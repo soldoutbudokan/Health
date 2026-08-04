@@ -1,0 +1,204 @@
+"use client";
+
+import { useId, useState } from "react";
+import { formatDateKey, round } from "@/lib/nutrition";
+
+export interface TrendPoint {
+  date: string;
+  value: number;
+  /** False for days with no entries at all — drawn as an empty slot. */
+  logged: boolean;
+}
+
+interface Props {
+  title: string;
+  unit: string;
+  points: TrendPoint[];
+  color: string;
+  /** Single reference line, e.g. the calorie target. */
+  goal?: number;
+  /** Reference band, e.g. the protein 160–180 g target. */
+  band?: { min: number; max: number };
+  height?: number;
+}
+
+/**
+ * Daily totals over time. Deliberately two separate charts rather than one
+ * with two y-axes — calories and grams don't share a scale, and a dual-axis
+ * chart lets you draw any relationship you like between them.
+ *
+ * Bars rather than a line because the days are discrete and some are missing:
+ * a line would interpolate straight through a day you didn't log and imply
+ * you ate something you didn't.
+ */
+export function TrendChart({
+  title,
+  unit,
+  points,
+  color,
+  goal,
+  band,
+  height = 132,
+}: Props) {
+  const [hover, setHover] = useState<number | null>(null);
+  const clipId = useId();
+
+  const ceiling = Math.max(
+    ...points.map((p) => p.value),
+    goal ?? 0,
+    band?.max ?? 0,
+    1,
+  );
+  // Headroom so a record day doesn't touch the top edge.
+  const scaleMax = ceiling * 1.12;
+
+  const W = 100; // viewBox units; the SVG stretches to its container
+  const gap = 1.6;
+  const barW = (W - gap * (points.length - 1)) / points.length;
+
+  const y = (v: number) => height - (v / scaleMax) * height;
+
+  const active = hover !== null ? points[hover] : null;
+
+  return (
+    <figure className="card p-4">
+      <figcaption className="mb-3 flex items-baseline justify-between gap-2">
+        <h3 className="text-sm font-semibold">{title}</h3>
+        <span className="tnum text-xs text-muted">
+          {active
+            ? `${formatDateKey(active.date)} · ${active.logged ? `${round(active.value)} ${unit}` : "not logged"}`
+            : goal
+              ? `target ${round(goal)} ${unit}`
+              : band
+                ? `target ${band.min}–${band.max} ${unit}`
+                : ""}
+        </span>
+      </figcaption>
+
+      <div
+        className="relative"
+        onMouseLeave={() => setHover(null)}
+        style={{ height }}
+      >
+        <svg
+          width="100%"
+          height={height}
+          viewBox={`0 0 ${W} ${height}`}
+          preserveAspectRatio="none"
+          role="img"
+          aria-label={`${title} over the last ${points.length} days`}
+        >
+          <defs>
+            <clipPath id={clipId}>
+              <rect x="0" y="0" width={W} height={height} />
+            </clipPath>
+          </defs>
+
+          {/* Target band sits behind the bars as recessive context. */}
+          {band && (
+            <rect
+              x="0"
+              y={y(band.max)}
+              width={W}
+              height={Math.max(0, y(band.min) - y(band.max))}
+              fill={color}
+              opacity={0.1}
+            />
+          )}
+
+          {/* Reference lines, hairline weight — chrome, not data. */}
+          {goal !== undefined && (
+            <line
+              x1="0"
+              x2={W}
+              y1={y(goal)}
+              y2={y(goal)}
+              stroke="var(--baseline)"
+              strokeWidth="0.5"
+              strokeDasharray="2 2"
+              vectorEffect="non-scaling-stroke"
+            />
+          )}
+          {band && (
+            <line
+              x1="0"
+              x2={W}
+              y1={y(band.min)}
+              y2={y(band.min)}
+              stroke="var(--baseline)"
+              strokeWidth="0.5"
+              strokeDasharray="2 2"
+              vectorEffect="non-scaling-stroke"
+            />
+          )}
+
+          <g clipPath={`url(#${clipId})`}>
+            {points.map((p, i) => {
+              const x = i * (barW + gap);
+              const h = p.logged ? Math.max(height - y(p.value), 1.5) : 0;
+              const isHover = hover === i;
+              return (
+                <g key={p.date}>
+                  {/* Empty slot so unlogged days read as absent, not as zero. */}
+                  {!p.logged && (
+                    <rect
+                      x={x}
+                      y={height - 2}
+                      width={barW}
+                      height={2}
+                      rx={1}
+                      fill="var(--track)"
+                    />
+                  )}
+                  {p.logged && (
+                    <rect
+                      x={x}
+                      y={height - h}
+                      width={barW}
+                      height={h}
+                      rx={1.4}
+                      fill={color}
+                      opacity={hover === null || isHover ? 1 : 0.45}
+                      className="transition-opacity duration-150"
+                    />
+                  )}
+                </g>
+              );
+            })}
+          </g>
+
+          {/* Baseline */}
+          <line
+            x1="0"
+            x2={W}
+            y1={height}
+            y2={height}
+            stroke="var(--baseline)"
+            strokeWidth="1"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+
+        {/* Hit targets are full-height columns, wider than the bars. */}
+        <div className="absolute inset-0 flex">
+          {points.map((p, i) => (
+            <button
+              key={p.date}
+              type="button"
+              className="h-full flex-1 cursor-default"
+              onMouseEnter={() => setHover(i)}
+              onFocus={() => setHover(i)}
+              onBlur={() => setHover(null)}
+              aria-label={`${formatDateKey(p.date)}: ${p.logged ? `${round(p.value)} ${unit}` : "not logged"}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-2 flex justify-between text-[10px] text-muted">
+        <span>{formatDateKey(points[0]?.date ?? "")}</span>
+        <span>{formatDateKey(points[points.length - 1]?.date ?? "")}</span>
+      </div>
+    </figure>
+  );
+}
