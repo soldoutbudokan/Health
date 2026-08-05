@@ -185,6 +185,14 @@ data so it sits inside the band. This holds visually too: the protein ring's
 overflow lap is green, never the critical red the calorie ring uses — over the
 band is not a fault.
 
+**A met target closes its ring.** The protein ring's circumference is the band's
+*floor*, so hitting 160 g draws a complete circle and everything above it runs as
+a green second lap, with a neutral tick where the band tops out. It was scaled to
+`max × 1.15` until August 5, 2026, which drew 182 g as an 88% arc — a cleared goal
+rendering as a near miss, and near-indistinguishable from a calorie ring that
+really was 580 short. Don't rescale it for the sake of showing the band as an arc
+on the first lap; that trade was made once and it cost more than it bought.
+
 **The dashboard is one selected day, two columns.** Food on the left, training on
 the right, and both show *only what was logged on that day* — stepping back to
 yesterday moves both columns together. A session, a meal or a morning check-in

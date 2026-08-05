@@ -17,9 +17,13 @@ interface RingProps {
    * so that ring passes something benign instead.
    */
   overflowColor?: string;
-  /** Second arc drawn as a band on the same track, e.g. the protein max. */
-  bandStart?: number;
-  bandEnd?: number;
+  /**
+   * Where a target *band* stops, as a fraction of the second lap. Only means
+   * anything on a ring whose circumference is the band's floor: the first lap
+   * is the target, and this tick marks how far past it the band runs, so the
+   * overflow arc reads as "still inside the band" or "past the top of it".
+   */
+  overflowBandEnd?: number;
   children?: React.ReactNode;
   label: string;
 }
@@ -30,8 +34,7 @@ function Ring({
   stroke = 12,
   color,
   overflowColor = "var(--status-critical)",
-  bandStart,
-  bandEnd,
+  overflowBandEnd,
   children,
   label,
 }: RingProps) {
@@ -59,21 +62,6 @@ function Ring({
           strokeWidth={stroke}
         />
 
-        {/* Target band (protein min→max), drawn on the track itself. */}
-        {bandStart !== undefined && bandEnd !== undefined && (
-          <circle
-            cx={size / 2}
-            cy={size / 2}
-            r={r}
-            fill="none"
-            stroke="var(--baseline)"
-            strokeWidth={stroke}
-            strokeDasharray={`${c * (bandEnd - bandStart)} ${c}`}
-            strokeDashoffset={-c * bandStart}
-            opacity={0.55}
-          />
-        )}
-
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -99,9 +87,50 @@ function Ring({
             strokeDasharray={`${c * overflow} ${c}`}
           />
         )}
+
+        {/* The top of the band, ticked across the second lap. Green stopping
+            short of it is "in the band"; green past it is "over", which is
+            still success — hence the neutral tick rather than a warning. */}
+        {overflowBandEnd !== undefined && overflow > 0 && (
+          <Tick
+            fraction={Math.min(overflowBandEnd, 1)}
+            size={size}
+            r={r}
+            stroke={stroke}
+          />
+        )}
       </svg>
       <div className="absolute inset-0 grid place-items-center text-center">{children}</div>
     </div>
+  );
+}
+
+/** A radial mark on the ring at `fraction` of one lap. Drawn inside the parent
+ *  svg, which is already rotated so that fraction 0 sits at twelve o'clock. */
+function Tick({
+  fraction,
+  size,
+  r,
+  stroke,
+}: {
+  fraction: number;
+  size: number;
+  r: number;
+  stroke: number;
+}) {
+  const a = 2 * Math.PI * fraction;
+  const inner = r - stroke / 2;
+  const outer = r + stroke / 2;
+  return (
+    <line
+      x1={size / 2 + inner * Math.cos(a)}
+      y1={size / 2 + inner * Math.sin(a)}
+      x2={size / 2 + outer * Math.cos(a)}
+      y2={size / 2 + outer * Math.sin(a)}
+      stroke="var(--baseline)"
+      strokeWidth={2}
+      strokeLinecap="round"
+    />
   );
 }
 
@@ -160,10 +189,14 @@ export function ProteinRing({
   min: number;
   max: number;
 }) {
-  // Scale the ring to the top of the band so the band is visible as an arc,
-  // rather than to the minimum where it would sit off the end.
-  const scale = max * 1.15;
-  const pct = consumed / scale;
+  // The ring closes when the target is *met*, so its circumference is the
+  // band's floor and everything above runs as a second lap. Scaling it to the
+  // top of the band plus headroom — which it did until August 5, 2026 — meant
+  // 182 g against a 160–180 g band drew an 88% arc: a cleared goal rendering
+  // as a near miss, and near-identical to a calorie ring that really was
+  // short. The band survives as a tick on the second lap rather than an arc
+  // on the first.
+  const pct = min > 0 ? consumed / min : 0;
   const status = consumed < min ? "under" : consumed > max ? "over" : "in";
 
   return (
@@ -172,8 +205,7 @@ export function ProteinRing({
         value={pct}
         color="var(--series-protein)"
         overflowColor="var(--status-good)"
-        bandStart={min / scale}
-        bandEnd={max / scale}
+        overflowBandEnd={min > 0 ? (max - min) / min : undefined}
         label={`Protein: ${round(consumed, 1)} g, target ${min} to ${max} g`}
       >
         <div>
