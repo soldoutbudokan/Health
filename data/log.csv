@@ -1,10 +1,11 @@
 id,date,meal,food,variant,brand,serving,servings,calories,protein_g,carbs_g,fat_g,fiber_g,sugar_g,sodium_mg,source,logged_at
 8cbd2660-1832-4ecb-b26c-cc5913dc5b0f,2026-08-04,breakfast,Iced Sugar-Free Vanilla Protein Latte,Venti,Starbucks,1 venti (24 fl oz),1,280,40,17,6,0,13,,packaged,2026-08-04T08:00:00.000Z
-23b4f77f-2751-4543-bd48-3c3b0a9dafa6,2026-08-04,breakfast,Protein Shake,2 scoops ON vanilla + splash of 2% milk,Optimum Nutrition,2 scoops (~61 g) + ~1/2 cup 2% milk,1,301,52,12,4.5,1,8,,packaged,2026-08-04T08:07:00.000Z
 6bb64dcc-0ad2-484e-b25b-fb16c3a655c0,2026-08-04,lunch,Korean BBQ tofu,,Pantry (Toronto),1 scoop (~150 g),2,265,20,12.5,15,3,,,custom,2026-08-04T12:14:00.000Z
 afebd6b7-d705-4af7-84d2-e49ef8d8e8e3,2026-08-04,lunch,Bone-in chicken thigh,,Pantry (Toronto),1 thigh (~110 g meat + skin),1,280,26,3,17,0,,,custom,2026-08-04T12:21:00.000Z
 614af121-ca1d-495d-80d6-eff3e97cf8fd,2026-08-04,lunch,Mac and cheese,,Pantry (Toronto),1 scoop (~170 g),1,320,13,30,16,1,,,custom,2026-08-04T12:28:00.000Z
 5ed87f4c-e5d5-4a75-89cd-4c657e46da63,2026-08-04,lunch,Greens with roasted chickpeas,,Pantry (Toronto),"1 scoop (~160 g, dressed)",1,220,7,16,13,8,,,custom,2026-08-04T12:35:00.000Z
 e685c2f7-5350-482e-ae80-35d71edbf389,2026-08-04,dinner,Mushroom Potsticker Soup,+ 6 potstickers,,1 bowl (1/6 recipe) + 6 potstickers,1,455,15,42,24,3.5,,1005,recipe,2026-08-04T19:42:00.000Z
+23b4f77f-2751-4543-bd48-3c3b0a9dafa6,2026-08-04,dinner,Protein Shake,2 scoops ON vanilla + splash of 2% milk,Optimum Nutrition,2 scoops (~61 g) + ~1/2 cup 2% milk,1,301,52,12,4.5,1,8,,packaged,2026-08-04T19:45:00.000Z
+237e471d-c252-4bae-a815-2c9e3a5c2356,2026-08-04,snack,Blueberries,,,32 berries (~48 g),1,27,0.4,7.0,0.2,1.2,4.8,,usda,2026-08-04T20:30:00.000Z
 b0dd7a2b-5c87-4e4e-a53c-779aab6973fa,2026-08-04,snack,Grenade Protein Bar,Oreo White,Grenade,1 bar (60 g),1,230,20,21,9,5,2,,packaged,2026-08-04T21:49:00.000Z
 79c7a60c-865a-4aa9-8653-bdf061464acd,2026-08-04,snack,Apple,,,1 medium (182 g),1,95,0.5,25,0.3,4.4,19,,staple,2026-08-04T21:56:00.000Z
