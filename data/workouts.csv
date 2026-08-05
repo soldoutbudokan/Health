@@ -28,3 +28,14 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-04-14,2026-08-04,heavy-upper,Seated Y raise,isolation,2,4,20,,,,logged
 2026-08-04-15,2026-08-04,heavy-upper,Dips,isolation,1,7,,,,,logged
 2026-08-04-16,2026-08-04,heavy-upper,Sled,finisher,1,,,10,,,logged
+2026-08-05-01,2026-08-05,heavy-lower,Sled push + pull,warmup,1,,,6,,,logged
+2026-08-05-02,2026-08-05,heavy-lower,Seated pancakes,warmup,1,,,,,,logged
+2026-08-05-03,2026-08-05,heavy-lower,Max jumps,jump,1,4,,,,,logged
+2026-08-05-04,2026-08-05,heavy-lower,Max jumps,jump,2,4,,,,,logged
+2026-08-05-05,2026-08-05,heavy-lower,Trap bar deadlift,compound,1,5,260,,,,logged
+2026-08-05-06,2026-08-05,heavy-lower,Trap bar deadlift,compound,2,5,260,,,,logged
+2026-08-05-07,2026-08-05,heavy-lower,Smith machine squat,compound,1,5,175,,,,logged
+2026-08-05-08,2026-08-05,heavy-lower,Smith machine squat,compound,2,4,175,,,,logged
+2026-08-05-09,2026-08-05,heavy-lower,Lying hamstring curl,isolation,1,8,110,,,,logged
+2026-08-05-10,2026-08-05,heavy-lower,Lying hamstring curl,isolation,2,5,110,,,,logged
+2026-08-05-11,2026-08-05,heavy-lower,Sled,finisher,1,,,7,,,logged
