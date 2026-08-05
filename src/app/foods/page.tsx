@@ -62,10 +62,15 @@ export default function Foods() {
         </p>
       </div>
 
+      {/* A placeholder is not a label — it vanishes on the first keystroke and
+          screen readers announce the field as unnamed. */}
       <input
+        id="food-filter"
+        type="search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Filter foods…"
+        aria-label="Filter foods by name, brand or barcode"
         className="w-full rounded-lg border border-hairline bg-surface-2 px-3.5 py-2.5 text-[15px] outline-none placeholder:text-muted"
       />
 

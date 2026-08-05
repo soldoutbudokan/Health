@@ -8,6 +8,31 @@ import { BUILTIN_FOODS } from "@/lib/search";
  *
  * Seeding happens only when storage is completely empty, so it never returns
  * after you've cleared it.
+ *
+ * This day totals 2,711 kcal and 213.5 g protein against goals of 2,800 kcal
+ * and a 160–180 g band — 89 kcal under, 33.5 g over the top of the band. That
+ * is deliberate, and it is not a rounding accident waiting to be tidied up:
+ *
+ * - Over the band is not a failure state in this app. `ProteinRing` renders
+ *   consumed > max as "✓ Target cleared (+33g)" in the success colour; the
+ *   only `text-critical` on the dashboard is calories over budget, and
+ *   calories are under. First run opens green on both rings, correctly.
+ * - Nothing renders broken. `GapClosers` is gated on `protein.toMin > 0` and
+ *   is meant to be absent on a day with no gap; the pace tile reads "Done".
+ * - The numbers are ordinary, not extreme: 31.5% of calories from protein on
+ *   a 2,700 kcal day is a normal high-protein day, not an implausible one.
+ * - The two breakfast drinks that carry 92 g of protein between them are both
+ *   in SEED_FAVORITES — they are routine items, not padding chosen to hit a
+ *   number.
+ *
+ * Trimming servings to land inside the band would mean editing a real logged
+ * day so the dashboard flatters the goal, which is exactly the thing the band
+ * (rather than a line) exists to avoid. Left alone on purpose.
+ *
+ * One caveat worth knowing: 40 g of the 213.5 comes from the Starbucks venti
+ * protein latte, the lowest-confidence entry in the catalog (its carbs are
+ * back-calculated — see its note). If that figure is revised down, this day's
+ * protein total moves with it.
  */
 const SEED_PLAN: Array<{ foodId: string; servings: number; slot: MealSlot }> = [
   // Breakfast

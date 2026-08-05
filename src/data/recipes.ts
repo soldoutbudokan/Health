@@ -8,6 +8,14 @@ import type { Food } from "@/lib/types";
  * The upstream tables are themselves estimates, so treat these as planning
  * numbers rather than label data. Re-run the transcription if the recipes
  * change: each `note` records the serving basis it was derived from.
+ *
+ * Fibre and sodium are NOT in the upstream tables. Where they appear below
+ * they were derived from the recipe's own ingredient list — quantities,
+ * standard per-100g fibre figures, and the salt the recipe actually specifies
+ * — and every entry carrying one says so in its note. Salt "to taste" is
+ * never invented: where that (or unmeasured pasta/boiling water) would be the
+ * dominant term, the note says what was left out, and where it would be the
+ * only term the field is absent entirely.
  */
 export const RECIPE_FOODS: Food[] = [
   {
@@ -15,8 +23,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Air Fryer Brussels Sprouts",
     source: "recipe",
     per: "1 serving (1/4 recipe)",
-    macros: { calories: 120, protein: 5, carbs: 12, fat: 7 },
-    note: "Assumes 4 servings.",
+    macros: { calories: 120, protein: 5, carbs: 12, fat: 7, fiber: 5, sodium: 310 },
+    note: "Assumes 4 servings. Fibre and sodium estimated from the ingredient list: ~142 g sprouts per serving at 3.8 g fibre/100 g; sodium is the recipe's stated 1/2 tsp salt plus 2-3 tbsp Parmesan, split four ways.",
     tags: ["side", "vegetable", "sprouts", "air fryer"],
   },
   {
@@ -24,8 +32,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Baked Ziti",
     source: "recipe",
     per: "1 serving (1/8 recipe)",
-    macros: { calories: 760, protein: 31, carbs: 55, fat: 46 },
-    note: "Based on 8 servings. Varies with pasta type and cheese amounts.",
+    macros: { calories: 760, protein: 31, carbs: 55, fat: 46, fiber: 5, sodium: 790 },
+    note: "Based on 8 servings. Varies with pasta type and cheese amounts. Fibre and sodium estimated from the ingredient list: 450 g dry pasta and two 28 oz cans of crushed tomatoes for the fibre; 1 lb mozzarella, 3 oz Parmesan, 12 oz ricotta and the canned tomatoes for the sodium. Excludes the salt in the pasta soaking water, which the recipe doesn't measure.",
     tags: ["pasta", "italian", "dinner", "bake"],
   },
   {
@@ -33,8 +41,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Beyond Meat Quesadilla",
     source: "recipe",
     per: "1 quesadilla (1 patty)",
-    macros: { calories: 550, protein: 28, carbs: 42, fat: 30 },
-    note: "Scales linearly — 1 serving per patty. Varies with tortilla size and cheese.",
+    macros: { calories: 550, protein: 28, carbs: 42, fat: 30, fiber: 3.5, sodium: 1115 },
+    note: "Scales linearly — 1 serving per patty. Varies with tortilla size and cheese. Fibre and sodium estimated from the ingredient list: the Beyond patty's own label (2 g fibre, 390 mg sodium), ~70 g of flour tortilla sized from the stated carbs (~545 mg), and ~1 oz cheese. Excludes the chilli oil and the salt on the patty.",
     tags: ["vegetarian", "mexican", "quesadilla", "beyond"],
   },
   {
@@ -43,8 +51,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "curry only",
     source: "recipe",
     per: "1 serving (1/8 recipe), no rice",
-    macros: { calories: 370, protein: 23, carbs: 14, fat: 25 },
-    note: "Based on 8 servings. Thighs run higher in fat than breasts.",
+    macros: { calories: 370, protein: 23, carbs: 14, fat: 25, fiber: 3, sodium: 815 },
+    note: "Based on 8 servings. Thighs run higher in fat than breasts. Fibre and sodium estimated from the ingredient list: the 800 g can of crushed tomatoes, 2 large onions and the spice load for the fibre; the recipe's 2 tsp of stated salt (1 in the marinade, 1 in the curry) plus the canned tomatoes for the sodium.",
     tags: ["curry", "chicken", "indian", "dinner"],
   },
   {
@@ -53,8 +61,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "with 1 cup rice",
     source: "recipe",
     per: "1 serving (1/8 recipe) + 1 cup cooked rice",
-    macros: { calories: 570, protein: 27, carbs: 58, fat: 25.5 },
-    note: "Based on 8 servings. Add ~200 kcal per extra cup of rice.",
+    macros: { calories: 570, protein: 27, carbs: 58, fat: 25.5, fiber: 3.6, sodium: 815 },
+    note: "Based on 8 servings. Add ~200 kcal per extra cup of rice. Fibre and sodium estimated from the ingredient list — the curry-only figures plus 0.6 g fibre for the cup of rice; steamed rice adds no sodium.",
     tags: ["curry", "chicken", "indian", "rice", "dinner"],
   },
   {
@@ -62,8 +70,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Chicken Stock",
     source: "recipe",
     per: "1 cup (1/8 batch)",
-    macros: { calories: 40, protein: 3.5, carbs: 3, fat: 1.5 },
-    note: "Assumes 8 one-cup servings. Varies with bones and whether fat is skimmed.",
+    macros: { calories: 40, protein: 3.5, carbs: 3, fat: 1.5, fiber: 0 },
+    note: "Assumes 8 one-cup servings. Varies with bones and whether fat is skimmed. Fibre is set to 0 rather than estimated: the vegetables are strained out and discarded, so none of it reaches the cup. Sodium is deliberately left blank — the recipe salts to taste at the end and the bouillon cube is optional, so there is no quantity to derive from.",
     tags: ["stock", "broth", "base"],
   },
   {
@@ -72,8 +80,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "chilli only",
     source: "recipe",
     per: "1 serving (1/5 recipe)",
-    macros: { calories: 450, protein: 32, carbs: 39, fat: 19 },
-    note: "Based on 5 servings. Varies with beef fat content and toppings.",
+    macros: { calories: 450, protein: 32, carbs: 39, fat: 19, fiber: 9, sodium: 735 },
+    note: "Based on 5 servings. Varies with beef fat content and toppings. Fibre and sodium estimated from the ingredient list: a 13 oz can of pinto beans, a 28 oz can of crushed tomatoes and 6 oz of tomato paste carry most of the fibre; 2 cups of commercial beef broth (~1,600 mg) plus the canned beans and tomatoes carry most of the sodium. Excludes salt added to taste and any salt in the chilli powder blend.",
     tags: ["chili", "chilli", "beef", "beans", "dinner"],
   },
   {
@@ -82,8 +90,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "with 3 Hawaiian rolls",
     source: "recipe",
     per: "1 serving (1/5 recipe) + 3 rolls",
-    macros: { calories: 705, protein: 39.5, carbs: 79.5, fat: 25.75 },
-    note: "Based on 5 servings.",
+    macros: { calories: 705, protein: 39.5, carbs: 79.5, fat: 25.75, fiber: 10.5, sodium: 975 },
+    note: "Based on 5 servings. Fibre and sodium estimated from the ingredient list — the chilli-only figures plus 3 Hawaiian rolls at ~0.5 g fibre and ~80 mg sodium each.",
     tags: ["chili", "chilli", "beef", "rolls", "dinner"],
   },
   {
@@ -91,8 +99,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Crispy Edge Enchiladas",
     source: "recipe",
     per: "1 serving (~2 enchiladas, 1/6 recipe)",
-    macros: { calories: 780, protein: 38, carbs: 67, fat: 41 },
-    note: "Based on 6 servings from 14 enchiladas. Varies with tortilla brand and cheese.",
+    macros: { calories: 780, protein: 38, carbs: 67, fat: 41, fiber: 3.5, sodium: 1900 },
+    note: "Based on 6 servings from 14 enchiladas. Sauce sodium is label-derived: La Costeña Red Enchilada Sauce states 330 mg per 1/4 cup (62.5 g), so the 600 ml the recipe calls for is 634 g — 3,348 mg, or 558 mg a serving. The rest is still estimated from the ingredient list (14 flour tortillas, 3 cups shredded cheese, seasoning and beef ≈ 8,060 mg), which is where the remaining uncertainty sits — a different tortilla moves the total by a few hundred mg. Total works out at 1,901 mg, so the earlier all-estimate figure of 1,900 needed no revision. Fibre remains estimated.",
     tags: ["enchiladas", "mexican", "dinner", "bake"],
   },
   {
@@ -100,8 +108,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Egg Fried Rice",
     source: "recipe",
     per: "1 serving (1/2 recipe)",
-    macros: { calories: 490, protein: 16, carbs: 48, fat: 26 },
-    note: "Based on 2 servings. Varies with rice type and oil amount.",
+    macros: { calories: 490, protein: 16, carbs: 48, fat: 26, fiber: 1.5, sodium: 1190 },
+    note: "Based on 2 servings. Varies with rice type and oil amount. Fibre and sodium estimated from the ingredient list: 1 cup cooked white rice and 2 spring onions per serving for the fibre; 1 tbsp soy sauce, 1/4 tsp MSG and 2 eggs per serving for the sodium. Excludes the salt added to taste.",
     tags: ["rice", "egg", "chinese", "quick"],
   },
   {
@@ -109,8 +117,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "French Bread Pizza",
     source: "recipe",
     per: "1 serving (1/4 loaf)",
-    macros: { calories: 725, protein: 27.5, carbs: 59, fat: 42 },
-    note: "Based on 4 servings. Varies with bread size and toppings.",
+    macros: { calories: 725, protein: 27.5, carbs: 59, fat: 42, fiber: 4, sodium: 1310 },
+    note: "Based on 4 servings. Varies with bread size and toppings. Fibre and sodium estimated from the ingredient list: a ~470 g loaf (back-calculated from the stated carbs) plus sauce for the fibre; the bread itself (~2,500 mg), 8 oz mozzarella, 2 oz Parmigiano and ~1 cup pizza sauce for the sodium. Bread is the single biggest sodium term here.",
     tags: ["pizza", "bread", "quick", "dinner"],
   },
   {
@@ -119,8 +127,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "curry only",
     source: "recipe",
     per: "1 serving (1/4 recipe), no rice",
-    macros: { calories: 500, protein: 16, carbs: 36, fat: 30 },
-    note: "Based on 4 servings. Add ~200 kcal per cup of rice.",
+    macros: { calories: 500, protein: 16, carbs: 36, fat: 30, fiber: 3, sodium: 1575 },
+    note: "Based on 4 servings. Add ~200 kcal per cup of rice. Fibre and sodium estimated from the ingredient list: potatoes, onions and the roux for the fibre; 4 S&B Golden Curry blocks (the box lists 800 mg sodium per 18 g block) plus a 900 ml carton of commercial vegetable broth for the sodium. This is the saltiest entry in the catalog and the roux is most of it — using water instead of broth takes ~760 mg off.",
     tags: ["curry", "japanese", "paneer", "vegetarian"],
   },
   {
@@ -129,8 +137,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "with 1 cup rice",
     source: "recipe",
     per: "1 serving (1/4 recipe) + 1 cup cooked rice",
-    macros: { calories: 700, protein: 20, carbs: 80, fat: 30.5 },
-    note: "Derived by adding the recipe's stated ~200 kcal cup of rice to the curry-only figures.",
+    macros: { calories: 700, protein: 20, carbs: 80, fat: 30.5, fiber: 3.6, sodium: 1575 },
+    note: "Derived by adding the recipe's stated ~200 kcal cup of rice to the curry-only figures. Fibre and sodium estimated from the ingredient list — plus 0.6 g fibre for the cup of rice, which adds no sodium.",
     tags: ["curry", "japanese", "paneer", "rice", "vegetarian"],
   },
   {
@@ -139,8 +147,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "soup only",
     source: "recipe",
     per: "1 serving (1/5 recipe)",
-    macros: { calories: 380, protein: 16, carbs: 43, fat: 18 },
-    note: "Based on 5 servings. Varies with lentil type and olive oil quantity.",
+    macros: { calories: 380, protein: 16, carbs: 43, fat: 18, fiber: 7, sodium: 470 },
+    note: "Based on 5 servings. Varies with lentil type and olive oil quantity. Fibre and sodium estimated from the ingredient list: 250 g dry lentils (~3.25 cups cooked at 8 g fibre/cup) plus potato, carrot, celery and onion for the fibre; sodium is the recipe's stated 1 tsp of salt across 5 servings. Assumes homemade unsalted stock — a litre of commercial broth would add ~680 mg per serving on top.",
     tags: ["soup", "lentil", "vegetarian"],
   },
   {
@@ -149,8 +157,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "with 1 slice crusty bread",
     source: "recipe",
     per: "1 serving (1/5 recipe) + 1 slice",
-    macros: { calories: 560, protein: 22, carbs: 78, fat: 20 },
-    note: "Based on 5 servings.",
+    macros: { calories: 560, protein: 22, carbs: 78, fat: 20, fiber: 9, sodium: 850 },
+    note: "Based on 5 servings. Fibre and sodium estimated from the ingredient list — the soup-only figures plus a ~70 g slice of crusty bread (~2 g fibre, ~380 mg sodium), sized from the +35 g of carbs the recipe's own table attributes to it.",
     tags: ["soup", "lentil", "bread", "vegetarian"],
   },
   {
@@ -159,8 +167,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "no egg",
     source: "recipe",
     per: "1 serving (1/6 recipe)",
-    macros: { calories: 700, protein: 20, carbs: 63, fat: 42 },
-    note: "Based on 6 servings with most rendered pork fat skimmed. Leaving it in can add 150+ kcal.",
+    macros: { calories: 700, protein: 20, carbs: 63, fat: 42, fiber: 4, sodium: 865 },
+    note: "Based on 6 servings with most rendered pork fat skimmed. Leaving it in can add 150+ kcal. Fibre and sodium estimated from the ingredient list: 1 cup rice and ~117 g of the roasted broccoli per serving for the fibre; 60 ml soy sauce in the braise and the 1/2 tsp salt on the broccoli, split six ways, for the sodium.",
     tags: ["pork", "taiwanese", "rice", "braise"],
   },
   {
@@ -169,8 +177,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "+ 1 egg",
     source: "recipe",
     per: "1 serving (1/6 recipe) + 1 egg",
-    macros: { calories: 770, protein: 26, carbs: 63, fat: 47 },
-    note: "Based on 6 servings. Each boiled egg adds ~70 kcal, 6g protein, 5g fat.",
+    macros: { calories: 770, protein: 26, carbs: 63.4, fat: 47, fiber: 4, sodium: 935 },
+    note: "Based on 6 servings. Each boiled egg adds ~70 kcal, 6g protein, 5g fat, 0.4g carbs and ~70 mg sodium, and no fibre. Fibre and sodium estimated from the ingredient list.",
     tags: ["pork", "taiwanese", "rice", "egg"],
   },
   {
@@ -179,8 +187,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "+ 2 eggs",
     source: "recipe",
     per: "1 serving (1/6 recipe) + 2 eggs",
-    macros: { calories: 840, protein: 32, carbs: 64, fat: 52 },
-    note: "Based on 6 servings.",
+    macros: { calories: 840, protein: 32, carbs: 63.8, fat: 52, fiber: 4, sodium: 1005 },
+    note: "Based on 6 servings. Fibre and sodium estimated from the ingredient list. Carbs use the same 0.4 g per egg as the +1 egg entry — the upstream table rounded these to 63 and 64, which made the first egg look carb-free and the second not.",
     tags: ["pork", "taiwanese", "rice", "egg"],
   },
   {
@@ -188,8 +196,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Meal Prep Beef Burrito",
     source: "recipe",
     per: "1 burrito (1/5 recipe)",
-    macros: { calories: 640, protein: 34, carbs: 59, fat: 28.5 },
-    note: "Recipe gives a range (600–680 kcal, 54–64g carbs, 27–30g fat); midpoints used. A 12\" tortilla adds 80–100 kcal over a 10\".",
+    macros: { calories: 640, protein: 34, carbs: 59, fat: 28.5, fiber: 7, sodium: 1390 },
+    note: "Recipe gives a range (600–680 kcal, 54–64g carbs, 27–30g fat); midpoints used. A 12\" tortilla adds 80–100 kcal over a 10\". Fibre and sodium estimated from the ingredient list: a 16 oz can of refried beans is most of the fibre; the same beans (~2,000 mg), five 10–12\" tortillas, 1 cup cheese and the recipe's stated 1/2 tsp salt are the sodium.",
     tags: ["burrito", "beef", "meal prep", "mexican"],
   },
   {
@@ -198,8 +206,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "broth only",
     source: "recipe",
     per: "1 serving (1/6 recipe), no potstickers",
-    macros: { calories: 165, protein: 4, carbs: 9, fat: 11 },
-    note: "Based on 6 servings. Watch sodium rather than calories here.",
+    macros: { calories: 165, protein: 4, carbs: 9, fat: 11, fiber: 2, sodium: 420 },
+    note: "Based on 6 servings. Watch sodium rather than calories here. Fibre and sodium estimated from the ingredient list: mushrooms, napa cabbage and scallions for the fibre; 1.5 tbsp soy sauce, 2 tsp hondashi and 0.3 tsp MSG across 6 servings for the sodium — the broth itself is homemade and unsalted. The hondashi figure is the least certain input.",
     tags: ["soup", "mushroom", "broth"],
   },
   {
@@ -208,8 +216,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "+ 6 potstickers",
     source: "recipe",
     per: "1 bowl (1/6 recipe) + 6 potstickers",
-    macros: { calories: 455, protein: 15, carbs: 42, fat: 24, sodium: 585 },
-    note: "Potsticker figures are off the Siwin package label; the rest is estimated. Sodium shown is potstickers alone, before soy sauce, hondashi and MSG.",
+    macros: { calories: 455, protein: 15, carbs: 42, fat: 24, fiber: 3.5, sodium: 1005 },
+    note: "Potsticker figures are off the Siwin package label; the rest is estimated. Sodium is 585 mg of label-measured potstickers (97.5 mg each) plus ~420 mg estimated for the seasoned broth — the earlier 585 mg figure here was potstickers alone and understated the bowl. Fibre is the broth's ~2 g plus an estimated 0.25 g per potsticker.",
     tags: ["soup", "potsticker", "dumpling", "mushroom"],
   },
   {
@@ -218,8 +226,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "+ 8 potstickers",
     source: "recipe",
     per: "1 bowl (1/6 recipe) + 8 potstickers",
-    macros: { calories: 550, protein: 18, carbs: 53, fat: 28 },
-    note: "Based on 6 servings.",
+    macros: { calories: 550, protein: 18, carbs: 53, fat: 28, fiber: 4, sodium: 1200 },
+    note: "Based on 6 servings. Fibre and sodium estimated from the ingredient list — the broth plus 8 potstickers at the Siwin label's 97.5 mg sodium each and an estimated 0.25 g fibre each.",
     tags: ["soup", "potsticker", "dumpling", "mushroom"],
   },
   {
@@ -228,8 +236,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "no egg",
     source: "recipe",
     per: "1 serving (1/6 recipe)",
-    macros: { calories: 725, protein: 36, carbs: 87, fat: 25 },
-    note: "Based on 6 servings. Fatty sukiyaki-cut ribeye can add 100+ kcal over lean brisket.",
+    macros: { calories: 725, protein: 36, carbs: 87, fat: 25, fiber: 3.5, sodium: 1710 },
+    note: "Based on 6 servings. Fatty sukiyaki-cut ribeye can add 100+ kcal over lean brisket. Fibre and sodium estimated from the ingredient list: 75 g dried udon plus onions and scallions for the fibre; 9 tbsp soy sauce across the broth and the beef pan, plus 2.5 tsp hondashi, for the sodium. Assumes you drink the broth. Excludes the salt in the dried udon, most of which leaches into the unsalted cooking water.",
     tags: ["udon", "beef", "japanese", "noodles"],
   },
   {
@@ -238,8 +246,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "+ 1 egg",
     source: "recipe",
     per: "1 serving (1/6 recipe) + 1 egg",
-    macros: { calories: 795, protein: 42, carbs: 87, fat: 30 },
-    note: "Based on 6 servings.",
+    macros: { calories: 795, protein: 42, carbs: 87.4, fat: 30, fiber: 3.5, sodium: 1780 },
+    note: "Based on 6 servings. Each boiled egg adds ~70 kcal, 6g protein, 5g fat, 0.4g carbs and ~70 mg sodium, and no fibre. Fibre and sodium estimated from the ingredient list.",
     tags: ["udon", "beef", "japanese", "noodles", "egg"],
   },
   {
@@ -248,8 +256,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "+ 2 eggs",
     source: "recipe",
     per: "1 serving (1/6 recipe) + 2 eggs",
-    macros: { calories: 865, protein: 48, carbs: 88, fat: 35 },
-    note: "Based on 6 servings.",
+    macros: { calories: 865, protein: 48, carbs: 87.8, fat: 35, fiber: 3.5, sodium: 1850 },
+    note: "Based on 6 servings. Fibre and sodium estimated from the ingredient list. Carbs use the same 0.4 g per egg as the +1 egg entry — the upstream table rounded these to 87 and 88, which made the first egg look carb-free and the second not.",
     tags: ["udon", "beef", "japanese", "noodles", "egg"],
   },
   {
@@ -257,8 +265,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Orange Chicken and Roasted Broccoli",
     source: "recipe",
     per: "1 serving (1/5 recipe), no rice",
-    macros: { calories: 500, protein: 32, carbs: 44, fat: 18 },
-    note: "Based on 5 servings. Add ~200 kcal per cup of rice.",
+    macros: { calories: 500, protein: 32, carbs: 44, fat: 18, fiber: 4, sodium: 615 },
+    note: "Based on 5 servings. Add ~200 kcal per cup of rice. Fibre and sodium estimated from the ingredient list: 1.5 lbs broccoli across 5 servings is nearly all the fibre; 1/4 cup low-sodium soy sauce and the chicken are the sodium. Excludes the salt added to taste on the chicken and the broccoli.",
     tags: ["chicken", "broccoli", "chinese", "dinner"],
   },
   {
@@ -266,8 +274,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Paneer Bhurji",
     source: "recipe",
     per: "1 serving (1/4 recipe)",
-    macros: { calories: 310, protein: 14, carbs: 10, fat: 22 },
-    note: "Based on 4 servings. Varies with paneer brand and oil.",
+    macros: { calories: 310, protein: 14, carbs: 10, fat: 22, fiber: 2 },
+    note: "Based on 4 servings. Varies with paneer brand and oil. Fibre estimated from the recipe's 200 g of onion and 250 g of tomato across 4 servings. Sodium is deliberately left blank — the recipe salts to taste and fresh paneer, onion and tomato carry almost none on their own, so any number would be invented.",
     tags: ["paneer", "indian", "vegetarian", "quick"],
   },
   {
@@ -275,8 +283,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Parmesan-Crusted Roasted Potatoes",
     source: "recipe",
     per: "1 serving (1/4 recipe, as a side)",
-    macros: { calories: 285, protein: 8, carbs: 45, fat: 9 },
-    note: "Based on 4 servings. Moves with the fat used — butter vs duck fat vs olive oil.",
+    macros: { calories: 285, protein: 8, carbs: 45, fat: 9, fiber: 3.5 },
+    note: "Based on 4 servings. Moves with the fat used — butter vs duck fat vs olive oil. Fibre estimated from 2 lbs of peeled Russets across 4 servings. Sodium is deliberately left blank: most of it would come from how much of the 1.5 tbsp of kosher salt in the boiling water the potatoes take up, which isn't knowable — the Parmesan on its own is only ~70 mg per serving, and publishing that alone would read as far lower than the dish actually is.",
     tags: ["potato", "side", "parmesan", "roast"],
   },
   {
@@ -284,8 +292,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Pasta alla Vodka",
     source: "recipe",
     per: "1 serving (1/5 recipe)",
-    macros: { calories: 570, protein: 16, carbs: 68, fat: 22 },
-    note: "Based on 5 servings. Varies with pasta type and cream amount.",
+    macros: { calories: 570, protein: 16, carbs: 68, fat: 22, fiber: 5.5, sodium: 315 },
+    note: "Based on 5 servings. Varies with pasta type and cream amount. Fibre and sodium estimated from the ingredient list: 1 lb dry pasta and a 28 oz can of crushed tomatoes for the fibre; the same canned tomatoes and 1/2 cup Parmesan for the sodium. Excludes the salted pasta water — unmeasured in the recipe, and it would add meaningfully, so treat this sodium as a floor.",
     tags: ["pasta", "italian", "vodka", "dinner"],
   },
   {
@@ -300,8 +308,9 @@ export const RECIPE_FOODS: Food[] = [
       fat: 6,
       fiber: 4,
       sugar: 24,
+      sodium: 265,
     },
-    note: "2 scoops ON Gold Standard + 3/4 cup Siggi's 0% skyr + 3/4 cup frozen jumbleberry + 3/4 cup 2% milk. Net carbs ~31g.",
+    note: "2 scoops ON Gold Standard + 3/4 cup Siggi's 0% skyr + 3/4 cup frozen jumbleberry + 3/4 cup 2% milk. Net carbs ~31g. Fibre is the recipe's own per-ingredient breakdown. Sodium is estimated from the same four components (milk ~90 mg, skyr ~65 mg, whey ~55 mg per scoop); the whey scoop figure is from memory of the label rather than the tub, so it's the least certain part.",
     tags: ["smoothie", "protein", "whey", "berry", "breakfast"],
   },
   {
@@ -310,8 +319,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "stew only",
     source: "recipe",
     per: "1 serving (1/6 recipe)",
-    macros: { calories: 300, protein: 10, carbs: 32, fat: 16 },
-    note: "Based on 6 servings, without optional vegetable stock.",
+    macros: { calories: 300, protein: 10, carbs: 32, fat: 16, fiber: 6.5, sodium: 330 },
+    note: "Based on 6 servings, without optional vegetable stock. Fibre and sodium estimated from the ingredient list: a 28 oz can of crushed tomatoes, a 19 oz can of chickpeas (~2 cups drained at 6 g fibre/cup) and 312 g of spinach for the fibre; the canned tomatoes and the chickpea can — added undrained, so its liquid counts too — for the sodium. Excludes salt added to taste, which the recipe leaves open, so treat this as a floor.",
     tags: ["stew", "chickpea", "spinach", "vegetarian"],
   },
   {
@@ -320,8 +329,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "with 2 slices sourdough",
     source: "recipe",
     per: "1 serving (1/6 recipe) + 2 slices",
-    macros: { calories: 540, protein: 18, carbs: 78, fat: 18 },
-    note: "Based on 6 servings.",
+    macros: { calories: 540, protein: 18, carbs: 78, fat: 18, fiber: 9, sodium: 850 },
+    note: "Based on 6 servings. Fibre and sodium estimated from the ingredient list — the stew-only figures plus 2 slices of sourdough at ~1.25 g fibre and ~260 mg sodium each, sized from the +46 g of carbs the recipe's own table attributes to them.",
     tags: ["stew", "chickpea", "spinach", "sourdough", "vegetarian"],
   },
   {
@@ -329,8 +338,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Stuffed Beef Bell Peppers",
     source: "recipe",
     per: "1 serving (2 pepper halves, 1/8 recipe)",
-    macros: { calories: 520, protein: 30, carbs: 33, fat: 30 },
-    note: "Based on 8 servings. Varies with beef fat content and how much is drained.",
+    macros: { calories: 520, protein: 30, carbs: 33, fat: 30, fiber: 5.5, sodium: 885 },
+    note: "Based on 8 servings. Varies with beef fat content and how much is drained. Fibre and sodium estimated from the ingredient list: 8 large bell peppers and the 28 oz can of crushed tomatoes for the fibre; the recipe's stated 1 1/4 tsp salt, 1 tbsp soy sauce, 2 cups of cheese and the canned tomatoes for the sodium.",
     tags: ["beef", "peppers", "bake", "dinner"],
   },
   {
@@ -338,8 +347,8 @@ export const RECIPE_FOODS: Food[] = [
     name: "Sun Dried Tomato Chicken Gnocchi Soup",
     source: "recipe",
     per: "1 serving (1/6 recipe)",
-    macros: { calories: 470, protein: 25, carbs: 55, fat: 18 },
-    note: "Based on 6 servings with homemade, unskimmed stock.",
+    macros: { calories: 470, protein: 25, carbs: 55, fat: 18, fiber: 6, sodium: 710 },
+    note: "Based on 6 servings with homemade, unskimmed stock. Fibre and sodium estimated from the ingredient list: 700 g gnocchi, an 8 oz jar of sun-dried tomatoes and a 5.5 oz can of tomato paste for the fibre; the gnocchi (brand-dependent, taken at ~380 mg/100 g), the sun-dried tomatoes and the rotisserie chicken for the sodium. Assumes unsalted homemade stock as the recipe note does — 5 cups of commercial broth would add ~670 mg per serving. Excludes the Parmesan at the table and salt to taste.",
     tags: ["soup", "chicken", "gnocchi", "tomato"],
   },
 ];

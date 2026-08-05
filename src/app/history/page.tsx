@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useId, useMemo, useRef, useState } from "react";
 import { useAppData } from "@/lib/store";
 import type { AppData, Goals } from "@/lib/types";
 import {
@@ -23,6 +23,7 @@ import {
 } from "@/lib/export";
 import { TrendChart, type TrendPoint } from "@/components/TrendChart";
 import { StatTile } from "@/components/StatTiles";
+import { SyncPanel } from "@/components/SyncPanel";
 
 const RANGES = [7, 14, 30, 90] as const;
 
@@ -56,7 +57,9 @@ export default function History() {
       loggedDays,
       avg,
       onTarget,
-      hitRate: loggedDays > 0 ? (onTarget / loggedDays) * 100 : 0,
+      // `null`, not 0 — nothing logged is an absence of evidence, and a 0%
+      // painted in the alert colour reads as "you missed every day".
+      hitRate: loggedDays > 0 ? (onTarget / loggedDays) * 100 : null,
     };
   }, [points, data.entries, data.goals.proteinMin, range, today]);
 
@@ -100,9 +103,21 @@ export default function History() {
         />
         <StatTile
           label="Protein target hit"
-          value={`${Math.round(stats.hitRate)}%`}
-          hint={`${stats.onTarget} of ${stats.loggedDays} logged days`}
-          tone={stats.hitRate >= 80 ? "good" : stats.hitRate >= 50 ? "neutral" : "warn"}
+          value={stats.hitRate === null ? "—" : `${Math.round(stats.hitRate)}%`}
+          hint={
+            stats.hitRate === null
+              ? `Nothing logged in the last ${range} days`
+              : `${stats.onTarget} of ${stats.loggedDays} logged days`
+          }
+          tone={
+            stats.hitRate === null
+              ? "neutral"
+              : stats.hitRate >= 80
+                ? "good"
+                : stats.hitRate >= 50
+                  ? "neutral"
+                  : "warn"
+          }
         />
         <StatTile
           label="Avg kcal / logged day"
@@ -212,6 +227,7 @@ export default function History() {
 
       <ExportPanel data={data} />
       <SettingsPanel
+        data={data}
         goals={data.goals}
         onSave={store.setGoals}
         onImport={store.replaceAll}
@@ -318,12 +334,26 @@ function ExportPanel({ data }: { data: AppData }) {
   );
 }
 
+/** Every field a `Goals` can carry, so a comparison can't miss one. */
+const GOAL_KEYS = [
+  "calories",
+  "proteinMin",
+  "proteinMax",
+  "carbs",
+  "fat",
+  "fiber",
+] as const;
+
+const sameGoals = (a: Goals, b: Goals) => GOAL_KEYS.every((k) => a[k] === b[k]);
+
 function SettingsPanel({
+  data,
   goals,
   onSave,
   onImport,
   onClear,
 }: {
+  data: AppData;
   goals: Goals;
   onSave: (g: Goals) => void;
   onImport: (d: AppData) => void;
@@ -333,12 +363,33 @@ function SettingsPanel({
   const [saved, setSaved] = useState(false);
   const [importError, setImportError] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const fieldId = useId();
 
-  const dirty =
-    draft.calories !== goals.calories ||
-    draft.proteinMin !== goals.proteinMin ||
-    draft.proteinMax !== goals.proteinMax ||
-    draft.fiber !== goals.fiber;
+  /**
+   * The goals the draft was last aligned with.
+   *
+   * Without it the draft would initialise once and then ignore the store
+   * forever: restoring a backup, erasing everything, or adopting a sync result
+   * all replace `goals`, and the inputs would keep showing the old numbers
+   * while `dirty` quietly went true — so the next "Save goals" would write the
+   * stale values back over what had just arrived.
+   *
+   * Comparing against this snapshot rather than against `goals` itself is what
+   * separates an outside change from the user's own typing: if the draft still
+   * matches what it was aligned with, nothing is half-typed and it is safe to
+   * adopt the new goals. If it doesn't, the user is mid-edit and their numbers
+   * stay put.
+   */
+  const [alignedWith, setAlignedWith] = useState<Goals>(goals);
+  if (!sameGoals(goals, alignedWith)) {
+    setAlignedWith(goals);
+    if (sameGoals(draft, alignedWith)) {
+      setDraft(goals);
+      setSaved(false);
+    }
+  }
+
+  const dirty = !sameGoals(draft, goals);
 
   async function handleFile(file: File) {
     setImportError(null);
@@ -374,11 +425,15 @@ function SettingsPanel({
       <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {numberFields.map(([label, key, unit]) => (
           <div key={key}>
-            <label className="mb-1.5 block text-[11px] font-medium uppercase tracking-wide text-muted">
+            <label
+              htmlFor={`${fieldId}-${key}`}
+              className="mb-1.5 block text-[11px] font-medium uppercase tracking-wide text-muted"
+            >
               {label}
             </label>
             <div className="relative">
               <input
+                id={`${fieldId}-${key}`}
                 type="number"
                 min={0}
                 value={draft[key] ?? ""}
@@ -425,8 +480,8 @@ function SettingsPanel({
           Backup
         </h3>
         <p className="mt-1 text-xs text-muted">
-          Your log lives in this browser only — nothing is uploaded anywhere. Export a
-          JSON backup before switching devices or clearing site data.
+          Your log lives in this browser. Export a JSON backup before switching devices or
+          clearing site data — or set up sync below to keep several devices in step.
         </p>
         <div className="mt-2 flex flex-wrap gap-2">
           <input
@@ -463,6 +518,10 @@ function SettingsPanel({
         </div>
         {importError && <p className="mt-2 text-xs text-critical">{importError}</p>}
       </div>
+
+      {/* Adopting the merged snapshot goes through the same path as a restored
+          backup, so a sync result is normalised exactly like an imported one. */}
+      <SyncPanel data={data} onSynced={onImport} />
     </section>
   );
 }

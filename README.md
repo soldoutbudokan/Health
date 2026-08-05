@@ -11,9 +11,11 @@ uploaded anywhere.
 
 ```bash
 npm install
-cp .env.example .env.local   # optional keys — see below
-npm run dev                  # http://localhost:3000
+npm run dev   # http://localhost:3000
 ```
+
+No API keys, no `.env.local`, no accounts. The app is a static site: everything
+it needs it either ships with or fetches from a free public API in the browser.
 
 ---
 
@@ -26,7 +28,7 @@ npm run dev                  # http://localhost:3000
 | Pantry (Toronto) | 4 | The catered plate broken into scoops so a future visit can be logged component by component |
 | Staples | 16 | Rice, eggs, milk, skyr, oats, chicken breast, tuna, peanut butter, oil — the things you top a recipe up with or close a gap with |
 
-Every food carries its **provenance** as a badge (`recipe`, `label`, `USDA`,
+Every food carries its **provenance** as a badge (`recipe`, `label`, `OFF`,
 `Claude`, `yours`) and a note saying where the number came from. A recipe
 estimate and a manufacturer's panel deserve different levels of trust, and this
 is how that survives into the log.
@@ -52,34 +54,43 @@ Foods page.
 
 ## Adding food that isn't in the catalog
 
-The add dialog tries three things, cheapest first:
+The add dialog tries two things, cheapest first:
 
 1. **Your catalog** — instant, offline, fuzzy. Type `potstick`, `gren`, or a
    barcode.
-2. **Food databases** — [USDA FoodData Central](https://fdc.nal.usda.gov/) and
-   [Open Food Facts](https://world.openfoodfacts.org/) in parallel. Free, no
-   account needed. Pure-digit queries go straight to Open Food Facts' barcode
-   endpoint.
-3. **Ask Claude** — for restaurant dishes, regional products, and anything with
-   no label. Claude searches the web, reads the panel, and returns structured
-   macros with a confidence level (`from label` / `from database` / `estimated`)
-   and its sources.
+2. **Food database** — [Open Food Facts](https://world.openfoodfacts.org/),
+   queried straight from the browser. Free, no account, no key. Pure-digit
+   queries of 8–14 characters go to the barcode endpoint; everything else is a
+   text search. Best for branded, packaged goods.
 
-Anything from 2 or 3 can be saved into your own catalog with **Save & add**, so
-the second time is instant.
+Anything from 2 can be saved into your own catalog with **Save & add**, so the
+second time is instant. There's also **Enter by hand** when you already know the
+numbers.
 
-There's also **Enter by hand** when you already know the numbers.
+### For anything without a label
+
+Restaurant dishes, home cooking, regional products — ask **Claude Code** to work
+out the macros and write the entry. It reads and writes the same private gist
+this app syncs with, so the food shows up in the log next time the app syncs.
+
+That used to be an "Ask Claude" button inside the app, backed by a server route
+holding an Anthropic key. A static site has no server to hold a key, and the
+route was unauthenticated — on a public URL anyone who found it could spend the
+key's credits. Moving the work to Claude Code removes both problems and gets a
+better answer, since Claude Code can look at the whole log while it decides.
 
 ### Environment variables
 
-Both are optional; the app works without either.
+None. There is no server, so there is nowhere to keep a secret — anything in
+`.env` would be compiled into the bundle and readable by anyone. `ANTHROPIC_API_KEY`
+and `USDA_API_KEY` are both gone: the first with the "Ask Claude" route, the
+second with USDA search, which was dropped rather than shipped with a
+world-readable key. Open Food Facts needs no key, which is why it survived the
+move to the client.
 
-| Variable | What it unlocks | Without it |
-|---|---|---|
-| `ANTHROPIC_API_KEY` | The "Ask Claude" lookup | The button returns a clear "not configured" message |
-| `USDA_API_KEY` | USDA search at normal rate limits ([free key](https://fdc.nal.usda.gov/api-key-signup)) | Falls back to the shared `DEMO_KEY`, ~30 requests/hour before it starts failing |
-
-Open Food Facts needs no key.
+The one credential the app does use — a GitHub token for gist sync — is pasted
+per device and kept in that browser's `localStorage`. It never enters the repo
+or the bundle.
 
 ---
 
@@ -144,18 +155,32 @@ Once you clear the log, it stays cleared.
 
 ## Deploying
 
-It's a standard Next.js app, so Vercel works with no configuration:
+It builds to a folder of static files — no Node process runs in production —
+so any file host will serve it. It ships configured for **GitHub Pages**.
 
 ```bash
-npx vercel
+npm run build   # writes ./out
 ```
 
-Add `ANTHROPIC_API_KEY` and `USDA_API_KEY` as environment variables in the
-project settings. The two API routes run server-side, so neither key is ever
-exposed to the browser.
+`.github/workflows/deploy.yml` does this on every push to the default branch:
+build, drop a `.nojekyll` marker in `out/` (Pages otherwise runs Jekyll, which
+strips any path starting with an underscore — i.e. all of `_next/`), upload it
+as a Pages artifact and deploy. Enable it once under **Settings → Pages →
+Source → GitHub Actions**.
 
-Note that `localStorage` is per-browser: deploying doesn't give you sync, it
-just means you don't need a laptop running to open it on your phone.
+Two settings in `next.config.ts` make that work:
+
+| Setting | Why |
+|---|---|
+| `output: "export"` | Pre-renders every route to HTML. Required — a static host cannot run route handlers or server components on demand. |
+| `basePath: "/Health"` | Pages serves a *project* site from `https://<user>.github.io/Health`, not from the domain root. Without it every asset URL resolves one level too high and the page loads blank. It must match the repository name — rename the repo and this changes with it. |
+
+To serve from somewhere else (a root domain, Netlify, S3), drop `basePath` and
+publish `out/`.
+
+Note that `localStorage` is per-browser: deploying doesn't give you sync on its
+own — gist sync does — it just means you don't need a laptop running to open it
+on your phone.
 
 ---
 
@@ -166,14 +191,15 @@ src/
 ├─ app/
 │  ├─ page.tsx              Dashboard — rings, KPIs, gap closers, the log, trends
 │  ├─ history/page.tsx      Trends, daily table, export, goals & backup
-│  ├─ foods/page.tsx        Catalog browser, favourites, delete
-│  └─ api/
-│     ├─ search/route.ts    USDA + Open Food Facts proxy
-│     └─ ai-lookup/route.ts Claude web search → structured macros
+│  └─ foods/page.tsx        Catalog browser, favourites, delete
 ├─ components/              Meters, TrendChart, AddFoodModal, MealList, …
 ├─ data/                    recipes.ts, staples.ts, pantry.ts, seed.ts
-└─ lib/                     types, store (localStorage), nutrition math, search, export
+└─ lib/                     types, store (localStorage), nutrition math, search,
+                            offSearch (Open Food Facts, client-side), sync, export
 ```
+
+There is no `app/api/`. There cannot be: a static export has no server to run
+route handlers on, and Next refuses to build one that contains them.
 
 ### Charts
 

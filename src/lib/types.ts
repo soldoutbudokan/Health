@@ -78,6 +78,12 @@ export interface LogEntry {
   /** Macros for ONE serving. Multiply by `servings` for the entry total. */
   macros: Macros;
   loggedAt: string; // ISO timestamp
+  /**
+   * Last edit, for sync. Absent on entries written before syncing existed, in
+   * which case `loggedAt` stands in — an entry never edited was last changed
+   * when it was logged.
+   */
+  updatedAt?: string;
 }
 
 export interface Goals {
@@ -106,6 +112,15 @@ export interface AppData {
   customFoods: Food[];
   /** Food ids pinned to the quick-add row. */
   favorites: string[];
+  /**
+   * Entry id → when it was deleted. A delete has to be recorded rather than
+   * implied, or syncing with a device that still holds the entry reads as
+   * "they have something I lack" and puts it straight back.
+   */
+  deletions?: Record<string, string>;
+  /** Stamps for the two fields replaced wholesale rather than merged. */
+  goalsUpdatedAt?: string;
+  favoritesUpdatedAt?: string;
 }
 
 export const EMPTY_DATA: AppData = {

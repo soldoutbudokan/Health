@@ -226,7 +226,9 @@ export function proteinStreak(entries: LogEntry[], goals: Goals): number {
   const today = toDateKey();
   let cursor = (byDate.get(today) ?? 0) >= goals.proteinMin ? today : addDays(today, -1);
   let streak = 0;
-  while ((byDate.get(cursor) ?? 0) >= goals.proteinMin) {
+  // `has` gates the walk, not just the threshold: an unlogged day must end the
+  // streak even when the threshold is 0, which every day clears vacuously.
+  while (byDate.has(cursor) && (byDate.get(cursor) ?? 0) >= goals.proteinMin) {
     streak++;
     cursor = addDays(cursor, -1);
   }

@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { Food, MealSlot } from "@/lib/types";
 import { MEAL_LABELS, MEAL_SLOTS } from "@/lib/types";
 import { round } from "@/lib/nutrition";
 import { allFoods, foodLabel, searchFoods } from "@/lib/search";
+import { searchOpenFoodFacts } from "@/lib/offSearch";
 import { SourceBadge } from "./SourceBadge";
 
 interface Props {
@@ -14,18 +15,15 @@ interface Props {
   defaultSlot: MealSlot;
   /** Returns the food actually logged, so the caller can offer to save it. */
   onAdd: (food: Food, servings: number, slot: MealSlot) => void;
-  /** Persist a web/Claude/manual food into the user's own catalog. */
+  /** Persist a web/manual food into the user's own catalog. */
   onSaveFood: (food: Omit<Food, "id" | "createdAt">) => Food;
 }
 
 type Mode = "search" | "manual";
 
-interface AiResult {
-  food: Food;
-  confidence: "label" | "database" | "estimate";
-  sources: string[];
-  macroMismatch: number | null;
-}
+/** Anything focusable, in DOM order — the raw material for the focus trap. */
+const FOCUSABLE =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 export function AddFoodModal({
   open,
@@ -45,12 +43,10 @@ export function AddFoodModal({
   const [webState, setWebState] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [webError, setWebError] = useState<string | null>(null);
 
-  const [ai, setAi] = useState<AiResult | null>(null);
-  const [aiState, setAiState] = useState<"idle" | "loading" | "done" | "error">("idle");
-  const [aiError, setAiError] = useState<string | null>(null);
-
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  /** The control that opened the dialog, so focus can go back where it came from. */
+  const openerRef = useRef<HTMLElement | null>(null);
 
   const catalog = useMemo(() => allFoods(customFoods), [customFoods]);
   const localResults = useMemo(
@@ -61,9 +57,7 @@ export function AddFoodModal({
   useEffect(() => {
     if (open) {
       setSlot(defaultSlot);
-      // Let the dialog mount before stealing focus.
-      const t = setTimeout(() => inputRef.current?.focus(), 40);
-      return () => clearTimeout(t);
+      return;
     }
     // Reset everything on close so the next open is a clean slate.
     setQuery("");
@@ -73,29 +67,79 @@ export function AddFoodModal({
     setWebResults([]);
     setWebState("idle");
     setWebError(null);
-    setAi(null);
-    setAiState("idle");
-    setAiError(null);
   }, [open, defaultSlot]);
 
-  // Typing invalidates the previous remote lookups.
+  // Focus moves in on open and back out on close. Capturing the opener before
+  // taking focus is what lets a keyboard user carry on from where they were
+  // instead of being dumped at the top of the document.
+  useEffect(() => {
+    if (!open) return;
+    openerRef.current = document.activeElement as HTMLElement | null;
+    // Let the dialog mount before stealing focus.
+    const t = setTimeout(() => inputRef.current?.focus(), 40);
+    return () => {
+      clearTimeout(t);
+      const opener = openerRef.current;
+      openerRef.current = null;
+      // Only restore if focus is still inside (or was lost with) the dialog;
+      // if something else has legitimately taken it, leave it alone.
+      const active = document.activeElement;
+      if (!active || active === document.body) opener?.focus?.();
+    };
+  }, [open]);
+
+  // Typing invalidates the previous remote lookup.
   useEffect(() => {
     setWebResults([]);
     setWebState("idle");
     setWebError(null);
-    setAi(null);
-    setAiState("idle");
-    setAiError(null);
   }, [query]);
 
   useEffect(() => {
+    if (!open) return;
+
+    // `aria-modal` promises the rest of the page is inert. Nothing enforces
+    // that on its own, so Tab is wrapped by hand: without this it walks
+    // straight out of the dialog and into the page behind it.
+    function focusable(): HTMLElement[] {
+      const root = dialogRef.current;
+      if (!root) return [];
+      return Array.from(root.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
+        (el) => el.getClientRects().length > 0,
+      );
+    }
+
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") {
         if (selected) setSelected(null);
         else onClose();
+        return;
+      }
+      if (e.key !== "Tab") return;
+
+      const items = focusable();
+      if (items.length === 0) {
+        e.preventDefault();
+        return;
+      }
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+
+      if (!dialogRef.current?.contains(active)) {
+        // Focus escaped (or never arrived) — pull it back to the near edge.
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+      } else if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
       }
     }
-    if (open) document.addEventListener("keydown", onKey);
+
+    document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onClose, selected]);
 
@@ -104,38 +148,12 @@ export function AddFoodModal({
     setWebState("loading");
     setWebError(null);
     try {
-      const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-      const data = (await res.json()) as { results: Food[]; errors: string[] };
-      setWebResults(data.results ?? []);
-      setWebError(data.errors?.length ? data.errors.join(" · ") : null);
+      const results = await searchOpenFoodFacts(query);
+      setWebResults(results);
       setWebState("done");
     } catch {
       setWebState("error");
-      setWebError("Could not reach the food databases. Check your connection.");
-    }
-  }, [query]);
-
-  const askClaude = useCallback(async () => {
-    if (query.trim().length < 2) return;
-    setAiState("loading");
-    setAiError(null);
-    try {
-      const res = await fetch("/api/ai-lookup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setAiState("error");
-        setAiError(data.error ?? "Lookup failed.");
-        return;
-      }
-      setAi(data as AiResult);
-      setAiState("done");
-    } catch {
-      setAiState("error");
-      setAiError("Could not reach the lookup service.");
+      setWebError("Could not reach Open Food Facts. Check your connection.");
     }
   }, [query]);
 
@@ -146,7 +164,7 @@ export function AddFoodModal({
     setServings(1);
   }
 
-  function confirm(alsoSave: boolean) {
+  function confirm(alsoSave: boolean, count: number) {
     if (!selected) return;
     let food = selected;
     if (alsoSave && selected.source !== "recipe" && selected.source !== "staple") {
@@ -155,7 +173,7 @@ export function AddFoodModal({
       void _createdAt;
       food = onSaveFood(rest);
     }
-    onAdd(food, servings, slot);
+    onAdd(food, count, slot);
     onClose();
   }
 
@@ -201,6 +219,7 @@ export function AddFoodModal({
                 <input
                   ref={inputRef}
                   value={query}
+                  aria-label="Search foods, recipes, or a barcode"
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" && localResults.length > 0) choose(localResults[0]);
@@ -248,7 +267,8 @@ export function AddFoodModal({
                 <Section title={query ? "Your foods" : "Recently useful"}>
                   {localResults.length === 0 ? (
                     <p className="px-1 py-3 text-sm text-muted">
-                      Nothing in your catalog matches “{query}”. Try the web or Claude below.
+                      Nothing in your catalog matches “{query}”. Try the food database
+                      below, or enter it by hand.
                     </p>
                   ) : (
                     localResults.map((f) => (
@@ -258,73 +278,36 @@ export function AddFoodModal({
                 </Section>
 
                 {query.trim().length >= 2 && (
-                  <>
-                    <Section
-                      title="Food databases"
-                      hint="USDA + Open Food Facts · free, no account"
-                      action={
-                        webState === "idle" ? (
-                          <ActionButton onClick={searchWeb}>Search</ActionButton>
-                        ) : webState === "loading" ? (
-                          <Spinner />
-                        ) : (
-                          <ActionButton onClick={searchWeb}>Again</ActionButton>
-                        )
-                      }
-                    >
-                      {webError && (
-                        <p className="px-1 py-1.5 text-xs text-serious">{webError}</p>
-                      )}
-                      {webState === "done" && webResults.length === 0 && !webError && (
-                        <p className="px-1 py-3 text-sm text-muted">No matches.</p>
-                      )}
-                      {webResults.map((f) => (
-                        <FoodRow key={f.id} food={f} onClick={() => choose(f)} />
-                      ))}
-                    </Section>
-
-                    <Section
-                      title="Ask Claude"
-                      hint="Searches the web and works out the macros"
-                      action={
-                        aiState === "loading" ? (
-                          <Spinner />
-                        ) : (
-                          <ActionButton onClick={askClaude} accent>
-                            {aiState === "idle" ? "Look up" : "Retry"}
-                          </ActionButton>
-                        )
-                      }
-                    >
-                      {aiState === "loading" && (
-                        <p className="px-1 py-3 text-sm text-muted">
-                          Searching for “{query}”… this usually takes 10–20 seconds.
-                        </p>
-                      )}
-                      {aiError && <p className="px-1 py-1.5 text-sm text-serious">{aiError}</p>}
-                      {ai && (
-                        <>
-                          <FoodRow food={ai.food} onClick={() => choose(ai.food)} />
-                          <div className="mt-1 space-y-1 px-1 text-xs text-muted">
-                            <p>
-                              <ConfidenceChip level={ai.confidence} />{" "}
-                              {ai.food.note}
-                            </p>
-                            {ai.sources.length > 0 && (
-                              <p>Sources: {ai.sources.slice(0, 4).join(", ")}</p>
-                            )}
-                            {ai.macroMismatch !== null && (
-                              <p className="text-serious">
-                                ⚠ Macros and calories disagree by ~{ai.macroMismatch}% — worth a
-                                second look before you rely on it.
-                              </p>
-                            )}
-                          </div>
-                        </>
-                      )}
-                    </Section>
-                  </>
+                  <Section
+                    title="Food database"
+                    hint="Open Food Facts · free, no account"
+                    action={
+                      webState === "idle" ? (
+                        <ActionButton onClick={searchWeb}>Search</ActionButton>
+                      ) : webState === "loading" ? (
+                        <Spinner />
+                      ) : (
+                        <ActionButton onClick={searchWeb}>Again</ActionButton>
+                      )
+                    }
+                  >
+                    {webError && (
+                      <p className="px-1 py-1.5 text-xs text-serious">{webError}</p>
+                    )}
+                    {webState === "done" && webResults.length === 0 && !webError && (
+                      <p className="px-1 py-3 text-sm text-muted">No matches.</p>
+                    )}
+                    {webResults.map((f) => (
+                      <FoodRow key={f.id} food={f} onClick={() => choose(f)} />
+                    ))}
+                  </Section>
                 )}
+
+                <p className="mt-1 border-t border-hairline px-1 pt-3 text-xs leading-relaxed text-muted">
+                  No label to go on — a restaurant dish, something unpackaged? Ask Claude
+                  Code to work out the macros and add it; it writes to the same synced log
+                  this app reads, so it shows up here.
+                </p>
               </div>
             )}
           </>
@@ -362,20 +345,14 @@ function Section({
 function ActionButton({
   onClick,
   children,
-  accent,
 }: {
   onClick: () => void;
   children: React.ReactNode;
-  accent?: boolean;
 }) {
   return (
     <button
       onClick={onClick}
-      className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition-colors ${
-        accent
-          ? "bg-protein text-white hover:opacity-90"
-          : "border border-hairline text-ink-2 hover:bg-surface-2"
-      }`}
+      className="rounded-lg border border-hairline px-2.5 py-1 text-xs font-semibold text-ink-2 transition-colors hover:bg-surface-2"
     >
       {children}
     </button>
@@ -389,23 +366,6 @@ function Spinner() {
       role="status"
       aria-label="Loading"
     />
-  );
-}
-
-function ConfidenceChip({ level }: { level: "label" | "database" | "estimate" }) {
-  const map = {
-    label: { text: "From label", color: "var(--status-good)" },
-    database: { text: "From database", color: "var(--series-protein)" },
-    estimate: { text: "Estimated", color: "var(--status-warning)" },
-  } as const;
-  const m = map[level];
-  return (
-    <span
-      className="mr-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
-      style={{ color: m.color, background: "var(--surface-2)" }}
-    >
-      {m.text}
-    </span>
   );
 }
 
@@ -433,6 +393,20 @@ function FoodRow({ food, onClick }: { food: Food; onClick: () => void }) {
   );
 }
 
+/** Half a quarter-serving is below the resolution of any kitchen scale here. */
+const MIN_SERVINGS = 0.25;
+
+/**
+ * Resolve whatever is in the text field to a loggable number of servings.
+ * Mid-edit states ("", "1.", "-") fall back to the last good value rather than
+ * to zero, and nothing below the minimum survives.
+ */
+function normalizeServings(raw: string, fallback: number): number {
+  const n = Number(raw);
+  if (raw.trim() === "" || !Number.isFinite(n)) return Math.max(MIN_SERVINGS, fallback);
+  return Math.max(MIN_SERVINGS, round(n, 2));
+}
+
 function PortionStep({
   food,
   servings,
@@ -448,12 +422,38 @@ function PortionStep({
   slot: MealSlot;
   setSlot: (s: MealSlot) => void;
   onBack: () => void;
-  onConfirm: (alsoSave: boolean) => void;
+  onConfirm: (alsoSave: boolean, servings: number) => void;
 }) {
   const m = food.macros;
   const isBuiltin = food.source === "recipe" || food.source === "staple";
   const alreadyMine = food.id.startsWith("custom-");
   const canSave = !isBuiltin && !alreadyMine;
+
+  const uid = useId();
+  const servingsId = `${uid}-servings`;
+  const mealLabelId = `${uid}-meal`;
+
+  /**
+   * The field holds a *string* while it is being edited. Coercing every
+   * keystroke to a number breaks decimals: typing "1.5" passes through "1.",
+   * which is not a finite number, so the old code wrote 0 back into the field
+   * and the next keystroke produced "05" — five servings logged instead of one
+   * and a half. The number is only committed when it is actually a number.
+   */
+  const [draft, setDraft] = useState(() => String(servings));
+
+  // Keep the field in step with the ± buttons and the preset chips, without
+  // clobbering an in-progress edit that happens to round to the same value.
+  useEffect(() => {
+    setDraft((d) => (Number(d) === servings && d.trim() !== "" ? d : String(servings)));
+  }, [servings]);
+
+  function commit(): number {
+    const next = normalizeServings(draft, servings);
+    setServings(next);
+    setDraft(String(next));
+    return next;
+  }
 
   const totals = {
     calories: m.calories * servings,
@@ -485,23 +485,38 @@ function PortionStep({
 
       <div className="space-y-5 overflow-y-auto p-4">
         <div>
-          <label className="mb-2 block text-[11px] font-semibold uppercase tracking-wide text-muted">
+          <label
+            htmlFor={servingsId}
+            className="mb-2 block text-[11px] font-semibold uppercase tracking-wide text-muted"
+          >
             Servings
           </label>
           <div className="flex items-center gap-2">
             <button
-              onClick={() => setServings(Math.max(0.25, round(servings - 0.25, 2)))}
+              onClick={() => setServings(Math.max(MIN_SERVINGS, round(servings - 0.25, 2)))}
               className="h-10 w-10 rounded-lg border border-hairline text-lg font-medium hover:bg-surface-2"
               aria-label="Fewer servings"
             >
               −
             </button>
             <input
+              id={servingsId}
               type="number"
-              min={0.25}
+              inputMode="decimal"
+              min={MIN_SERVINGS}
               step={0.25}
-              value={servings}
-              onChange={(e) => setServings(Math.max(0, Number(e.target.value) || 0))}
+              value={draft}
+              onChange={(e) => {
+                const raw = e.target.value;
+                setDraft(raw);
+                const n = Number(raw);
+                // Push upstream only once the text is a usable number, so the
+                // totals track typing without the field fighting the user.
+                if (raw.trim() !== "" && Number.isFinite(n) && n >= MIN_SERVINGS) {
+                  setServings(round(n, 2));
+                }
+              }}
+              onBlur={commit}
               className="tnum h-10 w-24 rounded-lg border border-hairline bg-surface-2 text-center text-[15px] outline-none"
             />
             <button
@@ -516,6 +531,7 @@ function PortionStep({
                 <button
                   key={n}
                   onClick={() => setServings(n)}
+                  aria-pressed={servings === n}
                   className={`rounded-lg px-2.5 py-1.5 text-xs font-medium ${
                     servings === n
                       ? "bg-protein text-white"
@@ -534,15 +550,19 @@ function PortionStep({
           ) : null}
         </div>
 
-        <div>
-          <label className="mb-2 block text-[11px] font-semibold uppercase tracking-wide text-muted">
+        <div role="group" aria-labelledby={mealLabelId}>
+          <span
+            id={mealLabelId}
+            className="mb-2 block text-[11px] font-semibold uppercase tracking-wide text-muted"
+          >
             Meal
-          </label>
+          </span>
           <div className="grid grid-cols-4 gap-1.5">
             {MEAL_SLOTS.map((s) => (
               <button
                 key={s}
                 onClick={() => setSlot(s)}
+                aria-pressed={slot === s}
                 className={`rounded-lg py-2 text-sm font-medium ${
                   slot === s
                     ? "bg-protein text-white"
@@ -583,14 +603,14 @@ function PortionStep({
       <div className="flex gap-2 border-t border-hairline p-3">
         {canSave && (
           <button
-            onClick={() => onConfirm(true)}
+            onClick={() => onConfirm(true, commit())}
             className="flex-1 rounded-lg border border-hairline py-2.5 text-sm font-semibold text-ink-2 hover:bg-surface-2"
           >
             Save &amp; add
           </button>
         )}
         <button
-          onClick={() => onConfirm(false)}
+          onClick={() => onConfirm(false, commit())}
           className="flex-1 rounded-lg bg-protein py-2.5 text-sm font-semibold text-white hover:opacity-90"
         >
           Add to {MEAL_LABELS[slot].toLowerCase()}
@@ -614,6 +634,10 @@ function ManualEntry({
   const [carbs, setCarbs] = useState("");
   const [fat, setFat] = useState("");
 
+  const uid = useId();
+  const nameId = `${uid}-name`;
+  const perId = `${uid}-per`;
+
   const kcal = Number(calories) || 0;
   const derived = (Number(protein) || 0) * 4 + (Number(carbs) || 0) * 4 + (Number(fat) || 0) * 9;
   const mismatch = kcal > 0 && Math.abs(derived - kcal) / kcal > 0.2;
@@ -630,10 +654,14 @@ function ManualEntry({
   return (
     <div className="space-y-4 overflow-y-auto p-4">
       <div>
-        <label className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wide text-muted">
+        <label
+          htmlFor={nameId}
+          className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wide text-muted"
+        >
           Name
         </label>
         <input
+          id={nameId}
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="e.g. Deli turkey sandwich"
@@ -642,10 +670,14 @@ function ManualEntry({
       </div>
 
       <div>
-        <label className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wide text-muted">
+        <label
+          htmlFor={perId}
+          className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wide text-muted"
+        >
           One serving is
         </label>
         <input
+          id={perId}
           value={per}
           onChange={(e) => setPer(e.target.value)}
           placeholder="e.g. 1 sandwich, 100 g, 1 cup"
@@ -654,27 +686,35 @@ function ManualEntry({
       </div>
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        {fields.map(([label, value, set, unit]) => (
-          <div key={label}>
-            <label className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wide text-muted">
-              {label}
-            </label>
-            <div className="relative">
-              <input
-                type="number"
-                min={0}
-                step="0.1"
-                value={value}
-                onChange={(e) => set(e.target.value)}
-                placeholder="0"
-                className="tnum w-full rounded-lg border border-hairline bg-surface-2 px-3 py-2.5 pr-9 text-[15px] outline-none"
-              />
-              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted">
-                {unit}
-              </span>
+        {fields.map(([label, value, set, unit]) => {
+          const fieldId = `${uid}-${label.toLowerCase()}`;
+          return (
+            <div key={label}>
+              <label
+                htmlFor={fieldId}
+                className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wide text-muted"
+              >
+                {label}
+              </label>
+              <div className="relative">
+                <input
+                  id={fieldId}
+                  type="number"
+                  inputMode="decimal"
+                  min={0}
+                  step="0.1"
+                  value={value}
+                  onChange={(e) => set(e.target.value)}
+                  placeholder="0"
+                  className="tnum w-full rounded-lg border border-hairline bg-surface-2 px-3 py-2.5 pr-9 text-[15px] outline-none"
+                />
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted">
+                  {unit}
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {mismatch && (

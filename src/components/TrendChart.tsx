@@ -53,7 +53,11 @@ export function TrendChart({
   const scaleMax = ceiling * 1.12;
 
   const W = 100; // viewBox units; the SVG stretches to its container
-  const gap = 1.6;
+  // A fixed gap outgrows the width once there are enough bars — at 90 days
+  // 1.6 units of gap consumes 142 of the 100 available and the bars come out
+  // negative, which browsers drop silently rather than clamp. Capping the gap
+  // at half a slot keeps 7/14/30 exactly as they were and only binds at 90.
+  const gap = Math.min(1.6, W / points.length / 2);
   const barW = (W - gap * (points.length - 1)) / points.length;
 
   const y = (v: number) => height - (v / scaleMax) * height;
@@ -179,16 +183,19 @@ export function TrendChart({
           />
         </svg>
 
-        {/* Hit targets are full-height columns, wider than the bars. */}
-        <div className="absolute inset-0 flex">
+        {/* Hit targets are full-height columns, wider than the bars. Tapping
+            has to work as well as hovering — there is no hover on a phone, and
+            without a click handler the whole chart is unreadable on touch. */}
+        <div className="absolute inset-0 flex" onMouseLeave={() => setHover(null)}>
           {points.map((p, i) => (
             <button
               key={p.date}
               type="button"
-              className="h-full flex-1 cursor-default"
+              className="h-full flex-1 cursor-pointer"
               onMouseEnter={() => setHover(i)}
               onFocus={() => setHover(i)}
               onBlur={() => setHover(null)}
+              onClick={() => setHover((h) => (h === i ? null : i))}
               aria-label={`${formatDateKey(p.date)}: ${p.logged ? `${round(p.value)} ${unit}` : "not logged"}`}
             />
           ))}
