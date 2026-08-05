@@ -181,7 +181,23 @@ because `toISOString()` shifts the day for anyone behind UTC. Don't reintroduce 
 data, not a zero-calorie day.
 
 **Protein is a band, not a line.** Over 180 g renders as success. Don't adjust real
-data so it sits inside the band.
+data so it sits inside the band. This holds visually too: the protein ring's
+overflow lap is green, never the critical red the calorie ring uses — over the
+band is not a fault.
+
+**The dashboard is one selected day, two columns.** Food on the left, training on
+the right, and both show *only what was logged on that day* — stepping back to
+yesterday moves both columns together. A session, a meal or a morning check-in
+appears on its own day and nowhere else. The site records; it never schedules —
+an empty day renders as an honest empty, not as a plan or a suggestion. The week
+strip and the bodyweight chart are the only standing (day-independent) elements
+in the training column, because they are historical context, not a day's record.
+
+**A plan slot with a set count pools its alternatives.** `comparePlan()` counts
+incline bench toward the heavy-day bench 3–4 × 5 (revised August 5, 2026 — see
+`docs/training-plan.md`) because a volume prescription is about the slot's total
+sets. Slots without a set count (the sled's "5–10 min") match one exercise only,
+so a second sled bout stays visible as its own line.
 
 **Don't invent units.** The old spreadsheet mixes pounds with machine pin numbers —
 "6 Reps at 13" is a pin position, "5 Reps at 145 lbs" is a weight. Only the rows
@@ -220,3 +236,16 @@ you have to remember to press. One file, one writer, no sync. Keep it that way.
 There were also two API routes — `/api/ai-lookup` calling Claude, and `/api/search`
 proxying USDA. Both are deleted. The first is your job now; the second isn't worth a
 server. `output: "export"` will fail the build if anyone adds a route handler back.
+
+**A calories-burned estimate was built and removed the same day** (August 5, 2026).
+MET × bodyweight × duration, shown on the session card and as a dashboard chart. It
+was judged silly — MET figures are population averages dressed as data, and the
+2,800 kcal target already assumes training, so the number informed no decision.
+Don't reintroduce it, on the dashboard or anywhere else, without being asked.
+
+**The dashboard's training column went through three shapes in one day** before
+landing where it is: first the *latest* session (read as today's schedule no matter
+how it was labelled), then historical charts only, then the current form — pinned to
+the dashboard's selected day. The rule that survived: a session shows on its own
+day and nowhere else, and the site never schedules. See "The dashboard is one
+selected day, two columns" above before rearranging it.
