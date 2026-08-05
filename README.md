@@ -7,7 +7,7 @@ the bars and shakes that show up most days, and whatever else gets eaten.
 
 **The site is read-only.** There is no add button, no browser storage, and no
 way to save anything from the page. `data/log.csv` in this repo is the log;
-Claude Code edits it, commits, and Cloudflare Pages rebuilds.
+Claude Code edits it, commits, and GitHub Pages rebuilds.
 
 ```bash
 npm install
@@ -23,7 +23,7 @@ npm run build  # writes ./out
 you tell Claude Code what you ate
   → it appends rows to data/log.csv
   → commit, push
-  → Cloudflare Pages rebuilds
+  → GitHub Actions rebuilds and publishes
   → the site shows it
 ```
 
@@ -62,9 +62,24 @@ number, commit it back. `fiber_g`, `sugar_g` and `sodium_mg` may be blank —
 blank means *not recorded*, which is not the same as zero. Quote any field
 containing a comma; plenty of food names have one.
 
-The repo is private, and the deployed site sits behind Cloudflare Access. That
-login is what keeps the log private, and it is what makes it safe for the data
-to be in the repo in plain text at all.
+### On privacy
+
+**The repo is public, and so is the log.** Anyone can read what's in
+`data/log.csv`, and git keeps the history of every change to it.
+
+That was a deliberate trade rather than an oversight. Putting a login in front
+of a static site turns out to be surprisingly expensive: GitHub Pages can only
+restrict a site on Enterprise, Cloudflare Access needs a domain registered to
+your own account and cannot protect a `*.pages.dev` URL, and Vercel cannot
+protect a production domain below its Pro tier. The free routes all involve
+either buying a domain or moving the data into a database so a client-side
+login has something real to guard — because on a static site the data is
+compiled into the JavaScript, and a login over an already-published bundle is
+decoration.
+
+For calories and protein that wasn't judged worth the cost. It would be the
+wrong call for anything more revealing, so don't put anything in the CSV that
+shouldn't be world-readable.
 
 ---
 
@@ -196,15 +211,17 @@ a CSV — Health Connect, Cronometer, MyFitnessPal — point it at `data/log.csv
 ## Deploying
 
 It builds to a folder of static files, so any file host will serve it. It is
-configured for **Cloudflare Pages**: build command `npm run build`, output
-directory `out`, and an Access policy in front of the hostname.
+configured for **GitHub Pages**. `.github/workflows/deploy.yml` builds on every
+push to `main` and publishes `out/`, dropping a `.nojekyll` marker so the
+`_next` asset directory survives (Jekyll strips paths beginning with an
+underscore). Pages must be enabled with **GitHub Actions** as the source.
 
 Two things in `next.config.ts` matter:
 
 | Setting | Why |
 |---|---|
 | `output: "export"` | Pre-renders every route to HTML. Required — a static host cannot run route handlers or server components on demand. |
-| no `basePath` | Cloudflare serves from the root of its own hostname. GitHub Pages needed `basePath: "/Health"` because project sites live on a subpath; keeping it here would push every asset one level too deep and the page would come up blank. |
+| `basePath: "/Health"` | Pages serves a *project* site from `https://<user>.github.io/Health`, not from the domain root. Without it every asset URL resolves one level too high and the page loads blank. It must match the repository name — rename the repo and this changes with it. |
 
 ### Environment variables
 

@@ -9,14 +9,21 @@ that is deliberate, not an oversight. Don't add one back.
 ## How it works
 
 ```
-you edit data/log.csv  →  commit  →  push  →  Cloudflare Pages rebuilds  →  site shows it
+you edit data/log.csv  →  commit  →  push  →  Actions rebuilds  →  site shows it
 ```
 
-The site is a static export served by Cloudflare Pages behind Cloudflare Access,
-so it asks for a login before it will show anything. That login is what keeps the
-log private, which is why the data can sit in the repo in plain text.
+The site is a static export on GitHub Pages at
+`https://soldoutbudokan.github.io/Health/`. A push to `main` triggers
+`.github/workflows/deploy.yml`, which builds and publishes; allow a minute or two.
 
-The repo is **private**. Keep it that way — the whole privacy model rests on it.
+**The repo is public, and so is the log.** That is a deliberate choice, not an
+oversight — putting a login in front of the site turned out to cost either a
+domain purchase (Cloudflare Access requires a domain on your own account and
+cannot protect a `*.pages.dev` URL), $20/month (Vercel cannot protect a
+production domain below Pro), or moving the data into Firestore. Public was
+judged the better trade for a calorie log. Don't write anything into
+`data/log.csv` that shouldn't be world-readable, and don't assume it's private
+because it's "just" a food log.
 
 ## The job you'll usually be asked to do
 

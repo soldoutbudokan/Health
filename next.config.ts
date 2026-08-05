@@ -1,22 +1,20 @@
 import type { NextConfig } from "next";
 
 /**
- * Static export, deployed to Cloudflare Pages behind Cloudflare Access.
+ * Static export for GitHub Pages.
  *
- * There is no `basePath` here on purpose. GitHub Pages served this from
- * `/Health` because project sites live on a subpath; Cloudflare serves from
- * the root of its own hostname, so a basePath would push every asset one
- * level too deep and the page would come up blank.
+ * `basePath` is required because Pages serves a *project* site from a subpath
+ * (`https://<user>.github.io/Health`) rather than from the domain root. Without
+ * it every asset URL resolves one level too high and the page loads blank. It
+ * must match the repository name — rename the repo and this changes with it.
  *
- * Access is what keeps the log private. The site is a public URL in the sense
- * that it resolves for anyone, but Cloudflare refuses to serve it without a
- * verified login, so the data baked into the build is only readable by the
- * identities on the Access policy. That is the trade that lets the log live
- * in the repo instead of behind a token the browser has to hold.
+ * Image optimisation is a server feature; `unoptimized` makes `next/image`
+ * emit plain <img> tags so the export can complete.
  */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: "export",
+  basePath: "/Health",
   images: { unoptimized: true },
 };
 
