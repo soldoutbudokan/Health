@@ -3,11 +3,13 @@ import { addDays, round, toDateKey } from "@/lib/nutrition";
 import { formatDay } from "@/lib/labels";
 import {
   readBreaks,
+  readCheckins,
   readSessions,
   readTrainingGoals,
   readWorkouts,
 } from "@/lib/trainingFile";
 import {
+  bodyweightSeries,
   comparePlan,
   gymSessionsIn,
   goalProgress,
@@ -24,6 +26,7 @@ import { PlanCheck } from "@/components/PlanCheck";
 import { GoalPace } from "@/components/GoalPace";
 import { LiftChart } from "@/components/LiftChart";
 import { WeekStrip } from "@/components/WeekStrip";
+import { BodyweightChart } from "@/components/BodyweightChart";
 
 /**
  * Server component: reads the three training files at build time and renders
@@ -51,6 +54,7 @@ export default function TrainingPage() {
   const sets = readWorkouts();
   const sessions = readSessions();
   const breaks = readBreaks();
+  const checkins = readCheckins();
   const goals = readTrainingGoals();
   const today = toDateKey(new Date());
 
@@ -71,6 +75,7 @@ export default function TrainingPage() {
   const charted = goals.goals.filter(
     (g): g is TrainingGoal => g.metric === "weight",
   );
+  const bodyweight = bodyweightSeries(checkins, sessions);
 
   return (
     <div className="space-y-5">
@@ -111,7 +116,7 @@ export default function TrainingPage() {
 
       <GoalPace progress={progress} today={today} deadline={goals.deadline} />
 
-      {charted.length > 0 && (
+      {(charted.length > 0 || bodyweight.length > 0) && (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {charted.map((g) => (
             <LiftChart
@@ -132,6 +137,9 @@ export default function TrainingPage() {
               colour={CHART_COLOURS[g.id] ?? "var(--series-protein)"}
             />
           ))}
+          {bodyweight.length > 0 && (
+            <BodyweightChart points={bodyweight} today={today} />
+          )}
         </div>
       )}
 

@@ -164,7 +164,10 @@ export const PROGRAM: PlannedSession[] = [
         sets: 3,
         setsMax: 4,
         reps: 5,
-        note: "Shoulder blades pinned, stop short of hard lockout, don't sink the bar so deep the shoulders roll forward. Add 2.5–5 lbs when all sets move well.",
+        // Aug 5, 2026 revision: incline pressed on this day counts toward the
+        // prescription — the plan check pools it with flat bench.
+        alternative: "Incline bench press",
+        note: "Shoulder blades pinned, stop short of hard lockout, don't sink the bar so deep the shoulders roll forward. Add 2.5–5 lbs when all sets move well. Incline sets count toward the 3–4.",
       },
       {
         name: "Cable row",

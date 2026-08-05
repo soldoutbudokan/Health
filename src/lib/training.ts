@@ -2,6 +2,7 @@ import { addDays, parseDateKey, round } from "./nutrition";
 import { PROGRAM, type PlannedExercise, type PlannedSession } from "@/data/program";
 import {
   GYM_SESSIONS,
+  type Checkin,
   type Session,
   type TrainingBreak,
   type TrainingGoal,
@@ -324,6 +325,35 @@ export function weeksSinceDeload(sessions: Session[], today: string): number | u
   return Math.floor(days / 7);
 }
 
+/* ------------------------------------------------------------- bodyweight */
+
+export interface BodyweightPoint {
+  date: string;
+  lbs: number;
+}
+
+/**
+ * Every bodyweight reading, one per day, oldest first. Check-ins are the
+ * primary record; a weight noted on a session row still counts, but when both
+ * exist for a day the morning check-in wins — it's the more standardised
+ * reading (same time, same conditions) and the one the file format is for.
+ */
+export function bodyweightSeries(
+  checkins: Checkin[],
+  sessions: Session[],
+): BodyweightPoint[] {
+  const byDate = new Map<string, number>();
+  for (const s of sessions) {
+    if (s.bodyweightLbs !== undefined) byDate.set(s.date, s.bodyweightLbs);
+  }
+  for (const c of checkins) {
+    if (c.bodyweightLbs !== undefined) byDate.set(c.date, c.bodyweightLbs);
+  }
+  return [...byDate.entries()]
+    .map(([date, lbs]) => ({ date, lbs }))
+    .sort((a, b) => a.date.localeCompare(b.date));
+}
+
 /* ------------------------------------------------ comparison with the plan */
 
 export type PlanVerdict = "met" | "short" | "over" | "missing" | "extra" | "skipped";
@@ -352,15 +382,28 @@ export function comparePlan(plan: PlannedSession, sets: WorkoutSet[]): PlanLine[
   const lines: PlanLine[] = [];
 
   for (const planned of plan.exercises) {
-    const idx = done.findIndex(
-      (d, i) =>
-        !claimed.has(i) &&
-        (sameExercise(d.exercise, planned.name) ||
-          (planned.alternative !== undefined &&
-            sameExercise(d.exercise, planned.alternative))),
-    );
+    // A slot with a set-count prescription pools every unclaimed exercise that
+    // answers to it — the named lift or its alternative — because a volume
+    // prescription is about the slot's total sets, not one exercise name:
+    // incline pressed beside flat bench counts toward the bench 3–4.
+    // Slots without a set count (the sled's "5–10 min") take one match only,
+    // so a second sled bout at the end of a session stays visible as its own
+    // line instead of vanishing into the warmup's.
+    const pools = planned.sets !== undefined;
+    const matches: number[] = [];
+    for (const [i, d] of done.entries()) {
+      if (claimed.has(i)) continue;
+      if (matches.length > 0 && !pools) break;
+      if (
+        sameExercise(d.exercise, planned.name) ||
+        (planned.alternative !== undefined &&
+          sameExercise(d.exercise, planned.alternative))
+      ) {
+        matches.push(i);
+      }
+    }
 
-    if (idx === -1) {
+    if (matches.length === 0) {
       lines.push({
         planned,
         exercise: planned.name,
@@ -371,11 +414,11 @@ export function comparePlan(plan: PlannedSession, sets: WorkoutSet[]): PlanLine[
       continue;
     }
 
-    claimed.add(idx);
-    const actual = done[idx].sets;
+    for (const i of matches) claimed.add(i);
+    const actual = matches.flatMap((i) => done[i].sets);
     lines.push({
       planned,
-      exercise: done[idx].exercise,
+      exercise: matches.map((i) => done[i].exercise).join(" + "),
       sets: actual,
       ...judge(planned, actual),
     });

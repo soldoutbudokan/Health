@@ -2,6 +2,7 @@ import Link from "next/link";
 import { addDays, round } from "@/lib/nutrition";
 import { formatDay } from "@/lib/labels";
 import {
+  bodyweightSeries,
   comparePlan,
   gymSessionsIn,
   latestSession,
@@ -19,6 +20,7 @@ import type {
 import { SessionCard } from "@/components/SessionCard";
 import { PlanCheck } from "@/components/PlanCheck";
 import { WeekStrip } from "@/components/WeekStrip";
+import { BodyweightChart } from "@/components/BodyweightChart";
 
 /**
  * The training half of the dashboard: the same week strip, latest session and
@@ -116,6 +118,8 @@ export function TrainingToday({
   const newest = checkins[checkins.length - 1];
   const checkin = newest && newest.date >= addDays(today, -6) ? newest : undefined;
 
+  const bodyweight = bodyweightSeries(checkins, sessions);
+
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center gap-2">
@@ -129,6 +133,10 @@ export function TrainingToday({
       </div>
 
       {checkin && <CheckinCard checkin={checkin} today={today} />}
+
+      {bodyweight.length > 0 && (
+        <BodyweightChart points={bodyweight} today={today} height={110} />
+      )}
 
       <WeekStrip
         week={week}
