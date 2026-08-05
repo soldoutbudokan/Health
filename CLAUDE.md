@@ -70,8 +70,8 @@ Plenty of food names contain commas, so this matters.
 
 ## The training files
 
-Three grains, three files. Don't merge them — sets, sessions and layoffs are
-genuinely different things and each is queried on its own.
+Four grains, four files. Don't merge them — sets, sessions, layoffs and morning
+check-ins are genuinely different things and each is queried on its own.
 
 ### `data/workouts.csv` — one row per *set*
 
@@ -116,6 +116,21 @@ start,end,kind,label,note
 `kind` is `travel` \| `illness` \| `deload` \| `other`. These shade the charts and
 explain gaps. Without them a six-week hole reads as "stopped tracking" rather than
 "was in Japan".
+
+### `data/checkins.csv` — one row per *morning check-in*
+
+```
+date,bodyweight_lbs,sleep_start,sleep_end,note
+```
+
+Bodyweight and sleep belong to a morning, not to a training session — rest days
+have mornings too, so this is its own file rather than a phantom `other` row in
+`sessions.csv`. Sleep times are the **local 24-hour clock**, `sleep_start` being
+the night before (`23:00,07:15` is an 8¼-hour night; the code handles the
+midnight crossing). Everything but `date` may be blank — blank means not
+recorded. When a weigh-in or a night's sleep gets mentioned ("weighed in at
+187.6", "slept 11 to 7:15"), append a row here; the dashboard shows the latest
+one if it's less than a week old.
 
 `data/training-goals.json` holds the six goals, the August baselines, the December
 targets and the January projection table. The projection is kept deliberately: the

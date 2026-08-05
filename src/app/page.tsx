@@ -1,7 +1,14 @@
 import { readLog } from "@/lib/logFile";
 import { readGoals } from "@/lib/goalsFile";
+import {
+  readBreaks,
+  readCheckins,
+  readSessions,
+  readWorkouts,
+} from "@/lib/trainingFile";
 import { proteinStreak, toDateKey } from "@/lib/nutrition";
 import { Dashboard } from "@/components/Dashboard";
+import { TrainingToday } from "@/components/TrainingToday";
 
 /**
  * Server component: reads the log off disk at build time and hands the parsed
@@ -20,14 +27,27 @@ export default function Page() {
   const entries = readLog();
   const goals = readGoals();
   const now = new Date();
+  const today = toDateKey(now);
 
   return (
-    <Dashboard
-      entries={entries}
-      goals={goals}
-      builtOn={toDateKey(now)}
-      builtHour={now.getHours()}
-      streak={proteinStreak(entries, goals)}
-    />
+    /* Diet and training side by side, because they are equally important and
+       neither half should be a page away. Stacked on narrow screens, food
+       first only because the day starts with breakfast. */
+    <div className="grid items-start gap-6 lg:grid-cols-2">
+      <Dashboard
+        entries={entries}
+        goals={goals}
+        builtOn={today}
+        builtHour={now.getHours()}
+        streak={proteinStreak(entries, goals)}
+      />
+      <TrainingToday
+        sets={readWorkouts()}
+        sessions={readSessions()}
+        breaks={readBreaks()}
+        checkins={readCheckins()}
+        today={today}
+      />
+    </div>
   );
 }

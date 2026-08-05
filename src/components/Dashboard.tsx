@@ -185,8 +185,9 @@ export function Dashboard({ entries, goals, builtOn, builtHour, streak }: Props)
         )}
       </section>
 
-      {/* KPI row */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      {/* KPI row. Back to 2×2 at lg, where the dashboard shares the page with
+          the training column and four-across tiles would be crushed. */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
         {isSnapshotDay ? (
           <StatTile
             label="Protein pace"

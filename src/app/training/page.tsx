@@ -18,15 +18,12 @@ import {
   weekStrip,
   weeksSinceDeload,
 } from "@/lib/training";
-import {
-  GYM_SESSIONS,
-  SESSION_SHORT,
-  type TrainingGoal,
-} from "@/lib/trainingTypes";
+import { type TrainingGoal } from "@/lib/trainingTypes";
 import { SessionCard } from "@/components/SessionCard";
 import { PlanCheck } from "@/components/PlanCheck";
 import { GoalPace } from "@/components/GoalPace";
 import { LiftChart } from "@/components/LiftChart";
+import { WeekStrip } from "@/components/WeekStrip";
 
 /**
  * Server component: reads the three training files at build time and renders
@@ -93,54 +90,12 @@ export default function TrainingPage() {
       </div>
 
       {/* Week strip — orienting, so it sits above the detail. */}
-      <section className="card px-4 py-3">
-        <div className="flex items-baseline justify-between gap-3">
-          <h2 className="text-sm font-semibold">Last seven days</h2>
-          <span className="tnum text-xs text-muted">
-            {gymThisWeek} of 4 gym sessions
-          </span>
-        </div>
-        <ol className="mt-2.5 grid grid-cols-7 gap-1.5">
-          {week.map((d) => {
-            const isGym = d.session && GYM_SESSIONS.includes(d.session.type);
-            return (
-              <li key={d.date} className="text-center">
-                <div className="text-[10px] text-muted">
-                  {formatDay(d.date, today) === "Today"
-                    ? "Today"
-                    : new Date(`${d.date}T12:00:00`).toLocaleDateString("en-US", {
-                        weekday: "narrow",
-                      })}
-                </div>
-                <div
-                  className={`mt-1 grid h-11 place-items-center rounded-lg px-0.5 text-[10px] font-semibold leading-tight ${
-                    isGym
-                      ? "text-white"
-                      : d.session
-                        ? "bg-surface-2 text-ink-2"
-                        : d.break
-                          ? "bg-track text-muted"
-                          : "border border-dashed border-hairline text-muted"
-                  }`}
-                  style={isGym ? { background: "var(--series-protein)" } : undefined}
-                  title={d.session ? d.date : (d.break?.label ?? d.date)}
-                >
-                  {d.session
-                    ? SESSION_SHORT[d.session.type]
-                    : d.break
-                      ? "away"
-                      : "—"}
-                </div>
-              </li>
-            );
-          })}
-        </ol>
-        <p className="mt-2 text-[11px] leading-snug text-muted">
-          {sinceDeload === undefined
-            ? "No deload week recorded yet. The plan calls for one every 4–5 weeks — mark it in data/sessions.csv when it happens."
-            : `${sinceDeload} week${sinceDeload === 1 ? "" : "s"} since the last deload. The plan calls for one every 4–5 weeks.`}
-        </p>
-      </section>
+      <WeekStrip
+        week={week}
+        gymThisWeek={gymThisWeek}
+        sinceDeload={sinceDeload}
+        today={today}
+      />
 
       {latest ? (
         <div className="grid gap-5 lg:grid-cols-2">

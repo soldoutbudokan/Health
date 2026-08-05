@@ -64,6 +64,7 @@ writer costs a rebuild and buys a log with a git history.
 | `data/workouts.csv` | One row per **set**. |
 | `data/sessions.csv` | One row per **session** — how it felt, what it cost. |
 | `data/breaks.csv` | One row per stretch of not training, so a gap is explained. |
+| `data/checkins.csv` | One row per morning check-in — bodyweight and sleep. |
 | `data/training-goals.json` | The six goals, their baselines, targets and pace. |
 | `docs/training-plan.md` | The program and the reasoning behind it. |
 | `docs/irl-cdtw.xlsx` | The spreadsheet this replaced, plus tidy CSVs beside it. |
@@ -72,13 +73,14 @@ They are read at build time by `src/lib/logFile.ts`, `goalsFile.ts` and
 `trainingFile.ts`, which use `node:fs` and therefore **run on the build machine
 only**. A client component that imports any of them fails the build, on purpose.
 
-Training is three files rather than one because it is three grains. Sets are the
+Training is four files rather than one because it is four grains. Sets are the
 atomic unit: "2 sets of 5 at 155 and 135" is two rows, never one averaged row,
 because the set that differs is a top set and a back-off set and progression
 keys on the first. Sessions carry the subjective half — fatigue, sweat,
-bodyweight, joint flags — which belongs to the day, not to any one set. And
-breaks carry the weeks nobody trained, which is the difference between "stopped
-lifting" and "was in Japan".
+bodyweight, joint flags — which belongs to the day, not to any one set. Breaks
+carry the weeks nobody trained, which is the difference between "stopped
+lifting" and "was in Japan". And check-ins carry bodyweight and sleep, which
+belong to a morning whether or not anything was lifted that day.
 
 The CSV columns are the ones a spreadsheet wants: open it in Excel, fix a
 number, commit it back. `fiber_g`, `sugar_g` and `sodium_mg` may be blank —
@@ -112,10 +114,10 @@ Every route is a server component that reads the files and passes plain data
 into a client component that owns nothing but presentation:
 
 ```
-src/app/page.tsx           readLog() + readGoals()  →  <Dashboard entries goals … />
+src/app/page.tsx           the log + the training files → <Dashboard> beside <TrainingToday>
 src/app/history/page.tsx   readLog() + readGoals()  →  <History entries goals … />
 src/app/foods/page.tsx     static catalog only, so client-side outright
-src/app/training/page.tsx  the three training files →  cards, plus <LiftChart> islands
+src/app/training/page.tsx  the training files →  cards, plus <LiftChart> islands
 src/app/program/page.tsx   src/data/program.ts + the archived spreadsheet
 ```
 
@@ -151,6 +153,8 @@ src/
 │  ├─ StatTiles.tsx         KPI tiles and the gap-closer panel
 │  ├─ TrendChart.tsx        Client: bar chart with hover/tap readout
 │  ├─ SourceBadge.tsx       The provenance badge every food carries
+│  ├─ TrainingToday.tsx     The dashboard's training column — check-in, week, session
+│  ├─ WeekStrip.tsx         The last seven days as a strip, shared with /training
 │  ├─ SessionCard.tsx       A workout laid out the way you'd describe it
 │  ├─ PlanCheck.tsx         That session against the day it was meant to be
 │  ├─ GoalPace.tsx          Six goals against a line to December 31st

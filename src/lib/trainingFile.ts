@@ -4,6 +4,7 @@ import { csvLines, isDateKey, optional, optionalNumber, splitRow } from "./csv";
 import {
   KIND_LABELS,
   SESSION_LABELS,
+  type Checkin,
   type Session,
   type SessionType,
   type SetKind,
@@ -135,6 +136,33 @@ export function parseBreaksCsv(csv: string): TrainingBreak[] {
   return breaks.sort((a, b) => a.start.localeCompare(b.start));
 }
 
+/** A clock time the file can carry: `7:15` or `23:00`. */
+const CLOCK = /^\d{1,2}:\d{2}$/;
+
+export function parseCheckinsCsv(csv: string): Checkin[] {
+  const rows = body(csvLines(csv), "date");
+  const checkins: Checkin[] = [];
+
+  for (const line of rows) {
+    const c = splitRow(line);
+    const date = c[0]?.trim();
+    if (!isDateKey(date)) continue;
+
+    const start = optional(c[2]);
+    const end = optional(c[3]);
+
+    checkins.push({
+      date,
+      bodyweightLbs: optionalNumber(c[1]),
+      sleepStart: start && CLOCK.test(start) ? start : undefined,
+      sleepEnd: end && CLOCK.test(end) ? end : undefined,
+      note: optional(c[4]),
+    });
+  }
+
+  return checkins.sort((a, b) => a.date.localeCompare(b.date));
+}
+
 const EMPTY_GOALS: TrainingGoals = {
   baselineOn: "",
   deadline: "",
@@ -153,6 +181,14 @@ export function readWorkouts(): WorkoutSet[] {
 export function readSessions(): Session[] {
   try {
     return parseSessionsCsv(readFileSync(dataPath("sessions.csv"), "utf8"));
+  } catch {
+    return [];
+  }
+}
+
+export function readCheckins(): Checkin[] {
+  try {
+    return parseCheckinsCsv(readFileSync(dataPath("checkins.csv"), "utf8"));
   } catch {
     return [];
   }

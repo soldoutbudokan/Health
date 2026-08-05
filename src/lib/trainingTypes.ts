@@ -1,11 +1,13 @@
 /**
  * The training half of the domain model.
  *
- * Three grains, three files, because they genuinely are three different things:
+ * Four grains, four files, because they genuinely are four different things:
  *
  *   data/workouts.csv   one row per *set*      — what was lifted
  *   data/sessions.csv   one row per *session*  — how it felt, what it cost
  *   data/breaks.csv     one row per *stretch*  — why a gap in the log is a gap
+ *   data/checkins.csv   one row per *check-in* — bodyweight and sleep, which
+ *                        belong to a morning rather than to any session
  *
  * Sets are the atomic unit because sets differ inside a session: "2 sets of 5
  * at 155 and 135" is two rows, not one row with an average. Rolling them up
@@ -144,6 +146,21 @@ export const FATIGUE_LABELS: Record<number, string> = {
   4: "Hard",
   5: "Exhausted",
 };
+
+/**
+ * A morning check-in. Separate from `Session` because a weigh-in doesn't need
+ * a workout to exist — rest days have mornings too — and folding it into
+ * sessions would invent phantom "other" sessions just to carry a number.
+ */
+export interface Checkin {
+  date: string;
+  bodyweightLbs?: number;
+  /** Local clock time HH:MM, the night before. */
+  sleepStart?: string;
+  /** Local clock time HH:MM, the morning of `date`. */
+  sleepEnd?: string;
+  note?: string;
+}
 
 export interface TrainingBreak {
   start: string;
