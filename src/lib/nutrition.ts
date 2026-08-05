@@ -206,6 +206,42 @@ export function rollingAverage(
   };
 }
 
+export interface MicroTotal {
+  /** Sum over the rows that record this field, scaled by servings. */
+  total: number;
+  /** How many of the day's rows record it. */
+  recordedRows: number;
+  totalRows: number;
+}
+
+/**
+ * Fiber, sugar and sodium, counting only the rows that record them. A blank
+ * is *not recorded*, not zero, so a total over partial data is a floor — the
+ * caller renders it as "≥" rather than passing it off as complete.
+ */
+export function microTotals(entries: LogEntry[]): {
+  fiber: MicroTotal;
+  sugar: MicroTotal;
+  sodium: MicroTotal;
+} {
+  const make = (pick: (m: Macros) => number | undefined): MicroTotal => {
+    let total = 0;
+    let recordedRows = 0;
+    for (const e of entries) {
+      const v = pick(e.macros);
+      if (v === undefined) continue;
+      total += v * e.servings;
+      recordedRows++;
+    }
+    return { total, recordedRows, totalRows: entries.length };
+  };
+  return {
+    fiber: make((m) => m.fiber),
+    sugar: make((m) => m.sugar),
+    sodium: make((m) => m.sodium),
+  };
+}
+
 /** Every date that has at least one entry, newest first. */
 export function loggedDates(entries: LogEntry[]): string[] {
   return [...new Set(entries.map((e) => e.date))].sort().reverse();

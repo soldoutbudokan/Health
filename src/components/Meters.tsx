@@ -1,4 +1,4 @@
-import { round } from "@/lib/nutrition";
+import { round, type MicroTotal } from "@/lib/nutrition";
 
 /**
  * A single ratio against a limit is a meter, not a chart. Two of them lead the
@@ -11,6 +11,12 @@ interface RingProps {
   size?: number;
   stroke?: number;
   color: string;
+  /**
+   * Colour of the second lap once value passes 1. Defaults to critical, which
+   * is right for a budget — but protein over its band is success, not a fault,
+   * so that ring passes something benign instead.
+   */
+  overflowColor?: string;
   /** Second arc drawn as a band on the same track, e.g. the protein max. */
   bandStart?: number;
   bandEnd?: number;
@@ -23,6 +29,7 @@ function Ring({
   size = 148,
   stroke = 12,
   color,
+  overflowColor = "var(--status-critical)",
   bandStart,
   bandEnd,
   children,
@@ -86,7 +93,7 @@ function Ring({
             cy={size / 2}
             r={r}
             fill="none"
-            stroke="var(--status-critical)"
+            stroke={overflowColor}
             strokeWidth={stroke / 2}
             strokeLinecap="round"
             strokeDasharray={`${c * overflow} ${c}`}
@@ -164,6 +171,7 @@ export function ProteinRing({
       <Ring
         value={pct}
         color="var(--series-protein)"
+        overflowColor="var(--status-good)"
         bandStart={min / scale}
         bandEnd={max / scale}
         label={`Protein: ${round(consumed, 1)} g, target ${min} to ${max} g`}
@@ -280,5 +288,74 @@ export function MacroSplit({
         ))}
       </dl>
     </div>
+  );
+}
+
+/**
+ * Fiber against its target, with sugar and sodium alongside. Quiet by design:
+ * these are logged less reliably than the macros, so a total over partial data
+ * is shown as a floor ("≥") and a day where nothing recorded a value shows a
+ * dash — a blank is *not recorded*, which is not the same as zero.
+ */
+export function Micros({
+  fiber,
+  sugar,
+  sodium,
+  fiberGoal,
+}: {
+  fiber: MicroTotal;
+  sugar: MicroTotal;
+  sodium: MicroTotal;
+  /** Undefined means the goals file sets no fiber target — shown unscored. */
+  fiberGoal?: number;
+}) {
+  const cell = (m: MicroTotal, unit: string, places = 0) => {
+    if (m.recordedRows === 0) return <span className="text-muted">—</span>;
+    const partial = m.recordedRows < m.totalRows;
+    return (
+      <>
+        {partial && <span className="text-muted">≥</span>}
+        {round(m.total, places).toLocaleString()}
+        <span className="text-xs font-normal text-muted">{unit}</span>
+      </>
+    );
+  };
+
+  const fiberMet =
+    fiberGoal !== undefined && fiber.recordedRows > 0 && fiber.total >= fiberGoal;
+
+  return (
+    <dl className="grid grid-cols-3 gap-2">
+      <div className="min-w-0">
+        <dt className="text-[11px] font-medium uppercase tracking-wide text-muted">
+          Fiber
+        </dt>
+        <dd
+          className="tnum mt-0.5 text-[15px] font-semibold"
+          style={fiberMet ? { color: "var(--success-text)" } : undefined}
+        >
+          {cell(fiber, "g")}
+          {fiberGoal !== undefined && (
+            <span className="ml-1.5 text-xs font-normal text-muted">
+              of {fiberGoal}g
+            </span>
+          )}
+        </dd>
+      </div>
+      <div className="min-w-0">
+        <dt className="text-[11px] font-medium uppercase tracking-wide text-muted">
+          Sugar
+        </dt>
+        <dd className="tnum mt-0.5 text-[15px] font-semibold">{cell(sugar, "g")}</dd>
+      </div>
+      <div className="min-w-0">
+        <dt className="text-[11px] font-medium uppercase tracking-wide text-muted">
+          Sodium
+        </dt>
+        <dd className="tnum mt-0.5 text-[15px] font-semibold">
+          {cell(sodium, "mg")}
+        </dd>
+      </div>
+    </dl>
   );
 }

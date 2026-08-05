@@ -8,6 +8,7 @@ import {
   computeProgress,
   entriesForDate,
   loggedDates,
+  microTotals,
   proteinPace,
   rollingAverage,
   round,
@@ -15,7 +16,7 @@ import {
 } from "@/lib/nutrition";
 import { formatDay, formatFullDay } from "@/lib/labels";
 import { BUILTIN_FOODS, suggestGapClosers } from "@/lib/search";
-import { CalorieRing, MacroSplit, ProteinRing } from "@/components/Meters";
+import { CalorieRing, MacroSplit, Micros, ProteinRing } from "@/components/Meters";
 import { MealList } from "@/components/MealList";
 import { GapClosers, StatTile } from "@/components/StatTiles";
 import { TrendChart, type TrendPoint } from "@/components/TrendChart";
@@ -61,6 +62,7 @@ export function Dashboard({ entries, goals, builtOn, builtHour, streak }: Props)
 
   const dayEntries = useMemo(() => entriesForDate(entries, date), [entries, date]);
   const totals = useMemo(() => sumEntries(dayEntries), [dayEntries]);
+  const micros = useMemo(() => microTotals(dayEntries), [dayEntries]);
   const progress = useMemo(() => computeProgress(totals, goals), [totals, goals]);
 
   /**
@@ -171,6 +173,16 @@ export function Dashboard({ entries, goals, builtOn, builtHour, streak }: Props)
             fat={totals.fat}
           />
         </div>
+        {dayEntries.length > 0 && (
+          <div className="mt-4 border-t border-hairline pt-4">
+            <Micros
+              fiber={micros.fiber}
+              sugar={micros.sugar}
+              sodium={micros.sodium}
+              fiberGoal={goals.fiber}
+            />
+          </div>
+        )}
       </section>
 
       {/* KPI row */}

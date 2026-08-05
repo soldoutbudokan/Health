@@ -6,6 +6,7 @@ import {
   addDays,
   entriesForDate,
   loggedDates,
+  microTotals,
   rollingAverage,
   round,
   sumEntries,
@@ -171,12 +172,17 @@ export function History({ entries, goals, builtOn }: Props) {
                   <th className="hidden px-2 py-2 text-right font-semibold sm:table-cell">
                     Fat
                   </th>
+                  <th className="hidden px-2 py-2 text-right font-semibold sm:table-cell">
+                    Fiber
+                  </th>
                   <th className="px-4 py-2 text-right font-semibold">Target</th>
                 </tr>
               </thead>
               <tbody className="tnum">
                 {dates.map((d) => {
-                  const t = sumEntries(entriesForDate(entries, d));
+                  const dayEntries = entriesForDate(entries, d);
+                  const t = sumEntries(dayEntries);
+                  const fiber = microTotals(dayEntries).fiber;
                   const hit = t.protein >= goals.proteinMin;
                   return (
                     <tr key={d} className="border-b border-hairline last:border-b-0">
@@ -193,6 +199,13 @@ export function History({ entries, goals, builtOn }: Props) {
                       </td>
                       <td className="hidden px-2 py-2 text-right text-muted sm:table-cell">
                         {round(t.fat)}
+                      </td>
+                      {/* "≥" marks a floor: some of the day's rows left fiber
+                          blank, and blank is not recorded, not zero. */}
+                      <td className="hidden px-2 py-2 text-right text-muted sm:table-cell">
+                        {fiber.recordedRows === 0
+                          ? "—"
+                          : `${fiber.recordedRows < fiber.totalRows ? "≥" : ""}${round(fiber.total)}`}
                       </td>
                       <td className="px-4 py-2 text-right">
                         {hit ? (
