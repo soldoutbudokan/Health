@@ -11,8 +11,10 @@ import {
 import {
   bodyweightSeries,
   comparePlan,
+  estimatedBurn,
   gymSessionsIn,
   goalProgress,
+  latestBodyweight,
   latestSession,
   liftSeries,
   planFor,
@@ -103,9 +105,21 @@ export default function TrainingPage() {
       />
 
       {latest ? (
-        <div className="grid gap-5 lg:grid-cols-2">
-          <SessionCard session={latest} sets={latestSets} today={today} />
-          {plan && <PlanCheck plan={plan} lines={planLines} />}
+        <div>
+          {/* Same label the dashboard column carries: this is the last thing
+              logged, not anything scheduled for today. */}
+          <h2 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted">
+            Last logged session · {formatDay(latest.date, today)}
+          </h2>
+          <div className="grid gap-5 lg:grid-cols-2">
+            <SessionCard
+              session={latest}
+              sets={latestSets}
+              today={today}
+              burn={estimatedBurn(latest, latestSets, latestBodyweight(bodyweight))}
+            />
+            {plan && <PlanCheck plan={plan} lines={planLines} />}
+          </div>
         </div>
       ) : (
         <p className="card p-8 text-center text-sm text-muted">

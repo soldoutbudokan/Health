@@ -4,7 +4,9 @@ import { formatDay } from "@/lib/labels";
 import {
   bodyweightSeries,
   comparePlan,
+  estimatedBurn,
   gymSessionsIn,
+  latestBodyweight,
   latestSession,
   planFor,
   sessionSets,
@@ -147,7 +149,20 @@ export function TrainingToday({
 
       {latest ? (
         <>
-          <SessionCard session={latest} sets={latestSets} today={today} />
+          {/* Labelled explicitly because this column sits beside "Today":
+              without it, yesterday's session reads as today's schedule — and
+              the site never schedules, it only records. */}
+          <div>
+            <h2 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted">
+              Last logged session · {formatDay(latest.date, today)}
+            </h2>
+            <SessionCard
+              session={latest}
+              sets={latestSets}
+              today={today}
+              burn={estimatedBurn(latest, latestSets, latestBodyweight(bodyweight))}
+            />
+          </div>
           {plan && <PlanCheck plan={plan} lines={planLines} />}
         </>
       ) : (

@@ -136,6 +136,14 @@ one if it's less than a week old.
 targets and the January projection table. The projection is kept deliberately: the
 distance between it and reality is the layoff.
 
+The session card's `≈N kcal` is a MET estimate (`estimatedBurn` in
+`src/lib/training.ts`): compendium METs by session type (4.0 gym, 7.0 basketball,
+2.5 stretch) × the latest logged bodyweight (190 lbs until one exists) × duration —
+recorded when `sessions.csv` has one, otherwise 3.5 min per set. Height and age
+barely move a MET figure, so they aren't inputs. It rounds to 10 kcal on purpose,
+and it is context, not budget — the 2,800 kcal target already assumes training, so
+don't treat the estimate as calories to eat back.
+
 ## Before inventing an exercise, check the program
 
 `src/data/program.ts` is the plan in code — the same object `/program` renders and
