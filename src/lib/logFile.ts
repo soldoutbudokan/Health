@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { csvLines, isDateKey, optional, optionalNumber, splitRow } from "./csv";
 import type { LogEntry, MealSlot, FoodSource } from "./types";
 
 /**
@@ -41,61 +42,10 @@ export const LOG_COLUMNS = [
 
 const SLOTS: MealSlot[] = ["breakfast", "lunch", "dinner", "snack"];
 
-/**
- * Split one CSV line, honouring quoted fields.
- *
- * Food names contain commas ("Chicken Curry, curry only") and apostrophes, so
- * a naive split on "," corrupts roughly a third of the catalog. Doubled quotes
- * inside a quoted field are an escaped quote, per RFC 4180.
- */
-function splitRow(line: string): string[] {
-  const out: string[] = [];
-  let field = "";
-  let quoted = false;
-
-  for (let i = 0; i < line.length; i++) {
-    const c = line[i];
-    if (quoted) {
-      if (c === '"') {
-        if (line[i + 1] === '"') {
-          field += '"';
-          i++;
-        } else {
-          quoted = false;
-        }
-      } else {
-        field += c;
-      }
-    } else if (c === '"') {
-      quoted = true;
-    } else if (c === ",") {
-      out.push(field);
-      field = "";
-    } else {
-      field += c;
-    }
-  }
-  out.push(field);
-  return out;
-}
-
-const optional = (v: string | undefined) => {
-  const s = v?.trim();
-  return s ? s : undefined;
-};
-
-/** Blank means "not recorded", which is not the same as zero. */
-const optionalNumber = (v: string | undefined) => {
-  const s = v?.trim();
-  if (!s) return undefined;
-  const n = Number(s);
-  return Number.isFinite(n) ? n : undefined;
-};
-
 const requiredNumber = (v: string | undefined) => optionalNumber(v) ?? 0;
 
 export function parseLogCsv(csv: string): LogEntry[] {
-  const lines = csv.split(/\r?\n/).filter((l) => l.trim().length > 0);
+  const lines = csvLines(csv);
   if (lines.length === 0) return [];
 
   // Tolerate a missing header so a hand-written file still loads.
@@ -109,7 +59,7 @@ export function parseLogCsv(csv: string): LogEntry[] {
     const date = c[1]?.trim();
     // A row without a date can't be placed on any day, so it is dropped rather
     // than silently landing on today and skewing that day's totals.
-    if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
+    if (!isDateKey(date)) continue;
 
     const slot = c[2]?.trim().toLowerCase() as MealSlot;
     const loggedAt = optional(c[16]) ?? `${date}T12:00:00.000Z`;

@@ -1,0 +1,107 @@
+date,exercise,type,focus,setting,day
+2025-02-20,Pullups,Warmup,"Back, Biceps",2/3 Reps,Pull
+2025-02-20,Lat Pull,Compound,Latissimus Dorsi,6 Reps at 11,Pull
+2025-02-20,Cable Row,Compound,"Upper Back, Biceps",6 Reps at 10,Pull
+2025-02-20,Bicep Curl,Isolation,Bicep Curls,5 Reps at 25 lbs,Pull
+2025-02-20,Cable Rear Delt Fly,Isolation,Posterior Deltoids,10 reps at 7.5 lbs,Pull
+2025-02-20,Shoulder Shrugs,Isolation,Trapezius,16 reps at 25 lbs,Pull
+2025-02-20,Side Bends,Core,Obliques,16 reps at 25 lbs,Pull
+2025-02-20,Hor. Cable Wood Chop,Core,Rotational Core,6 Reps at 32.5 lbs,Pull
+2025-02-21,Push-ups,Warmup,"Chest, Shoulders, Triceps",30 Reps,Push
+2025-02-21,Bench Press,Compound,"Chest, Triceps",6 Reps at 10,Push
+2025-02-21,Shoulder Press,Compound,"Shoulders, Triceps",6 Reps at 8,Push
+2025-02-21,Dumbell Lat Raise,Isolation,Lateral Deltoids,6 Reps at 15 lbs,Push
+2025-02-21,Cable Fly,Isolation,Chest,10 Reps at 12.5 lbs,Push
+2025-02-21,Low-High Cable Fly,Isolation,Upper Chest,6 Reps at 17.5 lbs,Push
+2025-02-21,Cable Lat Raise,Isolation,Lateral Deltoids,3 Reps at 12.5 lbs,Push
+2025-02-22,Knees over Toes,Mobility,Knee Stability,8 Reps at ~1/2,Legs
+2025-02-22,Nordic Hamstring Curl,Isolation,Hamstrings,5 Reps at 75 deg,Legs
+2025-02-22,Calf Raises,Isolation,Calves,27 Reps,Legs
+2025-02-22,Leg Raise,Core,Lower Abs,15 Reps,Legs
+2025-02-22,Decline Crunches,Core,Upper Abs,16 Reps at 10 lbs,Legs
+2025-02-22,Cable Hip Extension,Isolation,Glutes,10 Reps at 22.5 lbs,Legs
+2025-02-25,Cable Row,Compound,"Upper Back, Biceps",6 Reps at 11,Pull
+2025-02-26,Bench Press,Compound,"Chest, Triceps",6 Reps at 12,Push
+2025-02-28,Smith Machine Squat,Isolation,"Quads, Glute, Core",6 Reps at 60 lbs,Legs
+2025-02-28,Decline Crunches,Core,Upper Abs,18 Reps at 10 lbs,Legs
+2025-02-28,Romanian Deadlift,Compound,"Posterior Chain, Hamstrings",7 reps at 90 lbs,Legs
+2025-02-28,Calf Raises,Isolation,Calves,33 Reps,Legs
+2025-03-02,Lat Pull,Compound,Latissimus Dorsi,6 Reps at 12,Pull
+2025-03-02,Shoulder Shrugs,Isolation,Trapezius,16 Reps at 30 lbs,Pull
+2025-03-02,Side Bends,Core,Obliques,16 Reps at 30 lbs,Pull
+2025-03-03,Dumbell Lat Raise,Isolation,Lateral Deltoids,7 Reps at 15 lbs,Push
+2025-03-03,Cable Fly,Isolation,Chest,6 Reps at 17.5 lbs,Push
+2025-03-03,Cable Lat Raise,Isolation,Lateral Deltoids,4 Reps at 12.5 lbs,Push
+2025-03-09,Romanian Deadlift,Compound,"Posterior Chain, Hamstrings",11 reps at 110 lbs,Legs
+2025-03-17,Bench Press,Compound,"Chest, Triceps",6 Reps at 13,Push
+2025-03-21,ATG Split Squats,Compound,"Quads, Glutes, Balance",5 Reps at 10 lbs,Legs
+2025-03-21,Calf Raises,Isolation,Calves,38 Reps,Legs
+2025-03-23,Cable Rear Delt Fly,Isolation,Posterior Deltoids,5 Reps at 10.5 lbs,Pull
+2025-03-30,Cable Row,Compound,"Upper Back, Biceps",8 Reps at 11,Pull
+2025-03-30,Shoulder Shrugs,Isolation,Trapezius,20 Reps at 35 lbs,Pull
+2025-03-30,Side Bends,Core,Obliques,12 Reps at 35 lbs,Pull
+2025-04-02,Romanian Deadlift,Compound,"Posterior Chain, Hamstrings",4 Reps at 130 lbs,Legs
+2025-05-05,Leg Raise,Core,Lower Abs,9 Reps,Legs
+2025-05-05,Romanian Deadlift,Compound,"Posterior Chain, Hamstrings",3 Reps at 160 lbs,Legs
+2025-05-05,Calf Raises,Isolation,Calves,42 Reps,Legs
+2025-05-09,Lying Hamstring Curl,Isolation,Hamstrings,8 Reps at 10,Lower
+2025-05-09,Knees over Toes,Mobility,Knee Stability,5 Reps at ~3/4,Lower
+2025-05-09,Leg Extensions,Isolation,Quads,11 reps at 12,Lower
+2025-09-21,Romanian Deadlift,Compound,"Posterior Chain, Hamstrings",3 Reps at 185 lbs,Lower
+2025-09-21,Hack Squats,Isolation,"Quads, Glute, Core",4 Reps at 125 lbs,Lower
+2025-09-23,Hack Squats,Isolation,"Quads, Glute, Core",4 Reps at 135 lbs,Lower
+2025-10-16,Pull ups,Warmup,Back,1/2 Rep,Upper
+2025-10-16,Deficit Push-ups,Warmup,"Chest, Shoulders, Triceps",13 Reps,Upper
+2025-10-21,Deficit Push-ups,Warmup,"Chest, Shoulders, Triceps",14 Reps,Upper
+2025-11-07,Bench Press,Warmup,"Chest, Shoulders, Triceps",6 Reps at 10,Upper
+2025-11-08,Hack Squats,Isolation,"Quads, Glute, Core",7 Reps at 135 lbs,Lower
+2025-11-08,Knees over Toes,Mobility,Knee Stability,5 Reps at ~5/6,Lower
+2025-11-15,Knees over Toes,Mobility,Knee Stability,5 Reps,Lower
+2025-12-12,Pull ups,Warmup,Back,3 Reps,Upper
+2025-12-12,Bicep Curl,Isolation,Bicep Curls,5 Reps at 30 lbs,Upper
+2025-12-12,Lat Pull,Compound,Latissimus Dorsi,5 Reps at 13,Upper
+2025-12-12,Bench Press,Compound,"Chest, Triceps",5 Reps at 12,Upper
+2025-12-13,Lying Hamstring Curl,Isolation,Hamstring,5 Reps at 11,Lower
+2025-12-13,Leg Extension,Isolation,Quads,12 Reps at 13,Lower
+2025-12-16,Cable Row,Compound,"Upper Back, Biceps",5 Reps at 12,Upper
+2025-12-19,Leg Extension,Isolation,Quads,8 Reps at 16,Lower
+2025-12-20,Bench Press,Compound,"Chest, Triceps",5 Reps at 13,Upper
+2026-01-02,HR-BP,Underlying,Heart/Overall,76-121/71,n/a
+2026-01-02,HR-BP,Underlying,Heart/Overall,63-119/80,n/a
+2026-01-03,Pull ups,Warmup,Back,4 Reps,Upper
+2026-01-03,Lat Pull,Compound,Latissimus Dorsi,5 Reps at 14,Upper
+2026-01-06,Leg Extension,Isolation,Quads,6 Reps at 17,Lower
+2026-01-08,Bench Press,Compound,"Chest, Triceps",5 Reps at 135,Upper
+2026-01-08,Dips,Isolation,Tricpes,3 Reps,Upper
+2026-01-17,Bicep Curl,Isolation,Bicep Curls,5 Reps at 35 lbs,Upper
+2026-01-17,Bench Press,Compound,"Chest, Triceps",5 Reps at 145 lbs,Upper
+2026-01-18,Smith Machine Squat,Isolation,"Quads, Glute, Core",5 Reps at 145 lbs,Lower
+2026-01-18,Leg Extension,Isolation,Quads,8 Reps at 18,Lower
+2026-01-22,Deadlift,Compound,"Posterior Chain, Hamstrings",5 Reps at 195 lbs,Lower
+2026-01-25,Smith Machine Squat,Isolation,"Quads, Glute, Core",5 Reps at 155 lbs,Lower
+2026-01-31,Pull ups,Warmup,Back,5 Reps,Upper
+2026-01-31,Dips,Isolation,Tricpes,4 Reps,Upper
+2026-02-01,Smith Machine Squat,Isolation,"Quads, Glute, Core",5 Reps at 165 lbs,Lower
+2026-02-08,Smith Machine Squat,Isolation,"Quads, Glute, Core",6 Reps at 165 lbs,Lower
+2026-02-22,Deadlift,Compound,"Posterior Chain, Hamstrings",5 Reps at 205 lbs,Lower
+2026-02-22,Lying Hamstring Curl,Isolation,Hamstring,7 Reps at 11,Lower
+2026-02-25,Bench Press,Compound,"Chest, Triceps",5 Reps at 155,Upper
+2026-02-25,Dips,Isolation,Tricpes,6 Reps,Upper
+2026-02-26,Smith Machine Squat,Isolation,"Quads, Glute, Core",4 Reps at 185 lbs,Lower
+2026-03-10,Pull ups,Warmup,Back,6 Reps,Upper
+2026-03-14,Bench Press,Compound,"Chest, Triceps",5 Reps at 160,Upper
+2026-03-14,Preacher Curl,Isolation,Bicep Curls,7 Reps at 25 lbs,Upper
+2026-03-14,Seated Y Raise,Isolation,Lateral Deltoids,8 Reps at 15,Upper
+2026-03-17,Seated Y Raise,Isolation,Lateral Deltoids,9 Reps at 15,Upper
+2026-03-28,Dips,Isolation,Tricpes,7 Reps,Upper
+2026-03-31,Pull ups,Warmup,Back,7 Reps,Upper
+2026-03-31,Bench Press,Compound,"Chest, Triceps",5 Reps at 165,Upper
+2026-04-01,Deadlift,Compound,"Posterior Chain, Hamstrings",5 Reps at 225 lbs,Lower
+2026-04-01,Smith Machine Squat,Isolation,"Quads, Glute, Core",5 Reps at 185 lbs,Lower
+2026-04-18,Seated Y Raise,Isolation,Lateral Deltoids,6 Reps at 20,Upper
+2026-04-25,Pull ups,Warmup,Back,8 Reps,Upper
+2026-04-25,Preacher Curl,Isolation,Bicep Curls,5 Reps at 30,Upper
+2026-06-20,Dips,Isolation,Tricpes,8 Reps,Upper
+2026-06-25,Deadlift,Compound,"Posterior Chain, Hamstrings",5 Reps at 240 lbs,Lower
+2026-07-03,Deadlift,Compound,"Posterior Chain, Hamstrings",5 Reps at 250 lbs,Lower
+2026-07-19,Dips,Isolation,Tricpes,10 Reps,Upper

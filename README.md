@@ -1,13 +1,20 @@
-# Nutrition Calculator
+# Health
 
-A daily calorie and protein tracker built around one specific set of goals —
-**2,800 kcal** and **160–180 g protein** — and one specific set of food: the 23
-recipes in [soldoutbudokan/Templates](https://github.com/soldoutbudokan/Templates/tree/master/Recipes),
+Two logs on one site, because they answer the same question from different ends.
+
+**Nutrition** — a daily calorie and protein tracker built around one specific
+set of goals (**2,800 kcal**, **160–180 g protein**) and one specific set of
+food: the 23 recipes in [soldoutbudokan/Templates](https://github.com/soldoutbudokan/Templates/tree/master/Recipes),
 the bars and shakes that show up most days, and whatever else gets eaten.
 
+**Training** — four gym sessions a week against a December 31st deadline:
+trap bar deadlift 260 → 300 × 5, Smith squat 185 → 225 × 5, bench 165 → 225 × 5,
+pullups 7 → 10, and an in-game dunk. Every session is checked against the day it
+was supposed to be, so the log reports drift instead of just recording it.
+
 **The site is read-only.** There is no add button, no browser storage, and no
-way to save anything from the page. `data/log.csv` in this repo is the log;
-Claude Code edits it, commits, and GitHub Pages rebuilds.
+way to save anything from the page. The CSVs in `data/` are the logs; Claude
+Code edits them, commits, and GitHub Pages rebuilds.
 
 ```bash
 npm install
@@ -50,12 +57,26 @@ writer costs a rebuild and buys a log with a git history.
 
 | File | What it is |
 |---|---|
-| `data/log.csv` | The log. One row per thing eaten. The source of truth. |
+| `data/log.csv` | One row per thing eaten. |
 | `data/goals.json` | `{calories, proteinMin, proteinMax, fiber}`. No UI edits it. |
+| `data/workouts.csv` | One row per **set**. |
+| `data/sessions.csv` | One row per **session** — how it felt, what it cost. |
+| `data/breaks.csv` | One row per stretch of not training, so a gap is explained. |
+| `data/training-goals.json` | The six goals, their baselines, targets and pace. |
+| `docs/training-plan.md` | The program and the reasoning behind it. |
+| `docs/irl-cdtw.xlsx` | The spreadsheet this replaced, plus tidy CSVs beside it. |
 
-Both are read at build time by `src/lib/logFile.ts` and `src/lib/goalsFile.ts`,
-which use `node:fs` and therefore **run on the build machine only**. A client
-component that imports either one fails the build, on purpose.
+They are read at build time by `src/lib/logFile.ts`, `goalsFile.ts` and
+`trainingFile.ts`, which use `node:fs` and therefore **run on the build machine
+only**. A client component that imports any of them fails the build, on purpose.
+
+Training is three files rather than one because it is three grains. Sets are the
+atomic unit: "2 sets of 5 at 155 and 135" is two rows, never one averaged row,
+because the set that differs is a top set and a back-off set and progression
+keys on the first. Sessions carry the subjective half — fatigue, sweat,
+bodyweight, joint flags — which belongs to the day, not to any one set. And
+breaks carry the weeks nobody trained, which is the difference between "stopped
+lifting" and "was in Japan".
 
 The CSV columns are the ones a spreadsheet wants: open it in Excel, fix a
 number, commit it back. `fiber_g`, `sugar_g` and `sodium_mg` may be blank —
@@ -89,10 +110,15 @@ Every route is a server component that reads the files and passes plain data
 into a client component that owns nothing but presentation:
 
 ```
-src/app/page.tsx          readLog() + readGoals()  →  <Dashboard entries goals … />
-src/app/history/page.tsx  readLog() + readGoals()  →  <History entries goals … />
-src/app/foods/page.tsx    static catalog only, so client-side outright
+src/app/page.tsx           readLog() + readGoals()  →  <Dashboard entries goals … />
+src/app/history/page.tsx   readLog() + readGoals()  →  <History entries goals … />
+src/app/foods/page.tsx     static catalog only, so client-side outright
+src/app/training/page.tsx  the three training files →  cards, plus <LiftChart> islands
+src/app/program/page.tsx   src/data/program.ts + the archived spreadsheet
 ```
+
+The two training pages have no page-level state, so they ship as HTML with the
+charts as the only client islands — hover is the only interaction on either.
 
 `node:fs` runs at build; the browser gets JSON baked into the HTML. Client state
 is limited to which day you are looking at, the 7/14/30/90 range selector, chart
@@ -119,14 +145,24 @@ src/
 │  ├─ MealList.tsx          The day's log grouped by meal — presentational
 │  ├─ StatTiles.tsx         KPI tiles and the gap-closer panel
 │  └─ TrendChart.tsx        Client: bar chart with hover/tap readout
+│  ├─ SessionCard.tsx       A workout laid out the way you'd describe it
+│  ├─ PlanCheck.tsx         That session against the day it was meant to be
+│  ├─ GoalPace.tsx          Six goals against a line to December 31st
+│  ├─ LiftChart.tsx         Client: top sets over time, layoffs shaded
+│  └─ ArchiveTable.tsx      The old spreadsheet, as a record not as data
 ├─ data/                    recipes.ts, staples.ts, pantry.ts — the catalog
+│                           program.ts — the training plan, in code
 └─ lib/
+   ├─ csv.ts                RFC 4180 row splitting, shared by every reader.
    ├─ logFile.ts            Build-time CSV read. node:fs.
    ├─ goalsFile.ts          Build-time goals read. node:fs.
+   ├─ trainingFile.ts       Build-time read of the training files. node:fs.
    ├─ nutrition.ts          All the maths. Local dates, per-logged-day averages.
+   ├─ training.ts           Top sets, pace, compliance, plan comparison.
    ├─ labels.ts             Hydration-safe date labels.
    ├─ search.ts             Catalog search and gap-closer ranking.
-   ├─ types.ts              The domain model.
+   ├─ types.ts              The nutrition domain model.
+   ├─ trainingTypes.ts      The training domain model.
    └─ export.ts             Markdown and Apple Health XML.
 ```
 
@@ -247,3 +283,36 @@ The macro palette is the validated categorical slots 1–3 (blue / orange /
 aqua), which clear colour-vision-deficiency separation in both light and dark.
 Light-mode aqua sits below 3:1 contrast on the light surface, so every fat
 segment ships with a visible text label rather than relying on colour alone.
+
+The lift charts are the exception to "bars, not a line": a top set is a
+continuous quantity being pushed in one direction, not a daily total, so a line
+is the right mark. They stretch their SVG to the container with
+`preserveAspectRatio="none"`, which would turn any circle drawn inside into an
+ellipse — so the point markers are HTML positioned on top and stay round at
+every width.
+
+---
+
+## Training, specifically
+
+Three things on `/training` exist because a number at the end of December is
+too late to act on:
+
+- **Against the plan** — the logged session lined up against the program day it
+  was meant to be. A log that records what you did is a record; one that knows
+  what you were *meant* to do is feedback. Reported flatly, and extras don't
+  count against the score: an added exercise is not a failure to do a different
+  one.
+- **The pace tick** — every goal bar carries an upright mark showing where a
+  straight line from the August baseline to December 31st says you should be
+  today. "165 of 225" means nothing without knowing whether it is early or
+  late, and a bare percentage on a five-month goal reads as failure for four of
+  those months.
+- **Shaded layoffs** — May's travel and June's fortnight of illness are drawn
+  behind the charts. A lift that came back lower needs the explanation attached
+  to it, and the contrast is informative in itself: the deadlift and squat rode
+  through six weeks off almost untouched while the bench and pullups gave back
+  roughly eighteen pounds and three reps against January's projection.
+
+That January projection is kept in `data/training-goals.json` on purpose. It was
+written before the break, so the distance between it and reality *is* the break.

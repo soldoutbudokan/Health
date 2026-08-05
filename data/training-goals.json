@@ -1,0 +1,90 @@
+{
+  "baselineOn": "2026-08-01",
+  "deadline": "2026-12-31",
+  "goals": [
+    {
+      "id": "deadlift",
+      "name": "Trap bar deadlift",
+      "exercise": "Trap bar deadlift",
+      "metric": "weight",
+      "reps": 5,
+      "baseline": 260,
+      "target": 300,
+      "unit": "lbs",
+      "status": "on-track",
+      "note": "About 2 lbs a week gets there. The two heavy-day sets are the most important sets of the week."
+    },
+    {
+      "id": "squat",
+      "name": "Smith machine squat",
+      "exercise": "Smith machine squat",
+      "metric": "weight",
+      "reps": 5,
+      "baseline": 185,
+      "target": 225,
+      "unit": "lbs",
+      "status": "on-track",
+      "note": "Same 2 lbs a week as the deadlift."
+    },
+    {
+      "id": "bench",
+      "name": "Bench press",
+      "exercise": "Bench press",
+      "metric": "weight",
+      "reps": 5,
+      "baseline": 165,
+      "target": 225,
+      "unit": "lbs",
+      "status": "stretch",
+      "realistic": { "min": 195, "max": 205 },
+      "note": "225 by December is a stretch; 195–205 is the realistic landing and 225 likely arrives in spring. Food and sleep decide most of this one."
+    },
+    {
+      "id": "pullups",
+      "name": "Pullups",
+      "exercise": "Pullups",
+      "metric": "reps",
+      "baseline": 7,
+      "target": 10,
+      "unit": "reps",
+      "status": "on-track",
+      "note": "Bodyweight. Progress through frequency, not grinding — an all-out test set every few weeks tracks the path."
+    },
+    {
+      "id": "dips",
+      "name": "Dips",
+      "exercise": "Dips",
+      "metric": "reps",
+      "baseline": 10,
+      "target": 10,
+      "unit": "reps",
+      "status": "achieved",
+      "note": "Already there at the August baseline. The job is maintenance, not progress."
+    },
+    {
+      "id": "dunk",
+      "name": "In-game dunk",
+      "exercise": "Approach jumps at a rim",
+      "metric": "skill",
+      "baseline": 0,
+      "target": 0,
+      "unit": "",
+      "status": "skill",
+      "note": "Tracked by milestone — rim grab, hang, dunk attempt — not by a number. Dunking is a skill, so the actual movement has to be rehearsed."
+    }
+  ],
+  "projection": [
+    { "month": "2026-01", "values": { "deadlift": 177, "squat": 120, "bench": 132, "pullups": 3, "dips": 1 } },
+    { "month": "2026-02", "values": { "deadlift": 191, "squat": 130, "bench": 141, "pullups": 4, "dips": 3 } },
+    { "month": "2026-03", "values": { "deadlift": 207, "squat": 141, "bench": 150, "pullups": 5, "dips": 4 } },
+    { "month": "2026-04", "values": { "deadlift": 222, "squat": 150, "bench": 158, "pullups": 6, "dips": 5 } },
+    { "month": "2026-05", "values": { "deadlift": 235, "squat": 158, "bench": 165, "pullups": 7, "dips": 6 } },
+    { "month": "2026-06", "values": { "deadlift": 244, "squat": 165, "bench": 172, "pullups": 8, "dips": 8 } },
+    { "month": "2026-07", "values": { "deadlift": 252, "squat": 172, "bench": 177, "pullups": 9, "dips": 10 } },
+    { "month": "2026-08", "values": { "deadlift": 261, "squat": 178, "bench": 183, "pullups": 10, "dips": 10 } },
+    { "month": "2026-09", "values": { "deadlift": 268, "squat": 184, "bench": 187, "pullups": 10, "dips": 10 } },
+    { "month": "2026-10", "values": { "deadlift": 274, "squat": 190, "bench": 190, "pullups": 10, "dips": 10 } },
+    { "month": "2026-11", "values": { "deadlift": 274, "squat": 193, "bench": 193, "pullups": 10, "dips": 10 } },
+    { "month": "2026-12", "values": { "deadlift": 274, "squat": 196, "bench": 196, "pullups": 10, "dips": 10 } }
+  ]
+}

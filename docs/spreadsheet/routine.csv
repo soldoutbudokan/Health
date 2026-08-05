@@ -1,0 +1,40 @@
+day,exercise,type,focus,setting
+Push,Push-ups,Warmup,"Chest, Shoulders, Triceps",30 Reps
+Push,Bench Press,Compound,"Chest, Triceps",6 Reps at 13
+Push,Shoulder Press,Compound,"Shoulders, Triceps",6 Reps at 8
+Push,Dumbell Lat Raise,Isolation,Lateral Deltoids,7 Reps at 15 lbs
+Push,Cable Fly,Isolation,Chest,6 Reps at 17.5 lbs
+Push,Low-High Cable Fly,Isolation,Upper Chest,6 Reps at 17.5 lbs
+Push,Cable Lat Raise,Isolation,Lateral Deltoids,4 Reps at 12.5 lbs
+Push,Rope Tricep Extension,Isolation,Tricpes,
+Pull,Pullups,Warmup,"Back, Biceps",2/3 Reps
+Pull,Lat Pull,Compound,Latissimus Dorsi,6 Reps at 12
+Pull,Cable Row,Compound,"Upper Back, Biceps",8 Reps at 11
+Pull,Bicep Curl,Isolation,Bicep Curls,5 Reps at 25 lbs
+Pull,Cable Rear Delt Fly,Isolation,Posterior Deltoids,5 Reps at 10.5 lbs
+Pull,Shoulder Shrugs,Isolation,Trapezius,20 Reps at 35 lbs
+Pull,Side Bends,Core,Obliques,12 Reps at 35 lbs
+Pull,Hor. Cable Wood Chop,Core,Rotational Core,6 Reps at 32.5 lbs
+Legs,Knees over Toes,Mobility,Knee Stability,5 Reps
+Legs,Nordic Hamstring Curl,Isolation,Hamstrings,5 Reps at 75 deg
+Legs,Calf Raises,Isolation,Calves,38 Reps
+Legs,Romanian Deadlift,Compound,"Posterior Chain, Hamstrings",3 Reps at 185 lbs
+Legs,Leg Raise,Core,Lower Abs,9 Reps
+Legs,Decline Crunches,Core,Upper Abs,18 Reps at 10 lbs
+Legs,ATG Split Squats,Compound,"Quads, Glutes, Balance",5 Reps at 10 lbs
+Legs,Hack Squats,Isolation,"Quads, Glute, Core",7 Reps at 135 lbs
+Upper,Pull ups,Warmup,Back,8 Reps
+Upper,Seated Y Raise,Isolation,Lateral Deltoids,6 Reps at 20
+Upper,Lat Pull,Compound,Latissimus Dorsi,5 Reps at 14
+Upper,Cable Row,Compound,"Upper Back, Biceps",5 Reps at 12
+Upper,Preacher Curl,Isolation,Bicep Curls,5 Reps at 30
+Upper,Dips,Isolation,Tricpes,10 Reps
+Upper,Bench Press,Compound,"Chest, Triceps",5 Reps at 165
+Upper,Cable Fly,Isolation,Chest,7 Reps at 17.5
+Lower,Knees over Toes,Mobility,Knee Stability,5 Reps
+Lower,Calf Raises,Isolation,Calves,42 Reps
+Lower,Deadlift,Compound,"Posterior Chain, Hamstrings",5 Reps at 250 lbs
+Lower,Smith Machine Squat,Isolation,"Quads, Glute, Core",5 Reps at 185 lbs
+Lower,Bulgarian Split Squats,Compound,"Quads, Glutes, Balance",7 Reps at 25 lbs
+Lower,Lying Hamstring Curl,Isolation,Hamstring,7 Reps at 11
+Lower,Leg Extension,Isolation,Quads,8 Reps at 18

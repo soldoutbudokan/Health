@@ -3,8 +3,9 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "Nutrition Calculator",
-  description: "Daily calorie and protein tracking, built around your own recipes.",
+  title: "Health",
+  description:
+    "Daily calorie and protein tracking against your own recipes, and lifting against a December deadline.",
 };
 
 export const viewport: Viewport = {

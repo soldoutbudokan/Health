@@ -1,6 +1,8 @@
 # Working on this repo
 
-A daily calorie and protein tracker targeting **2,800 kcal** and **160–180 g protein**.
+Two logs on one site: a daily calorie and protein tracker targeting **2,800 kcal**
+and **160–180 g protein**, and a lifting log run against a training program with a
+**December 31st, 2026** deadline.
 
 **You are the only thing that writes to the log.** The website is a read-only
 dashboard. It has no add button, no browser storage, and no way to save anything —
@@ -25,15 +27,22 @@ judged the better trade for a calorie log. Don't write anything into
 `data/log.csv` that shouldn't be world-readable, and don't assume it's private
 because it's "just" a food log.
 
-## The job you'll usually be asked to do
+## The two jobs you'll usually be asked to do
 
 > "I had a chicken shawarma plate from the place on Bloor and two coffees"
 
 Work out the macros, append rows to `data/log.csv`, commit, push, and say what you
 assumed. A push takes a minute or two to appear on the site.
 
+> "Bench 2 sets of 5 at 155 and 135, cable row 2×5 at 130, dips 1×7. Wiped out."
+
+Append one row per **set** to `data/workouts.csv` and one row for the session to
+`data/sessions.csv`. Work out which program day it was (`src/data/program.ts`) and
+say so; the site checks the session against that day automatically, so getting the
+`session` column right is what makes the comparison mean anything.
+
 There's also a routine that asks each evening whether anything needs logging. Same
-job, just prompted rather than volunteered.
+jobs, just prompted rather than volunteered.
 
 ## `data/log.csv`
 
@@ -58,6 +67,67 @@ Quote any field containing a comma and double any internal quote (`"Chicken Curr
 Plenty of food names contain commas, so this matters.
 
 `data/goals.json` holds the targets. Edit it if asked; there's no UI for it.
+
+## The training files
+
+Three grains, three files. Don't merge them — sets, sessions and layoffs are
+genuinely different things and each is queried on its own.
+
+### `data/workouts.csv` — one row per *set*
+
+```
+id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,source
+```
+
+| Column | Notes |
+|---|---|
+| `session` | `heavy-lower` \| `light-lower` \| `heavy-upper` \| `light-upper` \| `off-a` \| `off-b` \| `stretch` \| `basketball` \| `other`. **Blank** for imported reference points that belong to no session |
+| `exercise` | free text; aliases are folded in `src/lib/training.ts` (`canonical`), so "Pull ups" and "Pullups" match. Add an alias there rather than renaming history |
+| `kind` | `warmup` \| `jump` \| `compound` \| `isolation` \| `core` \| `mobility` \| `finisher`. Drives how the session card groups things — the sled is `warmup` at the start and `finisher` at the end |
+| `set_index` | 1, 2, 3… within that exercise |
+| `reps`, `weight_lbs`, `duration_min` | any may be blank. Bodyweight work has reps and no weight; the sled has duration and neither |
+| `source` | `logged` (it happened and was recorded) \| `sheet` (from the old spreadsheet) \| `handoff` (a baseline stated in the training plan) |
+
+**One row per set, never a rolled-up average.** "2 sets of 5 at 155 and 135" is two
+rows. The set that *differs* is the whole point — 155 is a top set and 135 is a
+back-off set, and progression keys on the first number.
+
+**File order is session order.** The session card renders in it, so append sets in
+the order they were performed.
+
+### `data/sessions.csv` — one row per *session*
+
+```
+date,session,duration_min,fatigue,sweat,bodyweight_lbs,deload,flags,note
+```
+
+`fatigue` is 1–5 (5 = exhausted), `sweat` is `low`/`normal`/`high`, `deload` is
+`yes` or blank, `flags` is semicolon-separated joint or soreness tags such as
+`front-shoulder`. All optional. This is where the subjective half lives — record it,
+because a bench that dropped 10 lbs on a day flagged *exhausted, sweating heavily*
+is a recovery story, not a strength story.
+
+### `data/breaks.csv` — one row per stretch of *not training*
+
+```
+start,end,kind,label,note
+```
+
+`kind` is `travel` \| `illness` \| `deload` \| `other`. These shade the charts and
+explain gaps. Without them a six-week hole reads as "stopped tracking" rather than
+"was in Japan".
+
+`data/training-goals.json` holds the six goals, the August baselines, the December
+targets and the January projection table. The projection is kept deliberately: the
+distance between it and reality is the layoff.
+
+## Before inventing an exercise, check the program
+
+`src/data/program.ts` is the plan in code — the same object `/program` renders and
+`comparePlan()` grades sessions against. If a session deviates, that's data, not an
+error: log what happened and let the page report the gap. **Don't edit the program
+to make a session look compliant.** `docs/training-plan.md` is the source of truth
+for the reasoning; if the two disagree, the document wins and the file is stale.
 
 ## Before inventing a food, check the catalog
 
@@ -99,6 +169,15 @@ data, not a zero-calorie day.
 **Protein is a band, not a line.** Over 180 g renders as success. Don't adjust real
 data so it sits inside the band.
 
+**Don't invent units.** The old spreadsheet mixes pounds with machine pin numbers —
+"6 Reps at 13" is a pin position, "5 Reps at 145 lbs" is a weight. Only the rows
+whose units were unambiguous were imported into `data/workouts.csv`. The rest is
+displayed verbatim on `/program` and computed on by nothing. Keep it that way.
+
+**Hypermobility shapes the program.** Several rules that look like preferences
+aren't: no hard lockouts, no passive stretching, deloads every 4–5 weeks. They're in
+`HYPERMOBILITY_RULES`. Don't quietly relax one because a session would score better.
+
 ## Checks
 
 ```bash
@@ -111,6 +190,10 @@ imported from server components. If a client component imports it the build fail
 
 If you touched `src/data/`, re-check that Atwater reconciles and no `fiber` exceeds
 its entry's `carbs`.
+
+`docs/spreadsheet/*.csv` are read at build time too, by `/program`. They're derived
+from `docs/irl-cdtw.xlsx`; if that file is ever updated, regenerate them rather than
+hand-editing the CSVs.
 
 ## History, so nobody re-litigates it
 
