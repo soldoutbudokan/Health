@@ -1,6 +1,6 @@
 import type { Food } from "@/lib/types";
 import { round } from "@/lib/nutrition";
-import { foodLabel, proteinDensity } from "@/lib/search";
+import { caloriesPerProteinGram, foodLabel } from "@/lib/search";
 
 /** A handful of headline numbers is a KPI row, not a chart. */
 export function StatTile({
@@ -78,13 +78,16 @@ export function GapClosers({
         {foods.map((f) => {
           const covers = Math.min(100, (f.macros.protein / needProtein) * 100);
           const fits = remainingCalories <= 0 || f.macros.calories <= remainingCalories;
+          // Nothing reaches this list under 8 g of protein, so the ratio is
+          // always defined here — but the dash costs nothing and never lies.
+          const cost = caloriesPerProteinGram(f.macros);
           return (
             <li key={f.id} className="flex items-center gap-3 px-2 py-2">
               <div className="min-w-0 flex-1">
                 <div className="truncate text-sm font-medium">{foodLabel(f)}</div>
                 <div className="tnum truncate text-xs text-muted">
                   {round(f.macros.protein, 1)}g protein · {round(f.macros.calories)} kcal ·{" "}
-                  {round(proteinDensity(f.macros), 1)}g per 100 kcal
+                  {cost === null ? "—" : round(cost, 1)} kcal per gram of protein
                 </div>
               </div>
               <div className="shrink-0 text-right">

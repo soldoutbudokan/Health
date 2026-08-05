@@ -1,8 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { FoodSource } from "@/lib/types";
-import { BUILTIN_FOODS, foodLabel, proteinDensity, searchFoods } from "@/lib/search";
+import type { FoodSource, Macros } from "@/lib/types";
+import {
+  BUILTIN_FOODS,
+  caloriesPerProteinGram,
+  foodLabel,
+  searchFoods,
+} from "@/lib/search";
 import { round } from "@/lib/nutrition";
 import { SourceBadge } from "@/components/SourceBadge";
 
@@ -28,7 +33,7 @@ const FILTERS: Array<{ key: FoodSource | "all"; label: string }> = [
 export default function Foods() {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<(typeof FILTERS)[number]["key"]>("all");
-  const [sort, setSort] = useState<"name" | "protein" | "density">("name");
+  const [sort, setSort] = useState<"name" | "protein" | "cost">("name");
 
   const shown = useMemo(() => {
     let list = searchFoods(BUILTIN_FOODS, query, 500);
@@ -36,9 +41,13 @@ export default function Foods() {
 
     if (sort === "protein") {
       list = [...list].sort((a, b) => b.macros.protein - a.macros.protein);
-    } else if (sort === "density") {
+    } else if (sort === "cost") {
+      // Cheapest protein first. A food with no protein has no ratio at all, so
+      // it sorts to the bottom rather than to either extreme.
       list = [...list].sort(
-        (a, b) => proteinDensity(b.macros) - proteinDensity(a.macros),
+        (a, b) =>
+          (caloriesPerProteinGram(a.macros) ?? Infinity) -
+          (caloriesPerProteinGram(b.macros) ?? Infinity),
       );
     } else if (!query) {
       list = [...list].sort((a, b) => foodLabel(a).localeCompare(foodLabel(b)));
@@ -94,7 +103,7 @@ export default function Foods() {
           >
             <option value="name">Name</option>
             <option value="protein">Most protein</option>
-            <option value="density">Protein per 100 kcal</option>
+            <option value="cost">Calories per gram of protein</option>
           </select>
         </label>
       </div>
@@ -119,6 +128,9 @@ export default function Foods() {
                   {f.brand ? `${f.brand} · ` : ""}
                   {f.per}
                 </div>
+                {/* Six columns don't fit a phone, so the same numbers wrap into
+                    a strip below the serving they're "per". */}
+                <MacroStrip macros={f.macros} />
                 {/* The id is what you hand Claude Code to log this thing. */}
                 <div className="mt-0.5 truncate font-mono text-[11px] text-muted">
                   {f.id}
@@ -130,40 +142,90 @@ export default function Foods() {
                 )}
               </div>
 
-              <div className="tnum hidden shrink-0 gap-4 text-right text-[11px] text-muted sm:flex">
-                <span className="w-12">
-                  <span className="block text-sm font-semibold text-ink">
-                    {round(f.macros.calories)}
-                  </span>
-                  kcal
-                </span>
-                <span className="w-12">
-                  <span
-                    className="block text-sm font-semibold"
-                    style={{ color: "var(--series-protein)" }}
-                  >
-                    {round(f.macros.protein, 1)}
-                  </span>
-                  prot
-                </span>
-                <span className="w-12">
-                  <span className="block text-sm font-semibold">
-                    {round(proteinDensity(f.macros), 1)}
-                  </span>
-                  /100kcal
-                </span>
-              </div>
-
-              <div className="tnum shrink-0 text-right sm:hidden">
-                <div className="text-sm font-semibold">{round(f.macros.calories)}</div>
-                <div className="text-[11px]" style={{ color: "var(--series-protein)" }}>
-                  {round(f.macros.protein, 1)}g P
-                </div>
-              </div>
+              <MacroColumns macros={f.macros} />
             </li>
           ))}
         </ul>
       )}
+    </div>
+  );
+}
+
+/**
+ * The per-serving numbers, aligned so the catalog can be read down a column
+ * rather than across a row — which is the point of sorting it by one of them.
+ *
+ * Protein, carbs and fat carry the same three series colours the dashboard's
+ * macro split uses. Fibre doesn't: it is logged less reliably than the macros,
+ * and an absent value is *not recorded*, which is not the same as zero, so it
+ * renders as a dash. The same goes for calories per gram of protein on a food
+ * with no protein in it.
+ */
+function MacroColumns({ macros: m }: { macros: Macros }) {
+  const cost = caloriesPerProteinGram(m);
+
+  return (
+    <div className="tnum hidden shrink-0 gap-3 text-right text-[11px] text-muted sm:flex">
+      <Column label="kcal" value={round(m.calories)} />
+      <Column
+        label="prot"
+        value={round(m.protein, 1)}
+        color="var(--series-protein)"
+      />
+      <Column label="carb" value={round(m.carbs, 1)} color="var(--series-carbs)" />
+      <Column label="fat" value={round(m.fat, 1)} color="var(--series-fat)" />
+      <Column
+        label="fibre"
+        value={m.fiber === undefined ? "—" : round(m.fiber, 1)}
+      />
+      <Column
+        label="kcal/g P"
+        value={cost === null ? "—" : round(cost, 1)}
+        width="w-14"
+      />
+    </div>
+  );
+}
+
+function Column({
+  label,
+  value,
+  color,
+  width = "w-10",
+}: {
+  label: string;
+  value: string | number;
+  color?: string;
+  width?: string;
+}) {
+  return (
+    <span className={`${width} whitespace-nowrap`}>
+      <span
+        className="block text-sm font-semibold text-ink"
+        style={color ? { color } : undefined}
+      >
+        {value}
+      </span>
+      {label}
+    </span>
+  );
+}
+
+function MacroStrip({ macros: m }: { macros: Macros }) {
+  const cost = caloriesPerProteinGram(m);
+
+  return (
+    <div className="tnum mt-1 flex flex-wrap gap-x-2 text-xs text-muted sm:hidden">
+      <span className="font-semibold text-ink">{round(m.calories)} kcal</span>
+      <span style={{ color: "var(--series-protein)" }}>
+        {round(m.protein, 1)}g P
+      </span>
+      <span style={{ color: "var(--series-carbs)" }}>{round(m.carbs, 1)}g C</span>
+      <span style={{ color: "var(--series-fat)" }}>{round(m.fat, 1)}g F</span>
+      <span>{m.fiber === undefined ? "—" : `${round(m.fiber, 1)}g`} fibre</span>
+      <span className="text-ink">
+        {cost === null ? "—" : round(cost, 1)} kcal/g P
+      </span>
     </div>
   );
 }

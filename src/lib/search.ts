@@ -119,7 +119,14 @@ export function suggestGapClosers(
   return scored.slice(0, limit).map((s) => s.food);
 }
 
-/** Per-100-kcal protein, the number that actually decides what to eat. */
-export function proteinDensity(m: Macros): number {
-  return m.calories > 0 ? (m.protein / m.calories) * 100 : 0;
+/**
+ * Calories bought per gram of protein — the number that actually decides what
+ * to eat, and the one worth minimising. Lower is leaner: skyr is around 12,
+ * peanut butter around 45.
+ *
+ * Null when the food has no protein at all, because "infinite calories per
+ * gram" is a division by zero dressed up as a fact. Callers render a dash.
+ */
+export function caloriesPerProteinGram(m: Macros): number | null {
+  return m.protein > 0 ? m.calories / m.protein : null;
 }
