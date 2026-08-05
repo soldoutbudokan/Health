@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import type { Goals, LogEntry } from "@/lib/types";
 import {
@@ -31,6 +31,9 @@ interface Props {
   builtHour: number;
   /** Computed server-side, because `proteinStreak` reads the clock. */
   streak: number;
+  /** The day being looked at. Owned by `TodayView`, shared with training. */
+  date: string;
+  onDateChange: (date: string) => void;
 }
 
 const TREND_DAYS = 14;
@@ -46,13 +49,16 @@ const TREND_DAYS = 14;
  * the one thing guaranteed to have moved in between. It is also the honest
  * reading: this build cannot know about anything that happened after it.
  */
-export function Dashboard({ entries, goals, builtOn, builtHour, streak }: Props) {
+export function Dashboard({
+  entries,
+  goals,
+  builtOn,
+  builtHour,
+  streak,
+  date,
+  onDateChange,
+}: Props) {
   const dates = useMemo(() => loggedDates(entries), [entries]);
-
-  // Open on the newest day that has food in it. On a snapshot that is almost
-  // always the build day, and when it isn't — a rebuild triggered by a code
-  // change rather than a meal — landing on data beats landing on an empty day.
-  const [date, setDate] = useState(() => dates[0] ?? builtOn);
 
   // Don't walk forward past the snapshot, or past the last logged day if the
   // log somehow runs ahead of the build.
@@ -108,7 +114,7 @@ export function Dashboard({ entries, goals, builtOn, builtHour, streak }: Props)
       {/* Date bar — navigation only. Nothing on this page changes the log. */}
       <div className="flex flex-wrap items-center gap-2">
         <button
-          onClick={() => setDate(addDays(date, -1))}
+          onClick={() => onDateChange(addDays(date, -1))}
           aria-label="Previous day"
           className="rounded-lg border border-hairline px-2.5 py-1.5 text-ink-2 hover:bg-surface-2"
         >
@@ -116,7 +122,7 @@ export function Dashboard({ entries, goals, builtOn, builtHour, streak }: Props)
         </button>
         <h1 className="text-lg font-semibold">{formatDay(date, builtOn)}</h1>
         <button
-          onClick={() => setDate(addDays(date, 1))}
+          onClick={() => onDateChange(addDays(date, 1))}
           disabled={atHorizon}
           aria-label="Next day"
           className="rounded-lg border border-hairline px-2.5 py-1.5 text-ink-2 hover:bg-surface-2 disabled:opacity-30"
@@ -125,7 +131,7 @@ export function Dashboard({ entries, goals, builtOn, builtHour, streak }: Props)
         </button>
         {!isSnapshotDay && (
           <button
-            onClick={() => setDate(builtOn)}
+            onClick={() => onDateChange(builtOn)}
             className="rounded-lg px-2 py-1.5 text-sm font-medium text-protein hover:bg-surface-2"
           >
             Today
@@ -140,7 +146,7 @@ export function Dashboard({ entries, goals, builtOn, builtHour, streak }: Props)
             Jump to
             <select
               value={dates.includes(date) ? date : ""}
-              onChange={(e) => e.target.value && setDate(e.target.value)}
+              onChange={(e) => e.target.value && onDateChange(e.target.value)}
               className="rounded-lg border border-hairline bg-surface-2 px-2 py-1.5 text-xs text-ink outline-none"
             >
               {!dates.includes(date) && (

@@ -11,10 +11,8 @@ import {
 import {
   bodyweightSeries,
   comparePlan,
-  estimatedBurn,
   gymSessionsIn,
   goalProgress,
-  latestBodyweight,
   latestSession,
   liftSeries,
   planFor,
@@ -112,12 +110,7 @@ export default function TrainingPage() {
             Last logged session · {formatDay(latest.date, today)}
           </h2>
           <div className="grid gap-5 lg:grid-cols-2">
-            <SessionCard
-              session={latest}
-              sets={latestSets}
-              today={today}
-              burn={estimatedBurn(latest, latestSets, latestBodyweight(bodyweight))}
-            />
+            <SessionCard session={latest} sets={latestSets} today={today} />
             {plan && <PlanCheck plan={plan} lines={planLines} />}
           </div>
         </div>

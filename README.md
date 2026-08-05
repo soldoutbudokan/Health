@@ -114,7 +114,7 @@ Every route is a server component that reads the files and passes plain data
 into a client component that owns nothing but presentation:
 
 ```
-src/app/page.tsx           the log + the training files → <Dashboard> beside <TrainingToday>
+src/app/page.tsx           the log + the training files → <TodayView>, one selected day, two columns
 src/app/history/page.tsx   readLog() + readGoals()  →  <History entries goals … />
 src/app/foods/page.tsx     static catalog only, so client-side outright
 src/app/training/page.tsx  the training files →  cards, plus <LiftChart> islands
@@ -153,7 +153,8 @@ src/
 │  ├─ StatTiles.tsx         KPI tiles and the gap-closer panel
 │  ├─ TrendChart.tsx        Client: bar chart with hover/tap readout
 │  ├─ SourceBadge.tsx       The provenance badge every food carries
-│  ├─ TrainingToday.tsx     The dashboard's training column — check-in, week, session
+│  ├─ TodayView.tsx         Client: owns the selected day, shared by both columns
+│  ├─ TrainingDay.tsx       The selected day's session, check-in and context
 │  ├─ WeekStrip.tsx         The last seven days as a strip, shared with /training
 │  ├─ SessionCard.tsx       A workout laid out the way you'd describe it
 │  ├─ PlanCheck.tsx         That session against the day it was meant to be

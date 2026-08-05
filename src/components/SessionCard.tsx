@@ -1,12 +1,6 @@
 import { round } from "@/lib/nutrition";
 import { formatDay } from "@/lib/labels";
-import {
-  byExercise,
-  setLabel,
-  volume,
-  workingSets,
-  type BurnEstimate,
-} from "@/lib/training";
+import { byExercise, setLabel, volume, workingSets } from "@/lib/training";
 import {
   FATIGUE_LABELS,
   KIND_LABELS,
@@ -33,8 +27,6 @@ interface Props {
   sets: WorkoutSet[];
   /** The build day, so "Today" means the day the snapshot was taken. */
   today: string;
-  /** MET-based energy estimate for the session, when one can be made. */
-  burn?: BurnEstimate;
 }
 
 function SetPill({ set, top }: { set: WorkoutSet; top: boolean }) {
@@ -54,7 +46,7 @@ function SetPill({ set, top }: { set: WorkoutSet; top: boolean }) {
   );
 }
 
-export function SessionCard({ session, sets, today, burn }: Props) {
+export function SessionCard({ session, sets, today }: Props) {
   const groups = KIND_ORDER.map((kind) => ({
     kind,
     entries: byExercise(sets.filter((s) => s.kind === kind)),
@@ -74,18 +66,6 @@ export function SessionCard({ session, sets, today, burn }: Props) {
           set{working.length === 1 ? "" : "s"}
           {moved > 0 && ` · ${round(moved).toLocaleString("en-US")} lbs moved`}
           {session.durationMin !== undefined && ` · ${round(session.durationMin)} min`}
-          {burn && (
-            /* "≈" and the tooltip both mark this as an estimate — a MET table
-               figure, not a measurement. */
-            <span
-              title={`MET estimate: ${burn.met} METs × ${round(burn.bodyweightLbs, 1)} lbs × ${burn.minutes} min${
-                burn.minutesAssumed ? " (duration estimated from the sets)" : ""
-              }. Rough by nature — the trend across sessions is the signal, not any single figure.`}
-            >
-              {" "}
-              · ≈{burn.kcal} kcal
-            </span>
-          )}
           {session.deload && " · deload week"}
         </p>
       </header>

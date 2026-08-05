@@ -7,8 +7,7 @@ import {
   readWorkouts,
 } from "@/lib/trainingFile";
 import { proteinStreak, toDateKey } from "@/lib/nutrition";
-import { Dashboard } from "@/components/Dashboard";
-import { TrainingToday } from "@/components/TrainingToday";
+import { TodayView } from "@/components/TodayView";
 
 /**
  * Server component: reads the log off disk at build time and hands the parsed
@@ -29,25 +28,20 @@ export default function Page() {
   const now = new Date();
   const today = toDateKey(now);
 
+  /* Diet and training side by side, because they are equally important and
+     neither half should be a page away. TodayView owns the selected day, so
+     stepping back a day moves both columns together. */
   return (
-    /* Diet and training side by side, because they are equally important and
-       neither half should be a page away. Stacked on narrow screens, food
-       first only because the day starts with breakfast. */
-    <div className="grid items-start gap-6 lg:grid-cols-2">
-      <Dashboard
-        entries={entries}
-        goals={goals}
-        builtOn={today}
-        builtHour={now.getHours()}
-        streak={proteinStreak(entries, goals)}
-      />
-      <TrainingToday
-        sets={readWorkouts()}
-        sessions={readSessions()}
-        breaks={readBreaks()}
-        checkins={readCheckins()}
-        today={today}
-      />
-    </div>
+    <TodayView
+      entries={entries}
+      goals={goals}
+      builtOn={today}
+      builtHour={now.getHours()}
+      streak={proteinStreak(entries, goals)}
+      sets={readWorkouts()}
+      sessions={readSessions()}
+      breaks={readBreaks()}
+      checkins={readCheckins()}
+    />
   );
 }

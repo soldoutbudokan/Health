@@ -1,0 +1,68 @@
+"use client";
+
+import { useState } from "react";
+import type { Goals, LogEntry } from "@/lib/types";
+import type {
+  Checkin,
+  Session,
+  TrainingBreak,
+  WorkoutSet,
+} from "@/lib/trainingTypes";
+import { loggedDates } from "@/lib/nutrition";
+import { Dashboard } from "@/components/Dashboard";
+import { TrainingDay } from "@/components/TrainingDay";
+
+/**
+ * The two halves of the day, side by side, sharing one piece of state: which
+ * day you are looking at. Stepping the dashboard back to yesterday moves the
+ * training column with it, so each column shows the same day's record — food
+ * on the left, the session on the right, blank when nothing was logged.
+ */
+export function TodayView({
+  entries,
+  goals,
+  builtOn,
+  builtHour,
+  streak,
+  sets,
+  sessions,
+  breaks,
+  checkins,
+}: {
+  entries: LogEntry[];
+  goals: Goals;
+  builtOn: string;
+  builtHour: number;
+  streak: number;
+  sets: WorkoutSet[];
+  sessions: Session[];
+  breaks: TrainingBreak[];
+  checkins: Checkin[];
+}) {
+  // Open on the newest day that has food in it. On a snapshot that is almost
+  // always the build day, and when it isn't — a rebuild triggered by a code
+  // change rather than a meal — landing on data beats landing on an empty day.
+  const [date, setDate] = useState(() => loggedDates(entries)[0] ?? builtOn);
+
+  return (
+    <div className="grid items-start gap-6 lg:grid-cols-2">
+      <Dashboard
+        entries={entries}
+        goals={goals}
+        builtOn={builtOn}
+        builtHour={builtHour}
+        streak={streak}
+        date={date}
+        onDateChange={setDate}
+      />
+      <TrainingDay
+        sets={sets}
+        sessions={sessions}
+        breaks={breaks}
+        checkins={checkins}
+        date={date}
+        today={builtOn}
+      />
+    </div>
+  );
+}

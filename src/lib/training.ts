@@ -4,7 +4,6 @@ import {
   GYM_SESSIONS,
   type Checkin,
   type Session,
-  type SessionType,
   type TrainingBreak,
   type TrainingGoal,
   type TrainingGoals,
@@ -353,115 +352,6 @@ export function bodyweightSeries(
   return [...byDate.entries()]
     .map(([date, lbs]) => ({ date, lbs }))
     .sort((a, b) => a.date.localeCompare(b.date));
-}
-
-/* -------------------------------------------------------- energy estimate */
-
-/**
- * MET values by session type, from the compendium's resistance-training and
- * sport entries. Gym sessions sit at 4.0 — "resistance training, multiple
- * exercises" including the rest between sets — rather than the 6.0 of
- * continuous vigorous lifting, because most of an hour under a bar is spent
- * not lifting. Basketball is the compendium's game figure.
- */
-const SESSION_METS: Record<SessionType, number> = {
-  "heavy-lower": 4.0,
-  "light-lower": 4.0,
-  "heavy-upper": 4.0,
-  "light-upper": 4.0,
-  "off-a": 3.5,
-  "off-b": 3.5,
-  stretch: 2.5,
-  basketball: 7.0,
-  other: 3.5,
-};
-
-/** Minutes a set costs including its rest, when no duration was recorded. */
-const MINUTES_PER_SET = 3.5;
-
-/** The handoff bodyweight, used until a weigh-in is logged. */
-export const FALLBACK_BODYWEIGHT_LBS = 190;
-
-export interface BurnEstimate {
-  kcal: number;
-  minutes: number;
-  /** True when the duration was estimated from set count, not recorded. */
-  minutesAssumed: boolean;
-  met: number;
-  bodyweightLbs: number;
-}
-
-/**
- * Estimated energy cost of a session: MET × bodyweight × duration.
- *
- * An estimate by nature — MET tables are population averages, and height and
- * age barely move them, which is why they aren't inputs. The honest signal is
- * the trend across sessions, not any single figure; the display rounds to 10
- * kcal so the number doesn't pretend to precision it doesn't have.
- */
-export function estimatedBurn(
-  session: Session,
-  sets: WorkoutSet[],
-  bodyweightLbs: number | undefined,
-): BurnEstimate | undefined {
-  const lbs = bodyweightLbs ?? FALLBACK_BODYWEIGHT_LBS;
-
-  let minutes = session.durationMin;
-  let minutesAssumed = false;
-  if (minutes === undefined) {
-    if (sets.length === 0) return undefined;
-    minutesAssumed = true;
-    minutes = sets.reduce(
-      (acc, s) => acc + (s.durationMin ?? MINUTES_PER_SET),
-      0,
-    );
-  }
-
-  const met = SESSION_METS[session.type];
-  const kg = lbs * 0.453592;
-  const kcal = Math.round((met * kg * (minutes / 60)) / 10) * 10;
-  return { kcal, minutes: Math.round(minutes), minutesAssumed, met, bodyweightLbs: lbs };
-}
-
-/** Newest reading, for the burn estimate. Undefined until one is logged. */
-export function latestBodyweight(points: BodyweightPoint[]): number | undefined {
-  return points.length > 0 ? points[points.length - 1].lbs : undefined;
-}
-
-export interface DailyBurn {
-  date: string;
-  kcal: number;
-  /** False when no session was logged that day — missing, not a rest at 0. */
-  logged: boolean;
-}
-
-/**
- * Estimated burn per day over the `days` ending on `endDate`, for charting.
- * A day can hold more than one session (a gym day plus basketball); each is
- * estimated on its own sets — or on all of the day's sets when the session
- * column doesn't attribute them — and summed.
- */
-export function dailyBurnSeries(
-  sessions: Session[],
-  sets: WorkoutSet[],
-  bodyweightLbs: number | undefined,
-  endDate: string,
-  days: number,
-): DailyBurn[] {
-  const out: DailyBurn[] = [];
-  for (let i = days - 1; i >= 0; i--) {
-    const date = addDays(endDate, -i);
-    const daySessions = sessions.filter((s) => s.date === date);
-    const daySets = sessionSets(sets, date);
-    let kcal = 0;
-    for (const s of daySessions) {
-      const own = daySets.filter((x) => x.session === s.type);
-      const burn = estimatedBurn(s, own.length > 0 ? own : daySets, bodyweightLbs);
-      kcal += burn?.kcal ?? 0;
-    }
-    out.push({ date, kcal, logged: daySessions.length > 0 });
-  }
-  return out;
 }
 
 /* ------------------------------------------------ comparison with the plan */
