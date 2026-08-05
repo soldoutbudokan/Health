@@ -1,7 +1,8 @@
 "use client";
 
 import { useId, useState } from "react";
-import { formatDateKey, round } from "@/lib/nutrition";
+import { round } from "@/lib/nutrition";
+import { formatDay } from "@/lib/labels";
 
 export interface TrendPoint {
   date: string;
@@ -15,6 +16,11 @@ interface Props {
   unit: string;
   points: TrendPoint[];
   color: string;
+  /**
+   * The day "Today" refers to — the build day, passed down rather than read
+   * from the clock so the pre-rendered labels and the hydrated ones match.
+   */
+  today: string;
   /** Single reference line, e.g. the calorie target. */
   goal?: number;
   /** Reference band, e.g. the protein 160–180 g target. */
@@ -36,6 +42,7 @@ export function TrendChart({
   unit,
   points,
   color,
+  today,
   goal,
   band,
   height = 132,
@@ -70,7 +77,7 @@ export function TrendChart({
         <h3 className="text-sm font-semibold">{title}</h3>
         <span className="tnum text-xs text-muted">
           {active
-            ? `${formatDateKey(active.date)} · ${active.logged ? `${round(active.value)} ${unit}` : "not logged"}`
+            ? `${formatDay(active.date, today)} · ${active.logged ? `${round(active.value)} ${unit}` : "not logged"}`
             : goal
               ? `target ${round(goal)} ${unit}`
               : band
@@ -196,15 +203,15 @@ export function TrendChart({
               onFocus={() => setHover(i)}
               onBlur={() => setHover(null)}
               onClick={() => setHover((h) => (h === i ? null : i))}
-              aria-label={`${formatDateKey(p.date)}: ${p.logged ? `${round(p.value)} ${unit}` : "not logged"}`}
+              aria-label={`${formatDay(p.date, today)}: ${p.logged ? `${round(p.value)} ${unit}` : "not logged"}`}
             />
           ))}
         </div>
       </div>
 
       <div className="mt-2 flex justify-between text-[10px] text-muted">
-        <span>{formatDateKey(points[0]?.date ?? "")}</span>
-        <span>{formatDateKey(points[points.length - 1]?.date ?? "")}</span>
+        <span>{formatDay(points[0]?.date ?? "", today)}</span>
+        <span>{formatDay(points[points.length - 1]?.date ?? "", today)}</span>
       </div>
     </figure>
   );

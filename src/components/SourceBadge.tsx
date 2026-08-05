@@ -7,7 +7,7 @@ const LABELS: Record<FoodSource, { text: string; title: string }> = {
   usda: { text: "USDA", title: "USDA FoodData Central" },
   off: { text: "OFF", title: "Open Food Facts (crowd-sourced label data)" },
   claude: { text: "Claude", title: "Looked up by Claude from web sources" },
-  custom: { text: "yours", title: "You entered this one" },
+  custom: { text: "manual", title: "Entered by hand rather than from a label or a recipe" },
 };
 
 /**

@@ -3,21 +3,17 @@ import { PANTRY_FOODS } from "@/data/pantry";
 import { PACKAGED_FOODS, STAPLE_FOODS } from "@/data/staples";
 import type { Food, Macros } from "./types";
 
-/** Everything shipped with the app, before the user's own additions. */
+/**
+ * The whole catalog. It is a *reference*, not a log: nothing here is editable
+ * and nothing here is eaten until a row referencing it lands in `data/log.csv`.
+ * The Foods page browses it, and the gap-closer panel ranks it.
+ */
 export const BUILTIN_FOODS: Food[] = [
   ...PACKAGED_FOODS,
   ...RECIPE_FOODS,
   ...STAPLE_FOODS,
   ...PANTRY_FOODS,
 ];
-
-export function allFoods(customFoods: Food[]): Food[] {
-  return [...customFoods, ...BUILTIN_FOODS];
-}
-
-export function findFood(foods: Food[], id: string): Food | undefined {
-  return foods.find((f) => f.id === id);
-}
 
 function normalize(s: string): string {
   return s

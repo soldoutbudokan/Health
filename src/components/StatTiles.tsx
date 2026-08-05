@@ -1,5 +1,3 @@
-"use client";
-
 import type { Food } from "@/lib/types";
 import { round } from "@/lib/nutrition";
 import { foodLabel, proteinDensity } from "@/lib/search";
@@ -42,20 +40,22 @@ export function StatTile({
 }
 
 /**
- * The single most useful thing a tracker can do at 4pm: given what's left in
- * the budget, name specific things that close the gap. Ranked by how much of
- * the remaining protein they deliver per calorie.
+ * Given what's left in the budget, name specific things that would close the
+ * gap. Ranked by how much of the remaining protein they deliver per calorie.
+ *
+ * This reads the *catalog*, not the log, so it still means something in a
+ * read-only app: it answers "what could close this gap", and the answer is a
+ * shopping decision rather than a button. Nothing here logs anything — the
+ * rows are text, not controls.
  */
 export function GapClosers({
   foods,
   needProtein,
   remainingCalories,
-  onPick,
 }: {
   foods: Food[];
   needProtein: number;
   remainingCalories: number;
-  onPick: (food: Food) => void;
 }) {
   if (foods.length === 0) return null;
 
@@ -71,7 +71,7 @@ export function GapClosers({
         </span>
       </div>
       <p className="mb-3 text-xs text-muted">
-        Ranked by protein per calorie against what you have left today.
+        From the catalog, ranked by protein per calorie against what was left.
       </p>
 
       <ul className="space-y-1.5">
@@ -79,79 +79,31 @@ export function GapClosers({
           const covers = Math.min(100, (f.macros.protein / needProtein) * 100);
           const fits = remainingCalories <= 0 || f.macros.calories <= remainingCalories;
           return (
-            <li key={f.id}>
-              <button
-                onClick={() => onPick(f)}
-                className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left transition-colors hover:bg-surface-2"
-              >
-                <div className="min-w-0 flex-1">
-                  <div className="truncate text-sm font-medium">{foodLabel(f)}</div>
-                  <div className="tnum truncate text-xs text-muted">
-                    {round(f.macros.protein, 1)}g protein · {round(f.macros.calories)} kcal ·{" "}
-                    {round(proteinDensity(f.macros), 1)}g per 100 kcal
-                  </div>
+            <li key={f.id} className="flex items-center gap-3 px-2 py-2">
+              <div className="min-w-0 flex-1">
+                <div className="truncate text-sm font-medium">{foodLabel(f)}</div>
+                <div className="tnum truncate text-xs text-muted">
+                  {round(f.macros.protein, 1)}g protein · {round(f.macros.calories)} kcal ·{" "}
+                  {round(proteinDensity(f.macros), 1)}g per 100 kcal
                 </div>
-                <div className="shrink-0 text-right">
-                  <div
-                    className="tnum text-sm font-semibold"
-                    style={{ color: fits ? "var(--series-protein)" : "var(--status-serious)" }}
-                  >
-                    {Math.round(covers)}%
-                  </div>
-                  <div className="text-[10px] text-muted">of gap</div>
+              </div>
+              <div className="shrink-0 text-right">
+                <div
+                  className="tnum text-sm font-semibold"
+                  style={{ color: fits ? "var(--series-protein)" : "var(--status-serious)" }}
+                >
+                  {Math.round(covers)}%
                 </div>
-              </button>
+                {/* The percentage is the signal; colour only reinforces it,
+                    so the "doesn't fit" case says so in words too. */}
+                <div className="text-[10px] text-muted">
+                  {fits ? "of gap" : "over budget"}
+                </div>
+              </div>
             </li>
           );
         })}
       </ul>
-    </section>
-  );
-}
-
-export function QuickAdd({
-  foods,
-  onPick,
-  onManage,
-}: {
-  foods: Food[];
-  onPick: (food: Food) => void;
-  onManage: () => void;
-}) {
-  return (
-    <section>
-      <div className="mb-2 flex items-center gap-2">
-        <h2 className="text-[11px] font-semibold uppercase tracking-wide text-muted">
-          Quick add
-        </h2>
-        <button
-          onClick={onManage}
-          className="ml-auto text-xs font-medium text-muted hover:text-ink"
-        >
-          {foods.length === 0 ? "Pin favourites →" : "Manage →"}
-        </button>
-      </div>
-
-      {foods.length === 0 ? (
-        <p className="text-xs text-muted">
-          Star a food on the Foods page and it shows up here for one-tap logging.
-        </p>
-      ) : (
-        <div className="flex flex-wrap gap-1.5">
-          {foods.map((f) => (
-            <button
-              key={f.id}
-              onClick={() => onPick(f)}
-              className="group flex items-center gap-2 rounded-full border border-hairline bg-surface px-3 py-1.5 text-sm transition-colors hover:border-hairline-strong hover:bg-surface-2"
-            >
-              <span className="max-w-[180px] truncate font-medium">{foodLabel(f)}</span>
-              <span className="tnum text-xs text-muted">
-                {round(f.macros.protein)}g
-              </span>
-            </button>
-          ))}
-        </div>
-      )}
     </section>
   );
 }

@@ -38,8 +38,6 @@ export interface Food {
   note?: string;
   /** Search keywords beyond the name. */
   tags?: string[];
-  /** ISO timestamp — set for foods the user added themselves. */
-  createdAt?: string;
 }
 
 export type MealSlot = "breakfast" | "lunch" | "dinner" | "snack";
@@ -78,12 +76,6 @@ export interface LogEntry {
   /** Macros for ONE serving. Multiply by `servings` for the entry total. */
   macros: Macros;
   loggedAt: string; // ISO timestamp
-  /**
-   * Last edit, for sync. Absent on entries written before syncing existed, in
-   * which case `loggedAt` stands in — an entry never edited was last changed
-   * when it was logged.
-   */
-  updatedAt?: string;
 }
 
 export interface Goals {
@@ -101,34 +93,6 @@ export const DEFAULT_GOALS: Goals = {
   proteinMin: 160,
   proteinMax: 180,
   fiber: 30,
-};
-
-/** Everything persisted to localStorage, versioned for future migrations. */
-export interface AppData {
-  version: 1;
-  goals: Goals;
-  entries: LogEntry[];
-  /** Foods the user created, imported from the web, or got from Claude. */
-  customFoods: Food[];
-  /** Food ids pinned to the quick-add row. */
-  favorites: string[];
-  /**
-   * Entry id → when it was deleted. A delete has to be recorded rather than
-   * implied, or syncing with a device that still holds the entry reads as
-   * "they have something I lack" and puts it straight back.
-   */
-  deletions?: Record<string, string>;
-  /** Stamps for the two fields replaced wholesale rather than merged. */
-  goalsUpdatedAt?: string;
-  favoritesUpdatedAt?: string;
-}
-
-export const EMPTY_DATA: AppData = {
-  version: 1,
-  goals: DEFAULT_GOALS,
-  entries: [],
-  customFoods: [],
-  favorites: [],
 };
 
 export const ZERO_MACROS: Macros = {

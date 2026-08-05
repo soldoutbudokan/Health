@@ -1,5 +1,3 @@
-"use client";
-
 import { round } from "@/lib/nutrition";
 
 /**

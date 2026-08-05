@@ -1,0 +1,288 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import Link from "next/link";
+import type { Goals, LogEntry } from "@/lib/types";
+import {
+  addDays,
+  computeProgress,
+  entriesForDate,
+  loggedDates,
+  proteinPace,
+  rollingAverage,
+  round,
+  sumEntries,
+} from "@/lib/nutrition";
+import { formatDay, formatFullDay } from "@/lib/labels";
+import { BUILTIN_FOODS, suggestGapClosers } from "@/lib/search";
+import { CalorieRing, MacroSplit, ProteinRing } from "@/components/Meters";
+import { MealList } from "@/components/MealList";
+import { GapClosers, StatTile } from "@/components/StatTiles";
+import { TrendChart, type TrendPoint } from "@/components/TrendChart";
+
+interface Props {
+  /** The whole log, parsed from `data/log.csv` on the build machine. */
+  entries: LogEntry[];
+  goals: Goals;
+  /** Local calendar date of the build. Stands in for "today". */
+  builtOn: string;
+  /** Local hour of the build, 0–23. Only the protein pace reads it. */
+  builtHour: number;
+  /** Computed server-side, because `proteinStreak` reads the clock. */
+  streak: number;
+}
+
+const TREND_DAYS = 14;
+
+/**
+ * The dashboard. Every number on it is derived from props — there is no store,
+ * no fetch and no write path, and the only state is which day you are looking
+ * at.
+ *
+ * Nothing here reads the clock. "Today" is `builtOn`, threaded down from the
+ * server component, because a page pre-rendered on the build machine and then
+ * hydrated in a browser has to produce the same markup twice, and the clock is
+ * the one thing guaranteed to have moved in between. It is also the honest
+ * reading: this build cannot know about anything that happened after it.
+ */
+export function Dashboard({ entries, goals, builtOn, builtHour, streak }: Props) {
+  const dates = useMemo(() => loggedDates(entries), [entries]);
+
+  // Open on the newest day that has food in it. On a snapshot that is almost
+  // always the build day, and when it isn't — a rebuild triggered by a code
+  // change rather than a meal — landing on data beats landing on an empty day.
+  const [date, setDate] = useState(() => dates[0] ?? builtOn);
+
+  // Don't walk forward past the snapshot, or past the last logged day if the
+  // log somehow runs ahead of the build.
+  const horizon = dates[0] && dates[0] > builtOn ? dates[0] : builtOn;
+  const atHorizon = date >= horizon;
+  const isSnapshotDay = date === builtOn;
+
+  const dayEntries = useMemo(() => entriesForDate(entries, date), [entries, date]);
+  const totals = useMemo(() => sumEntries(dayEntries), [dayEntries]);
+  const progress = useMemo(() => computeProgress(totals, goals), [totals, goals]);
+
+  /**
+   * `proteinPace` only reads `getHours()`, so a date carrying the build hour
+   * and nothing else gives both renders the same answer. The pace is therefore
+   * "as of when this snapshot was taken", which is the only sense it can have.
+   */
+  const pace = useMemo(
+    () => proteinPace(totals, goals, new Date(2000, 0, 1, builtHour)),
+    [totals, goals, builtHour],
+  );
+
+  const gapClosers = useMemo(
+    () =>
+      suggestGapClosers(
+        BUILTIN_FOODS,
+        progress.protein.toMin,
+        progress.calories.remaining,
+      ),
+    [progress.protein.toMin, progress.calories.remaining],
+  );
+
+  const trend = useMemo(() => {
+    const cal: TrendPoint[] = [];
+    const prot: TrendPoint[] = [];
+    for (let i = TREND_DAYS - 1; i >= 0; i--) {
+      const d = addDays(date, -i);
+      const es = entriesForDate(entries, d);
+      const t = sumEntries(es);
+      cal.push({ date: d, value: t.calories, logged: es.length > 0 });
+      prot.push({ date: d, value: t.protein, logged: es.length > 0 });
+    }
+    return { cal, prot };
+  }, [entries, date]);
+
+  const { avg: avg7, loggedDays: logged7 } = useMemo(
+    () => rollingAverage(entries, date, 7),
+    [entries, date],
+  );
+
+  return (
+    <div className="space-y-6">
+      {/* Date bar — navigation only. Nothing on this page changes the log. */}
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          onClick={() => setDate(addDays(date, -1))}
+          aria-label="Previous day"
+          className="rounded-lg border border-hairline px-2.5 py-1.5 text-ink-2 hover:bg-surface-2"
+        >
+          ‹
+        </button>
+        <h1 className="text-lg font-semibold">{formatDay(date, builtOn)}</h1>
+        <button
+          onClick={() => setDate(addDays(date, 1))}
+          disabled={atHorizon}
+          aria-label="Next day"
+          className="rounded-lg border border-hairline px-2.5 py-1.5 text-ink-2 hover:bg-surface-2 disabled:opacity-30"
+        >
+          ›
+        </button>
+        {!isSnapshotDay && (
+          <button
+            onClick={() => setDate(builtOn)}
+            className="rounded-lg px-2 py-1.5 text-sm font-medium text-protein hover:bg-surface-2"
+          >
+            Today
+          </button>
+        )}
+
+        {/* Stepping a day at a time is fine for a run of consecutive days and
+            useless for a log with gaps in it, so the logged days are also a
+            list you can jump straight into. */}
+        {dates.length > 1 && (
+          <label className="ml-auto flex items-center gap-1.5 text-xs text-muted">
+            Jump to
+            <select
+              value={dates.includes(date) ? date : ""}
+              onChange={(e) => e.target.value && setDate(e.target.value)}
+              className="rounded-lg border border-hairline bg-surface-2 px-2 py-1.5 text-xs text-ink outline-none"
+            >
+              {!dates.includes(date) && (
+                <option value="">{formatDay(date, builtOn)} · nothing logged</option>
+              )}
+              {dates.map((d) => (
+                <option key={d} value={d}>
+                  {formatDay(d, builtOn)}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+      </div>
+
+      {/* Hero meters */}
+      <section className="card p-5">
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:justify-around">
+          <CalorieRing consumed={totals.calories} goal={goals.calories} />
+          <ProteinRing
+            consumed={totals.protein}
+            min={goals.proteinMin}
+            max={goals.proteinMax}
+          />
+        </div>
+        <div className="mt-5 border-t border-hairline pt-4">
+          <MacroSplit
+            protein={totals.protein}
+            carbs={totals.carbs}
+            fat={totals.fat}
+          />
+        </div>
+      </section>
+
+      {/* KPI row */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {isSnapshotDay ? (
+          <StatTile
+            label="Protein pace"
+            value={progress.protein.toMin === 0 ? "Done" : `${round(pace.perMeal)}g`}
+            unit={progress.protein.toMin === 0 ? undefined : "/ meal"}
+            hint={pace.label}
+            tone={progress.protein.toMin === 0 ? "good" : "neutral"}
+          />
+        ) : (
+          /* Pacing a day that is already over is meaningless, so a finished
+             day reports what it finished on instead. */
+          <StatTile
+            label="Protein result"
+            value={progress.protein.toMin === 0 ? "Met" : `${round(progress.protein.toMin)}g`}
+            unit={progress.protein.toMin === 0 ? undefined : "short"}
+            hint={`Finished on ${round(totals.protein)}g of ${goals.proteinMin}g`}
+            tone={progress.protein.toMin === 0 ? "good" : "neutral"}
+          />
+        )}
+        <StatTile
+          label="Protein streak"
+          value={streak}
+          unit={streak === 1 ? "day" : "days"}
+          hint={
+            streak === 0
+              ? `Hit ${goals.proteinMin}g to start one`
+              : "Consecutive days at target"
+          }
+          tone={streak >= 3 ? "good" : "neutral"}
+        />
+        <StatTile
+          label="Avg kcal · 7d"
+          value={logged7 > 0 ? round(avg7.calories).toLocaleString() : "—"}
+          hint={
+            logged7 > 0
+              ? `Over ${logged7} logged day${logged7 === 1 ? "" : "s"} · target ${goals.calories.toLocaleString()}`
+              : "No days logged yet"
+          }
+          tone={
+            logged7 > 0 && Math.abs(avg7.calories - goals.calories) <= 200
+              ? "good"
+              : "neutral"
+          }
+        />
+        <StatTile
+          label="Avg protein · 7d"
+          value={logged7 > 0 ? round(avg7.protein) : "—"}
+          unit={logged7 > 0 ? "g" : undefined}
+          hint={
+            logged7 > 0
+              ? `Over ${logged7} logged day${logged7 === 1 ? "" : "s"} · target ${goals.proteinMin}–${goals.proteinMax}g`
+              : "No days logged yet"
+          }
+          tone={logged7 > 0 && avg7.protein >= goals.proteinMin ? "good" : "neutral"}
+        />
+      </div>
+
+      {/* Gap closers — only when there's actually a gap to close. */}
+      {progress.protein.toMin > 0 && dayEntries.length > 0 && (
+        <GapClosers
+          foods={gapClosers}
+          needProtein={progress.protein.toMin}
+          remainingCalories={progress.calories.remaining}
+        />
+      )}
+
+      <MealList entries={dayEntries} />
+
+      {dayEntries.length === 0 && (
+        <div className="card p-8 text-center">
+          <p className="text-sm text-ink-2">
+            Nothing logged for {formatDay(date, builtOn).toLowerCase()}.
+          </p>
+          <p className="mx-auto mt-2 max-w-md text-xs leading-relaxed text-muted">
+            {dates.length === 0
+              ? "The log is empty. It lives in data/log.csv — once there are rows in it, this page fills in on the next build."
+              : "Days are added by editing data/log.csv and pushing; the site rebuilds from the file."}
+          </p>
+        </div>
+      )}
+
+      {/* Trends — two charts, never one with two y-axes. */}
+      <div className="grid gap-3 sm:grid-cols-2">
+        <TrendChart
+          title={`Calories · last ${TREND_DAYS} days`}
+          unit="kcal"
+          points={trend.cal}
+          color="var(--series-carbs)"
+          today={builtOn}
+          goal={goals.calories}
+        />
+        <TrendChart
+          title={`Protein · last ${TREND_DAYS} days`}
+          unit="g"
+          points={trend.prot}
+          color="var(--series-protein)"
+          today={builtOn}
+          band={{ min: goals.proteinMin, max: goals.proteinMax }}
+        />
+      </div>
+
+      <p className="pb-2 text-center text-xs leading-relaxed text-muted">
+        <Link href="/history" className="hover:text-ink">
+          Full history &amp; export →
+        </Link>
+        <br />
+        <span>Read-only snapshot of {formatFullDay(builtOn)}.</span>
+      </p>
+    </div>
+  );
+}

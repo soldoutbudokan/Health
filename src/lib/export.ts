@@ -1,99 +1,22 @@
-import type { AppData, LogEntry, Macros } from "./types";
+import type { Goals, LogEntry, Macros } from "./types";
 import {
   entriesForDate,
   entryMacros,
-  formatDateKey,
   loggedDates,
   round,
   sumEntries,
 } from "./nutrition";
-
-function csvCell(v: string | number | undefined): string {
-  if (v === undefined) return "";
-  const s = String(v);
-  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-}
+import { formatDay } from "./labels";
 
 /**
- * One row per logged item, with the day's totals repeated is *not* done here —
- * totals are their own rows at the end so the file imports cleanly into a
- * spreadsheet or another tracker without duplicate-counting.
+ * Exports are pure functions of the entries, which is why they survived the
+ * move to a build-time log: nothing here reads or writes state.
+ *
+ * There is no CSV export any more. `data/log.csv` in the repo *is* the CSV —
+ * a download that reproduced it would be a copy that could disagree with the
+ * original. There is no JSON backup either: the log is a committed file, and
+ * git is a better backup than a file in your downloads folder.
  */
-export function toCSV(entries: LogEntry[]): string {
-  const header = [
-    "date",
-    "meal",
-    "food",
-    "variant",
-    "brand",
-    "serving",
-    "servings",
-    "calories",
-    "protein_g",
-    "carbs_g",
-    "fat_g",
-    "fiber_g",
-    "sugar_g",
-    "sodium_mg",
-    "source",
-    "logged_at",
-  ];
-
-  const rows = [...entries]
-    .sort((a, b) => a.date.localeCompare(b.date) || a.loggedAt.localeCompare(b.loggedAt))
-    .map((e) => {
-      const m = entryMacros(e);
-      return [
-        e.date,
-        e.slot,
-        e.name,
-        e.variant ?? "",
-        e.brand ?? "",
-        e.per,
-        round(e.servings, 2),
-        round(m.calories),
-        round(m.protein, 1),
-        round(m.carbs, 1),
-        round(m.fat, 1),
-        m.fiber ? round(m.fiber, 1) : "",
-        m.sugar ? round(m.sugar, 1) : "",
-        m.sodium ? round(m.sodium) : "",
-        e.source,
-        e.loggedAt,
-      ].map(csvCell).join(",");
-    });
-
-  return [header.join(","), ...rows].join("\n");
-}
-
-/** Day-level CSV — one row per day. What most trackers actually want. */
-export function toDailyCSV(entries: LogEntry[]): string {
-  const header = [
-    "date",
-    "calories",
-    "protein_g",
-    "carbs_g",
-    "fat_g",
-    "fiber_g",
-    "items",
-  ];
-  const rows = loggedDates(entries)
-    .sort()
-    .map((date) => {
-      const dayEntries = entriesForDate(entries, date);
-      const m = sumEntries(dayEntries);
-      return [
-        date,
-        round(m.calories),
-        round(m.protein, 1),
-        round(m.carbs, 1),
-        round(m.fat, 1),
-        round(m.fiber ?? 0, 1),
-        dayEntries.length,
-      ].join(",");
-    });
-  return [header.join(","), ...rows].join("\n");
-}
 
 function macroLine(m: Macros): string {
   const parts = [
@@ -106,8 +29,11 @@ function macroLine(m: Macros): string {
   return parts.join(" · ");
 }
 
-export function toMarkdown(data: AppData): string {
-  const { entries, goals } = data;
+export function toMarkdown(
+  entries: LogEntry[],
+  goals: Goals,
+  today: string,
+): string {
   const dates = loggedDates(entries);
 
   const lines: string[] = [
@@ -125,7 +51,7 @@ export function toMarkdown(data: AppData): string {
     const hitProtein = totals.protein >= goals.proteinMin;
     const kcalDelta = totals.calories - goals.calories;
 
-    lines.push(`## ${formatDateKey(date)} — ${date}`, "");
+    lines.push(`## ${formatDay(date, today)} — ${date}`, "");
     lines.push(`**${macroLine(totals)}**`, "");
     lines.push(
       `- Calories: ${round(totals.calories)} / ${goals.calories} (${kcalDelta >= 0 ? "+" : ""}${round(kcalDelta)})`,
@@ -228,10 +154,6 @@ export function toAppleHealthXML(entries: LogEntry[]): string {
     ...records,
     "</HealthData>",
   ].join("\n");
-}
-
-export function toJSON(data: AppData): string {
-  return JSON.stringify(data, null, 2);
 }
 
 export function download(filename: string, content: string, mime: string) {
