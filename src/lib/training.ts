@@ -428,6 +428,42 @@ export function latestBodyweight(points: BodyweightPoint[]): number | undefined 
   return points.length > 0 ? points[points.length - 1].lbs : undefined;
 }
 
+export interface DailyBurn {
+  date: string;
+  kcal: number;
+  /** False when no session was logged that day — missing, not a rest at 0. */
+  logged: boolean;
+}
+
+/**
+ * Estimated burn per day over the `days` ending on `endDate`, for charting.
+ * A day can hold more than one session (a gym day plus basketball); each is
+ * estimated on its own sets — or on all of the day's sets when the session
+ * column doesn't attribute them — and summed.
+ */
+export function dailyBurnSeries(
+  sessions: Session[],
+  sets: WorkoutSet[],
+  bodyweightLbs: number | undefined,
+  endDate: string,
+  days: number,
+): DailyBurn[] {
+  const out: DailyBurn[] = [];
+  for (let i = days - 1; i >= 0; i--) {
+    const date = addDays(endDate, -i);
+    const daySessions = sessions.filter((s) => s.date === date);
+    const daySets = sessionSets(sets, date);
+    let kcal = 0;
+    for (const s of daySessions) {
+      const own = daySets.filter((x) => x.session === s.type);
+      const burn = estimatedBurn(s, own.length > 0 ? own : daySets, bodyweightLbs);
+      kcal += burn?.kcal ?? 0;
+    }
+    out.push({ date, kcal, logged: daySessions.length > 0 });
+  }
+  return out;
+}
+
 /* ------------------------------------------------ comparison with the plan */
 
 export type PlanVerdict = "met" | "short" | "over" | "missing" | "extra" | "skipped";

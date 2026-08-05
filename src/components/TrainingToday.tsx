@@ -1,15 +1,12 @@
 import Link from "next/link";
-import { addDays, round } from "@/lib/nutrition";
+import { round } from "@/lib/nutrition";
+import { addDays } from "@/lib/nutrition";
 import { formatDay } from "@/lib/labels";
 import {
   bodyweightSeries,
-  comparePlan,
-  estimatedBurn,
+  dailyBurnSeries,
   gymSessionsIn,
   latestBodyweight,
-  latestSession,
-  planFor,
-  sessionSets,
   weekStrip,
   weeksSinceDeload,
 } from "@/lib/training";
@@ -19,19 +16,20 @@ import type {
   TrainingBreak,
   WorkoutSet,
 } from "@/lib/trainingTypes";
-import { SessionCard } from "@/components/SessionCard";
-import { PlanCheck } from "@/components/PlanCheck";
 import { WeekStrip } from "@/components/WeekStrip";
 import { BodyweightChart } from "@/components/BodyweightChart";
+import { TrendChart } from "@/components/TrendChart";
 
 /**
- * The training half of the dashboard: the same week strip, latest session and
- * plan check that lead `/training`, sitting beside the day's food because the
- * two halves are equally important and neither should be a page away.
- *
- * Server component — everything here is a static read of committed files, so
- * it ships as HTML with no state at all.
+ * The training half of the dashboard, and deliberately *historical*: the
+ * morning check-in, the week strip, estimated burn per day and bodyweight over
+ * time. No session card here — a session card beside a column headed "Today"
+ * reads as today's schedule no matter how it's labelled, and the site never
+ * schedules. The full detail of the latest session lives on /training.
  */
+
+/** Matches the nutrition trends next door. */
+const BURN_DAYS = 14;
 
 /** "23:00" → "11:00 pm". The file stores a local 24-hour clock. */
 function formatClock(hhmm: string): string {
@@ -106,11 +104,6 @@ export function TrainingToday({
   checkins: Checkin[];
   today: string;
 }) {
-  const latest = latestSession(sessions);
-  const latestSets = latest ? sessionSets(sets, latest.date) : [];
-  const plan = planFor(latest);
-  const planLines = plan ? comparePlan(plan, latestSets) : [];
-
   const week = weekStrip(sessions, breaks, today);
   const gymThisWeek = gymSessionsIn(sessions, addDays(today, -6), today);
   const sinceDeload = weeksSinceDeload(sessions, today);
@@ -121,6 +114,13 @@ export function TrainingToday({
   const checkin = newest && newest.date >= addDays(today, -6) ? newest : undefined;
 
   const bodyweight = bodyweightSeries(checkins, sessions);
+  const burn = dailyBurnSeries(
+    sessions,
+    sets,
+    latestBodyweight(bodyweight),
+    today,
+    BURN_DAYS,
+  ).map((d) => ({ date: d.date, value: d.kcal, logged: d.logged }));
 
   return (
     <div className="space-y-6">
@@ -136,10 +136,6 @@ export function TrainingToday({
 
       {checkin && <CheckinCard checkin={checkin} today={today} />}
 
-      {bodyweight.length > 0 && (
-        <BodyweightChart points={bodyweight} today={today} height={110} />
-      )}
-
       <WeekStrip
         week={week}
         gymThisWeek={gymThisWeek}
@@ -147,29 +143,19 @@ export function TrainingToday({
         today={today}
       />
 
-      {latest ? (
-        <>
-          {/* Labelled explicitly because this column sits beside "Today":
-              without it, yesterday's session reads as today's schedule — and
-              the site never schedules, it only records. */}
-          <div>
-            <h2 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted">
-              Last logged session · {formatDay(latest.date, today)}
-            </h2>
-            <SessionCard
-              session={latest}
-              sets={latestSets}
-              today={today}
-              burn={estimatedBurn(latest, latestSets, latestBodyweight(bodyweight))}
-            />
-          </div>
-          {plan && <PlanCheck plan={plan} lines={planLines} />}
-        </>
-      ) : (
-        <p className="card p-8 text-center text-sm text-muted">
-          No sessions logged yet. Tell Claude Code what you lifted and it lands
-          in <code>data/workouts.csv</code>.
-        </p>
+      {/* Historical, like the nutrition trends next door. Burn is an estimate
+          (METs × bodyweight × duration), hence the ≈ in the title; an empty
+          slot is a day with no session logged, not a rest burned at zero. */}
+      <TrendChart
+        title={`≈ Calories burned · last ${BURN_DAYS} days`}
+        unit="kcal"
+        points={burn}
+        color="var(--series-protein)"
+        today={today}
+      />
+
+      {bodyweight.length > 0 && (
+        <BodyweightChart points={bodyweight} today={today} height={130} />
       )}
     </div>
   );
