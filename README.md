@@ -1,5 +1,7 @@
 # Health
 
+**Live at [soldoutbudokan.github.io/Health](https://soldoutbudokan.github.io/Health/).**
+
 Two logs on one site, because they answer the same question from different ends.
 
 **Nutrition** — a daily calorie and protein tracker built around one specific
@@ -137,14 +139,18 @@ src/
 ├─ app/
 │  ├─ page.tsx              Server: reads the log, renders the dashboard
 │  ├─ history/page.tsx      Server: reads the log, renders history
-│  └─ foods/page.tsx        Client: catalog browser
+│  ├─ foods/page.tsx        Client: catalog browser
+│  ├─ training/page.tsx     Server: reads the three training files
+│  └─ program/page.tsx      Server: the plan in code plus the archived spreadsheet
 ├─ components/
+│  ├─ Nav.tsx               The site's navigation
 │  ├─ Dashboard.tsx         Client: day selection, rings, KPIs, meals, trends
 │  ├─ History.tsx           Client: range selector, daily table, export
 │  ├─ Meters.tsx            Rings and the macro split — presentational
 │  ├─ MealList.tsx          The day's log grouped by meal — presentational
 │  ├─ StatTiles.tsx         KPI tiles and the gap-closer panel
-│  └─ TrendChart.tsx        Client: bar chart with hover/tap readout
+│  ├─ TrendChart.tsx        Client: bar chart with hover/tap readout
+│  ├─ SourceBadge.tsx       The provenance badge every food carries
 │  ├─ SessionCard.tsx       A workout laid out the way you'd describe it
 │  ├─ PlanCheck.tsx         That session against the day it was meant to be
 │  ├─ GoalPace.tsx          Six goals against a line to December 31st
@@ -247,7 +253,8 @@ a CSV — Health Connect, Cronometer, MyFitnessPal — point it at `data/log.csv
 ## Deploying
 
 It builds to a folder of static files, so any file host will serve it. It is
-configured for **GitHub Pages**. `.github/workflows/deploy.yml` builds on every
+configured for **GitHub Pages** and published at
+**<https://soldoutbudokan.github.io/Health/>**. `.github/workflows/deploy.yml` builds on every
 push to `main` and publishes `out/`, dropping a `.nojekyll` marker so the
 `_next` asset directory survives (Jekyll strips paths beginning with an
 underscore). Pages must be enabled with **GitHub Actions** as the source.
@@ -263,8 +270,9 @@ Two things in `next.config.ts` matter:
 
 None. There is no server, so there is nowhere to keep a secret — anything in
 `.env` would be compiled into the bundle and readable by anyone with access to
-the site. The privacy model is the private repo plus Cloudflare Access, not a
-credential the browser holds.
+the site. There is also nothing to guard: the repo and the site are public by
+design (see *On privacy*), so the rule is not "hide the data" but "don't log
+anything that shouldn't be world-readable".
 
 ---
 
