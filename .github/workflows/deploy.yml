@@ -54,3 +54,12 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # The action defaults to giving up after 10 minutes. On August 6,
+          # 2026 two runs in a row hit that ceiling while Pages was backed up —
+          # the first stuck in deployment_queued, the second killed part-way
+          # through deployment_in_progress, which cancels a publish that was
+          # otherwise working. Thirty minutes rides out a slow day. A deploy
+          # taking this long is a Pages problem, not a build problem: check
+          # whether the build job passed before touching anything here.
+          timeout: 1800000
