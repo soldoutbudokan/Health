@@ -45,6 +45,20 @@ jobs:
         with:
           path: ./out
 
+      # A publish can fail with a perfectly good build behind it — Pages spent
+      # the afternoon of August 6, 2026 doing exactly that, and the log sat
+      # correct on main with no way to look at it. The snapshot rides along on
+      # every run, so a red deploy still leaves one downloadable file that
+      # opens offline. It is not part of the Pages artifact: it lives at the
+      # repo root, not in out/, and the site has no need of a copy of itself.
+      - name: Build the offline snapshot
+        run: node scripts/snapshot.mjs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: snapshot
+          path: snapshot.html
+
   deploy:
     needs: build
     runs-on: ubuntu-latest

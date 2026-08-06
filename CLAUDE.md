@@ -233,6 +233,41 @@ its entry's `carbs`.
 from `docs/irl-cdtw.xlsx`; if that file is ever updated, regenerate them rather than
 hand-editing the CSVs.
 
+## When the site is up but unreachable
+
+```bash
+npm run snapshot       # build, then fold out/ into one file: snapshot.html
+```
+
+All five pages in a single self-contained HTML file — no server, no network, opens
+offline. Every deploy uploads one as a downloadable `snapshot` artifact too, so a
+failed publish still leaves something you can look at.
+
+It exists because a push landing correctly on `main` doesn't mean anyone can see it.
+GitHub Pages spent the afternoon of August 6, 2026 aborting the publish step at its
+hard ten-minute ceiling while every build passed; the log was right the whole time
+and simply invisible.
+
+**The snapshot recomputes nothing.** `scripts/snapshot.mjs` inlines the stylesheet,
+drops the JavaScript and stitches the exported pages together — every number in it
+was rendered by the real app during `next build`. Keep it that way. A snapshot that
+did its own arithmetic would be a second implementation of the maths, which is the
+same mistake as a second copy of the log. If a figure is wrong in the snapshot, it
+is wrong on the site.
+
+Day-stepping, the theme toggle and the food search do nothing in it, because the
+pages are frozen at their pre-rendered state. Those controls are marked `disabled`
+rather than left looking clickable. Dark mode still works — it's a CSS media query,
+not JavaScript.
+
+`snapshot.html` is gitignored. It's derived from `data/*.csv`, and committing it
+would put a second copy of the log in the repo.
+
+**Don't raise the timeout in `deploy.yml` to fix a slow Pages day.** It looks like
+the fix and isn't — `actions/deploy-pages` clamps the value to its 600,000 ms
+maximum and logs that it did. That was tried on August 6, 2026 and cost a run to
+disprove; the comment in the workflow records it.
+
 ## History, so nobody re-litigates it
 
 This app has been through three storage designs. It briefly synced through a private
