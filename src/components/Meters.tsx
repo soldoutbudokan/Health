@@ -146,7 +146,7 @@ export function CalorieRing({
   const over = remaining < 0;
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex min-w-0 flex-col items-center gap-2">
       <Ring
         value={pct}
         color="var(--series-carbs)"
@@ -161,7 +161,7 @@ export function CalorieRing({
           </div>
         </div>
       </Ring>
-      <p className="text-sm text-ink-2">
+      <p className="text-center text-sm text-ink-2">
         {over ? (
           <>
             <span className="font-semibold text-critical">
@@ -200,7 +200,7 @@ export function ProteinRing({
   const status = consumed < min ? "under" : consumed > max ? "over" : "in";
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex min-w-0 flex-col items-center gap-2">
       <Ring
         value={pct}
         color="var(--series-protein)"
@@ -218,7 +218,7 @@ export function ProteinRing({
           </div>
         </div>
       </Ring>
-      <p className="flex items-center gap-1.5 text-sm text-ink-2">
+      <p className="flex flex-wrap items-center justify-center gap-1.5 text-center text-sm text-ink-2">
         {status === "under" ? (
           <>
             <span aria-hidden>↑</span>

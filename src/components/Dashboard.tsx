@@ -164,7 +164,10 @@ export function Dashboard({
 
       {/* Hero meters */}
       <section className="card p-5">
-        <div className="flex flex-wrap items-center justify-center gap-8 sm:justify-around">
+        {/* A narrower gap on phones is what keeps the two rings side by side
+            there; at gap-8 the pair no longer fits 430 px and wraps into a
+            column twice as tall. */}
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-around sm:gap-8">
           <CalorieRing consumed={totals.calories} goal={goals.calories} />
           <ProteinRing
             consumed={totals.protein}

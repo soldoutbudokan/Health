@@ -81,8 +81,11 @@ export function Nav() {
 
         {/* Five links no longer fit a narrow phone. Scrolling the strip keeps
             every destination reachable without collapsing them behind a menu
-            that costs a tap to open. */}
-        <nav className="-mx-1 flex min-w-0 flex-1 items-center gap-1 overflow-x-auto px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            that costs a tap to open — but a link sheared off mid-word reads as
+            a broken layout, not as "there is more this way", so the right edge
+            fades. Where the links already fit, the fade lands on empty space
+            and shows nothing. */}
+        <nav className="-mx-1 flex min-w-0 flex-1 items-center gap-1 overflow-x-auto px-1 [mask-image:linear-gradient(to_right,#000_calc(100%-32px),transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {LINKS.map((l) => {
             const active = pathname === l.href;
             return (

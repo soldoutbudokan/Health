@@ -44,25 +44,34 @@ export function TodayView({
   // change rather than a meal — landing on data beats landing on an empty day.
   const [date, setDate] = useState(() => loggedDates(entries)[0] ?? builtOn);
 
+  // `min-w-0` on each column is load-bearing, not tidying. A grid item defaults
+  // to `min-width: auto`, so it refuses to shrink below its widest unbreakable
+  // content — a set chip like "260 × 5", a week-strip tick — and instead widens
+  // its track. On a 430 px phone that made both columns 466 px and scrolled the
+  // whole page sideways, including the header.
   return (
     <div className="grid items-start gap-6 lg:grid-cols-2">
-      <Dashboard
-        entries={entries}
-        goals={goals}
-        builtOn={builtOn}
-        builtHour={builtHour}
-        streak={streak}
-        date={date}
-        onDateChange={setDate}
-      />
-      <TrainingDay
-        sets={sets}
-        sessions={sessions}
-        breaks={breaks}
-        checkins={checkins}
-        date={date}
-        today={builtOn}
-      />
+      <div className="min-w-0">
+        <Dashboard
+          entries={entries}
+          goals={goals}
+          builtOn={builtOn}
+          builtHour={builtHour}
+          streak={streak}
+          date={date}
+          onDateChange={setDate}
+        />
+      </div>
+      <div className="min-w-0">
+        <TrainingDay
+          sets={sets}
+          sessions={sessions}
+          breaks={breaks}
+          checkins={checkins}
+          date={date}
+          today={builtOn}
+        />
+      </div>
     </div>
   );
 }
