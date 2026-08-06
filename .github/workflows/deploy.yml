@@ -52,14 +52,15 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Don't try to raise the timeout here. On August 6, 2026 three runs in a
+      # row aborted at ten minutes while Pages was degraded — one stuck in
+      # deployment_queued, two killed part-way through deployment_in_progress,
+      # each one cancelling a publish that was otherwise working. Passing
+      # `timeout: 1800000` looks like the fix and isn't: the action clamps it
+      # and logs "timeout value is greater than the allowed maximum - timeout
+      # set to the maximum of 600000 milliseconds". Ten minutes is a hard
+      # ceiling in deploy-pages, so a slow Pages day cannot be waited out from
+      # this file. If the build job passed and this one didn't, nothing in the
+      # repo is broken — re-run the workflow once Pages recovers.
       - id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          # The action defaults to giving up after 10 minutes. On August 6,
-          # 2026 two runs in a row hit that ceiling while Pages was backed up —
-          # the first stuck in deployment_queued, the second killed part-way
-          # through deployment_in_progress, which cancels a publish that was
-          # otherwise working. Thirty minutes rides out a slow day. A deploy
-          # taking this long is a Pages problem, not a build problem: check
-          # whether the build job passed before touching anything here.
-          timeout: 1800000
