@@ -170,9 +170,31 @@ estimate from a photo deserve different trust. Every food in `src/data/` carries
 within about 10% of the stated calories. Every entry in this catalog passes; if
 yours doesn't, you've misread a label. Fibre counts inside carbs here.
 
-**Leave a value blank rather than guessing it.** Several recipes deliberately have
+**Leave a value blank rather than guessing it.** Three recipes deliberately have
 no sodium because they specify "salt to taste" and any figure would be invention.
 A made-up number reads as authoritative and is worse than an absent one.
+
+**But a column that is blank half the time answers nothing.** The rule above was
+read too widely until August 8, 2026, and had left sodium missing on 23 of 42 log
+rows — including Grenade bars and whey shakes, which have a printed panel, and one
+row whose figure was already sitting in `recipes.ts` and simply hadn't been copied
+across. None of that was "refusing to guess", it was just unfinished, and it made
+every daily total a floor of unknown depth. Sodium is now carried on every log row.
+
+The rule still holds where it was actually earning its keep. What stays blank:
+`recipe-chicken-stock`, `recipe-paneer-bhurji` and
+`recipe-parmesan-roasted-potatoes`, which salt to taste; and the staples that are
+bought near-zero but reach the plate cooked and salted — rice, oats, eggs,
+almonds, olive oil (see the header comment in `staples.ts`). For those the
+as-bought figure would be a floor dressed as a total, which is the same failure in
+a different costume.
+
+Where a number had to be estimated — restaurant and catered food, mostly — the
+entry's `note` carries the band and says what drives it, e.g. the Pantry plate is
+±40%. An estimate with its error bar stated is a different object from a guess
+presented as a reading, and only the second one is the thing this rule forbids.
+Sodium bands are wider than calorie bands for the same dish: a portion can be
+eyeballed, a sauce cannot.
 
 **Dates are local, never UTC.** `toDateKey()` in `src/lib/nutrition.ts` exists
 because `toISOString()` shifts the day for anyone behind UTC. Don't reintroduce it.
