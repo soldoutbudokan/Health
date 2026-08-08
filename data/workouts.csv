@@ -39,3 +39,19 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-05-09,2026-08-05,heavy-lower,Lying hamstring curl,isolation,1,8,110,,,,logged
 2026-08-05-10,2026-08-05,heavy-lower,Lying hamstring curl,isolation,2,5,110,,,,logged
 2026-08-05-11,2026-08-05,heavy-lower,Sled,finisher,1,,,7,,,logged
+2026-08-08-01,2026-08-08,light-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-08-08-02,2026-08-08,light-upper,Pullups,compound,1,5,,,8.5,"1-2 RIR on all three sets. Third set of the session rather than the programmed two, to carry the pulling volume dropped when the cable row was cut for the back.",logged
+2026-08-08-03,2026-08-08,light-upper,Pullups,compound,2,5,,,8.5,,logged
+2026-08-08-04,2026-08-08,light-upper,Pullups,compound,3,5,,,8.5,,logged
+2026-08-08-05,2026-08-08,light-upper,Bench press,compound,1,8,135,,8,"REPS ASSUMED. Only ""3 sets at 135"" was stated; recorded as the prescribed 3 x 8 because the weight matched the prescription exactly. Correct this row if it was not 8s -- bench is the tracked lift and a wrong rep count here corrupts the progression line.",logged
+2026-08-08-06,2026-08-08,light-upper,Bench press,compound,2,8,135,,8,"Reps assumed, as set 1.",logged
+2026-08-08-07,2026-08-08,light-upper,Bench press,compound,3,8,135,,9,"Reps assumed, as set 1. RPE 9 reads ""2 RIR every set except the last one"" as the last set being the hard one; flip this to 7 if it was the easy one instead.",logged
+2026-08-08-08,2026-08-08,light-upper,Standing curl,isolation,1,6,30,,,"Substituted for the programmed preacher curl -- benches were taken. Implement not stated, so this is 30 lbs as reported and not necessarily comparable to the 25 lbs logged for preacher curl on Aug 4.",logged
+2026-08-08-09,2026-08-08,light-upper,Standing curl,isolation,2,6,30,,,,logged
+2026-08-08-10,2026-08-08,light-upper,Standing Y raise,isolation,1,10,15,,,"Standing with 15 lb dumbbells rather than the programmed seated 20 -- benches and the 20s were both taken.",logged
+2026-08-08-11,2026-08-08,light-upper,Standing Y raise,isolation,2,10,15,,,,logged
+2026-08-08-12,2026-08-08,light-upper,Dips,isolation,1,10,,,,"Reported easy, so the full programmed 10 was taken. First time at 10 in the logged era -- Aug 4 was 7.",logged
+2026-08-08-13,2026-08-08,light-upper,Lat pulldown,compound,1,8,110,,,"First lat pulldown in the log, so this is a baseline rather than a progression.",logged
+2026-08-08-14,2026-08-08,light-upper,Lat pulldown,compound,2,8,110,,,,logged
+2026-08-08-15,2026-08-08,light-upper,Cable fly,isolation,1,6,35,,,"Deliberately light.",logged
+2026-08-08-16,2026-08-08,light-upper,Cable fly,isolation,2,6,35,,,,logged
