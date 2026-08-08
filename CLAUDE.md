@@ -145,11 +145,11 @@ for the reasoning; if the two disagree, the document wins and the file is stale.
 
 ## Before inventing a food, check the catalog
 
-59 entries live in `src/data/`, and reusing one keeps the numbers consistent:
+60 entries live in `src/data/`, and reusing one keeps the numbers consistent:
 
 | File | What's in it |
 |---|---|
-| `recipes.ts` | 34 entries from the [Templates](https://github.com/soldoutbudokan/Templates/tree/master/Recipes) recipes, one per serving-suggestion column |
+| `recipes.ts` | 35 entries from the [Templates](https://github.com/soldoutbudokan/Templates/tree/master/Recipes) recipes, one per serving-suggestion column |
 | `staples.ts` | 21 staples plus packaged goods (bars, shakes, the Starbucks latte) |
 | `pantry.ts` | 4 components of the Toronto catered plate |
 

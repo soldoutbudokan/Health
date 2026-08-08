@@ -104,6 +104,15 @@ export const RECIPE_FOODS: Food[] = [
     tags: ["enchiladas", "mexican", "dinner", "bake"],
   },
   {
+    id: "recipe-egg-burrito",
+    name: "Egg Burrito",
+    source: "recipe",
+    per: "1 burrito (whole recipe)",
+    macros: { calories: 470, protein: 21, carbs: 38, fat: 24, fiber: 2, sodium: 950 },
+    note: "Single-serving recipe — the whole thing is one burrito. Upstream gives a calorie range (450–490 kcal); midpoint used, as with the beef burrito. Fibre and sodium estimated from the ingredient list: a ~65 g flour tortilla, sized from the stated carbs, carries nearly all the fibre (~2 g) and ~470 mg of the sodium, plus 2 large eggs (~140 mg), ~15 g marble cheese (~90 mg) and 1 tbsp salsa (~100 mg). The recipe's \"pinch of salt\" is the least certain input, taken as ~1/16 tsp (~150 mg). Upstream notes that the cheese, the oil the eggs soak up and tortilla size (80–100 kcal between a 10\" and a 12\") move the calories most.",
+    tags: ["burrito", "egg", "breakfast", "mexican"],
+  },
+  {
     id: "recipe-egg-fried-rice",
     name: "Egg Fried Rice",
     source: "recipe",
