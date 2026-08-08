@@ -328,8 +328,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "stew only",
     source: "recipe",
     per: "1 serving (1/6 recipe)",
-    macros: { calories: 300, protein: 10, carbs: 32, fat: 16, fiber: 6.5, sodium: 330 },
-    note: "Based on 6 servings, without optional vegetable stock. Fibre and sodium estimated from the ingredient list: a 28 oz can of crushed tomatoes, a 19 oz can of chickpeas (~2 cups drained at 6 g fibre/cup) and 312 g of spinach for the fibre; the canned tomatoes and the chickpea can — added undrained, so its liquid counts too — for the sodium. Excludes salt added to taste, which the recipe leaves open, so treat this as a floor.",
+    macros: { calories: 376, protein: 13.9, carbs: 44.4, fat: 17.4, fiber: 8.5, sodium: 455 },
+    note: "Based on 6 servings, without optional vegetable stock. TWO 19 oz cans of chickpeas, corrected from one on August 8, 2026 on the cook's account; this was not re-checked against the Templates recipe, so if that document says one can, the document wins and this entry is the stale one. The second can adds ~76 kcal, ~3.9 g protein, ~12.4 g carbs, ~1.4 g fat, ~2 g fibre and ~125 mg sodium per serving, which is why protein moved 10 to 13.9 and this became the highest-fibre entry in the catalog. Fibre and sodium estimated from the ingredient list: a 28 oz can of crushed tomatoes, the two chickpea cans (~2 cups drained each at 6 g fibre/cup) and 312 g of spinach for the fibre; the tomatoes and both chickpea cans — added undrained, so their liquid counts too — for the sodium. Excludes salt added to taste, which the recipe leaves open, so treat this as a floor.",
     tags: ["stew", "chickpea", "spinach", "vegetarian"],
   },
   {
@@ -338,8 +338,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "with 2 slices sourdough",
     source: "recipe",
     per: "1 serving (1/6 recipe) + 2 slices",
-    macros: { calories: 540, protein: 18, carbs: 78, fat: 18, fiber: 9, sodium: 850 },
-    note: "Based on 6 servings. Fibre and sodium estimated from the ingredient list — the stew-only figures plus 2 slices of sourdough at ~1.25 g fibre and ~260 mg sodium each, sized from the +46 g of carbs the recipe's own table attributes to them.",
+    macros: { calories: 616, protein: 21.9, carbs: 90.4, fat: 19.4, fiber: 11, sodium: 975 },
+    note: "Based on 6 servings, and on TWO cans of chickpeas — see the stew-only entry for that correction and its caveat. Fibre and sodium estimated from the ingredient list — the stew-only figures plus 2 slices of sourdough at ~1.25 g fibre and ~260 mg sodium each, sized from the +46 g of carbs the recipe's own table attributes to them. The bread is over half the sodium in this pairing (520 of 975 mg) despite being under 40% of the calories, so swapping it for ordinary sandwich slices at ~135 mg each saves ~250 mg.",
     tags: ["stew", "chickpea", "spinach", "sourdough", "vegetarian"],
   },
   {
