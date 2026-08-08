@@ -1,5 +1,6 @@
 import { RECIPE_FOODS } from "@/data/recipes";
 import { PANTRY_FOODS } from "@/data/pantry";
+import { RESTAURANT_FOODS } from "@/data/restaurants";
 import { PACKAGED_FOODS, STAPLE_FOODS } from "@/data/staples";
 import type { Food, Macros } from "./types";
 
@@ -13,6 +14,7 @@ export const BUILTIN_FOODS: Food[] = [
   ...RECIPE_FOODS,
   ...STAPLE_FOODS,
   ...PANTRY_FOODS,
+  ...RESTAURANT_FOODS,
 ];
 
 function normalize(s: string): string {
