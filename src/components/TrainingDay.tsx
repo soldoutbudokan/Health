@@ -20,6 +20,7 @@ import type {
 } from "@/lib/trainingTypes";
 import { SessionCard } from "@/components/SessionCard";
 import { PlanCheck } from "@/components/PlanCheck";
+import { OutputCard } from "@/components/OutputCard";
 import { WeekStrip } from "@/components/WeekStrip";
 import { BodyweightChart } from "@/components/BodyweightChart";
 
@@ -139,6 +140,7 @@ export function TrainingDay({
         <>
           <SessionCard session={session} sets={daySets} today={today} />
           {plan && <PlanCheck plan={plan} lines={planLines} />}
+          <OutputCard sets={daySets} date={date} today={today} />
         </>
       ) : (
         <div className="card p-8 text-center">

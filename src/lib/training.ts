@@ -510,3 +510,79 @@ export function volume(sets: WorkoutSet[]): number {
 export function workingSets(sets: WorkoutSet[]): WorkoutSet[] {
   return sets.filter((s) => s.kind !== "warmup" && s.kind !== "finisher");
 }
+
+/* ----------------------------------------------------------------- output */
+
+/**
+ * A day's training output, totalled in the three units the log actually
+ * records: pounds moved (weight × reps), unweighted reps, and timed minutes.
+ *
+ * Three totals rather than one, because the units don't convert. Folding dips
+ * into "equivalent pounds" would need a bodyweight guess for every rep, and
+ * folding any of it into energy is the calories-burned estimate this site
+ * built and removed on August 5, 2026. Everything here is a sum of logged
+ * numbers; nothing is estimated.
+ */
+export interface SessionOutput {
+  /** Σ weight × reps over every weighted set — the figure `volume` gives. */
+  volumeLbs: number;
+  /** Weighted exercises with their share of it, heaviest total first. */
+  lifts: { exercise: string; lbs: number }[];
+  /** Total reps of unweighted work — pullups, dips, jumps. */
+  bodyweightReps: number;
+  bodyweight: { exercise: string; reps: number }[];
+  /** Minutes of timed work. Both sled bouts of a session pool here. */
+  conditioningMin: number;
+  conditioning: { exercise: string; minutes: number }[];
+}
+
+export function sessionOutput(sets: WorkoutSet[]): SessionOutput {
+  // Keyed on the canonical name so "Sled push + pull" and "Sled" pool, but
+  // displayed under the first spelling the session used.
+  const tally = (
+    entries: Map<string, { exercise: string; total: number }>,
+    s: WorkoutSet,
+    amount: number,
+  ) => {
+    const key = canonical(s.exercise);
+    const cur = entries.get(key);
+    if (cur) cur.total += amount;
+    else entries.set(key, { exercise: s.exercise, total: amount });
+  };
+
+  const lifts = new Map<string, { exercise: string; total: number }>();
+  const bodyweight = new Map<string, { exercise: string; total: number }>();
+  const conditioning = new Map<string, { exercise: string; total: number }>();
+
+  for (const s of sets) {
+    if (s.weightLbs !== undefined && s.reps !== undefined) {
+      tally(lifts, s, s.weightLbs * s.reps);
+    } else if (s.durationMin !== undefined) {
+      tally(conditioning, s, s.durationMin);
+    } else if (s.reps !== undefined) {
+      tally(bodyweight, s, s.reps);
+    }
+    // A set with no numbers at all — the shoulder warmup — has nothing to add.
+  }
+
+  const liftRows = [...lifts.values()]
+    .map((r) => ({ exercise: r.exercise, lbs: r.total }))
+    .sort((a, b) => b.lbs - a.lbs);
+  const bwRows = [...bodyweight.values()].map((r) => ({
+    exercise: r.exercise,
+    reps: r.total,
+  }));
+  const condRows = [...conditioning.values()].map((r) => ({
+    exercise: r.exercise,
+    minutes: r.total,
+  }));
+
+  return {
+    volumeLbs: liftRows.reduce((t, r) => t + r.lbs, 0),
+    lifts: liftRows,
+    bodyweightReps: bwRows.reduce((t, r) => t + r.reps, 0),
+    bodyweight: bwRows,
+    conditioningMin: condRows.reduce((t, r) => t + r.minutes, 0),
+    conditioning: condRows,
+  };
+}
