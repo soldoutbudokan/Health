@@ -315,6 +315,18 @@ export function gymSessionsIn(sessions: Session[], from: string, to: string): nu
 }
 
 /**
+ * Every logged session in the window, whatever kind. Reported beside
+ * `gymSessionsIn()` rather than instead of it, because the two answer
+ * different questions and the strip was answering only one of them: a
+ * conditioning day is training that happened, but it is not one of the four
+ * lifting days the program prescribes, so folding it into that count would
+ * read three lifts and a sled bout as a complete week.
+ */
+export function sessionsIn(sessions: Session[], from: string, to: string): number {
+  return sessions.filter((s) => s.date >= from && s.date <= to).length;
+}
+
+/**
  * Weeks since the last deload week, or undefined if none has been recorded.
  *
  * Undefined rather than "infinity" because a log that starts today has not

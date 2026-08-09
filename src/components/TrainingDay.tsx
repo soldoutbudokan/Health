@@ -5,6 +5,7 @@ import {
   breakOn,
   comparePlan,
   gymSessionsIn,
+  sessionsIn,
   outputSeries,
   planFor,
   sessionOn,
@@ -121,6 +122,7 @@ export function TrainingDay({
 
   const week = weekStrip(sessions, breaks, today);
   const gymThisWeek = gymSessionsIn(sessions, addDays(today, -6), today);
+  const sessionsThisWeek = sessionsIn(sessions, addDays(today, -6), today);
   const sinceDeload = weeksSinceDeload(sessions, today);
   const output = outputSeries(sets, sessions);
 
@@ -160,6 +162,7 @@ export function TrainingDay({
       <WeekStrip
         week={week}
         gymThisWeek={gymThisWeek}
+        sessionsThisWeek={sessionsThisWeek}
         sinceDeload={sinceDeload}
         today={today}
       />

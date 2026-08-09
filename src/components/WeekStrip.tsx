@@ -10,11 +10,15 @@ import { GYM_SESSIONS, SESSION_SHORT } from "@/lib/trainingTypes";
 export function WeekStrip({
   week,
   gymThisWeek,
+  sessionsThisWeek,
   sinceDeload,
   today,
 }: {
   week: DaySlot[];
+  /** The four programmed lifting days only — the program's own target. */
   gymThisWeek: number;
+  /** Everything logged, lifting or not. */
+  sessionsThisWeek: number;
   sinceDeload: number | undefined;
   today: string;
 }) {
@@ -22,8 +26,16 @@ export function WeekStrip({
     <section className="card px-4 py-3">
       <div className="flex items-baseline justify-between gap-3">
         <h2 className="text-sm font-semibold">Last seven days</h2>
+        {/*
+          Two figures, because "3 of 4 gym sessions" was one number doing two
+          jobs and getting one of them wrong: the sled bout happened at the gym,
+          so a week with it read as a session short. The total counts what was
+          trained; the second counts only the four lifting days the program
+          prescribes, which is the number progression actually depends on.
+        */}
         <span className="tnum text-xs text-muted">
-          {gymThisWeek} of 4 gym sessions
+          {sessionsThisWeek} session{sessionsThisWeek === 1 ? "" : "s"} ·{" "}
+          {gymThisWeek} of 4 lifting
         </span>
       </div>
       <ol className="mt-2.5 grid grid-cols-7 gap-1.5">

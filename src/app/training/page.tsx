@@ -12,6 +12,7 @@ import {
   bodyweightSeries,
   comparePlan,
   gymSessionsIn,
+  sessionsIn,
   goalProgress,
   latestSession,
   liftSeries,
@@ -66,6 +67,7 @@ export default function TrainingPage() {
   const progress = goalProgress(goals, sets, today);
   const week = weekStrip(sessions, breaks, today);
   const gymThisWeek = gymSessionsIn(sessions, addDays(today, -6), today);
+  const sessionsThisWeek = sessionsIn(sessions, addDays(today, -6), today);
   const sinceDeload = weeksSinceDeload(sessions, today);
 
   const chartWindowStart = goals.baselineOn
@@ -98,6 +100,7 @@ export default function TrainingPage() {
       <WeekStrip
         week={week}
         gymThisWeek={gymThisWeek}
+        sessionsThisWeek={sessionsThisWeek}
         sinceDeload={sinceDeload}
         today={today}
       />
