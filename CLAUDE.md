@@ -81,7 +81,7 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 
 | Column | Notes |
 |---|---|
-| `session` | `heavy-lower` \| `light-lower` \| `heavy-upper` \| `light-upper` \| `off-a` \| `off-b` \| `stretch` \| `basketball` \| `other`. **Blank** for imported reference points that belong to no session |
+| `session` | `heavy-lower` \| `light-lower` \| `heavy-upper` \| `light-upper` \| `off-a` \| `off-b` \| `stretch` \| `basketball` \| `conditioning` \| `other`. The last three have no `program.ts` entry on purpose, so they draw no plan comparison and read as deviations. **Blank** for imported reference points that belong to no session |
 | `exercise` | free text; aliases are folded in `src/lib/training.ts` (`canonical`), so "Pull ups" and "Pullups" match. Add an alias there rather than renaming history |
 | `kind` | `warmup` \| `jump` \| `compound` \| `isolation` \| `core` \| `mobility` \| `finisher`. Drives how the session card groups things — the sled is `warmup` at the start and `finisher` at the end |
 | `set_index` | 1, 2, 3… within that exercise |

@@ -14,7 +14,14 @@
  * loses the back-off set, which is exactly the thing progression depends on.
  */
 
-/** Which day of the program a session was. Mirrors `src/data/program.ts`. */
+/**
+ * Which day of the program a session was — or, for the last three, that it was
+ * not one. `basketball`, `conditioning` and `other` have no `src/data/program.ts`
+ * entry on purpose: `planFor()` looks the type up in PROGRAM and returns
+ * undefined when it misses, so a session of one of these kinds draws no plan
+ * comparison and reads as the deviation it is. Adding a program day to make one
+ * of them score would be the mistake the CLAUDE.md rule warns about.
+ */
 export type SessionType =
   | "heavy-lower"
   | "light-lower"
@@ -24,6 +31,7 @@ export type SessionType =
   | "off-b"
   | "stretch"
   | "basketball"
+  | "conditioning"
   | "other";
 
 export const SESSION_LABELS: Record<SessionType, string> = {
@@ -35,6 +43,7 @@ export const SESSION_LABELS: Record<SessionType, string> = {
   "off-b": "Off Day B — Upper Support",
   stretch: "Stretch Under Tension",
   basketball: "Basketball",
+  conditioning: "Conditioning",
   other: "Other",
 };
 
@@ -48,9 +57,18 @@ export const SESSION_SHORT: Record<SessionType, string> = {
   "off-b": "Off B",
   stretch: "Stretch",
   basketball: "Ball",
+  conditioning: "Cond",
   other: "Other",
 };
 
+/**
+ * The four lifting days, and only those. Named for where they happen but used
+ * for what they are: `gymSessionsIn()` counts them as the week's training
+ * frequency, and the week strip highlights them. `conditioning` is deliberately
+ * absent even though the sled is done at the gym — counting it here would read
+ * a sled bout as a lifting session and inflate both the frequency and the
+ * deload clock.
+ */
 export const GYM_SESSIONS: SessionType[] = [
   "heavy-lower",
   "light-lower",
