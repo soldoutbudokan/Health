@@ -4,7 +4,7 @@ import { useId, useState } from "react";
 import { round, parseDateKey, addDays } from "@/lib/nutrition";
 import { formatDay } from "@/lib/labels";
 import type { OutputPoint } from "@/lib/training";
-import { SESSION_LABELS } from "@/lib/trainingTypes";
+import { SESSION_LABELS, SESSION_SHORT } from "@/lib/trainingTypes";
 
 /**
  * Pounds moved per session, over time — the standing companion to the
@@ -19,9 +19,12 @@ import { SESSION_LABELS } from "@/lib/trainingTypes";
  * a gap, not a zero — `outputSeries` leaves it out, because a basketball
  * day's output isn't measured in pounds at all.
  *
- * The hover names the program day, because tonnage only compares fairly
- * within a day type: a light-upper landing under a heavy-lower is the
- * program working, not a slump.
+ * Every point carries a day-type tick under the plot, in the week strip's
+ * short vocabulary, because tonnage only compares fairly within a day type:
+ * a light-upper landing under a heavy-lower is the program working, not a
+ * slump — and that should be readable without a hover. Ticks that would
+ * collide are skipped, never overlapped; two staggered lanes absorb
+ * back-to-back sessions first, and a skipped point still has its hover.
  */
 
 interface Props {
@@ -32,8 +35,15 @@ interface Props {
 
 const day = (key: string) => parseDateKey(key).getTime() / 86_400_000;
 
-/** At least eight weeks of window, stretched to include every session. */
-const MIN_WINDOW_DAYS = 56;
+/**
+ * Two weeks of window at minimum, stretched to include every session. The
+ * bodyweight chart holds eight weeks because weight moves on a months scale;
+ * here the window hugs the logged span instead, because sessions come days
+ * apart and the day-type ticks need the horizontal room — under the longer
+ * window the first week of sessions piled into a corner and half the ticks
+ * had to be skipped.
+ */
+const MIN_WINDOW_DAYS = 14;
 
 export function OutputChart({ points, today, height = 150 }: Props) {
   const [hover, setHover] = useState<number | null>(null);
@@ -64,6 +74,23 @@ export function OutputChart({ points, today, height = 150 }: Props) {
 
   const describe = (p: OutputPoint) =>
     `${formatDay(p.date, today)} · ${SESSION_LABELS[p.type]} · ${round(p.lbs).toLocaleString("en-US")} lbs`;
+
+  // Greedy left-to-right placement of the day-type ticks: take the first lane
+  // with room, skip the label entirely when both are taken. The gap is about
+  // one rendered label's width, so nothing ever overlaps.
+  const LABEL_GAP = 9;
+  const laneEdge = [-Infinity, -Infinity];
+  const ticks = points.flatMap((p) => {
+    const px = x(p.date);
+    for (let lane = 0; lane < laneEdge.length; lane++) {
+      if (px - laneEdge[lane] >= LABEL_GAP) {
+        laneEdge[lane] = px;
+        return [{ p, px, lane }];
+      }
+    }
+    return [];
+  });
+  const laneCount = ticks.reduce((m, t) => Math.max(m, t.lane + 1), 0);
 
   return (
     <figure className="card p-4">
@@ -140,6 +167,22 @@ export function OutputChart({ points, today, height = 150 }: Props) {
           </button>
         ))}
       </div>
+
+      {/* The dot buttons above carry the full reading, so this row is visual
+          duplication for sighted readers and hidden from assistive tech. */}
+      {laneCount > 0 && (
+        <div aria-hidden className="relative mt-1" style={{ height: laneCount * 13 }}>
+          {ticks.map((t) => (
+            <span
+              key={t.p.date}
+              className="absolute -translate-x-1/2 whitespace-nowrap text-[10px] text-muted"
+              style={{ left: `${Math.min(Math.max(t.px, 4), 96)}%`, top: t.lane * 13 }}
+            >
+              {SESSION_SHORT[t.p.type]}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className="mt-2 flex justify-between text-[10px] text-muted">
         <span>{formatDay(windowStart, today)}</span>
