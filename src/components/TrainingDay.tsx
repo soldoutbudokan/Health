@@ -6,6 +6,7 @@ import {
   breakOn,
   comparePlan,
   gymSessionsIn,
+  outputSeries,
   planFor,
   sessionOn,
   sessionSets,
@@ -22,6 +23,7 @@ import { SessionCard } from "@/components/SessionCard";
 import { PlanCheck } from "@/components/PlanCheck";
 import { OutputCard } from "@/components/OutputCard";
 import { WeekStrip } from "@/components/WeekStrip";
+import { OutputChart } from "@/components/OutputChart";
 import { BodyweightChart } from "@/components/BodyweightChart";
 
 /**
@@ -30,8 +32,8 @@ import { BodyweightChart } from "@/components/BodyweightChart";
  * yesterday's heavy upper; today shows blank until something is logged. The
  * site never schedules — an empty day is an honest empty, not a plan.
  *
- * The week strip and the bodyweight chart sit below as standing context; they
- * are historical and don't change with the selected day.
+ * The week strip, the lbs-moved chart and the bodyweight chart sit below as
+ * standing context; they are historical and don't change with the selected day.
  */
 
 /** "23:00" → "11:00 pm". The file stores a local 24-hour clock. */
@@ -120,6 +122,7 @@ export function TrainingDay({
   const week = weekStrip(sessions, breaks, today);
   const gymThisWeek = gymSessionsIn(sessions, addDays(today, -6), today);
   const sinceDeload = weeksSinceDeload(sessions, today);
+  const output = outputSeries(sets, sessions);
   const bodyweight = bodyweightSeries(checkins, sessions);
 
   return (
@@ -161,6 +164,8 @@ export function TrainingDay({
         sinceDeload={sinceDeload}
         today={today}
       />
+
+      {output.length > 0 && <OutputChart points={output} today={today} height={130} />}
 
       {bodyweight.length > 0 && (
         <BodyweightChart points={bodyweight} today={today} height={130} />

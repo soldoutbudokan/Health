@@ -4,6 +4,7 @@ import {
   GYM_SESSIONS,
   type Checkin,
   type Session,
+  type SessionType,
   type TrainingBreak,
   type TrainingGoal,
   type TrainingGoals,
@@ -585,4 +586,29 @@ export function sessionOutput(sets: WorkoutSet[]): SessionOutput {
     conditioningMin: condRows.reduce((t, r) => t + r.minutes, 0),
     conditioning: condRows,
   };
+}
+
+export interface OutputPoint {
+  date: string;
+  lbs: number;
+  type: SessionType;
+}
+
+/**
+ * Pounds moved per logged session day, oldest first — the tonnage line the
+ * dashboard charts. A day whose session carried no weighted work (a stretch
+ * day, basketball) is absent rather than zero: its output is measured in
+ * other units, and a zero here would draw it as a collapse instead of a
+ * different kind of day. Reference sets imported outside any session don't
+ * chart either — a single remembered top set is not a day's output.
+ */
+export function outputSeries(sets: WorkoutSet[], sessions: Session[]): OutputPoint[] {
+  return sessions
+    .map((s) => ({
+      date: s.date,
+      type: s.type,
+      lbs: sessionOutput(sessionSets(sets, s.date)).volumeLbs,
+    }))
+    .filter((p) => p.lbs > 0)
+    .sort((a, b) => a.date.localeCompare(b.date));
 }

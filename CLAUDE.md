@@ -220,8 +220,9 @@ the right, and both show *only what was logged on that day* — stepping back to
 yesterday moves both columns together. A session, a meal or a morning check-in
 appears on its own day and nowhere else. The site records; it never schedules —
 an empty day renders as an honest empty, not as a plan or a suggestion. The week
-strip and the bodyweight chart are the only standing (day-independent) elements
-in the training column, because they are historical context, not a day's record.
+strip, the lbs-moved chart and the bodyweight chart are the only standing
+(day-independent) elements in the training column, because they are historical
+context, not a day's record.
 
 **A plan slot with a set count pools its alternatives.** `comparePlan()` counts
 incline bench toward the heavy-day bench 3–4 × 5 (revised August 5, 2026 — see
@@ -307,6 +308,10 @@ MET × bodyweight × duration, shown on the session card and as a dashboard char
 was judged silly — MET figures are population averages dressed as data, and the
 2,800 kcal target already assumes training, so the number informed no decision.
 Don't reintroduce it, on the dashboard or anywhere else, without being asked.
+A wattage estimate was considered on August 9, 2026 and turned down for the same
+reason: watts need bar speed and range of motion, neither of which is logged, so
+the figure would have been tonnage multiplied by invented constants — same chart,
+fake units. The lbs-moved line chart is what got built instead.
 
 **The dashboard's training column went through three shapes in one day** before
 landing where it is: first the *latest* session (read as today's schedule no matter

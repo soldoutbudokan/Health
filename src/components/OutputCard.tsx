@@ -110,10 +110,12 @@ export function OutputCard({ sets, date, today }: Props) {
                   <div
                     aria-hidden
                     className="h-2 rounded-r-[4px]"
+                    // Same hue as the lbs-moved chart below — output is one
+                    // entity — and distinct from the bodyweight line's blue.
                     style={{
                       width: `${(l.lbs / maxLbs) * 100}%`,
                       minWidth: 8,
-                      background: "var(--series-protein)",
+                      background: "var(--series-carbs)",
                     }}
                   />
                 </div>
