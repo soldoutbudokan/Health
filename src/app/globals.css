@@ -8,6 +8,21 @@
  * Validator: all checks PASS all-pairs in both modes. Light-mode aqua sits at
  * 2.74:1 on the light surface, so the relief rule applies — every fat segment
  * and swatch is shipped with a visible text label, never colour alone.
+ *
+ * `--series-conditioning` (magenta, slot 5) belongs to a SECOND and separate
+ * scale: the week strip's session chips, whose only two filled states are a
+ * gym day in slot-1 blue and a conditioning day in this. That two-colour scale
+ * is what was validated for it — blue↔magenta clears every gate in both modes
+ * (normal-vision ΔE 27.5 light / 26.5 dark, CVD 13.0 / 15.9). It is deliberately
+ * NOT validated all-pairs against the macro three, because it never encodes
+ * alongside them: macros colour the food column, chips the training column, and
+ * nothing reads a chip against a ring. Slot 4 (yellow) and the orange, green and
+ * red slots were all unavailable here — each sits on top of a reserved status
+ * colour or on a macro already spoken for. Light-mode magenta is 2.62:1 on the
+ * light surface, so it takes the same relief rule as aqua: the chip always
+ * carries its text label. `--on-conditioning` is the chip's own foreground,
+ * because the light step needs dark ink (7.31:1) where the dark step takes
+ * white (3.94:1).
  */
 :root {
   color-scheme: light;
@@ -29,6 +44,10 @@
   --series-protein: #2a78d6;
   --series-carbs: #eb6834;
   --series-fat: #1baf7a;
+
+  /* Session chips — a separate two-colour scale, see the header note */
+  --series-conditioning: #e87ba4;
+  --on-conditioning: #0b0b0b;
 
   /* Status — fixed, never themed, always paired with an icon or label */
   --status-good: #0ca30c;
@@ -62,6 +81,9 @@
     --series-carbs: #d95926;
     --series-fat: #199e70;
 
+    --series-conditioning: #d55181;
+    --on-conditioning: #ffffff;
+
     --success-text: #0ca30c;
 
     --track: #2c2c2a;
@@ -88,6 +110,9 @@
   --series-protein: #3987e5;
   --series-carbs: #d95926;
   --series-fat: #199e70;
+
+  --series-conditioning: #d55181;
+  --on-conditioning: #ffffff;
 
   --success-text: #0ca30c;
 

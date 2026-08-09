@@ -28,7 +28,19 @@ export function WeekStrip({
       </div>
       <ol className="mt-2.5 grid grid-cols-7 gap-1.5">
         {week.map((d) => {
-          const isGym = d.session && GYM_SESSIONS.includes(d.session.type);
+          // The two filled chip states, and the whole of that colour scale:
+          // a gym day in slot-1 blue, a conditioning day in magenta. Every
+          // other day is a neutral surface, so nothing else competes and the
+          // pair only ever has to separate from each other.
+          const isGym = d.session ? GYM_SESSIONS.includes(d.session.type) : false;
+          const fill = isGym
+            ? { background: "var(--series-protein)", color: "#ffffff" }
+            : d.session?.type === "conditioning"
+              ? {
+                  background: "var(--series-conditioning)",
+                  color: "var(--on-conditioning)",
+                }
+              : undefined;
           return (
             <li key={d.date} className="text-center">
               <div className="text-[10px] text-muted">
@@ -40,15 +52,15 @@ export function WeekStrip({
               </div>
               <div
                 className={`mt-1 grid h-11 place-items-center rounded-lg px-0.5 text-[10px] font-semibold leading-tight ${
-                  isGym
-                    ? "text-white"
+                  fill
+                    ? ""
                     : d.session
                       ? "bg-surface-2 text-ink-2"
                       : d.break
                         ? "bg-track text-muted"
                         : "border border-dashed border-hairline text-muted"
                 }`}
-                style={isGym ? { background: "var(--series-protein)" } : undefined}
+                style={fill}
                 title={d.session ? d.date : (d.break?.label ?? d.date)}
               >
                 {d.session
