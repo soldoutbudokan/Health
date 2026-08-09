@@ -9,6 +9,7 @@ import type {
   WorkoutSet,
 } from "@/lib/trainingTypes";
 import { loggedDates } from "@/lib/nutrition";
+import { bodyweightSeries } from "@/lib/training";
 import { Dashboard } from "@/components/Dashboard";
 import { TrainingDay } from "@/components/TrainingDay";
 
@@ -44,6 +45,11 @@ export function TodayView({
   // change rather than a meal — landing on data beats landing on an empty day.
   const [date, setDate] = useState(() => loggedDates(entries)[0] ?? builtOn);
 
+  // Rendered in the food column, fed by the training files: bodyweight follows
+  // diet more than it follows any single session, so the chart lives on the
+  // left even though its readings come from check-ins and session rows.
+  const bodyweight = bodyweightSeries(checkins, sessions);
+
   // `min-w-0` on each column is load-bearing, not tidying. A grid item defaults
   // to `min-width: auto`, so it refuses to shrink below its widest unbreakable
   // content — a set chip like "260 × 5", a week-strip tick — and instead widens
@@ -58,6 +64,7 @@ export function TodayView({
           builtOn={builtOn}
           builtHour={builtHour}
           streak={streak}
+          bodyweight={bodyweight}
           date={date}
           onDateChange={setDate}
         />

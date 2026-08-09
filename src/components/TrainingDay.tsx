@@ -2,7 +2,6 @@ import Link from "next/link";
 import { addDays, round } from "@/lib/nutrition";
 import { formatDay } from "@/lib/labels";
 import {
-  bodyweightSeries,
   breakOn,
   comparePlan,
   gymSessionsIn,
@@ -24,7 +23,6 @@ import { PlanCheck } from "@/components/PlanCheck";
 import { OutputCard } from "@/components/OutputCard";
 import { WeekStrip } from "@/components/WeekStrip";
 import { OutputChart } from "@/components/OutputChart";
-import { BodyweightChart } from "@/components/BodyweightChart";
 
 /**
  * The training half of the dashboard, pinned to the dashboard's selected day:
@@ -32,8 +30,10 @@ import { BodyweightChart } from "@/components/BodyweightChart";
  * yesterday's heavy upper; today shows blank until something is logged. The
  * site never schedules — an empty day is an honest empty, not a plan.
  *
- * The week strip, the lbs-moved chart and the bodyweight chart sit below as
- * standing context; they are historical and don't change with the selected day.
+ * The week strip and the lbs-moved chart sit below as standing context; they
+ * are historical and don't change with the selected day. The bodyweight chart
+ * used to sit here too, and moved to the food column on August 9, 2026 —
+ * bodyweight follows diet more than it follows any single session.
  */
 
 /** "23:00" → "11:00 pm". The file stores a local 24-hour clock. */
@@ -123,7 +123,6 @@ export function TrainingDay({
   const gymThisWeek = gymSessionsIn(sessions, addDays(today, -6), today);
   const sinceDeload = weeksSinceDeload(sessions, today);
   const output = outputSeries(sets, sessions);
-  const bodyweight = bodyweightSeries(checkins, sessions);
 
   return (
     <div className="space-y-6">
@@ -166,10 +165,6 @@ export function TrainingDay({
       />
 
       {output.length > 0 && <OutputChart points={output} today={today} height={130} />}
-
-      {bodyweight.length > 0 && (
-        <BodyweightChart points={bodyweight} today={today} height={130} />
-      )}
     </div>
   );
 }

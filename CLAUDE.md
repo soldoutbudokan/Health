@@ -219,10 +219,11 @@ on the first lap; that trade was made once and it cost more than it bought.
 the right, and both show *only what was logged on that day* — stepping back to
 yesterday moves both columns together. A session, a meal or a morning check-in
 appears on its own day and nowhere else. The site records; it never schedules —
-an empty day renders as an honest empty, not as a plan or a suggestion. The week
-strip, the lbs-moved chart and the bodyweight chart are the only standing
-(day-independent) elements in the training column, because they are historical
-context, not a day's record.
+an empty day renders as an honest empty, not as a plan or a suggestion. The
+standing (day-independent) elements are few because they are historical context,
+not a day's record: the week strip and the lbs-moved chart in the training
+column, and the bodyweight chart in the food column — moved there on August 9,
+2026, because bodyweight follows diet more than it follows any single session.
 
 **A plan slot with a set count pools its alternatives.** `comparePlan()` counts
 incline bench toward the heavy-day bench 3–4 × 5 (revised August 5, 2026 — see

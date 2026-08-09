@@ -8,10 +8,14 @@ import type { BodyweightPoint } from "@/lib/training";
 /**
  * Bodyweight over time. A sibling of `LiftChart` rather than a reuse of it:
  * there is no pace line, because bodyweight has no December target — it is
- * context for the lifts (the bench goal note says food and sleep decide most
- * of it), not a goal being chased. Same mark for the same reason as the lifts:
- * a continuous quantity, so a line; and the same HTML-marker trick, because
- * the stretched SVG would squash circles into ellipses.
+ * context (the bench goal note says food and sleep decide most of it), not a
+ * goal being chased. Same mark for the same reason as the lifts: a continuous
+ * quantity, so a line; and the same HTML-marker trick, because the stretched
+ * SVG would squash circles into ellipses.
+ *
+ * On the dashboard it renders in the *food* column (since August 9, 2026),
+ * because bodyweight follows diet more than it follows any single session;
+ * `/training` keeps it beside the lift charts, where it is recovery context.
  *
  * Renders from the very first reading — a chart with one dot is a chart
  * that's ready, which beats appearing out of nowhere weeks later.

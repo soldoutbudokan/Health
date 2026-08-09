@@ -16,10 +16,12 @@ import {
 } from "@/lib/nutrition";
 import { formatDay, formatFullDay } from "@/lib/labels";
 import { BUILTIN_FOODS, suggestGapClosers } from "@/lib/search";
+import type { BodyweightPoint } from "@/lib/training";
 import { CalorieRing, MacroSplit, Micros, ProteinRing } from "@/components/Meters";
 import { MealList } from "@/components/MealList";
 import { GapClosers, StatTile } from "@/components/StatTiles";
 import { TrendChart, type TrendPoint } from "@/components/TrendChart";
+import { BodyweightChart } from "@/components/BodyweightChart";
 
 interface Props {
   /** The whole log, parsed from `data/log.csv` on the build machine. */
@@ -31,6 +33,8 @@ interface Props {
   builtHour: number;
   /** Computed server-side, because `proteinStreak` reads the clock. */
   streak: number;
+  /** Bodyweight readings — training-file data that renders with the food. */
+  bodyweight: BodyweightPoint[];
   /** The day being looked at. Owned by `TodayView`, shared with training. */
   date: string;
   onDateChange: (date: string) => void;
@@ -55,6 +59,7 @@ export function Dashboard({
   builtOn,
   builtHour,
   streak,
+  bodyweight,
   date,
   onDateChange,
 }: Props) {
@@ -297,6 +302,12 @@ export function Dashboard({
           band={{ min: goals.proteinMin, max: goals.proteinMax }}
         />
       </div>
+
+      {/* Standing, unlike the trends above — bodyweight is the diet's slow
+          output, so it charts here and ignores the selected day. */}
+      {bodyweight.length > 0 && (
+        <BodyweightChart points={bodyweight} today={builtOn} height={130} />
+      )}
 
       <p className="pb-2 text-center text-xs leading-relaxed text-muted">
         <Link href="/history" className="hover:text-ink">
