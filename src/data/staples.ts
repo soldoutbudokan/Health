@@ -153,9 +153,9 @@ export const PACKAGED_FOODS: Food[] = [
       fat: 13,
       fiber: 2,
       sugar: 3,
-      sodium: 970,
+      sodium: 890,
     },
-    note: "The whole 70 g pack as sold — noodle cake plus the tastemaker sachet — prepared with water and nothing else. Calories, protein, carbs and fat agree across the export-pack panel and its per-100 g figure (443 kcal/100 g x 0.70 = 310), and Atwater lands at 313, so the macros are solid. SODIUM IS NOT: 970 mg is the export-pack figure, and Nestle India's own panel for the domestic 70 g pack runs nearer 700 mg. Read it as 700-1,000 mg a pack and check the wrapper, because at two packs that spread is 600 mg — a fifth of a day's allowance riding on which region printed the box. Regional variants (Masala vs Chicken vs Curry) move sodium more than they move calories. Sugar is the tastemaker's, ~3 g, and is the least corroborated line.",
+    note: "The whole 70 g pack as sold — noodle cake plus the tastemaker sachet — prepared with water and nothing else. Calories, protein, carbs and fat agree across the export-pack panel and its per-100 g figure (443 kcal/100 g x 0.70 = 310), and Atwater lands at 313, so the macros are solid. Sodium was 970 mg from the export-pack panel until August 9, 2026, when the pack actually in the cupboard was read and put two packs at ~1,780 mg — so 890 a pack, which is what this now carries. That is the only line here traceable to the box on hand rather than a database; the macros are still the export figure and would be worth replacing off the same panel. ONE THING IS UNRESOLVED: 1,780 was reported against a two-pack line, so it is recorded as 890 x 2. If it was 1,780 for a single pack, every Maggi row in the log is half what it should be. Regional variants (Masala vs Chicken vs Curry) move sodium more than they move calories. Sugar is the tastemaker's, ~3 g, and is the least corroborated line.",
     tags: ["noodles", "instant noodles", "maggi", "masala", "ramen", "quick"],
   },
 ];
