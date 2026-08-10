@@ -153,7 +153,7 @@ export function TrainingDay({
           </p>
           {dayBreak && (
             <p className="mx-auto mt-2 max-w-md text-xs leading-relaxed text-muted">
-              Marked away: {dayBreak.label}.
+              Logged as off: {dayBreak.label}.
             </p>
           )}
         </div>

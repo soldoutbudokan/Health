@@ -78,7 +78,7 @@ export function WeekStrip({
                 {d.session
                   ? SESSION_SHORT[d.session.type]
                   : d.break
-                    ? "away"
+                    ? "off"
                     : "—"}
               </div>
             </li>
