@@ -1,5 +1,5 @@
 id,date,meal,food,variant,brand,serving,servings,calories,protein_g,carbs_g,fat_g,fiber_g,sugar_g,sodium_mg,source,logged_at
-8cbd2660-1832-4ecb-b26c-cc5913dc5b0f,2026-08-04,breakfast,Iced Sugar-Free Vanilla Protein Latte,Venti,Starbucks,1 venti (24 fl oz),1,280,40,17,6,0,13,280,packaged,2026-08-04T08:00:00.000Z
+8cbd2660-1832-4ecb-b26c-cc5913dc5b0f,2026-08-04,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-08-04T08:00:00.000Z
 6bb64dcc-0ad2-484e-b25b-fb16c3a655c0,2026-08-04,lunch,Korean BBQ tofu,,Pantry (Toronto),1 scoop (~150 g),2,265,20,12.5,15,3,,700,custom,2026-08-04T12:14:00.000Z
 afebd6b7-d705-4af7-84d2-e49ef8d8e8e3,2026-08-04,lunch,Bone-in chicken thigh,,Pantry (Toronto),1 thigh (~110 g meat + skin),1,280,26,3,17,0,,450,custom,2026-08-04T12:21:00.000Z
 614af121-ca1d-495d-80d6-eff3e97cf8fd,2026-08-04,lunch,Mac and cheese,,Pantry (Toronto),1 scoop (~170 g),1,320,13,30,16,1,,600,custom,2026-08-04T12:28:00.000Z
@@ -18,7 +18,7 @@ df76900b-2248-4542-816d-c553f136ae74,2026-08-05,dinner,Mushroom Potsticker Soup,
 76128aa9-57df-4e65-a96c-c318f57bbeaa,2026-08-05,dinner,Premier Protein Shake,Cookies & Cream,Premier Protein,1 bottle (325 ml),1,160,30,5,3,,1,200,packaged,2026-08-05T19:05:00.000Z
 a496bcd5-b99b-4c36-b397-b89ef8924164,2026-08-05,snack,Blueberries,,,32 berries (~48 g),1,27,0.4,7.0,0.2,1.2,4.8,1,usda,2026-08-05T20:15:00.000Z
 a9445fb7-c4f0-425f-a3e7-5bc537e766fe,2026-08-05,snack,Nerds Gummy Clusters,Cherry Lemonade,Nerds,16 pieces (30 g),1.42,100,1,24,0,,21,45,packaged,2026-08-05T20:30:00.000Z
-cd50de6d-c3f9-4c3b-afab-7f9d08c2797d,2026-08-06,breakfast,Iced Sugar-Free Vanilla Protein Latte,Venti,Starbucks,1 venti (24 fl oz),1,280,40,17,6,0,13,280,packaged,2026-08-06T08:00:00.000Z
+cd50de6d-c3f9-4c3b-afab-7f9d08c2797d,2026-08-06,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-08-06T08:00:00.000Z
 462bb3d7-f34a-4d1f-9b12-7df580dda2f7,2026-08-06,lunch,Cacio e Pepe,,Spaghetti Western,1 scoop (~120 g),2,260,10,26.5,12.5,1.4,1.1,500,claude,2026-08-06T13:00:00.000Z
 3ebd7b29-116c-4b6f-b2b2-230ee4f19b23,2026-08-06,lunch,Pasta Vodka,with ground beef,Spaghetti Western,1 scoop (~120 g),2,225,10,26.5,8.5,2.1,2.1,315,claude,2026-08-06T13:00:00.000Z
 6396a6e4-b234-4af8-a738-48e586dc6eb1,2026-08-06,lunch,Chicken Caesar Sandwich,,Spaghetti Western,1 sandwich,0.5,655,49,57,25,3,3,1400,claude,2026-08-06T13:00:00.000Z
@@ -27,7 +27,7 @@ de4c80d4-2994-4847-89f2-974aa0064234,2026-08-06,dinner,Beyond Burger Patty,,Beyo
 b4071eba-bb9a-426e-a8cc-310869694bae,2026-08-06,dinner,Protein Shake,2 scoops ON vanilla + splash of 2% milk,Optimum Nutrition,2 scoops (~61 g) + ~1/2 cup 2% milk,1,301,52,12,4.5,1,8,318,packaged,2026-08-06T19:05:00.000Z
 6985eaf3-43c4-4578-9662-771963d23bcf,2026-08-06,dinner,Carrots,raw,,100 g raw,1.5,41,0.9,9.6,0.2,2.8,4.7,69,usda,2026-08-06T19:10:00.000Z
 d62572de-253d-4a73-8d14-be35848cdd25,2026-08-06,dinner,Hummus,,,1 tbsp (~15 g),0.5,25,1.2,2.1,1.4,0.9,0,57,usda,2026-08-06T19:10:00.000Z
-86475c8d-918b-40b3-a2ed-8acfd5fa338e,2026-08-07,breakfast,Iced Sugar-Free Vanilla Protein Latte,Venti,Starbucks,1 venti (24 fl oz),1,280,40,17,6,0,13,280,packaged,2026-08-07T08:00:00.000Z
+86475c8d-918b-40b3-a2ed-8acfd5fa338e,2026-08-07,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-08-07T08:00:00.000Z
 ea660fde-0031-4281-bbda-823defcbe760,2026-08-07,lunch,Flour Tortilla,white,Freshwest Grill,1 tortilla (~12 in),1,320,8,50,9,3,1,600,claude,2026-08-07T13:00:00.000Z
 6102b231-5624-4659-afe3-8bde098972ff,2026-08-07,lunch,Grilled Chicken,,Freshwest Grill,1 scoop (~4 oz),1,180,32,0,7,0,0,310,claude,2026-08-07T13:00:00.000Z
 8ea96929-f4a1-40e2-bdc6-fd88d8ae5ef5,2026-08-07,lunch,Refried Beans,,Freshwest Grill,1 scoop (~1/2 cup),1,130,7,21,2.5,7,1,480,claude,2026-08-07T13:00:00.000Z
@@ -58,4 +58,4 @@ b83aafac-b208-43a7-91c4-c1a2baf0f2f8,2026-08-09,lunch,Cherries,sweet raw,,10 che
 ea6b7b80-5220-44e7-a4cc-e79f8aabee8c,2026-08-09,snack,Apple,,,1 medium (182 g),1,95,0.5,25,0.3,4.4,19,2,staple,2026-08-09T17:00:00.000Z
 af457f21-1d0d-4086-aa1a-da59ae96e354,2026-08-09,snack,Gatorade Recover Whey Protein Bar,Chocolate Caramel,Gatorade,1 bar (2.8 oz / 80 g),1,350,20,43,11,1,29,200,packaged,2026-08-09T17:00:00.000Z
 75676d48-5b07-49ca-835e-f478a0473dff,2026-08-09,dinner,Spinach and Chickpea Stew,with 2 slices sourdough,,1 serving (1/6 recipe) + 2 slices,1,610,22,90,20,11,,1090,recipe,2026-08-09T20:00:00.000Z
-78f52607-65cc-4607-8a8e-2c6c2a0cde4e,2026-08-10,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,1 venti (24 fl oz),1.05,280,40,17,6,0,13,280,packaged,2026-08-10T14:17:30.000Z
+78f52607-65cc-4607-8a8e-2c6c2a0cde4e,2026-08-10,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-08-10T14:17:30.000Z
