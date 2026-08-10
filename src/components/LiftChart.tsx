@@ -35,6 +35,12 @@ interface Props {
   points: LiftPoint[];
   /** The straight line from baseline to target. */
   pace: { from: string; fromValue: number; to: string; toValue: number };
+  /**
+   * What the January spreadsheet projected, month by month. Drawn dotted and
+   * faint: it is a superseded plan, kept visible because the gap between it
+   * and the logged line is the layoff.
+   */
+  projection?: { date: string; value: number }[];
   breaks: { start: string; end: string; label: string }[];
   windowStart: string;
   windowEnd: string;
@@ -50,6 +56,7 @@ export function LiftChart({
   unit,
   points,
   pace,
+  projection,
   breaks,
   windowStart,
   windowEnd,
@@ -69,7 +76,14 @@ export function LiftChart({
   const span = t1 - t0 || 1;
   const x = (key: string) => ((day(key) - t0) / span) * W;
 
-  const values = [...points.map((p) => p.value), pace.fromValue, pace.toValue];
+  // The projection participates in the scale so its low January end stays in
+  // frame — cropping it would hide exactly the distance it exists to show.
+  const values = [
+    ...points.map((p) => p.value),
+    ...(projection ?? []).map((p) => p.value),
+    pace.fromValue,
+    pace.toValue,
+  ];
   const lo = Math.min(...values);
   const hi = Math.max(...values);
   const pad = Math.max((hi - lo) * 0.15, hi * 0.02, 1);
@@ -79,6 +93,10 @@ export function LiftChart({
 
   const inWindow = points.filter((p) => p.date >= windowStart && p.date <= windowEnd);
   const path = inWindow
+    .map((p, i) => `${i === 0 ? "M" : "L"}${x(p.date).toFixed(2)},${y(p.value).toFixed(2)}`)
+    .join(" ");
+
+  const projectionPath = (projection ?? [])
     .map((p, i) => `${i === 0 ? "M" : "L"}${x(p.date).toFixed(2)},${y(p.value).toFixed(2)}`)
     .join(" ");
 
@@ -125,6 +143,23 @@ export function LiftChart({
                 opacity={0.12}
               />
             ))}
+
+            {/* January's projection — dotted, to keep it apart from the
+                dashed pace line. A plan that has been superseded, not a
+                target: it is drawn so the gap to the logged line reads as
+                the layoff it is. */}
+            {projectionPath && (
+              <path
+                d={projectionPath}
+                fill="none"
+                stroke="var(--text-muted)"
+                strokeWidth="1.5"
+                strokeDasharray="0.5 2.5"
+                strokeLinecap="round"
+                opacity={0.7}
+                vectorEffect="non-scaling-stroke"
+              />
+            )}
 
             {/* The pace line: where a straight run at the target would be. */}
             <line
@@ -196,10 +231,14 @@ export function LiftChart({
         <span>{formatDay(windowStart, today)}</span>
         <span>{formatDay(windowEnd, today)}</span>
       </div>
-      {breaks.length > 0 && (
+      {(breaks.length > 0 || (projection?.length ?? 0) > 0) && (
         <p className="mt-1.5 text-[11px] leading-snug text-muted">
-          Shaded: {breaks.map((b) => b.label).join(", ")}. Hollow markers came from
-          the old spreadsheet or the handoff, not from a logged session.
+          {breaks.length > 0 &&
+            `Shaded: ${breaks.map((b) => b.label).join(", ")}. `}
+          {(projection?.length ?? 0) > 0 &&
+            "Dotted: what January's spreadsheet projected — the distance to it is the layoff. "}
+          {breaks.length > 0 &&
+            "Hollow markers came from the old spreadsheet or the handoff, not from a logged session."}
         </p>
       )}
     </figure>

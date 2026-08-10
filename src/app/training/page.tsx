@@ -17,6 +17,8 @@ import {
   latestSession,
   liftSeries,
   planFor,
+  projectionSeries,
+  rmSeries,
   sessionSets,
   weekStrip,
   weeksSinceDeload,
@@ -26,6 +28,7 @@ import { SessionCard } from "@/components/SessionCard";
 import { PlanCheck } from "@/components/PlanCheck";
 import { GoalPace } from "@/components/GoalPace";
 import { LiftChart } from "@/components/LiftChart";
+import { RmChart } from "@/components/RmChart";
 import { WeekStrip } from "@/components/WeekStrip";
 import { BodyweightChart } from "@/components/BodyweightChart";
 
@@ -78,6 +81,10 @@ export default function TrainingPage() {
     (g): g is TrainingGoal => g.metric === "weight",
   );
   const bodyweight = bodyweightSeries(checkins, sessions);
+
+  const rmCharted = charted
+    .map((g) => ({ goal: g, points: rmSeries(sets, g.exercise) }))
+    .filter((r) => r.points.length > 0);
 
   return (
     <div className="space-y-5">
@@ -140,6 +147,7 @@ export default function TrainingPage() {
                 to: goals.deadline,
                 toValue: g.target,
               }}
+              projection={projectionSeries(goals, g.id)}
               breaks={breaks}
               windowStart={chartWindowStart}
               windowEnd={goals.deadline}
@@ -150,6 +158,37 @@ export default function TrainingPage() {
           {bodyweight.length > 0 && (
             <BodyweightChart points={bodyweight} today={today} />
           )}
+        </div>
+      )}
+
+      {rmCharted.length > 0 && (
+        <div>
+          <h2 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted">
+            Estimated maxes
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {rmCharted.map(({ goal, points }) => (
+              <RmChart
+                key={goal.id}
+                title={goal.name}
+                points={points}
+                breaks={breaks}
+                windowStart={chartWindowStart}
+                windowEnd={goals.deadline}
+                today={today}
+                colour={CHART_COLOURS[goal.id] ?? "var(--series-protein)"}
+              />
+            ))}
+          </div>
+          <p className="mt-2 text-[11px] leading-relaxed text-muted">
+            Each day&rsquo;s best set restated as an estimated 1-, 3- and 5-rep
+            max via Epley — weight × (1 + reps ÷ 30). These are estimates, not
+            lifted weights: rep-max formulas disagree by roughly ±5–10%, and the
+            error grows with the rep count of the set the estimate came from. A
+            set already at 5 reps passes through the e5RM line unchanged, so
+            that curve never contradicts the log. The goals above are graded on
+            real top sets only — nothing estimated feeds them.
+          </p>
         </div>
       )}
 

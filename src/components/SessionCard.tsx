@@ -29,6 +29,60 @@ interface Props {
   today: string;
 }
 
+/**
+ * The session's shape as a glyph: one column per set, height proportional to
+ * weight (or, for bodyweight work, reps) against the exercise's heaviest set,
+ * scaled from zero. A top set followed by a back-off draws the step down that
+ * "155 × 5, 135 × 5" describes, readable before the numbers are.
+ *
+ * Decorative on purpose — the pills beside it carry every figure, so it is
+ * hidden from assistive tech, and it only appears when there are at least two
+ * comparable sets: a single full-height bar would say nothing.
+ */
+function SetShape({ sets }: { sets: WorkoutSet[] }) {
+  const weighted = sets.filter((s) => s.weightLbs !== undefined);
+  const repsOnly = sets.filter(
+    (s) => s.weightLbs === undefined && s.reps !== undefined,
+  );
+  const values =
+    weighted.length >= 2
+      ? weighted.map((s) => s.weightLbs!)
+      : repsOnly.length >= 2
+        ? repsOnly.map((s) => s.reps!)
+        : null;
+  if (!values) return null;
+
+  const max = Math.max(...values);
+  if (max <= 0) return null;
+
+  const BAR = 5;
+  const GAP = 2;
+  const H = 20;
+  return (
+    <svg
+      aria-hidden
+      width={values.length * (BAR + GAP) - GAP}
+      height={H}
+      className="shrink-0"
+    >
+      {values.map((v, i) => {
+        const h = Math.max((v / max) * H, 2);
+        return (
+          <rect
+            key={i}
+            x={i * (BAR + GAP)}
+            y={H - h}
+            width={BAR}
+            height={h}
+            rx={1}
+            fill="var(--baseline)"
+          />
+        );
+      })}
+    </svg>
+  );
+}
+
 function SetPill({ set, top }: { set: WorkoutSet; top: boolean }) {
   return (
     <span
@@ -86,6 +140,7 @@ export function SessionCard({ session, sets, today }: Props) {
                   <li key={`${e.exercise}-${i}`}>
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
                       <span className="min-w-0 flex-1 text-[15px]">{e.exercise}</span>
+                      <SetShape sets={e.sets} />
                       <div className="flex flex-wrap justify-end gap-1.5">
                         {e.sets.map((s) => (
                           <SetPill

@@ -314,6 +314,18 @@ reason: watts need bar speed and range of motion, neither of which is logged, so
 the figure would have been tonnage multiplied by invented constants — same chart,
 fake units. The lbs-moved line chart is what got built instead.
 
+**Estimated 1/3/5RM curves are the one estimate that made it in** — added
+August 10, 2026, by explicit request, which is the bar the two paragraphs above
+set. They live on `/training` under "Estimated maxes" (`rmSeries()` in
+`src/lib/training.ts`, rendered by `RmChart`), computed from logged sets via
+Epley and labelled as estimates with the ±5–10% band stated. Two rules keep
+them tolerable where MET and watts weren't: the goals, their pace lines and the
+lift charts are still graded on real top sets only — nothing estimated feeds
+`goalProgress()` — and restating a set at its own rep count is the identity, so
+the e5RM curve agrees with the log wherever the log actually speaks. Don't let
+an estimated figure cross into the grading, and don't add rep counts the goals
+don't use.
+
 **The dashboard's training column went through three shapes in one day** before
 landing where it is: first the *latest* session (read as today's schedule no matter
 how it was labelled), then historical charts only, then the current form — pinned to

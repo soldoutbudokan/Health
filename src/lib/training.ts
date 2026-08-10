@@ -8,6 +8,7 @@ import {
   type TrainingBreak,
   type TrainingGoal,
   type TrainingGoals,
+  type TrainingSource,
   type WorkoutSet,
 } from "./trainingTypes";
 
@@ -170,12 +171,64 @@ export function topSet(sets: WorkoutSet[], exercise: string): WorkoutSet | undef
 }
 
 /**
- * Epley one-rep-max estimate. Used only to compare sets at *different* rep
- * counts — 165×5 against 145×8 — never to restate a set that is already at
- * the goal's rep count, where the raw weight is the honest number.
+ * Epley one-rep-max estimate. Exists to compare sets at *different* rep
+ * counts — 165×5 against 145×8 — never to overwrite a raw weight with a
+ * dressed-up one. The estimated-max chart is its one consumer, and it keeps
+ * that rule arithmetically: restating a set at its own rep count is the
+ * identity, so an e5RM drawn from a 5-rep set *is* the raw weight.
+ *
+ * Unrounded, because `rmSeries` derives the 3- and 5-rep figures from this
+ * one and rounding belongs at the display edge, not in the middle of a chain.
  */
 export function estimated1RM(weightLbs: number, reps: number): number {
-  return round(weightLbs * (1 + reps / 30));
+  return weightLbs * (1 + reps / 30);
+}
+
+export interface RmPoint {
+  date: string;
+  /** The set the day's estimate came from — provenance, shown on hover. */
+  weightLbs: number;
+  reps: number;
+  source: TrainingSource;
+  /** The same best set restated at 1, 3 and 5 reps. Unrounded. */
+  e1: number;
+  e3: number;
+  e5: number;
+}
+
+/**
+ * One point per day for an exercise: the day's best *estimated* single,
+ * with the 3- and 5-rep restatements of the same set alongside.
+ *
+ * Best by estimated max rather than by weight, because that is the question
+ * this series answers — 135×8 is a better single than 145×2 even though 145
+ * is heavier. The three curves are one estimate at three rep counts, not
+ * three measurements, which is why they only ever move together.
+ *
+ * Nothing here feeds `goalProgress` or the lift charts: the goals are graded
+ * on real top sets only, and an estimate that crept into the grading would be
+ * the same mistake as the calories-burned figure this site already removed.
+ */
+export function rmSeries(sets: WorkoutSet[], exercise: string): RmPoint[] {
+  const best = new Map<string, { set: WorkoutSet; e1: number }>();
+  for (const s of sets) {
+    if (!sameExercise(s.exercise, exercise)) continue;
+    if (s.weightLbs === undefined || s.reps === undefined) continue;
+    const e1 = estimated1RM(s.weightLbs, s.reps);
+    const cur = best.get(s.date);
+    if (!cur || e1 > cur.e1) best.set(s.date, { set: s, e1 });
+  }
+  return [...best.values()]
+    .sort((a, b) => a.set.date.localeCompare(b.set.date))
+    .map(({ set: s, e1 }) => ({
+      date: s.date,
+      weightLbs: s.weightLbs!,
+      reps: s.reps!,
+      source: s.source,
+      e1,
+      e3: e1 / (1 + 3 / 30),
+      e5: e1 / (1 + 5 / 30),
+    }));
 }
 
 /**
@@ -281,6 +334,25 @@ export function goalProgress(
       projected,
     };
   });
+}
+
+/**
+ * The January spreadsheet's projection for one goal, as chartable points.
+ *
+ * A projection row's month means "during this month" — `goalProgress` reads
+ * the current month's row as where January said you'd be by now — so each
+ * value is pinned to the middle of its month rather than to either edge.
+ * Drawn on the lift charts so the distance between this line and the logged
+ * one is visible for what it is: the layoff, not a slump.
+ */
+export function projectionSeries(
+  goals: TrainingGoals,
+  goalId: string,
+): { date: string; value: number }[] {
+  return goals.projection
+    .filter((p) => p.values[goalId] !== undefined)
+    .map((p) => ({ date: `${p.month}-15`, value: p.values[goalId] }))
+    .sort((a, b) => a.date.localeCompare(b.date));
 }
 
 /* ------------------------------------------------------------- compliance */

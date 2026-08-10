@@ -15,6 +15,7 @@ import { formatDay, formatFullDay } from "@/lib/labels";
 import { download, toAppleHealthXML, toMarkdown } from "@/lib/export";
 import { TrendChart, type TrendPoint } from "@/components/TrendChart";
 import { StatTile } from "@/components/StatTiles";
+import { LogHeatmap } from "@/components/LogHeatmap";
 
 const RANGES = [7, 14, 30, 90] as const;
 
@@ -148,6 +149,10 @@ export function History({ entries, goals, builtOn }: Props) {
           height={150}
         />
       </div>
+
+      {/* The whole log at a glance — deliberately outside the range toggle,
+          which windows the charts above but would defeat a calendar. */}
+      <LogHeatmap entries={entries} goals={goals} builtOn={builtOn} />
 
       {/* Table view — the accessible counterpart to the charts above. */}
       <section className="card overflow-hidden">
