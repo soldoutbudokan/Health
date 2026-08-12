@@ -18,6 +18,13 @@ The site is a static export on GitHub Pages at
 `https://soldoutbudokan.github.io/Health/`. A push to `main` triggers
 `.github/workflows/deploy.yml`, which builds and publishes; allow a minute or two.
 
+**Commit log entries straight to `main`.** Standing instruction as of August 12,
+2026. There is one writer and one file, so a feature branch buys no review and
+costs a merge — and worse, it means the number you just logged isn't on the site,
+because Pages builds from `main` and nothing else. If a session starts you on a
+branch, land the work on `main` anyway. Code changes big enough to want a second
+look are the exception, and they're rare here.
+
 **The repo is public, and so is the log.** That is a deliberate choice, not an
 oversight — putting a login in front of the site turned out to cost either a
 domain purchase (Cloudflare Access requires a domain on your own account and
