@@ -106,4 +106,22 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "A bakery-style chocolate chip cookie. Size is the assumption doing nearly all the work here, since cookies of this style are fairly consistent per gram at ~4.7 kcal/g — so this entry is really a weight estimate wearing a macro breakdown. First estimated at 75 g on August 11, 2026 and corrected the same day to 86 g, on the report that the cookie was noticeably bigger than that — roughly 15% — which is the observation the original note said the band turned on. That is one eyeballed sighting rather than a scale reading, so the band is still 330-480 kcal and still tracks size alone; it is narrower than the opening 250-450 only because the small-supermarket-cookie end has been ruled out. Sodium ~275 mg is ordinary for the type and the least consequential number in the row.",
     tags: ["cookie", "dessert", "chocolate chip", "aloette", "restaurant", "takeout", "toronto"],
   },
+  {
+    id: "thai-beef-pad-thai",
+    name: "Beef Pad Thai",
+    source: "claude",
+    per: "100 g",
+    gramsPerServing: 100,
+    macros: {
+      calories: 200,
+      protein: 10,
+      carbs: 21,
+      fat: 8.5,
+      fiber: 1,
+      sugar: 5,
+      sodium: 350,
+    },
+    note: "NO VENUE — this is a generic Thai-restaurant pad thai rather than a particular kitchen's, because none was named when it was first logged on August 13, 2026. If it turns out to come from somewhere ordered from repeatedly, split this into a branded entry rather than letting one set of numbers stand for every restaurant in the city. Held per 100 g so a lunch portion and a full plate log against the same figures; a served portion runs 350-500 g. Estimated from the dish's construction, not a panel: per 100 g, roughly 45 g cooked rice noodles, 27 g beef, 10 g egg, 12 g bean sprouts and garlic chives, 10 g tamarind-and-palm-sugar sauce, 4 g wok oil and 3 g crushed peanuts. Two things move the total and neither is visible from the outside: how much oil the wok carried, and how much beef is actually in it. Calorie band is 155-260 per 100 g on that basis. Sodium is wider at 250-500 mg per 100 g and tracks the fish sauce alone, which is the usual asymmetry here — a portion can be eyeballed, a sauce cannot. Two published figures bracket this: P.F. Chang's beef pad thai is 760 kcal / 28 g protein / 1,670 mg sodium for a large restaurant plate, and a 300 g reference serving is commonly given as 600 kcal / 35 g protein, which is 200 kcal per 100 g — the same density this entry carries. The 5 g of sugar per 100 g is real and worth noticing: pad thai sauce is palm sugar and tamarind, so a 400 g plate is a 20 g sugar item before anything sweet is ordered.",
+    tags: ["pad thai", "thai", "noodles", "beef", "restaurant", "takeout", "lunch"],
+  },
 ];
