@@ -56,3 +56,18 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-08-15,2026-08-08,light-upper,Cable fly,isolation,1,6,35,,,"Deliberately light.",logged
 2026-08-08-16,2026-08-08,light-upper,Cable fly,isolation,2,6,35,,,,logged
 2026-08-09-01,2026-08-09,conditioning,Sled,finisher,1,,,50,,"Torque M4 Tank at full resistance for the whole fifty minutes. Logged as ""finisher"" because that is the kind the program gives the sled's open-ended ""to tolerance"" bout; here it was the entire session rather than the end of one. The session is typed `conditioning`, but SetKind has no such member and gained none for this -- adding one would change how every session card groups its rows to settle a single line. Resistance is left out of weight_lbs deliberately -- the Tank's setting is a magnetic brake level, not pounds.",logged
+2026-08-13-01,2026-08-13,other,Sled push + pull,warmup,1,,,6,,,logged
+2026-08-13-02,2026-08-13,other,Seated pancakes,warmup,1,,,,,,logged
+2026-08-13-03,2026-08-13,other,Shoulder warmup,warmup,1,,,,,,logged
+2026-08-13-04,2026-08-13,other,Jumps,jump,1,,,,,"Reported only as ""Jumps"". Two sets are logged because the plan for the day called for 2 x 4 bodyweight and every other item was followed or its deviation stated, but no rep count was given, so reps stay blank rather than get assumed at 4.",logged
+2026-08-13-05,2026-08-13,other,Jumps,jump,2,,,,,,logged
+2026-08-13-06,2026-08-13,other,Trap bar deadlift,compound,1,5,260,,,"Reported quite easy. The plan for the day called for 240 as a re-entry load; 260 was taken instead and both sets moved. This is the same weight as August 5, the session the lower-back strain followed, repeated here after eight days without lower-body lifting with no back complaint at all -- which is the useful result of the day. Upper traps reported as working hard, and reported as happening again rather than for the first time.",logged
+2026-08-13-07,2026-08-13,other,Trap bar deadlift,compound,2,5,260,,,,logged
+2026-08-13-08,2026-08-13,other,Bench press,compound,1,5,150,,,"150 rather than the planned 155 because the plates to make 155 were not available. Against August 4's 155 x 5 top set this is a 5 lb step down taken for equipment reasons, not a performance reading.",logged
+2026-08-13-09,2026-08-13,other,Bench press,compound,2,5,140,,,,logged
+2026-08-13-10,2026-08-13,other,Bench press,compound,3,5,140,,,,logged
+2026-08-13-11,2026-08-13,other,Pullups,compound,1,5,,,,"Reported quite hard. Taken fifth in the session, after the deadlifts and the bench, and five days after the last lifting session -- where August 8's three sets of five at RPE 8.5 were taken first, before anything else. Not a test set and not comparable to one.",logged
+2026-08-13-12,2026-08-13,other,Pullups,compound,2,5,,,,,logged
+2026-08-13-13,2026-08-13,other,Smith machine squat,compound,1,5,160,,,"All ten reps completed, against August 5's 175 for 5 then 4. Deliberately lighter for a full-body day and for being the sixth item rather than the second; the missed rep at 175 is what the lighter load was chosen to avoid repeating.",logged
+2026-08-13-14,2026-08-13,other,Smith machine squat,compound,2,5,160,,,,logged
+2026-08-13-15,2026-08-13,other,Dips,isolation,1,10,,,,"Full programmed ten, matching August 8. This goal is already at target, so the job here is maintenance.",logged
