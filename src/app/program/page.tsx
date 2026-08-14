@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  AWAY_FROM_THE_GYM,
   HYPERMOBILITY_RULES,
   OPEN_ITEMS,
   PROGRAM,
@@ -95,6 +96,57 @@ function Notes({
   );
 }
 
+/**
+ * The travel-week protocol. Rendered here and nowhere else on purpose: this is
+ * the plan page, and the plan is allowed to say what to do. The dashboard is
+ * not — a day there shows what was logged and never what was suggested — so
+ * this must not migrate onto it, however convenient that would be mid-trip.
+ */
+function AwayFromTheGym() {
+  return (
+    <section className="card p-4">
+      <h2 className="text-base font-semibold">Away from the gym</h2>
+      <p className="mt-1 text-sm leading-relaxed text-ink-2">{AWAY_FROM_THE_GYM.blurb}</p>
+
+      <h3 className="mt-4 text-sm font-medium">Swapping the loaded work</h3>
+      <dl className="mt-2 divide-y divide-[color:var(--border)]">
+        {AWAY_FROM_THE_GYM.substitutions.map((s) => (
+          <div key={s.programmed} className="flex flex-wrap gap-x-3 gap-y-0.5 py-2">
+            <dt className="w-full text-sm font-medium sm:w-52 sm:shrink-0">
+              {s.programmed}
+            </dt>
+            <dd className="flex-1 text-sm leading-snug text-ink-2">{s.away}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <h3 className="mt-4 text-sm font-medium">Shape of a six-day trip</h3>
+      <ol className="mt-2 divide-y divide-[color:var(--border)]">
+        {AWAY_FROM_THE_GYM.days.map((d, i) => (
+          <li key={`${d.when}-${i}`} className="flex flex-wrap gap-x-3 gap-y-0.5 py-2">
+            <span className="w-full text-sm font-medium text-muted sm:w-24 sm:shrink-0">
+              {d.when}
+            </span>
+            <span className="flex-1 text-sm leading-snug text-ink-2">{d.work}</span>
+          </li>
+        ))}
+      </ol>
+
+      <h3 className="mt-4 text-sm font-medium">Two things to avoid</h3>
+      <dl className="mt-2 space-y-2.5">
+        {AWAY_FROM_THE_GYM.avoid.map((a) => (
+          <div key={a.title}>
+            <dt className="text-sm font-medium">{a.title}</dt>
+            <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">{a.body}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <p className="mt-4 text-xs leading-snug text-muted">{AWAY_FROM_THE_GYM.returning}</p>
+    </section>
+  );
+}
+
 export default function ProgramPage() {
   const gym = PROGRAM.filter((s) => s.place === "gym");
   const home = PROGRAM.filter((s) => s.place === "home");
@@ -160,6 +212,8 @@ export default function ProgramPage() {
           <SessionTable key={s.id} session={s} />
         ))}
       </div>
+
+      <AwayFromTheGym />
 
       <section className="card p-4">
         <h2 className="text-base font-semibold">Hypermobility rules</h2>

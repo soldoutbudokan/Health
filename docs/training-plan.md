@@ -127,6 +127,55 @@ Short-on-time version: pullover, goblet pry, calf stretch.
 
 If wrecked: walk 30 minutes instead. Recovery beats one more session.
 
+### Away From the Gym (travel weeks, no equipment)
+
+A trip is not a deload and not a layoff — it is a maintenance week. Six days costs
+essentially nothing: the August 5–13 gap ended with the trap bar moving *better* at
+the same 260. So the goal is to come home unstiff and unhurt, not to have trained.
+Four short sessions across a six-day trip is the dose, and travel days themselves
+get walking and nothing else.
+
+Where a session calls for the 25 or 35 lb bell, load is usually solvable: a backpack
+with 20–25 lbs of books, or a bag of rice. Staying in a house normally solves it and
+a hotel normally does not — in that case drop to the bodyweight column and accept
+the smaller stimulus.
+
+| Programmed | Away substitute |
+|---|---|
+| Goblet squat pry (25 lb) | Loaded backpack held at the chest, or grip a door frame and use it as the counterweight |
+| Kettlebell pullover (25 lb) | Loaded backpack in both hands; a dead hang if there is a bar |
+| Slow single-leg RDL (35 lb) | Same movement, backpack or bodyweight, still 5 sec down |
+| Two-leg calf raises (35 lb) | Single-leg, bodyweight, off a stair. One leg roughly doubles the load, which is what the bell was for |
+| Band pull-aparts | Skip it. Shoulder insurance is the one item a week without costs nothing |
+| Kettlebell overhead hold | Plank shoulder taps, 10/side, hips still |
+| Bench press | Feet-elevated pushups — feet on a chair shifts load to the upper chest and raises the share of bodyweight pressed, which is what makes it a substitute rather than a warmup |
+| Dips | Diamond pushups |
+| Pullups | A bar if one exists — park, tree branch, garage beam: 2 × 3–4 easy reps, twice in the week. Otherwise accept the gap |
+
+Shape of a six-day trip:
+
+| Day | |
+|---|---|
+| Travel day | Walking. Long lunge hold and deep squat hold on arrival if stiff |
+| Day 1 | Feet-elevated pushups 3 sets · dead bugs 2 × 10 · side plank 2 × 20 sec/side |
+| Day 2 | Pogo hops 2 × 20 · single-leg calf raises 2 × 12/side · single-leg RDL 2 × 5/side · Copenhagen plank 2 × 15 sec/side |
+| Day 3 | The full Stretch Under Tension day, with the substitutions above |
+| Day 4 | Diamond pushups 3 sets · plank shoulder taps 2 × 10/side · dead bugs 2 × 10 |
+| Travel day | Nothing |
+
+Two things to avoid:
+
+- **Bench dips off a chair or a bed edge.** The obvious dip substitute and a bad one
+  here: hands behind the body force the shoulder into extension plus internal
+  rotation at end range, which is exactly the position the hypermobility rules exist
+  to keep it out of. Diamond pushups reach the same tissue without going there.
+- **High-rep circuits to failure.** Sets of 50 pushups are not a bench substitute;
+  they are soreness that follows you home and blunts the first session back. Stop a
+  few reps short on every set, the same as in the gym.
+
+Coming back, the first session is a normal one rather than a make-up session, and
+the weights resume where they left off rather than backing down.
+
 ## 4. Progression and Cycle Rules
 
 - **Main lifts (deadlift, squat, bench heavy day):** add 2.5–5 lbs whenever all work sets move well. Target pace on deadlift and squat is ~2 lbs/week.
@@ -139,6 +188,7 @@ If wrecked: walk 30 minutes instead. Recovery beats one more session.
 
 These points came out of back-and-forth and should be preserved as reasoning, not just rules:
 
+- **What "stretch under tension" means.** The muscle is working while it is at length — the opposite of sinking into a position and relaxing there. In a passive stretch the muscle switches off and the load transfers at end range to the joint capsule and ligaments, which for this athlete means loading the exact tissue that is already too lax and buying range there is no strength in. Under load the working muscle is an active brake protecting the joint, and any range gained is range that can be controlled. Every movement on the stretch day is built that way: the goblet pry *holds* the bottom of a squat rather than being pushed into it, the single-leg RDL is a five-second eccentric rather than a hamstring stretch, the deep pushup hold keeps the arms working while the chest sits at length. Hence the three rules — move slow, stop at the first real stretch rather than max range, and read sharp or pinchy as the signal it has left muscle range for joint range.
 - **Jumps moved to the start of lower days.** The old routine had 2x10 weighted jumps superset with 2x10 depth jumps at the end, after deadlifts, squats, and machine work. Jumping tired teaches slow mechanics, and tired reps don't raise the vertical. Low-dose fresh jumping (2x4 on heavy day) primes the nervous system rather than draining it — fatigue comes from volume, and the volume was the actual problem. Total jump volume dropped by more than half, but every rep is now done fresh, which is the only kind that raises a vertical.
 - **Why not train jumping fatigued for in-game dunking?** Fresh training raises the ceiling, and the ceiling is what carries into games. If a dunk needs a 32-inch jump and the fresh max is 33, the in-game (tired) jump is ~29 — rim grabs. Raise the fresh max to 37 and the tired jump is ~33 — dunks. Fatigued athleticism comes free from playing basketball.
 - **Depth jump dose cut hard.** They're the most demanding jump variant. Past ~5 reps a set, quality collapses and the athlete is just absorbing landings, which is where injury risk sits — especially with hypermobility.

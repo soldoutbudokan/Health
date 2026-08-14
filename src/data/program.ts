@@ -387,6 +387,100 @@ export function plannedSession(id: SessionType): PlannedSession | undefined {
   return PROGRAM.find((s) => s.id === id);
 }
 
+/**
+ * What to do on a trip, with no gym and usually no equipment.
+ *
+ * Deliberately NOT a `PROGRAM` entry and deliberately not a `SessionType`. Two
+ * reasons. A PROGRAM entry is a thing `comparePlan()` grades a logged session
+ * against, and grading a maintenance week would be scoring a week whose whole
+ * point is that it does not count. And a SessionType is something you can write
+ * in `data/workouts.csv`; days away are recorded by a row in `data/breaks.csv`,
+ * which is what that file is for. So this renders on `/program` as reference and
+ * touches nothing else — no comparison, no session chip, no frequency count.
+ *
+ * It lives here rather than only in the trip's break note because it is not
+ * about one trip. Added August 13, 2026 for the August 14–19 trip; the dates
+ * stay in `data/breaks.csv` and only the protocol is here, so the next trip
+ * reads the same page instead of re-deriving it.
+ */
+export const AWAY_FROM_THE_GYM: {
+  blurb: string;
+  substitutions: { programmed: string; away: string }[];
+  days: { when: string; work: string }[];
+  avoid: { title: string; body: string }[];
+  returning: string;
+} = {
+  blurb:
+    "A trip is not a deload and not a layoff — it is a maintenance week. Six days costs essentially nothing: the August 5–13 gap ended with the trap bar moving better at the same 260. The goal is to come home unstiff and unhurt, not to have trained. Four short sessions across a six-day trip is the dose, and travel days get walking and nothing else. Where a session calls for the 25 or 35 lb bell, a backpack with 20–25 lbs of books or a bag of rice usually solves it — a house normally has the makings and a hotel normally does not, in which case drop to bodyweight and accept the smaller stimulus.",
+  substitutions: [
+    {
+      programmed: "Goblet squat pry (25 lb)",
+      away: "Loaded backpack held at the chest, or grip a door frame and let it be the counterweight",
+    },
+    {
+      programmed: "Kettlebell pullover (25 lb)",
+      away: "Loaded backpack in both hands; a dead hang if there is a bar",
+    },
+    {
+      programmed: "Slow single-leg RDL (35 lb)",
+      away: "Same movement, backpack or bodyweight, still 5 sec down",
+    },
+    {
+      programmed: "Two-leg calf raises (35 lb)",
+      away: "Single-leg, bodyweight, off a stair — one leg roughly doubles the load, which is what the bell was for",
+    },
+    {
+      programmed: "Band pull-aparts",
+      away: "Skip it. Shoulder insurance is the one item a week without costs nothing",
+    },
+    {
+      programmed: "Kettlebell overhead hold",
+      away: "Plank shoulder taps, 10/side, hips still",
+    },
+    {
+      programmed: "Bench press",
+      away: "Feet-elevated pushups — feet on a chair shifts load to the upper chest and raises the share of bodyweight pressed, which is what makes it a substitute rather than a warmup",
+    },
+    { programmed: "Dips", away: "Diamond pushups" },
+    {
+      programmed: "Pullups",
+      away: "A bar if one exists — park, tree branch, garage beam: 2 × 3–4 easy reps, twice in the week. Otherwise accept the gap",
+    },
+  ],
+  days: [
+    {
+      when: "Travel day",
+      work: "Walking. Long lunge hold and deep squat hold on arrival if stiff",
+    },
+    {
+      when: "Day 1",
+      work: "Feet-elevated pushups 3 sets · dead bugs 2 × 10 · side plank 2 × 20 sec/side",
+    },
+    {
+      when: "Day 2",
+      work: "Pogo hops 2 × 20 · single-leg calf raises 2 × 12/side · single-leg RDL 2 × 5/side · Copenhagen plank 2 × 15 sec/side",
+    },
+    { when: "Day 3", work: "The full Stretch Under Tension day, with the substitutions above" },
+    {
+      when: "Day 4",
+      work: "Diamond pushups 3 sets · plank shoulder taps 2 × 10/side · dead bugs 2 × 10",
+    },
+    { when: "Travel day", work: "Nothing" },
+  ],
+  avoid: [
+    {
+      title: "Bench dips off a chair or a bed edge",
+      body: "The obvious dip substitute and a bad one here: hands behind the body force the shoulder into extension plus internal rotation at end range, which is exactly the position the hypermobility rules exist to keep it out of. Diamond pushups reach the same tissue without going there.",
+    },
+    {
+      title: "High-rep circuits to failure",
+      body: "Sets of 50 pushups are not a bench substitute; they are soreness that follows you home and blunts the first session back. Stop a few reps short on every set, the same as in the gym.",
+    },
+  ],
+  returning:
+    "Coming back, the first session is a normal one rather than a make-up session, and the weights resume where they left off rather than backing down.",
+};
+
 /** Scheduling constraints. Only two, deliberately — the days float otherwise. */
 export const SCHEDULING_RULES = [
   "Don't stack heavy lower right after light lower.",
@@ -427,6 +521,10 @@ export const HYPERMOBILITY_RULES = [
 ];
 
 export const RATIONALE: { title: string; body: string }[] = [
+  {
+    title: 'What "stretch under tension" means',
+    body: "The muscle is working while it is at length — the opposite of sinking into a position and relaxing there. In a passive stretch the muscle switches off and the load transfers at end range to the joint capsule and ligaments, which here means loading the exact tissue that is already too lax and buying range there is no strength in. Under load the working muscle is an active brake protecting the joint, and any range gained is range that can be controlled. Every movement on the stretch day is built that way: the goblet pry holds the bottom of a squat rather than being pushed into it, the single-leg RDL is a five-second eccentric rather than a hamstring stretch, the deep pushup hold keeps the arms working while the chest sits at length. Hence the three rules — move slow, stop at the first real stretch rather than max range, and read sharp or pinchy as the signal it has left muscle range for joint range.",
+  },
   {
     title: "Jumps moved to the start of lower days",
     body: "The old routine had 2×10 weighted jumps supersetted with 2×10 depth jumps at the end, after deadlifts, squats and machine work. Jumping tired teaches slow mechanics, and tired reps don't raise a vertical. Total jump volume dropped by more than half, but every rep is now done fresh, which is the only kind that raises a vertical.",
