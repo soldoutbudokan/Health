@@ -15,12 +15,24 @@
  */
 
 /**
- * Which day of the program a session was — or, for the last three, that it was
- * not one. `basketball`, `conditioning` and `other` have no `src/data/program.ts`
- * entry on purpose: `planFor()` looks the type up in PROGRAM and returns
- * undefined when it misses, so a session of one of these kinds draws no plan
- * comparison and reads as the deviation it is. Adding a program day to make one
- * of them score would be the mistake the CLAUDE.md rule warns about.
+ * Which day of the program a session was — or, for the last four, that it was
+ * not one. `full-body`, `basketball`, `conditioning` and `other` have no
+ * `src/data/program.ts` entry on purpose: `planFor()` looks the type up in
+ * PROGRAM and returns undefined when it misses, so a session of one of these
+ * kinds draws no plan comparison and reads as the deviation it is. Adding a
+ * program day to make one of them score would be the mistake the CLAUDE.md
+ * rule warns about.
+ *
+ * `full-body` was added on August 13, 2026, for a session that put the sled,
+ * jumps, trap bar, bench, pullups, squat and dips into one day because it was
+ * the only day that week training was possible. It had been logged as `other`
+ * for a few hours first, which was true and said nothing. The program splits
+ * upper from lower for good reasons and a full-body day is a real departure
+ * from it, so the type exists to name *which* departure it was — the same job
+ * `conditioning` does for a sled-only day. It is deliberately not a program
+ * day: naming a deviation is not the same as sanctioning it, and if these
+ * start recurring the answer is to revise `docs/training-plan.md`, not to
+ * quietly add a PROGRAM entry so they stop reading as deviations.
  */
 export type SessionType =
   | "heavy-lower"
@@ -30,6 +42,7 @@ export type SessionType =
   | "off-a"
   | "off-b"
   | "stretch"
+  | "full-body"
   | "basketball"
   | "conditioning"
   | "other";
@@ -42,6 +55,7 @@ export const SESSION_LABELS: Record<SessionType, string> = {
   "off-a": "Off Day A — Jump Support",
   "off-b": "Off Day B — Upper Support",
   stretch: "Stretch Under Tension",
+  "full-body": "Full Body",
   basketball: "Basketball",
   conditioning: "Conditioning",
   other: "Other",
@@ -56,24 +70,38 @@ export const SESSION_SHORT: Record<SessionType, string> = {
   "off-a": "Off A",
   "off-b": "Off B",
   stretch: "Stretch",
+  "full-body": "Full",
   basketball: "Ball",
   conditioning: "Cond",
   other: "Other",
 };
 
 /**
- * The four lifting days, and only those. Named for where they happen but used
- * for what they are: `gymSessionsIn()` counts them as the week's training
+ * The days that put a barbell in your hands. Named for where they happen but
+ * used for what they are: `gymSessionsIn()` counts them as the week's training
  * frequency, and the week strip highlights them. `conditioning` is deliberately
  * absent even though the sled is done at the gym — counting it here would read
  * a sled bout as a lifting session and inflate both the frequency and the
  * deload clock.
+ *
+ * `full-body` is here, added August 13, 2026, and it is the one member that is
+ * not a program day. That is not an inconsistency — it is two different
+ * questions being answered separately. Whether a session draws a plan
+ * comparison is settled by PROGRAM, which full-body is rightly absent from;
+ * whether it was a lifting day is settled here, and a day carrying the trap
+ * bar, bench and squat plainly was one. Leaving it out would render the week
+ * it happened as "1 session · 0 of 4 lifting" for a week in which every main
+ * lift was trained, which is a worse falsehood than the one the exclusion
+ * would be avoiding. The denominator stays 4: the numerator counts lifting
+ * days done, the 4 counts what the program asks for, and "1 of 4" is the
+ * honest reading of a week with one full-body session in it.
  */
 export const GYM_SESSIONS: SessionType[] = [
   "heavy-lower",
   "light-lower",
   "heavy-upper",
   "light-upper",
+  "full-body",
 ];
 
 /**
