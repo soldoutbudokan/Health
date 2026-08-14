@@ -131,47 +131,60 @@ If wrecked: walk 30 minutes instead. Recovery beats one more session.
 
 A trip is not a deload and not a layoff — it is a maintenance week. Six days costs
 essentially nothing: the August 5–13 gap ended with the trap bar moving *better* at
-the same 260. So the goal is to come home unstiff and unhurt, not to have trained.
-Four short sessions across a six-day trip is the dose, and travel days themselves
-get walking and nothing else.
+the same 260. So this is not a substitute program. It is **one loaded-stretch
+movement per goal lift, done daily**, in about twelve minutes. Daily works precisely
+because nothing here goes near failure — the moment something is sore, drop that item
+for the day rather than pushing it.
 
-**Assume no equipment at all** — no weights, no bands, and no improvised load
-either. Everything below needs a floor, a chair, a step and a doorway, and every
-substitution is written for that. The loaded stretches lose some stimulus in their
-bodyweight form, which does not matter for a week whose job is maintenance.
+**Assume no equipment at all** — no weights, no bands, no improvised load. A floor, a
+chair, a step and a doorway is the whole kit.
 
-| Programmed | Away substitute |
-|---|---|
-| Goblet squat pry (25 lb) | Hold a door frame or doorknob and lean back into a deep squat — the grip is the counterweight the bell was providing, and it does the job better |
-| Kettlebell pullover (25 lb) | Kneel in front of a chair, elbows on the seat, sink the chest toward the floor — then press the elbows down and hold. The press is what keeps it under tension instead of a passive hang |
-| Slow single-leg RDL (35 lb) | Same movement, bodyweight, still 5 sec down, free arm reaching forward — the reach lengthens the lever and takes back some of the missing load |
-| Two-leg calf raises (35 lb) | Single-leg, bodyweight, off a stair. One leg roughly doubles the load, which is what the bell was for |
-| Band pull-aparts | Prone Y-T-W raises, 8 each position — face down on the floor, or arms off the edge of a bed. Same rear-delt and mid-trap tissue, the arm's own weight as resistance |
-| Kettlebell overhead hold | Plank shoulder taps, 10/side, hips still |
-| Bench press | Feet-elevated pushups — feet on a chair shifts load to the upper chest and raises the share of bodyweight pressed, which is what makes it a substitute rather than a warmup |
-| Dips | Diamond pushups |
-| Pullups | A bar if one exists — park, tree branch, garage beam: 2 × 3–4 easy reps, twice in the week. Otherwise accept the gap |
+| Goal lift | Movement | Dose |
+|---|---|---|
+| Trap bar deadlift | Slow single-leg RDL — bodyweight, 5 sec down, free arm reaching forward, pause at the bottom | 2 × 5/side |
+| Smith machine squat | Deep squat hold — grip a door frame or doorknob and lean back into the bottom | 2 × 45 sec |
+| Bench press | Deep pushup hold, kneel if needed | 2 × 15–20 sec |
+| Dips | Nothing of its own — the deep pushup hold is already the bottom of a dip as well as a bench | shared |
+| Pullups | Active hang if there is a bar, shoulders pulled down away from the ears. No bar: kneel at a chair, elbows on the seat, hips back, chest sinking, then drive the elbows down and hold | 2 × 20–30 sec |
+| Jumps | Pogo hops, then slow single-leg calf raises off a step — 3 sec down, pause in the stretch | 2 × 20, then 2 × 10/side |
+| Jumps and squat, shared | Reverse Nordic — kneel upright on a cushion, hips straight and ribs down, lean back under control. Shallow at first | 2 × 5, 3–5 sec down |
 
-Shape of a six-day trip:
+Three of those need their reasoning stated, because the obvious version of each is
+the wrong one:
 
-| Day | |
-|---|---|
-| Travel day | Walking. Long lunge hold and deep squat hold on arrival if stiff |
-| Day 1 | Feet-elevated pushups 3 sets · prone Y-T-W raises 2 × 8 each · dead bugs 2 × 10 |
-| Day 2 | Pogo hops 2 × 20 · single-leg calf raises 2 × 12/side · single-leg RDL 2 × 5/side · Copenhagen plank 2 × 15 sec/side |
-| Day 3 | The full Stretch Under Tension day, in the bodyweight forms above |
-| Day 4 | Diamond pushups 3 sets · prone Y-T-W raises 2 × 8 each · plank shoulder taps 2 × 10/side · side plank 2 × 20 sec/side |
-| Travel day | Nothing |
+- **Dips share the bench movement rather than getting their own.** What a dip would
+  add over a pushup is deeper shoulder extension, which is the one direction the
+  hypermobility rules say not to go looking. Sharing is the answer, not a gap.
+- **The hang has to be active.** A relaxed dead hang with the shoulders up around the
+  ears feels like the best stretch on the list and is load handed straight to the
+  shoulder capsule — the tissue already too lax. If the shoulders cannot stay
+  depressed, the hang is over; do the chair version.
+- **The eccentric hip-flexor work sits under jumps, not the deadlift.** The
+  deadlift's tissue at length is hamstring, which the single-leg RDL covers. Hip
+  flexors are what this plan already assigns to jumping (see the long lunge hold).
 
-Two things to avoid:
+Feet — supination work, barefoot, safe daily. A hypermobile foot tends to collapse
+onto its ligaments rather than hold its own arch, and supination is what turns the
+foot into a rigid lever at takeoff, so this is jump work as much as foot work.
 
-- **Bench dips off a chair or a bed edge.** The obvious dip substitute and a bad one
-  here: hands behind the body force the shoulder into extension plus internal
-  rotation at end range, which is exactly the position the hypermobility rules exist
-  to keep it out of. Diamond pushups reach the same tissue without going there.
-- **High-rep circuits to failure.** Sets of 50 pushups are not a bench substitute;
-  they are soreness that follows you home and blunts the first session back. Stop a
-  few reps short on every set, the same as in the gym.
+| Movement | Dose | Note |
+|---|---|---|
+| Short foot (arch doming) | 2 × 10/side, 3 sec holds | Draw the ball of the foot toward the heel to raise the arch **without curling the toes** — toes staying long is what separates this from a toe scrunch |
+| Single-leg barefoot balance | 30 sec/side, then eyes closed | Trains the foot to stabilise actively rather than collapsing onto its ligaments |
+| Supinated calf raise | folded into the calf raises above | Bias the weight to the outside edge of the foot on the way up |
+
+What not to do:
+
+- **Dips off a bed, a chair or a bath edge.** The obvious dip substitute and the worst
+  option in the house. Hands behind the body force the shoulder into extension plus
+  internal rotation at end range — precisely the position the hypermobility rules
+  exist to keep it out of — and a mattress adds an unstable surface under a bodyweight
+  load. There is no version worth the risk for six days of maintenance.
+- **Passive hanging, and passive anything.** See above; it is the most tempting
+  mistake on the list because it feels productive.
+- **High-rep circuits to failure.** Sets of 50 pushups are not a bench substitute,
+  they are soreness that follows you home and blunts the first session back. Every
+  item here stops well short, which is also what makes doing them daily safe.
 
 Coming back, the first session is a normal one rather than a make-up session, and
 the weights resume where they left off rather than backing down.

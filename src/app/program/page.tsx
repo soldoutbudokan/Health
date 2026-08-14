@@ -97,10 +97,11 @@ function Notes({
 }
 
 /**
- * The travel-week protocol. Rendered here and nowhere else on purpose: this is
- * the plan page, and the plan is allowed to say what to do. The dashboard is
- * not — a day there shows what was logged and never what was suggested — so
- * this must not migrate onto it, however convenient that would be mid-trip.
+ * The away-from-the-gym protocol. Rendered here and nowhere else on purpose:
+ * this is the plan page, and the plan is allowed to say what to do. The
+ * dashboard is not — a day there shows what was logged and never what was
+ * suggested — so this must not migrate onto it, however convenient that would
+ * be mid-trip.
  */
 function AwayFromTheGym() {
   return (
@@ -108,31 +109,39 @@ function AwayFromTheGym() {
       <h2 className="text-base font-semibold">Away from the gym</h2>
       <p className="mt-1 text-sm leading-relaxed text-ink-2">{AWAY_FROM_THE_GYM.blurb}</p>
 
-      <h3 className="mt-4 text-sm font-medium">Swapping the loaded work</h3>
-      <dl className="mt-2 divide-y divide-[color:var(--border)]">
-        {AWAY_FROM_THE_GYM.substitutions.map((s) => (
-          <div key={s.programmed} className="flex flex-wrap gap-x-3 gap-y-0.5 py-2">
-            <dt className="w-full text-sm font-medium sm:w-52 sm:shrink-0">
-              {s.programmed}
-            </dt>
-            <dd className="flex-1 text-sm leading-snug text-ink-2">{s.away}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <h3 className="mt-4 text-sm font-medium">Shape of a six-day trip</h3>
+      <h3 className="mt-4 text-sm font-medium">One movement per goal lift, daily</h3>
       <ol className="mt-2 divide-y divide-[color:var(--border)]">
-        {AWAY_FROM_THE_GYM.days.map((d, i) => (
-          <li key={`${d.when}-${i}`} className="flex flex-wrap gap-x-3 gap-y-0.5 py-2">
-            <span className="w-full text-sm font-medium text-muted sm:w-24 sm:shrink-0">
-              {d.when}
-            </span>
-            <span className="flex-1 text-sm leading-snug text-ink-2">{d.work}</span>
+        {AWAY_FROM_THE_GYM.daily.map((d, i) => (
+          <li key={`${d.goal}-${i}`} className="py-2.5">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+              <span className="text-[15px] font-medium">{d.goal}</span>
+              <span className="tnum text-sm font-medium text-ink-2">{d.dose}</span>
+            </div>
+            <p className="mt-0.5 text-sm leading-snug text-ink-2">{d.movement}</p>
+            <p className="mt-0.5 text-xs leading-snug text-muted">{d.loading}</p>
           </li>
         ))}
       </ol>
 
-      <h3 className="mt-4 text-sm font-medium">Two things to avoid</h3>
+      <h3 className="mt-4 text-sm font-medium">Feet — supination</h3>
+      <p className="mt-1 text-xs leading-snug text-muted">
+        Barefoot, and safe to do every day. A hypermobile foot tends to collapse onto
+        its ligaments rather than hold its own arch, and supination is what turns the
+        foot into a rigid lever at takeoff — so this is jump work as much as foot work.
+      </p>
+      <ol className="mt-2 divide-y divide-[color:var(--border)]">
+        {AWAY_FROM_THE_GYM.feet.map((f) => (
+          <li key={f.name} className="py-2.5">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+              <span className="text-[15px]">{f.name}</span>
+              <span className="tnum text-sm font-medium text-ink-2">{f.dose}</span>
+            </div>
+            <p className="mt-0.5 text-xs leading-snug text-muted">{f.note}</p>
+          </li>
+        ))}
+      </ol>
+
+      <h3 className="mt-4 text-sm font-medium">What not to do</h3>
       <dl className="mt-2 space-y-2.5">
         {AWAY_FROM_THE_GYM.avoid.map((a) => (
           <div key={a.title}>

@@ -405,79 +405,86 @@ export function plannedSession(id: SessionType): PlannedSession | undefined {
  */
 export const AWAY_FROM_THE_GYM: {
   blurb: string;
-  substitutions: { programmed: string; away: string }[];
-  days: { when: string; work: string }[];
+  daily: { goal: string; movement: string; dose: string; loading: string }[];
+  feet: { name: string; dose: string; note: string }[];
   avoid: { title: string; body: string }[];
   returning: string;
 } = {
   blurb:
-    "A trip is not a deload and not a layoff — it is a maintenance week. Six days costs essentially nothing: the August 5–13 gap ended with the trap bar moving better at the same 260. The goal is to come home unstiff and unhurt, not to have trained. Four short sessions across a six-day trip is the dose, and travel days get walking and nothing else. ASSUME NO EQUIPMENT AT ALL — no weights, no bands, no improvised load either. Everything below needs a floor, a chair, a step and a doorway, and every substitution is written for that. The loaded stretches lose some stimulus in their bodyweight form, which does not matter for a week whose job is maintenance.",
-  substitutions: [
+    "A trip is not a deload and not a layoff — it is a maintenance week. Six days costs essentially nothing: the August 5–13 gap ended with the trap bar moving better at the same 260. So this is not a substitute program, it is one loaded-stretch movement per goal lift, done daily, in about twelve minutes. Daily works precisely because nothing here goes near failure — the moment something is sore, drop that item for the day rather than pushing it. ASSUME NO EQUIPMENT AT ALL: no weights, no bands, no improvised load. A floor, a chair, a step and a doorway is the whole kit.",
+  daily: [
     {
-      programmed: "Goblet squat pry (25 lb)",
-      away: "Hold a door frame or a doorknob and lean back into a deep squat — the grip is the counterweight the bell was providing, and it does the job better",
+      goal: "Trap bar deadlift",
+      movement: "Slow single-leg RDL — bodyweight, 5 sec down, free arm reaching forward, pause at the bottom",
+      dose: "2 × 5/side",
+      loading: "Hamstring at length. The reach lengthens the lever and takes back some of the load the 35 lb bell was providing",
     },
     {
-      programmed: "Kettlebell pullover (25 lb)",
-      away: "Kneel in front of a chair or couch, elbows on the seat, sink the chest toward the floor — then press the elbows down into the seat and hold. The press is what keeps it under tension instead of a passive hang",
+      goal: "Smith machine squat",
+      movement: "Deep squat hold — grip a door frame or doorknob and lean back into the bottom",
+      dose: "2 × 45 sec",
+      loading: "Hips and ankles at the bottom position. The grip is the counterweight the goblet pry used the bell for, and it does that job better",
     },
     {
-      programmed: "Slow single-leg RDL (35 lb)",
-      away: "Same movement, bodyweight, still 5 sec down, free arm reaching forward — the reach lengthens the lever and takes back some of the missing load",
+      goal: "Bench press",
+      movement: "Deep pushup hold — kneel if needed",
+      dose: "2 × 15–20 sec",
+      loading: "Chest and front shoulder at the bottom of a press",
     },
     {
-      programmed: "Two-leg calf raises (35 lb)",
-      away: "Single-leg, bodyweight, off a stair — one leg roughly doubles the load, which is what the bell was for",
+      goal: "Dips",
+      movement: "Nothing of its own — the deep pushup hold above is already the bottom of a dip as well as a bench",
+      dose: "shared",
+      loading: "Deliberately shared rather than left blank. The position a dip would add is deeper shoulder extension, which is the one place the hypermobility rules say not to go looking",
     },
     {
-      programmed: "Band pull-aparts",
-      away: "Prone Y-T-W raises, 8 each position — face down on the floor or with the arms off the edge of a bed. Same rear-delt and mid-trap tissue, and the arm's own weight is the resistance",
+      goal: "Pullups",
+      movement: "Active hang if there is a bar — shoulders pulled down away from the ears, never a passive dangle. No bar: kneel at a chair, elbows on the seat, hips back, chest sinking, then drive the elbows down into the seat and hold",
+      dose: "2 × 20–30 sec",
+      loading: "Lats at length. The active part is the whole point — a relaxed hang hands the load to the shoulder capsule, which is the tissue already too lax",
     },
     {
-      programmed: "Kettlebell overhead hold",
-      away: "Plank shoulder taps, 10/side, hips still",
+      goal: "Jumps",
+      movement: "Pogo hops, then slow single-leg calf raises off a step — 3 sec down, pause in the stretch",
+      dose: "2 × 20, then 2 × 10/side",
+      loading: "Tendon stiffness, then the Achilles at length. The slow lowering is what makes the calf raise a loaded stretch and not just a calf raise",
     },
     {
-      programmed: "Bench press",
-      away: "Feet-elevated pushups — feet on a chair shifts load to the upper chest and raises the share of bodyweight pressed, which is what makes it a substitute rather than a warmup",
-    },
-    { programmed: "Dips", away: "Diamond pushups" },
-    {
-      programmed: "Pullups",
-      away: "A bar if one exists — park, tree branch, garage beam: 2 × 3–4 easy reps, twice in the week. Otherwise accept the gap",
+      goal: "Jumps and squat, shared",
+      movement: "Reverse Nordic — kneel upright with a cushion under the knees, hips straight and ribs down, lean back under control and come back. Go shallow at first",
+      dose: "2 × 5, 3–5 sec down",
+      loading: "Quads and hip flexors eccentrically at length. This is the eccentric hip-flexor slot: it sits here rather than under the deadlift, because the deadlift's tissue at length is hamstring and the hip flexors are what the plan already assigns to jumping",
     },
   ],
-  days: [
+  feet: [
     {
-      when: "Travel day",
-      work: "Walking. Long lunge hold and deep squat hold on arrival if stiff",
+      name: "Short foot (arch doming)",
+      dose: "2 × 10/side, 3 sec holds",
+      note: "Barefoot, foot flat. Draw the ball of the foot toward the heel to raise the arch WITHOUT curling the toes — the toes staying long is what separates this from a toe scrunch.",
     },
     {
-      when: "Day 1",
-      work: "Feet-elevated pushups 3 sets · prone Y-T-W raises 2 × 8 each · dead bugs 2 × 10",
+      name: "Single-leg barefoot balance",
+      dose: "30 sec/side, then try it with eyes closed",
+      note: "Trains the foot to stabilise actively rather than collapsing onto its ligaments — the same principle as everything else here, applied to the arch.",
     },
     {
-      when: "Day 2",
-      work: "Pogo hops 2 × 20 · single-leg calf raises 2 × 12/side · single-leg RDL 2 × 5/side · Copenhagen plank 2 × 15 sec/side",
+      name: "Supinated calf raise",
+      dose: "folded into the 2 × 10/side above",
+      note: "Bias the weight to the outside edge of the foot on the way up. Supination is what makes the foot a rigid lever at takeoff, so this is jump work as much as foot work.",
     },
-    {
-      when: "Day 3",
-      work: "The full Stretch Under Tension day, in the bodyweight forms above",
-    },
-    {
-      when: "Day 4",
-      work: "Diamond pushups 3 sets · prone Y-T-W raises 2 × 8 each · plank shoulder taps 2 × 10/side · side plank 2 × 20 sec/side",
-    },
-    { when: "Travel day", work: "Nothing" },
   ],
   avoid: [
     {
-      title: "Bench dips off a chair or a bed edge",
-      body: "The obvious dip substitute and a bad one here: hands behind the body force the shoulder into extension plus internal rotation at end range, which is exactly the position the hypermobility rules exist to keep it out of. Diamond pushups reach the same tissue without going there.",
+      title: "Dips off a bed, a chair or a bath edge",
+      body: "The obvious dip substitute and the worst option in the house. Hands behind the body force the shoulder into extension plus internal rotation at end range, which is precisely the position the hypermobility rules exist to keep it out of, and a mattress adds an unstable surface under a bodyweight load. There is no version of this worth the risk for six days of maintenance — the deep pushup hold reaches the same tissue from a safe direction.",
+    },
+    {
+      title: "Passive hanging, and passive anything",
+      body: "A dead hang with the shoulders relaxed up around the ears is the single most tempting mistake available on this list, because it feels like a great stretch. It is load transferred straight to the shoulder capsule. If the shoulders cannot stay actively depressed, the hang is over — do the chair version instead.",
     },
     {
       title: "High-rep circuits to failure",
-      body: "Sets of 50 pushups are not a bench substitute; they are soreness that follows you home and blunts the first session back. Stop a few reps short on every set, the same as in the gym.",
+      body: "Sets of 50 pushups are not a bench substitute; they are soreness that follows you home and blunts the first session back. Every item here stops well short, which is also what makes doing them daily safe.",
     },
   ],
   returning:
