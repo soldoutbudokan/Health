@@ -411,19 +411,19 @@ export const AWAY_FROM_THE_GYM: {
   returning: string;
 } = {
   blurb:
-    "A trip is not a deload and not a layoff — it is a maintenance week. Six days costs essentially nothing: the August 5–13 gap ended with the trap bar moving better at the same 260. The goal is to come home unstiff and unhurt, not to have trained. Four short sessions across a six-day trip is the dose, and travel days get walking and nothing else. Where a session calls for the 25 or 35 lb bell, a backpack with 20–25 lbs of books or a bag of rice usually solves it — a house normally has the makings and a hotel normally does not, in which case drop to bodyweight and accept the smaller stimulus.",
+    "A trip is not a deload and not a layoff — it is a maintenance week. Six days costs essentially nothing: the August 5–13 gap ended with the trap bar moving better at the same 260. The goal is to come home unstiff and unhurt, not to have trained. Four short sessions across a six-day trip is the dose, and travel days get walking and nothing else. ASSUME NO EQUIPMENT AT ALL — no weights, no bands, no improvised load either. Everything below needs a floor, a chair, a step and a doorway, and every substitution is written for that. The loaded stretches lose some stimulus in their bodyweight form, which does not matter for a week whose job is maintenance.",
   substitutions: [
     {
       programmed: "Goblet squat pry (25 lb)",
-      away: "Loaded backpack held at the chest, or grip a door frame and let it be the counterweight",
+      away: "Hold a door frame or a doorknob and lean back into a deep squat — the grip is the counterweight the bell was providing, and it does the job better",
     },
     {
       programmed: "Kettlebell pullover (25 lb)",
-      away: "Loaded backpack in both hands; a dead hang if there is a bar",
+      away: "Kneel in front of a chair or couch, elbows on the seat, sink the chest toward the floor — then press the elbows down into the seat and hold. The press is what keeps it under tension instead of a passive hang",
     },
     {
       programmed: "Slow single-leg RDL (35 lb)",
-      away: "Same movement, backpack or bodyweight, still 5 sec down",
+      away: "Same movement, bodyweight, still 5 sec down, free arm reaching forward — the reach lengthens the lever and takes back some of the missing load",
     },
     {
       programmed: "Two-leg calf raises (35 lb)",
@@ -431,7 +431,7 @@ export const AWAY_FROM_THE_GYM: {
     },
     {
       programmed: "Band pull-aparts",
-      away: "Skip it. Shoulder insurance is the one item a week without costs nothing",
+      away: "Prone Y-T-W raises, 8 each position — face down on the floor or with the arms off the edge of a bed. Same rear-delt and mid-trap tissue, and the arm's own weight is the resistance",
     },
     {
       programmed: "Kettlebell overhead hold",
@@ -454,16 +454,19 @@ export const AWAY_FROM_THE_GYM: {
     },
     {
       when: "Day 1",
-      work: "Feet-elevated pushups 3 sets · dead bugs 2 × 10 · side plank 2 × 20 sec/side",
+      work: "Feet-elevated pushups 3 sets · prone Y-T-W raises 2 × 8 each · dead bugs 2 × 10",
     },
     {
       when: "Day 2",
       work: "Pogo hops 2 × 20 · single-leg calf raises 2 × 12/side · single-leg RDL 2 × 5/side · Copenhagen plank 2 × 15 sec/side",
     },
-    { when: "Day 3", work: "The full Stretch Under Tension day, with the substitutions above" },
+    {
+      when: "Day 3",
+      work: "The full Stretch Under Tension day, in the bodyweight forms above",
+    },
     {
       when: "Day 4",
-      work: "Diamond pushups 3 sets · plank shoulder taps 2 × 10/side · dead bugs 2 × 10",
+      work: "Diamond pushups 3 sets · prone Y-T-W raises 2 × 8 each · plank shoulder taps 2 × 10/side · side plank 2 × 20 sec/side",
     },
     { when: "Travel day", work: "Nothing" },
   ],

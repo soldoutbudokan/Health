@@ -135,18 +135,18 @@ the same 260. So the goal is to come home unstiff and unhurt, not to have traine
 Four short sessions across a six-day trip is the dose, and travel days themselves
 get walking and nothing else.
 
-Where a session calls for the 25 or 35 lb bell, load is usually solvable: a backpack
-with 20–25 lbs of books, or a bag of rice. Staying in a house normally solves it and
-a hotel normally does not — in that case drop to the bodyweight column and accept
-the smaller stimulus.
+**Assume no equipment at all** — no weights, no bands, and no improvised load
+either. Everything below needs a floor, a chair, a step and a doorway, and every
+substitution is written for that. The loaded stretches lose some stimulus in their
+bodyweight form, which does not matter for a week whose job is maintenance.
 
 | Programmed | Away substitute |
 |---|---|
-| Goblet squat pry (25 lb) | Loaded backpack held at the chest, or grip a door frame and use it as the counterweight |
-| Kettlebell pullover (25 lb) | Loaded backpack in both hands; a dead hang if there is a bar |
-| Slow single-leg RDL (35 lb) | Same movement, backpack or bodyweight, still 5 sec down |
+| Goblet squat pry (25 lb) | Hold a door frame or doorknob and lean back into a deep squat — the grip is the counterweight the bell was providing, and it does the job better |
+| Kettlebell pullover (25 lb) | Kneel in front of a chair, elbows on the seat, sink the chest toward the floor — then press the elbows down and hold. The press is what keeps it under tension instead of a passive hang |
+| Slow single-leg RDL (35 lb) | Same movement, bodyweight, still 5 sec down, free arm reaching forward — the reach lengthens the lever and takes back some of the missing load |
 | Two-leg calf raises (35 lb) | Single-leg, bodyweight, off a stair. One leg roughly doubles the load, which is what the bell was for |
-| Band pull-aparts | Skip it. Shoulder insurance is the one item a week without costs nothing |
+| Band pull-aparts | Prone Y-T-W raises, 8 each position — face down on the floor, or arms off the edge of a bed. Same rear-delt and mid-trap tissue, the arm's own weight as resistance |
 | Kettlebell overhead hold | Plank shoulder taps, 10/side, hips still |
 | Bench press | Feet-elevated pushups — feet on a chair shifts load to the upper chest and raises the share of bodyweight pressed, which is what makes it a substitute rather than a warmup |
 | Dips | Diamond pushups |
@@ -157,10 +157,10 @@ Shape of a six-day trip:
 | Day | |
 |---|---|
 | Travel day | Walking. Long lunge hold and deep squat hold on arrival if stiff |
-| Day 1 | Feet-elevated pushups 3 sets · dead bugs 2 × 10 · side plank 2 × 20 sec/side |
+| Day 1 | Feet-elevated pushups 3 sets · prone Y-T-W raises 2 × 8 each · dead bugs 2 × 10 |
 | Day 2 | Pogo hops 2 × 20 · single-leg calf raises 2 × 12/side · single-leg RDL 2 × 5/side · Copenhagen plank 2 × 15 sec/side |
-| Day 3 | The full Stretch Under Tension day, with the substitutions above |
-| Day 4 | Diamond pushups 3 sets · plank shoulder taps 2 × 10/side · dead bugs 2 × 10 |
+| Day 3 | The full Stretch Under Tension day, in the bodyweight forms above |
+| Day 4 | Diamond pushups 3 sets · prone Y-T-W raises 2 × 8 each · plank shoulder taps 2 × 10/side · side plank 2 × 20 sec/side |
 | Travel day | Nothing |
 
 Two things to avoid:
