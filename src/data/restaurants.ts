@@ -164,4 +164,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Built the same way as the beef patty above and subject to every caveat in that note — no published figures from Patties Express, anchored to Golden Krust's 142 g Jamaican-style chicken patty at 330 kcal / 10 g protein / 47 g carbs / 12 g fat / 2 g fibre / 8 g sugar / 540 mg sodium, then nudged for a shop-baked shell. Calorie band is 290-400. Chicken sits slightly below beef here on both calories and sodium, which is the direction the published panels agree on (Golden Krust: 330 against 340, 540 mg against 620), but the gap is inside both bands and should not be read as a reason to choose one. THE FILLINGS ARE CLOSER THAN THEY SOUND: chicken patty filling is dark meat with the same seasoning and the same thickened gravy, so it is not the leaner option a chicken-versus-beef framing implies, and at 12 g of protein per 340 kcal neither patty is a protein item. Chicken brands are more scattered than beef, which is why the band's floor is lower: Golden Krust 330, Caribbean Food Delights 330 (but 19 g fat), Juici 380, George's Tastee 290. Sodium band is 400-750 mg. One published Golden Krust jerk-chicken figure of 390 kcal / 17 g fat was also returned and is NOT used here — it is the in-store jerk patty rather than the 142 g retail one, a different product, and mixing the two would be the confusable-sibling error.",
     tags: ["patty", "jamaican", "chicken", "patties express", "restaurant", "takeout", "lunch", "toronto", "caribbean"],
   },
+  {
+    id: "subway-6in-sweet-onion-chicken-teriyaki-built",
+    name: "Sweet Onion Chicken Teriyaki",
+    variant: '6-inch, as built: lettuce, onion, black olives, cheddar, sub sauce',
+    brand: "Subway",
+    source: "claude",
+    per: "1 six-inch sub",
+    macros: {
+      calories: 510,
+      protein: 28,
+      carbs: 57.5,
+      fat: 19.5,
+      fiber: 4,
+      sugar: 23.5,
+      sodium: 1085,
+    },
+    note: "UNLIKE THE OTHER ENTRIES IN THIS FILE, MOST OF THIS IS PUBLISHED — Subway posts panels, so this is an addition of four sourced rows rather than a reconstruction, which is why it carries the narrowest band here at 470-570 kcal. Built as: the standard 6-inch Sweet Onion Chicken Teriyaki (340 kcal / 24 g protein / 54 g carbs / 4 g fat / 4 g fibre / 22 g sugar / 790 mg sodium for a 262 g sub, Atwater 348 against 340), which already includes the bread, the chicken, the standard veg and the sweet onion sauce; plus cheddar (60 kcal / 4 g protein / 4.5 g fat / 90 mg sodium); plus black olives (0 kcal, 25 mg sodium — three rings are a rounding error in everything but salt); plus Sub Sauce. THE SUB SAUCE IS THE ONE ESTIMATED LINE. Only its calories are published, 110 per 3 tsp (21 g), so the split into 11 g fat / 2.5 g carbs is back-calculated and the ~180 mg sodium is inferred from Subway's own mayonnaise (65-70 mg per 14 g) adjusted upward because at 5.2 kcal/g this is a thinner, more seasoned sauce than mayonnaise's 7.1 — read it as 100-300 mg. It is nonetheless a fifth of the sandwich's calories and more than half its fat, so a sub ordered without it is a genuinely different item, near 400 kcal. BREAD IS THE OTHER ASSUMPTION: the 340 kcal base is the default wheat/Italian, and Italian Herb & Cheese would add roughly 40-50 kcal — that is most of the calorie band. Tomato is in the published base but was not ordered, worth about -5 kcal, which is below the noise and has not been subtracted. The 23.5 g of sugar is real and is the teriyaki glaze plus the sweet onion sauce, not the bread; this is a sweet sandwich by construction. At 28 g protein for 510 kcal it is the best protein-per-calorie restaurant item in this file.",
+    tags: ["subway", "sub", "sandwich", "chicken", "teriyaki", "sweet onion", "restaurant", "takeout", "dinner"],
+  },
 ];
