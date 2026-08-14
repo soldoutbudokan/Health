@@ -59,8 +59,8 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-13-01,2026-08-13,full-body,Sled push + pull,warmup,1,,,6,,,logged
 2026-08-13-02,2026-08-13,full-body,Seated pancakes,warmup,1,,,,,,logged
 2026-08-13-03,2026-08-13,full-body,Shoulder warmup,warmup,1,,,,,,logged
-2026-08-13-04,2026-08-13,full-body,Jumps,jump,1,,,,,"Reported only as ""Jumps"". Two sets are logged because the plan for the day called for 2 x 4 bodyweight and every other item was followed or its deviation stated, but no rep count was given, so reps stay blank rather than get assumed at 4.",logged
-2026-08-13-05,2026-08-13,full-body,Jumps,jump,2,,,,,,logged
+2026-08-13-04,2026-08-13,full-body,Jumps,jump,1,4,,,,"Bodyweight, as the program prescribes. Reps were confirmed as 4 on August 13 having first been logged blank -- the session was reported as just ""Jumps"" and 4 was the planned count, which is not the same as a stated one.",logged
+2026-08-13-05,2026-08-13,full-body,Jumps,jump,2,4,,,,,logged
 2026-08-13-06,2026-08-13,full-body,Trap bar deadlift,compound,1,5,260,,,"Reported quite easy. The plan for the day called for 240 as a re-entry load; 260 was taken instead and both sets moved. This is the same weight as August 5, the session the lower-back strain followed, repeated here after eight days without lower-body lifting with no back complaint at all -- which is the useful result of the day. Upper traps reported as working hard, and reported as happening again rather than for the first time.",logged
 2026-08-13-07,2026-08-13,full-body,Trap bar deadlift,compound,2,5,260,,,,logged
 2026-08-13-08,2026-08-13,full-body,Bench press,compound,1,5,150,,,"150 rather than the planned 155 because the plates to make 155 were not available. Against August 4's 155 x 5 top set this is a 5 lb step down taken for equipment reasons, not a performance reading.",logged

@@ -40,19 +40,28 @@ export function WeekStrip({
       </div>
       <ol className="mt-2.5 grid grid-cols-7 gap-1.5">
         {week.map((d) => {
-          // The two filled chip states, and the whole of that colour scale:
-          // a gym day in slot-1 blue, a conditioning day in magenta. Every
-          // other day is a neutral surface, so nothing else competes and the
-          // pair only ever has to separate from each other.
+          // The three filled chip states, and the whole of that colour scale:
+          // a gym day in slot-1 blue, a conditioning day in magenta, a
+          // full-body day in purple. Every other day is a neutral surface, so
+          // nothing else competes and the three only ever separate from each
+          // other — which they do all-pairs in both modes, see globals.css.
+          //
+          // full-body is tested BEFORE the gym check on purpose: it is a
+          // member of GYM_SESSIONS, so the blue branch would otherwise swallow
+          // it and the whole point of the purple is that it not read as one of
+          // the four program days.
+          const isFullBody = d.session?.type === "full-body";
           const isGym = d.session ? GYM_SESSIONS.includes(d.session.type) : false;
-          const fill = isGym
-            ? { background: "var(--series-protein)", color: "#ffffff" }
-            : d.session?.type === "conditioning"
-              ? {
-                  background: "var(--series-conditioning)",
-                  color: "var(--on-conditioning)",
-                }
-              : undefined;
+          const fill = isFullBody
+            ? { background: "var(--series-fullbody)", color: "var(--on-fullbody)" }
+            : isGym
+              ? { background: "var(--series-protein)", color: "#ffffff" }
+              : d.session?.type === "conditioning"
+                ? {
+                    background: "var(--series-conditioning)",
+                    color: "var(--on-conditioning)",
+                  }
+                : undefined;
           return (
             <li key={d.date} className="text-center">
               <div className="text-[10px] text-muted">
