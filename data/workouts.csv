@@ -71,3 +71,17 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-13-13,2026-08-13,full-body,Smith machine squat,compound,1,5,160,,,"All ten reps completed, against August 5's 175 for 5 then 4. Deliberately lighter for a full-body day and for being the sixth item rather than the second; the missed rep at 175 is what the lighter load was chosen to avoid repeating.",logged
 2026-08-13-14,2026-08-13,full-body,Smith machine squat,compound,2,5,160,,,,logged
 2026-08-13-15,2026-08-13,full-body,Dips,isolation,1,10,,,,"Full programmed ten, matching August 8. This goal is already at target, so the job here is maintenance.",logged
+2026-08-15-01,2026-08-15,stretch,Slow single-leg RDL,mobility,1,5,,,,"Bodyweight, 5 sec down, free arm reaching forward, pause at the bottom -- the AWAY_FROM_THE_GYM substitute for the 35 lb bell version on the stretch day. Reps are per side: 5 left and 5 right in each of the two sets.",logged
+2026-08-15-02,2026-08-15,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
+2026-08-15-03,2026-08-15,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version -- gripping the frame and leaning back into the bottom. The grip is the counterweight the goblet pry uses the 25 lb bell for.",logged
+2026-08-15-04,2026-08-15,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
+2026-08-15-05,2026-08-15,stretch,Deep pushup hold,mobility,1,,,0.3,,"Prescribed 15-20 sec; 0.3 min is the midpoint of that range, not a stopwatch reading.",logged
+2026-08-15-06,2026-08-15,stretch,Deep pushup hold,mobility,2,,,0.3,,,logged
+2026-08-15-07,2026-08-15,stretch,Active hang,mobility,1,,,0.42,,"Prescribed 20-30 sec; 0.42 min is the midpoint. WHETHER THIS WAS A BAR HANG OR THE CHAIR VERSION WAS NOT RECORDED -- the routine gives both and they load the lats differently.",logged
+2026-08-15-08,2026-08-15,stretch,Active hang,mobility,2,,,0.42,,,logged
+2026-08-15-09,2026-08-15,stretch,Pogo hops,jump,1,20,,,,"Tendon stiffness, ahead of the calf raises.",logged
+2026-08-15-10,2026-08-15,stretch,Pogo hops,jump,2,20,,,,,logged
+2026-08-15-11,2026-08-15,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, pause in the stretch. Per side, as with the RDL.",logged
+2026-08-15-12,2026-08-15,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
+2026-08-15-13,2026-08-15,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
+2026-08-15-14,2026-08-15,stretch,Reverse Nordic,mobility,2,5,,,,,logged
