@@ -129,9 +129,15 @@ If wrecked: walk 30 minutes instead. Recovery beats one more session.
 
 ### Away From the Gym (travel weeks, no equipment)
 
-A trip is not a deload and not a layoff — it is a maintenance week. Six days costs
-essentially nothing: the August 5–13 gap ended with the trap bar moving *better* at
-the same 260. So this is not a substitute program. It is **one loaded-stretch
+A trip is not a deload and not a layoff — it is a maintenance week. Six days should
+cost little, but **the log does not yet show that and this section used to claim it
+did**: it cited the August 5–13 gap ending with the trap bar moving better at the
+same 260. The 260 was a typo, corrected on August 14 — the session was 240, the
+re-entry load the plan itself prescribed, and it was never pushed past that. An easy
+set at a deliberately conservative weight measures the prescription, not the layoff.
+The claim is withdrawn rather than restated more softly, and the first heavy lower
+session after a break is the only thing that will settle it. So this is not a
+substitute program. It is **one loaded-stretch
 movement per goal lift, done daily**, in about twelve minutes. Daily works precisely
 because nothing here goes near failure — the moment something is sore, drop that item
 for the day rather than pushing it.
