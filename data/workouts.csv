@@ -81,7 +81,7 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-15-08,2026-08-15,stretch,Active hang,mobility,2,,,0.42,,,logged
 2026-08-15-09,2026-08-15,stretch,Pogo hops,jump,1,20,,,,"Tendon stiffness, ahead of the calf raises.",logged
 2026-08-15-10,2026-08-15,stretch,Pogo hops,jump,2,20,,,,,logged
-2026-08-15-11,2026-08-15,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, pause in the stretch. Per side, as with the RDL.",logged
+2026-08-15-11,2026-08-15,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, pause in the stretch. Per side, as with the RDL. THE SUPINATED CALF RAISE IS FOLDED IN HERE RATHER THAN LOGGED AS ITS OWN EXERCISE, which is how AWAY_FROM_THE_GYM prescribes it -- the weight biased to the outside edge of the foot on the way up. It is a bias on these same sets, not extra sets, so giving it rows of its own would double-count them.",logged
 2026-08-15-12,2026-08-15,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
 2026-08-15-13,2026-08-15,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
 2026-08-15-14,2026-08-15,stretch,Reverse Nordic,mobility,2,5,,,,,logged

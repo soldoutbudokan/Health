@@ -107,4 +107,6 @@ aadd1ae7-fd3f-4e05-adfe-0c17fda4df36,2026-08-15,lunch,Crackers,"two, table-crack
 2033ab39-1343-4078-82e5-08ac05c4d1e5,2026-08-15,snack,Tiramisu,a small piece,,1 piece (~80 g),1,240,4,22,15,0.4,18,65,claude,2026-08-15T21:00:00.000Z
 978f0dd3-6efb-4cce-a7ad-de3c5f890a19,2026-08-15,snack,Sparkling apple juice,,,1 glass (~250 mL),1,115,0.2,28,0,0.3,26,12,claude,2026-08-15T21:00:00.000Z
 940b43ed-3879-4f13-85d8-faeb9bc31283,2026-08-15,snack,Brisk Lemon Iced Tea,,Brisk,1 can (341 mL),1,120,0,31,0,0,31,55,packaged,2026-08-15T21:00:00.000Z
-d5421453-0308-4e17-aadc-0d9c47734f66,2026-08-15,dinner,"Pizza, personal",smallish -- size and toppings not recorded,,"1 personal pizza (~8 in, ~230 g)",1,550,23,66,20,3.5,7,1200,claude,2026-08-15T23:00:00.000Z
+d5421453-0308-4e17-aadc-0d9c47734f66,2026-08-15,dinner,"Pizza, personal",smallish -- about three quarters eaten; size and toppings not recorded,,"1 personal pizza (~8 in, ~230 g)",0.75,550,23,66,20,3.5,7,1200,claude,2026-08-15T23:00:00.000Z
+aa1f0b3c-2e64-4d0e-9a03-71c1e6f5b8d2,2026-08-15,dinner,Peach crisp,,,1 serving (~150 g),1,290,3,47,11,3,30,150,claude,2026-08-15T23:15:00.000Z
+c4e7d918-5b30-4a72-8e15-0d9a3f26c7b1,2026-08-15,dinner,"Ice cream, vanilla",one scoop,,1 scoop (1/2 cup / 66 g),1,137,2.3,15.6,7.3,0.5,14,53,usda,2026-08-15T23:15:00.000Z
