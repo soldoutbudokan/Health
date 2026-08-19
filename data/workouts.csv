@@ -1,24 +1,24 @@
 id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,source
-2025-02-28-01,2025-02-28,,Smith machine squat,compound,1,6,60,,,"From the old spreadsheet's progression log; the rest of that session was not recorded.",sheet
-2025-12-12-01,2025-12-12,,Pullups,compound,1,3,,,,"From the old spreadsheet's progression log; the rest of that session was not recorded.",sheet
-2026-01-03-01,2026-01-03,,Pullups,compound,1,4,,,,"From the old spreadsheet's progression log; the rest of that session was not recorded.",sheet
-2026-01-08-01,2026-01-08,,Bench press,compound,1,5,135,,,"From the old spreadsheet's progression log; the rest of that session was not recorded.",sheet
-2026-01-08-02,2026-01-08,,Dips,isolation,1,3,,,,"From the old spreadsheet's progression log; the rest of that session was not recorded.",sheet
-2026-01-17-01,2026-01-17,,Bench press,compound,1,5,145,,,"From the old spreadsheet's progression log; the rest of that session was not recorded.",sheet
-2026-01-18-01,2026-01-18,,Smith machine squat,compound,1,5,145,,,"From the old spreadsheet's progression log; the rest of that session was not recorded.",sheet
+2025-02-28-01,2025-02-28,,Smith machine squat,compound,1,6,60,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
+2025-12-12-01,2025-12-12,,Pullups,compound,1,3,,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
+2026-01-03-01,2026-01-03,,Pullups,compound,1,4,,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
+2026-01-08-01,2026-01-08,,Bench press,compound,1,5,135,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
+2026-01-08-02,2026-01-08,,Dips,isolation,1,3,,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
+2026-01-17-01,2026-01-17,,Bench press,compound,1,5,145,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
+2026-01-18-01,2026-01-18,,Smith machine squat,compound,1,5,145,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
 2026-01-22-01,2026-01-22,,Trap bar deadlift,compound,1,5,195,,,"From the old spreadsheet's progression log, where it is recorded as ""Deadlift"" and read here as the trap bar.",sheet
-2026-08-01-01,2026-08-01,,Trap bar deadlift,compound,1,5,260,,,"August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.",handoff
-2026-08-01-02,2026-08-01,,Smith machine squat,compound,1,5,185,,,"August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.",handoff
-2026-08-01-03,2026-08-01,,Bench press,compound,1,5,165,,,"August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.",handoff
-2026-08-01-04,2026-08-01,,Pullups,compound,1,7,,,,"August 2026 baseline from docs/training-plan.md. The old routine sheet says 8; the handoff is the later document and wins.",handoff
-2026-08-01-05,2026-08-01,,Dips,isolation,1,10,,,,"August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.",handoff
+2026-08-01-01,2026-08-01,,Trap bar deadlift,compound,1,5,260,,,August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.,handoff
+2026-08-01-02,2026-08-01,,Smith machine squat,compound,1,5,185,,,August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.,handoff
+2026-08-01-03,2026-08-01,,Bench press,compound,1,5,165,,,August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.,handoff
+2026-08-01-04,2026-08-01,,Pullups,compound,1,7,,,,August 2026 baseline from docs/training-plan.md. The old routine sheet says 8; the handoff is the later document and wins.,handoff
+2026-08-01-05,2026-08-01,,Dips,isolation,1,10,,,,August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.,handoff
 2026-08-04-01,2026-08-04,heavy-upper,Sled push + pull,warmup,1,,,6,,,logged
 2026-08-04-02,2026-08-04,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
 2026-08-04-03,2026-08-04,heavy-upper,Pullups,compound,1,5,,,,,logged
 2026-08-04-04,2026-08-04,heavy-upper,Pullups,compound,2,5,,,,,logged
 2026-08-04-05,2026-08-04,heavy-upper,Bench press,compound,1,5,155,,,,logged
 2026-08-04-06,2026-08-04,heavy-upper,Bench press,compound,2,5,135,,,,logged
-2026-08-04-07,2026-08-04,heavy-upper,Incline bench press,compound,1,5,100,,,"Not in the program — the handoff rejected incline in favour of more flat volume.",logged
+2026-08-04-07,2026-08-04,heavy-upper,Incline bench press,compound,1,5,100,,,Not in the program — the handoff rejected incline in favour of more flat volume.,logged
 2026-08-04-08,2026-08-04,heavy-upper,Incline bench press,compound,2,5,90,,,,logged
 2026-08-04-09,2026-08-04,heavy-upper,Cable row,compound,1,5,130,,,,logged
 2026-08-04-10,2026-08-04,heavy-upper,Cable row,compound,2,5,130,,,,logged
@@ -48,44 +48,44 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-08-07,2026-08-08,light-upper,Bench press,compound,3,8,135,,9,"RPE 9 reads ""2 RIR every set except the last one"" as the last set being the hard one; flip this to 7 if it was the easy one instead. The rep count is confirmed, this reading is not.",logged
 2026-08-08-08,2026-08-08,light-upper,Standing curl,isolation,1,6,30,,,"Substituted for the programmed preacher curl -- benches were taken. Implement not stated, so this is 30 lbs as reported and not necessarily comparable to the 25 lbs logged for preacher curl on Aug 4.",logged
 2026-08-08-09,2026-08-08,light-upper,Standing curl,isolation,2,6,30,,,,logged
-2026-08-08-10,2026-08-08,light-upper,Standing Y raise,isolation,1,10,15,,,"Standing with 15 lb dumbbells rather than the programmed seated 20 -- benches and the 20s were both taken.",logged
+2026-08-08-10,2026-08-08,light-upper,Standing Y raise,isolation,1,10,15,,,Standing with 15 lb dumbbells rather than the programmed seated 20 -- benches and the 20s were both taken.,logged
 2026-08-08-11,2026-08-08,light-upper,Standing Y raise,isolation,2,10,15,,,,logged
 2026-08-08-12,2026-08-08,light-upper,Dips,isolation,1,10,,,,"Reported easy, so the full programmed 10 was taken. First time at 10 in the logged era -- Aug 4 was 7.",logged
 2026-08-08-13,2026-08-08,light-upper,Lat pulldown,compound,1,8,110,,,"First lat pulldown in the log, so this is a baseline rather than a progression.",logged
 2026-08-08-14,2026-08-08,light-upper,Lat pulldown,compound,2,8,110,,,,logged
-2026-08-08-15,2026-08-08,light-upper,Cable fly,isolation,1,6,35,,,"Deliberately light.",logged
+2026-08-08-15,2026-08-08,light-upper,Cable fly,isolation,1,6,35,,,Deliberately light.,logged
 2026-08-08-16,2026-08-08,light-upper,Cable fly,isolation,2,6,35,,,,logged
-2026-08-09-01,2026-08-09,conditioning,Sled,finisher,1,,,50,,"Torque M4 Tank at full resistance for the whole fifty minutes. Logged as ""finisher"" because that is the kind the program gives the sled's open-ended ""to tolerance"" bout; here it was the entire session rather than the end of one. The session is typed `conditioning`, but SetKind has no such member and gained none for this -- adding one would change how every session card groups its rows to settle a single line. Resistance is left out of weight_lbs deliberately -- the Tank's setting is a magnetic brake level, not pounds.",logged
+2026-08-09-01,2026-08-09,conditioning,Sled,finisher,1,,,50,,Torque M4 Tank at full resistance for the whole fifty minutes.,logged
 2026-08-13-01,2026-08-13,full-body,Sled push + pull,warmup,1,,,6,,,logged
 2026-08-13-02,2026-08-13,full-body,Seated pancakes,warmup,1,,,,,,logged
 2026-08-13-03,2026-08-13,full-body,Shoulder warmup,warmup,1,,,,,,logged
-2026-08-13-04,2026-08-13,full-body,Jumps,jump,1,4,,,,"Bodyweight, as the program prescribes. Reps were confirmed as 4 on August 13 having first been logged blank -- the session was reported as just ""Jumps"" and 4 was the planned count, which is not the same as a stated one.",logged
+2026-08-13-04,2026-08-13,full-body,Jumps,jump,1,4,,,,"Bodyweight, as the program prescribes.",logged
 2026-08-13-05,2026-08-13,full-body,Jumps,jump,2,4,,,,,logged
-2026-08-13-06,2026-08-13,full-body,Trap bar deadlift,compound,1,5,240,,,"CORRECTED ON AUGUST 14 FROM 260, WHICH WAS A TYPO IN THE ORIGINAL REPORT. Both sets were 240, which is exactly the re-entry load the plan called for -- so this session followed the plan here rather than overriding it, the reverse of what the first version of this note said. Reported quite easy, 20 lbs below the August 5 sets, after eight days without lower-body lifting and with no back complaint at all, which is still the useful result of the day. WHAT IT NO LONGER SHOWS: an easy 240 after a conservative re-entry prescription says the prescription was conservative, not that the layoff cost nothing -- the top set was not tested. Upper traps reported as working hard, and reported as happening again rather than for the first time.",logged
+2026-08-13-06,2026-08-13,full-body,Trap bar deadlift,compound,1,5,240,,,"Reported quite easy. The re-entry load the plan prescribes, eight days after the session the lower-back strain followed.",logged
 2026-08-13-07,2026-08-13,full-body,Trap bar deadlift,compound,2,5,240,,,,logged
 2026-08-13-08,2026-08-13,full-body,Bench press,compound,1,5,150,,,"150 rather than the planned 155 because the plates to make 155 were not available. Against August 4's 155 x 5 top set this is a 5 lb step down taken for equipment reasons, not a performance reading.",logged
 2026-08-13-09,2026-08-13,full-body,Bench press,compound,2,5,140,,,,logged
 2026-08-13-10,2026-08-13,full-body,Bench press,compound,3,5,140,,,,logged
-2026-08-13-11,2026-08-13,full-body,Pullups,compound,1,5,,,,"Reported quite hard. Taken fifth in the session, after the deadlifts and the bench, and five days after the last lifting session -- where August 8's three sets of five at RPE 8.5 were taken first, before anything else. Not a test set and not comparable to one.",logged
+2026-08-13-11,2026-08-13,full-body,Pullups,compound,1,5,,,,"Reported quite hard. Taken fifth in the session, after the deadlifts and the bench.",logged
 2026-08-13-12,2026-08-13,full-body,Pullups,compound,2,5,,,,,logged
-2026-08-13-13,2026-08-13,full-body,Smith machine squat,compound,1,5,160,,,"All ten reps completed, against August 5's 175 for 5 then 4. Deliberately lighter for a full-body day and for being the sixth item rather than the second; the missed rep at 175 is what the lighter load was chosen to avoid repeating.",logged
+2026-08-13-13,2026-08-13,full-body,Smith machine squat,compound,1,5,160,,,"All ten reps completed, against August 5's 175 for 5 then 4. Deliberately lighter.",logged
 2026-08-13-14,2026-08-13,full-body,Smith machine squat,compound,2,5,160,,,,logged
 2026-08-13-15,2026-08-13,full-body,Dips,isolation,1,10,,,,"Full programmed ten, matching August 8. This goal is already at target, so the job here is maintenance.",logged
-2026-08-15-01,2026-08-15,stretch,Slow single-leg RDL,mobility,1,5,,,,"Bodyweight, 5 sec down, free arm reaching forward, pause at the bottom -- the AWAY_FROM_THE_GYM substitute for the 35 lb bell version on the stretch day. Reps are per side: 5 left and 5 right in each of the two sets.",logged
+2026-08-15-01,2026-08-15,stretch,Slow single-leg RDL,mobility,1,5,,,,"Bodyweight, 5 sec down, free arm reaching forward, pause at the bottom -- the away substitute for the 35 lb bell version. Reps are per side.",logged
 2026-08-15-02,2026-08-15,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
-2026-08-15-03,2026-08-15,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version -- gripping the frame and leaning back into the bottom. The grip is the counterweight the goblet pry uses the 25 lb bell for.",logged
+2026-08-15-03,2026-08-15,stretch,Deep squat hold,mobility,1,,,0.75,,Doorway version -- gripping the frame and leaning back into the bottom. The grip is the counterweight the goblet pry uses the 25 lb bell for.,logged
 2026-08-15-04,2026-08-15,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
 2026-08-15-05,2026-08-15,stretch,Deep pushup hold,mobility,1,,,0.3,,"Prescribed 15-20 sec; 0.3 min is the midpoint of that range, not a stopwatch reading.",logged
 2026-08-15-06,2026-08-15,stretch,Deep pushup hold,mobility,2,,,0.3,,,logged
-2026-08-15-07,2026-08-15,stretch,Active hang,mobility,1,,,0.42,,"Prescribed 20-30 sec; 0.42 min is the midpoint. WHETHER THIS WAS A BAR HANG OR THE CHAIR VERSION WAS NOT RECORDED -- the routine gives both and they load the lats differently.",logged
+2026-08-15-07,2026-08-15,stretch,Active hang,mobility,1,,,0.42,,Prescribed 20-30 sec; 0.42 min is the midpoint. WHETHER THIS WAS A BAR HANG OR THE CHAIR VERSION WAS NOT RECORDED -- the routine gives both and they load the lats differently.,logged
 2026-08-15-08,2026-08-15,stretch,Active hang,mobility,2,,,0.42,,,logged
 2026-08-15-09,2026-08-15,stretch,Pogo hops,jump,1,20,,,,"Tendon stiffness, ahead of the calf raises.",logged
 2026-08-15-10,2026-08-15,stretch,Pogo hops,jump,2,20,,,,,logged
-2026-08-15-11,2026-08-15,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, pause in the stretch. Per side, as with the RDL. THE SUPINATED CALF RAISE IS FOLDED IN HERE RATHER THAN LOGGED AS ITS OWN EXERCISE, which is how AWAY_FROM_THE_GYM prescribes it -- the weight biased to the outside edge of the foot on the way up. It is a bias on these same sets, not extra sets, so giving it rows of its own would double-count them.",logged
+2026-08-15-11,2026-08-15,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, pause in the stretch. Per side. The supinated calf raise is folded in here as an outside-edge bias on these same sets, which is how the routine prescribes it -- separate rows would double-count them.",logged
 2026-08-15-12,2026-08-15,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
 2026-08-15-13,2026-08-15,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
 2026-08-15-14,2026-08-15,stretch,Reverse Nordic,mobility,2,5,,,,,logged
-2026-08-16-01,2026-08-16,stretch,Slow single-leg RDL,mobility,1,5,,,,"Third day of the trip and the second run of AWAY_FROM_THE_GYM, all seven daily items at the prescribed doses -- same shape as August 15, so the notes on that day's rows carry the detail rather than being repeated here. Reps are per side.",logged
+2026-08-16-01,2026-08-16,stretch,Slow single-leg RDL,mobility,1,5,,,,"Second run of the away routine, same shape as August 15. Reps are per side.",logged
 2026-08-16-02,2026-08-16,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
 2026-08-16-03,2026-08-16,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the prescribed 45 sec, not a stopwatch reading.",logged
 2026-08-16-04,2026-08-16,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
@@ -95,11 +95,11 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-16-08,2026-08-16,stretch,Active hang,mobility,2,,,0.42,,,logged
 2026-08-16-09,2026-08-16,stretch,Pogo hops,jump,1,20,,,,,logged
 2026-08-16-10,2026-08-16,stretch,Pogo hops,jump,2,20,,,,,logged
-2026-08-16-11,2026-08-16,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, per side. THE OUTSIDE-EDGE BIAS WAS NOT REPORTED EITHER WAY TODAY, so unlike the 15th these are logged as plain slow calf raises and the supinated variant is not claimed. Same sets either way -- the bias would be a bias on these, never extra rows.",logged
+2026-08-16-11,2026-08-16,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, per side. The outside-edge bias was not reported today, so these are plain slow calf raises.",logged
 2026-08-16-12,2026-08-16,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
 2026-08-16-13,2026-08-16,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
 2026-08-16-14,2026-08-16,stretch,Reverse Nordic,mobility,2,5,,,,,logged
-2026-08-18-01,2026-08-18,stretch,Slow single-leg RDL,mobility,1,5,,,,"Fifth day of the trip and the third run of AWAY_FROM_THE_GYM. THE DOSES ON THIS DAY'S ROWS ARE THE ROUTINE'S PRESCRIPTION, NOT A REPORT -- only that the routine was done was stated. Same shape as August 15 and 16, whose rows carry the detail. Reps are per side.",logged
+2026-08-18-01,2026-08-18,stretch,Slow single-leg RDL,mobility,1,5,,,,"Third run of the away routine. The doses on this day's rows are the routine's prescription, not a report. Reps are per side.",logged
 2026-08-18-02,2026-08-18,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
 2026-08-18-03,2026-08-18,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the prescribed 45 sec, not a stopwatch reading.",logged
 2026-08-18-04,2026-08-18,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
@@ -113,17 +113,17 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-18-12,2026-08-18,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
 2026-08-18-13,2026-08-18,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
 2026-08-18-14,2026-08-18,stretch,Reverse Nordic,mobility,2,5,,,,,logged
-2026-08-19-01,2026-08-19,stretch,Slow single-leg RDL,mobility,1,5,,,,"Sixth day of the trip and the fourth run of AWAY_FROM_THE_GYM. AS ON THE 18TH, THE DOSES ON THIS DAY'S ROWS ARE THE ROUTINE'S PRESCRIPTION, NOT A REPORT -- only that a stretch session happened was stated. Same shape as August 15 and 16, whose rows carry the detail. Reps are per side.",logged
+2026-08-19-01,2026-08-19,stretch,Slow single-leg RDL,mobility,1,5,,,,"Fourth run of the away routine. As on the 18th, the doses on this day's rows are the routine's prescription, not a report. Reps are per side.",logged
 2026-08-19-02,2026-08-19,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
 2026-08-19-03,2026-08-19,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the prescribed 45 sec, not a stopwatch reading.",logged
 2026-08-19-04,2026-08-19,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
 2026-08-19-05,2026-08-19,stretch,Deep pushup hold,mobility,1,,,0.3,,Prescribed 15-20 sec; 0.3 min is the midpoint of that range.,logged
 2026-08-19-06,2026-08-19,stretch,Deep pushup hold,mobility,2,,,0.3,,,logged
-2026-08-19-07,2026-08-19,stretch,Active hang,mobility,1,,,0.42,,"Prescribed 20-30 sec; 0.42 min is the midpoint. BAR OR CHAIR VERSION STILL NOT RECORDED, on any of the four runs.",logged
+2026-08-19-07,2026-08-19,stretch,Active hang,mobility,1,,,0.42,,Prescribed 20-30 sec; 0.42 min is the midpoint. Bar or chair version not recorded.,logged
 2026-08-19-08,2026-08-19,stretch,Active hang,mobility,2,,,0.42,,,logged
 2026-08-19-09,2026-08-19,stretch,Pogo hops,jump,1,20,,,,,logged
 2026-08-19-10,2026-08-19,stretch,Pogo hops,jump,2,20,,,,,logged
-2026-08-19-11,2026-08-19,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, per side. The outside-edge bias was not reported, so as on the 16th and 18th these are plain slow calf raises and the supinated variant is not claimed.",logged
+2026-08-19-11,2026-08-19,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, per side. The outside-edge bias was not reported, so these are plain slow calf raises.",logged
 2026-08-19-12,2026-08-19,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
 2026-08-19-13,2026-08-19,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
 2026-08-19-14,2026-08-19,stretch,Reverse Nordic,mobility,2,5,,,,,logged
