@@ -28,6 +28,7 @@ export function TodayView({
   sets,
   sessions,
   breaks,
+  dietBreaks,
   checkins,
 }: {
   entries: LogEntry[];
@@ -38,6 +39,10 @@ export function TodayView({
   sets: WorkoutSet[];
   sessions: Session[];
   breaks: TrainingBreak[];
+  /* Training breaks the food column should shade — see dietBreaks(). The
+     training column takes the unfiltered list, because every row in the file
+     is by definition a training break. */
+  dietBreaks: { start: string; end: string; label: string }[];
   checkins: Checkin[];
 }) {
   // Open on the newest day that has food in it. On a snapshot that is almost
@@ -65,6 +70,7 @@ export function TodayView({
           builtHour={builtHour}
           streak={streak}
           bodyweight={bodyweight}
+          breaks={dietBreaks}
           date={date}
           onDateChange={setDate}
         />

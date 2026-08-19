@@ -11,6 +11,13 @@ export interface TrendPoint {
   logged: boolean;
 }
 
+/** A stretch of not-logging with a reason — shaded so a gap reads as a trip. */
+export interface TrendBreak {
+  start: string;
+  end: string;
+  label: string;
+}
+
 interface Props {
   title: string;
   unit: string;
@@ -25,6 +32,12 @@ interface Props {
   goal?: number;
   /** Reference band, e.g. the protein 160–180 g target. */
   band?: { min: number; max: number };
+  /**
+   * Shaded behind the bars, from `data/breaks.csv`. Without them a run of
+   * short days reads as a diet that fell apart, when it was a week away from
+   * a kitchen — which is the same job breaks.csv already does for training.
+   */
+  breaks?: TrendBreak[];
   height?: number;
 }
 
@@ -45,6 +58,7 @@ export function TrendChart({
   today,
   goal,
   band,
+  breaks = [],
   height = 132,
 }: Props) {
   const [hover, setHover] = useState<number | null>(null);
@@ -69,7 +83,28 @@ export function TrendChart({
 
   const y = (v: number) => height - (v / scaleMax) * height;
 
+  // Breaks are date ranges; the chart is a list of columns. Map one to the
+  // other by index so a shaded band lines up with the bars it covers, and drop
+  // any break that falls entirely outside the window.
+  const shaded = breaks
+    .map((b) => {
+      const first = points.findIndex((p) => p.date >= b.start && p.date <= b.end);
+      if (first === -1) return null;
+      let last = first;
+      while (last + 1 < points.length && points[last + 1].date <= b.end) last++;
+      // Half a gap of bleed at each end, so the band brackets its columns
+      // rather than stopping flush against the first and last bar — clamped to
+      // the viewBox, because a break touching either end would otherwise run
+      // off it and rely on the SVG viewport to hide the overhang.
+      const x = Math.max(0, first * (barW + gap) - gap / 2);
+      const right = Math.min(W, last * (barW + gap) + barW + gap / 2);
+      return { label: b.label, x, width: right - x };
+    })
+    .filter((v): v is NonNullable<typeof v> => v !== null);
+
   const active = hover !== null ? points[hover] : null;
+  const activeBreak =
+    active && breaks.find((b) => active.date >= b.start && active.date <= b.end);
 
   return (
     <figure className="card p-4">
@@ -77,7 +112,7 @@ export function TrendChart({
         <h3 className="text-sm font-semibold">{title}</h3>
         <span className="tnum text-xs text-muted">
           {active
-            ? `${formatDay(active.date, today)} · ${active.logged ? `${round(active.value)} ${unit}` : "not logged"}`
+            ? `${formatDay(active.date, today)} · ${active.logged ? `${round(active.value)} ${unit}` : "not logged"}${activeBreak ? ` · ${activeBreak.label}` : ""}`
             : goal
               ? `target ${round(goal)} ${unit}`
               : band
@@ -97,13 +132,28 @@ export function TrendChart({
           viewBox={`0 0 ${W} ${height}`}
           preserveAspectRatio="none"
           role="img"
-          aria-label={`${title} over the last ${points.length} days`}
+          aria-label={`${title} over ${points.length} days`}
         >
           <defs>
             <clipPath id={clipId}>
               <rect x="0" y="0" width={W} height={height} />
             </clipPath>
           </defs>
+
+          {/* Breaks go down first, behind even the target band: they are the
+              reason for the shape of the data, not a reading on it. Same fill
+              as the week strip's "off" chip, so a break looks the same on both
+              sides of the page. */}
+          {shaded.map((b) => (
+            <rect
+              key={b.label + b.x}
+              x={b.x}
+              y="0"
+              width={b.width}
+              height={height}
+              fill="var(--track)"
+            />
+          ))}
 
           {/* Target band sits behind the bars as recessive context. */}
           {band && (
@@ -203,7 +253,11 @@ export function TrendChart({
               onFocus={() => setHover(i)}
               onBlur={() => setHover(null)}
               onClick={() => setHover((h) => (h === i ? null : i))}
-              aria-label={`${formatDay(p.date, today)}: ${p.logged ? `${round(p.value)} ${unit}` : "not logged"}`}
+              aria-label={`${formatDay(p.date, today)}: ${p.logged ? `${round(p.value)} ${unit}` : "not logged"}${
+                breaks.some((b) => p.date >= b.start && p.date <= b.end)
+                  ? ` (${breaks.find((b) => p.date >= b.start && p.date <= b.end)!.label})`
+                  : ""
+              }`}
             />
           ))}
         </div>

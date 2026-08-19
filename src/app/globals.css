@@ -9,13 +9,17 @@
  * 2.74:1 on the light surface, so the relief rule applies — every fat segment
  * and swatch is shipped with a visible text label, never colour alone.
  *
- * `--series-conditioning` (magenta, slot 5) and `--series-fullbody` (purple)
- * belong to a SECOND and separate scale: the week strip's session chips, whose
- * three filled states are a gym day in slot-1 blue, a conditioning day in the
- * magenta and a full-body day in the purple. That three-colour scale is what is
- * validated for it, all-pairs in both modes: worst CVD ΔE 13.0 light / 9.4 dark,
- * worst normal-vision 21.1 / 15.9, against gates of 8 and 15. It is deliberately
- * NOT validated all-pairs against the macro three, because it never encodes
+ * `--series-conditioning` (magenta, slot 5), `--series-fullbody` (purple) and
+ * `--series-stretch` (teal) belong to a SECOND and separate scale: the week
+ * strip's session chips, whose four filled states are a gym day in slot-1 blue,
+ * a conditioning day in the magenta, a full-body day in the purple and a
+ * stretch day in the teal. That four-colour scale is what is validated for it,
+ * all-pairs in both modes by `scripts/validate_palette.js` — which now exists;
+ * this comment cited it for months before it did, so the figures it used to
+ * quote could never be re-checked and are replaced here by that script's own.
+ * Worst CVD ΔE is 14.3 light / 10.4 dark against a gate of 8, worst
+ * normal-vision 31.3 / 21.7 against a gate of 15. It is deliberately NOT
+ * validated all-pairs against the macro three, because it never encodes
  * alongside them: macros colour the food column, chips the training column, and
  * nothing reads a chip against a ring. Light-mode magenta is 2.62:1 on the
  * light surface, so it takes the same relief rule as aqua: the chip always
@@ -23,19 +27,39 @@
  * because the light step needs dark ink (7.31:1) where the dark step takes
  * white (3.94:1); the purple takes white in both (8.54:1 / 5.46:1).
  *
- * PURPLE WAS THE ONLY HUE AVAILABLE, and it is worth writing down why, because
- * the obvious candidates all look free and are not. Yellow, orange, green and
- * red each sit on a reserved status colour or on a macro already spoken for —
- * green is the sharpest trap, since it validates cleanly but `--status-good` is
- * the protein ring's overflow lap in the very next column, so a green chip
- * would read as "this session was good" about a session the site classes as a
- * deviation. That leaves the blue-violet arc, and most of it fails: the
- * reference palette's own violet step (`#9085e9`) lands at CVD ΔE 1.9 against
- * the dark blue, because a pale desaturated violet IS blue to a protan or
- * deutan viewer. Only a dark, saturated purple separates, and it separates on
- * lightness and chroma rather than on hue. Both steps here were picked by
- * scanning the hue circle against the validator rather than by eye; re-run
- * `scripts/validate_palette.js` on all three chips before touching any of them.
+ * PURPLE WAS THE ONLY HUE AVAILABLE for the third chip, and it is worth writing
+ * down why, because the obvious candidates all look free and are not. Yellow,
+ * orange, green and red each sit on a reserved status colour or on a macro
+ * already spoken for — green is the sharpest trap, since it validates cleanly
+ * but `--status-good` is the protein ring's overflow lap in the very next
+ * column, so a green chip would read as "this session was good" about a session
+ * the site classes as a deviation. That leaves the blue-violet arc, and most of
+ * it fails: the reference palette's own violet step (`#9085e9`) lands at CVD ΔE
+ * 1.9 against the dark blue, because a pale desaturated violet IS blue to a
+ * protan or deutan viewer. Only a dark, saturated purple separates, and it
+ * separates on lightness and chroma rather than on hue.
+ *
+ * THE TEAL, added for stretch days, is the same story told again, and the
+ * validator was written to settle it rather than argue it. Sweeping the hue
+ * circle against the three shipped chips leaves two arcs standing: a second
+ * violet, rejected because a fourth chip that reads as "another purple" defeats
+ * the point of having it, and this teal. A mid-lightness teal does NOT work —
+ * `#0f7a72` lands at CVD ΔE 3.3 light / 1.8 dark against the blue, because to a
+ * tritan viewer teal IS blue, the exact mirror of the violet failure above. It
+ * only separates at the extremes of lightness, so the two steps sit far apart:
+ * a near-black pine in light mode and a soft mint in dark. Like the purple, it
+ * separates on lightness, not on hue. The mint needs dark ink (11.96:1) where
+ * the pine takes white (10.79:1), hence `--on-stretch`.
+ *
+ * Both scales were picked by scanning against the validator rather than by eye;
+ * run `node scripts/validate_palette.js` on all four chips before touching any
+ * of them, and `node scripts/validate_palette.js '#rrggbb'` to test a fifth.
+ *
+ * KNOWN AND NOT FIXED HERE: the gym chip's white label sits at 4.42:1 light and
+ * 3.64:1 dark, and the dark magenta's at 3.94:1, against the 4.5:1 that a 10px
+ * bold label needs. Those three predate the teal and changing them restyles the
+ * most common chip in the strip, so the validator reports them as an advisory
+ * rather than failing on them. The separation gates are what it exits on.
  */
 :root {
   color-scheme: light;
@@ -63,6 +87,8 @@
   --on-conditioning: #0b0b0b;
   --series-fullbody: #732698;
   --on-fullbody: #ffffff;
+  --series-stretch: #1d443d;
+  --on-stretch: #ffffff;
 
   /* Status — fixed, never themed, always paired with an icon or label */
   --status-good: #0ca30c;
@@ -100,6 +126,8 @@
     --on-conditioning: #ffffff;
     --series-fullbody: #8b50ad;
     --on-fullbody: #ffffff;
+    --series-stretch: #61dec5;
+    --on-stretch: #0b0b0b;
 
     --success-text: #0ca30c;
 
@@ -132,6 +160,8 @@
   --on-conditioning: #ffffff;
   --series-fullbody: #8b50ad;
   --on-fullbody: #ffffff;
+  --series-stretch: #61dec5;
+  --on-stretch: #0b0b0b;
 
   --success-text: #0ca30c;
 

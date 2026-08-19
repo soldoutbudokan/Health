@@ -7,6 +7,7 @@ import {
   readWorkouts,
 } from "@/lib/trainingFile";
 import { proteinStreak, toDateKey } from "@/lib/nutrition";
+import { dietBreaks } from "@/lib/training";
 import { TodayView } from "@/components/TodayView";
 
 /**
@@ -25,6 +26,7 @@ import { TodayView } from "@/components/TodayView";
 export default function Page() {
   const entries = readLog();
   const goals = readGoals();
+  const breaks = readBreaks();
   const now = new Date();
   const today = toDateKey(now);
 
@@ -40,7 +42,8 @@ export default function Page() {
       streak={proteinStreak(entries, goals)}
       sets={readWorkouts()}
       sessions={readSessions()}
-      breaks={readBreaks()}
+      breaks={breaks}
+      dietBreaks={dietBreaks(breaks)}
       checkins={readCheckins()}
     />
   );

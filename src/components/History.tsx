@@ -13,30 +13,54 @@ import {
 } from "@/lib/nutrition";
 import { formatDay, formatFullDay } from "@/lib/labels";
 import { download, toAppleHealthXML, toMarkdown } from "@/lib/export";
-import { TrendChart, type TrendPoint } from "@/components/TrendChart";
+import { TrendChart, type TrendBreak, type TrendPoint } from "@/components/TrendChart";
 import { StatTile } from "@/components/StatTiles";
 import { LogHeatmap } from "@/components/LogHeatmap";
 
-const RANGES = [7, 14, 30, 90] as const;
+/*
+ * `"all"` is the default as of August 19, 2026. A range toggle that opens on 30
+ * days answers "how was the last month" when the question the charts are for is
+ * "how has it gone" — and with the log only a fortnight old, 30 was a window
+ * padded with a fortnight of blank. The narrower windows stay because zooming
+ * in is a real thing to want; they are just no longer where you land.
+ */
+const RANGES = [7, 14, 30, 90, "all"] as const;
+type Range = (typeof RANGES)[number];
 
 interface Props {
   entries: LogEntry[];
   goals: Goals;
   /** Build day. The windows end here and "Today" means this. */
   builtOn: string;
+  /** Shaded on the trend charts — see TrendChart. */
+  breaks: TrendBreak[];
 }
 
 /**
  * History is read-only in the same way the dashboard is: the entries arrive as
  * props from the build, and the only state is how far back you want to look.
  */
-export function History({ entries, goals, builtOn }: Props) {
-  const [range, setRange] = useState<(typeof RANGES)[number]>(30);
+export function History({ entries, goals, builtOn, breaks }: Props) {
+  const [range, setRange] = useState<Range>("all");
+
+  const dates = useMemo(() => loggedDates(entries), [entries]);
+
+  // How many calendar days the charts and the stats below actually cover.
+  // "all" reaches back to the first entry; everything else is a fixed window
+  // ending on the build day, which may run off the front of the log.
+  const span = useMemo(() => {
+    if (range !== "all") return range;
+    const first = dates[dates.length - 1];
+    if (!first) return 1;
+    let n = 1;
+    for (let d = first; d < builtOn; d = addDays(d, 1)) n++;
+    return n;
+  }, [range, dates, builtOn]);
 
   const points = useMemo(() => {
     const cal: TrendPoint[] = [];
     const prot: TrendPoint[] = [];
-    for (let i = range - 1; i >= 0; i--) {
+    for (let i = span - 1; i >= 0; i--) {
       const d = addDays(builtOn, -i);
       const es = entriesForDate(entries, d);
       const t = sumEntries(es);
@@ -44,11 +68,11 @@ export function History({ entries, goals, builtOn }: Props) {
       prot.push({ date: d, value: t.protein, logged: es.length > 0 });
     }
     return { cal, prot };
-  }, [entries, range, builtOn]);
+  }, [entries, span, builtOn]);
 
   const stats = useMemo(() => {
     // rollingAverage already divides by logged days rather than calendar days.
-    const { avg, loggedDays } = rollingAverage(entries, builtOn, range);
+    const { avg, loggedDays } = rollingAverage(entries, builtOn, span);
     const onTarget = points.prot.filter(
       (p) => p.logged && p.value >= goals.proteinMin,
     ).length;
@@ -60,9 +84,7 @@ export function History({ entries, goals, builtOn }: Props) {
       // painted in the alert colour reads as "you missed every day".
       hitRate: loggedDays > 0 ? (onTarget / loggedDays) * 100 : null,
     };
-  }, [points, entries, goals.proteinMin, range, builtOn]);
-
-  const dates = useMemo(() => loggedDates(entries), [entries]);
+  }, [points, entries, goals.proteinMin, span, builtOn]);
 
   return (
     <div className="space-y-6">
@@ -80,7 +102,7 @@ export function History({ entries, goals, builtOn }: Props) {
                   : "text-ink-2 hover:bg-surface-2"
               }`}
             >
-              {r}d
+              {r === "all" ? "All" : `${r}d`}
             </button>
           ))}
         </div>
@@ -90,15 +112,15 @@ export function History({ entries, goals, builtOn }: Props) {
         <StatTile
           label="Days logged"
           value={stats.loggedDays}
-          unit={`/ ${range}`}
-          hint={`${Math.round((stats.loggedDays / range) * 100)}% coverage`}
+          unit={`/ ${span}`}
+          hint={`${Math.round((stats.loggedDays / span) * 100)}% coverage`}
         />
         <StatTile
           label="Protein target hit"
           value={stats.hitRate === null ? "—" : `${Math.round(stats.hitRate)}%`}
           hint={
             stats.hitRate === null
-              ? `Nothing logged in the last ${range} days`
+              ? `Nothing logged in the last ${span} days`
               : `${stats.onTarget} of ${stats.loggedDays} logged days`
           }
           tone={
@@ -131,21 +153,23 @@ export function History({ entries, goals, builtOn }: Props) {
 
       <div className="grid gap-3 sm:grid-cols-2">
         <TrendChart
-          title={`Calories · last ${range} days`}
+          title={`Calories · ${range === "all" ? `all ${span} days` : `last ${span} days`}`}
           unit="kcal"
           points={points.cal}
           color="var(--series-carbs)"
           today={builtOn}
           goal={goals.calories}
+          breaks={breaks}
           height={150}
         />
         <TrendChart
-          title={`Protein · last ${range} days`}
+          title={`Protein · ${range === "all" ? `all ${span} days` : `last ${span} days`}`}
           unit="g"
           points={points.prot}
           color="var(--series-protein)"
           today={builtOn}
           band={{ min: goals.proteinMin, max: goals.proteinMax }}
+          breaks={breaks}
           height={150}
         />
       </div>

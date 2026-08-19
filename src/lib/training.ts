@@ -368,6 +368,30 @@ export function breakOn(breaks: TrainingBreak[], date: string): TrainingBreak | 
   return breaks.find((b) => date >= b.start && date <= b.end);
 }
 
+/**
+ * The subset of breaks worth shading on the FOOD charts.
+ *
+ * `data/breaks.csv` is a training file — one row per stretch of not training —
+ * and most of what is in it says nothing about eating. The August 6–7 lower
+ * back strain is the case that makes the point: no gym for two days, and both
+ * days fully logged at target. Shading them on a calorie chart would claim the
+ * food log stopped, which is exactly the false reading the file exists to
+ * prevent, just pointed at the other half of the site.
+ *
+ * `travel` and `illness` are the two kinds that actually disrupt eating — you
+ * are away from your own kitchen, or you are not keeping anything down.
+ * `deload` and `other` are training-side by construction and are dropped.
+ * Kind is doing real work here rather than being decoration, so if a fifth kind
+ * is ever added, decide which side of this line it falls on.
+ */
+export function dietBreaks(
+  breaks: TrainingBreak[],
+): { start: string; end: string; label: string }[] {
+  return breaks
+    .filter((b) => b.kind === "travel" || b.kind === "illness")
+    .map(({ start, end, label }) => ({ start, end, label }));
+}
+
 /** The seven days ending on `today`, oldest first. */
 export function weekStrip(
   sessions: Session[],

@@ -20,7 +20,7 @@ import type { BodyweightPoint } from "@/lib/training";
 import { CalorieRing, MacroSplit, Micros, ProteinRing } from "@/components/Meters";
 import { MealList } from "@/components/MealList";
 import { GapClosers, StatTile } from "@/components/StatTiles";
-import { TrendChart, type TrendPoint } from "@/components/TrendChart";
+import { TrendChart, type TrendBreak, type TrendPoint } from "@/components/TrendChart";
 import { BodyweightChart } from "@/components/BodyweightChart";
 
 interface Props {
@@ -35,12 +35,12 @@ interface Props {
   streak: number;
   /** Bodyweight readings — training-file data that renders with the food. */
   bodyweight: BodyweightPoint[];
+  /** Shaded on the trend charts, so a week away doesn't read as a collapse. */
+  breaks: TrendBreak[];
   /** The day being looked at. Owned by `TodayView`, shared with training. */
   date: string;
   onDateChange: (date: string) => void;
 }
-
-const TREND_DAYS = 14;
 
 /**
  * The dashboard. Every number on it is derived from props — there is no store,
@@ -60,6 +60,7 @@ export function Dashboard({
   builtHour,
   streak,
   bodyweight,
+  breaks,
   date,
   onDateChange,
 }: Props) {
@@ -96,18 +97,35 @@ export function Dashboard({
     [progress.protein.toMin, progress.calories.remaining],
   );
 
+  /*
+   * The whole log, not a trailing window. This was the last 14 days ending on
+   * the selected day until August 19, 2026, which made it the third element on
+   * the page that moved when you stepped back a day — and the only one where
+   * that motion cost something, because a 14-day window is exactly wide enough
+   * to hide whether a bad week is a bad week or the normal state of things.
+   * Reading a trend means seeing all of it.
+   *
+   * That makes these two standing elements, like the bodyweight chart below
+   * and the week strip opposite: historical context rather than a day's
+   * record. The day columns either side of them are still one selected day.
+   *
+   * Every calendar day between the first entry and the build day gets a slot,
+   * including the ones with nothing in them — a gap is the point, and the
+   * break shading is what tells a trip apart from a lapse.
+   */
   const trend = useMemo(() => {
     const cal: TrendPoint[] = [];
     const prot: TrendPoint[] = [];
-    for (let i = TREND_DAYS - 1; i >= 0; i--) {
-      const d = addDays(date, -i);
+    const first = dates[dates.length - 1];
+    if (!first) return { cal, prot };
+    for (let d = first; d <= horizon; d = addDays(d, 1)) {
       const es = entriesForDate(entries, d);
       const t = sumEntries(es);
       cal.push({ date: d, value: t.calories, logged: es.length > 0 });
       prot.push({ date: d, value: t.protein, logged: es.length > 0 });
     }
     return { cal, prot };
-  }, [entries, date]);
+  }, [entries, dates, horizon]);
 
   const { avg: avg7, loggedDays: logged7 } = useMemo(
     () => rollingAverage(entries, date, 7),
@@ -286,20 +304,22 @@ export function Dashboard({
       {/* Trends — two charts, never one with two y-axes. */}
       <div className="grid gap-3 sm:grid-cols-2">
         <TrendChart
-          title={`Calories · last ${TREND_DAYS} days`}
+          title={`Calories · all ${trend.cal.length} days`}
           unit="kcal"
           points={trend.cal}
           color="var(--series-carbs)"
           today={builtOn}
           goal={goals.calories}
+          breaks={breaks}
         />
         <TrendChart
-          title={`Protein · last ${TREND_DAYS} days`}
+          title={`Protein · all ${trend.prot.length} days`}
           unit="g"
           points={trend.prot}
           color="var(--series-protein)"
           today={builtOn}
           band={{ min: goals.proteinMin, max: goals.proteinMax }}
+          breaks={breaks}
         />
       </div>
 
