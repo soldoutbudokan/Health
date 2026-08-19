@@ -99,3 +99,17 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-16-12,2026-08-16,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
 2026-08-16-13,2026-08-16,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
 2026-08-16-14,2026-08-16,stretch,Reverse Nordic,mobility,2,5,,,,,logged
+2026-08-18-01,2026-08-18,stretch,Slow single-leg RDL,mobility,1,5,,,,"Fifth day of the trip and the third run of AWAY_FROM_THE_GYM. THE DOSES ON THIS DAY'S ROWS ARE THE ROUTINE'S PRESCRIPTION, NOT A REPORT -- only that the routine was done was stated. Same shape as August 15 and 16, whose rows carry the detail. Reps are per side.",logged
+2026-08-18-02,2026-08-18,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
+2026-08-18-03,2026-08-18,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the prescribed 45 sec, not a stopwatch reading.",logged
+2026-08-18-04,2026-08-18,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
+2026-08-18-05,2026-08-18,stretch,Deep pushup hold,mobility,1,,,0.3,,Prescribed 15-20 sec; 0.3 min is the midpoint of that range.,logged
+2026-08-18-06,2026-08-18,stretch,Deep pushup hold,mobility,2,,,0.3,,,logged
+2026-08-18-07,2026-08-18,stretch,Active hang,mobility,1,,,0.42,,"Prescribed 20-30 sec; 0.42 min is the midpoint. AS ON THE 15TH AND 16TH, WHETHER THIS WAS A BAR HANG OR THE CHAIR VERSION WAS NOT RECORDED.",logged
+2026-08-18-08,2026-08-18,stretch,Active hang,mobility,2,,,0.42,,,logged
+2026-08-18-09,2026-08-18,stretch,Pogo hops,jump,1,20,,,,,logged
+2026-08-18-10,2026-08-18,stretch,Pogo hops,jump,2,20,,,,,logged
+2026-08-18-11,2026-08-18,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, per side. AS ON THE 16TH, THE OUTSIDE-EDGE BIAS WAS NOT REPORTED, so these are logged as plain slow calf raises and the supinated variant is not claimed.",logged
+2026-08-18-12,2026-08-18,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
+2026-08-18-13,2026-08-18,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
+2026-08-18-14,2026-08-18,stretch,Reverse Nordic,mobility,2,5,,,,,logged
