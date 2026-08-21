@@ -323,6 +323,23 @@ export const RECIPE_FOODS: Food[] = [
     tags: ["smoothie", "protein", "whey", "berry", "breakfast"],
   },
   {
+    id: "recipe-scallion-pancake-egg-roll-up",
+    name: "Scallion Pancake Egg Roll-Up",
+    source: "recipe",
+    per: "1 serving (1 roll-up)",
+    macros: {
+      calories: 390,
+      protein: 14,
+      carbs: 30,
+      fat: 20,
+      fiber: 1.5,
+      sugar: 3,
+      sodium: 880,
+    },
+    note: "The recipe is one serving by construction \u2014 one frozen scallion pancake, 1.5 large eggs, a teaspoon each of soy and hoisin \u2014 and its own table gives 370\u2013410 kcal / 14 g protein / 30 g carbs / 20 g fat, of which 390 is the midpoint carried here. Atwater on those macros lands at 356, 8.7% under, and the gap is the point of the stated range: pan-oil absorption is what moves the calories between 370 and 410 and it is not itemised in the 20 g fat line. Fibre, sugar and sodium are not upstream and are derived from the ingredient list \u2014 pancake ~350 mg, 1.5 eggs ~107 mg, 1 tsp soy ~330 mg, 1 tsp hoisin ~90 mg \u2014 so read the sodium as 700\u20131,100 mg, and note it is mostly the two sauces rather than the pancake. Rebuilding the whole serving from components independently returns 14.4 g protein and 31 g carbs against the upstream 14 and 30, which is the closest thing to corroboration this entry has. THE PANCAKE IS THE VARIABLE: the recipe's own footnote puts brands at 190\u2013260 kcal and says to check the box, so a different bag moves this entry by ~70 kcal before any oil is counted.",
+    tags: ["scallion pancake", "egg", "roll-up", "breakfast", "snack", "chinese", "quick"],
+  },
+  {
     id: "recipe-spinach-chickpea-stew",
     name: "Spinach and Chickpea Stew",
     variant: "stew only",
