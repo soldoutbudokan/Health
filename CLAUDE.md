@@ -203,6 +203,15 @@ presented as a reading, and only the second one is the thing this rule forbids.
 Sodium bands are wider than calorie bands for the same dish: a portion can be
 eyeballed, a sauce cannot.
 
+**Keep a note to one paragraph.** Every `note` in `data/*.csv` and every catalog
+entry's `note` in `src/data/`: one paragraph, and prefer four sentences to ten. Asked
+for on August 20, 2026, after a session note ran to nine sentences and shouted three
+of them in capitals — at that length the note stops being read, which costs more than
+the detail buys. The rules above are unaffected and still bind: say where a number
+came from, state the band on an estimate, record a correction rather than quietly
+overwriting. They have to fit. If the reasoning genuinely will not, it belongs in
+`docs/training-plan.md` and the note should point at it.
+
 **Dates are local, never UTC.** `toDateKey()` in `src/lib/nutrition.ts` exists
 because `toISOString()` shifts the day for anyone behind UTC. Don't reintroduce it.
 

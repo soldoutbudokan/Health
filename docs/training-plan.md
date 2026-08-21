@@ -136,9 +136,14 @@ same 260. The 260 was a typo, corrected on August 14 — the session was 240, th
 re-entry load the plan itself prescribed, and it was never pushed past that. An easy
 set at a deliberately conservative weight measures the prescription, not the layoff.
 The claim is withdrawn rather than restated more softly, and the first heavy lower
-session after a break is the only thing that will settle it. So this is not a
-substitute program. It is **one loaded-stretch
-movement per goal lift, done daily**, in about twelve minutes. Daily works precisely
+session after a break is the only thing that will settle it. **August 20, 2026 settled
+it.** After the August 14–19 trip — six days away, the away routine run on four of them
+— the trap bar went 260 × 5 × 2 at the first attempt, reported medium-hard with room
+left. That is the pre-trip working weight recovered in full at a load nobody chose to
+be cautious about, which is exactly the test the August 13 session could not supply:
+six days away on this routine cost nothing at the trap bar. One data point, and it says
+nothing yet about the squat or the bench. So this is not a substitute program. It is
+**one loaded-stretch movement per goal lift, done daily**, in about twelve minutes. Daily works precisely
 because nothing here goes near failure — the moment something is sore, drop that item
 for the day rather than pushing it.
 
