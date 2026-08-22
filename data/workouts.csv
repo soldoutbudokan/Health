@@ -149,5 +149,5 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-22-11,2026-08-22,light-upper,Cable row,compound,2,5,130,,,,logged
 2026-08-22-12,2026-08-22,light-upper,Preacher curl,isolation,1,5,25,,,"The programmed preacher rather than the standing curl Aug 8 was forced into, at the 25 lbs of Aug 4.",logged
 2026-08-22-13,2026-08-22,light-upper,Preacher curl,isolation,2,5,25,,,,logged
-2026-08-22-14,2026-08-22,light-upper,Seated Y raise,isolation,1,5,20,,,"Reported as ""Y raises"" without saying seated or standing; logged as seated because 2 x 5 at 20 is exactly the seated prescription and matches Aug 4. Flip to standing if it was. Aug 4 got 4 reps at this weight, so 5 completes the slot.",logged
+2026-08-22-14,2026-08-22,light-upper,Seated Y raise,isolation,1,5,20,,,"Confirmed seated the same day. First reported as just ""Y raises"", and logged as seated on the dose matching the prescription exactly; the confirmation settles it rather than leaving the reading open. This is the first seated Y raise since Aug 4, Aug 8 having been forced standing, and Aug 4 got only 4 reps at this weight -- so 5 completes the slot.",logged
 2026-08-22-15,2026-08-22,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
