@@ -136,3 +136,18 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-20-07,2026-08-20,heavy-lower,Trap bar deadlift,compound,2,5,260,,,,logged
 2026-08-20-08,2026-08-20,heavy-lower,Bulgarian split squat,compound,1,5,30,,,"Substituted for the Smith machine squat, which was taken. Two 30 lb dumbbells, so weight_lbs is the per-dumbbell 30 as on the Aug 8 Y raise; 60 lbs total. Reps recorded as 5 per leg, the conventional reading of what was reported rather than a counted figure. Deliberately not aliased to the Smith squat in training.ts -- different exercise, and the squat goal must not be fed by it.",logged
 2026-08-20-09,2026-08-20,heavy-lower,Bulgarian split squat,compound,2,5,30,,,,logged
+2026-08-22-01,2026-08-22,light-upper,Sled push + pull,warmup,1,,,6,,"Six minutes, inside the plan's 5-10.",logged
+2026-08-22-02,2026-08-22,light-upper,Shoulder warmup,warmup,1,,12,,,"First shoulder warmup in the log to carry a weight: 12 lbs, up from 8. Implement not stated.",logged
+2026-08-22-03,2026-08-22,light-upper,Pullups,compound,1,8,,,,"All-out test set, the first since the 7 of Aug 1 that set the goal baseline. Eight reps is a new best and the goal now reads 8 of 10. Taken second in the session and fresh, as the plan asks; reported as having taken it out of him, which the 3 on the next set confirms.",logged
+2026-08-22-04,2026-08-22,light-upper,Pullups,compound,2,3,,,,"Three against the usual 4-5 clean. This is the priced cost of a true all-out set rather than a fall-off, and the reason the plan tests only every few weeks.",logged
+2026-08-22-05,2026-08-22,light-upper,Bench press,compound,1,8,140,,,"140 x 8 hits the 3 x 8 @ 135-145 prescription at the weight planned this morning, and is a 5 lb step on the 135 x 8 of Aug 8. Reported as cooked straight after this set.",logged
+2026-08-22-06,2026-08-22,light-upper,Bench press,compound,2,7,140,,,,logged
+2026-08-22-07,2026-08-22,light-upper,Bench press,compound,3,3,130,,,"Dropped 10 lbs and still only 3. Eighteen reps against the prescribed 24.",logged
+2026-08-22-08,2026-08-22,light-upper,Lat pulldown,compound,1,5,130,,,"130 at the prescribed 2 x 5, against the 110 x 8 of Aug 8 -- that set was under-loaded for the rep count rather than this being a 20 lb jump.",logged
+2026-08-22-09,2026-08-22,light-upper,Lat pulldown,compound,2,5,130,,,,logged
+2026-08-22-10,2026-08-22,light-upper,Cable row,compound,1,5,130,,,"Back in the session after Aug 8 cut it for the lower back, and matching the 130 x 5 of Aug 4.",logged
+2026-08-22-11,2026-08-22,light-upper,Cable row,compound,2,5,130,,,,logged
+2026-08-22-12,2026-08-22,light-upper,Preacher curl,isolation,1,5,25,,,"The programmed preacher rather than the standing curl Aug 8 was forced into, at the 25 lbs of Aug 4.",logged
+2026-08-22-13,2026-08-22,light-upper,Preacher curl,isolation,2,5,25,,,,logged
+2026-08-22-14,2026-08-22,light-upper,Seated Y raise,isolation,1,5,20,,,"Reported as ""Y raises"" without saying seated or standing; logged as seated because 2 x 5 at 20 is exactly the seated prescription and matches Aug 4. Flip to standing if it was. Aug 4 got 4 reps at this weight, so 5 completes the slot.",logged
+2026-08-22-15,2026-08-22,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
