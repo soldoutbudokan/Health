@@ -14,6 +14,26 @@ import type { Food } from "@/lib/types";
  */
 export const RESTAURANT_FOODS: Food[] = [
   {
+    id: "stacked-cookie-butter-stack",
+    name: "Signature Pancake Stack",
+    variant: "Cookie butter",
+    brand: "Stacked Pancake & Breakfast House",
+    source: "claude",
+    per: "1 stack (3 pancakes, ~425 g plated)",
+    gramsPerServing: 425,
+    macros: {
+      calories: 1200,
+      protein: 24,
+      carbs: 139,
+      fat: 59,
+      fiber: 4,
+      sugar: 45,
+      sodium: 1350,
+    },
+    note: "Estimated from the dish's construction, not a published panel \u2014 the chain posts no nutrition and none was reachable on August 23, 2026. Built as three large buttermilk pancakes (~110 g each, 750 kcal) plus ~50 g cookie butter, ~30 g whipped cream and ~15 g crumbled speculoos, which is what the 59 g fat and the low 24 g protein imply; syrup is NOT included and is logged separately. Read calories as 900\u20131,500: the stack count is the variable, so a two-pancake stack is ~950 and a heavier cookie-butter hand pushes past 1,300. Sodium is the wider band at 800\u20131,900 mg and is mostly the pancakes rather than the topping \u2014 baking powder and batter salt run ~400 mg a pancake, so it tracks the same count the calories do.",
+    tags: ["pancakes", "cookie butter", "speculoos", "biscoff", "stacked", "restaurant", "brunch", "breakfast"],
+  },
+  {
     id: "sw-cacio-e-pepe",
     name: "Cacio e Pepe",
     brand: "Spaghetti Western",

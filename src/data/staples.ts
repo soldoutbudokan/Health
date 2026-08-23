@@ -9,6 +9,27 @@ import type { Food } from "@/lib/types";
  */
 export const PACKAGED_FOODS: Food[] = [
   {
+    id: "staple-maple-syrup",
+    name: "Maple syrup",
+    source: "usda",
+    per: "1 tbsp (20 g)",
+    gramsPerServing: 20,
+    macros: { calories: 52, protein: 0, carbs: 13.4, fat: 0, fiber: 0, sugar: 12.1, sodium: 2 },
+    note: "USDA pure maple syrup, carried per tablespoon so a poured amount logs through the servings multiplier \u2014 a third of a cup is 5.33. Atwater lands at 54 against 52, +3%, the gap being water rather than anything unaccounted. The zeroes are real: this is sugar and water, with no protein, fat or fibre by construction, which is why it is not subject to this file's blank-sodium convention. THE ASSUMPTION IS THAT IT WAS REAL MAPLE: table syrup is corn syrup and runs ~47 kcal and 12.8 g carbs a tablespoon, about a tenth lighter, so if the restaurant poured the cheap stuff this overstates by roughly that much.",
+    tags: ["maple", "syrup", "sweetener", "pancakes", "breakfast"],
+  },
+  {
+    id: "staple-ketchup",
+    name: "Ketchup",
+    brand: "Heinz",
+    source: "packaged",
+    per: "1 tbsp (15 mL / 17 g)",
+    gramsPerServing: 17,
+    macros: { calories: 20, protein: 0, carbs: 5, fat: 0, fiber: 0, sugar: 4, sodium: 160 },
+    note: "Heinz Canada's published panel for 15 mL, carried per tablespoon so a portion logs through the servings multiplier. Atwater reconciles exactly at 20. Sodium is the only figure here that matters and it is a read panel rather than an estimate: at 160 mg a tablespoon this is one of the densest sodium sources in the catalog by volume, so two tablespoons is 320 mg for 40 kcal. Restaurant ketchup is usually Heinz in Toronto, but a house or generic bottle would move the sodium more than the calories.",
+    tags: ["ketchup", "condiment", "tomato", "heinz"],
+  },
+  {
     id: "pkg-grenade-oreo-white",
     name: "Grenade Protein Bar",
     variant: "Oreo White",
