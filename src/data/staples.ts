@@ -253,6 +253,25 @@ export const PACKAGED_FOODS: Food[] = [
     note: "The whole 70 g pack as sold — noodle cake plus the tastemaker sachet — prepared with water and nothing else. Calories, protein, carbs and fat agree across the export-pack panel and its per-100 g figure (443 kcal/100 g x 0.70 = 310), and Atwater lands at 313, so the macros are solid. Sodium was 970 mg from the export-pack panel until August 9, 2026, when the pack actually in the cupboard was read and put two packs at ~1,780 mg — so 890 a pack, which is what this now carries. That the 1,780 was two packs and not one was confirmed the same day, so 890 a pack is settled rather than inferred from an ambiguous total. It is also the only line here traceable to the box on hand rather than a database — the macros are still the export-pack figure and would be worth replacing off the same panel next time it is open. Regional variants (Masala vs Chicken vs Curry) move sodium more than they move calories. Sugar is the tastemaker's, ~3 g, and is the least corroborated line.",
     tags: ["noodles", "instant noodles", "maggi", "masala", "ramen", "quick"],
   },
+  {
+    id: "staple-naan-plain",
+    name: "Naan",
+    variant: "plain",
+    source: "usda",
+    per: "1 naan (100 g)",
+    gramsPerServing: 100,
+    macros: {
+      calories: 290,
+      protein: 9.5,
+      carbs: 50,
+      fat: 6,
+      fiber: 2,
+      sugar: 3,
+      sodium: 550,
+    },
+    note: "Held per 100 g so a piece count logs through the servings multiplier, because piece weight is the real variable here — Stonefire's full naan is 126 g, restaurant naan runs 90-120 g, and the entry is useless if it assumes one. Energy density is the solid line: USDA's commercially-prepared refrigerated naan row gives 291 kcal and 9.6 g protein per 100 g, and Stonefire's own panel (63 g half-naan at 180 kcal) works out to 286, so two independent sources agree within 2% and Atwater lands at 292 against 290. Sodium is the wide line and is carried at 550 with a 450-750 band: the USDA row is about 465 mg per 100 g while Stonefire's panel works out to about 745, and nothing decides between them without reading the bag. THIS IS PLAIN NAAN — butter and garlic versions carry more fat and run 15-25% higher in calories, so do not log them against this entry.",
+    tags: ["naan", "bread", "flatbread", "indian", "curry", "side"],
+  },
 ];
 
 /**
