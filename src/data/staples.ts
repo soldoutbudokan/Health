@@ -62,6 +62,18 @@ export const PACKAGED_FOODS: Food[] = [
     tags: ["bar", "protein bar", "snack", "grenade", "oreo"],
   },
   {
+    id: "pkg-kameda-kakinotane",
+    name: "Kaki no Tane",
+    variant: "Kameda, original with peanuts",
+    brand: "Kameda Seika",
+    source: "packaged",
+    per: "1 bag (30 g)",
+    gramsPerServing: 30,
+    macros: { calories: 136, protein: 3.6, carbs: 20.9, fat: 4.2, fiber: 1, sodium: 150 },
+    note: "Kameda Seika's published panel for the 180 g six-bag pack, per 30 g bag: 136 kcal, 3.6 g protein, 4.2 g fat, 20.9 g carbs, 0.38 g salt. Atwater reproduces the 136 exactly, which is the panel's own arithmetic rather than a coincidence. Sodium is converted from that Japanese salt-equivalent line (0.38 / 2.54), so it carries that rounding and nothing worse. Fibre is not on the panel and the 1 g is estimated from the mix \u2014 roughly 7 parts soy-glazed rice cracker to 3 parts peanut, the peanuts carrying nearly all of it, so read it as \u00b10.5 g; sugars are not broken out and there is no basis to estimate them, so that line stays blank. The panel came from Kameda's published figures via search rather than the wrapper in hand, and the multipack ships in several sizes \u2014 check the bag weight if the pack is not the 180 g one.",
+    tags: ["kaki no tane", "rice cracker", "arare", "peanut", "kameda", "japanese", "snack"],
+  },
+  {
     id: "pkg-gatorade-caramel-bar",
     name: "Gatorade Recover Whey Protein Bar",
     variant: "Chocolate Caramel",
