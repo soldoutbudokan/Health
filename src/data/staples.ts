@@ -9,6 +9,18 @@ import type { Food } from "@/lib/types";
  */
 export const PACKAGED_FOODS: Food[] = [
   {
+    id: "pkg-on-whey-scoop",
+    name: "Whey Protein Powder",
+    variant: "1 scoop ON Gold Standard vanilla",
+    brand: "Optimum Nutrition",
+    source: "packaged",
+    per: "1 scoop (~30.5 g)",
+    gramsPerServing: 30.5,
+    macros: { calories: 120, protein: 24, carbs: 3, fat: 1, fiber: 0.5, sugar: 1, sodium: 130 },
+    note: "ON Gold Standard 100% Whey, Vanilla Ice Cream, per single scoop \u2014 the same panel the two-scoop shake entries are built from, split out so a shake mixed off the usual dose logs as the standard entry plus a top-up rather than by rescaling a whole shake. A quarter more powder than the usual two scoops is this row at 0.5 servings. Atwater lands at 117 against 120, -2.5%. Other flavours in the range run 105\u2013140 mg sodium a scoop, so that line moves a little if the tub changes.",
+    tags: ["whey", "protein", "powder", "scoop", "on", "optimum", "vanilla"],
+  },
+  {
     id: "staple-maple-syrup",
     name: "Maple syrup",
     source: "usda",
@@ -326,6 +338,17 @@ export const PACKAGED_FOODS: Food[] = [
  *   names its source in its own note.
  */
 export const STAPLE_FOODS: Food[] = [
+  {
+    id: "staple-molasses-cookie-small",
+    name: "Molasses cookie",
+    variant: "small, homemade",
+    source: "claude",
+    per: "1 small cookie (~22 g)",
+    gramsPerServing: 22,
+    macros: { calories: 95, protein: 1.1, carbs: 15, fat: 3.5, fiber: 0.3, sugar: 9, sodium: 75 },
+    note: "Estimated for a home-baked soft molasses cookie, not read off a recipe \u2014 none was given, so this is built from the standard construction of the type: flour, butter, brown sugar, molasses, egg, soda and spice, at roughly 4.3 kcal/g. Read it as 70\u2013125 kcal and treat size as the variable doing nearly all the work, since cookies of this style are consistent per gram and \"small\" was the only dimension reported; butter ratio is the second and moves the fat line more than the calories. Sodium ~75 mg is baking soda plus salted butter and is ordinary for the type. IF THE RECIPE EXISTS, THIS ENTRY SHOULD BE REPLACED BY IT \u2014 a weighed batch divided by its yield would retire the band entirely.",
+    tags: ["cookie", "molasses", "ginger", "dessert", "snack", "homemade"],
+  },
   {
     id: "staple-rice-cooked-cup",
     name: "White rice, cooked",
