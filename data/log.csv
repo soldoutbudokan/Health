@@ -172,6 +172,7 @@ d92f6b04-7c18-4a53-b8e6-3057ac91d2f7,2026-08-22,snack,Apple,,,1 medium (182 g),2
 296d9565-e870-4f75-bcfe-1ff1873f90eb,2026-08-23,breakfast,Ketchup,,Heinz,1 tbsp (15 mL / 17 g),2,20,0,5,0,0,4,160,packaged,2026-08-23T16:15:55.000Z
 ea3c8487-d7df-4add-b814-1a3ec44befc5,2026-08-23,snack,Grenade Protein Bar,Oreo White,Grenade,1 bar (60 g),1,230,20,21,9,5,2,300,packaged,2026-08-23T21:20:46.000Z
 2495a4b2-01dd-4362-b01c-6d747689daf7,2026-08-23,dinner,Chicken Curry,curry only,,"1 serving (1/8 recipe), no rice",1,370,23,14,25,3,,815,recipe,2026-08-24T00:02:49.000Z
+bbf31261-d9cc-471c-a159-b8bff30bb64a,2026-08-23,dinner,Paratha,Original,Shana,1 paratha (80 g),2,270,5,32,15,,,320,packaged,2026-08-24T23:06:32.000Z
 aa547f73-9f32-40bd-8f97-2948c0991feb,2026-08-23,dinner,Protein Shake,2 scoops ON vanilla + splash of 2% milk,Optimum Nutrition,2 scoops (~61 g) + ~1/2 cup 2% milk,1,301,52,12,4.5,1,8,318,packaged,2026-08-24T00:02:49.000Z
 db1eb4ca-83bc-4359-b413-7bb0f48fd98b,2026-08-23,dinner,Whey Protein Powder,1 scoop ON Gold Standard vanilla,Optimum Nutrition,1 scoop (~30.5 g),0.5,120,24,3,1,0.5,1,130,packaged,2026-08-24T00:02:49.000Z
 810dddce-b0fa-48ef-9f84-37200ad240cd,2026-08-23,snack,Molasses cookie,"small, homemade",,1 small cookie (~22 g),2,95,1.1,15,3.5,0.3,9,75,claude,2026-08-24T00:02:49.000Z
@@ -180,3 +181,6 @@ f30bc664-4873-442c-9734-4f344cc5bc17,2026-08-24,lunch,Pasta alla Vodka,~10% smal
 a6ec87be-bbac-4881-969a-ff9d5c24b96f,2026-08-24,snack,Kaki no Tane,"Kameda, original with peanuts",Kameda Seika,1 bag (30 g),1,136,3.6,20.9,4.2,1,,150,packaged,2026-08-24T20:40:11.000Z
 0476be18-1ec6-467a-82ec-561e83c5862e,2026-08-24,snack,Grenade Protein Bar,Oreo White,Grenade,1 bar (60 g),1,230,20,21,9,5,2,300,packaged,2026-08-24T19:51:10.000Z
 d8584741-cbe4-49b5-83c5-901437bf8ef3,2026-08-24,snack,Banana,,,1 medium (118 g),1,105,1.3,27,0.4,3,,1,staple,2026-08-24T21:26:42.000Z
+bbac2f56-7286-4a12-8c04-6892e371bbd4,2026-08-24,dinner,Chicken Curry,curry only,,"1 serving (1/8 recipe), no rice",1,370,23,14,25,3,,815,recipe,2026-08-24T23:06:32.000Z
+1bc62ee7-6cfc-4aff-be2e-97f58ccce360,2026-08-24,dinner,Paratha,Original,Shana,1 paratha (80 g),2,270,5,32,15,,,320,packaged,2026-08-24T23:06:32.000Z
+df631b1d-fe60-4dd9-9661-f429a68f58d0,2026-08-24,dinner,Molasses cookie,"small, homemade",,1 small cookie (~22 g),2,95,1.1,15,3.5,0.3,9,75,claude,2026-08-24T23:06:32.000Z

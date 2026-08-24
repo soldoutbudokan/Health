@@ -74,6 +74,18 @@ export const PACKAGED_FOODS: Food[] = [
     tags: ["kaki no tane", "rice cracker", "arare", "peanut", "kameda", "japanese", "snack"],
   },
   {
+    id: "pkg-shana-paratha-original",
+    name: "Paratha",
+    variant: "Original",
+    brand: "Shana",
+    source: "packaged",
+    per: "1 paratha (80 g)",
+    gramsPerServing: 80,
+    macros: { calories: 270, protein: 5, carbs: 32, fat: 15, sodium: 320 },
+    note: "Shana's panel for the frozen Original Paratha, per 80 g piece: 270 kcal, 5 g protein, 15 g fat, 32 g carbs, 320 mg sodium \u2014 80 g is the pack's own basis, the 5-piece pack running 400 g and the 15-piece 1.2 kg. It agrees with the per-100 g listing (338 kcal, 6 g protein, 18 g fat, 40 g carbs) scaled by 0.8, so two independent reads land on the same panel; Atwater gives 283 against 270, +4.8%. Fibre is deliberately blank \u2014 no reachable listing carries it, and whether the dough is atta or maida swings it between roughly 1.4 and 5.7 g a piece, so any single figure would be invention rather than an estimate; read the box if fibre matters. Sugars are unstated and near-zero by construction for a flour, water, oil and salt dough. These came via search rather than off the wrapper in hand.",
+    tags: ["paratha", "flatbread", "bread", "shana", "frozen", "indian", "pakistani"],
+  },
+  {
     id: "pkg-gatorade-caramel-bar",
     name: "Gatorade Recover Whey Protein Bar",
     variant: "Chocolate Caramel",
