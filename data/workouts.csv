@@ -161,3 +161,18 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-23-08,2026-08-23,light-lower,Depth jumps,jump,1,5,,,,"First depth jumps in the log. One set of five against the prescribed 2x5, the reduced dose agreed this morning for a first exposure on a sore lower back. Taken after the weighted jumps, which inverts the plan's one stated ordering rule.",logged
 2026-08-23-09,2026-08-23,light-lower,Lying leg curl,isolation,1,5,110,,,"First lying leg curl in the log -- the machine was broken on Aug 20 and the exercise has no prior weight to progress from, so 110 for a clean 2x5 reported quite easy is its baseline.",logged
 2026-08-23-10,2026-08-23,light-lower,Lying leg curl,isolation,2,5,110,,,,logged
+2026-08-26-01,2026-08-26,heavy-upper,Sled,warmup,1,,,6,,"Six minutes, inside the plan's 5-10.",logged
+2026-08-26-02,2026-08-26,heavy-upper,Shoulder warmup,warmup,1,,,5,,"Five minutes, matching the ~5 min prescription. First shoulder warmup in the log to carry a duration -- the Aug 22 one carried a weight, 12 lbs, and no time.",logged
+2026-08-26-03,2026-08-26,heavy-upper,Pullups,compound,1,5,,,,"Two clean fives, the top of the 2 x 4-5 prescription. First pullups since the Aug 22 all-out test that reached 8 and cost the set after it; this is the plan's ordinary dose rather than another test.",logged
+2026-08-26-04,2026-08-26,heavy-upper,Pullups,compound,2,5,,,,,logged
+2026-08-26-05,2026-08-26,heavy-upper,Bench press,compound,1,5,160,,,"160 x 5, a 5 lb step on the 155 of Aug 4 and the heaviest bench actually performed in the log -- the 165 above it is a handoff baseline stated in the training plan, not a set anyone recorded. Reported as not too bad, so there is room. Three sets of 5 meets the low end of the 3-4 x 5 prescription.",logged
+2026-08-26-06,2026-08-26,heavy-upper,Bench press,compound,2,5,145,,,"145 for both back-offs, 10 lbs above the 135 Aug 4 backed off to.",logged
+2026-08-26-07,2026-08-26,heavy-upper,Bench press,compound,3,5,145,,,,logged
+2026-08-26-08,2026-08-26,heavy-upper,Cable row,compound,1,5,130,,,"130 x 5 for the prescribed two sets, the same load held on Aug 4 and Aug 22.",logged
+2026-08-26-09,2026-08-26,heavy-upper,Cable row,compound,2,5,130,,,,logged
+2026-08-26-10,2026-08-26,heavy-upper,Preacher curl,isolation,1,6,25,,,"Six then four against the prescribed 2 x 5 -- ten reps either way, at the 25 lbs held since Aug 4. Two sets, so the slot is met.",logged
+2026-08-26-11,2026-08-26,heavy-upper,Preacher curl,isolation,2,4,25,,,,logged
+2026-08-26-12,2026-08-26,heavy-upper,Cable lateral raise,isolation,1,4,12.5,,,"Substituted for the programmed seated Y raise because the 20 lb dumbbells were gone -- equipment, not a choice. Logged under its own name and deliberately not aliased to the Y raise in training.ts, as the Aug 20 Bulgarian split squat was not aliased to the Smith squat: a lateral raise is a different movement from the Y's scapular-plane pull, and the Y raise slot has to stay honest. Four then three at 12.5 lbs is well short of the 2 x 5.",logged
+2026-08-26-13,2026-08-26,heavy-upper,Cable lateral raise,isolation,2,3,12.5,,,,logged
+2026-08-26-14,2026-08-26,heavy-upper,Sled,finisher,1,,,,,"Second sled bout of the session, no duration reported. Its own line because the sled's slot carries no set count and so matches one exercise only.",logged
+2026-08-26-15,2026-08-26,heavy-upper,Dips,isolation,1,10,,,,"Ten in one set, exactly the 1 x 10 prescription and back to the August baseline after the 7 of Aug 4 and the miss on Aug 22, when dips were lost to time. The dips goal is maintenance at 10, so this holds it.",logged
