@@ -550,4 +550,15 @@ export const STAPLE_FOODS: Food[] = [
     macros: { calories: 119, protein: 0, carbs: 0, fat: 13.5 },
     tags: ["oil", "olive", "fat", "cooking"],
   },
+  {
+    id: "staple-carrot-cake-slice-iced",
+    name: "Carrot cake",
+    variant: "1 slice, cream cheese icing",
+    source: "claude",
+    per: "1 slice (~115 g, iced)",
+    gramsPerServing: 115,
+    macros: { calories: 475, protein: 4.6, carbs: 56, fat: 26.5, fiber: 1.6, sugar: 39, sodium: 390 },
+    note: "Estimated for a standard caf\u00e9 slice, not read off a panel \u2014 no venue was given on August 26, 2026, so this is built from the type rather than from a product. Density is USDA\u0027s commercially prepared carrot cake with cream cheese frosting at ~415 kcal per 100 g, applied to a ~115 g slice; the icing is taken as cream cheese, which is standard for the cake and supplies much of the 39 g of sugar along with the crumb. Read it as 350\u2013600 kcal and treat slice size as the variable doing nearly all the work, since caf\u00e9 slices run 90\u2013150 g and a bakery wedge goes past that; the icing thickness is the second and moves fat and sugar more than calories. Sodium ~390 mg is baking soda, salt and cream cheese, and is ordinary for the type. IF THE VENUE IS NAMED AND POSTS A PANEL, THIS ENTRY SHOULD BE REPLACED BY IT.",
+    tags: ["carrot cake", "cake", "dessert", "icing", "cream cheese", "snack"],
+  },
 ];
