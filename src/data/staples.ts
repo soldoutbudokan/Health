@@ -542,6 +542,16 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["banana", "fruit", "snack"],
   },
   {
+    id: "staple-peach",
+    name: "Peach",
+    source: "staple",
+    per: "1 medium (150 g)",
+    gramsPerServing: 150,
+    macros: { calories: 59, protein: 1.4, carbs: 14.3, fat: 0.4, fiber: 2.3, sugar: 12.6, sodium: 0 },
+    note: "USDA raw peach scaled from its per-100 g row to USDA's own medium fruit at 150 g; added August 28, 2026 when two were eaten and nothing in this catalog covered them. Sodium is a true 0 rather than a floor — raw and unsalted, like the apple and banana above. Atwater lands at 66 against 59, +12%, the widest miss in this file: USDA computes fruit energy with fruit-specific factors instead of the general 4/4/9, and fibre yields well under 4 kcal/g. The apple (+10%) and banana (+11%) miss the same way for the same reason, so read this as the raw-fruit artefact rather than a misread figure — but the size is the real soft input, since a large peach runs nearer 175 g and would add about a quarter.",
+    tags: ["peach", "fruit", "snack"],
+  },
+  {
     id: "staple-olive-oil",
     name: "Olive oil",
     source: "staple",
