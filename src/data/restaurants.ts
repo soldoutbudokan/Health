@@ -361,4 +361,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated from Chop Hop's own published salad description, not a panel \u2014 chophop.com and every menu mirror were blocked at the network egress proxy on August 26, 2026, so this is a reconstruction and sits at the low-confidence end of this file. WHAT THE CHAIN PUBLISHES FOR THE COBB IS A BACON AND EGG BASE, A BLUE CHEESE MISO SPREAD AS THE DRESSING AND SPICY CANDIED PECANS as the garnish, which makes it not the classic: no avocado is named so none is counted here, and neither pecans nor miso belong to the classic at all. Built as ~140 g chopped greens, 30 g bacon, one large egg, 110 g of the added herb roasted chicken, ~50 g of the spread, 20 g candied pecans and 50 g cherry tomato; Atwater lands at 822 against 820. Read calories as 600\u20131,050, with the spread carrying nearly all of that band \u2014 it is the least-sourced line, taken as a creamy dressing at ~50 g because no quantity is published. SODIUM WAS FIRST WRITTEN 1,840 AND IS NOW 1,550, corrected the same day: the component masses are unchanged and the error was in the per-gram densities, which had been taken near the top of the range on the chicken and the candied pecans at once rather than centred. Rebuilt at ~1,800 mg/100 g for the bacon, ~220 for the roasted chicken, ~1,250 for the spread and ~250 for the pecans; band 1,150\u20132,100, still the widest line here because bacon, blue cheese and miso stack three salt sources. For scale, Chick-fil-A\u0027s Cobb with dressing publishes about 1,890 mg and Panera\u0027s Green Goddess Cobb with chicken about 1,350, so a Cobb of this build sits between two real panels rather than above both. The herb roasted chicken is as reported: the opening-menu protein list ran Korean short rib, piri-piri chicken, Cajun shrimp, yuzu pork belly and chipotle jackfruit, so the menu has moved since and the chicken\u0027s 110 g portion is unconfirmed.",
     tags: ["chop hop", "chophop", "cobb", "salad", "chopped salad", "chicken", "bacon", "blue cheese", "restaurant", "toronto", "lunch"],
   },
+  {
+    id: "lavenue-ill-have-it-all",
+    name: "I'll Have It All",
+    variant: "full breakfast plate, bread included",
+    brand: "L'Avenue",
+    source: "claude",
+    per: "1 plate (full breakfast, bread included, no syrup)",
+    macros: {
+      calories: 1675,
+      protein: 64,
+      carbs: 136,
+      fat: 95,
+      fiber: 7,
+      sugar: 15,
+      sodium: 3470,
+    },
+    note: "Estimated from the menu description and a plate photo on August 29, 2026, not a published panel — L'Avenue posts no nutrition and its site was blocked at the egress proxy. Built as 2 fried eggs, 2 strips of bacon, a house sausage link, a slice of honey-orange glazed ham, a ~30 g scoop of pâté, one buttermilk pancake, one slice of French toast, the breakfast potatoes and the bread choice with butter (~225 kcal, roughly alike across baguette, multigrain, bagel and naan); the eggs and four meats carry ~42 g of the 64 g protein in only ~660 kcal and the starch half the rest. Read calories as 1,300–2,100, subtracting ~225 if the bread goes uneaten; the unlimited maple syrup is NOT included and is logged separately, same as the Stacked entry. Sodium is the widest band at 2,300–4,600 mg — four cured or seasoned meats, seasoned potatoes and batter salt at once, and a cure cannot be eyeballed the way a portion can.",
+    tags: ["lavenue", "l'avenue", "brunch", "breakfast", "restaurant", "toronto", "eggs", "bacon", "sausage", "ham", "pate", "pancake", "french toast", "full breakfast"],
+  },
 ];
