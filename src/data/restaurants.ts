@@ -380,4 +380,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated from the menu description and a plate photo on August 29, 2026, not a published panel — L'Avenue posts no nutrition and its site was blocked at the egress proxy. Built as 2 fried eggs, 2 strips of bacon, a house sausage link, a slice of honey-orange glazed ham, a ~30 g scoop of pâté, one buttermilk pancake, one slice of French toast, the breakfast potatoes and the bread choice with butter (~225 kcal, roughly alike across baguette, multigrain, bagel and naan); the eggs and four meats carry ~42 g of the 64 g protein in only ~660 kcal and the starch half the rest. Read calories as 1,300–2,100, subtracting ~225 if the bread goes uneaten; the unlimited maple syrup is NOT included and is logged separately, same as the Stacked entry. Sodium is the widest band at 2,300–4,600 mg — four cured or seasoned meats, seasoned potatoes and batter salt at once, and a cure cannot be eyeballed the way a portion can.",
     tags: ["lavenue", "l'avenue", "brunch", "breakfast", "restaurant", "toronto", "eggs", "bacon", "sausage", "ham", "pate", "pancake", "french toast", "full breakfast"],
   },
+  {
+    id: "qb-eggs-benedict-peameal",
+    name: "Eggs Benedict",
+    variant: "peameal bacon, house greens",
+    brand: "The Queen & Beaver Public House",
+    source: "claude",
+    per: "1 plate",
+    macros: {
+      calories: 645,
+      protein: 38,
+      carbs: 30,
+      fat: 40.5,
+      fiber: 3,
+      sugar: 3,
+      sodium: 1450,
+    },
+    note: "Estimated from the brunch menu's own description — peameal bacon, house greens — and the standard build of the dish, not a panel; the pub publishes no nutrition and queenandbeaverpub.ca was blocked at the network egress proxy on August 30, 2026, so the menu was read from a photograph. Built as two poached eggs and ~75 g of peameal bacon under ~55 g of hollandaise on an English muffin, with dressed house greens alongside; Atwater lands at 637 against 645. Read calories as 550–850: the hollandaise ladle is most of the band and cannot be seen from outside, with muffin size a distant second. Peameal is why this is the menu's best protein-per-calorie plate — cured pork loin rather than belly, so ~17 g of the 38 g protein arrives in ~115 kcal. Sodium is the widest line at 1,000–2,000 mg, the brine and the sauce stacking; a cure cannot be eyeballed the way a portion can.",
+    tags: ["queen and beaver", "q&b", "eggs benedict", "benedict", "peameal", "eggs", "hollandaise", "brunch", "breakfast", "restaurant", "toronto", "pub"],
+  },
 ];
