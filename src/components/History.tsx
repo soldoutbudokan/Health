@@ -60,14 +60,30 @@ export function History({ entries, goals, builtOn, breaks }: Props) {
   const points = useMemo(() => {
     const cal: TrendPoint[] = [];
     const prot: TrendPoint[] = [];
+    const fiber: TrendPoint[] = [];
+    const sodium: TrendPoint[] = [];
     for (let i = span - 1; i >= 0; i--) {
       const d = addDays(builtOn, -i);
       const es = entriesForDate(entries, d);
       const t = sumEntries(es);
       cal.push({ date: d, value: t.calories, logged: es.length > 0 });
       prot.push({ date: d, value: t.protein, logged: es.length > 0 });
+      // See the same block in Dashboard: a micro is logged only where a row
+      // records it, and a partial day is a floor rather than a low day.
+      const m = microTotals(es);
+      for (const [pts, mt] of [
+        [fiber, m.fiber],
+        [sodium, m.sodium],
+      ] as const) {
+        pts.push({
+          date: d,
+          value: mt.total,
+          logged: mt.recordedRows > 0,
+          partial: mt.recordedRows < mt.totalRows,
+        });
+      }
     }
-    return { cal, prot };
+    return { cal, prot, fiber, sodium };
   }, [entries, span, builtOn]);
 
   const stats = useMemo(() => {
@@ -169,6 +185,29 @@ export function History({ entries, goals, builtOn, breaks }: Props) {
           color="var(--series-protein)"
           today={builtOn}
           band={{ min: goals.proteinMin, max: goals.proteinMax }}
+          breaks={breaks}
+          height={150}
+        />
+        {/* Underneath the two above, and the same pair as the dashboard's —
+            see the note there for the colour choices and why a hatched bar is
+            a floor rather than a low day. */}
+        <TrendChart
+          title={`Fiber · ${range === "all" ? `all ${span} days` : `last ${span} days`}`}
+          unit="g"
+          points={points.fiber}
+          color="var(--series-fat)"
+          today={builtOn}
+          goal={goals.fiber}
+          breaks={breaks}
+          height={150}
+        />
+        <TrendChart
+          title={`Sodium · ${range === "all" ? `all ${span} days` : `last ${span} days`}`}
+          unit="mg"
+          points={points.sodium}
+          color="var(--text-secondary)"
+          today={builtOn}
+          caption="no target set"
           breaks={breaks}
           height={150}
         />

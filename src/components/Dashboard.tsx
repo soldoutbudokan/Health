@@ -116,15 +116,32 @@ export function Dashboard({
   const trend = useMemo(() => {
     const cal: TrendPoint[] = [];
     const prot: TrendPoint[] = [];
+    const fiber: TrendPoint[] = [];
+    const sodium: TrendPoint[] = [];
     const first = dates[dates.length - 1];
-    if (!first) return { cal, prot };
+    if (!first) return { cal, prot, fiber, sodium };
     for (let d = first; d <= horizon; d = addDays(d, 1)) {
       const es = entriesForDate(entries, d);
       const t = sumEntries(es);
       cal.push({ date: d, value: t.calories, logged: es.length > 0 });
       prot.push({ date: d, value: t.protein, logged: es.length > 0 });
+      // Micros key off recordedRows, not on the day having entries: a day
+      // where nothing recorded sodium is an empty slot, not a zero-sodium
+      // day, and a day where only some rows did is a floor.
+      const m = microTotals(es);
+      for (const [pts, mt] of [
+        [fiber, m.fiber],
+        [sodium, m.sodium],
+      ] as const) {
+        pts.push({
+          date: d,
+          value: mt.total,
+          logged: mt.recordedRows > 0,
+          partial: mt.recordedRows < mt.totalRows,
+        });
+      }
     }
-    return { cal, prot };
+    return { cal, prot, fiber, sodium };
   }, [entries, dates, horizon]);
 
   const { avg: avg7, loggedDays: logged7 } = useMemo(
@@ -319,6 +336,31 @@ export function Dashboard({
           color="var(--series-protein)"
           today={builtOn}
           band={{ min: goals.proteinMin, max: goals.proteinMax }}
+          breaks={breaks}
+        />
+        {/* Fiber and sodium sit under the two above rather than beside them
+            because they are read second and are the weaker data: both are
+            summed over only the rows that record them, so a hatched bar is a
+            floor. Fiber takes the third macro slot — the one the two charts
+            above leave free — and sodium takes the neutral ink on purpose,
+            because goals.json sets no sodium target and a saturated series
+            colour on an unscored reading implies one. */}
+        <TrendChart
+          title={`Fiber · all ${trend.fiber.length} days`}
+          unit="g"
+          points={trend.fiber}
+          color="var(--series-fat)"
+          today={builtOn}
+          goal={goals.fiber}
+          breaks={breaks}
+        />
+        <TrendChart
+          title={`Sodium · all ${trend.sodium.length} days`}
+          unit="mg"
+          points={trend.sodium}
+          color="var(--text-secondary)"
+          today={builtOn}
+          caption="no target set"
           breaks={breaks}
         />
       </div>

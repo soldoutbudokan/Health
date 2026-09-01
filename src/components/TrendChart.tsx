@@ -9,6 +9,14 @@ export interface TrendPoint {
   value: number;
   /** False for days with no entries at all — drawn as an empty slot. */
   logged: boolean;
+  /**
+   * The day's total is a *floor*: some rows record this field and some leave
+   * it blank, and a blank is "not recorded" rather than zero. Drawn hatched
+   * and read out with a "≥", the same convention the Micros panel uses —
+   * without it a day whose sodium came from two of nine rows would draw a
+   * short bar and read as a light day rather than an unknown one.
+   */
+  partial?: boolean;
 }
 
 /** A stretch of not-logging with a reason — shaded so a gap reads as a trip. */
@@ -32,6 +40,12 @@ interface Props {
   goal?: number;
   /** Reference band, e.g. the protein 160–180 g target. */
   band?: { min: number; max: number };
+  /**
+   * Resting right-hand caption for a chart with neither goal nor band, where
+   * that slot would otherwise sit empty. Sodium has no target in goals.json,
+   * so it says what the bars are instead of implying a score.
+   */
+  caption?: string;
   /**
    * Shaded behind the bars, from `data/breaks.csv`. Without them a run of
    * short days reads as a diet that fell apart, when it was a week away from
@@ -58,11 +72,13 @@ export function TrendChart({
   today,
   goal,
   band,
+  caption,
   breaks = [],
   height = 132,
 }: Props) {
   const [hover, setHover] = useState<number | null>(null);
   const clipId = useId();
+  const hatchId = useId();
 
   const ceiling = Math.max(
     ...points.map((p) => p.value),
@@ -102,6 +118,14 @@ export function TrendChart({
     })
     .filter((v): v is NonNullable<typeof v> => v !== null);
 
+  // One function for both the visible readout and the aria-label: they said
+  // the same thing in two places, and a "≥" added to one and not the other
+  // would put the floor caveat in front of sighted readers only.
+  const readout = (p: TrendPoint) =>
+    p.logged
+      ? `${p.partial ? "≥" : ""}${round(p.value)} ${unit}`
+      : "not logged";
+
   const active = hover !== null ? points[hover] : null;
   const activeBreak =
     active && breaks.find((b) => active.date >= b.start && active.date <= b.end);
@@ -112,12 +136,12 @@ export function TrendChart({
         <h3 className="text-sm font-semibold">{title}</h3>
         <span className="tnum text-xs text-muted">
           {active
-            ? `${formatDay(active.date, today)} · ${active.logged ? `${round(active.value)} ${unit}` : "not logged"}${activeBreak ? ` · ${activeBreak.label}` : ""}`
+            ? `${formatDay(active.date, today)} · ${readout(active)}${activeBreak ? ` · ${activeBreak.label}` : ""}`
             : goal
               ? `target ${round(goal)} ${unit}`
               : band
                 ? `target ${band.min}–${band.max} ${unit}`
-                : ""}
+                : (caption ?? "")}
         </span>
       </figcaption>
 
@@ -138,6 +162,28 @@ export function TrendChart({
             <clipPath id={clipId}>
               <rect x="0" y="0" width={W} height={height} />
             </clipPath>
+            {/* Floor days. Hatching rather than a lighter fill because the
+                bars already use opacity for hover dimming, and one channel
+                cannot carry two meanings. patternUnits are userSpaceOnUse so
+                the stripes keep their angle whatever the container width does
+                to the non-uniform viewBox scale. */}
+            <pattern
+              id={hatchId}
+              width="3"
+              height="3"
+              patternUnits="userSpaceOnUse"
+              patternTransform="rotate(45)"
+            >
+              <rect width="3" height="3" fill={color} opacity={0.3} />
+              <line
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="3"
+                stroke={color}
+                strokeWidth="1.5"
+              />
+            </pattern>
           </defs>
 
           {/* Breaks go down first, behind even the target band: they are the
@@ -218,7 +264,7 @@ export function TrendChart({
                       width={barW}
                       height={h}
                       rx={1.4}
-                      fill={color}
+                      fill={p.partial ? `url(#${hatchId})` : color}
                       opacity={hover === null || isHover ? 1 : 0.45}
                       className="transition-opacity duration-150"
                     />
@@ -253,7 +299,7 @@ export function TrendChart({
               onFocus={() => setHover(i)}
               onBlur={() => setHover(null)}
               onClick={() => setHover((h) => (h === i ? null : i))}
-              aria-label={`${formatDay(p.date, today)}: ${p.logged ? `${round(p.value)} ${unit}` : "not logged"}${
+              aria-label={`${formatDay(p.date, today)}: ${readout(p)}${
                 breaks.some((b) => p.date >= b.start && p.date <= b.end)
                   ? ` (${breaks.find((b) => p.date >= b.start && p.date <= b.end)!.label})`
                   : ""
