@@ -47,6 +47,12 @@ interface Props {
    */
   caption?: string;
   /**
+   * Accessible name, when the displayed title is an abbreviation. Sodium's
+   * chart is titled "Na" to keep the heading on one line; a screen reader
+   * should still hear the word.
+   */
+  label?: string;
+  /**
    * Shaded behind the bars, from `data/breaks.csv`. Without them a run of
    * short days reads as a diet that fell apart, when it was a week away from
    * a kitchen — which is the same job breaks.csv already does for training.
@@ -73,6 +79,7 @@ export function TrendChart({
   goal,
   band,
   caption,
+  label,
   breaks = [],
   height = 132,
 }: Props) {
@@ -156,7 +163,7 @@ export function TrendChart({
           viewBox={`0 0 ${W} ${height}`}
           preserveAspectRatio="none"
           role="img"
-          aria-label={`${title} over ${points.length} days`}
+          aria-label={`${label ?? title} over ${points.length} days`}
         >
           <defs>
             <clipPath id={clipId}>

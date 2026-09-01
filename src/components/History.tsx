@@ -202,7 +202,8 @@ export function History({ entries, goals, builtOn, breaks }: Props) {
           height={150}
         />
         <TrendChart
-          title={`Sodium · ${range === "all" ? `all ${span} days` : `last ${span} days`}`}
+          title={`Na · ${range === "all" ? `all ${span} days` : `last ${span} days`}`}
+          label="Sodium"
           unit="mg"
           points={points.sodium}
           color="var(--text-secondary)"

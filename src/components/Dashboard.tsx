@@ -355,7 +355,8 @@ export function Dashboard({
           breaks={breaks}
         />
         <TrendChart
-          title={`Sodium · all ${trend.sodium.length} days`}
+          title={`Na · all ${trend.sodium.length} days`}
+          label="Sodium"
           unit="mg"
           points={trend.sodium}
           color="var(--text-secondary)"
