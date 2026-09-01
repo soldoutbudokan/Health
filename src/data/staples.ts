@@ -658,4 +658,16 @@ export const STAPLE_FOODS: Food[] = [
     note: "Every figure read off the Frito-Lay Canada panel for the 190 g bag, whose stated serving is 50 g or 27 chips, re-confirmed against four retailer listings on August 31, 2026 \u2014 no estimated line anywhere in this entry. Atwater lands at 263 against the stated 260, +1.2%. Held at the panel's own 50 g serving so a handful and half a bag both log through the servings multiplier; the full 190 g bag is 3.8 servings. WORTH STATING BECAUSE THE FLAVOUR NAME MISLEADS ON PROTEIN: cacio e pepe here is a cheese-and-pepper seasoning dusted onto a plain kettle chip, so the 3 g of protein is potato rather than cheese, and at 5.2 kcal per gram this is among the least protein-dense things in the catalog.",
     tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "cacio e pepe", "snack", "packaged"],
   },
+  {
+    id: "pkg-cheetos-puffs",
+    name: "Cheetos Puffs",
+    variant: "cheese flavoured",
+    brand: "Frito-Lay",
+    source: "packaged",
+    per: "1 small bag (28 g, ~13 pieces)",
+    gramsPerServing: 28,
+    macros: { calories: 160, protein: 2, carbs: 16, fat: 10, fiber: 1, sugar: 1, sodium: 270 },
+    note: "Read off the Frito-Lay panel for the 28 g serving, cross-checked against several retailer and database listings on September 1, 2026 — no estimated line here. THE BAG SIZE IS CONFIRMED RATHER THAN ASSUMED: the eater reported 160 kcal off the bag, which is exactly the 28 g panel, so the portion is pinned by the label and not by a guess at what 'small bag' means. Atwater lands at 162 against the stated 160, +1.3%. Held at the panel's own 28 g serving so a larger bag logs through the servings multiplier. At 5.7 kcal per gram with 2 g of protein this is the least protein-dense thing in the catalog, a shade past the Miss Vickie's above it, and the 270 mg of sodium in a 160 kcal snack is the line worth noticing — the cheese dust carries it. Flavour variants move this: Flamin' Hot and Simply White Cheddar both differ by a gram or two of fat and up to 30 mg of sodium.",
+    tags: ["cheetos", "puffs", "cheese", "chips", "crisps", "snack", "packaged", "frito-lay"],
+  },
 ];
