@@ -248,3 +248,7 @@ ce047f32-7e7c-42f8-9654-a58d6a9f83a0,2026-09-01,snack,Cheetos Puffs,cheese flavo
 49be244a-d678-4dfe-a76e-a3a12a65db84,2026-09-01,dinner,"Carrots, raw",,,100 g,0.5,41,0.9,9.6,0.2,2.8,4.7,69,usda,2026-09-01T23:15:00.000Z
 c5b44d7d-8398-41ba-81aa-7298fcf9fd5e,2026-09-01,dinner,Plum,,,1 medium (66 g),2,30,0.5,7.5,0.2,0.9,6.5,0,usda,2026-09-01T23:15:00.000Z
 a623fa96-ce0d-412e-a87a-d571edeba953,2026-09-02,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, no ice",Starbucks,"1 venti (24 fl oz), less ice",1.2,294,42,17.9,6.3,0,13.7,294,packaged,2026-09-02T13:21:15.000Z
+21770e3b-061a-4f2a-80d8-a03b688d1133,2026-09-02,lunch,Lentil Soup,with 1 slice crusty bread,,1 serving (1/5 recipe) + 1 slice,1,560,22,78,20,9,,850,recipe,2026-09-02T22:25:59.000Z
+dc630db4-cd9e-46eb-ab4b-df9df73e013a,2026-09-02,snack,Kirkland Signature Protein Bar,chewy,Kirkland Signature,1 bar (40 g),2,190,10,16,11,6,6,120,packaged,2026-09-02T22:25:59.000Z
+6ca3e7cc-f7c7-4cc5-9d8a-2ed9ba0ad7cc,2026-09-02,dinner,Lasagna,"homemade, lean beef",,1 normal piece (~265 g),1.2,395,33,26,17.5,2.5,7,800,claude,2026-09-02T22:25:59.000Z
+e69fe1a1-7ecc-41d0-8bcd-8ad1963bc875,2026-09-02,dinner,"Carrots, raw",,,100 g,1,41,0.9,9.6,0.2,2.8,4.7,69,usda,2026-09-02T22:25:59.000Z
