@@ -659,6 +659,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "cacio e pepe", "snack", "packaged"],
   },
   {
+    id: "pkg-miss-vickies-original",
+    name: "Kettle Cooked Potato Chips",
+    variant: "Original Recipe",
+    brand: "Miss Vickie's",
+    source: "packaged",
+    per: "28 g (~16 chips)",
+    gramsPerServing: 28,
+    macros: { calories: 150, protein: 2, carbs: 17, fat: 9, fiber: 1, sugar: 0, sodium: 95 },
+    note: "The plain sibling of the Cacio e Pepe entry above, added September 3, 2026 when a mini bag was eaten and only the flavoured row existed. Read off the published 28 g panel \u2014 150 kcal, 9 g fat, 17 g carbs, 1 g fibre, 2 g protein \u2014 cross-checked against retailer and database listings the same day; Atwater lands at 157 against 150, +4.7%. Held at that 28 g serving rather than at the mini bag, so a 25 g mini logs as 0.87 and a 50 g bag as 1.8. SODIUM IS THE ONE SOFT LINE: US listings give about 90 mg per 28 g and the Canadian Original Recipe panel scales nearer 110, so 95 is the middle of an 80\u2013130 band. Even at the top that is well under half the Cacio e Pepe\u0027s 250 mg per 50 g, because Original carries salt alone and no seasoning dust.",
+    tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "original", "sea salt", "snack", "packaged"],
+  },
+  {
     id: "pkg-cheetos-puffs",
     name: "Cheetos Puffs",
     variant: "cheese flavoured",
