@@ -726,4 +726,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "USDA 'Sugars, granulated' at 12.5 g, carried per tablespoon so a spooned amount logs through the servings multiplier. Atwater runs +5% (50.4 against 48), which is USDA's own gap on the row rather than a misread. The zeroes are real by construction — this is sucrose and nothing else — so the blank-sodium convention in this file's header does not apply: unlike rice or oats there is no cooking step that adds salt to a spoonful of sugar. Carbs and sugar are necessarily the same number here.",
     tags: ["sugar", "granulated", "sweetener", "usda"],
   },
+  {
+    id: "staple-soy-sauce",
+    name: "Soy sauce",
+    variant: "regular brewed",
+    source: "usda",
+    per: "1 tbsp (16 g)",
+    gramsPerServing: 16,
+    macros: { calories: 8, protein: 1.3, carbs: 0.8, fat: 0, fiber: 0.1, sugar: 0.1, sodium: 900 },
+    note: "USDA soy sauce made from soy and wheat (shoyu); Kikkoman\u0027s own panel gives 920 mg a tablespoon, so 900 is the two agreeing rather than one source. THIS IS A SODIUM ENTRY AND NOTHING ELSE — 8 kcal is a rounding error and 900 mg is a third of a day\u0027s reasonable intake, which is why it gets a row instead of being waved through as a condiment. Unlike the staples above that are left blank for salting to taste, soy sauce arrives already salt and the figure is the whole point of logging it. A takeout dipping cup holds about a tablespoon, so log the fraction actually used; low-sodium versions run about 575 mg and should be logged as a different amount rather than this row.",
+    tags: ["soy sauce", "shoyu", "condiment", "sushi", "japanese", "sodium"],
+  },
 ];
