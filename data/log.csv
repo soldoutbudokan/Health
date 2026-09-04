@@ -267,3 +267,8 @@ e01087ef-49ba-4532-a7c0-a4bfabbb1dd7,2026-09-03,lunch,White rice,bibimbap base,D
 d0d32eda-6d28-4856-bfcd-c79de6e299d9,2026-09-03,lunch,Fried egg,,Doraji,"1 large egg, fried",1,90,6.3,0.4,7,0,0.2,95,claude,2026-09-03T16:30:00.000Z
 c94205b7-d6fe-4da7-9cbf-cf8a169bc0a3,2026-09-03,snack,Kirkland Signature Protein Bar,chewy,Kirkland Signature,1 bar (40 g),2,190,10,16,11,6,6,120,packaged,2026-09-03T20:15:00.000Z
 94f44fd1-4d59-497c-9323-629d78d478f2,2026-09-03,snack,Kettle Cooked Potato Chips,Original Recipe,Miss Vickie's,28 g (~16 chips),0.87,150,2,17,9,1,0,95,packaged,2026-09-03T20:15:00.000Z
+5c1f0a3e-9b47-4d2a-8e61-3ac70d5f21b8,2026-09-03,dinner,Egg Burrito,,,1 burrito (whole recipe),2,440,19.1,38,21.5,2,,780,recipe,2026-09-04T02:15:00.000Z
+a2d84b19-6f30-4c57-b9ee-71e0d5c8a934,2026-09-03,dinner,"Carrots, raw",,,100 g,0.2,41,0.9,9.6,0.2,2.8,4.7,69,usda,2026-09-04T02:15:00.000Z
+7e63b5c0-1d82-4f9a-a3d7-52b9e0c14a76,2026-09-03,dinner,Chipotle hot sauce,,Cholula,1 tbsp (15 mL),0.5,5,0,1.2,0,0,0,330,packaged,2026-09-04T02:15:00.000Z
+3f9c27ad-8e51-4b06-9d24-6ca8f3b71e52,2026-09-03,dinner,Siggi's 0% plain skyr,,Siggi's,3/4 cup (~180 g),1,113,20,7,0,,,65,staple,2026-09-04T02:15:00.000Z
+c8a41e76-2b93-4d18-a5f7-90e2b7c36d41,2026-09-03,dinner,Sugar,"white, granulated",,1 tbsp (12.5 g),0.5,48,0,12.6,0,0,12.6,0,usda,2026-09-04T02:15:00.000Z
