@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   AWAY_FROM_THE_GYM,
+  BELT_AND_BACK,
   HYPERMOBILITY_RULES,
   OPEN_ITEMS,
   PROGRAM,
@@ -119,6 +120,24 @@ function AwayFromTheGym() {
             </div>
             <p className="mt-0.5 text-sm leading-snug text-ink-2">{d.movement}</p>
             <p className="mt-0.5 text-xs leading-snug text-muted">{d.loading}</p>
+          </li>
+        ))}
+      </ol>
+
+      <h3 className="mt-4 text-sm font-medium">Trunk — for the lower back</h3>
+      <p className="mt-1 text-xs leading-snug text-muted">
+        Stability, not stretching. None of these takes the spine anywhere and all of
+        them make it stiffer, which is what a back that has strained twice needs and
+        what a hypermobile one can safely do every day. Added September 5, 2026.
+      </p>
+      <ol className="mt-2 divide-y divide-[color:var(--border)]">
+        {AWAY_FROM_THE_GYM.trunk.map((t) => (
+          <li key={t.name} className="py-2.5">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+              <span className="text-[15px]">{t.name}</span>
+              <span className="tnum text-sm font-medium text-ink-2">{t.dose}</span>
+            </div>
+            <p className="mt-0.5 text-xs leading-snug text-muted">{t.note}</p>
           </li>
         ))}
       </ol>
@@ -242,6 +261,7 @@ export default function ProgramPage() {
       </section>
 
       <Notes title="Progression and cycles" items={PROGRESSION_RULES} />
+      <Notes title="The belt and the lower back" items={BELT_AND_BACK} />
       <Notes title="Why the plan looks like this" items={RATIONALE} />
       <Notes title="Open items" items={OPEN_ITEMS} />
 

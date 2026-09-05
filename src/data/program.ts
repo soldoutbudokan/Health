@@ -69,9 +69,18 @@ export const PROGRAM: PlannedSession[] = [
         prescription: "2 × 5",
         sets: 2,
         reps: 5,
-        note: "Add 2.5–5 lbs when both sets move well.",
+        // Sep 5, 2026: the belt and the neck cue, after the second back
+        // episode. Both are argued in docs/training-plan.md section 9.
+        note: "Add 5 lbs when both sets move well, and never 10 — the 10 lb step is the working suspect for the September back soreness. Belt on for these two sets only; the ramp before them is beltless. Chin packed, eyes on the floor a couple of metres ahead: the belt holds the trunk, the eyes hold the neck.",
       },
-      { name: "Smith machine squat", kind: "compound", prescription: "2 × 5", sets: 2, reps: 5 },
+      {
+        name: "Smith machine squat",
+        kind: "compound",
+        prescription: "2 × 5",
+        sets: 2,
+        reps: 5,
+        note: "Belt on for the work sets, off for the ramp. Add 5 lbs when both sets move well.",
+      },
       {
         name: "Lying leg curl",
         kind: "isolation",
@@ -127,9 +136,16 @@ export const PROGRAM: PlannedSession[] = [
         prescription: "2 × 5",
         sets: 2,
         reps: 5,
-        note: "80–85% of heavy-day weight. Crisp bar speed.",
+        note: "80–85% of heavy-day weight. Crisp bar speed. Beltless — this day is what keeps the unbelted brace trained.",
       },
-      { name: "Smith machine squat", kind: "compound", prescription: "2 × 5", sets: 2, reps: 5 },
+      {
+        name: "Smith machine squat",
+        kind: "compound",
+        prescription: "2 × 5",
+        sets: 2,
+        reps: 5,
+        note: "Beltless, as above.",
+      },
       { name: "Lying leg curl", kind: "isolation", prescription: "2 × 5", sets: 2, reps: 5 },
       { name: "Sled", kind: "finisher", prescription: "To tolerance", optional: true },
     ],
@@ -280,6 +296,14 @@ export const PROGRAM: PlannedSession[] = [
         sets: 2,
         note: "Bent knee, on a couch or bench. Groin strength protects against injury as jump volume climbs.",
       },
+      {
+        name: "Bird dog",
+        kind: "core",
+        prescription: "2 × 8/side, 3 sec hold",
+        sets: 2,
+        reps: 8,
+        note: "Lower back stability without taking the spine anywhere. Added September 5, 2026, after the second back episode.",
+      },
     ],
   },
   {
@@ -309,6 +333,13 @@ export const PROGRAM: PlannedSession[] = [
         prescription: "2 × 30 sec/arm",
         sets: 2,
         note: "25 lb bell. Ribs down, elbow soft but not locked. Shoulder stability matters more given the hypermobility.",
+      },
+      {
+        name: "Side plank",
+        kind: "core",
+        prescription: "2 × 20–30 sec/side",
+        sets: 2,
+        note: "From the knees if the hip complains. Lateral trunk stiffness for the lower back; with the dead bugs, the off-day half of the trunk block. Added September 5, 2026.",
       },
       {
         name: "Dead bugs",
@@ -406,6 +437,13 @@ export function plannedSession(id: SessionType): PlannedSession | undefined {
 export const AWAY_FROM_THE_GYM: {
   blurb: string;
   daily: { goal: string; movement: string; dose: string; loading: string }[];
+  /**
+   * For the lower back, added September 5, 2026 after the second episode.
+   * Stability, not stretching: none of these takes the spine anywhere, all of
+   * them make it stiffer, which is what a hypermobile back that has strained
+   * twice needs and what it can do daily. See docs/training-plan.md section 9.
+   */
+  trunk: { name: string; dose: string; note: string }[];
   feet: { name: string; dose: string; note: string }[];
   avoid: { title: string; body: string }[];
   returning: string;
@@ -456,6 +494,28 @@ export const AWAY_FROM_THE_GYM: {
       loading: "Quads and hip flexors eccentrically at length. This is the eccentric hip-flexor slot: it sits here rather than under the deadlift, because the deadlift's tissue at length is hamstring and the hip flexors are what the plan already assigns to jumping",
     },
   ],
+  trunk: [
+    {
+      name: "Bird dog",
+      dose: "2 × 8/side, 3 sec hold",
+      note: "Opposite arm and leg, hips level, nothing else moves. The hold is the work.",
+    },
+    {
+      name: "Side plank",
+      dose: "2 × 20–30 sec/side",
+      note: "From the knees if the hip complains. Lateral trunk stiffness, the direction a hinge does not train.",
+    },
+    {
+      name: "Dead bugs",
+      dose: "2 × 10",
+      note: "Lower back glued to the floor throughout. If it lifts, shorten the reach.",
+    },
+    {
+      name: "Bracing drill",
+      dose: "10 × 5 sec",
+      note: "On the back first: breathe into the belly and the sides, not the chest. Then standing, the same breath pushed hard against a hand on the stomach and held five seconds. This is the skill the belt amplifies — a belt braced into with a chest breath is a leather accessory. If the belt travelled, finish with a few bodyweight hinges and squats in it, so nothing about it is new when there is a bar in hand.",
+    },
+  ],
   feet: [
     {
       name: "Short foot (arch doming)",
@@ -488,8 +548,39 @@ export const AWAY_FROM_THE_GYM: {
     },
   ],
   returning:
-    "Coming back, the first session is a normal one rather than a make-up session, and the weights resume where they left off rather than backing down.",
+    "Coming back, the first session is a normal one rather than a make-up session, and the weights resume where they left off rather than backing down. The one exception is a new piece of equipment: the first session with the belt runs at the last settled working weight rather than the last step up, so the belt is learned before it is loaded.",
 };
+
+/**
+ * The belt and the lower back. Written September 5, 2026, after the second
+ * back episode and the purchase of a weightlifting belt; the reasoning is in
+ * docs/training-plan.md section 9. Rendered on /program beside the progression
+ * rules because that is what the belt is — a progression tool with rules about
+ * when it may be used — and not a hypermobility rule, though hypermobility is
+ * why the beltless sets in it are not negotiable.
+ */
+export const BELT_AND_BACK: { title: string; body: string }[] = [
+  {
+    title: "What the belt does",
+    body: "The abdominal wall braces against the belt instead of against nothing, so the same breath makes more pressure inside the trunk, and pressure is what holds a spine stiff under a bar. The August 28 trap bar sets were tired and five sore mornings followed; tired is what a trunk that has run out of stiffness feels like. That is what the belt supplies. It does not hold the spine up — worn loose, or braced into with a chest breath, it is a leather accessory — and it does not build trunk strength, it borrows it.",
+  },
+  {
+    title: "How to wear it",
+    body: "Around the narrowest part of the waist, over the navel or a little below; move it down or loosen a notch if it digs into the ribs at the bottom of the squat. Tight enough that a full belly breath pushes hard against it, loose enough that the breath can be taken at all — a flat hand fits between belt and stomach before the breath and not after, and it usually runs a notch looser for the deadlift than the squat. The rep: stand tall, big breath into the belly and the sides, push out into the belt, hold through the rep, exhale at the top. Re-brace every rep at first.",
+  },
+  {
+    title: "When it goes on",
+    body: "Heavy lower, and only the work sets of the trap bar deadlift and the Smith squat. The ramp sets before them are beltless. Light lower is beltless throughout: 80–85% at crisp bar speed is well inside what the unbelted trunk can hold, and that day is what keeps the trunk trained. Not on the leg curl, the jumps, the sled or any upper day. A lifter with lax ligaments and two back episodes must not end up with a trunk that only works in a belt, and the beltless sets are the answer to that.",
+  },
+  {
+    title: "What to expect from it",
+    body: "A few percent on the top sets once the brace is learned — 270 in the belt should feel closer to the August 20 260 than to the August 28 270 — and that is the whole gain on day one. The number rises afterwards by the plan's own rule, 5 lbs when both sets move well; what the belt changes is that 5 becomes the normal step and that each step lands more often. It does not make 10 lb steps safe. Five is the cap.",
+  },
+  {
+    title: "The lower back",
+    body: "The gate stands: fine if the back warms up and stays dull and two-sided, a flag if anything is sharp or one-sided, and sharp stops the session. Report the two mornings after every heavy lower; soreness not fading by the third morning is a flag, and a fourth sore morning means the next heavy lower repeats its weight. The trunk block — bird dog, side plank, dead bugs — runs daily on trips and is split across the two off days at home. Never stretch the lower back: a forward fold or a twist feels like relief and loads the ligaments that already give too much. The neck goes with this: chin packed, eyes on the floor a couple of metres ahead, and the head never leads the bar.",
+  },
+];
 
 /** Scheduling constraints. Only two, deliberately — the days float otherwise. */
 export const SCHEDULING_RULES = [

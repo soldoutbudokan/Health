@@ -97,6 +97,7 @@ Days are slotted into the week by the athlete. Only two scheduling rules:
 | Knee-to-wall drill | 2 x 10 slow per side | **Conditional** — see Section 6. |
 | Two-leg slow calf raises | 2 x 10 | Off a step, holding the 35 lb kettlebell. 3 seconds down, pause at top. Keeps Achilles loading in the plan. |
 | Copenhagen plank (bent knee) | 2 x 15 sec/side | Knee on couch or bench. Groin strength protects against injury as jump volume climbs. |
+| Bird dog | 2 x 8/side, 3 sec hold | Lower back stability without taking the spine anywhere. Added September 5, 2026, after the second back episode — see Section 9.3. |
 
 Note: single-leg calf raises and tibialis raises were in an earlier draft; the athlete swapped calf raises for the ankle drill and skipped tib raises. The two-leg calf raise was kept as a compromise (see Section 6).
 
@@ -107,6 +108,7 @@ Note: single-leg calf raises and tibialis raises were in an earlier draft; the a
 | Pushups | 2 sets | Stop a few reps short of failure. Free bench volume. |
 | Band pull-aparts | 2 x 20 | Slow and controlled. |
 | Kettlebell overhead hold or carry | 2 x 30 sec/arm | 25 lb bell. Ribs down, elbow soft but not locked. Shoulder stability matters more given hypermobility. |
+| Side plank | 2 x 20–30 sec/side | From the knees if the hip complains. Lateral trunk stiffness for the lower back; with the dead bugs, the off-day half of the trunk block. Added September 5, 2026 — see Section 9.3. |
 | Dead bugs | 2 x 10 | Lower back glued to the mat. |
 
 ### Stretch Under Tension Day (~20 min, home)
@@ -197,8 +199,14 @@ What not to do:
   they are soreness that follows you home and blunts the first session back. Every
   item here stops well short, which is also what makes doing them daily safe.
 
+September 5, 2026: a five-minute trunk block — bird dog, side plank, dead bug and a
+bracing drill — was added to the daily routine for the lower back. It is in Section 9.1.
+
 Coming back, the first session is a normal one rather than a make-up session, and
-the weights resume where they left off rather than backing down.
+the weights resume where they left off rather than backing down. The one exception is a new
+piece of equipment: the first session with the belt runs at the last settled working
+weight rather than the last step up, so the belt is learned before it is loaded
+(Section 9.4).
 
 ## 4. Progression and Cycle Rules
 
@@ -254,3 +262,120 @@ Suggestions for the health dashboard this document feeds:
 - **Bodyweight**, because of the bench-vs-dunk tradeoff — the athlete should see the trend and decide which goal owns the fall.
 - **Soreness or joint complaints**, especially front-of-shoulder on bench and anything sharp at a joint, since those trigger the hypermobility rules above.
 - **Bench reality check:** flag around late October whether the pace supports 225x5 by December or the realistic 195–205, so expectations adjust early instead of in December.
+
+## 9. September 2026: the Belt, the Lower Back and the Return from BC
+
+Written September 5, 2026, on the second day of the September 4–13 BC trip. That trip is the first deload in the log (classified September 3; see `data/breaks.csv`). Three things have changed since Section 3 was written, and the plan has to absorb them:
+
+- **The lower back has complained twice after a heavy lower.** The August 5 strain, then the August 30 – September 2 soreness after the August 28 session took the trap bar from 260 to 270 in one step, twice what the 2.5–5 lb rule allows. A chiropractor on September 2 cleared most of it and the morning of the 3rd read "much better". Nothing sharp or one-sided was reported either time.
+- **A weightlifting belt has been bought.** The squat and the deadlift should go up with it. They will, as a faster rate of progression rather than a jump on the first day, and only if the belt is braced into rather than worn.
+- **The calendar is broken up.** Home on September 14, no training on the 15th or 16th, a second trip September 23–27. The first uninterrupted week starts September 28.
+
+Where the lifts stood when the break began, against the pace line `goalProgress()` draws from the August 1 baseline to December 31, read on September 14:
+
+| Lift | Last performed | Pace line, Sep 14 | Gap |
+|---|---|---|---|
+| Trap bar deadlift | 270 × 5 × 2 (Aug 28) | 272 | −2 |
+| Smith squat | 175 × 5 × 2 (Aug 28) | 197 | −22 |
+| Bench press | 160 × 5 (Aug 26), 145 × 5 × 2 behind it | 182 on the 225 line; 175 on the realistic 200 | −22 / −15 |
+| Pullups | 8 (Aug 22 test) | 8 | 0 |
+| Dips | 10 (Aug 26) | 10 | held |
+
+The trap bar is on pace. The squat and the bench are not, for different reasons: the squat lost three sessions to a taken machine and a sore back, and the bench is behind on volume and food. The belt bears on the first and not the second.
+
+### 9.1 The break, September 5–13
+
+Two jobs. Keep the tissue the goal lifts run on, and arrive on the 14th with a trunk that can brace and a back that has stopped talking. Neither needs equipment.
+
+**Daily, about 20 minutes:**
+
+1. **The away routine from Section 3, as written.** Single-leg RDL, deep squat hold, deep pushup hold, active hang or the chair version, pogos and slow calf raises, reverse Nordic, the foot block. Twelve minutes. The single-leg RDL is the one item to watch: it is the hinge, and the hinge is what the back reacts to. Hips square, back flat, and stop the reach where the back would start to round.
+2. **A trunk block, new. Five minutes.** Bird dog 2 × 8 per side with a three-second hold; side plank 2 × 20–30 seconds per side, from the knees if the hip complains; dead bugs 2 × 10 with the lower back glued to the floor. These three are what a back that has strained twice needs, and what a hypermobile one can do daily: none of them takes the spine anywhere, all of them make it stiffer. This is not stretching. **Do not stretch the lower back.** A forward fold or a twist feels like relief and loads the ligaments that already give too much. The chiropractor's adjustment was the chiropractor's; do not try to reproduce it.
+3. **Bracing practice. Two minutes.** Lie on the back, knees up, one hand on the belly and one on the ribs. Breathe into the belly hand, then into the sides and the back, and not into the rib hand. Then stand, take the same breath, push the belly out hard against a hand on it, and hold for five seconds. Ten of those. This is the skill the belt amplifies, and a hotel floor is enough to learn it on. If the belt travelled, wear it for a few bodyweight hinges and squats at the end to find where it sits and how tight it wants to be, so nothing about it is new when there is a bar in hand.
+4. **Walk.** Thirty minutes or more, most days. Section 3 already says recovery beats one more session.
+
+**What not to do** is Section 3's list, no bed dips, no passive hanging, no circuits to failure, plus the lumbar stretching above.
+
+**Food.** The diet break is by choice and is not logged. The one thing worth keeping is protein at every meal. It is what the tissue is made of, and it is the part of the diet that fails first on a trip.
+
+**Logging.** The away routine is a `stretch` session and off-day work is `off-a` or `off-b`, each with the deload flag set, as the `breaks.csv` row says. If nothing is reported, nothing is written.
+
+### 9.2 The belt
+
+**What it does.** The abdominal wall braces against the belt instead of against nothing, so the same breath makes more pressure inside the trunk, and pressure is what holds a spine stiff under a bar. The August 28 trap bar sets were "not horrendous but definitely tired" and five sore mornings followed. Tired is what a trunk that has run out of stiffness feels like. That is the thing the belt supplies.
+
+**What it does not do.** It does not hold the spine up. Worn loose, or braced into with a chest breath, it is a leather accessory. And it does not build trunk strength; it borrows it. A lifter with lax ligaments and two back episodes must not end up with a trunk that only works in a belt, which is why the rules below keep unbelted work in every week.
+
+**How to wear it.**
+
+- *Position.* Around the narrowest part of the waist, between the ribs and the hip bones, over the navel or a little below. If it digs into the ribs at the bottom of the squat, move it down or loosen a notch.
+- *Tightness.* Tight enough that a full belly breath pushes hard against it, loose enough that the breath can be taken at all. A flat hand fits between belt and stomach before the breath and not after. Most people run it one notch looser for the deadlift than for the squat.
+- *The rep.* Stand tall, big breath into the belly and the sides, push out into the belt, hold the pressure through the rep, exhale at the top. Re-brace for every rep at first; holding one breath across five reps is a skill for later.
+- *The neck.* The August 28 pinch at the bony back of the neck was the head coming up into extension under the heaviest load yet. The belt holds the trunk; the eyes hold the neck. Chin packed, eyes on the floor a couple of metres ahead, and the head does not lead the bar. This is now in the program note for the trap bar.
+
+**When it goes on.** Heavy lower, and only the work sets of the trap bar deadlift and the Smith squat. The ramp sets before them are beltless. Light lower is beltless throughout: the day is 80–85% at crisp bar speed, well inside what the unbelted trunk can hold, and it is what keeps that trunk trained. Not on the leg curl, not on the jumps, not on the sled, not on any upper day. The belt is for the sets the trunk cannot otherwise hold and nowhere else.
+
+**What to expect.** A few percent on the top sets once the brace is learned. For the trap bar, 270 in the belt should feel closer to the August 20 260 than to the August 28 270. That is the whole gain on day one. The number rises over the following weeks by the plan's own rule, 5 lbs when both sets move well. What the belt changes is that 5 becomes the normal step rather than the ambitious one, and that each step lands more often. It does not make 10 lb steps safe, and the 10 lb step is the working suspect for the September soreness. **Five is the cap.**
+
+**Hypermobility.** A belt is external stiffness for a trunk whose ligaments give more than they should. It is the same idea as the carries, overhead holds and Copenhagen planks in Section 7, and a better fit here than for most lifters. The risk is the one above, dependence, and the beltless ramp and beltless light day are the answer.
+
+### 9.3 The lower back
+
+- **The gate stands.** Fine if the back warms up and stays dull and two-sided. A flag if anything is sharp or one-sided, and sharp means the session stops.
+- **Report the two mornings after every heavy lower.** The 48-hour mark is where soreness peaks, and where the August 30 soreness was still climbing. Soreness that has not started fading by the third morning is a flag. A fourth sore morning means the next heavy lower repeats its weight instead of stepping.
+- **The trunk block on off days, not only on trips.** Bird dog joins Off Day A and side plank joins Off Day B, beside the dead bugs already there. Two minutes each.
+- **The warmup gets a ramp.** The August 28 note asked for a better warmup. After the sled and the pancakes, the trap bar climbs through 135 × 5, 185 × 3 and 225 × 2 or thereabouts, beltless, before the belt goes on; the squat through 95 × 5 and 135 × 3. Ramp sets are not logged: `comparePlan()` pools every set under a lift's name into its 2 × 5 slot and would grade the ramp as over-volume. The log is for work sets.
+- **No lumbar stretching**, for the reasons in 9.1.
+
+### 9.4 The return, September 14 to October 4
+
+Sessions on the days the calendar allows; the two scheduling rules hold. Each load is the plan for the day and gets revised by what the session before it said. This assumes the 14th is a training day. If it is lost to travel, the 17th takes the heavy lower and the rest slide a slot: heavy upper on the 18th, light lower on the 20th, light upper on the 21st, and the 270 retest waits for the 28th.
+
+| Date | Session | Main loads | Why |
+|---|---|---|---|
+| Mon Sep 14 | Heavy lower | Trap bar **260** × 5 × 2, belted. Smith squat **180** × 5 × 2, belted. Leg curl 120 × 5 × 2. Jumps 2 × 4, first. | The belt calibration session. The trap bar runs at the weight it held all August rather than the 270 it reached once, because the session is for learning the belt on the lift that hurt the back. Ten days off plus a new tool plus the heaviest pull ever is one novelty too many. The squat takes the 180 that August 28 earned; on a fixed bar path there is less to learn. Sled to finish only if the deadlifts were fine. |
+| Tue–Wed Sep 15–16 | No training | — | Forced, and well placed. The two days after a heavy lower are where it recovers, and the 48-hour back check lands on the morning of the 16th. The trunk block if there are five minutes; nothing if not. |
+| Thu Sep 17 | Heavy upper | Bench **160** × 5, then 145 × 5 for two or three sets. Pullups 2 × 5. Row 130 × 5 × 2. Preacher 25, Y raise 20, dips 1 × 10. | Bench at the August 26 top set. If 160 moves as it did then, the next heavy upper goes to 165. Take the fourth set if the third was easy; bench is the lift that is behind on volume. |
+| Fri Sep 18 | Light lower | Trap bar **215** × 5 × 2, squat **150** × 5 × 2, leg curl 110–120. All beltless. Depth jumps 2 × 5 then weighted jumps 2 × 5 at the 20s, **first** this time. Approach jumps if there is a rim. | 215 is 80% of 270 and 83% of 260, inside the band either way. The first light lower to run the jumps in the plan's order. |
+| Sat Sep 19 | Off A, or basketball | Pogos, calf raises, Copenhagen, bird dog. | A game replaces it. |
+| Sun Sep 20 | Light upper | Pullups: set one is the **all-out test**, four weeks after the 8 of August 22. Bench 135 × 8 × 3. Pulldown 130, row 130, preacher 25, Y raise 20, dips 1 × 10. | The test says what ten days off cost the pullup; expect 8. Bench stays at 135 because the third set on August 30 approached failure, and 140 waits for three sets with a rep in hand. |
+| Mon Sep 21 | Heavy lower | Trap bar **270** × 5 × 2, belted. Squat **185** × 5 × 2, belted. Leg curl 120 or 125. | The retest of the weight that produced the September soreness, now with the belt and a week's practice in it. If 270 feels like the August 20 260 did, the belt is working and the 28th goes to 275. If the back reports on the 22nd or 23rd, the 28th repeats 270. |
+| Tue Sep 22 | Heavy upper if fresh, Off B if not | Bench 165 × 5 if the 17th's 160 was easy, else 160 again. The rest as on the 17th. | Optional. Five days after the last heavy upper and the day before a five-day trip. Bench keeps better than the legs do, so skipping it costs little. |
+| Wed–Sun Sep 23–27 | Trip | Away routine and trunk block daily. | In `data/breaks.csv` as travel, like the August and September trips. A maintenance week, not a deload; the deload was BC. |
+| Mon Sep 28 | Heavy lower | Trap bar 275 or 270, squat 190 or 185, by what the 21st said. | First session of the first uninterrupted week. The weights resume where they left off. |
+| Tue Sep 29 | Heavy upper | Bench 165 or 160, by what the 17th and 22nd said. | |
+| Wed Sep 30 | Off A | | |
+| Thu Oct 1 | Light lower | 80–85% of the 28th, beltless. | |
+| Fri Oct 2 | Light upper | | |
+| Sat Oct 3 | Off B, or basketball | | |
+| Sun Oct 4 | Stretch under tension, or a walk | | |
+
+That last week is the template from here: heavy lower Monday, heavy upper Tuesday, light lower Thursday, light upper Friday, off-day work between. It satisfies both rules, the light lower sitting three days before the next heavy lower and the bench sessions three and four days apart. The days float; the rules do not.
+
+### 9.5 The blocks to December 31
+
+Sixteen weeks from September 14. Section 4 asks for a deload every four to five weeks, and the log shows what happens without one: the September soreness arrived in week four with nothing marked. So the deloads go on the calendar now rather than waiting to be noticed.
+
+| Block | Dates | What |
+|---|---|---|
+| 1 | Sep 14 – Oct 18 | Return, belt, retest, then progress. Five weeks on the calendar, four in the gym once the trip is taken out. |
+| Deload | Oct 19 – 25 | Same sessions, every weight down 10–15%. The belt stays on the heavy-day work sets; a deload changes the weight, not the setup. Pullup test on the Friday before, October 16. |
+| 2 | Oct 26 – Nov 22 | Progress. Section 8's bench reality check falls here: by October 31 the heavy-day top set says whether 225 or 195–205 is the December number. |
+| Deload | Nov 23 – 29 | As above. Pullup test November 20. |
+| 3 | Nov 30 – Dec 27 | The last push. Section 4's November option, a few jumps at the end of one session a week, fits here if the base is there. Pullup test December 18. |
+| Test | Dec 28 – 31 | The goals are graded on real top sets at 5 reps, so the last heavy lower and heavy upper of the year are the tests. Nothing new gets attempted that week. |
+
+Where that lands at 5 lbs per heavy session that moves well, and how many sessions each lift can afford to stall:
+
+| Lift | Start | Heavy sessions left | Steps of 5 needed | Stalls affordable | Lands |
+|---|---|---|---|---|---|
+| Trap bar deadlift | 270 on Sep 21 | 12 | 6 to 300 | 6 | 300 around November 9 with no stalls, early December with three. Likely. |
+| Smith squat | 180 on Sep 14 | 13 | 9 to 225 | 4 | 225 on November 30 with no stalls, December 28 with four. More stalls than that and it lands at 215–220. Possible, and the belt is why. |
+| Bench press | 160 on Sep 17 | 13–14 | 8 to 200, 13 to 225 | 5–6 for 200, 0–1 for 225 | 200 with ordinary stalls. 225 needs every session to progress, which no lift here has done yet. Section 2's realistic 195–205 stands. |
+| Pullups | 8 | tests Sep 20, Oct 16, Nov 20, Dec 18 | 2 reps | — | 10 by December if the frequency work holds. |
+
+The squat is the goal the belt was bought for. It is 22 lbs behind pace and needs about 3 lbs a week from here, which the 2 lbs a week in Section 4 will not deliver and 5 lbs a session with the belt will, if most sessions land. The trap bar has slack to spare and steps no faster than 5 lbs regardless. The slack is what protects the back.
+
+### 9.6 What changed in the program file
+
+`src/data/program.ts`, September 5, 2026. The heavy-lower trap bar and squat notes say the belt goes on for the work sets and off for the ramp, and carry the neck cue. The light-lower notes say beltless and why. Off Day A gained the bird dog and Off Day B the side plank. The away routine gained the trunk block, and its returning rule gained its one exception: a new tool is learned at the last settled weight rather than the last step up. A "The belt and the lower back" block renders 9.2 and 9.3 on `/program`. Nothing was removed and no prescription got easier.
