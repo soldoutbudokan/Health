@@ -788,10 +788,10 @@ export const STAPLE_FOODS: Food[] = [
     name: "Masala puri",
     variant: "homemade, small",
     source: "claude",
-    per: "1 small puri (~25 g)",
-    gramsPerServing: 25,
-    macros: { calories: 86, protein: 1.4, carbs: 8.6, fat: 5.2, fiber: 1.3, sugar: 0.3, sodium: 120 },
-    note: "Estimated on September 5, 2026 for a small home-fried spiced puri — the deep-fried atta bread with ajwain, turmeric and chilli in the dough, not the Bangalore chaat that shares the name — built from about 12 g of whole-wheat atta and 5 g of frying oil taken up, which is the ordinary uptake for a puri this size. Atwater lands at 87 against 86. Read calories as 65–110: THE OIL IS THE WHOLE BAND, since a puri absorbs anywhere from 3 to 7 g depending on dough stiffness and oil temperature, while the flour is fixed by the size reported (“not super big”). A regular 4–5 inch puri is closer to 40 g and 130 kcal and should log at about 1.5 of these rather than as a fresh estimate. Sodium ~120 mg is the dough salt at a teaspoon per two cups of atta and moves with the cook.",
+    per: "1 small puri (~15 g)",
+    gramsPerServing: 15,
+    macros: { calories: 52, protein: 0.8, carbs: 5.2, fat: 3.1, fiber: 0.8, sugar: 0.2, sodium: 72 },
+    note: "Estimated on September 5, 2026 for a small home-fried spiced puri — the deep-fried atta bread with ajwain, turmeric and chilli in the dough, not the Bangalore chaat that shares the name. First written as a 25 g puri of 12 g atta and 5 g oil, 86 kcal, and cut by 40% the same day on the owner's correction that the meal ran far lighter, which makes it about 7 g of atta and 3 g of oil taken up: a 3-inch puri. Atwater lands at 52 against 52. Read calories as 40–70: THE OIL IS THE WHOLE BAND, since a puri this size absorbs anywhere from 2 to 5 g depending on dough stiffness and oil temperature, while the flour is fixed by the size reported (“not super big”). A regular 4–5 inch puri is closer to 40 g and 130 kcal and should log at about 2.5 of these rather than as a fresh estimate. Sodium ~70 mg is the dough salt at a teaspoon per two cups of atta and moves with the cook.",
     tags: ["puri", "poori", "masala puri", "indian", "bread", "fried", "homemade"],
   },
   {
@@ -802,7 +802,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 g",
     gramsPerServing: 100,
     macros: { calories: 245, protein: 4.6, carbs: 38.5, fat: 8, fiber: 0.3, sugar: 36.5, sodium: 40 },
-    note: "Estimated on September 5, 2026 from the standard construction — hung whole-milk curd sweetened at roughly 35% sugar by weight, with cardamom and a little nut — as about 60 g of chakka, 35 g of sugar and 5 g of garnish per 100 g; Atwater lands at 244 against 245, and Amul’s packaged shrikhand panel (about 250 kcal, 4.4 g protein, 41 g carbs and 8.4 g fat per 100 g) sits on top of it. Held per 100 g because it was reported by the cup, and a cup of shrikhand is a dense thing at about 1.05 g/mL: a 250 mL cup is 2.6 servings and a katori is closer to 1.5. THE SUGAR IS THE FIGURE THAT MATTERS AND IT IS REAL: 36 g per 100 g is what makes shrikhand shrikhand, and a lighter household hand runs 25–30%, so read calories as 200–270 and sugar as 25–40 g. This is a dessert carrying a little protein, not a protein source — the 4.6 g is what survives from the curd once it is cut with its own weight in sugar. Sodium ~40 mg is the curd’s own and is a true figure, nothing being salted.",
+    note: "Estimated on September 5, 2026 from the standard construction — hung whole-milk curd sweetened at roughly 35% sugar by weight, with cardamom and a little nut — as about 60 g of chakka, 35 g of sugar and 5 g of garnish per 100 g; Atwater lands at 244 against 245, and Amul’s packaged shrikhand panel (about 250 kcal, 4.4 g protein, 41 g carbs and 8.4 g fat per 100 g) sits on top of it. Held per 100 g because it was reported by the cup, and a cup of shrikhand is a dense thing at about 1.05 g/mL: a 250 mL cup is 2.6 servings and a katori is closer to 1.5. The first log against it, September 5, 2026, went in as the 250 mL cup and was cut to 1.56 the same day on the owner's correction that the meal ran far lighter, which puts that cup at the katori rather than the measure. THE SUGAR IS THE FIGURE THAT MATTERS AND IT IS REAL: 36 g per 100 g is what makes shrikhand shrikhand, and a lighter household hand runs 25–30%, so read calories as 200–270 and sugar as 25–40 g. This is a dessert carrying a little protein, not a protein source — the 4.6 g is what survives from the curd once it is cut with its own weight in sugar. Sodium ~40 mg is the curd’s own and is a true figure, nothing being salted.",
     tags: ["shrikhand", "shrikand", "srikhand", "yogurt", "dessert", "indian", "gujarati", "homemade", "sugar"],
   },
   {
