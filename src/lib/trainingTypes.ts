@@ -6,8 +6,9 @@
  *   data/workouts.csv   one row per *set*      — what was lifted
  *   data/sessions.csv   one row per *session*  — how it felt, what it cost
  *   data/breaks.csv     one row per *stretch*  — why a gap in the log is a gap
- *   data/checkins.csv   one row per *check-in* — bodyweight and sleep, which
- *                        belong to a morning rather than to any session
+ *   data/checkins.csv   one row per *check-in* — bodyweight, sleep and resting
+ *                        vitals, which belong to a morning rather than to any
+ *                        session
  *
  * Sets are the atomic unit because sets differ inside a session: "2 sets of 5
  * at 155 and 135" is two rows, not one row with an average. Rolling them up
@@ -205,6 +206,16 @@ export interface Checkin {
   sleepStart?: string;
   /** Local clock time HH:MM, the morning of `date`. */
   sleepEnd?: string;
+  /**
+   * Resting blood pressure in mmHg. A reading is the pair; the card shows
+   * nothing when only one half is present. Added September 5, 2026, with the
+   * first reading in a long time — the only earlier one is the undated 119/80
+   * in `docs/spreadsheet/vitals.csv`.
+   */
+  systolicMmHg?: number;
+  diastolicMmHg?: number;
+  /** Resting heart rate, beats per minute. */
+  restingHrBpm?: number;
   note?: string;
 }
 

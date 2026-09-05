@@ -64,7 +64,7 @@ writer costs a rebuild and buys a log with a git history.
 | `data/workouts.csv` | One row per **set**. |
 | `data/sessions.csv` | One row per **session** — how it felt, what it cost. |
 | `data/breaks.csv` | One row per stretch of not training, so a gap is explained. |
-| `data/checkins.csv` | One row per morning check-in — bodyweight and sleep. |
+| `data/checkins.csv` | One row per morning check-in — bodyweight, sleep, and resting blood pressure and heart rate when taken. |
 | `data/training-goals.json` | The six goals, their baselines, targets and pace. |
 | `docs/training-plan.md` | The program and the reasoning behind it. |
 | `docs/irl-cdtw.xlsx` | The spreadsheet this replaced, plus tidy CSVs beside it. |

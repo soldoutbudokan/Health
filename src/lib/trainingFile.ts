@@ -156,7 +156,13 @@ export function parseCheckinsCsv(csv: string): Checkin[] {
       bodyweightLbs: optionalNumber(c[1]),
       sleepStart: start && CLOCK.test(start) ? start : undefined,
       sleepEnd: end && CLOCK.test(end) ? end : undefined,
-      note: optional(c[4]),
+      // The vitals columns went in ahead of the note on September 5, 2026,
+      // and every older row was given three blank fields so the note stayed
+      // last. Reading is positional, so the order here is the file's order.
+      systolicMmHg: optionalNumber(c[4]),
+      diastolicMmHg: optionalNumber(c[5]),
+      restingHrBpm: optionalNumber(c[6]),
+      note: optional(c[7]),
     });
   }
 

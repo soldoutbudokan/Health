@@ -89,6 +89,23 @@ function CheckinCard({ checkin, today }: { checkin: Checkin; today: string }) {
             )}
           </span>
         )}
+        {checkin.systolicMmHg !== undefined &&
+          checkin.diastolicMmHg !== undefined && (
+            <span className="tnum">
+              <span className="text-base font-semibold text-ink">
+                {checkin.systolicMmHg}/{checkin.diastolicMmHg}
+              </span>{" "}
+              mmHg
+            </span>
+          )}
+        {checkin.restingHrBpm !== undefined && (
+          <span className="tnum">
+            <span className="text-base font-semibold text-ink">
+              {checkin.restingHrBpm}
+            </span>{" "}
+            bpm resting
+          </span>
+        )}
       </div>
       {checkin.note && (
         <p className="mt-1 text-xs leading-snug text-muted">{checkin.note}</p>

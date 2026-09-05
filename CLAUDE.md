@@ -127,7 +127,7 @@ explain gaps. Without them a six-week hole reads as "stopped tracking" rather th
 ### `data/checkins.csv` — one row per *morning check-in*
 
 ```
-date,bodyweight_lbs,sleep_start,sleep_end,note
+date,bodyweight_lbs,sleep_start,sleep_end,systolic_mmhg,diastolic_mmhg,resting_hr_bpm,note
 ```
 
 Bodyweight and sleep belong to a morning, not to a training session — rest days
@@ -138,6 +138,16 @@ midnight crossing). Everything but `date` may be blank — blank means not
 recorded. When a weigh-in or a night's sleep gets mentioned ("weighed in at
 187.6", "slept 11 to 7:15"), append a row here; the dashboard shows it on its
 own day, alongside that day's session.
+
+`systolic_mmhg`, `diastolic_mmhg` and `resting_hr_bpm` are a resting blood
+pressure and heart rate, added September 5, 2026 when the first reading in a
+long time came in (114/72, 60). They are morning measurements like the other
+two, so they live here. The only earlier reading is the old spreadsheet's
+undated 119/80 and 64 in `docs/spreadsheet/vitals.csv`, which nothing renders.
+Blood pressure shows only as a pair. The parser is positional and `note` stays
+last, so the three columns went in ahead of it and every older row was given
+three blank fields — don't tack a new column on after the note to save the
+migration.
 
 `data/training-goals.json` holds the six goals, the August baselines, the December
 targets and the January projection table. The projection is kept deliberately: the
