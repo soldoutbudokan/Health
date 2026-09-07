@@ -606,6 +606,10 @@ export const BELT_AND_BACK: { title: string; body: string }[] = [
 export const SCHEDULING_RULES = [
   "Don't stack heavy lower right after light lower.",
   "Give bench a day or two between sessions.",
+  // Added September 7, 2026: the weekend is where training most reliably
+  // happens, and it happens fasted, which the light days tolerate and the
+  // heavy days should not have to.
+  "Weekend sessions are fasted, so only the light days go there. Heavy days are weekdays.",
 ];
 
 export const PROGRESSION_RULES: { title: string; body: string }[] = [

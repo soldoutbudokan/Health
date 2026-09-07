@@ -79,18 +79,28 @@ export default function LastStretchPage() {
               Each heavy day steps 5 lbs on the one before it. When a session does not move
               well, the next one repeats the weight and every later row slides a week; the
               file gets revised to say so, the past rows stay as they were. One exception
-              is written in: the belt jump on Sep 21, a single 10 lb step allowed only if
+              is written in: the belt jump on Sep 22, a single 10 lb step allowed only if
               Sep 14 moved well and the back said nothing for two mornings.
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium">Where it ends</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              Trap bar 300 on Oct 26, ten pullups on Oct 30, squat 225 on Nov 9. Once all
+              Trap bar 300 on Oct 27, ten pullups on Nov 8, squat 225 on Nov 10. Once all
               three have landed the stretch is over, whatever the bench is doing, and the
               rows after that are contingency: the same goal weights repeated for the
               sessions that stall, with a deload in the week of Nov 23 and the file ending
               Dec 20. The deadline stays Dec 31.
+            </dd>
+          </div>
+          <div>
+            <dt className="text-sm font-medium">The shape of a week</dt>
+            <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
+              Weekends are the likeliest training days and they are fasted, so they get the
+              two light days: light lower Saturday, light upper Sunday. The heavy days sit on
+              weekdays, Tuesday and Thursday, fed. The first week back is the exception, run
+              on weekdays because that weekend is spoken for, and the deload week moves its
+              heavy days to Monday and Tuesday because the rest of it is away.
             </dd>
           </div>
           <div>

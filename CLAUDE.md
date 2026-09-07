@@ -183,17 +183,27 @@ The plan file never records what happened; that is `sessions.csv` and
 `workouts.csv`, as always.
 
 **The all-goes-well line is the plan.** Belt session September 14 at 270 and 185,
-the one 10 lb belt jump on September 21, five pounds a heavy session after that,
+the one 10 lb belt jump on September 22, five pounds a heavy session after that,
 a deload in the week of October 12 placed around the October 14–16 off days,
-and the goals closing October 26 (trap bar), October 30 (pullups) and November 9
-(squat). Rows after November 9 are contingency, for stalls. **When the three
+and the goals closing October 27 (trap bar), November 8 (pullups) and November 10
+(squat). Rows after November 10 are contingency, for stalls. **When the three
 close, the last stretch is over** and the next block is cardio, whatever the
 bench is doing — the owner said so on September 7. Don't extend the stretch to
 chase the bench.
 
+**The shape of a week.** Weekends are the likeliest training days and they are
+fasted, so only the light days go there: light lower Saturday, light upper
+Sunday. Heavy days are weekdays, Tuesday and Thursday, fed; Monday is the
+stretch day and Off A and B sit on Wednesday and Friday. The first week back
+(September 14–22) runs on weekdays because that weekend is spoken for, and the
+deload week moves its heavy days to Monday and Tuesday because the rest of it
+is away. When shifting rows, keep a heavy day off the weekend.
+
 **Ticks are derived, never clicked.** A day is done when `sessions.csv` carries a
 session of the planned type on that date. Nothing on the page saves anything;
-don't add a checkbox that does.
+don't add a checkbox that does. A finished lifting session — any of the four gym
+days, logged on a planned gym day — shades green; off days and the away routine
+keep their own fill when logged. Green is for the workouts being chased.
 
 **This page schedules; nothing else does.** The dashboard's rule — it records and
 never suggests — stands everywhere else. Don't put planned sessions on the

@@ -75,7 +75,7 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   return: {
     label: "The return",
     blurb:
-      "Belt on. The 14th learns it at 270 and 185; the 21st takes the one 10 lb jump. Two forced rest days and a five-day trip sit inside this phase.",
+      "Belt on. The 14th learns it at 270 and 185; the 22nd takes the one 10 lb jump. Weekdays only, the weekend being spoken for; two forced rest days and a five-day trip sit inside this phase.",
   },
   trip: {
     label: "The trip",
@@ -83,17 +83,18 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   },
   "block-1": {
     label: "Block 1",
-    blurb: "The first uninterrupted weeks. Five pounds a session on the heavy days when both sets move well.",
+    blurb:
+      "The first uninterrupted weeks, on the standing shape: heavy lower Tuesday, heavy upper Thursday, the fasted weekend for the light days. Five pounds a session on the heavy days when both sets move well.",
   },
   deload: {
     label: "Deload",
     blurb:
-      "Same sessions, every weight down 10–15%, placed so the Oct 14–16 off days fall inside it.",
+      "Same sessions, every weight down 10–15%, placed so the Oct 14–16 off days fall inside it. The heavy days move to Monday and Tuesday for this week only.",
   },
   "block-2": {
     label: "Block 2",
     blurb:
-      "Where the goals close on the all-goes-well line: trap bar 300 on Oct 26, ten pullups on Oct 30, squat 225 on Nov 9.",
+      "Where the goals close on the all-goes-well line: trap bar 300 on Oct 27, ten pullups on Nov 8, squat 225 on Nov 10.",
   },
   contingency: {
     label: "Contingency",

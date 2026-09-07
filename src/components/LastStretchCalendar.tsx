@@ -49,10 +49,16 @@ function Cell({
   labelMonth: boolean;
   onSelect: (date: string) => void;
 }) {
-  const { plan, status } = view;
+  const { plan, status, logged } = view;
   const t = tone(view);
   const filled = status === "done" || status === "swapped";
   const faded = status === "missed" || status === "skipped";
+  // A finished lifting session shades green, whichever gym day it turned out
+  // to be — asked for on September 7, 2026. Off days and the away routine
+  // keep their own fill: they count, but they are not the thing being chased.
+  const lifted =
+    filled && logged !== undefined && GYM_SESSIONS.includes(logged.type) &&
+    plan.slot !== "rest" && GYM_SESSIONS.includes(plan.slot);
   const isToday = plan.date === today;
   const day = Number(plan.date.slice(8, 10));
   const dayLabel = labelMonth
@@ -67,7 +73,10 @@ function Cell({
   if (plan.slot === "rest") {
     cls += "border border-dashed border-hairline text-muted";
   } else if (t) {
-    if (filled) {
+    if (lifted) {
+      style.background = "var(--status-good)";
+      style.color = "#0b0b0b";
+    } else if (filled) {
       style.background = t.colour;
       style.color = t.on;
     } else {
@@ -301,8 +310,9 @@ export function LastStretchCalendar({
             )}
           </div>
           <p className="mt-0.5 text-[11px] leading-snug text-muted">
-            Outlined is planned, filled happened, faded with a cross was missed. Blue is a lifting
-            day, teal the away routine, grey an off day at home. Tap a day.
+            Outlined is planned, green is a finished lifting session, faded with a cross was
+            missed. Blue is a lifting day, teal the away routine, grey an off day at home.
+            Heavy days are weekdays; the fasted weekend gets the light days. Tap a day.
           </p>
 
           <div className="mt-3 grid grid-cols-7 gap-0.5 sm:gap-1.5">
