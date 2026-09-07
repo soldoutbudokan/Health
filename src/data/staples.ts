@@ -837,4 +837,16 @@ export const STAPLE_FOODS: Food[] = [
     note: "Estimated September 6, 2026 with no venue named, built as about 6 fl oz of 2% milk, 5 fl oz of chai concentrate and one pump of vanilla syrup; Atwater lands at 200 on the nose. Starbucks' published tall Chai Tea Latte corroborates that build closely at 190 kcal, 6 g protein, 37 g carbs and 35 g sugar, the vanilla accounting for most of the gap, so this rests on a real panel rather than on construction alone. Read calories as 160-260: the concentrate-to-milk ratio is the band, and a heavy vanilla hand runs two or three pumps rather than one. THE SUGAR IS THE HEADLINE at 34 g, nearly all of it added and most of it in the concentrate rather than the syrup, which makes this a dessert-grade drink that happens to carry a little milk protein. Sodium is the milk's own ~90 mg plus a little from the concentrate, band 90-180.",
     tags: ["chai", "vanilla chai", "chai latte", "tea", "latte", "drink", "cafe"],
   },
+  {
+    id: "pkg-hide-seek-fab-vanilla",
+    name: "Hide & Seek Fab! Cookies",
+    variant: "Vanilla cream sandwich",
+    brand: "Parle Platina",
+    source: "packaged",
+    per: "1 cookie (12.5 g)",
+    gramsPerServing: 12.5,
+    macros: { calories: 62, protein: 0.5, carbs: 8.9, fat: 2.8, fiber: 0.2, sugar: 4.9, sodium: 20 },
+    note: "Parle's published panel for the 112 g pack scaled to one cookie: 499 kcal, 4 g protein, 71 g carbs, 39.5 g sugar, 22 g fat and 0.4 g salt per 100 g, at 12.5 g a cookie, which is the pack's own two-biscuit 25 g serving halved and puts nine cookies in a pack. Atwater lands at 498 against 499, so this is a label read rather than a reconstruction, and the panel is the only soft part of it \u2014 no wrapper was to hand on September 7, 2026, so the figures come from aggregator listings of it and should move if the pack disagrees. Fibre is the one built line: the panel prints 0 g, which is a rounding of what refined flour carries, so 0.2 g a cookie is a floor rather than a reading. Held per cookie because they get eaten by the handful, and a portion logs as a multiplier.",
+    tags: ["cookie", "biscuit", "hide and seek", "fab", "parle", "vanilla", "cream", "sandwich", "snack", "indian"],
+  },
 ];
