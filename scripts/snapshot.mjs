@@ -9,7 +9,7 @@
  *
  * It deliberately does NOT recompute anything. Every number here was rendered
  * by the real app during `next build`; this script only inlines the stylesheet,
- * drops the JavaScript and stitches the five pages together. That matters —
+ * drops the JavaScript and stitches the six pages together. That matters —
  * a snapshot that did its own arithmetic would be a second implementation of
  * the maths, and this repo has already learned what two copies of the truth
  * cost. If a figure is wrong here, it is wrong on the site too.
@@ -44,6 +44,7 @@ const PAGES = [
   { file: "foods.html", id: "foods", label: "Foods" },
   { file: "training.html", id: "training", label: "Training" },
   { file: "program.html", id: "program", label: "Program" },
+  { file: "last-stretch.html", id: "last-stretch", label: "Last stretch" },
 ];
 
 if (!existsSync(outDir)) {

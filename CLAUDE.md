@@ -152,6 +152,53 @@ migration.
 `data/training-goals.json` holds the six goals, the August baselines, the December
 targets and the January projection table. The projection is kept deliberately: the
 distance between it and reality is the layoff.
+## THE LAST STRETCH — `data/last-stretch.csv`
+
+The calendar from September 7, 2026 to the day the trap bar reaches 300 × 5, the
+Smith squat 225 × 5 and the pullups 10, on the line where every session goes well.
+Rendered at `/last-stretch`. Asked for on September 7, 2026; the reasoning is
+Section 10 of `docs/training-plan.md`. One row per day:
+
+```
+date,session,phase,deload,optional,trap_bar,squat,leg_curl,bench,bench_backoff,pullups,milestone,note
+```
+
+| Column | Notes |
+|---|---|
+| `session` | a `sessions.csv` session type, or `rest` |
+| `phase` | `break` \| `return` \| `trip` \| `block-1` \| `deload` \| `block-2` \| `contingency` |
+| `trap_bar`, `squat`, `leg_curl`, `bench`, `bench_backoff` | planned top-set lbs. Blank means no such lift that day, never zero |
+| `pullups` | free text: `2×5`, `test (9)`, `2×4 easy, optional` |
+| `milestone` | a goal closing, or a step worth naming. The page reads the goal dates from it |
+| `optional` | `yes` when skipping it is following the plan |
+| `note` | one paragraph, short |
+
+**When asked what a day's workout should be**, read the row, open the session's
+exercise list in `src/data/program.ts`, and check the last logged session of that
+type. If its work sets all moved well — and, for a heavy lower, the back said
+nothing on the two mornings after — the row stands. If not, the answer is the
+previous weight repeated, and the rows from that date on slide a week: rewrite
+the future rows, never the past ones, and say in the commit what moved and why.
+The plan file never records what happened; that is `sessions.csv` and
+`workouts.csv`, as always.
+
+**The all-goes-well line is the plan.** Belt session September 14 at 270 and 185,
+the one 10 lb belt jump on September 21, five pounds a heavy session after that,
+a deload in the week of October 12 placed around the October 14–16 off days,
+and the goals closing October 26 (trap bar), October 30 (pullups) and November 9
+(squat). Rows after November 9 are contingency, for stalls. **When the three
+close, the last stretch is over** and the next block is cardio, whatever the
+bench is doing — the owner said so on September 7. Don't extend the stretch to
+chase the bench.
+
+**Ticks are derived, never clicked.** A day is done when `sessions.csv` carries a
+session of the planned type on that date. Nothing on the page saves anything;
+don't add a checkbox that does.
+
+**This page schedules; nothing else does.** The dashboard's rule — it records and
+never suggests — stands everywhere else. Don't put planned sessions on the
+dashboard or the training page, however convenient it looks mid-week.
+
 ## Before inventing an exercise, check the program
 
 `src/data/program.ts` is the plan in code — the same object `/program` renders and

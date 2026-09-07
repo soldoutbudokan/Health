@@ -66,6 +66,7 @@ writer costs a rebuild and buys a log with a git history.
 | `data/breaks.csv` | One row per stretch of not training, so a gap is explained. |
 | `data/checkins.csv` | One row per morning check-in — bodyweight, sleep, and resting blood pressure and heart rate when taken. |
 | `data/training-goals.json` | The six goals, their baselines, targets and pace. |
+| `data/last-stretch.csv` | One row per **planned day** to the strength goals — the only file that schedules. |
 | `docs/training-plan.md` | The program and the reasoning behind it. |
 | `docs/irl-cdtw.xlsx` | The spreadsheet this replaced, plus tidy CSVs beside it. |
 
@@ -119,6 +120,7 @@ src/app/history/page.tsx   readLog() + readGoals()  →  <History entries goals 
 src/app/foods/page.tsx     static catalog only, so client-side outright
 src/app/training/page.tsx  the training files →  cards, plus <LiftChart> islands
 src/app/program/page.tsx   src/data/program.ts + the archived spreadsheet
+src/app/last-stretch/page.tsx  the plan file + the training files → <LastStretchCalendar>, one open day
 ```
 
 The two training pages have no page-level state, so they ship as HTML with the
@@ -143,7 +145,8 @@ src/
 │  ├─ history/page.tsx      Server: reads the log, renders history
 │  ├─ foods/page.tsx        Client: catalog browser
 │  ├─ training/page.tsx     Server: reads the three training files
-│  └─ program/page.tsx      Server: the plan in code plus the archived spreadsheet
+│  ├─ program/page.tsx      Server: the plan in code plus the archived spreadsheet
+│  └─ last-stretch/page.tsx Server: the planned calendar, ticked from the log
 ├─ components/
 │  ├─ Nav.tsx               The site's navigation
 │  ├─ Dashboard.tsx         Client: day selection, rings, KPIs, meals, trends
@@ -160,7 +163,8 @@ src/
 │  ├─ PlanCheck.tsx         That session against the day it was meant to be
 │  ├─ GoalPace.tsx          Six goals against a line to December 31st
 │  ├─ LiftChart.tsx         Client: top sets over time, layoffs shaded
-│  └─ ArchiveTable.tsx      The old spreadsheet, as a record not as data
+│  ├─ ArchiveTable.tsx      The old spreadsheet, as a record not as data
+│  └─ LastStretchCalendar.tsx  Client: the planned weeks, one open day
 ├─ data/                    recipes.ts, staples.ts, pantry.ts — the catalog
 │                           program.ts — the training plan, in code
 └─ lib/
@@ -168,6 +172,8 @@ src/
    ├─ logFile.ts            Build-time CSV read. node:fs.
    ├─ goalsFile.ts          Build-time goals read. node:fs.
    ├─ trainingFile.ts       Build-time read of the training files. node:fs.
+   ├─ lastStretchFile.ts    Build-time read of the plan file. node:fs.
+   ├─ lastStretch.ts        Pure: days against the log, weeks, goal dates.
    ├─ nutrition.ts          All the maths. Local dates, per-logged-day averages.
    ├─ training.ts           Top sets, pace, compliance, plan comparison.
    ├─ labels.ts             Hydration-safe date labels.

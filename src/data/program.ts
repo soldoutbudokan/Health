@@ -56,6 +56,16 @@ export const PROGRAM: PlannedSession[] = [
       },
       { name: "Seated pancakes", kind: "warmup", prescription: "~5 min", note: "Lower back." },
       {
+        name: "Pullups",
+        kind: "compound",
+        prescription: "2 × 3–4, easy",
+        sets: 2,
+        reps: 3,
+        repsMax: 4,
+        optional: true,
+        note: "Section 4's frequency option, listed from September 7, 2026 for the last stretch: the path from 8 to 10 is frequency, and two easy sets here make four pullup days a week. Only if the elbows feel good.",
+      },
+      {
         name: "Jumps",
         kind: "jump",
         prescription: "2 × 4",
@@ -107,6 +117,16 @@ export const PROGRAM: PlannedSession[] = [
     exercises: [
       { name: "Sled push + pull", kind: "warmup", prescription: "5–10 min" },
       { name: "Seated pancakes", kind: "warmup", prescription: "~5 min" },
+      {
+        name: "Pullups",
+        kind: "compound",
+        prescription: "2 × 3–4, easy",
+        sets: 2,
+        reps: 3,
+        repsMax: 4,
+        optional: true,
+        note: "Section 4's frequency option, listed from September 7, 2026 for the last stretch: the path from 8 to 10 is frequency, and two easy sets here make four pullup days a week. Only if the elbows feel good.",
+      },
       {
         name: "Depth jumps",
         kind: "jump",

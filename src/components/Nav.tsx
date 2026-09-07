@@ -10,6 +10,7 @@ const LINKS = [
   { href: "/foods", label: "Foods" },
   { href: "/training", label: "Training" },
   { href: "/program", label: "Program" },
+  { href: "/last-stretch", label: "Last stretch" },
 ];
 
 function ThemeToggle() {

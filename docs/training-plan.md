@@ -46,6 +46,7 @@ Days are slotted into the week by the athlete. Only two scheduling rules:
 | 5 | Smith squat | 2 x 5 | Same progression rule. |
 | 6 | Lying leg curl | 2 x 5 | Hamstrings drive both the deadlift and the jump. |
 | 7 | Sled (optional) | To tolerance | Skip if deadlifts were rough. |
+| — | Pullups (optional) | 2 x 3–4, easy | Section 4's frequency option, listed from September 7, 2026 for the last stretch. After the pancakes, before the jumps, only if the elbows feel good. |
 
 ### Light Lower
 
@@ -59,6 +60,7 @@ Days are slotted into the week by the athlete. Only two scheduling rules:
 | 6 | Smith squat | 2 x 5 | Same idea. Light means the bar moves quick, not loafing. |
 | 7 | Lying leg curl | 2 x 5 | |
 | 8 | Sled (optional) | To tolerance | |
+| — | Pullups (optional) | 2 x 3–4, easy | As on the heavy day. |
 
 **No leg extensions anywhere.** Cut deliberately. Squats, deadlifts, sled, and jumps cover the quads.
 
@@ -315,7 +317,7 @@ Two jobs. Keep the tissue the goal lifts run on, and arrive on the 14th with a t
 
 **When it goes on.** Heavy lower, and only the work sets of the trap bar deadlift and the Smith squat. The ramp sets before them are beltless. Light lower is beltless throughout: the day is 80–85% at crisp bar speed, well inside what the unbelted trunk can hold, and it is what keeps that trunk trained. Not on the leg curl, not on the jumps, not on the sled, not on any upper day. The belt is for the sets the trunk cannot otherwise hold and nowhere else.
 
-**What to expect.** A few percent on the top sets once the brace is learned. For the trap bar, 270 in the belt should feel closer to the August 20 260 than to the August 28 270. That is the whole gain on day one. The number rises over the following weeks by the plan's own rule, 5 lbs when both sets move well. What the belt changes is that 5 becomes the normal step rather than the ambitious one, and that each step lands more often. It does not make 10 lb steps safe, and the 10 lb step is the working suspect for the September soreness. **Five is the cap.**
+**What to expect.** A few percent on the top sets once the brace is learned. For the trap bar, 270 in the belt should feel closer to the August 20 260 than to the August 28 270. That is the whole gain on day one. The number rises over the following weeks by the plan's own rule, 5 lbs when both sets move well. What the belt changes is that 5 becomes the normal step rather than the ambitious one, and that each step lands more often. It does not make 10 lb steps safe, and the 10 lb step is the working suspect for the September soreness. **Five is the cap**, with the one exception Section 10 writes in: the belt jump on September 21, a single 10 lb step, allowed only if the 14th moved well and the back said nothing for two mornings.
 
 **Hypermobility.** A belt is external stiffness for a trunk whose ligaments give more than they should. It is the same idea as the carries, overhead holds and Copenhagen planks in Section 7, and a better fit here than for most lifters. The risk is the one above, dependence, and the beltless ramp and beltless light day are the answer.
 
@@ -328,6 +330,8 @@ Two jobs. Keep the tissue the goal lifts run on, and arrive on the 14th with a t
 - **No lumbar stretching**, for the reasons in 9.1.
 
 ### 9.4 The return, September 14 to October 4
+
+*Superseded on September 7 by Section 10 and `data/last-stretch.csv`: the 14th runs at 270 and 185 rather than 260 and 180, at the owner's call that the belt should show early, and the 21st takes 280 and 195. The table below stays as the first draft rather than being quietly rewritten.*
 
 Sessions on the days the calendar allows; the two scheduling rules hold. Each load is the plan for the day and gets revised by what the session before it said. This assumes the 14th is a training day. If it is lost to travel, the 17th takes the heavy lower and the rest slide a slot: heavy upper on the 18th, light lower on the 20th, light upper on the 21st, and the 270 retest waits for the 28th.
 
@@ -379,3 +383,27 @@ The squat is the goal the belt was bought for. It is 22 lbs behind pace and need
 ### 9.6 What changed in the program file
 
 `src/data/program.ts`, September 5, 2026. The heavy-lower trap bar and squat notes say the belt goes on for the work sets and off for the ramp, and carry the neck cue. The light-lower notes say beltless and why. Off Day A gained the bird dog and Off Day B the side plank. The away routine gained the trunk block, and its returning rule gained its one exception: a new tool is learned at the last settled weight rather than the last step up. A "The belt and the lower back" block renders 9.2 and 9.3 on `/program`. Nothing was removed and no prescription got easier.
+
+## 10. The Last Stretch (September 7, 2026)
+
+The calendar from September 7 to the day the three remaining strength goals close, on the line where every session goes well. Asked for on September 7, from BC, with three additions to what Section 9 knew: the belt should show early rather than be eased in, October 14–16 are off days (a workout at another gym may be possible), and once the trap bar, the squat and the pullups close, the next block is cardio, whatever the bench is doing. It lives in `data/last-stretch.csv`, one row per day, and renders at `/last-stretch`; the site rule that it records and never schedules stands everywhere but that page.
+
+**The line.** Belt on September 14 at the weights the lifts already own: trap bar 270, the weight that produced the September soreness, and squat 185, the baseline the goals file has claimed since August. September 21 takes the belt jump, one 10 lb step on each: 280 and 195. That revises Section 9.2's cap once and only once, and it is conditional: the 14th has to move well and the back has to say nothing on the 15th and 16th, or the 21st repeats the 14th and every later row slides a week. After that, five pounds a heavy session. The deload sits in the week of October 12 so the October 14–16 off days fall inside it, which costs the block three days it would have spent lightly anyway. Block 2 is where the goals close.
+
+| Heavy lower | Trap bar | Squat | Leg curl | Note |
+|---|---|---|---|---|
+| Sep 14 | 270 | 185 | 120 | Belt on. Beltless ramp first. |
+| Sep 21 | 280 | 195 | 125 | The belt jump. |
+| Sep 28 | 285 | 200 | 125 | First uninterrupted week. |
+| Oct 5 | 290 | 205 | 130 | |
+| Oct 12 | 250 | 175 | 110 | Deload; Oct 14–16 off inside the week. |
+| Oct 19 | 295 | 210 | 130 | |
+| Oct 26 | **300** | 215 | 135 | Trap bar goal. Held at 300 from here; the back's budget goes to the squat. |
+| Nov 2 | 300 | 220 | 135 | |
+| Nov 9 | 300 | **225** | 140 | Squat goal, and the end of the stretch. |
+
+Pullups: 2 × 5 on heavy upper, two sets on light upper, and Section 4's optional two easy sets at the start of lower days, now listed in the program so the session card can see them. Tests as set one of a light upper on September 20 (nine), October 9 (nine or ten) and October 30 (ten, the goal). Bench: 165 on September 17, then five pounds a heavy upper with a hold every third session, 150 in the deload week: 175 by early October, 185 by early November, 200 in the first week of December if it keeps going. It is a rider, not a condition.
+
+**On the all-goes-well line the stretch ends November 9.** Everything after that in the file is contingency: the goal weights repeated for the sessions that stall, a deload in the week of November 23, the file ending December 20 and the deadline still December 31. A stall is answered by repeating the weight and sliding the later rows, never by a bigger step to catch up; the future rows get rewritten, the past ones do not.
+
+**What the page does and does not do.** It shows every planned day, marks a day done when `data/sessions.csv` carries a session of that type on it, and opens any day to the program for that session with the planned load beside the last logged one. It has no checkbox that saves: the log is the only writer, and a tick that lived in the browser would be a second copy of the truth. Logging the session is what ticks the box.
