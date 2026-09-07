@@ -849,4 +849,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "Parle's published panel for the 112 g pack scaled to one cookie: 499 kcal, 4 g protein, 71 g carbs, 39.5 g sugar, 22 g fat and 0.4 g salt per 100 g, at 12.5 g a cookie, which is the pack's own two-biscuit 25 g serving halved and puts nine cookies in a pack. Atwater lands at 498 against 499, so this is a label read rather than a reconstruction, and the panel is the only soft part of it \u2014 no wrapper was to hand on September 7, 2026, so the figures come from aggregator listings of it and should move if the pack disagrees. Fibre is the one built line: the panel prints 0 g, which is a rounding of what refined flour carries, so 0.2 g a cookie is a floor rather than a reading. Held per cookie because they get eaten by the handful, and a portion logs as a multiplier.",
     tags: ["cookie", "biscuit", "hide and seek", "fab", "parle", "vanilla", "cream", "sandwich", "snack", "indian"],
   },
+  {
+    id: "staple-watermelon-100g",
+    name: "Watermelon",
+    variant: "raw, diced",
+    source: "usda",
+    per: "100 g",
+    gramsPerServing: 100,
+    macros: { calories: 30, protein: 0.6, carbs: 7.6, fat: 0.2, fiber: 0.4, sugar: 6.2, sodium: 1 },
+    note: "USDA raw watermelon at its per-100 g row, added September 7, 2026 when a bowl was eaten and nothing here covered it. Held per 100 g rather than per fruit, like the juices above and unlike the apple, banana and peach, because it arrives cut into a bowl and a portion should log as a multiplier: a bowl of cubes is taken here as 200 g, read as 150-300, and that size is the only real variable in the row. Atwater lands at 35 against 30, +15%, which is the raw-fruit artefact the peach and plum entries document rather than a misread figure. Sodium is a true 1 mg and the sugar is all the fruit's own, but the thing worth seeing is how little of anything this is \u2014 watermelon is 91% water, so a 200 g bowl is 60 kcal, about a sixteenth of the calories per gram that this morning's cookies carried.",
+    tags: ["watermelon", "melon", "fruit", "snack", "usda"],
+  },
 ];
