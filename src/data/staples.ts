@@ -882,4 +882,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "Estimated September 7, 2026 for a homemade Indo-Chinese noodle stir-fry, built per 100 g as 58 g cooked wheat noodles, 20 g firm tofu, 15 g of cabbage, carrot and pepper, 5 g of wok oil and 2 g of soy and vinegar; Atwater lands at 166 against 162. Held per 100 g like the Bawara and pad thai entries so a scoop and a full plate log against the same figures, with a serving-spoon scoop taken here as 150 g, read as 120-200. The oil is the calorie band as always, 130-210 per 100 g, because nobody measures what the pan carried. Worth setting against the Bawara restaurant row it shadows: near-identical calories, but 6.4 g protein against 4 g because of the tofu, and half the sodium at 220 mg against 450 \u2014 that gap is a home soy-sauce hand rather than anything about the dish, so read it as 120-400.",
     tags: ["hakka", "noodles", "chow mein", "tofu", "indo-chinese", "homemade", "vegetarian", "lunch"],
   },
+  {
+    id: "staple-poha-chivda",
+    name: "Poha chivda",
+    variant: "spiced, homemade",
+    source: "claude",
+    per: "100 g",
+    gramsPerServing: 100,
+    macros: { calories: 461, protein: 9.5, carbs: 56, fat: 23.1, fiber: 4.2, sugar: 3.8, sodium: 500 },
+    note: "Estimated September 8, 2026 for the dry spiced snack mix \u2014 thin flattened rice fried with peanuts, curry leaves, turmeric and a little sugar \u2014 and not the wet kanda poha breakfast, which is a third of this per gram. Built per 170 g batch as 100 g thin poha, 25 g peanuts, 15 g roasted gram, 25 g oil and 5 g sugar; Atwater lands at 470 against 461, and Haldiram\u0027s commercial poha chivda corroborates the middle at roughly 466 kcal and 24 g fat per 100 g. Held per 100 g because it is eaten by the bowl and the handful, with a bowl taken here as 50 g, read as 35-75. THE OIL IS THE BAND at 400-520 kcal per 100 g \u2014 a deep-fried batch runs near 30 g of fat and a dry-roasted one near 15 \u2014 and sodium 500 mg is a salted-snack estimate, band 300-800, with the commercial version at the top of it.",
+    tags: ["poha", "chivda", "chiwda", "namkeen", "snack mix", "flattened rice", "indian", "snack", "breakfast", "homemade"],
+  },
 ];
