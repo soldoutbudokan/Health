@@ -893,4 +893,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "Estimated September 8, 2026 for the dry spiced snack mix \u2014 thin flattened rice fried with peanuts, curry leaves, turmeric and a little sugar \u2014 and not the wet kanda poha breakfast, which is a third of this per gram. Built per 170 g batch as 100 g thin poha, 25 g peanuts, 15 g roasted gram, 25 g oil and 5 g sugar; Atwater lands at 470 against 461, and Haldiram\u0027s commercial poha chivda corroborates the middle at roughly 466 kcal and 24 g fat per 100 g. Held per 100 g because it is eaten by the bowl and the handful, with a bowl taken here as 50 g, read as 35-75. THE OIL IS THE BAND at 400-520 kcal per 100 g \u2014 a deep-fried batch runs near 30 g of fat and a dry-roasted one near 15 \u2014 and sodium 500 mg is a salted-snack estimate, band 300-800, with the commercial version at the top of it.",
     tags: ["poha", "chivda", "chiwda", "namkeen", "snack mix", "flattened rice", "indian", "snack", "breakfast", "homemade"],
   },
+  {
+    id: "staple-debra-methi-spinach",
+    name: "Debra",
+    variant: "methi and spinach, homemade",
+    source: "claude",
+    per: "1 debra (~40 g)",
+    gramsPerServing: 40,
+    macros: { calories: 124, protein: 2.5, carbs: 13.2, fat: 7, fiber: 2.2, sugar: 0.4, sodium: 180 },
+    note: "Estimated September 8, 2026 for a homemade Gujarati dhebra \u2014 bajra-and-wheat dough with chopped fenugreek and spinach, curd and spice, rolled small and pan-fried \u2014 built per piece as 15 g bajra flour, 3.75 g wheat flour, 6 g greens, 4 g curd and 6 g of oil across dough and pan; Atwater lands at 126 against 124. Held per piece because they are counted rather than weighed, with a piece taken here as ~40 g finished, read as 30-55, and that size does most of the work in the band. THE PAN OIL IS THE OTHER HALF OF IT: a light hand runs 3 g a piece and a generous one 8, which puts a debra at 100-165 kcal. Sodium 180 mg is a salted-dough estimate, band 100-300, and the 2.2 g of fibre is high for a flatbread because bajra carries about 11 g per 100 g \u2014 the greens add almost nothing next to that.",
+    tags: ["debra", "dhebra", "thepla", "bajra", "millet", "methi", "fenugreek", "spinach", "flatbread", "roti", "gujarati", "indian", "homemade"],
+  },
 ];
