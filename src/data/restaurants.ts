@@ -11,6 +11,12 @@ import type { Food } from "@/lib/types";
  * These exist so a dish eaten more than once stops being re-estimated from
  * scratch every time. A second guess at the same sandwich that lands 200 kcal
  * from the first one makes the log look like the sandwich changed.
+ *
+ * The Olive Garden entries added September 8, 2026 are the exception to the
+ * paragraph above: it is a US chain and publishes a full panel, so those rows
+ * are read figures rather than reconstructions and carry no estimate band. The
+ * one built thing among them is the split of the Tour of Italy plate across its
+ * three parts, and its entries say so.
  */
 export const RESTAURANT_FOODS: Food[] = [
   {
@@ -793,5 +799,71 @@ export const RESTAURANT_FOODS: Food[] = [
     },
     note: "Estimated September 6, 2026 from the menu description and a photograph of the plate; Il Terrazzo is independent and publishes no nutrition, and BC menu labelling binds only chains, so there is no panel to check this against. Built as ~130 g dry fusilli, ~120 g raw ground beef, a tomato-soffritto base, ~70 g cream, ~25 g butter, ~40 g parmesan split between the sauce and the grating on top, ~90 g mozzarella baked over it, wilted spinach and ~10 g of oil; Atwater lands at 1,698 against 1,700. THE FIRST DRAFT OF THIS ENTRY WAS 1,360 AND OMITTED BUTTER ENTIRELY, which is the correction worth recording: a restaurant pan sauce finished without butter is the exception rather than the rule, and adding it alongside a less timid cream and cheese hand accounts for the whole 340 kcal revision, made the same evening on the owner's report that the plate had left them far fuller than 1,360 would explain. Read calories as 1,300-2,100, the widest band in this file, because the two things setting the number — dry pasta weight, and how heavy the cream, butter and cheese hand was — are both invisible once a dish is baked under melted mozzarella. Sodium 1,600-3,000 mg, the two cheeses carrying about 1,200 of it before anything is deliberately seasoned. At 80 g of protein this is the second-highest entry in the catalog and comfortably the least efficient of them, costing 21.3 kcal per gram against the Big Belly chicken bowl's 9.2, so it is a pasta dish that happens to be high in protein rather than a protein source; portion goes through the servings multiplier rather than a fresh estimate, and the first log against it settled at 1.05 after starting at 1.2 — the owner's own read of the plate, which at ~756 g is a large serving rather than the outlier 1.2 implied.",
     tags: ["fusilli", "pasta", "bolognese", "sugo di manzo", "beef", "baked pasta", "mozzarella", "parmesan", "il terrazzo", "victoria", "italian", "restaurant", "dinner"],
+  },
+  {
+    id: "og-tour-of-italy-chicken-parm",
+    name: "Chicken Parmigiana",
+    variant: "Tour of Italy portion",
+    brand: "Olive Garden",
+    source: "claude",
+    per: "1 portion (the plate's third)",
+    macros: { calories: 510, protein: 42, carbs: 26, fat: 28, fiber: 2, sugar: 7, sodium: 1150 },
+    note: "Olive Garden\u0027s published Tour of Italy panel \u2014 1,520 kcal, 75 g protein, 92 g carbs, 96 g fat, 6 g fibre, 19 g sugar and 3,250 mg sodium for the dinner plate \u2014 split across its three parts, because the plate gets eaten unevenly and one multiplier over the whole thing would misstate the fat. THE PLATE TOTAL IS A READ PANEL AND THE SPLIT IS NOT: the three components sum back to it exactly, but the division between them is built from Olive Garden\u0027s own standalone entr\u00e9es, the alfredo taken at about 45% of its 1,310 kcal full portion and the lasagna at about 45% of its 930, with this cutlet as the remainder. Read each component as \u00b120% while the plate total stands at \u00b10 \u2014 an error here moves calories between the three rows rather than changing their sum. This is the breaded cutlet with marinara and melted mozzarella and no pasta beneath it, which is why it is the protein-dense third at 12 kcal per gram of protein against the alfredo\u0027s 49.",
+    tags: ["chicken parmigiana", "chicken parm", "tour of italy", "olive garden", "italian", "chain", "restaurant", "dinner"],
+  },
+  {
+    id: "og-tour-of-italy-lasagna",
+    name: "Lasagna Classico",
+    variant: "Tour of Italy portion",
+    brand: "Olive Garden",
+    source: "claude",
+    per: "1 portion (the plate's third)",
+    macros: { calories: 420, protein: 21, carbs: 25, fat: 23, fiber: 2, sugar: 8, sodium: 1150 },
+    note: "The lasagna third of Olive Garden\u0027s Tour of Italy, a slice with meat sauce, taken at about 45% of the chain\u0027s standalone 930 kcal Lasagna Classico \u2014 see the chicken parmigiana entry for how the published 1,520 kcal plate panel was divided, and read this as \u00b120% while the three components still sum exactly back to it. Atwater lands at 391 against 420, -7%, which is the rounding the chain publishes at rather than anything unaccounted. Sodium 1,150 mg is its share of the plate\u0027s 3,250 and is the figure worth seeing: one slice is half a day\u0027s allowance before anything else reaches the table.",
+    tags: ["lasagna", "lasagna classico", "tour of italy", "olive garden", "beef", "italian", "chain", "restaurant", "dinner"],
+  },
+  {
+    id: "og-tour-of-italy-alfredo",
+    name: "Fettuccine Alfredo",
+    variant: "Tour of Italy portion",
+    brand: "Olive Garden",
+    source: "claude",
+    per: "1 portion (the plate's third)",
+    macros: { calories: 590, protein: 12, carbs: 41, fat: 45, fiber: 2, sugar: 4, sodium: 950 },
+    note: "The fettuccine alfredo third of Olive Garden\u0027s Tour of Italy, taken at about 45% of the chain\u0027s standalone 1,310 kcal dinner portion \u2014 see the chicken parmigiana entry for how the published 1,520 kcal plate panel was divided, and read this as \u00b120% while the three still sum exactly back to it. THIS IS THE FATTY THIRD AND THE LEAST PROTEIN-DENSE THING IN THE FILE: 590 kcal for 12 g of protein is 49 kcal a gram, against the cutlet beside it at 12, which is what cream, butter and parmesan on pasta looks like as a ratio. It is also the largest of the three at 590 kcal, so leaving half of it on the plate saves more than skipping two breadsticks. Atwater lands at 617 against 590, +5%, on the chain\u0027s own rounding.",
+    tags: ["fettuccine alfredo", "alfredo", "pasta", "cream", "tour of italy", "olive garden", "italian", "chain", "restaurant", "dinner"],
+  },
+  {
+    id: "og-minestrone",
+    name: "Minestrone Soup",
+    brand: "Olive Garden",
+    source: "packaged",
+    per: "1 bowl",
+    macros: { calories: 110, protein: 5, carbs: 17, fat: 1, fiber: 4, sugar: 4, sodium: 810 },
+    note: "Olive Garden\u0027s published panel for a bowl, entered as printed rather than reconstructed: 110 kcal, 5 g protein, 17 g carbs, 1 g fat, 4 g fibre, 4 g sugar and 810 mg sodium. Atwater lands at 97 against 110, -12%, the widest miss in this file and plain rounding on small numbers \u2014 a printed 1 g of fat is anything from 0.5 to 1.4, which covers most of the gap on its own. THE SODIUM IS THE WHOLE STORY at 810 mg for 110 kcal, roughly three times the sodium per calorie of the Tour of Italy plate and the densest in the catalog by that measure. It is nonetheless the lightest thing on this menu and the only one here carrying real fibre.",
+    tags: ["minestrone", "soup", "vegetable", "olive garden", "italian", "chain", "restaurant"],
+  },
+  {
+    id: "og-breadstick",
+    name: "Breadstick",
+    variant: "garlic-topped",
+    brand: "Olive Garden",
+    source: "packaged",
+    per: "1 breadstick (~74 g)",
+    gramsPerServing: 74,
+    macros: { calories: 140, protein: 4, carbs: 25, fat: 2, fiber: 1, sugar: 2, sodium: 460 },
+    note: "Olive Garden\u0027s published panel for one garlic-topped breadstick, entered as printed: 140 kcal, 4 g protein, 25 g carbs, 2 g fat and 460 mg sodium; Atwater lands at 134 against 140. Fibre and sugar are the built lines at 1 g and 2 g, ordinary for white-flour bread rather than read off the panel. Held per stick because they arrive in a basket and get counted, so a portion logs as a multiplier. The 460 mg of sodium is what makes a second one cost more than its 140 calories suggest \u2014 two breadsticks carry more salt than the minestrone beside them.",
+    tags: ["breadstick", "bread", "garlic", "olive garden", "italian", "chain", "restaurant"],
+  },
+  {
+    id: "og-house-salad",
+    name: "House Salad",
+    variant: "with signature Italian dressing",
+    brand: "Olive Garden",
+    source: "packaged",
+    per: "1 serving",
+    macros: { calories: 150, protein: 3, carbs: 13, fat: 10, fiber: 3, sugar: 4, sodium: 770 },
+    note: "Olive Garden\u0027s published panel for a serving of house salad dressed with the signature Italian, entered as printed: 150 kcal, 3 g protein, 13 g carbs, 10 g fat and 770 mg sodium; Atwater lands at 154 against 150. Fibre 3 g and sugar 4 g are built rather than read. THE DRESSING IS NEARLY THE WHOLE ROW \u2014 undressed the salad runs about a third of these calories and a fraction of the sodium \u2014 so a salad ordered dry should not log against this entry. Held per serving because it arrives family-style, and a portion down to a couple of bites logs through the multiplier.",
+    tags: ["house salad", "salad", "italian dressing", "olive garden", "chain", "restaurant"],
   },
 ];

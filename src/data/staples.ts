@@ -904,4 +904,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "Estimated September 8, 2026 for a homemade Gujarati dhebra \u2014 bajra-and-wheat dough with chopped fenugreek and spinach, curd and spice, rolled small and pan-fried \u2014 built per piece as 15 g bajra flour, 3.75 g wheat flour, 6 g greens, 4 g curd and 6 g of oil across dough and pan; Atwater lands at 126 against 124. Held per piece because they are counted rather than weighed, with a piece taken here as ~40 g finished, read as 30-55, and that size does most of the work in the band. THE PAN OIL IS THE OTHER HALF OF IT: a light hand runs 3 g a piece and a generous one 8, which puts a debra at 100-165 kcal. Sodium 180 mg is a salted-dough estimate, band 100-300, and the 2.2 g of fibre is high for a flatbread because bajra carries about 11 g per 100 g \u2014 the greens add almost nothing next to that.",
     tags: ["debra", "dhebra", "thepla", "bajra", "millet", "methi", "fenugreek", "spinach", "flatbread", "roti", "gujarati", "indian", "homemade"],
   },
+  {
+    id: "pkg-excel-mint",
+    name: "Excel Mints",
+    variant: "sugar-free",
+    brand: "Wrigley",
+    source: "packaged",
+    per: "1 mint",
+    macros: { calories: 5, protein: 0, carbs: 1, fat: 0, fiber: 0, sugar: 0, sodium: 0 },
+    note: "Wrigley\u0027s sugar-free Excel mint at its label figure of about 5 kcal and 1 g a mint, which is the whole entry \u2014 the carbohydrate is sugar alcohol rather than sugar, so sugar sits at 0 and is a real 0 rather than a blank, as is the sodium. Held per mint because they get eaten one or two at a time. Carried for completeness rather than because it moves a day: two mints are 10 kcal, which is a rounding error against anything else in this file. It is here so a mention in the log has something to point at instead of being re-estimated.",
+    tags: ["mint", "mints", "excel", "wrigley", "sugar free", "breath mint", "candy"],
+  },
 ];
