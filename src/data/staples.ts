@@ -62,6 +62,18 @@ export const PACKAGED_FOODS: Food[] = [
     tags: ["bar", "protein bar", "snack", "grenade", "oreo"],
   },
   {
+    id: "pkg-simplyprotein-dark-chocolate-almond",
+    name: "SimplyProtein Crispy Bar",
+    variant: "Dark Chocolate Almond",
+    brand: "SimplyProtein",
+    source: "packaged",
+    per: "1 bar (40 g)",
+    gramsPerServing: 40,
+    macros: { calories: 160, protein: 13, carbs: 17, fat: 7, fiber: 7, sugar: 2, sodium: 180 },
+    note: "SimplyProtein's published panel for the 40 g Crispy Bar, added September 10, 2026; simplyprotein.ca was unreachable, so the figures come from retailer and dietitian listings of it and no wrapper was in hand. Three lines are soft in a narrow way \u2014 carbs run 15\u201317 g and sodium 180\u2013200 mg across those listings, and the older Snack Bar line of the same flavour prints 12 g protein against this one's 13 \u2014 so check the wrapper, but the spread is small enough that it moves the row by under 10 kcal. Atwater lands at 183 against 160, +14%, which is the widest miss in this file and is the fibre rather than a misread panel: 7 of the 17 g of carbs is fibre and yields nearer 2 kcal/g than 4, and recomputing on that basis gives 169, +6%. THE FIBRE IS THE POINT OF THE BAR alongside the protein \u2014 7 g in a 40 g bar is more than the Grenade bar above carries in 60 g, at 70 fewer calories and 7 g less protein. Held per bar because that is how it is eaten and a half logs through the multiplier.",
+    tags: ["bar", "protein bar", "simply protein", "simplyprotein", "crispy bar", "dark chocolate", "almond", "plant based", "vegan", "high fibre", "snack"],
+  },
+  {
     id: "pkg-kameda-kakinotane",
     name: "Kaki no Tane",
     variant: "Kameda, original with peanuts",
