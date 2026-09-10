@@ -834,6 +834,16 @@ export const RESTAURANT_FOODS: Food[] = [
     tags: ["fettuccine alfredo", "alfredo", "pasta", "cream", "tour of italy", "olive garden", "italian", "chain", "restaurant", "dinner"],
   },
   {
+    id: "og-chicken-shrimp-carbonara",
+    name: "Chicken & Shrimp Carbonara",
+    brand: "Olive Garden",
+    source: "packaged",
+    per: "1 dinner portion",
+    macros: { calories: 1390, protein: 64, carbs: 75, fat: 94, fiber: 4, sugar: 10, sodium: 2050 },
+    note: "Olive Garden's published panel for the dinner portion, added September 10, 2026: 1,390 kcal, 64 g protein, 75 g carbs, 94 g fat and 2,050 mg sodium, with Atwater landing at 1,402 against 1,390. It is a read figure like the minestrone and breadstick beside it but a softer one, because olivegarden.com was unreachable and this comes from aggregator listings of the panel, which spread from 1,370 to 1,590 kcal \u2014 read it as \u00b110% rather than the \u00b10 the other read rows carry. Fibre 4 g and sugar 10 g are the built lines, taken from the shrimp-only Carbonara's listing because neither is printed for this item. THE PROTEIN IS WHAT SEPARATES IT FROM THE ALFREDO: 22 kcal per gram of protein against that row's 49, the same cream sauce carrying chicken and shrimp rather than nothing. Held per dinner portion, so a lunch portion is a different size and should not log against this row.",
+    tags: ["carbonara", "chicken and shrimp carbonara", "shrimp", "chicken", "spaghetti", "pasta", "cream", "bacon", "olive garden", "italian", "chain", "restaurant", "dinner"],
+  },
+  {
     id: "og-minestrone",
     name: "Minestrone Soup",
     brand: "Olive Garden",
