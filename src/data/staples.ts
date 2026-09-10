@@ -948,4 +948,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "Estimated September 9, 2026 for an unbranded honey-flavoured Greek yogurt eaten by the cup, built at 95 kcal / 8.5 g protein / 13 g carbs / 1 g fat / 12 g sugar / 40 mg sodium per 100 g and scaled to USDA\u0027s 245 g cup; Atwater lands at 235 against 233. The plain 0% entry above says flavoured tubs are a different food and this is that lookup, so read it as a band rather than a panel \u2014 nonfat honey tubs (Chobani-class) run near 80 kcal per 100 g and a 2% Fage-class one past 115, which puts a cup anywhere from 195 to 280 kcal and 18 to 23 g of protein. Sugar is what separates it from the plain tub: about two thirds of the 29 g is added honey and cane sugar rather than the milk\u0027s own lactose, where a plain cup carries around 8 g. Fibre is left blank to match the plain and skyr rows above rather than written as a zero, and if the tub in the fridge has a panel it wins over all of this.",
     tags: ["yogurt", "yoghurt", "greek", "honey", "flavoured", "protein", "dairy"],
   },
+  {
+    id: "staple-pani-puri",
+    name: "Pani puri",
+    variant: "assembled, potato and chickpea filling",
+    source: "claude",
+    per: "1 puri (assembled, ~38 g)",
+    gramsPerServing: 38,
+    macros: { calories: 45, protein: 0.8, carbs: 7, fat: 1.4, fiber: 0.5, sugar: 1.8, sodium: 150 },
+    note: "Estimated September 9, 2026 for a plate of assembled pani puri, built per piece as a 4 g fried semolina shell (about 2.8 g of flour and 1.2 g of absorbed oil), 12 g of spiced potato-and-chickpea filling, 20 ml of mint-tamarind pani and a 2 g drizzle of sweet chutney; Atwater lands at 44 against 45. Distinct from the masala puri above, which is a 15 g deep-fried atta bread eaten as a bread \u2014 the shell here is a quarter of that weight and the filling and water are most of the row. Read calories as 35\u201360 a piece: the shell\u0027s oil and how freely the sweet chutney goes on do nearly all of that, and a plate drowned in chutney runs past 60. THE SODIUM IS THE WIDE FIGURE, band 100\u2013250 a piece, because chaat pani is salted hard with kala namak and no two cooks agree \u2014 across a plate of 20 that spread is 2,000 to 5,000 mg, so it is the number to distrust here rather than the calories.",
+    tags: ["pani puri", "golgappa", "puchka", "gol gappa", "chaat", "indian", "street food", "snack", "fried"],
+  },
 ];
