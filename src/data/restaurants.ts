@@ -876,4 +876,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Olive Garden\u0027s published panel for a serving of house salad dressed with the signature Italian, entered as printed: 150 kcal, 3 g protein, 13 g carbs, 10 g fat and 770 mg sodium; Atwater lands at 154 against 150. Fibre 3 g and sugar 4 g are built rather than read. THE DRESSING IS NEARLY THE WHOLE ROW \u2014 undressed the salad runs about a third of these calories and a fraction of the sodium \u2014 so a salad ordered dry should not log against this entry. Held per serving because it arrives family-style, and a portion down to a couple of bites logs through the multiplier.",
     tags: ["house salad", "salad", "italian dressing", "olive garden", "chain", "restaurant"],
   },
+  {
+    id: "tonkotsu-ramen-bowl",
+    name: "Tonkotsu Ramen",
+    variant: "pork bone broth, chashu and kikurage",
+    source: "claude",
+    per: "1 bowl (~650 g as served)",
+    gramsPerServing: 650,
+    macros: {
+      calories: 700,
+      protein: 31,
+      carbs: 65,
+      fat: 31,
+      fiber: 4.5,
+      sugar: 4,
+      sodium: 2200,
+    },
+    note: "NO VENUE — a generic shop tonkotsu bowl rather than a particular kitchen's, because none was named when it was first logged on September 12, 2026; split this into a branded entry if it turns out to come from somewhere ordered from repeatedly. Estimated from the construction, not a panel: ~200 g cooked thin noodles (290 kcal), ~400 ml emulsified pork broth (240 kcal and most of the fat), two chashu slices at ~50 g (140 kcal), and the kikurage, scallion and aromatics, which are ~25 kcal between them. No ajitama is counted — add ~70 kcal and 6 g protein if one came with it. Calorie band is 550–950, and the two things moving it are invisible from the outside: how rich the broth was rendered, and HOW MUCH OF IT WAS ACTUALLY DRUNK. A bowl left half full of broth is ~120 kcal and ~900 mg of sodium lighter than this row says, so log that as 0.8 of a serving rather than re-estimating the dish. Sodium at 2,200 mg is the widest figure, band 1,500–3,500, and it is nearly all tare and broth — published shop bowls run 2,000–4,000 mg when the broth goes down, which makes one of these most of a day's salt. The kikurage is a texture topping and not a macro line: ~15 g rehydrated is 10 kcal and about 1.5 g of the fibre.",
+    tags: ["ramen", "tonkotsu", "noodles", "pork", "chashu", "kikurage", "wood ear", "japanese", "restaurant", "lunch"],
+  },
 ];
