@@ -766,6 +766,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["hot sauce", "chipotle", "cholula", "condiment", "mexican", "spicy"],
   },
   {
+    id: "pkg-tacobell-fire-sauce-packet",
+    name: "Hot Sauce",
+    variant: "Fire, single packet",
+    brand: "Taco Bell",
+    source: "packaged",
+    per: "1 packet (7 g)",
+    gramsPerServing: 7,
+    macros: { calories: 0, protein: 0, carbs: 0, fat: 0, fiber: 0, sugar: 0, sodium: 55 },
+    note: "Taco Bell's published figures for the 7 g sachet, read September 13, 2026: 0 kcal and 55 mg sodium, with fat, carbs and protein all printed as zero. These are rounded zeroes rather than true ones — the sauce is tomato purée, vinegar and chilli, so a packet carries a gram or two of carbohydrate that label rounding erases — but the error is under 5 kcal even across a handful, which is why sodium is the only line worth carrying. Held per packet because that is how it arrives and a handful logs as a multiplier. THE AUGUST 6, 2026 LOG ROW DISAGREES AND IS BEING LEFT ALONE: it recorded the same sauce as a tablespoon at ~15 g and 75 mg, which works out to 5 mg a gram against this panel's 7.9, so that row understates by roughly 40 mg — too small to be worth rewriting history over, and noted here instead.",
+    tags: ["hot sauce", "fire sauce", "taco bell", "packet", "sachet", "condiment", "mexican", "spicy"],
+  },
+  {
     id: "staple-sugar-white",
     name: "Sugar",
     variant: "white, granulated",

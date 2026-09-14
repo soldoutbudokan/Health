@@ -895,4 +895,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "NO VENUE — a generic shop tonkotsu bowl rather than a particular kitchen's, because none was named when it was first logged on September 12, 2026; split this into a branded entry if it turns out to come from somewhere ordered from repeatedly. Estimated from the construction, not a panel: ~200 g cooked thin noodles (290 kcal), ~400 ml emulsified pork broth (240 kcal and most of the fat), two chashu slices at ~50 g (140 kcal), and the kikurage, scallion and aromatics, which are ~25 kcal between them. No ajitama is counted — add ~70 kcal and 6 g protein if one came with it. Calorie band is 550–950, and the two things moving it are invisible from the outside: how rich the broth was rendered, and HOW MUCH OF IT WAS ACTUALLY DRUNK. A bowl left half full of broth is ~120 kcal and ~900 mg of sodium lighter than this row says, so log that as 0.8 of a serving rather than re-estimating the dish. Sodium at 2,200 mg is the widest figure, band 1,500–3,500, and it is nearly all tare and broth — published shop bowls run 2,000–4,000 mg when the broth goes down, which makes one of these most of a day's salt. The kikurage is a texture topping and not a macro line: ~15 g rehydrated is 10 kcal and about 1.5 g of the fibre. The 650 g bowl this row is built on is the soft input at the other end: its own first use was logged at 1.2 servings the same day, because the eater reported it more filling than this — which is what the multiplier is for, and the reason to keep 650 g here rather than inflate the entry to fit one bowl.",
     tags: ["ramen", "tonkotsu", "noodles", "pork", "chashu", "kikurage", "wood ear", "japanese", "restaurant", "lunch"],
   },
+  {
+    id: "tacobell-cheese-quesadilla",
+    name: "Cheese Quesadilla",
+    brand: "Taco Bell",
+    source: "packaged",
+    per: "1 quesadilla (~139 g)",
+    gramsPerServing: 139,
+    macros: {
+      calories: 470,
+      protein: 18,
+      carbs: 41,
+      fat: 24,
+      fiber: 3,
+      sugar: 3,
+      sodium: 1000,
+    },
+    note: "Taco Bell's published panel, entered as printed on September 13, 2026: 470 kcal, 18 g protein, 41 g carbs, 24 g fat, 3 g fibre, 3 g sugars, 1,000 mg sodium, with 13 g of that fat saturated. Read from four independent aggregator listings that agreed on every line, since tacobell.com did not come through the egress proxy; Atwater lands at 452 against 470, -4%, which is a real panel rather than a reconstruction. THE US PANEL IS THE ASSUMPTION — Taco Bell Canada publishes its own figures and they were not reachable, so a Canadian store may differ by a few grams; the recipe is the same three-cheese blend and creamy jalapeño sauce in a grilled flour tortilla either way. The sauce is why this is not merely cheese on bread: it carries a good share of the 24 g of fat, and asking for it held would take the row off by more than a rounding. At 18 g of protein per 470 kcal it is middling, and the 1,000 mg of sodium is the line that shows up in a day — it is over a third of a day's allowance in one hand-sized item.",
+    tags: ["quesadilla", "cheese quesadilla", "taco bell", "mexican", "fast food", "restaurant", "chain", "tortilla"],
+  },
 ];
