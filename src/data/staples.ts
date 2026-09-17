@@ -1092,4 +1092,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "Estimated September 9, 2026 for a plate of assembled pani puri, built per piece as a 4 g fried semolina shell (about 2.8 g of flour and 1.2 g of absorbed oil), 12 g of spiced potato-and-chickpea filling, 12.5 ml of mint-tamarind pani and a 2 g drizzle of sweet chutney; Atwater lands at 42 against 43. First written the same evening at 20 ml of pani a piece, 45 kcal and 150 mg of sodium, and corrected within the hour when the owner put the whole plate\u0027s pani at one bowl of about 250 ml across 20 \u2014 that is a dipping plate rather than street service, where each shell is filled to the brim, so the pani volume is the first thing to re-read if a plate is served differently. Distinct from the masala puri above, which is a 15 g deep-fried atta bread eaten as a bread \u2014 the shell here is a quarter of that weight and the filling and water are most of the row. Read calories as 35\u201355 a piece: the shell\u0027s oil and how freely the sweet chutney goes on do nearly all of that. THE SODIUM IS THE WIDE FIGURE, band 80\u2013200 a piece, because chaat pani is salted hard with kala namak and no two cooks agree \u2014 across a plate of 20 that spread is 1,600 to 4,000 mg, so it is the number to distrust here rather than the calories.",
     tags: ["pani puri", "golgappa", "puchka", "gol gappa", "chaat", "indian", "street food", "snack", "fried"],
   },
+  {
+    id: "staple-vanilla-cake-slice-frosted",
+    name: "Vanilla cake",
+    variant: "1 slice, frosted",
+    source: "claude",
+    per: "1 slice (~110 g, frosted)",
+    gramsPerServing: 110,
+    macros: { calories: 390, protein: 4, carbs: 52, fat: 19, fiber: 0.6, sugar: 38, sodium: 300 },
+    note: "Estimated for a standard restaurant birthday slice on September 16, 2026, not read off a panel \u2014 no venue nutrition exists and none was published. Built like the carrot cake row above it: USDA\u0027s commercially prepared yellow cake with frosting at ~355 kcal per 100 g, applied to a ~110 g slice. Read it as 280\u2013500 kcal and treat slice size as the variable doing nearly all the work, since a restaurant comps a wedge rather than measures one; frosting thickness is second and moves fat and sugar more than calories. At 4 g of protein and 38 g of sugar this is sugar and fat with a little flour in it, which is the fair read of the type. IF THE VENUE IS NAMED AND POSTS A PANEL, THIS ENTRY SHOULD BE REPLACED BY IT.",
+    tags: ["vanilla cake", "cake", "birthday cake", "dessert", "frosting", "snack"],
+  },
 ];
