@@ -84,6 +84,18 @@ export default function LastStretchPage() {
             </dd>
           </div>
           <div>
+            <dt className="text-sm font-medium">The accessories are rules, not targets</dt>
+            <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
+              From Sep 21 the upper days also carry a number for the row, the pulldown, the
+              curl, the Y raise, the fly and the dips. No weight on any of them produces a
+              bench; they keep the shoulder balanced and the elbows quiet while the lifts
+              being chased climb. So the row steps with the bench and stays near 83% of it,
+              the pulldown steps each light upper toward bodyweight for the pullup, the curl
+              steps once a block, and the Y raise, the fly and the dips hold. A set that
+              is not clean means the number repeats, same as the main lifts.
+            </dd>
+          </div>
+          <div>
             <dt className="text-sm font-medium">Where it ends</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
               Trap bar 300 on Oct 27, ten pullups on Nov 8, squat 225 on Nov 10. Once all

@@ -62,6 +62,20 @@ export interface PlanDay {
   benchBackoff?: number;
   /** "2×5", "test (9)", "2×4 easy, optional" — a string on purpose. */
   pullups?: string;
+  /**
+   * The accessory line, upper days only, added September 17, 2026. These are
+   * rules rendered as numbers, not targets: the row rides at 82–84% of the
+   * planned bench, the pulldown climbs toward bodyweight for the pullup, the
+   * curl steps once a block, the Y raise and the fly hold. Section 10 of
+   * docs/training-plan.md says why. Graded like the other loads.
+   */
+  cableRow?: number;
+  latPulldown?: number;
+  preacherCurl?: number;
+  yRaise?: number;
+  cableFly?: number;
+  /** "1×10", "1×8" on a deload — bodyweight, so a string like pullups. */
+  dips?: string;
   /** A goal closing, or a step worth naming. */
   milestone?: string;
   note?: string;
@@ -188,6 +202,12 @@ function plannedLoad(plan: PlanDay, exercise: string): string | undefined {
       : `${plan.bench} lbs`;
   }
   if (sameExercise(exercise, "Pullups")) return plan.pullups;
+  if (sameExercise(exercise, "Cable row")) return fmt(plan.cableRow);
+  if (sameExercise(exercise, "Lat pulldown")) return fmt(plan.latPulldown);
+  if (sameExercise(exercise, "Preacher curl")) return fmt(plan.preacherCurl);
+  if (sameExercise(exercise, "Seated Y raise")) return fmt(plan.yRaise);
+  if (sameExercise(exercise, "Cable fly")) return fmt(plan.cableFly);
+  if (sameExercise(exercise, "Dips")) return plan.dips;
   return undefined;
 }
 
@@ -197,6 +217,11 @@ function plannedNumber(plan: PlanDay, exercise: string): number | undefined {
   if (sameExercise(exercise, "Smith machine squat")) return plan.squat;
   if (sameExercise(exercise, "Lying leg curl")) return plan.legCurl;
   if (sameExercise(exercise, "Bench press")) return plan.bench;
+  if (sameExercise(exercise, "Cable row")) return plan.cableRow;
+  if (sameExercise(exercise, "Lat pulldown")) return plan.latPulldown;
+  if (sameExercise(exercise, "Preacher curl")) return plan.preacherCurl;
+  if (sameExercise(exercise, "Seated Y raise")) return plan.yRaise;
+  if (sameExercise(exercise, "Cable fly")) return plan.cableFly;
   return undefined;
 }
 

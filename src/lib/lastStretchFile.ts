@@ -11,12 +11,16 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * Columns, in order:
  *
  *   date, session, phase, deload, optional, trap_bar, squat, leg_curl,
- *   bench, bench_backoff, pullups, milestone, note
+ *   bench, bench_backoff, pullups, cable_row, lat_pulldown, preacher_curl,
+ *   y_raise, cable_fly, dips, milestone, note
  *
- * `session` is a SessionType or `rest`. The four load columns are the
- * planned top-set weights in pounds and are blank where the day has no such
- * lift; blank means "nothing planned", never zero. `pullups` is free text
- * ("2×5", "test (9)") because a pullup plan is an instruction, not a load.
+ * `session` is a SessionType or `rest`. The load columns are the planned
+ * top-set weights in pounds and are blank where the day has no such lift;
+ * blank means "nothing planned", never zero. `pullups` and `dips` are free
+ * text ("2×5", "test (9)", "1×10") because a bodyweight plan is an
+ * instruction, not a load. The six accessory columns were added September 17,
+ * 2026, ahead of `milestone` so `note` stays last; rows before that date
+ * carry them blank, because no accessory plan existed for those days.
  */
 
 const SESSION_TYPES = Object.keys(SESSION_LABELS) as SessionType[];
@@ -50,8 +54,14 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
       bench: optionalNumber(c[8]),
       benchBackoff: optionalNumber(c[9]),
       pullups: optional(c[10]),
-      milestone: optional(c[11]),
-      note: optional(c[12]),
+      cableRow: optionalNumber(c[11]),
+      latPulldown: optionalNumber(c[12]),
+      preacherCurl: optionalNumber(c[13]),
+      yRaise: optionalNumber(c[14]),
+      cableFly: optionalNumber(c[15]),
+      dips: optional(c[16]),
+      milestone: optional(c[17]),
+      note: optional(c[18]),
     });
   }
   return days.sort((a, b) => a.date.localeCompare(b.date));

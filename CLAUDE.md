@@ -160,7 +160,8 @@ Rendered at `/last-stretch`. Asked for on September 7, 2026; the reasoning is
 Section 10 of `docs/training-plan.md`. One row per day:
 
 ```
-date,session,phase,deload,optional,trap_bar,squat,leg_curl,bench,bench_backoff,pullups,milestone,note
+date,session,phase,deload,optional,trap_bar,squat,leg_curl,bench,bench_backoff,pullups,
+cable_row,lat_pulldown,preacher_curl,y_raise,cable_fly,dips,milestone,note
 ```
 
 | Column | Notes |
@@ -169,6 +170,8 @@ date,session,phase,deload,optional,trap_bar,squat,leg_curl,bench,bench_backoff,p
 | `phase` | `break` \| `return` \| `trip` \| `block-1` \| `deload` \| `block-2` \| `contingency` |
 | `trap_bar`, `squat`, `leg_curl`, `bench`, `bench_backoff` | planned top-set lbs. Blank means no such lift that day, never zero |
 | `pullups` | free text: `2×5`, `test (9)`, `2×4 easy, optional` |
+| `cable_row`, `lat_pulldown`, `preacher_curl`, `y_raise`, `cable_fly` | planned lbs on the upper days, added September 17, 2026. Blank on lower days and on every row before September 21 — no accessory plan existed for those, so none is written in after the fact |
+| `dips` | free text like `pullups`: `1×10`, `1×8` on a deload |
 | `milestone` | a goal closing, or a step worth naming. The page reads the goal dates from it |
 | `optional` | `yes` when skipping it is following the plan |
 | `note` | one paragraph, short |
@@ -190,6 +193,20 @@ and the goals closing October 27 (trap bar), November 8 (pullups) and November 1
 close, the last stretch is over** and the next block is cardio, whatever the
 bench is doing — the owner said so on September 7. Don't extend the stretch to
 chase the bench.
+
+**The accessories are rules rendered as numbers, not targets.** Asked for on
+September 17, 2026, after the row had sat at 130 for seven clean sessions
+because nothing said to move it. No weight on a row or a curl produces a bench;
+they keep the shoulder balanced and the elbows quiet while the lifts being
+chased climb, and the pulldown builds the pullup directly. So: the row steps
+5 lbs on each heavy upper and holds on the light upper after it, which keeps it
+at 82–84% of the planned bench; the pulldown steps 5 lbs each light upper, held
+on a pullup test day, toward bodyweight by December; the preacher curl steps
+5 lbs once a block; the Y raise, the fly and the dips hold. A set that is not
+clean repeats the number, as on the main lifts, and the same slide applies.
+Deloads take them down 10–15% with everything else. Don't chase any of them —
+insurance that gets progressed like a goal becomes a fourth load on the same
+joint. Section 10 of `docs/training-plan.md` has the reasoning.
 
 **The shape of a week.** Weekends are the likeliest training days and they are
 fasted, so only the light days go there: light lower Saturday, light upper
