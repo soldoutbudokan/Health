@@ -1103,4 +1103,16 @@ export const STAPLE_FOODS: Food[] = [
     note: "Estimated for a standard restaurant birthday slice on September 16, 2026, not read off a panel \u2014 no venue nutrition exists and none was published. Built like the carrot cake row above it: USDA\u0027s commercially prepared yellow cake with frosting at ~355 kcal per 100 g, applied to a ~110 g slice. Read it as 280\u2013500 kcal and treat slice size as the variable doing nearly all the work, since a restaurant comps a wedge rather than measures one; frosting thickness is second and moves fat and sugar more than calories. At 4 g of protein and 38 g of sugar this is sugar and fat with a little flour in it, which is the fair read of the type. IF THE VENUE IS NAMED AND POSTS A PANEL, THIS ENTRY SHOULD BE REPLACED BY IT.",
     tags: ["vanilla cake", "cake", "birthday cake", "dessert", "frosting", "snack"],
   },
+  {
+    id: "pkg-covered-bridge-sour-cream-onion-60g",
+    name: "Sour Cream & Onion Kettle Chips",
+    variant: "single-serve bag",
+    brand: "Covered Bridge",
+    source: "packaged",
+    per: "1 bag (~60 g)",
+    gramsPerServing: 60,
+    macros: { calories: 310, protein: 5.2, carbs: 36, fat: 15.5, fiber: 3, sugar: 2.5, sodium: 390 },
+    note: "ONLY THE CALORIE FIGURE IS READ — 310 for the bag, off the wrapper on September 17, 2026, which is why the entry is held per bag and named for it. Everything else is that 310 scaled from the one Covered Bridge panel that was reachable, a 36 g single-serve at 180 kcal, 3 g protein, 21 g carbs, 9 g fat, 2 g fibre and 230 mg sodium; coveredbridgechips.com was not readable through the egress proxy. Scaling by calories rather than by weight is deliberate — it keeps the macro ratios the panel states and leaves only the bag size uncertain. That size is the soft input: Covered Bridge's single-serve is sold as 60 g and one listing puts a 60 g sour-cream bag at 290 kcal rather than 310, so the wrapper in hand is either a slightly denser flavour or a slightly larger bag. At 310 kcal and 5.2 g of protein this is a 60-to-1 calorie-to-protein item, the least protein-dense thing logged in a normal day here. Sodium ~390 mg is the scaled line and the least supported, band 300–500; kettle chips are fried in the bag's own oil and a seasoned flavour salts harder than a plain one.",
+    tags: ["chips", "potato chips", "kettle chips", "sour cream and onion", "covered bridge", "snack", "packaged"],
+  },
 ];
