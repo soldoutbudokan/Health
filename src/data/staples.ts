@@ -1115,4 +1115,16 @@ export const STAPLE_FOODS: Food[] = [
     note: "ONLY THE CALORIE FIGURE IS READ — 310 for the bag, off the wrapper on September 17, 2026, which is why the entry is held per bag and named for it. Everything else is that 310 scaled from the one Covered Bridge panel that was reachable, a 36 g single-serve at 180 kcal, 3 g protein, 21 g carbs, 9 g fat, 2 g fibre and 230 mg sodium; coveredbridgechips.com was not readable through the egress proxy. Scaling by calories rather than by weight is deliberate — it keeps the macro ratios the panel states and leaves only the bag size uncertain. That size is the soft input: Covered Bridge's single-serve is sold as 60 g and one listing puts a 60 g sour-cream bag at 290 kcal rather than 310, so the wrapper in hand is either a slightly denser flavour or a slightly larger bag. At 310 kcal and 5.2 g of protein this is a 60-to-1 calorie-to-protein item, the least protein-dense thing logged in a normal day here. Sodium ~390 mg is the scaled line and the least supported, band 300–500; kettle chips are fried in the bag's own oil and a seasoned flavour salts harder than a plain one.",
     tags: ["chips", "potato chips", "kettle chips", "sour cream and onion", "covered bridge", "snack", "packaged"],
   },
+  {
+    id: "pkg-fftt-white-cheddar-popcorn-23g",
+    name: "White Cheddar Popcorn",
+    variant: "single-serve bag",
+    brand: "From Farm To Table",
+    source: "packaged",
+    per: "1 bag (23 g)",
+    gramsPerServing: 23,
+    macros: { calories: 90, protein: 2.5, carbs: 14, fat: 2.8, fiber: 2.5, sugar: 0.5, sodium: 190 },
+    note: "ONLY THE CALORIE FIGURE IS READ \u2014 90 for the bag, off the wrapper on September 18, 2026. fromfarmtotable.ca, the brand\u0027s own 23 g nutrition sheet and every retailer listing were blocked at the network egress proxy, so everything else is a reconstruction built to that 90 and should be read as one. Search summaries put this flavour at 70 kcal and the Butter & Salt at 90; the wrapper wins and 70 is the figure to doubt, because 23 g of bare popped corn is already about 89 kcal and a seasoned bag cannot come in under it. Composition taken as roughly 19 g popped corn, 2 g canola oil and 2 g cheese seasoning, then scaled to the 90 \u2014 Atwater lands at 91, which is the reconstruction\u0027s own arithmetic rather than corroboration. Sodium ~190 mg is the least supported line, band 130\u2013260, since all of it sits in the seasoning and none of it was read; the 23 g bag size is the brand\u0027s only single-serve and is the one input two independent searches agree on. At 2.5 g of protein per 90 kcal this is a fibre-and-salt snack, not a protein item.",
+    tags: ["popcorn", "white cheddar", "cheddar", "from farm to table", "farm to table", "snack", "packaged"],
+  },
 ];
