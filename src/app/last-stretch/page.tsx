@@ -96,6 +96,18 @@ export default function LastStretchPage() {
             </dd>
           </div>
           <div>
+            <dt className="text-sm font-medium">The weighted jump holds at 20</dt>
+            <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
+              From Oct 3 the light lower days carry a number for it too, and that number
+              does not climb: 20 lbs a hand, 15 on a deload. It is the last loaded lift in
+              the rotation that had no plan, and it is the one that should not get one that
+              moves. The jump is graded on how fast it leaves the floor, and 40 lbs against
+              a 186 lb bodyweight is already about a fifth — past that the load starts
+              buying itself at the expense of the speed it was added to train. Every other
+              jump on the program is bodyweight on purpose and carries no number at all.
+            </dd>
+          </div>
+          <div>
             <dt className="text-sm font-medium">Where it ends</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
               Trap bar 300 on Oct 27, ten pullups on Nov 8, squat 225 on Nov 10. Once all

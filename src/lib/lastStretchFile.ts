@@ -11,8 +11,8 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * Columns, in order:
  *
  *   date, session, phase, deload, optional, trap_bar, squat, leg_curl,
- *   bench, bench_backoff, pullups, cable_row, lat_pulldown, preacher_curl,
- *   y_raise, cable_fly, dips, milestone, note
+ *   weighted_jumps, bench, bench_backoff, pullups, cable_row, lat_pulldown,
+ *   preacher_curl, y_raise, cable_fly, dips, milestone, note
  *
  * `session` is a SessionType or `rest`. The load columns are the planned
  * top-set weights in pounds and are blank where the day has no such lift;
@@ -21,6 +21,11 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * instruction, not a load. The six accessory columns were added September 17,
  * 2026, ahead of `milestone` so `note` stays last; rows before that date
  * carry them blank, because no accessory plan existed for those days.
+ * `weighted_jumps` followed on September 19, 2026, inserted after
+ * `leg_curl` rather than appended so the lower-day loads stay together, and
+ * it is the light-lower days only — the heavy day's jumps are bodyweight by
+ * prescription. Blank before October 3 for the same reason the accessories
+ * are blank before September 21.
  */
 
 const SESSION_TYPES = Object.keys(SESSION_LABELS) as SessionType[];
@@ -51,17 +56,18 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
       trapBar: optionalNumber(c[5]),
       squat: optionalNumber(c[6]),
       legCurl: optionalNumber(c[7]),
-      bench: optionalNumber(c[8]),
-      benchBackoff: optionalNumber(c[9]),
-      pullups: optional(c[10]),
-      cableRow: optionalNumber(c[11]),
-      latPulldown: optionalNumber(c[12]),
-      preacherCurl: optionalNumber(c[13]),
-      yRaise: optionalNumber(c[14]),
-      cableFly: optionalNumber(c[15]),
-      dips: optional(c[16]),
-      milestone: optional(c[17]),
-      note: optional(c[18]),
+      weightedJumps: optionalNumber(c[8]),
+      bench: optionalNumber(c[9]),
+      benchBackoff: optionalNumber(c[10]),
+      pullups: optional(c[11]),
+      cableRow: optionalNumber(c[12]),
+      latPulldown: optionalNumber(c[13]),
+      preacherCurl: optionalNumber(c[14]),
+      yRaise: optionalNumber(c[15]),
+      cableFly: optionalNumber(c[16]),
+      dips: optional(c[17]),
+      milestone: optional(c[18]),
+      note: optional(c[19]),
     });
   }
   return days.sort((a, b) => a.date.localeCompare(b.date));

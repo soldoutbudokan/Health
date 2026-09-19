@@ -58,6 +58,15 @@ export interface PlanDay {
   trapBar?: number;
   squat?: number;
   legCurl?: number;
+  /**
+   * Per dumbbell, on the light lower days only, added September 19, 2026.
+   * The heavy day's jumps are bodyweight by prescription and carry no number
+   * on purpose. This one holds rather than climbs: the jump is graded on
+   * speed, and 20 lbs a hand is already about a fifth of bodyweight, which is
+   * the top of the band where a loaded jump is still a jump. Section 10 of
+   * docs/training-plan.md says why.
+   */
+  weightedJumps?: number;
   bench?: number;
   benchBackoff?: number;
   /** "2×5", "test (9)", "2×4 easy, optional" — a string on purpose. */
@@ -195,6 +204,9 @@ function plannedLoad(plan: PlanDay, exercise: string): string | undefined {
   if (sameExercise(exercise, "Trap bar deadlift")) return fmt(plan.trapBar);
   if (sameExercise(exercise, "Smith machine squat")) return fmt(plan.squat);
   if (sameExercise(exercise, "Lying leg curl")) return fmt(plan.legCurl);
+  if (sameExercise(exercise, "Weighted jumps")) {
+    return plan.weightedJumps === undefined ? undefined : `${plan.weightedJumps} lbs a hand`;
+  }
   if (sameExercise(exercise, "Bench press")) {
     if (plan.bench === undefined) return undefined;
     return plan.benchBackoff !== undefined
@@ -216,6 +228,7 @@ function plannedNumber(plan: PlanDay, exercise: string): number | undefined {
   if (sameExercise(exercise, "Trap bar deadlift")) return plan.trapBar;
   if (sameExercise(exercise, "Smith machine squat")) return plan.squat;
   if (sameExercise(exercise, "Lying leg curl")) return plan.legCurl;
+  if (sameExercise(exercise, "Weighted jumps")) return plan.weightedJumps;
   if (sameExercise(exercise, "Bench press")) return plan.bench;
   if (sameExercise(exercise, "Cable row")) return plan.cableRow;
   if (sameExercise(exercise, "Lat pulldown")) return plan.latPulldown;
@@ -324,7 +337,9 @@ export function dayView(
   if (logged) {
     const daySets = sessionSets(sets, plan.date);
     const loggedLifts: LoggedLift[] = byExercise(daySets)
-      .filter((g) => g.sets.some((s) => s.kind === "compound" || s.kind === "isolation"))
+      .filter((g) =>
+        g.sets.some((s) => s.kind === "compound" || s.kind === "isolation" || s.kind === "jump"),
+      )
       .map((g) => {
         const top = topSet(g.sets, g.exercise);
         const planned = plannedNumber(plan, g.exercise);

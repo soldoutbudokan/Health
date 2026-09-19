@@ -160,8 +160,9 @@ Rendered at `/last-stretch`. Asked for on September 7, 2026; the reasoning is
 Section 10 of `docs/training-plan.md`. One row per day:
 
 ```
-date,session,phase,deload,optional,trap_bar,squat,leg_curl,bench,bench_backoff,pullups,
-cable_row,lat_pulldown,preacher_curl,y_raise,cable_fly,dips,milestone,note
+date,session,phase,deload,optional,trap_bar,squat,leg_curl,weighted_jumps,bench,
+bench_backoff,pullups,cable_row,lat_pulldown,preacher_curl,y_raise,cable_fly,dips,
+milestone,note
 ```
 
 | Column | Notes |
@@ -169,6 +170,7 @@ cable_row,lat_pulldown,preacher_curl,y_raise,cable_fly,dips,milestone,note
 | `session` | a `sessions.csv` session type, or `rest` |
 | `phase` | `break` \| `return` \| `trip` \| `block-1` \| `deload` \| `block-2` \| `contingency` |
 | `trap_bar`, `squat`, `leg_curl`, `bench`, `bench_backoff` | planned top-set lbs. Blank means no such lift that day, never zero |
+| `weighted_jumps` | lbs **per dumbbell**, light lower days only, added September 19, 2026. Blank on the heavy days, whose jumps are bodyweight by prescription, and blank before October 3 |
 | `pullups` | free text: `2×5`, `test (9)`, `2×4 easy, optional` |
 | `cable_row`, `lat_pulldown`, `preacher_curl`, `y_raise`, `cable_fly` | planned lbs on the upper days, added September 17, 2026. Blank on lower days and on every row before September 21 — no accessory plan existed for those, so none is written in after the fact |
 | `dips` | free text like `pullups`: `1×10`, `1×8` on a deload |
@@ -208,13 +210,29 @@ Deloads take them down 10–15% with everything else. Don't chase any of them �
 insurance that gets progressed like a goal becomes a fourth load on the same
 joint. Section 10 of `docs/training-plan.md` has the reasoning.
 
+**The weighted jump holds; every other jump is bodyweight.** Asked for on
+September 19, 2026 — a prescription for every lift in the schedule, not just the
+ones a goal is named after. An audit of `program.ts` against the plan file found
+one genuine gap: the weighted jump had carried two 20 lb dumbbells since August
+23 because nothing said otherwise. Everything else without a number is timed
+(the sled, the pancakes, the shoulder warmup), bodyweight by explicit
+prescription (the heavy day's jumps, the depth and approach jumps, the pogo
+hops) or fixed in `program.ts` because it does not progress (the 35 lb calf-raise
+bell, the 25 lb overhead hold and goblet pry). So `weighted_jumps` is written in
+as **20 a hand, 15 on a deload, held for the whole stretch**. Don't step it: the
+jump is graded on speed, 40 lbs on a 186 lb bodyweight is already about a fifth,
+and a load that climbs while the trap bar climbs is a fourth progressing load on
+the same joints. Grading it meant admitting `jump` sets to the day card's logged
+list, so bodyweight jumps now show there with no verdict.
+
 **The shape of a week.** Weekends are the likeliest training days and they are
 fasted, so only the light days go there: light lower Saturday, light upper
 Sunday. Heavy days are weekdays, Tuesday and Thursday, fed; Monday is the
 stretch day and Off A and B sit on Wednesday and Friday. The first week back
-(September 14–22) runs on weekdays because that weekend is spoken for, and the
-deload week moves its heavy days to Monday and Tuesday because the rest of it
-is away. When shifting rows, keep a heavy day off the weekend.
+(September 14–22) was written for weekdays because that weekend was spoken for,
+though the light lower ended up on Saturday the 19th after work took Friday —
+which is where the standing shape puts it anyway; and the deload week moves its
+heavy days to Monday and Tuesday because the rest of it is away. When shifting rows, keep a heavy day off the weekend.
 
 **Ticks are derived, never clicked.** A day is done when `sessions.csv` carries a
 session of the planned type on that date. Nothing on the page saves anything;
