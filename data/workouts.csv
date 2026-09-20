@@ -236,3 +236,4 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-09-19-11,2026-09-19,light-lower,Smith machine squat,compound,2,5,150,,,,logged
 2026-09-19-12,2026-09-19,light-lower,Lying leg curl,isolation,1,5,120,,,"The one lift off its planned number: the row called 110 for both sets and the first took 120, the heavy-day weight held since Aug 28, before backing off to 110 for the second. Logged as the two weights they were rather than averaged, since the 120 is the set that says something.",logged
 2026-09-19-13,2026-09-19,light-lower,Lying leg curl,isolation,2,5,110,,,,logged
+2026-09-20-01,2026-09-20,other,Bike riding,finisher,1,,,40,,"Learning to ride, forty minutes, and the whole session. Kind is finisher only because the set schema has no slot for a standalone timed bout -- the Aug 9 sled-only row uses the same one. No distance, route or intensity was reported and none is invented.",logged
