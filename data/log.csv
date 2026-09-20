@@ -431,3 +431,6 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-09-20-lunch-eggs,2026-09-20,lunch,"Egg, large","two, cooked into the Maggi",,1 large egg (50 g),2,72,6.3,0.4,4.8,,,,staple,2026-09-20T17:43:21.000Z
 2026-09-20-lunch-bell-pepper,2026-09-20,lunch,"Red bell pepper, raw","half a medium; red assumed, cooked into the Maggi",,1 medium (~119 g),0.5,37,1.2,7.2,0.4,2.5,5,5,staple,2026-09-20T17:43:21.000Z
 2026-09-20-lunch-choc-chip-cookie,2026-09-20,lunch,Chocolate chip cookie,"homemade, made with butter",,1 cookie (28 g),1,137,1.6,16.3,8,0.5,10,85,usda,2026-09-20T17:43:21.000Z
+2026-09-20-snack-smoothie,2026-09-20,snack,Protein Berry Smoothie,double fruit; the second 3/4 cup of berries is its own row,,1 batch (~515 ml),1,505,76,35.5,6,4,24,265,recipe,2026-09-20T19:33:02.000Z
+2026-09-20-snack-smoothie-extra-berries,2026-09-20,snack,Frozen mixed berries,the second 3/4 cup in the double-fruit smoothie,,3/4 cup (~105 g),1,60,2,13.5,0.4,4,11,4,staple,2026-09-20T19:33:02.000Z
+2026-09-20-snack-vickies-cacio-e-pepe,2026-09-20,snack,Kettle Cooked Potato Chips,Cacio e Pepe,Miss Vickie's,27 chips (50 g),1.6,260,3,29,15,2,2,250,packaged,2026-09-20T19:33:02.000Z
