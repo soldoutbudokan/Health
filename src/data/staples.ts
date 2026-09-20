@@ -444,6 +444,17 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["cookie", "molasses", "ginger", "dessert", "snack", "homemade"],
   },
   {
+    id: "staple-chocolate-chip-cookie",
+    name: "Chocolate chip cookie",
+    variant: "homemade, made with butter",
+    source: "usda",
+    per: "1 cookie (28 g)",
+    gramsPerServing: 28,
+    macros: { calories: 137, protein: 1.6, carbs: 16.3, fat: 8, fiber: 0.5, sugar: 10, sodium: 85 },
+    note: "USDA 'Cookies, chocolate chip, prepared from recipe, made with butter' (488 kcal / 5.7 g protein / 58.2 g carbs / 28.4 g fat per 100 g) scaled to its own 28 g cookie, added September 20, 2026. That row is the from-scratch one rather than a packaged panel, which is what a home-baked cookie wants; no recipe was given, so nothing here is a weighed batch. Figures were checked against published listings of the row rather than recalled, and FoodData Central was unreachable from here; fibre and sodium come off the same listings and sugars did not, so the 10 g is estimated from the type at roughly a third of the weight -- read it as 8-13 g. Atwater lands at 144 against 137, +5%. SIZE IS THE VARIABLE and belongs in the servings multiplier: 28 g is a plain drop cookie about 2.5 inches across, and a thick bakery-style one runs 45-55 g, so log one of those as 1.6-2 servings rather than editing this row. A weighed batch divided by its yield would retire the band, as the molasses entry above says.",
+    tags: ["cookie", "chocolate chip", "dessert", "snack", "homemade", "usda"],
+  },
+  {
     id: "staple-rice-cooked-cup",
     name: "White rice, cooked",
     source: "staple",
