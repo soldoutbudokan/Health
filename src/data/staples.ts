@@ -1020,6 +1020,17 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["bread", "whole wheat", "wholemeal", "toast", "carb", "usda"],
   },
   {
+    id: "staple-dinner-roll",
+    name: "Dinner roll",
+    variant: "plain, commercially prepared",
+    source: "usda",
+    per: "1 roll (28 g)",
+    gramsPerServing: 28,
+    macros: { calories: 87, protein: 3, carbs: 14, fat: 1.8, fiber: 1, sodium: 131 },
+    note: "USDA 'Rolls, dinner, plain, commercially prepared (includes brown-and-serve)' (310 kcal / 10.86 g protein / 50.04 g carbs / 6.47 g fat / 467 mg sodium per 100 g) scaled to USDA's own one-roll weight of 28 g, added September 20, 2026 when one went beside a stew. The per-100 g figures were confirmed against published listings of that row rather than recalled; FoodData Central itself was unreachable from here, and fibre and sugars are the two lines those listings did not carry. Fibre is therefore estimated at 1 g, read across from the white sandwich slice above, which is the same refined flour at the same weight — call it plus or minus 0.5 g; sugars have no such basis and stay blank. Atwater lands at 84 against 87, -3%. ROLL SIZE IS THE REAL VARIABLE and should log through the servings multiplier: 28 g is a small pan roll, a table or bakery roll runs 40-55 g, so log 1.4 to 2 servings rather than editing this row.",
+    tags: ["dinner roll", "roll", "bun", "bread", "side", "carb", "usda"],
+  },
+  {
     id: "staple-avocado",
     name: "Avocado",
     variant: "raw, flesh only",
