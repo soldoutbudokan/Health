@@ -125,7 +125,7 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   "block-2": {
     label: "Block 2",
     blurb:
-      "Where the goals close on the all-goes-well line: trap bar 300 on Oct 27, ten pullups on Nov 8, squat 225 on Nov 10.",
+      "Where the goals close on the all-goes-well line: ten pullups on Nov 8, then trap bar 300 and squat 225 on Nov 17.",
   },
   contingency: {
     label: "Contingency",

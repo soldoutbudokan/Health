@@ -194,9 +194,13 @@ The plan file never records what happened; that is `sessions.csv` and
 
 **The all-goes-well line is the plan.** Belt session September 14 at 270 and 185,
 the one 10 lb belt jump on September 22, five pounds a heavy session after that,
-a deload in the week of October 12 placed around the October 14–16 off days,
-and the goals closing October 27 (trap bar), November 8 (pullups) and November 10
-(squat). Rows after November 10 are contingency, for stalls. **When the three
+a deload in the week of October 12 placed around the October 14–16 off days.
+Redrawn September 22: the trap bar took its jump to 280 for one set, but the 260
+back-off lost form on the fifth rep and the squat was cut to 135. So the trap bar
+restarts at 270 on September 29 and climbs in fives, and the squat takes its
+skipped jump to 195 the same day and runs its old line a week late. The goals
+now close November 8 (pullups) and November 17 (trap bar and squat together).
+Rows after November 17 are contingency, for stalls. **When the three
 close, the last stretch is over** and the next block is cardio, whatever the
 bench is doing — the owner said so on September 7. Don't extend the stretch to
 chase the bench.

@@ -249,3 +249,13 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-09-21-10,2026-09-21,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
 2026-09-21-11,2026-09-21,heavy-upper,Cable row,compound,1,6,130,,,2 x 6 at 130 because the stack goes 130 to 140 and the plan said 135. Six at 130 is about the same work as five at 135. Same problem again on Oct 8.,logged
 2026-09-21-12,2026-09-21,heavy-upper,Cable row,compound,2,6,130,,,,logged
+2026-09-22-01,2026-09-22,heavy-lower,Sled push + pull,warmup,1,,,,,As the program says; time not noted.,logged
+2026-09-22-02,2026-09-22,heavy-lower,Seated pancakes,warmup,1,,,,,,logged
+2026-09-22-03,2026-09-22,heavy-lower,Jumps,jump,1,4,,,,"Bodyweight, as the program says.",logged
+2026-09-22-04,2026-09-22,heavy-lower,Jumps,jump,2,4,,,,,logged
+2026-09-22-05,2026-09-22,heavy-lower,Trap bar deadlift,compound,1,5,280,,9,"280 was hard but doable, maybe one more rep in me. Dropped to 260 for the second set; first four fine, lost form on the fifth and scared myself.",logged
+2026-09-22-06,2026-09-22,heavy-lower,Trap bar deadlift,compound,2,5,260,,10,,logged
+2026-09-22-07,2026-09-22,heavy-lower,Smith machine squat,compound,1,5,135,,,Cut to 135 after the deadlift scare. The plan said 195.,logged
+2026-09-22-08,2026-09-22,heavy-lower,Smith machine squat,compound,2,5,135,,,,logged
+2026-09-22-09,2026-09-22,heavy-lower,Lying leg curl,isolation,1,6,120,,,120 x 6 as planned; the stack has no 125.,logged
+2026-09-22-10,2026-09-22,heavy-lower,Lying leg curl,isolation,2,6,120,,,,logged
