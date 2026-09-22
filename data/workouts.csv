@@ -1,24 +1,24 @@
 id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,source
-2025-02-28-01,2025-02-28,,Smith machine squat,compound,1,6,60,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
-2025-12-12-01,2025-12-12,,Pullups,compound,1,3,,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
-2026-01-03-01,2026-01-03,,Pullups,compound,1,4,,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
-2026-01-08-01,2026-01-08,,Bench press,compound,1,5,135,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
-2026-01-08-02,2026-01-08,,Dips,isolation,1,3,,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
-2026-01-17-01,2026-01-17,,Bench press,compound,1,5,145,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
-2026-01-18-01,2026-01-18,,Smith machine squat,compound,1,5,145,,,From the old spreadsheet's progression log; the rest of that session was not recorded.,sheet
-2026-01-22-01,2026-01-22,,Trap bar deadlift,compound,1,5,195,,,"From the old spreadsheet's progression log, where it is recorded as ""Deadlift"" and read here as the trap bar.",sheet
-2026-08-01-01,2026-08-01,,Trap bar deadlift,compound,1,5,260,,,August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.,handoff
-2026-08-01-02,2026-08-01,,Smith machine squat,compound,1,5,185,,,August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.,handoff
-2026-08-01-03,2026-08-01,,Bench press,compound,1,5,165,,,August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.,handoff
-2026-08-01-04,2026-08-01,,Pullups,compound,1,7,,,,August 2026 baseline from docs/training-plan.md. The old routine sheet says 8; the handoff is the later document and wins.,handoff
-2026-08-01-05,2026-08-01,,Dips,isolation,1,10,,,,August 2026 baseline from docs/training-plan.md. Dated the 1st because the document gives the month only.,handoff
+2025-02-28-01,2025-02-28,,Smith machine squat,compound,1,6,60,,,From the old spreadsheet. The rest of that session wasn't recorded.,sheet
+2025-12-12-01,2025-12-12,,Pullups,compound,1,3,,,,From the old spreadsheet. The rest of that session wasn't recorded.,sheet
+2026-01-03-01,2026-01-03,,Pullups,compound,1,4,,,,From the old spreadsheet. The rest of that session wasn't recorded.,sheet
+2026-01-08-01,2026-01-08,,Bench press,compound,1,5,135,,,From the old spreadsheet. The rest of that session wasn't recorded.,sheet
+2026-01-08-02,2026-01-08,,Dips,isolation,1,3,,,,From the old spreadsheet. The rest of that session wasn't recorded.,sheet
+2026-01-17-01,2026-01-17,,Bench press,compound,1,5,145,,,From the old spreadsheet. The rest of that session wasn't recorded.,sheet
+2026-01-18-01,2026-01-18,,Smith machine squat,compound,1,5,145,,,From the old spreadsheet. The rest of that session wasn't recorded.,sheet
+2026-01-22-01,2026-01-22,,Trap bar deadlift,compound,1,5,195,,,"From the old spreadsheet, where it just says ""Deadlift"". Taken to be the trap bar.",sheet
+2026-08-01-01,2026-08-01,,Trap bar deadlift,compound,1,5,260,,,August baseline from the training plan. Dated the 1st because the plan only gives the month.,handoff
+2026-08-01-02,2026-08-01,,Smith machine squat,compound,1,5,185,,,August baseline from the training plan. Dated the 1st because the plan only gives the month.,handoff
+2026-08-01-03,2026-08-01,,Bench press,compound,1,5,165,,,August baseline from the training plan. Dated the 1st because the plan only gives the month.,handoff
+2026-08-01-04,2026-08-01,,Pullups,compound,1,7,,,,"August baseline from the training plan. The old sheet says 8, but the plan is newer.",handoff
+2026-08-01-05,2026-08-01,,Dips,isolation,1,10,,,,August baseline from the training plan. Dated the 1st because the plan only gives the month.,handoff
 2026-08-04-01,2026-08-04,heavy-upper,Sled push + pull,warmup,1,,,6,,,logged
 2026-08-04-02,2026-08-04,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
 2026-08-04-03,2026-08-04,heavy-upper,Pullups,compound,1,5,,,,,logged
 2026-08-04-04,2026-08-04,heavy-upper,Pullups,compound,2,5,,,,,logged
 2026-08-04-05,2026-08-04,heavy-upper,Bench press,compound,1,5,155,,,,logged
 2026-08-04-06,2026-08-04,heavy-upper,Bench press,compound,2,5,135,,,,logged
-2026-08-04-07,2026-08-04,heavy-upper,Incline bench press,compound,1,5,100,,,Not in the program — the handoff rejected incline in favour of more flat volume.,logged
+2026-08-04-07,2026-08-04,heavy-upper,Incline bench press,compound,1,5,100,,,Not in the program. The plan dropped incline for more flat bench.,logged
 2026-08-04-08,2026-08-04,heavy-upper,Incline bench press,compound,2,5,90,,,,logged
 2026-08-04-09,2026-08-04,heavy-upper,Cable row,compound,1,5,130,,,,logged
 2026-08-04-10,2026-08-04,heavy-upper,Cable row,compound,2,5,130,,,,logged
@@ -40,212 +40,212 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-08-05-10,2026-08-05,heavy-lower,Lying hamstring curl,isolation,2,5,110,,,,logged
 2026-08-05-11,2026-08-05,heavy-lower,Sled,finisher,1,,,7,,,logged
 2026-08-08-01,2026-08-08,light-upper,Shoulder warmup,warmup,1,,,,,,logged
-2026-08-08-02,2026-08-08,light-upper,Pullups,compound,1,5,,,8.5,"1-2 RIR on all three sets. Third set of the session rather than the programmed two, to carry the pulling volume dropped when the cable row was cut for the back.",logged
+2026-08-08-02,2026-08-08,light-upper,Pullups,compound,1,5,,,8.5,1-2 reps in reserve on all three sets. Did a third set to make up for cutting the cable row.,logged
 2026-08-08-03,2026-08-08,light-upper,Pullups,compound,2,5,,,8.5,,logged
 2026-08-08-04,2026-08-08,light-upper,Pullups,compound,3,5,,,8.5,,logged
-2026-08-08-05,2026-08-08,light-upper,Bench press,compound,1,8,135,,8,"Reps confirmed as 8 on Aug 9, having first been recorded as the prescribed count on the strength of the weight matching. 2 RIR.",logged
+2026-08-08-05,2026-08-08,light-upper,Bench press,compound,1,8,135,,8,2 reps in reserve. Reps confirmed as 8 the next day.,logged
 2026-08-08-06,2026-08-08,light-upper,Bench press,compound,2,8,135,,8,,logged
-2026-08-08-07,2026-08-08,light-upper,Bench press,compound,3,8,135,,9,"RPE 9 reads ""2 RIR every set except the last one"" as the last set being the hard one; flip this to 7 if it was the easy one instead. The rep count is confirmed, this reading is not.",logged
-2026-08-08-08,2026-08-08,light-upper,Standing curl,isolation,1,6,30,,,"Substituted for the programmed preacher curl -- benches were taken. Implement not stated, so this is 30 lbs as reported and not necessarily comparable to the 25 lbs logged for preacher curl on Aug 4.",logged
+2026-08-08-07,2026-08-08,light-upper,Bench press,compound,3,8,135,,9,"Took ""2 in reserve on every set but the last"" to mean the last was the hard one. If it was the easy one, make this RPE 7.",logged
+2026-08-08-08,2026-08-08,light-upper,Standing curl,isolation,1,6,30,,,"Instead of the preacher curl, since the benches were taken. Didn't say barbell or dumbbells, so this 30 may not compare with the 25 preacher.",logged
 2026-08-08-09,2026-08-08,light-upper,Standing curl,isolation,2,6,30,,,,logged
-2026-08-08-10,2026-08-08,light-upper,Standing Y raise,isolation,1,10,15,,,Standing with 15 lb dumbbells rather than the programmed seated 20 -- benches and the 20s were both taken.,logged
+2026-08-08-10,2026-08-08,light-upper,Standing Y raise,isolation,1,10,15,,,Standing with 15s instead of seated with 20s. The benches and the 20s were taken.,logged
 2026-08-08-11,2026-08-08,light-upper,Standing Y raise,isolation,2,10,15,,,,logged
-2026-08-08-12,2026-08-08,light-upper,Dips,isolation,1,10,,,,"Reported easy, so the full programmed 10 was taken. First time at 10 in the logged era -- Aug 4 was 7.",logged
-2026-08-08-13,2026-08-08,light-upper,Lat pulldown,compound,1,8,110,,,"First lat pulldown in the log, so this is a baseline rather than a progression.",logged
+2026-08-08-12,2026-08-08,light-upper,Dips,isolation,1,10,,,,"Felt easy, so did all 10. First time at 10; Aug 4 was 7.",logged
+2026-08-08-13,2026-08-08,light-upper,Lat pulldown,compound,1,8,110,,,"First lat pulldown logged, so this is the starting point.",logged
 2026-08-08-14,2026-08-08,light-upper,Lat pulldown,compound,2,8,110,,,,logged
 2026-08-08-15,2026-08-08,light-upper,Cable fly,isolation,1,6,35,,,Deliberately light.,logged
 2026-08-08-16,2026-08-08,light-upper,Cable fly,isolation,2,6,35,,,,logged
-2026-08-09-01,2026-08-09,conditioning,Sled,finisher,1,,,50,,Torque M4 Tank at full resistance for the whole fifty minutes.,logged
+2026-08-09-01,2026-08-09,conditioning,Sled,finisher,1,,,50,,"Torque M4 Tank at full resistance, all 50 minutes.",logged
 2026-08-13-01,2026-08-13,full-body,Sled push + pull,warmup,1,,,6,,,logged
 2026-08-13-02,2026-08-13,full-body,Seated pancakes,warmup,1,,,,,,logged
 2026-08-13-03,2026-08-13,full-body,Shoulder warmup,warmup,1,,,,,,logged
-2026-08-13-04,2026-08-13,full-body,Jumps,jump,1,4,,,,"Bodyweight, as the program prescribes.",logged
+2026-08-13-04,2026-08-13,full-body,Jumps,jump,1,4,,,,"Bodyweight, as the program says.",logged
 2026-08-13-05,2026-08-13,full-body,Jumps,jump,2,4,,,,,logged
-2026-08-13-06,2026-08-13,full-body,Trap bar deadlift,compound,1,5,240,,,"Reported quite easy. The re-entry load the plan prescribes, eight days after the session the lower-back strain followed.",logged
+2026-08-13-06,2026-08-13,full-body,Trap bar deadlift,compound,1,5,240,,,"Quite easy. The plan's re-entry weight, eight days after the back strain.",logged
 2026-08-13-07,2026-08-13,full-body,Trap bar deadlift,compound,2,5,240,,,,logged
-2026-08-13-08,2026-08-13,full-body,Bench press,compound,1,5,150,,,"150 rather than the planned 155 because the plates to make 155 were not available. Against August 4's 155 x 5 top set this is a 5 lb step down taken for equipment reasons, not a performance reading.",logged
+2026-08-13-08,2026-08-13,full-body,Bench press,compound,1,5,150,,,"150, not 155, because the plates for 155 weren't there.",logged
 2026-08-13-09,2026-08-13,full-body,Bench press,compound,2,5,140,,,,logged
 2026-08-13-10,2026-08-13,full-body,Bench press,compound,3,5,140,,,,logged
-2026-08-13-11,2026-08-13,full-body,Pullups,compound,1,5,,,,"Reported quite hard. Taken fifth in the session, after the deadlifts and the bench.",logged
+2026-08-13-11,2026-08-13,full-body,Pullups,compound,1,5,,,,"Quite hard. Did them fifth, after the deadlifts and bench.",logged
 2026-08-13-12,2026-08-13,full-body,Pullups,compound,2,5,,,,,logged
-2026-08-13-13,2026-08-13,full-body,Smith machine squat,compound,1,5,160,,,"All ten reps completed, against August 5's 175 for 5 then 4. Deliberately lighter.",logged
+2026-08-13-13,2026-08-13,full-body,Smith machine squat,compound,1,5,160,,,"All ten reps. Lighter on purpose than Aug 5's 175, which went 5 then 4.",logged
 2026-08-13-14,2026-08-13,full-body,Smith machine squat,compound,2,5,160,,,,logged
-2026-08-13-15,2026-08-13,full-body,Dips,isolation,1,10,,,,"Full programmed ten, matching August 8. This goal is already at target, so the job here is maintenance.",logged
-2026-08-15-01,2026-08-15,stretch,Slow single-leg RDL,mobility,1,5,,,,"Bodyweight, 5 sec down, free arm reaching forward, pause at the bottom -- the away substitute for the 35 lb bell version. Reps are per side.",logged
+2026-08-13-15,2026-08-13,full-body,Dips,isolation,1,10,,,,"All ten again. Already at the goal, so this just keeps it.",logged
+2026-08-15-01,2026-08-15,stretch,Slow single-leg RDL,mobility,1,5,,,,"Bodyweight, 5 seconds down, free arm reaching forward, pause at the bottom. Stands in for the 35 lb bell version. Reps per side.",logged
 2026-08-15-02,2026-08-15,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
-2026-08-15-03,2026-08-15,stretch,Deep squat hold,mobility,1,,,0.75,,Doorway version -- gripping the frame and leaning back into the bottom. The grip is the counterweight the goblet pry uses the 25 lb bell for.,logged
+2026-08-15-03,2026-08-15,stretch,Deep squat hold,mobility,1,,,0.75,,Doorway version: hold the frame and lean back into the bottom. The grip does what the 25 lb bell does in the goblet pry.,logged
 2026-08-15-04,2026-08-15,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
-2026-08-15-05,2026-08-15,stretch,Deep pushup hold,mobility,1,,,0.3,,"Prescribed 15-20 sec; 0.3 min is the midpoint of that range, not a stopwatch reading.",logged
+2026-08-15-05,2026-08-15,stretch,Deep pushup hold,mobility,1,,,0.3,,"Plan says 15-20 seconds; 0.3 min is the middle, not a timed hold.",logged
 2026-08-15-06,2026-08-15,stretch,Deep pushup hold,mobility,2,,,0.3,,,logged
-2026-08-15-07,2026-08-15,stretch,Active hang,mobility,1,,,0.42,,Prescribed 20-30 sec; 0.42 min is the midpoint. WHETHER THIS WAS A BAR HANG OR THE CHAIR VERSION WAS NOT RECORDED -- the routine gives both and they load the lats differently.,logged
+2026-08-15-07,2026-08-15,stretch,Active hang,mobility,1,,,0.42,,Plan says 20-30 seconds; 0.42 min is the middle. Didn't note bar hang or chair version.,logged
 2026-08-15-08,2026-08-15,stretch,Active hang,mobility,2,,,0.42,,,logged
-2026-08-15-09,2026-08-15,stretch,Pogo hops,jump,1,20,,,,"Tendon stiffness, ahead of the calf raises.",logged
+2026-08-15-09,2026-08-15,stretch,Pogo hops,jump,1,20,,,,"For tendon stiffness, before the calf raises.",logged
 2026-08-15-10,2026-08-15,stretch,Pogo hops,jump,2,20,,,,,logged
-2026-08-15-11,2026-08-15,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, pause in the stretch. Per side. The supinated calf raise is folded in here as an outside-edge bias on these same sets, which is how the routine prescribes it -- separate rows would double-count them.",logged
+2026-08-15-11,2026-08-15,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 seconds down, pause at the bottom, per side. Leaned onto the outside edge on these for the supinated version rather than doing separate sets.",logged
 2026-08-15-12,2026-08-15,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
-2026-08-15-13,2026-08-15,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
+2026-08-15-13,2026-08-15,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 seconds down.",logged
 2026-08-15-14,2026-08-15,stretch,Reverse Nordic,mobility,2,5,,,,,logged
-2026-08-16-01,2026-08-16,stretch,Slow single-leg RDL,mobility,1,5,,,,"Second run of the away routine, same shape as August 15. Reps are per side.",logged
+2026-08-16-01,2026-08-16,stretch,Slow single-leg RDL,mobility,1,5,,,,Same as the 15th. Reps per side.,logged
 2026-08-16-02,2026-08-16,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
-2026-08-16-03,2026-08-16,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the prescribed 45 sec, not a stopwatch reading.",logged
+2026-08-16-03,2026-08-16,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the planned 45 seconds, not a timed hold.",logged
 2026-08-16-04,2026-08-16,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
-2026-08-16-05,2026-08-16,stretch,Deep pushup hold,mobility,1,,,0.3,,"Prescribed 15-20 sec; 0.3 min is the midpoint of that range, not a stopwatch reading.",logged
+2026-08-16-05,2026-08-16,stretch,Deep pushup hold,mobility,1,,,0.3,,"Plan says 15-20 seconds; 0.3 min is the middle, not a timed hold.",logged
 2026-08-16-06,2026-08-16,stretch,Deep pushup hold,mobility,2,,,0.3,,,logged
-2026-08-16-07,2026-08-16,stretch,Active hang,mobility,1,,,0.42,,"Prescribed 20-30 sec; 0.42 min is the midpoint. AS ON THE 15TH, WHETHER THIS WAS A BAR HANG OR THE CHAIR VERSION WAS NOT RECORDED.",logged
+2026-08-16-07,2026-08-16,stretch,Active hang,mobility,1,,,0.42,,Plan says 20-30 seconds; 0.42 min is the middle. Didn't note bar hang or chair version.,logged
 2026-08-16-08,2026-08-16,stretch,Active hang,mobility,2,,,0.42,,,logged
 2026-08-16-09,2026-08-16,stretch,Pogo hops,jump,1,20,,,,,logged
 2026-08-16-10,2026-08-16,stretch,Pogo hops,jump,2,20,,,,,logged
-2026-08-16-11,2026-08-16,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, per side. The outside-edge bias was not reported today, so these are plain slow calf raises.",logged
+2026-08-16-11,2026-08-16,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 seconds down, per side. No outside-edge lean noted, so plain calf raises.",logged
 2026-08-16-12,2026-08-16,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
-2026-08-16-13,2026-08-16,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
+2026-08-16-13,2026-08-16,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 seconds down.",logged
 2026-08-16-14,2026-08-16,stretch,Reverse Nordic,mobility,2,5,,,,,logged
-2026-08-18-01,2026-08-18,stretch,Slow single-leg RDL,mobility,1,5,,,,"Third run of the away routine. The doses on this day's rows are the routine's prescription, not a report. Reps are per side.",logged
+2026-08-18-01,2026-08-18,stretch,Slow single-leg RDL,mobility,1,5,,,,"Today's numbers are the plan's doses, not a report. Reps per side.",logged
 2026-08-18-02,2026-08-18,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
-2026-08-18-03,2026-08-18,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the prescribed 45 sec, not a stopwatch reading.",logged
+2026-08-18-03,2026-08-18,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the planned 45 seconds, not a timed hold.",logged
 2026-08-18-04,2026-08-18,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
-2026-08-18-05,2026-08-18,stretch,Deep pushup hold,mobility,1,,,0.3,,Prescribed 15-20 sec; 0.3 min is the midpoint of that range.,logged
+2026-08-18-05,2026-08-18,stretch,Deep pushup hold,mobility,1,,,0.3,,"Plan says 15-20 seconds; 0.3 min is the middle, not a timed hold.",logged
 2026-08-18-06,2026-08-18,stretch,Deep pushup hold,mobility,2,,,0.3,,,logged
-2026-08-18-07,2026-08-18,stretch,Active hang,mobility,1,,,0.42,,"Prescribed 20-30 sec; 0.42 min is the midpoint. AS ON THE 15TH AND 16TH, WHETHER THIS WAS A BAR HANG OR THE CHAIR VERSION WAS NOT RECORDED.",logged
+2026-08-18-07,2026-08-18,stretch,Active hang,mobility,1,,,0.42,,Plan says 20-30 seconds; 0.42 min is the middle. Didn't note bar hang or chair version.,logged
 2026-08-18-08,2026-08-18,stretch,Active hang,mobility,2,,,0.42,,,logged
 2026-08-18-09,2026-08-18,stretch,Pogo hops,jump,1,20,,,,,logged
 2026-08-18-10,2026-08-18,stretch,Pogo hops,jump,2,20,,,,,logged
-2026-08-18-11,2026-08-18,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, per side. AS ON THE 16TH, THE OUTSIDE-EDGE BIAS WAS NOT REPORTED, so these are logged as plain slow calf raises and the supinated variant is not claimed.",logged
+2026-08-18-11,2026-08-18,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 seconds down, per side. No outside-edge lean noted, so plain calf raises.",logged
 2026-08-18-12,2026-08-18,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
-2026-08-18-13,2026-08-18,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
+2026-08-18-13,2026-08-18,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 seconds down.",logged
 2026-08-18-14,2026-08-18,stretch,Reverse Nordic,mobility,2,5,,,,,logged
-2026-08-19-01,2026-08-19,stretch,Slow single-leg RDL,mobility,1,5,,,,"Fourth run of the away routine. As on the 18th, the doses on this day's rows are the routine's prescription, not a report. Reps are per side.",logged
+2026-08-19-01,2026-08-19,stretch,Slow single-leg RDL,mobility,1,5,,,,"Today's numbers are the plan's doses, not a report. Reps per side.",logged
 2026-08-19-02,2026-08-19,stretch,Slow single-leg RDL,mobility,2,5,,,,,logged
-2026-08-19-03,2026-08-19,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the prescribed 45 sec, not a stopwatch reading.",logged
+2026-08-19-03,2026-08-19,stretch,Deep squat hold,mobility,1,,,0.75,,"Doorway version. 0.75 min is the planned 45 seconds, not a timed hold.",logged
 2026-08-19-04,2026-08-19,stretch,Deep squat hold,mobility,2,,,0.75,,,logged
-2026-08-19-05,2026-08-19,stretch,Deep pushup hold,mobility,1,,,0.3,,Prescribed 15-20 sec; 0.3 min is the midpoint of that range.,logged
+2026-08-19-05,2026-08-19,stretch,Deep pushup hold,mobility,1,,,0.3,,"Plan says 15-20 seconds; 0.3 min is the middle, not a timed hold.",logged
 2026-08-19-06,2026-08-19,stretch,Deep pushup hold,mobility,2,,,0.3,,,logged
-2026-08-19-07,2026-08-19,stretch,Active hang,mobility,1,,,0.42,,Prescribed 20-30 sec; 0.42 min is the midpoint. Bar or chair version not recorded.,logged
+2026-08-19-07,2026-08-19,stretch,Active hang,mobility,1,,,0.42,,Plan says 20-30 seconds; 0.42 min is the middle. Didn't note bar hang or chair version.,logged
 2026-08-19-08,2026-08-19,stretch,Active hang,mobility,2,,,0.42,,,logged
 2026-08-19-09,2026-08-19,stretch,Pogo hops,jump,1,20,,,,,logged
 2026-08-19-10,2026-08-19,stretch,Pogo hops,jump,2,20,,,,,logged
-2026-08-19-11,2026-08-19,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 sec down, per side. The outside-edge bias was not reported, so these are plain slow calf raises.",logged
+2026-08-19-11,2026-08-19,stretch,Slow single-leg calf raise,mobility,1,10,,,,"Off a step, 3 seconds down, per side. No outside-edge lean noted, so plain calf raises.",logged
 2026-08-19-12,2026-08-19,stretch,Slow single-leg calf raise,mobility,2,10,,,,,logged
-2026-08-19-13,2026-08-19,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 sec down.",logged
+2026-08-19-13,2026-08-19,stretch,Reverse Nordic,mobility,1,5,,,,"Cushion under the knees, hips straight, ribs down, 3-5 seconds down.",logged
 2026-08-19-14,2026-08-19,stretch,Reverse Nordic,mobility,2,5,,,,,logged
-2026-08-20-01,2026-08-20,heavy-lower,Sled push + pull,warmup,1,,,8,,"Eight minutes, inside the plan's 5-10. Available at the start but not at the end, which is why the finisher slot is empty.",logged
-2026-08-20-02,2026-08-20,heavy-lower,Jumps,jump,1,4,,,,"Bodyweight, as prescribed. Taken second rather than third, ahead of the seated pancakes -- fresher, which is the point of putting jumps early.",logged
+2026-08-20-01,2026-08-20,heavy-lower,Sled push + pull,warmup,1,,,8,,"Eight minutes. The sled was gone by the end, so no finisher.",logged
+2026-08-20-02,2026-08-20,heavy-lower,Jumps,jump,1,4,,,,"Bodyweight. Did them second, before the pancakes, while fresh.",logged
 2026-08-20-03,2026-08-20,heavy-lower,Jumps,jump,2,4,,,,,logged
-2026-08-20-04,2026-08-20,heavy-lower,Seated pancakes,warmup,1,,,,,"Reported as 2 sets of 12-15 reps. The plan gives this slot as ~5 min and the exact count was not recorded, so reps are left blank.",logged
+2026-08-20-04,2026-08-20,heavy-lower,Seated pancakes,warmup,1,,,,,"2 sets of 12-15. Exact reps not noted, so left blank.",logged
 2026-08-20-05,2026-08-20,heavy-lower,Seated pancakes,warmup,2,,,,,,logged
-2026-08-20-06,2026-08-20,heavy-lower,Trap bar deadlift,compound,1,5,260,,,"260 for a clean 2x5, reported medium-hard with room left -- the Aug 5 weight recovered in full, fifteen days on and after the strain that followed that session. Next heavy lower goes to 265.",logged
+2026-08-20-06,2026-08-20,heavy-lower,Trap bar deadlift,compound,1,5,260,,,"Clean 2x5, medium-hard with some left. Back to the Aug 5 weight 15 days later. Next heavy lower: 265.",logged
 2026-08-20-07,2026-08-20,heavy-lower,Trap bar deadlift,compound,2,5,260,,,,logged
-2026-08-20-08,2026-08-20,heavy-lower,Bulgarian split squat,compound,1,5,30,,,"Substituted for the Smith machine squat, which was taken. Two 30 lb dumbbells, so weight_lbs is the per-dumbbell 30 as on the Aug 8 Y raise; 60 lbs total. Reps recorded as 5 per leg, the conventional reading of what was reported rather than a counted figure. Deliberately not aliased to the Smith squat in training.ts -- different exercise, and the squat goal must not be fed by it.",logged
+2026-08-20-08,2026-08-20,heavy-lower,Bulgarian split squat,compound,1,5,30,,,"Instead of the Smith squat, which was taken. Two 30 lb dumbbells; the weight is per dumbbell. 5 per leg.",logged
 2026-08-20-09,2026-08-20,heavy-lower,Bulgarian split squat,compound,2,5,30,,,,logged
-2026-08-22-01,2026-08-22,light-upper,Sled push + pull,warmup,1,,,6,,"Six minutes, inside the plan's 5-10.",logged
-2026-08-22-02,2026-08-22,light-upper,Shoulder warmup,warmup,1,,12,,,"First shoulder warmup in the log to carry a weight: 12 lbs, up from 8. Implement not stated.",logged
-2026-08-22-03,2026-08-22,light-upper,Pullups,compound,1,8,,,,"All-out test set, the first since the 7 of Aug 1 that set the goal baseline. Eight reps is a new best and the goal now reads 8 of 10. Taken second in the session and fresh, as the plan asks; reported as having taken it out of him, which the 3 on the next set confirms.",logged
-2026-08-22-04,2026-08-22,light-upper,Pullups,compound,2,3,,,,"Three against the usual 4-5 clean. This is the priced cost of a true all-out set rather than a fall-off, and the reason the plan tests only every few weeks.",logged
-2026-08-22-05,2026-08-22,light-upper,Bench press,compound,1,8,140,,,"140 x 8 hits the 3 x 8 @ 135-145 prescription at the weight planned this morning, and is a 5 lb step on the 135 x 8 of Aug 8. Reported as cooked straight after this set.",logged
+2026-08-22-01,2026-08-22,light-upper,Sled push + pull,warmup,1,,,6,,Six minutes.,logged
+2026-08-22-02,2026-08-22,light-upper,Shoulder warmup,warmup,1,,12,,,"12 lbs, up from 8. Didn't say what with.",logged
+2026-08-22-03,2026-08-22,light-upper,Pullups,compound,1,8,,,,"All-out test. 8 reps, up from 7 on Aug 1, a new best. Did it second while fresh. Took a lot out of me.",logged
+2026-08-22-04,2026-08-22,light-upper,Pullups,compound,2,3,,,,"Only 3 after the all-out set. That's the cost of testing, and why the plan only tests every few weeks.",logged
+2026-08-22-05,2026-08-22,light-upper,Bench press,compound,1,8,140,,,"140 x 8, 5 more than Aug 8. Cooked right after this set.",logged
 2026-08-22-06,2026-08-22,light-upper,Bench press,compound,2,7,140,,,,logged
-2026-08-22-07,2026-08-22,light-upper,Bench press,compound,3,3,130,,,"Dropped 10 lbs and still only 3. Eighteen reps against the prescribed 24.",logged
-2026-08-22-08,2026-08-22,light-upper,Lat pulldown,compound,1,5,130,,,"130 at the prescribed 2 x 5, against the 110 x 8 of Aug 8 -- that set was under-loaded for the rep count rather than this being a 20 lb jump.",logged
+2026-08-22-07,2026-08-22,light-upper,Bench press,compound,3,3,130,,,Dropped 10 lbs and still only 3. 18 reps of the planned 24.,logged
+2026-08-22-08,2026-08-22,light-upper,Lat pulldown,compound,1,5,130,,,"130 for 2 x 5. Aug 8's 110 x 8 was too light, so this isn't really a 20 lb jump.",logged
 2026-08-22-09,2026-08-22,light-upper,Lat pulldown,compound,2,5,130,,,,logged
-2026-08-22-10,2026-08-22,light-upper,Cable row,compound,1,5,130,,,"Back in the session after Aug 8 cut it for the lower back, and matching the 130 x 5 of Aug 4.",logged
+2026-08-22-10,2026-08-22,light-upper,Cable row,compound,1,5,130,,,Back in after Aug 8 cut it for the back. Same 130 as Aug 4.,logged
 2026-08-22-11,2026-08-22,light-upper,Cable row,compound,2,5,130,,,,logged
-2026-08-22-12,2026-08-22,light-upper,Preacher curl,isolation,1,5,25,,,"The programmed preacher rather than the standing curl Aug 8 was forced into, at the 25 lbs of Aug 4.",logged
+2026-08-22-12,2026-08-22,light-upper,Preacher curl,isolation,1,5,25,,,"Back to the proper preacher curl after Aug 8's standing curls. 25, same as Aug 4.",logged
 2026-08-22-13,2026-08-22,light-upper,Preacher curl,isolation,2,5,25,,,,logged
-2026-08-22-14,2026-08-22,light-upper,Seated Y raise,isolation,1,5,20,,,"Confirmed seated the same day. First reported as just ""Y raises"", and logged as seated on the dose matching the prescription exactly; the confirmation settles it rather than leaving the reading open. This is the first seated Y raise since Aug 4, Aug 8 having been forced standing, and Aug 4 got only 4 reps at this weight -- so 5 completes the slot.",logged
+2026-08-22-14,2026-08-22,light-upper,Seated Y raise,isolation,1,5,20,,,"Confirmed seated. First seated Y raise since Aug 4, when 20 only got 4 reps.",logged
 2026-08-22-15,2026-08-22,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
-2026-08-23-01,2026-08-23,light-lower,Seated pancakes,warmup,1,,,5,,"Five minutes, the plan's ~5. The whole warmup today -- the sled was rained off, so this session opens on the pancakes alone.",logged
-2026-08-23-02,2026-08-23,light-lower,Trap bar deadlift,compound,1,5,210,,,"210 is 81% of the 260 pulled on Aug 20, inside the plan's 80-85% for a light day, and reported quite easy. Bar speed was the prescription rather than the weight, so easy is the target hit and not a light day left on the table.",logged
+2026-08-23-01,2026-08-23,light-lower,Seated pancakes,warmup,1,,,5,,"Five minutes. The whole warmup, since the sled was rained out.",logged
+2026-08-23-02,2026-08-23,light-lower,Trap bar deadlift,compound,1,5,210,,,"81% of Aug 20's 260, in the light-day range. Quite easy, which is the point on a speed day.",logged
 2026-08-23-03,2026-08-23,light-lower,Trap bar deadlift,compound,2,5,210,,,,logged
-2026-08-23-04,2026-08-23,light-lower,Smith machine squat,compound,1,5,150,,,"First Smith squat since Aug 13's 160 for 2x5; the machine was taken on Aug 20 and Bulgarians were substituted. 150 for a clean 2x5 reported quite easy, against the 175 that gave 5 then 4 on Aug 5.",logged
+2026-08-23-04,2026-08-23,light-lower,Smith machine squat,compound,1,5,150,,,"First Smith squat since Aug 13. Clean 2x5, quite easy.",logged
 2026-08-23-05,2026-08-23,light-lower,Smith machine squat,compound,2,5,150,,,,logged
-2026-08-23-06,2026-08-23,light-lower,Weighted jumps,jump,1,5,20,,,"First weighted jumps in the log, so this sets their baseline. Two 20 lb dumbbells, so weight_lbs is the per-dumbbell 20 as on the Aug 20 Bulgarian split squat; 40 lbs total. Taken after the lifts rather than first and fresh, which is the session's main deviation.",logged
+2026-08-23-06,2026-08-23,light-lower,Weighted jumps,jump,1,5,20,,,First weighted jumps. Two 20 lb dumbbells; the weight is per dumbbell. Did them after the lifts instead of first.,logged
 2026-08-23-07,2026-08-23,light-lower,Weighted jumps,jump,2,5,20,,,,logged
-2026-08-23-08,2026-08-23,light-lower,Depth jumps,jump,1,5,,,,"First depth jumps in the log. One set of five against the prescribed 2x5, the reduced dose agreed this morning for a first exposure on a sore lower back. Taken after the weighted jumps, which inverts the plan's one stated ordering rule.",logged
-2026-08-23-09,2026-08-23,light-lower,Lying leg curl,isolation,1,5,110,,,"First lying leg curl in the log -- the machine was broken on Aug 20 and the exercise has no prior weight to progress from, so 110 for a clean 2x5 reported quite easy is its baseline.",logged
+2026-08-23-08,2026-08-23,light-lower,Depth jumps,jump,1,5,,,,"First depth jumps. One set of 5 instead of two, since it was the first try and the back was sore. Did them after the weighted jumps, which is backwards.",logged
+2026-08-23-09,2026-08-23,light-lower,Lying leg curl,isolation,1,5,110,,,"First lying leg curl logged, since the machine was broken on Aug 20. 110 for 2x5, quite easy.",logged
 2026-08-23-10,2026-08-23,light-lower,Lying leg curl,isolation,2,5,110,,,,logged
-2026-08-26-01,2026-08-26,heavy-upper,Sled,warmup,1,,,6,,"Six minutes, inside the plan's 5-10.",logged
-2026-08-26-02,2026-08-26,heavy-upper,Shoulder warmup,warmup,1,,,5,,"Five minutes, matching the ~5 min prescription. First shoulder warmup in the log to carry a duration -- the Aug 22 one carried a weight, 12 lbs, and no time.",logged
-2026-08-26-03,2026-08-26,heavy-upper,Pullups,compound,1,5,,,,"Two clean fives, the top of the 2 x 4-5 prescription. First pullups since the Aug 22 all-out test that reached 8 and cost the set after it; this is the plan's ordinary dose rather than another test. Reported afterwards as feeling quite hard: the top of the range went up, but it did not come easy four days after that test.",logged
+2026-08-26-01,2026-08-26,heavy-upper,Sled,warmup,1,,,6,,Six minutes.,logged
+2026-08-26-02,2026-08-26,heavy-upper,Shoulder warmup,warmup,1,,,5,,Five minutes.,logged
+2026-08-26-03,2026-08-26,heavy-upper,Pullups,compound,1,5,,,,"2 x 5, top of the range. Felt quite hard four days after the test.",logged
 2026-08-26-04,2026-08-26,heavy-upper,Pullups,compound,2,5,,,,,logged
-2026-08-26-05,2026-08-26,heavy-upper,Bench press,compound,1,5,160,,,"160 x 5, a 5 lb step on the 155 of Aug 4 and the heaviest bench actually performed in the log -- the 165 above it is a handoff baseline stated in the training plan, not a set anyone recorded. Reported as not too bad, so there is room. Three sets of 5 meets the low end of the 3-4 x 5 prescription.",logged
-2026-08-26-06,2026-08-26,heavy-upper,Bench press,compound,2,5,145,,,"145 for both back-offs, 10 lbs above the 135 Aug 4 backed off to.",logged
+2026-08-26-05,2026-08-26,heavy-upper,Bench press,compound,1,5,160,,,"160 x 5, up 5 from Aug 4 and my heaviest real bench. The 165 is the plan's stated baseline, not a set I've done. Felt not too bad.",logged
+2026-08-26-06,2026-08-26,heavy-upper,Bench press,compound,2,5,145,,,"145 for both back-offs, 10 more than Aug 4.",logged
 2026-08-26-07,2026-08-26,heavy-upper,Bench press,compound,3,5,145,,,,logged
-2026-08-26-08,2026-08-26,heavy-upper,Cable row,compound,1,5,130,,,"130 x 5 for the prescribed two sets, the same load held on Aug 4 and Aug 22.",logged
+2026-08-26-08,2026-08-26,heavy-upper,Cable row,compound,1,5,130,,,"130, same as Aug 4 and Aug 22.",logged
 2026-08-26-09,2026-08-26,heavy-upper,Cable row,compound,2,5,130,,,,logged
-2026-08-26-10,2026-08-26,heavy-upper,Preacher curl,isolation,1,6,25,,,"Six then four against the prescribed 2 x 5 -- ten reps either way, at the 25 lbs held since Aug 4. Two sets, so the slot is met.",logged
+2026-08-26-10,2026-08-26,heavy-upper,Preacher curl,isolation,1,6,25,,,"6 then 4, ten reps either way. 25 since Aug 4.",logged
 2026-08-26-11,2026-08-26,heavy-upper,Preacher curl,isolation,2,4,25,,,,logged
-2026-08-26-12,2026-08-26,heavy-upper,Cable lateral raise,isolation,1,4,12.5,,,"Substituted for the programmed seated Y raise because the 20 lb dumbbells were gone -- equipment, not a choice. Logged under its own name and deliberately not aliased to the Y raise in training.ts, as the Aug 20 Bulgarian split squat was not aliased to the Smith squat: a lateral raise is a different movement from the Y's scapular-plane pull, and the Y raise slot has to stay honest. Four then three at 12.5 lbs is well short of the 2 x 5.",logged
+2026-08-26-12,2026-08-26,heavy-upper,Cable lateral raise,isolation,1,4,12.5,,,"Instead of the seated Y raise, because the 20 lb dumbbells were gone. 4 then 3 at 12.5, well short of 2 x 5.",logged
 2026-08-26-13,2026-08-26,heavy-upper,Cable lateral raise,isolation,2,3,12.5,,,,logged
-2026-08-26-14,2026-08-26,heavy-upper,Sled,finisher,1,,,,,"Second sled bout of the session, no duration reported. Its own line because the sled's slot carries no set count and so matches one exercise only.",logged
-2026-08-26-15,2026-08-26,heavy-upper,Dips,isolation,1,10,,,,"Ten in one set, exactly the 1 x 10 prescription and back to the August baseline after the 7 of Aug 4 and the miss on Aug 22, when dips were lost to time. The dips goal is maintenance at 10, so this holds it.",logged
-2026-08-28-1,2026-08-28,heavy-lower,Sled push + pull,warmup,1,,,5,,"Five minutes, the floor of the plan's 5-10 min range.",logged
-2026-08-28-2,2026-08-28,heavy-lower,Jumps,jump,1,4,,,,"Bodyweight, as prescribed, and taken second ahead of the seated pancakes -- the same order as Aug 20, which puts them fresh where the plan wants them.",logged
+2026-08-26-14,2026-08-26,heavy-upper,Sled,finisher,1,,,,,Second sled bout. No time noted.,logged
+2026-08-26-15,2026-08-26,heavy-upper,Dips,isolation,1,10,,,,"Ten in one set, back to the goal after 7 on Aug 4 and none on Aug 22.",logged
+2026-08-28-1,2026-08-28,heavy-lower,Sled push + pull,warmup,1,,,5,,Five minutes.,logged
+2026-08-28-2,2026-08-28,heavy-lower,Jumps,jump,1,4,,,,"Bodyweight. Second, before the pancakes, same as Aug 20.",logged
 2026-08-28-3,2026-08-28,heavy-lower,Jumps,jump,2,4,,,,,logged
-2026-08-28-4,2026-08-28,heavy-lower,Seated pancakes,warmup,1,,,5,,"Five minutes, matching the plan's ~5 min. Taken third rather than second; the ordering has no bearing on the grade.",logged
-2026-08-28-5,2026-08-28,heavy-lower,Trap bar deadlift,compound,1,5,270,,,"270 for a clean 2x5, up 10 lbs on the 260 held since Aug 1 and reported as not horrendous but definitely tired. The step is double the plan's 2.5-5 lb rule and 5 over the 265 the Aug 20 note called for, so it was taken faster than programmed -- it landed, and it puts the lift about 3 lbs ahead of the pace line to 300 for the first time since the baseline. Pinching reported during these sets, first as traps and corrected the same evening to the bony back of the neck; the session row carries the flag.",logged
+2026-08-28-4,2026-08-28,heavy-lower,Seated pancakes,warmup,1,,,5,,Five minutes.,logged
+2026-08-28-5,2026-08-28,heavy-lower,Trap bar deadlift,compound,1,5,270,,,"Clean 2x5, up 10 from 260. Not horrendous but definitely tired. The plan says 2.5-5 lb steps, so this went up too fast. Felt a pinch during the sets at the bony back of the neck (first noted as traps).",logged
 2026-08-28-6,2026-08-28,heavy-lower,Trap bar deadlift,compound,2,5,270,,,,logged
-2026-08-28-7,2026-08-28,heavy-lower,Smith machine squat,compound,1,5,175,,,"175 for a clean 2x5 -- the weight that went 5 then 4 on Aug 5 and has not been attempted since, the machine having been taken on Aug 20. Both sets complete means the progression rule is finally met, so the next heavy lower goes to 180. Still 10 under the goal file's 185 baseline, which is a handoff figure never actually performed in the log.",logged
+2026-08-28-7,2026-08-28,heavy-lower,Smith machine squat,compound,1,5,175,,,Clean 2x5 at the weight that went 5 then 4 on Aug 5. Next heavy lower: 180.,logged
 2026-08-28-8,2026-08-28,heavy-lower,Smith machine squat,compound,2,5,175,,,,logged
-2026-08-28-9,2026-08-28,heavy-lower,Lying leg curl,isolation,1,5,120,,,"120 for 2x5, a 10 lb step on the 110 that went 2x5 quite easy on Aug 23. First time this slot has been filled on a heavy lower since Aug 5, the machine having been broken on Aug 20.",logged
+2026-08-28-9,2026-08-28,heavy-lower,Lying leg curl,isolation,1,5,120,,,"120, up 10 from Aug 23.",logged
 2026-08-28-10,2026-08-28,heavy-lower,Lying leg curl,isolation,2,5,120,,,,logged
-2026-08-28-11,2026-08-28,heavy-lower,Sled,finisher,1,,,6,,"Six minutes to finish. The first heavy lower to fill the optional finisher slot -- the sled was gone by the end on Aug 20 and the deadlifts are the stated reason to skip it, so taking it says they were not rough.",logged
-2026-08-30-01,2026-08-30,light-upper,Elliptical,warmup,1,,,,,"A few minutes, standing in for the sled, which was not available -- the warmup slot going to equipment rather than choice, same as Aug 20's missing sled. No figure reported beyond a few, so the duration column stays blank.",logged
+2026-08-28-11,2026-08-28,heavy-lower,Sled,finisher,1,,,6,,Six minutes to finish. First time doing the finisher on a heavy lower.,logged
+2026-08-30-01,2026-08-30,light-upper,Elliptical,warmup,1,,,,,"A few minutes instead of the sled, which wasn't there.",logged
 2026-08-30-02,2026-08-30,light-upper,Shoulder warmup,warmup,1,,,,,,logged
-2026-08-30-03,2026-08-30,light-upper,Pullups,compound,1,5,,,,"A clean 2 x 5 at the top of the 4-5 range, no all-out test -- the Aug 22 test set the best at 8 and the next one is a couple of weeks out.",logged
+2026-08-30-03,2026-08-30,light-upper,Pullups,compound,1,5,,,,Clean 2 x 5. No test this time.,logged
 2026-08-30-04,2026-08-30,light-upper,Pullups,compound,2,5,,,,,logged
-2026-08-30-05,2026-08-30,light-upper,Bench press,compound,1,8,135,,,"The first light-day bench to complete its 3 x 8 as written: 135 for 8-8-8, 24 reps against the 18 that 140/140/130 produced on Aug 22. Reported first set easy, second hard, third approaching failure -- the shape a right-sized triple-eight should have. 140 is the step once all three sets at 135 keep a rep in hand.",logged
+2026-08-30-05,2026-08-30,light-upper,Bench press,compound,1,8,135,,,"135 for 8-8-8, the full 3 x 8 for the first time. First set easy, second hard, third close to failure. Go to 140 once all three sets leave a rep.",logged
 2026-08-30-06,2026-08-30,light-upper,Bench press,compound,2,8,135,,,,logged
-2026-08-30-07,2026-08-30,light-upper,Bench press,compound,3,8,135,,,"Approached failure.",logged
-2026-08-30-08,2026-08-30,light-upper,Lat pulldown,compound,1,5,130,,,"130 x 5 for both sets, matching Aug 22.",logged
+2026-08-30-07,2026-08-30,light-upper,Bench press,compound,3,8,135,,,Close to failure.,logged
+2026-08-30-08,2026-08-30,light-upper,Lat pulldown,compound,1,5,130,,,"130, same as Aug 22.",logged
 2026-08-30-09,2026-08-30,light-upper,Lat pulldown,compound,2,5,130,,,,logged
-2026-08-30-10,2026-08-30,light-upper,Cable row,compound,1,5,130,,,"130 x 5 for the prescribed two sets, the load held since Aug 4, run strict under the morning's lower-back gate.",logged
+2026-08-30-10,2026-08-30,light-upper,Cable row,compound,1,5,130,,,"130, same as always. Kept strict for the back.",logged
 2026-08-30-11,2026-08-30,light-upper,Cable row,compound,2,5,130,,,,logged
-2026-08-30-12,2026-08-30,light-upper,Preacher curl,isolation,1,6,25,,,"Six then four at 25 against the prescribed 2 x 5 -- the same ten-rep split as Aug 26.",logged
+2026-08-30-12,2026-08-30,light-upper,Preacher curl,isolation,1,6,25,,,"6 then 4 at 25, same as Aug 26.",logged
 2026-08-30-13,2026-08-30,light-upper,Preacher curl,isolation,2,4,25,,,,logged
-2026-08-30-14,2026-08-30,light-upper,Seated Y raise,isolation,1,5,20,,,"The 20 lb dumbbells back on the rack after Aug 26's forced cable substitution, and the slot back at Aug 22's 2 x 5 at 20.",logged
+2026-08-30-14,2026-08-30,light-upper,Seated Y raise,isolation,1,5,20,,,20 lb dumbbells back on the rack.,logged
 2026-08-30-15,2026-08-30,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
-2026-09-14-01,2026-09-14,heavy-lower,Backwards treadmill walk,warmup,1,,,5,,"Five minutes walking backwards, standing in for the sled push and pull -- the same warmup-slot substitution the Aug 30 elliptical row records. Deliberately not aliased to the sled in training.ts, so the plan's 5-10 min sled slot reads as unfilled and this shows as its own line. A treadmill is not a sled and the comparison should say so.",logged
-2026-09-14-02,2026-09-14,heavy-lower,Seated pancakes,warmup,1,,,,,"Reported only as pancakes; no duration or rep count given, so both columns stay blank. The plan gives this slot as ~5 min.",logged
-2026-09-14-03,2026-09-14,heavy-lower,Trap bar deadlift,compound,1,5,270,,,"270 for 5, then 2 on the second set, called short on purpose -- more was reported available but the lower back is not yet at 100 per cent after the Aug 31 to Sep 3 soreness, so the set was stopped rather than ground out. Seven reps against the plan's ten, at the weight that went a clean 2x5 on Aug 28, seventeen days and a ten-day layoff ago. That makes this a return rather than a progression, and it resolves half the condition the Sep 22 belt jump to 280 is written against; the other half is the back on the 15th and 16th. The belt the plan specified and the beltless 135-185-225 ramp were not reported either way, so neither is recorded here.",logged
+2026-09-14-01,2026-09-14,heavy-lower,Backwards treadmill walk,warmup,1,,,5,,Five minutes walking backwards instead of the sled.,logged
+2026-09-14-02,2026-09-14,heavy-lower,Seated pancakes,warmup,1,,,,,Didn't note time or reps.,logged
+2026-09-14-03,2026-09-14,heavy-lower,Trap bar deadlift,compound,1,5,270,,,"5, then stopped at 2 on purpose. Had more, but the back isn't 100% yet. Didn't note the belt or the warmup ramp.",logged
 2026-09-14-04,2026-09-14,heavy-lower,Trap bar deadlift,compound,2,2,270,,,,logged
-2026-09-14-05,2026-09-14,heavy-lower,Smith machine squat,compound,1,5,185,,,"185 for a clean 2x5, a 10 lb step on the 175 of Aug 28 and 5 over the 180 that note called for. It is the first time the log has actually performed the 185 the goals file has claimed as a baseline since August, so the squat goal finally starts from a real set rather than a handoff figure. The day's one clean progression, and it came after a deadlift that was cut short.",logged
+2026-09-14-05,2026-09-14,heavy-lower,Smith machine squat,compound,1,5,185,,,"Clean 2x5, up 10 from Aug 28. First time I've actually done the 185 the goals list as the baseline.",logged
 2026-09-14-06,2026-09-14,heavy-lower,Smith machine squat,compound,2,5,185,,,,logged
-2026-09-14-07,2026-09-14,heavy-lower,Lying leg curl,isolation,1,5,120,,,"120 for 2x5, holding the Aug 28 weight rather than stepping. The only lift in the session at its previous number, and it matched it straight off the layoff.",logged
+2026-09-14-07,2026-09-14,heavy-lower,Lying leg curl,isolation,1,5,120,,,"Same as Aug 28, right after the layoff.",logged
 2026-09-14-08,2026-09-14,heavy-lower,Lying leg curl,isolation,2,5,120,,,,logged
 2026-09-17-01,2026-09-17,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
-2026-09-17-02,2026-09-17,heavy-upper,Pullups,compound,1,5,,,,"A clean 2 x 5 at the top of the 4-5 range, first pullups since Aug 30 and straight back at the number after eighteen days. No test set; the plan puts the next all-out attempt at the Oct 4 light upper.",logged
+2026-09-17-02,2026-09-17,heavy-upper,Pullups,compound,1,5,,,,Clean 2 x 5 after 18 days off. Next test is Oct 4.,logged
 2026-09-17-03,2026-09-17,heavy-upper,Pullups,compound,2,5,,,,,logged
-2026-09-17-04,2026-09-17,heavy-upper,Lying chest press (machine),compound,1,1,160,,,"Life Fitness lying chest press, stack lbs as displayed, substituted because the bench was taken -- the plan had 165 x 5 with 150 back-offs here. Logged under its own name and deliberately NOT aliased to bench press in training.ts, for the same reason the Aug 30 elliptical was not aliased to the sled and the Aug 26 cable lateral raise was not aliased to the Y raise: a fixed-path machine at an unknown lever ratio is not a barbell, and the bench goal grades on real top sets only. That means the heavy upper's 3-4 x 5 bench slot reads as unfilled, which is the truth of the day. This first set was a single at 160 taken as an opener rather than a max -- the 150 x 5 that followed puts the machine e1RM near 173, so there were roughly 13 lbs in hand here.",logged
-2026-09-17-05,2026-09-17,heavy-upper,Lying chest press (machine),compound,2,5,150,,,"The work set and the one number worth keeping. Across Epley, Brzycki and Lombardi it gives a machine e1RM of 169-176, mean 173, which is the reference point if this machine gets used again. WHAT IT DOES NOT GIVE IS A BENCH FIGURE: a chest press machine's stack does not equal resistance at the hands, the ratio is not published, and a fixed path lets you handle more than a free bar, so the barbell-equivalent band runs 112-150 lbs for 5. That band is too wide to say whether the bench moved, which is the answer to the question rather than a dodge -- see the session note.",logged
-2026-09-17-06,2026-09-17,heavy-upper,Lying chest press (machine),compound,3,5,140,,,"The back-off, 93 per cent of the work set against the 91 per cent that 145 was to 160 on Aug 26 -- a slightly tighter drop, though on a different implement.",logged
-2026-09-17-07,2026-09-17,heavy-upper,Cable row,compound,1,5,130,,,"130 x 5 for the prescribed two sets, the load held unchanged since Aug 4 and matched straight off the layoff.",logged
+2026-09-17-04,2026-09-17,heavy-upper,Lying chest press (machine),compound,1,1,160,,,"Life Fitness lying chest press, because the bench was taken. Weight is what the stack says. An opener, not a max.",logged
+2026-09-17-05,2026-09-17,heavy-upper,Lying chest press (machine),compound,2,5,150,,,"The work set. Works out to an estimated max of about 173 on this machine, if I use it again. It doesn't convert to a bench: the machine's ratio isn't published, so this could be anywhere from about 112 to 150 on a barbell.",logged
+2026-09-17-06,2026-09-17,heavy-upper,Lying chest press (machine),compound,3,5,140,,,Back-off.,logged
+2026-09-17-07,2026-09-17,heavy-upper,Cable row,compound,1,5,130,,,"130, same as always.",logged
 2026-09-17-08,2026-09-17,heavy-upper,Cable row,compound,2,5,130,,,,logged
-2026-09-17-09,2026-09-17,heavy-upper,Preacher curl,isolation,1,5,25,,,"Reported only as bicep curls at 25 lbs, with no implement named and no substitution mentioned, so it is recorded in the slot it falls in at the weight that slot has carried since Aug 4 -- correct this row if it was a standing or dumbbell curl instead, as the Aug 8 standing curl is recorded separately. A clean 2 x 5 either way, back to the Aug 4 shape after the 6-then-4 splits of Aug 26 and Aug 30.",logged
+2026-09-17-09,2026-09-17,heavy-upper,Preacher curl,isolation,1,5,25,,,"Said ""bicep curls at 25"", so logged as preacher. Fix this row if they were standing or dumbbell curls.",logged
 2026-09-17-10,2026-09-17,heavy-upper,Preacher curl,isolation,2,5,25,,,,logged
-2026-09-17-11,2026-09-17,heavy-upper,Seated Y raise,isolation,1,5,20,,,"2 x 5 at 20, matching Aug 30 and Aug 22 with the dumbbells on the rack this time.",logged
+2026-09-17-11,2026-09-17,heavy-upper,Seated Y raise,isolation,1,5,20,,,"20, same as last time.",logged
 2026-09-17-12,2026-09-17,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
-2026-09-17-13,2026-09-17,heavy-upper,Dips,isolation,1,10,,,,"Ten in one set, exactly the prescription. The dips goal is maintenance at 10 and this holds it, matching Aug 26.",logged
-2026-09-19-01,2026-09-19,light-lower,Backwards treadmill walk,warmup,1,,,5,,"Five minutes walking backwards in place of the sled push and pull, the same substitution the Sep 14 and Aug 30 rows record. Not aliased to the sled in training.ts, so the plan's 5-10 min sled slot reads as unfilled and this stands as its own line.",logged
-2026-09-19-02,2026-09-19,light-lower,Seated pancakes,warmup,1,,,,,"Reported only as pancakes, no duration given, so that column stays blank. The plan gives the slot as ~5 min.",logged
-2026-09-19-03,2026-09-19,light-lower,Clamshells,warmup,1,,,,,"First clamshells in the log, done alongside the pancakes. Not in program.ts and not being added there, so this reads as an extra line rather than filling a slot -- glute-med activation put into the warmup, which is a reasonable thing to add to a hip-heavy day and not something the plan asked for. No reps or duration reported.",logged
-2026-09-19-04,2026-09-19,light-lower,Depth jumps,jump,1,5,,,,"The full 2x5 the plan prescribes, and taken first as written. Aug 23 managed one set and took it after the weighted jumps, inverting the plan's one stated ordering rule; this is the first time the log has run the jumps at full dose and in order.",logged
+2026-09-17-13,2026-09-17,heavy-upper,Dips,isolation,1,10,,,,Ten in one set.,logged
+2026-09-19-01,2026-09-19,light-lower,Backwards treadmill walk,warmup,1,,,5,,Five minutes walking backwards instead of the sled.,logged
+2026-09-19-02,2026-09-19,light-lower,Seated pancakes,warmup,1,,,,,No time noted.,logged
+2026-09-19-03,2026-09-19,light-lower,Clamshells,warmup,1,,,,,Added to the warmup with the pancakes. Not in the program. No reps or time noted.,logged
+2026-09-19-04,2026-09-19,light-lower,Depth jumps,jump,1,5,,,,"Full 2x5, first thing, as planned. First time doing the jumps at full dose and in the right order.",logged
 2026-09-19-05,2026-09-19,light-lower,Depth jumps,jump,2,5,,,,,logged
-2026-09-19-06,2026-09-19,light-lower,Weighted jumps,jump,1,5,20,,,"Two 20 lb dumbbells, so weight_lbs is the per-dumbbell 20 as on Aug 23; 40 lbs total, matching that baseline. Taken after the depth jumps and before the lifts, which is what the plan asks and what Aug 23 did not do.",logged
+2026-09-19-06,2026-09-19,light-lower,Weighted jumps,jump,1,5,20,,,"Two 20 lb dumbbells; the weight is per dumbbell. After the depth jumps and before the lifts, as planned.",logged
 2026-09-19-07,2026-09-19,light-lower,Weighted jumps,jump,2,5,20,,,,logged
-2026-09-19-08,2026-09-19,light-lower,Trap bar deadlift,compound,1,5,220,,,"220 for a clean 2x5, the last-stretch row's number exactly and a 10 lb step on the 210 of Aug 23. It is 81% of the 270 pulled on Sep 14, inside the light day's 80-85%, and the first time since the layoff that a prescribed 2x5 has gone the full ten reps -- Sep 14 stopped at seven. Belt use was not reported; the day is written beltless.",logged
+2026-09-19-08,2026-09-19,light-lower,Trap bar deadlift,compound,1,5,220,,,"Clean 2x5, as planned. First full 2x5 on the trap bar since the layoff. No belt noted.",logged
 2026-09-19-09,2026-09-19,light-lower,Trap bar deadlift,compound,2,5,220,,,,logged
-2026-09-19-10,2026-09-19,light-lower,Smith machine squat,compound,1,5,150,,,"150 for a clean 2x5, the plan's number and the same weight Aug 23 took. That is 81% of the 185 of Sep 14, inside the light band, so the light day has moved up with the heavy one rather than being held back.",logged
+2026-09-19-10,2026-09-19,light-lower,Smith machine squat,compound,1,5,150,,,"Clean 2x5, as planned.",logged
 2026-09-19-11,2026-09-19,light-lower,Smith machine squat,compound,2,5,150,,,,logged
-2026-09-19-12,2026-09-19,light-lower,Lying leg curl,isolation,1,5,120,,,"The one lift off its planned number: the row called 110 for both sets and the first took 120, the heavy-day weight held since Aug 28, before backing off to 110 for the second. Logged as the two weights they were rather than averaged, since the 120 is the set that says something.",logged
+2026-09-19-12,2026-09-19,light-lower,Lying leg curl,isolation,1,5,120,,,"Plan said 110 for both. Did the first at the heavy-day 120, then 110.",logged
 2026-09-19-13,2026-09-19,light-lower,Lying leg curl,isolation,2,5,110,,,,logged
-2026-09-20-01,2026-09-20,other,Bike riding,finisher,1,,,40,,"Learning to ride, forty minutes, and the whole session. Kind is finisher only because the set schema has no slot for a standalone timed bout -- the Aug 9 sled-only row uses the same one. No distance, route or intensity was reported and none is invented.",logged
+2026-09-20-01,2026-09-20,other,Bike riding,finisher,1,,,40,,"Learning to ride, 40 minutes. No distance or route.",logged
 2026-09-21-01,2026-09-21,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
-2026-09-21-02,2026-09-21,heavy-upper,Pullups,compound,1,5,,,,"2 x 5, matching Sep 17 and sitting at the top of the 4-5 range. The next all-out test is the Oct 4 light upper.",logged
+2026-09-21-02,2026-09-21,heavy-upper,Pullups,compound,1,5,,,,2 x 5. Next test is Oct 4.,logged
 2026-09-21-03,2026-09-21,heavy-upper,Pullups,compound,2,5,,,,,logged
-2026-09-21-04,2026-09-21,heavy-upper,Bench press,compound,1,5,165,,10,"165 x 5, the first set at 165 anyone has recorded -- the training plan claimed it as the August baseline and nothing in the seven weeks since had performed it, so this confirms the handoff rather than clearing it. It is a 5 lb step on the Aug 26 160 and the heaviest bench in the log by a real set, and it is the first barbell bench since that day, 26 days earlier, Sep 17 having run on a machine that drew no comparison. Reported as barely completed, so the RPE 10 is that phrase translated rather than a number given. Aug 26's 160 came back as not too bad, so the jump in effort is real, but the reading is confounded three ways: 26 days off the barbell, a session rushed by a work emergency, and everything else in it reported as feeling fine.",logged
+2026-09-21-04,2026-09-21,heavy-upper,Bench press,compound,1,5,165,,10,"165 x 5, my heaviest bench. Barely got it. First barbell bench in 26 days, and rushed because of a work emergency.",logged
 2026-09-21-05,2026-09-21,heavy-upper,Bench press,compound,2,5,150,,9,,logged
-2026-09-21-06,2026-09-21,heavy-upper,Bench press,compound,3,5,135,,9,"150 then 135 for the back-offs, the 150 as the plan wrote it and the 135 a further 15 lbs down, both reported as super hard. Aug 26 backed off to 145 twice after a top set that had room; a second back-off taken lower than the first is new here and reads as the 165 having cost everything. Three sets of 5 still meets the low end of the 3-4 x 5 prescription.",logged
-2026-09-21-07,2026-09-21,heavy-upper,Preacher curl,isolation,1,7,25,,,"7 then 5 at 25, twelve reps against the prescribed ten and the most volume this lift has carried at this weight -- Sep 17 ran a flat 2 x 5 and Aug 26 and Aug 30 ran 6 then 4. The weight is unchanged since Aug 4, which is where the accessory rule puts it: the curl steps once a block, not once a session.",logged
+2026-09-21-06,2026-09-21,heavy-upper,Bench press,compound,3,5,135,,9,"150 then 135 on the back-offs, both super hard. The 165 took everything.",logged
+2026-09-21-07,2026-09-21,heavy-upper,Preacher curl,isolation,1,7,25,,,"7 then 5, the most reps I've done at 25. Stays at 25 until the next block.",logged
 2026-09-21-08,2026-09-21,heavy-upper,Preacher curl,isolation,2,5,25,,,,logged
-2026-09-21-09,2026-09-21,heavy-upper,Seated Y raise,isolation,1,5,20,,,"2 x 5 at 20, matching Sep 17, Aug 30 and Aug 22. The plan holds this one at 20 for the whole stretch.",logged
+2026-09-21-09,2026-09-21,heavy-upper,Seated Y raise,isolation,1,5,20,,,"20, same as last time. Stays at 20 all stretch.",logged
 2026-09-21-10,2026-09-21,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
-2026-09-21-11,2026-09-21,heavy-upper,Cable row,compound,1,6,130,,,"2 x 6 at 130 because the stack jumps 130 to 140 and the plan asked for 135. Six reps at 130 is an Epley e1RM of 156 against the planned 135 x 5's 157.5, about 1% under, and Brzycki puts the match at six reps too; 140 x 4 lands as close but is a 7.7% load jump on the joint this accessory exists to protect, so the reps carried the step instead of the pin. It reads as a deviation from the 2 x 5 slot and it is one. The 10 lb stack will collide with the plan's 5 lb steps again on Oct 8.",logged
+2026-09-21-11,2026-09-21,heavy-upper,Cable row,compound,1,6,130,,,2 x 6 at 130 because the stack goes 130 to 140 and the plan said 135. Six at 130 is about the same work as five at 135. Same problem again on Oct 8.,logged
 2026-09-21-12,2026-09-21,heavy-upper,Cable row,compound,2,6,130,,,,logged

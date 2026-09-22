@@ -71,6 +71,11 @@ const ALIASES: Record<string, string> = {
   pushup: "pushups",
   pushups: "pushups",
 };
+// Substitutes are deliberately left unaliased so the slot they stood in for
+// reads as unfilled: Bulgarian split squat (Smith squat), cable lateral raise
+// (seated Y raise), lying chest press machine (bench — stack lbs aren't barbell
+// lbs, and the bench goal grades real top sets only), and the backwards
+// treadmill walk and elliptical (sled).
 
 export function canonical(name: string): string {
   const stripped = name.toLowerCase().replace(/[^a-z0-9]/g, "");
