@@ -100,7 +100,7 @@ export const RECIPE_FOODS: Food[] = [
     source: "recipe",
     per: "1 serving (~2 enchiladas, 1/6 recipe)",
     macros: { calories: 780, protein: 38, carbs: 67, fat: 41, fiber: 3.5, sodium: 1900 },
-    note: "Based on 6 servings from 14 enchiladas. Sauce sodium is label-derived: La Costeña Red Enchilada Sauce states 330 mg per 1/4 cup (62.5 g), so the 600 ml the recipe calls for is 634 g — 3,348 mg, or 558 mg a serving. The rest is still estimated from the ingredient list (14 flour tortillas, 3 cups shredded cheese, seasoning and beef ≈ 8,060 mg), which is where the remaining uncertainty sits — a different tortilla moves the total by a few hundred mg. Total works out at 1,901 mg, so the earlier all-estimate figure of 1,900 needed no revision. Fibre remains estimated.",
+    note: "Based on 6 servings from 14 enchiladas. The sauce sodium is off the La Costeña label (330 mg per 1/4 cup), so the recipe's 600 ml works out to about 558 mg a serving. The rest is estimated from the ingredients: tortillas, cheese, seasoning and beef. A different tortilla moves the total by a few hundred mg. Fibre is estimated.",
     tags: ["enchiladas", "mexican", "dinner", "bake"],
   },
   {
@@ -109,7 +109,7 @@ export const RECIPE_FOODS: Food[] = [
     source: "recipe",
     per: "1 burrito (whole recipe)",
     macros: { calories: 440, protein: 19.1, carbs: 38, fat: 21.5, fiber: 2, sodium: 780 },
-    note: "AS ACTUALLY BUILT, NOT AS WRITTEN UPSTREAM — on August 8, 2026 the cook reported using less salsa, less cheese and less salt than the recipe specifies, and all three were halved: salsa 1 tbsp to ~1/2 tbsp, marble cheese ~15 g to ~7.5 g, and the \"pinch of salt\" ~1/16 tsp to ~1/32 tsp. Sodium went 950 to 900 to 780 across those edits. The cheese cut is the one that moves more than sodium: it also takes ~30 kcal, ~1.9 g protein and ~2.5 g fat out, which is why the calories now sit at 440, below upstream's stated 450–490 range. Anything reconciled against that range will no longer agree, by design. Sodium by line: a ~65 g flour tortilla (~470 mg), 2 large eggs (~140 mg), cheese (~45 mg), salsa (~50 mg), salt (~75 mg); the tortilla also carries nearly all the ~2 g fibre. The tortilla is now 60% of the total and is the only line here still at full strength — it is also the best-corroborated one, since USDA's refrigerated flour tortilla row is 683 mg/100 g (444 mg at 65 g) and a Mission 10\" burrito tortilla is 590 mg at 71 g, putting 470 mg between a generic and a brand-name reading. Further halving of the garnishes cannot reach it. No hot sauce has ever been in this ingredient list; adding any would raise the figure, not lower it.",
+    note: "Adjusted to how it's actually made, not the recipe: on Aug 8 it turned out to use about half the salsa, cheese and salt the recipe calls for, so those are halved. That puts calories at 440, under the recipe's 450–490. Sodium by part: tortilla ~470 mg, 2 eggs ~140, cheese ~45, salsa ~50, salt ~75. The tortilla is most of the sodium and nearly all the fibre, and USDA and Mission both put it in that range.",
     tags: ["burrito", "egg", "breakfast", "mexican"],
   },
   {
@@ -137,7 +137,7 @@ export const RECIPE_FOODS: Food[] = [
     source: "recipe",
     per: "1 serving (1/4 recipe), no rice",
     macros: { calories: 500, protein: 18, carbs: 36, fat: 30, fiber: 3, sodium: 1575 },
-    note: "Based on 4 servings. Add ~200 kcal per cup of rice. PROTEIN IS THE ONE FIGURE HERE THAT DEPARTS FROM UPSTREAM: the recipe's table says 16 g and this entry carries 18 g, changed August 10, 2026 after the ingredient list was checked. The block size is no longer an assumption — the owner confirmed 300 g the same day, which is what narrowed this from the 19 g first written against an assumed 300–350 g range. At 18–20 g protein per 100 g, 300 g of paneer is 54–60 g, and the potatoes (~7 g), roux (~4 g), onions (~2.5 g) and garlic (~1 g) add ~15 g more, putting the pot at 69–75 g and a serving at 17.1–18.6 g. Working backwards from the stated fat agrees: 30 g a serving is 120 g for the pot, of which 2 tbsp oil and 4 roux blocks are ~50 g, leaving ~70 g of paneer fat — right at 300 g of paneer, which at its own protein-to-fat ratio cannot yield only 16 g a serving. 18 g is the midpoint of that range. Note what did NOT catch this: Atwater passes at 16 g (478 kcal) and at 18 g (486 kcal) against a stated 500, because protein is a small share of a fat-dominated dish — the check has no power here and the ingredient list had to do the work. Calories, carbs and fat are still the upstream table's and reconcile with the ingredients as written, so only protein moved. Fibre and sodium estimated from the ingredient list: potatoes, onions and the roux for the fibre; 4 S&B Golden Curry blocks (the box lists 800 mg sodium per 18 g block) plus a 900 ml carton of commercial vegetable broth for the sodium. This is the saltiest entry in the catalog and the roux is most of it — using water instead of broth takes ~760 mg off.",
+    note: "Based on 4 servings. Add ~200 kcal per cup of rice. Protein is 18 g, not the recipe's 16: a 300 g paneer block (confirmed Aug 10) plus the potatoes, roux and onions gives the pot about 70 g of protein, or 17–19 g a serving. Calories, carbs and fat are the recipe's. Fibre and sodium are estimated from the ingredients, and the sodium is mostly the four S&B Golden Curry blocks (800 mg each) and the carton of vegetable broth. Saltiest thing in the catalog; water instead of broth takes off about 760 mg.",
     tags: ["curry", "japanese", "paneer", "vegetarian"],
   },
   {
@@ -147,7 +147,7 @@ export const RECIPE_FOODS: Food[] = [
     source: "recipe",
     per: "1 serving (1/4 recipe) + 1 cup cooked rice",
     macros: { calories: 700, protein: 22, carbs: 80, fat: 30.5, fiber: 3.6, sodium: 1575 },
-    note: "Derived by adding the recipe's stated ~200 kcal cup of rice to the curry-only figures — so the protein here moved from 20 g to 22 g on August 10, 2026 purely because the curry-only entry did; see that entry's note for why 16 g upstream became 18 g, and for the confirmed 300 g paneer block that settled it. The cup of rice is this catalog's own staple row (4.3 g protein, 0.6 g fibre, no sodium). Fibre and sodium estimated from the ingredient list.",
+    note: "The curry plus the recipe's ~200 kcal cup of rice, using the catalog's rice row. Protein is 22 g because the curry-only entry was corrected from 16 to 18 on Aug 10; see that note. Fibre and sodium estimated from the ingredients.",
     tags: ["curry", "japanese", "paneer", "rice", "vegetarian"],
   },
   {
@@ -226,7 +226,7 @@ export const RECIPE_FOODS: Food[] = [
     source: "recipe",
     per: "1 bowl (1/6 recipe) + 6 potstickers",
     macros: { calories: 455, protein: 15, carbs: 42, fat: 24, fiber: 3.5, sodium: 1005 },
-    note: "Potsticker figures are off the Siwin package label; the rest is estimated. Sodium is 585 mg of label-measured potstickers (97.5 mg each) plus ~420 mg estimated for the seasoned broth — the earlier 585 mg figure here was potstickers alone and understated the bowl. Fibre is the broth's ~2 g plus an estimated 0.25 g per potsticker.",
+    note: "Potsticker figures are off the Siwin label; the rest is estimated. Sodium is 585 mg from the potstickers (97.5 mg each) plus about 420 mg for the broth. This used to count only the potstickers. Fibre is the broth's ~2 g plus about 0.25 g a potsticker.",
     tags: ["soup", "potsticker", "dumpling", "mushroom"],
   },
   {
@@ -293,7 +293,7 @@ export const RECIPE_FOODS: Food[] = [
     source: "recipe",
     per: "1 serving (1/4 recipe, as a side)",
     macros: { calories: 285, protein: 8, carbs: 45, fat: 9, fiber: 3.5 },
-    note: "Based on 4 servings. Moves with the fat used — butter vs duck fat vs olive oil. Fibre estimated from 2 lbs of peeled Russets across 4 servings. Sodium is deliberately left blank: most of it would come from how much of the 1.5 tbsp of kosher salt in the boiling water the potatoes take up, which isn't knowable — the Parmesan on its own is only ~70 mg per serving, and publishing that alone would read as far lower than the dish actually is.",
+    note: "Based on 4 servings. Moves with the fat used: butter, duck fat or olive oil. Fibre estimated from 2 lbs of peeled Russets. Sodium left blank on purpose: most of it is whatever the potatoes take up from 1.5 tbsp of kosher salt in the boiling water, which can't be known. The Parmesan alone is only ~70 mg a serving, and listing just that would make the dish look far less salty than it is.",
     tags: ["potato", "side", "parmesan", "roast"],
   },
   {
@@ -336,7 +336,7 @@ export const RECIPE_FOODS: Food[] = [
       sugar: 3,
       sodium: 880,
     },
-    note: "The recipe is one serving by construction \u2014 one frozen scallion pancake, 1.5 large eggs, a teaspoon each of soy and hoisin \u2014 and its own table gives 370\u2013410 kcal / 14 g protein / 30 g carbs / 20 g fat, of which 390 is the midpoint carried here. Atwater on those macros lands at 356, 8.7% under, and the gap is the point of the stated range: pan-oil absorption is what moves the calories between 370 and 410 and it is not itemised in the 20 g fat line. Fibre, sugar and sodium are not upstream and are derived from the ingredient list \u2014 pancake ~350 mg, 1.5 eggs ~107 mg, 1 tsp soy ~330 mg, 1 tsp hoisin ~90 mg \u2014 so read the sodium as 700\u20131,100 mg, and note it is mostly the two sauces rather than the pancake. Rebuilding the whole serving from components independently returns 14.4 g protein and 31 g carbs against the upstream 14 and 30, which is the closest thing to corroboration this entry has. THE PANCAKE IS THE VARIABLE: the recipe's own footnote puts brands at 190\u2013260 kcal and says to check the box, so a different bag moves this entry by ~70 kcal before any oil is counted.",
+    note: "One serving by design: one frozen scallion pancake, 1.5 eggs, a teaspoon each of soy and hoisin. The recipe gives 370–410 kcal and 390 is the middle; the range is mostly how much oil the pancake soaks up. Fibre, sugar and sodium are worked out from the ingredients (pancake ~350 mg, eggs ~107, soy ~330, hoisin ~90), so call sodium 700–1,100 mg, mostly the sauces. Pancake brands run 190–260 kcal, so check the box.",
     tags: ["scallion pancake", "egg", "roll-up", "breakfast", "snack", "chinese", "quick"],
   },
   {
@@ -346,7 +346,7 @@ export const RECIPE_FOODS: Food[] = [
     source: "recipe",
     per: "1 serving (1/6 recipe)",
     macros: { calories: 370, protein: 14, carbs: 44, fat: 18, fiber: 8.5, sodium: 570 },
-    note: "Calories, protein, carbs and fat are the Templates recipe's own table, without the optional vegetable stock. Two 19 oz cans of chickpeas, undrained — the entry said one until August 8, 2026 and the recipe settles it. Note what upstream does and does not establish: the ingredient list is fact, but its nutrition table carries the line \"Estimates generated by Claude\", so aligning to it is consistency with the source rather than independent corroboration. Fibre and sodium are not in that table and are derived here from the ingredients. Fibre, 8.5 g: 4 cups of drained chickpeas at 6 g/cup (4.0), 794 g crushed tomatoes (2.5), 312 g spinach (1.1), 2 onions (0.9). Sodium is the soft figure — 570 mg is the midpoint of a ~240–770 mg band, and the spread is real, driven by whether the tomatoes and chickpeas are no-salt-added or regular. Both chickpea cans go in undrained, so their liquid counts; the spinach is worth ~41 mg a serving and was missed entirely before this. All of that EXCLUDES the recipe's salt to taste and its optional MSG pinch, so it remains a floor rather than a total. The 6 tbsp of olive oil is most of the fat — ~119 kcal and 13.5 g of it per serving.",
+    note: "Calories, protein, carbs and fat are the recipe's table, without the optional stock. That table was itself generated by Claude, so it's consistent with the recipe rather than an independent check. Two 19 oz cans of chickpeas, undrained; this said one until Aug 8. Fibre (8.5 g) and sodium are worked out from the ingredients. Sodium is 570 mg, the middle of about 240–770 depending on whether the canned tomatoes and chickpeas are no-salt-added, and it leaves out salt to taste and the optional MSG, so it's a floor. Most of the fat is the 6 tbsp of olive oil.",
     tags: ["stew", "chickpea", "spinach", "vegetarian"],
   },
   {
@@ -356,7 +356,7 @@ export const RECIPE_FOODS: Food[] = [
     source: "recipe",
     per: "1 serving (1/6 recipe) + 2 slices",
     macros: { calories: 610, protein: 22, carbs: 90, fat: 20, fiber: 11, sodium: 1090 },
-    note: "The Templates recipe's own with-sourdough column, on 6 servings and two cans of chickpeas — see the stew-only entry for what that table does and does not corroborate. Fibre and sodium are derived here, not upstream: the stew-only figures plus 2 slices of sourdough at ~1.25 g fibre and ~260 mg sodium each, sized from the +46 g of carbs the recipe's table attributes to them. Sodium inherits the stew's ~240–770 mg band and its exclusion of salt to taste. The bread is ~520 mg of the 1,090 — roughly half the sodium for under 40% of the calories — so ordinary sandwich slices at ~135 mg each save ~250 mg, and skipping the second slice saves ~260.",
+    note: "The recipe's with-sourdough column, 6 servings, two cans of chickpeas. Fibre and sodium are the stew plus two slices of sourdough at ~1.25 g fibre and ~260 mg sodium each. The bread is about half the sodium: sandwich bread would save ~250 mg, and one slice instead of two saves ~260. Same sodium range and salt-to-taste caveat as the stew.",
     tags: ["stew", "chickpea", "spinach", "sourdough", "vegetarian"],
   },
   {

@@ -124,6 +124,11 @@ start,end,kind,label,note
 explain gaps. Without them a six-week hole reads as "stopped tracking" rather than
 "was in Japan".
 
+The Sep 4–13 BC trip counts as the first deload but stays `kind: travel`.
+`dietBreaks()` shades only travel and illness on the food charts, so flipping it
+would un-shade a real stretch away from the kitchen. The deload flag lives on that
+trip's off-day sessions, which is where `weeksSinceDeload()` reads it.
+
 ### `data/checkins.csv` — one row per *morning check-in*
 
 ```
@@ -313,6 +318,15 @@ the detail buys. The rules above are unaffected and still bind: say where a numb
 came from, state the band on an estimate, record a correction rather than quietly
 overwriting. They have to fit. If the reasoning genuinely will not, it belongs in
 `docs/training-plan.md` and the note should point at it.
+
+**Write notes like a person keeping a diary.** Asked for on September 22, 2026,
+when every note on the site was rewritten because they had drifted into rankings
+and restated columns ("the third-longest of the 41 nights recorded"). A check-in or
+session note says what the numbers can't — a sore back, a big brunch, a flight — in
+a sentence or two, in plain words. Don't restate the columns, rank the day against
+the file, shout in capitals, or write "reads as X rather than Y". Catalog notes keep
+the rules above, just plainly: "Estimated from a photo. Call it 550–900 kcal; the
+mayo is the unknown."
 
 **Dates are local, never UTC.** `toDateKey()` in `src/lib/nutrition.ts` exists
 because `toISOString()` shifts the day for anyone behind UTC. Don't reintroduce it.

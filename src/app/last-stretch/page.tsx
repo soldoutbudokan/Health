@@ -66,74 +66,70 @@ export default function LastStretchPage() {
           <div>
             <dt className="text-sm font-medium">A tick is the log, not a click</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              A day is done when a session of the planned type was logged on it. There is
-              nothing on this page to press to complete a workout, on purpose: the site has
-              one writer and one file, and a checkbox that saved in the browser would be a
-              second copy of the truth. Log the session and the box ticks itself on the next
-              build.
+              A day is done when a session of the planned type is logged on it. There&rsquo;s
+              nothing to click here on purpose: the log file is the only record, and a
+              checkbox saved in the browser would be a second copy. Log the session and
+              the box ticks on the next build.
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium">The loads are the plan if the session before went well</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              Each heavy day steps 5 lbs on the one before it. When a session does not move
-              well, the next one repeats the weight and every later row slides a week; the
-              file gets revised to say so, the past rows stay as they were. One exception
-              is written in: the belt jump on Sep 22, a single 10 lb step allowed only if
-              Sep 14 moved well and the back said nothing for two mornings.
+              Each heavy day is 5 lbs more than the last. If a session doesn&rsquo;t go well,
+              the next one repeats the weight and every later row moves back a week. Past
+              rows never change. One exception: the belt jump on Sep 22, a single 10 lb
+              step, only if Sep 14 went well and the back was quiet for the two mornings
+              after.
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium">The accessories are rules, not targets</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              From Sep 21 the upper days also carry a number for the row, the pulldown, the
-              curl, the Y raise, the fly and the dips. No weight on any of them produces a
-              bench; they keep the shoulder balanced and the elbows quiet while the lifts
-              being chased climb. So the row steps with the bench and stays near 83% of it,
-              the pulldown steps each light upper toward bodyweight for the pullup, the curl
-              steps once a block, and the Y raise, the fly and the dips hold. A set that
-              is not clean means the number repeats, same as the main lifts.
+              From Sep 21 the upper days also have numbers for the row, pulldown, curl, Y
+              raise, fly and dips. None of these builds a bench; they keep the shoulders
+              balanced and the elbows happy while the main lifts go up. The row goes up
+              with the bench and stays near 83% of it, the pulldown goes up each light
+              upper toward bodyweight, the curl goes up once a block, and the Y raise, fly
+              and dips stay put. If a set isn&rsquo;t clean, repeat the number, same as the main
+              lifts.
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium">The weighted jump holds at 20</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              From Oct 3 the light lower days carry a number for it too, and that number
-              does not climb: 20 lbs a hand, 15 on a deload. It is the last loaded lift in
-              the rotation that had no plan, and it is the one that should not get one that
-              moves. The jump is graded on how fast it leaves the floor, and 40 lbs against
-              a 186 lb bodyweight is already about a fifth — past that the load starts
-              buying itself at the expense of the speed it was added to train. Every other
-              jump on the program is bodyweight on purpose and carries no number at all.
+              From Oct 3 the light lower days have a number for it too, and it stays put:
+              20 lbs a hand, 15 on a deload. The jump is about speed off the floor, and 40
+              lbs at a 186 lb bodyweight is already about a fifth; any more and it starts
+              costing the speed it&rsquo;s there to train. Every other jump is bodyweight on
+              purpose.
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium">Where it ends</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
               Trap bar 300 on Oct 27, ten pullups on Nov 8, squat 225 on Nov 10. Once all
-              three have landed the stretch is over, whatever the bench is doing, and the
-              rows after that are contingency: the same goal weights repeated for the
-              sessions that stall, with a deload in the week of Nov 23 and the file ending
-              Dec 20. The deadline stays Dec 31.
+              three are done, the stretch is over, whatever the bench is doing. The rows
+              after that are backup: the same goal weights repeated for any lift that
+              stalls, a deload the week of Nov 23, and the plan ending Dec 20. The
+              deadline is still Dec 31.
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium">The shape of a week</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              Weekends are the likeliest training days and they are fasted, so they get the
-              two light days: light lower Saturday, light upper Sunday. The heavy days sit on
-              weekdays, Tuesday and Thursday, fed. The first week back is the exception, run
-              on weekdays because that weekend is spoken for, and the deload week moves its
-              heavy days to Monday and Tuesday because the rest of it is away.
+              Weekends are the likeliest training days and they&rsquo;re fasted, so they get the
+              light days: light lower Saturday, light upper Sunday. The heavy days are
+              Tuesday and Thursday, fed. The first week back ran on weekdays because that
+              weekend was taken, and the deload week moves its heavy days to Monday and
+              Tuesday because I&rsquo;m away for the rest of it.
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium">Asking what a day should look like</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              Tap the day. The card lists the program for that session with the planned
-              load in bold and the last logged set beside it, so the answer to &ldquo;what
-              am I doing today&rdquo; is on the page. The reasoning behind the loads, the
-              belt and the lower back is in sections 9 and 10 of{" "}
+              Tap the day. The card shows that session&rsquo;s program with the planned weight
+              in bold and the last logged set next to it. The reasons behind the weights,
+              the belt and the lower back are in sections 9 and 10 of{" "}
               <code className="text-[13px]">docs/training-plan.md</code>.
             </dd>
           </div>

@@ -63,7 +63,7 @@ export const PROGRAM: PlannedSession[] = [
         reps: 3,
         repsMax: 4,
         optional: true,
-        note: "Section 4's frequency option, listed from September 7, 2026 for the last stretch: the path from 8 to 10 is frequency, and two easy sets here make four pullup days a week. Only if the elbows feel good.",
+        note: "Optional. The way from 8 to 10 is more pullup days, and two easy sets here make four a week. Only if the elbows feel good.",
       },
       {
         name: "Jumps",
@@ -81,7 +81,7 @@ export const PROGRAM: PlannedSession[] = [
         reps: 5,
         // Sep 5, 2026: the belt and the neck cue, after the second back
         // episode. Both are argued in docs/training-plan.md section 9.
-        note: "Add 5 lbs when both sets move well, and never 10 — the 10 lb step is the working suspect for the September back soreness. Belt on for these two sets only; the ramp before them is beltless. Chin packed, eyes on the floor a couple of metres ahead: the belt holds the trunk, the eyes hold the neck.",
+        note: "Add 5 lbs when both sets move well, never 10; the 10 lb jump is the likely cause of the September back soreness. Belt on for these two sets only, not the ramp. Chin tucked, eyes on the floor a couple of metres ahead: the belt holds the trunk, the eyes hold the neck.",
       },
       {
         name: "Smith machine squat",
@@ -125,7 +125,7 @@ export const PROGRAM: PlannedSession[] = [
         reps: 3,
         repsMax: 4,
         optional: true,
-        note: "Section 4's frequency option, listed from September 7, 2026 for the last stretch: the path from 8 to 10 is frequency, and two easy sets here make four pullup days a week. Only if the elbows feel good.",
+        note: "Optional. The way from 8 to 10 is more pullup days, and two easy sets here make four a week. Only if the elbows feel good.",
       },
       {
         name: "Depth jumps",
@@ -493,7 +493,7 @@ export const AWAY_FROM_THE_GYM: {
       goal: "Dips",
       movement: "Nothing of its own — the deep pushup hold above is already the bottom of a dip as well as a bench",
       dose: "shared",
-      loading: "Deliberately shared rather than left blank. The position a dip would add is deeper shoulder extension, which is the one place the hypermobility rules say not to go looking",
+      loading: "Shared on purpose. What a dip would add is deeper shoulder extension, which the hypermobility rules say to stay away from.",
     },
     {
       goal: "Pullups",
@@ -511,7 +511,7 @@ export const AWAY_FROM_THE_GYM: {
       goal: "Jumps and squat, shared",
       movement: "Reverse Nordic — kneel upright with a cushion under the knees, hips straight and ribs down, lean back under control and come back. Go shallow at first",
       dose: "2 × 5, 3–5 sec down",
-      loading: "Quads and hip flexors eccentrically at length. This is the eccentric hip-flexor slot: it sits here rather than under the deadlift, because the deadlift's tissue at length is hamstring and the hip flexors are what the plan already assigns to jumping",
+      loading: "Quads and hip flexors, loaded while lengthening. It goes here rather than with the deadlift because the deadlift already covers the hamstrings, and the plan gives the hip flexors to jumping.",
     },
   ],
   trunk: [
@@ -533,14 +533,14 @@ export const AWAY_FROM_THE_GYM: {
     {
       name: "Bracing drill",
       dose: "10 × 5 sec",
-      note: "On the back first: breathe into the belly and the sides, not the chest. Then standing, the same breath pushed hard against a hand on the stomach and held five seconds. This is the skill the belt amplifies — a belt braced into with a chest breath is a leather accessory. If the belt travelled, finish with a few bodyweight hinges and squats in it, so nothing about it is new when there is a bar in hand.",
+      note: "On the back first: breathe into the belly and sides, not the chest. Then standing, push the same breath hard against a hand on the stomach and hold five seconds. This is what the belt amplifies; braced with a chest breath, a belt does nothing. If the belt travelled, finish with a few bodyweight hinges and squats in it so it isn't new when there's a bar in hand.",
     },
   ],
   feet: [
     {
       name: "Short foot (arch doming)",
       dose: "2 × 10/side, 3 sec holds",
-      note: "Barefoot, foot flat. Draw the ball of the foot toward the heel to raise the arch WITHOUT curling the toes — the toes staying long is what separates this from a toe scrunch.",
+      note: "Barefoot, foot flat. Draw the ball of the foot toward the heel to raise the arch without curling the toes. Keeping the toes long is what makes it different from a toe scrunch.",
     },
     {
       name: "Single-leg barefoot balance",
@@ -582,7 +582,7 @@ export const AWAY_FROM_THE_GYM: {
 export const BELT_AND_BACK: { title: string; body: string }[] = [
   {
     title: "What the belt does",
-    body: "The abdominal wall braces against the belt instead of against nothing, so the same breath makes more pressure inside the trunk, and pressure is what holds a spine stiff under a bar. The August 28 trap bar sets were tired and five sore mornings followed; tired is what a trunk that has run out of stiffness feels like. That is what the belt supplies. It does not hold the spine up — worn loose, or braced into with a chest breath, it is a leather accessory — and it does not build trunk strength, it borrows it.",
+    body: "With a belt, the abs brace against something, so the same breath makes more pressure in the trunk, and that pressure is what keeps the spine stiff under a bar. The Aug 28 trap bar sets felt tired and five sore mornings followed; tired is what a trunk running out of stiffness feels like. The belt supplies that. It doesn't hold the spine up (worn loose, or braced with a chest breath, it does nothing), and it doesn't build trunk strength; it borrows it.",
   },
   {
     title: "How to wear it",
@@ -594,7 +594,7 @@ export const BELT_AND_BACK: { title: string; body: string }[] = [
   },
   {
     title: "What to expect from it",
-    body: "A few percent on the top sets once the brace is learned — 270 in the belt should feel closer to the August 20 260 than to the August 28 270 — and that is the whole gain on day one. The number rises afterwards by the plan's own rule, 5 lbs when both sets move well; what the belt changes is that 5 becomes the normal step and that each step lands more often. It does not make 10 lb steps safe. Five is the cap.",
+    body: "A few percent on the top sets once the brace is learned: 270 in the belt should feel closer to the Aug 20 260 than the Aug 28 270. That's the whole gain on day one. After that the weight goes up by the usual rule, 5 lbs when both sets move well, and the belt makes each step land more often. It doesn't make 10 lb steps safe. Five is the cap.",
   },
   {
     title: "The lower back",

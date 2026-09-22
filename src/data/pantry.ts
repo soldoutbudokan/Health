@@ -79,7 +79,7 @@ export const PANTRY_FOODS: Food[] = [
     per: "1 protein portion (~180 g cooked)",
     gramsPerServing: 180,
     macros: { calories: 400, protein: 46, carbs: 5, fat: 21, fiber: 1, sugar: 2, sodium: 700 },
-    note: "The protein half of a one-protein-two-sides plate, estimated September 14, 2026 from a photo of the tray: boneless pieces, charred, coriander through them, filling roughly a third of the container. Built as ~180 g of cooked skinless thigh at ~26 g protein and ~10 g fat per 100 g, plus the yogurt-and-oil marinade, and Atwater lands at 393 against 400. Read calories as 300–500, the portion being the wide part and the cut the rest — breast instead of thigh takes it to about 330 with 12 g of fat, and the protein barely moves either way. Sodium is an estimate in the 450–1,100 mg band and is almost all rub and marinade salt rather than the meat, which carries under 100 mg on its own.",
+    note: "The protein half of a one-protein, two-sides plate, estimated Sep 14 from a photo: boneless charred pieces with coriander, about a third of the container. About 180 g of cooked thigh plus the yogurt-and-oil marinade. Call it 300–500 kcal; breast instead would be about 330 kcal with 12 g fat and the same protein. Sodium 450–1,100 mg, almost all marinade.",
     tags: ["pantry", "chicken", "tandoori", "indian", "protein", "catering", "toronto"],
   },
   {
@@ -90,7 +90,7 @@ export const PANTRY_FOODS: Food[] = [
     per: "1 side portion (~200 g)",
     gramsPerServing: 200,
     macros: { calories: 320, protein: 4, carbs: 38, fat: 16, fiber: 4, sugar: 2, sodium: 350 },
-    note: "Baby potatoes boiled, flattened and roasted hard in oil, herbs through them, estimated September 14, 2026 from a photo. The oil is the whole story: the potatoes themselves are ~155 kcal at this weight and the roasting fat roughly doubles it, so read calories as 250–420 depending on how wet the tray was. Atwater lands at 312 against 320. Sodium is an estimate in the 200–550 mg band, all of it seasoning; the aioli that arrives on top is a separate entry and carries its own.",
+    note: "Baby potatoes boiled, flattened and roasted in oil with herbs, estimated Sep 14 from a photo. The potatoes are about 155 kcal and the oil roughly doubles it, so call it 250–420. Sodium 200–550 mg. The aioli on top is its own entry.",
     tags: ["pantry", "potatoes", "smashed potatoes", "side", "catering", "toronto"],
   },
   {
@@ -101,7 +101,7 @@ export const PANTRY_FOODS: Food[] = [
     per: "1 drizzle (~30 g)",
     gramsPerServing: 30,
     macros: { calories: 205, protein: 0.3, carbs: 1, fat: 22.5, fiber: 0, sugar: 0.5, sodium: 200 },
-    note: "Broken out from the potatoes because it moves independently of them and moves a lot — a mayonnaise-based sauce at roughly 680 kcal per 100 g, so a drizzle is worth more than half again what the potatoes under it cost. The 30 g is read off a photo taken September 14, 2026 showing it poured rather than spooned, with a little pooling; a genuine sprinkle would be nearer 10 g and 70 kcal, which is the band, 70–250. Atwater lands at 207 against 205. Sodium is an estimate in the 120–320 mg band and tracks the same gram figure everything else here does.",
+    note: "The aioli on the potatoes, separate because it varies a lot: mayo-based, about 680 kcal per 100 g. The photo on Sep 14 showed it poured with a bit of pooling, so about 30 g; a light drizzle would be 10 g and 70 kcal. Call it 70–250 kcal. Sodium 120–320 mg.",
     tags: ["pantry", "aioli", "garlic", "mayo", "sauce", "catering", "toronto"],
   },
   {
@@ -113,7 +113,7 @@ export const PANTRY_FOODS: Food[] = [
     per: "1 side portion (~165 g, dressed)",
     gramsPerServing: 165,
     macros: { calories: 325, protein: 11.5, carbs: 22.5, fat: 21, fiber: 8, sugar: 3, sodium: 595 },
-    note: "A named dish rather than the generic `pantry-greens-chickpeas`, which stays as it is for the August 4 plate; this is curly kale with a Caesar dressing and Parmesan, and it is not the same object. Built September 14, 2026 from a photo as ~90 g kale, ~35 g crunchy roasted chickpeas, ~28 g dressing and ~6 g Parmesan, with Atwater landing at 325 on the nose. Read calories as 230–430, the dressing and the chickpeas being the band — the chickpeas are the roasted crunchy kind at roughly 400 kcal per 100 g, not the soft ones out of a tin, which is most of why this is 100 kcal over the August entry. Sodium is an estimate in the 400–850 mg band and is over half dressing and Parmesan, so it runs well above the older greens entry for the same reason the calories do.",
+    note: "Curly kale Caesar with roasted chickpeas and Parmesan, a different dish from the generic greens and chickpeas entry (kept for the Aug 4 plate). Built Sep 14 from a photo: ~90 g kale, ~35 g crunchy roasted chickpeas, ~28 g dressing, ~6 g Parmesan. The crunchy chickpeas are why it's 100 kcal more than the older entry. Call it 230–430 kcal and 400–850 mg sodium, mostly dressing and cheese.",
     tags: ["pantry", "salad", "kale", "caesar", "chickpeas", "side", "catering", "toronto"],
   },
 ];

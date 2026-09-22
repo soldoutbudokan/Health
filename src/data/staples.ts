@@ -17,7 +17,7 @@ export const PACKAGED_FOODS: Food[] = [
     per: "1 scoop (~30.5 g)",
     gramsPerServing: 30.5,
     macros: { calories: 120, protein: 24, carbs: 3, fat: 1, fiber: 0.5, sugar: 1, sodium: 130 },
-    note: "ON Gold Standard 100% Whey, Vanilla Ice Cream, per single scoop \u2014 the same panel the two-scoop shake entries are built from, split out so a shake mixed off the usual dose logs as the standard entry plus a top-up rather than by rescaling a whole shake. A quarter more powder than the usual two scoops is this row at 0.5 servings. Atwater lands at 117 against 120, -2.5%. Other flavours in the range run 105\u2013140 mg sodium a scoop, so that line moves a little if the tub changes.",
+    note: "ON Gold Standard 100% Whey, Vanilla Ice Cream, one scoop, off the same panel as the two-scoop shakes. It's here so an extra half scoop can go on top of a normal shake. Other flavours run 105–140 mg sodium a scoop.",
     tags: ["whey", "protein", "powder", "scoop", "on", "optimum", "vanilla"],
   },
   {
@@ -27,7 +27,7 @@ export const PACKAGED_FOODS: Food[] = [
     per: "1 tbsp (20 g)",
     gramsPerServing: 20,
     macros: { calories: 52, protein: 0, carbs: 13.4, fat: 0, fiber: 0, sugar: 12.1, sodium: 2 },
-    note: "USDA pure maple syrup, carried per tablespoon so a poured amount logs through the servings multiplier \u2014 a third of a cup is 5.33. Atwater lands at 54 against 52, +3%, the gap being water rather than anything unaccounted. The zeroes are real: this is sugar and water, with no protein, fat or fibre by construction, which is why it is not subject to this file's blank-sodium convention. THE ASSUMPTION IS THAT IT WAS REAL MAPLE: table syrup is corn syrup and runs ~47 kcal and 12.8 g carbs a tablespoon, about a tenth lighter, so if the restaurant poured the cheap stuff this overstates by roughly that much.",
+    note: "USDA pure maple syrup, per tablespoon; a third of a cup is 5.33. The zeroes are real, since it's just sugar and water. Assumes real maple: table syrup is about a tenth lighter, so this runs a little high if the restaurant used the cheap stuff.",
     tags: ["maple", "syrup", "sweetener", "pancakes", "breakfast"],
   },
   {
@@ -38,7 +38,7 @@ export const PACKAGED_FOODS: Food[] = [
     per: "1 tbsp (15 mL / 17 g)",
     gramsPerServing: 17,
     macros: { calories: 20, protein: 0, carbs: 5, fat: 0, fiber: 0, sugar: 4, sodium: 160 },
-    note: "Heinz Canada's published panel for 15 mL, carried per tablespoon so a portion logs through the servings multiplier. Atwater reconciles exactly at 20. Sodium is the only figure here that matters and it is a read panel rather than an estimate: at 160 mg a tablespoon this is one of the densest sodium sources in the catalog by volume, so two tablespoons is 320 mg for 40 kcal. Restaurant ketchup is usually Heinz in Toronto, but a house or generic bottle would move the sodium more than the calories.",
+    note: "Heinz Canada's panel for 15 mL, per tablespoon. The sodium is the number that matters: 160 mg for 20 kcal. A house or generic ketchup would change the sodium more than the calories.",
     tags: ["ketchup", "condiment", "tomato", "heinz"],
   },
   {
@@ -58,7 +58,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 2,
       sodium: 300,
     },
-    note: "Grenade's published figures for the 60 g Oreo White bar (230 kcal, 20 g protein, 2 g sugars). Third-party databases list this anywhere from 210–250 kcal, so check your wrapper if you want it exact. Sodium is the softest figure here: Grenade's UK panel gives salt, not sodium, and the bars cluster around 0.7–0.8 g salt — divided by 2.5 that is 280–320 mg, so 300 mg is the middle of a converted range rather than a number read off a panel. Check the wrapper if sodium is what you are watching.",
+    note: "Grenade's published figures for the 60 g Oreo White bar. Other databases list it at 210–250 kcal, so check the wrapper if you want it exact. Sodium is converted from the UK panel's salt (0.7–0.8 g salt is 280–320 mg), so 300 is the middle.",
     tags: ["bar", "protein bar", "snack", "grenade", "oreo"],
   },
   {
@@ -70,7 +70,7 @@ export const PACKAGED_FOODS: Food[] = [
     per: "1 bar (40 g)",
     gramsPerServing: 40,
     macros: { calories: 160, protein: 13, carbs: 17, fat: 7, fiber: 7, sugar: 2, sodium: 180 },
-    note: "SimplyProtein's published panel for the 40 g Crispy Bar, added September 10, 2026; simplyprotein.ca was unreachable, so the figures come from retailer and dietitian listings of it and no wrapper was in hand. Three lines are soft in a narrow way \u2014 carbs run 15\u201317 g and sodium 180\u2013200 mg across those listings, and the older Snack Bar line of the same flavour prints 12 g protein against this one's 13 \u2014 so check the wrapper, but the spread is small enough that it moves the row by under 10 kcal. Atwater lands at 183 against 160, +14%, which is the widest miss in this file and is the fibre rather than a misread panel: 7 of the 17 g of carbs is fibre and yields nearer 2 kcal/g than 4, and recomputing on that basis gives 169, +6%. THE FIBRE IS THE POINT OF THE BAR alongside the protein \u2014 7 g in a 40 g bar is more than the Grenade bar above carries in 60 g, at 70 fewer calories and 7 g less protein. Held per bar because that is how it is eaten and a half logs through the multiplier.",
+    note: "SimplyProtein's 40 g Crispy Bar, from retailer and dietitian listings; their site was unreachable and there was no wrapper to hand. Listings vary a little on carbs (15–17 g) and sodium (180–200 mg). Atwater runs high because 7 g of the carbs is fibre. That fibre is part of the point: more than the Grenade bar, for 70 fewer calories.",
     tags: ["bar", "protein bar", "simply protein", "simplyprotein", "crispy bar", "dark chocolate", "almond", "plant based", "vegan", "high fibre", "snack"],
   },
   {
@@ -82,7 +82,7 @@ export const PACKAGED_FOODS: Food[] = [
     per: "1 bag (30 g)",
     gramsPerServing: 30,
     macros: { calories: 136, protein: 3.6, carbs: 20.9, fat: 4.2, fiber: 1, sodium: 150 },
-    note: "Kameda Seika's published panel for the 180 g six-bag pack, per 30 g bag: 136 kcal, 3.6 g protein, 4.2 g fat, 20.9 g carbs, 0.38 g salt. Atwater reproduces the 136 exactly, which is the panel's own arithmetic rather than a coincidence. Sodium is converted from that Japanese salt-equivalent line (0.38 / 2.54), so it carries that rounding and nothing worse. Fibre is not on the panel and the 1 g is estimated from the mix \u2014 roughly 7 parts soy-glazed rice cracker to 3 parts peanut, the peanuts carrying nearly all of it, so read it as \u00b10.5 g; sugars are not broken out and there is no basis to estimate them, so that line stays blank. The panel came from Kameda's published figures via search rather than the wrapper in hand, and the multipack ships in several sizes \u2014 check the bag weight if the pack is not the 180 g one.",
+    note: "Kameda Seika's panel for the 180 g six-bag pack, per 30 g bag, found through search rather than off the bag. Sodium is converted from the salt figure. Fibre isn't on the panel; 1 g is an estimate, mostly from the peanuts, ±0.5 g. Sugar isn't listed, so it's blank. Check the bag weight if it's a different pack.",
     tags: ["kaki no tane", "rice cracker", "arare", "peanut", "kameda", "japanese", "snack"],
   },
   {
@@ -94,7 +94,7 @@ export const PACKAGED_FOODS: Food[] = [
     per: "1 paratha (80 g)",
     gramsPerServing: 80,
     macros: { calories: 270, protein: 5, carbs: 32, fat: 15, sodium: 320 },
-    note: "Shana's panel for the frozen Original Paratha, per 80 g piece: 270 kcal, 5 g protein, 15 g fat, 32 g carbs, 320 mg sodium \u2014 80 g is the pack's own basis, the 5-piece pack running 400 g and the 15-piece 1.2 kg. It agrees with the per-100 g listing (338 kcal, 6 g protein, 18 g fat, 40 g carbs) scaled by 0.8, so two independent reads land on the same panel; Atwater gives 283 against 270, +4.8%. Fibre is deliberately blank \u2014 no reachable listing carries it, and whether the dough is atta or maida swings it between roughly 1.4 and 5.7 g a piece, so any single figure would be invention rather than an estimate; read the box if fibre matters. Sugars are unstated and near-zero by construction for a flour, water, oil and salt dough. These came via search rather than off the wrapper in hand.",
+    note: "Shana's panel for the frozen Original Paratha, per 80 g piece, found through search. It matches their per-100 g listing. Fibre is blank on purpose: nothing lists it, and atta versus maida dough could put it anywhere from 1.4 to 5.7 g. Check the box if fibre matters.",
     tags: ["paratha", "flatbread", "bread", "shana", "frozen", "indian", "pakistani"],
   },
   {
@@ -114,7 +114,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 29,
       sodium: 200,
     },
-    note: "2.8 oz Recover bar: 350 kcal and 20 g protein are consistent across sources. Carbs are listed as 43 g on nutrition databases and 49 g in some retail copy — 43 g is what actually reconciles with the 350 kcal total, so that is what's used here. Sodium is mid-range rather than a single panel reading; published figures for this bar sit around 180–230 mg.",
+    note: "2.8 oz Recover bar. 350 kcal and 20 g protein agree across sources. Carbs are 43 g in nutrition databases and 49 g in some retail copy; 43 is the one that adds up to 350. Sodium is a middle figure, since sources give 180–230 mg.",
     tags: ["bar", "protein bar", "snack", "gatorade", "caramel", "recover"],
   },
   {
@@ -134,7 +134,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 6,
       sodium: 120,
     },
-    note: "Every figure here is read straight off the box panel (42 bars, 40 g each), photographed August 10, 2026 — one of the few entries in this catalog with no estimated line at all. Atwater lands at 203 against a stated 190, +7%, inside the 10% the catalog holds to; nothing needs explaining away. Worth stating plainly what this bar is, because the name misleads: it is a peanut bar with some added soy protein, not a whey-style protein bar. The ingredient list opens peanuts, isolated soy protein, chicory root extract, dark chocolate coating, peanut butter, semisweet chocolate chips — which is why 11 g of fat sits against only 10 g of protein, and why 6 of the 16 g of carbs are sugars. The 6 g of fibre is chicory root inulin. At 10 g of protein per 190 kcal it is roughly half as protein-dense as the Grenade bar (20 g per 230 kcal) and a third of the Starbucks latte's, so it does not do the job those do; treat it as a snack that happens to contain protein. THIS ENTRY REPLACED A BADLY WRONG FIRST DRAFT, recorded here because the failure is instructive: written from memory on August 10, 2026 it claimed a 60 g bar with 21 g protein, 15 g fibre and 6 g fat, and the note argued at length that its Atwater miss was a legitimate high-fibre artefact. The panel says 40 g, 10 g protein, 6 g fibre, 11 g fat. The reasoning was sound and every input to it was invented. A recalled panel is not a source.",
+    note: "Everything read off the box (40 g bars), photographed Aug 10. Despite the name, it's a peanut bar with some soy protein, which is why there's more fat than protein. About half as protein-dense as a Grenade bar, so treat it as a snack. The first version of this entry was written from memory and was badly wrong (60 g, 21 g protein, 15 g fibre); the box fixed it.",
     tags: ["bar", "protein bar", "snack", "kirkland", "costco", "chewy"],
   },
   {
@@ -154,7 +154,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 9,
       sodium: 75,
     },
-    note: "The Canadian Fibre 1 box, read through search summaries on September 15, 2026 because fiberone.com and every nutrition site were blocked at the network egress proxy: a 35 g bar at 130 kcal, 2 g protein, 26 g carbs, 3.5 g fat, 7 g fibre, 9 g sugars, 75 mg sodium. Two independent searches returned the same figures, so this is a label read rather than a reconstruction. Atwater on the general 4/4/9 lands at 144 against 130, +10%, which is the high-fibre artefact this catalog documents on the raw fruit rather than a misread panel — charging the 7 g of fibre at ~2 kcal/g instead gives 130 on the nose, and that agreement is what corroborates the row. THE US BOX IS THE CONFUSABLE SIBLING at 40 g and 140–150 kcal, so a wrapper bought stateside runs about 15 kcal heavier than this. Reported as a chocolate chip bar and taken as this one, since the Canadian chewy line is Oats & Chocolate and what it is studded with is semisweet chocolate chips; at 2 g of protein per 130 kcal it is a fibre snack and not a protein item, which the name it sits beside in the log makes worth saying.",
+    note: "The Canadian Fibre 1 box, from search summaries on Sep 15 (the site was blocked); two searches gave the same figures. Atwater runs high because of the 7 g of fibre. The US bar is bigger, 40 g and 140–150 kcal. Logged from \"chocolate chip bar\"; the Canadian chewy line is Oats & Chocolate. A fibre snack, not a protein one.",
     tags: ["bar", "fibre bar", "fiber one", "fibre one", "snack", "oats", "chocolate", "chocolate chip", "chewy"],
   },
   {
@@ -186,7 +186,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 8,
       sodium: 318,
     },
-    note: "Sodium is the sibling entry's 260 mg plus half of this catalog's 115 mg/cup 2% milk row, derived the same way the other macros here are. The 2-scoop shake plus a ~1/2 cup (120 ml) splash of 2% milk (+61 kcal, +4 g protein, +6 g carbs, +2.4 g fat). Serving weight is 61 g of powder plus ~122 g of milk: the macro delta against the water version is exactly half a cup at this catalog's 244 g/cup, so the milk weight is derived rather than measured. Water isn't counted, same as the sibling entry. Use the water version and add milk separately if your splash varies.",
+    note: "The 2-scoop shake plus about half a cup of 2% milk (+61 kcal, +4 g protein, +6 g carbs, +2.4 g fat). Sodium is the water shake's 260 plus half a cup of milk. If the splash varies, log the water version and the milk separately.",
     tags: ["shake", "whey", "protein", "on", "optimum", "vanilla", "milk"],
   },
   {
@@ -205,7 +205,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 1,
       sodium: 200,
     },
-    note: "Premier's published panel for the 11 fl oz ready-to-drink bottle: 160 kcal, 30 g protein, 5 g carbs, 3 g fat, 1 g sugar. Sodium sits around 200 mg and moves a little by flavour (the range across the line is roughly 180–220 mg). Atwater comes out at 167 against a stated 160, which is normal for a shake — the carb figure includes fibre and sugar alcohols that do not deliver a full 4 kcal/g.",
+    note: "Premier's panel for the 11 fl oz bottle. Sodium moves a little by flavour, roughly 180–220 mg. Atwater runs a bit high because some of the carbs are fibre and sugar alcohols.",
     tags: ["shake", "protein", "premier", "cookies and cream", "rtd", "drink"],
   },
   {
@@ -224,7 +224,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 13.7,
       sodium: 294,
     },
-    note: "The standing order is less ice, so since August 10, 2026 this entry is Starbucks' published venti panel scaled by 1.05 — the owner's estimate that less ice leaves room for about 5% more drink. The multiplier is a calibration, not a reading; what Starbucks publishes is the regular-ice venti at 280 kcal / 40 g protein / 17 g carbs / 6 g fat / 13 g sugar, and dividing by 1.05 gets back to it. Everything the un-scaled entry carried still applies. Sodium is NOT from Starbucks — it is built from a ~10 fl oz 2% milk plus ~30 g whey reconstruction (~144 mg from the milk, ~130 mg from the whey, then the same ×1.05), so it inherits every doubt that reconstruction carries and should be read as ±85 mg. LOWEST-CONFIDENCE ENTRY IN THE CATALOG — check it against the current Starbucks panel before trusting it. Of the published figures only the calories, protein, fat and sugar are Starbucks'; the 17 g carbs is back-calculated from those, so this entry passing an Atwater check is arithmetic, not corroboration. Two independent sanity checks it does survive: the stated sugar bounds carbs from below, and building the drink from roughly 10 fl oz of 2% milk plus ~30 g of whey lands near the published 280 / 40 / 17 / 6. Against that, 40 g protein is at the top of the range published for this drink, and at 42 g scaled it is the largest single protein item in the catalog — it alone is a quarter of a day's target, so an error here moves a whole day. A grande with regular ice is roughly three-quarters of the un-scaled venti.",
+    note: "Starbucks' published venti (280 kcal, 40 g protein, 17 g carbs, 6 g fat, 13 g sugar) scaled up 5%, since the order is less ice and that leaves room for more drink. The 5% is a guess. Sodium isn't from Starbucks: it's built from about 10 fl oz of 2% milk plus a scoop of whey, so read it as ±85 mg. At 42 g protein this is the biggest single protein item in the catalog and one of the least certain, so check it against the current Starbucks panel. A grande with regular ice is about three quarters of the unscaled venti.",
     tags: ["starbucks", "latte", "coffee", "protein", "vanilla", "iced", "drink"],
   },
   {
@@ -242,7 +242,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 35,
       sodium: 270,
     },
-    note: "Starbucks' published panel for the cinnamon coffee cake — 380 kcal, 4 g protein, 57 g carbs, 15 g fat, 1 g fibre, 35 g sugars, 270 mg sodium. Read from nutrition aggregators on August 13, 2026 rather than from starbucks.com, which was unreachable from this machine; two independent searches returned the same seven figures, and Atwater lands at 379 against a stated 380, which is the signature of a real panel rather than a database reconstruction. THE CONFUSABLE SIBLING IS THE MAIN RISK: the same searches surface a reduced-fat cinnamon swirl coffee cake at 330 kcal / 43 g carbs, a different product — if the case card says reduced-fat or swirl, this entry is the wrong one. Serving weight is the soft part and is deliberately absent: aggregators state the serving as 100 g while a Starbucks slice runs nearer 113 g, so rather than pick one, the macros are carried per slice exactly as published and nothing has been scaled. Worth stating plainly what this is, since it arrives beside the protein latte and the two read as one breakfast: at 4 g of protein per 380 kcal it is the least protein-dense thing in the catalog, a pastry and nothing else, and 35 g of sugar is more than any other single entry here. All of the breakfast's protein comes from the drink.",
+    note: "Starbucks' published panel, from nutrition sites on Aug 13 because starbucks.com was unreachable; two searches agreed on every figure. Not the reduced-fat cinnamon swirl coffee cake (330 kcal): if the card says reduced-fat or swirl, this is the wrong entry. No serving weight, because sources disagree (100 g vs about 113 g). A pastry: 4 g protein, 35 g sugar.",
     tags: ["starbucks", "coffee cake", "cinnamon", "pastry", "cake", "breakfast"],
   },
   {
@@ -261,7 +261,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 1,
       sodium: 790,
     },
-    note: "Egg frittata with kale-basil pesto and mozzarella on a cheddar-onion bun. The 370 kcal and the 146 g weight are the Canadian panel as FatSecret Canada lists it, read through search summaries on September 13, 2026 because starbucks.ca and every nutrition site were blocked at the egress proxy; the macro breakdown is the US panel (390 kcal, 21 g protein, 36 g carbs, 16 g fat, 2 g fibre, 1 g sugar, 790 mg sodium), the only full one that came through. Atwater on those macros lands at 372, so the two panels read as one recipe rounded differently rather than two products; read calories as 370-390 and sodium as 700-850, sodium being the line most likely to move by market. At 21 g of protein per 370 kcal it is the protein-dense half of a Starbucks lunch, nearly all of it egg and cheese.",
+    note: "Egg, kale-basil pesto and mozzarella on a cheddar-onion bun. The 370 kcal and 146 g are the Canadian panel, via FatSecret Canada; the macros are the US panel (390 kcal), the only full one reachable on Sep 13. They look like the same sandwich rounded differently. Read calories as 370–390 and sodium as 700–850.",
     tags: ["starbucks", "sandwich", "egg", "pesto", "mozzarella", "breakfast sandwich", "frittata", "lunch"],
   },
   {
@@ -280,7 +280,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 37,
       sodium: 220,
     },
-    note: "Starbucks Canada's published panel for the 104 g brownie, read through search summaries of starbucks.ca on September 13, 2026 since the site itself was blocked at the egress proxy: 480 kcal, 6 g protein, 55 g carbs, 28 g fat (9 g saturated), 3 g fibre, 37 g sugars, 220 mg sodium. Atwater lands at 496 against 480, +3%, which is a real panel rather than a reconstruction. Entered as the Canadian panel because the store was in BC; a wrapper from a US store may differ by a few grams and wins if it does. At 6 g of protein per 480 kcal this is a dessert and nothing else, and 37 g of sugar puts it beside the cinnamon coffee cake as the sweetest thing in the catalog.",
+    note: "Starbucks Canada's panel for the 104 g brownie, from search summaries on Sep 13. Canadian because the store was in BC; a US wrapper may differ by a few grams. A dessert: 6 g protein, 37 g sugar.",
     tags: ["starbucks", "brownie", "chocolate", "dessert", "pastry", "bakery"],
   },
   {
@@ -299,7 +299,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 29,
       sodium: 30,
     },
-    note: "The published panel's own serving, 16 pieces / 40 g, carried verbatim so a piece count logs through the servings multiplier rather than by rescaling the entry — ten pieces is 0.625. Read from nutrition aggregators on August 13, 2026 rather than from a wrapper. Calories are the one soft line: sources split between 140 and 150 for the same 40 g while agreeing on every other figure, and 140 is the more commonly stated, so read this as 140-150. Atwater lands at 144 against 140, which is as close as a sugar confection gets. The zeroes here are real zeroes and not blanks: this is sugar, corn syrup and acid, with no fat and no protein by construction, which is the reverse of the sodium convention elsewhere in this file. 29 g of sugar in 40 g of candy means the entry is about three-quarters sugar by weight.",
+    note: "The panel's own serving, 16 pieces (40 g), so ten pieces is 0.625. From nutrition sites, not a wrapper. Sources say 140 or 150 kcal; 140 is more common. No fat or protein, since it's sugar, corn syrup and acid.",
     tags: ["candy", "sweets", "sour patch", "sour patch kids", "gummy", "snack", "sugar"],
   },
   {
@@ -318,7 +318,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 16,
       sodium: 5,
     },
-    note: "The published panel's own serving, 6 pieces / 30 g, carried verbatim so a piece count logs through the servings multiplier — seven pieces is 1.167. Read from nutrition aggregators on August 14, 2026 rather than from a bag; the 90 kcal / 30 g and the 16 g of sugar come from the panel, the 5 mg sodium likewise. Atwater lands at 94 against 90, +4%. FLAVOUR IS THE SOFT INPUT AND IT WAS NOT RECORDED: Kasugai runs muscat, grape, lychee, peach and strawberry as separate products and their published densities spread from 300 to 333 kcal per 100 g, so read this entry as ±10% until the bag is named. The count is approximate too — 'around 7' — and at 15 kcal a piece a miscount of two is 30 kcal, which is smaller than the flavour spread. THE PROTEIN IS REAL AND IS GELATIN: about 1.4 g per serving, which is why this does not carry the true zero that Sour Patch Kids does. It is still not a protein source in any useful sense — it is an incomplete protein at a trivial dose — and it is logged only because leaving it out would misstate a figure the panel actually publishes. Fat and fibre are real zeroes. Sodium at 5 mg is the lowest in this file and effectively nil; unlike the staples above it is a printed figure, not an as-bought floor.",
+    note: "The panel's own serving, 6 pieces (30 g), so seven pieces is 1.167. From nutrition sites, not the bag. Flavour wasn't noted and flavours run 300–333 kcal per 100 g, so call it ±10%. The protein is gelatin and doesn't count for much.",
     tags: ["candy", "sweets", "gummy", "gummies", "kasugai", "japanese", "snack", "sugar", "fruit"],
   },
   {
@@ -337,7 +337,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 31,
       sodium: 55,
     },
-    note: "The Canadian 341 mL can, which is the size sold in Toronto; read from published panels on August 15, 2026 rather than off a can in hand. Atwater lands at 124 against 120, +3%, and the whole of it is sugar — high-fructose corn syrup, with the carbs and the sugars identical because there is nothing else in the drink to be a carbohydrate. Protein, fat and fibre are true zeroes, not unrecorded blanks. THE CAN SIZE IS THE ASSUMPTION: the US 12 fl oz (355 mL) can runs ~130 kcal / 34 g sugar / 65 mg sodium, about 8% higher across the board, so if the can was American this row understates it by roughly a tenth. Sodium is the softest figure at 55 mg — published values for this drink sit between 45 and 70 mg per can depending on the source — and it is also the least consequential.",
+    note: "The Canadian 341 mL can, from published panels rather than a can in hand. All the carbs are sugar. A US 355 mL can is about 8% more across the board. Sodium varies by source, 45–70 mg.",
     tags: ["drink", "iced tea", "brisk", "lemon", "soft drink", "canned", "sugar"],
   },
   {
@@ -357,7 +357,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 2,
       sodium: 225,
     },
-    note: "Scaled from the box panel's 30 g (1/2 cup) serving — 160 kcal, 3 g protein, 16 g carbs, 9 g fat, 240 mg sodium — down to the 28 g single-serve pack, so every figure here is the panel times 0.93 rather than a reading off the snack-pack wrapper itself. That scaling is the entry's main caveat: the two sizes are the same cracker, but single-serve packs sometimes carry their own rounded panel. Fibre and sugar are the softest numbers, both below the 1 g the panel rounds to, and published figures for a 1 oz pack range 120–250 mg on sodium depending on the source — 225 mg comes from the box panel, which is the only one of those tied to a stated serving weight. THE VARIETY IS AN ASSUMPTION: logged as the cheese-filled sandwich version, the common single-serve pack. Plain Ritz Bits minis (no filling) land within ~10 kcal and ~15 mg sodium of this but split differently, nearer 18 g carbs and 7 g fat.",
+    note: "The box panel's 30 g serving scaled down to the 28 g pack, not read off the pack itself. Sodium sources range from 120 to 250 mg; 225 is the box panel, the only one tied to a weight. Assumes the cheese-filled kind; plain Ritz Bits are within about 10 kcal.",
     tags: ["cracker", "ritz", "cheese", "snack", "nabisco", "bits"],
   },
   {
@@ -377,7 +377,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 3,
       sodium: 890,
     },
-    note: "The whole 70 g pack as sold — noodle cake plus the tastemaker sachet — prepared with water and nothing else. Calories, protein, carbs and fat agree across the export-pack panel and its per-100 g figure (443 kcal/100 g x 0.70 = 310), and Atwater lands at 313, so the macros are solid. Sodium was 970 mg from the export-pack panel until August 9, 2026, when the pack actually in the cupboard was read and put two packs at ~1,780 mg — so 890 a pack, which is what this now carries. That the 1,780 was two packs and not one was confirmed the same day, so 890 a pack is settled rather than inferred from an ambiguous total. It is also the only line here traceable to the box on hand rather than a database — the macros are still the export-pack figure and would be worth replacing off the same panel next time it is open. Regional variants (Masala vs Chicken vs Curry) move sodium more than they move calories. Sugar is the tastemaker's, ~3 g, and is the least corroborated line.",
+    note: "The whole 70 g pack, noodles plus tastemaker, made with water. Calories and macros are the export-pack panel. Sodium was 970 until Aug 9, when the pack in the cupboard showed about 1,780 mg for two packs, so 890 a pack. Re-read the macros off that box next time it's open. Other flavours change the sodium more than the calories.",
     tags: ["noodles", "instant noodles", "maggi", "masala", "ramen", "quick"],
   },
   {
@@ -396,7 +396,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 3,
       sodium: 550,
     },
-    note: "Held per 100 g so a piece count logs through the servings multiplier, because piece weight is the real variable here — Stonefire's full naan is 126 g, restaurant naan runs 90-120 g, and the entry is useless if it assumes one. Energy density is the solid line: USDA's commercially-prepared refrigerated naan row gives 291 kcal and 9.6 g protein per 100 g, and Stonefire's own panel (63 g half-naan at 180 kcal) works out to 286, so two independent sources agree within 2% and Atwater lands at 292 against 290. Sodium is the wide line and is carried at 550 with a 450-750 band: the USDA row is about 465 mg per 100 g while Stonefire's panel works out to about 745, and nothing decides between them without reading the bag. THIS IS PLAIN NAAN — butter and garlic versions carry more fat and run 15-25% higher in calories, so do not log them against this entry.",
+    note: "Per 100 g, because naan size varies a lot (Stonefire's full naan is 126 g, restaurant naan 90–120 g). USDA and Stonefire agree on calories within 2%. Sodium is 550 in a 450–750 range, because USDA and Stonefire disagree. Plain naan only; butter or garlic naan runs 15–25% higher.",
     tags: ["naan", "bread", "flatbread", "indian", "curry", "side"],
   },
 ];
@@ -440,7 +440,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 small cookie (~22 g)",
     gramsPerServing: 22,
     macros: { calories: 95, protein: 1.1, carbs: 15, fat: 3.5, fiber: 0.3, sugar: 9, sodium: 75 },
-    note: "Estimated for a home-baked soft molasses cookie, not read off a recipe \u2014 none was given, so this is built from the standard construction of the type: flour, butter, brown sugar, molasses, egg, soda and spice, at roughly 4.3 kcal/g. Read it as 70\u2013125 kcal and treat size as the variable doing nearly all the work, since cookies of this style are consistent per gram and \"small\" was the only dimension reported; butter ratio is the second and moves the fat line more than the calories. Sodium ~75 mg is baking soda plus salted butter and is ordinary for the type. IF THE RECIPE EXISTS, THIS ENTRY SHOULD BE REPLACED BY IT \u2014 a weighed batch divided by its yield would retire the band entirely.",
+    note: "Estimated for a small, soft home-baked molasses cookie. No recipe was given, so it's built from the usual flour, butter, brown sugar, molasses and egg. Call it 70–125 kcal, mostly depending on size. If the recipe turns up, replace this with it.",
     tags: ["cookie", "molasses", "ginger", "dessert", "snack", "homemade"],
   },
   {
@@ -451,7 +451,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 cookie (28 g)",
     gramsPerServing: 28,
     macros: { calories: 137, protein: 1.6, carbs: 16.3, fat: 8, fiber: 0.5, sugar: 10, sodium: 85 },
-    note: "USDA 'Cookies, chocolate chip, prepared from recipe, made with butter' (488 kcal / 5.7 g protein / 58.2 g carbs / 28.4 g fat per 100 g) scaled to its own 28 g cookie, added September 20, 2026. That row is the from-scratch one rather than a packaged panel, which is what a home-baked cookie wants; no recipe was given, so nothing here is a weighed batch. Figures were checked against published listings of the row rather than recalled, and FoodData Central was unreachable from here; fibre and sodium come off the same listings and sugars did not, so the 10 g is estimated from the type at roughly a third of the weight -- read it as 8-13 g. Atwater lands at 144 against 137, +5%. SIZE IS THE VARIABLE and belongs in the servings multiplier: 28 g is a plain drop cookie about 2.5 inches across, and a thick bakery-style one runs 45-55 g, so log one of those as 1.6-2 servings rather than editing this row. A weighed batch divided by its yield would retire the band, as the molasses entry above says.",
+    note: "USDA's from-scratch chocolate chip cookie made with butter, at its 28 g cookie. Sugar wasn't in the listings used, so 10 g is an estimate (8–13 g). Size is what matters: 28 g is a plain 2.5-inch drop cookie, and a thick bakery one (45–55 g) is 1.6–2 servings.",
     tags: ["cookie", "chocolate chip", "dessert", "snack", "homemade", "usda"],
   },
   {
@@ -500,7 +500,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 medium (~119 g)",
     gramsPerServing: 119,
     macros: { calories: 37, protein: 1.2, carbs: 7.2, fat: 0.4, fiber: 2.5, sugar: 5, sodium: 5 },
-    note: "USDA sweet red pepper, raw (31 kcal / 100 g) at the 119 g USDA calls a medium fruit — so a quarter pepper logs as 0.25 rather than by re-weighing. Unlike the rice, oats and eggs in this file, the 5 mg of sodium is a real total and not a floor: this is eaten raw, so nothing is added between the shelf and the plate. If it ever gets roasted and salted, log the salt with the dish. Red is the ripe stage of the same fruit sold green, and it is sweeter for it — a green pepper of this size is about 24 kcal with half the sugar.",
+    note: "USDA raw red pepper at a 119 g medium, so a quarter pepper is 0.25. The sodium is the whole figure because it's eaten raw; if it's roasted and salted, log the salt with the dish. A green pepper this size is about 24 kcal.",
     tags: ["pepper", "bell pepper", "capsicum", "vegetable", "raw", "snack"],
   },
   {
@@ -510,7 +510,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 tbsp (15 g)",
     gramsPerServing: 15,
     macros: { calories: 25, protein: 1.2, carbs: 2.1, fat: 1.4, fiber: 0.9, sugar: 0, sodium: 57 },
-    note: "USDA commercial hummus (166 kcal / 100 g, 379 mg sodium) held per tablespoon, so teaspoon-scale dips log through the multiplier — 2 tsp is 0.667. BRAND VARIATION IS THE MAIN CAVEAT and it is wide: supermarket tubs run roughly 130-200 kcal and 300-500 mg sodium per 100 g depending on how much tahini and oil is in them, and an oil-topped or garlic-confit style sits at the top of both. Read this as a generic rather than as the tub in the fridge. The sugar is a true near-zero (USDA gives 0.3 g/100 g, which is 0.05 g at this serving) and is written as 0 rather than left blank, since chickpeas and tahini contribute essentially none.",
+    note: "USDA commercial hummus, per tablespoon, so 2 tsp is 0.667. Brands vary a lot, roughly 130–200 kcal and 300–500 mg sodium per 100 g, depending on the tahini and oil. Treat it as a generic.",
     tags: ["hummus", "chickpea", "dip", "tahini", "snack", "spread"],
   },
   {
@@ -521,7 +521,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "3/4 cup (~180 g)",
     gramsPerServing: 180,
     macros: { calories: 113, protein: 20, carbs: 7, fat: 0, sodium: 65 },
-    note: "Macros are Siggi's 0% plain scaled from the 150 g cup to a 3/4-cup (180 g) portion. The sodium is NOT off the tub — it is USDA's strained nonfat yogurt row (36 mg/100 g) at 180 g. Plain skyr panels cluster in the 55–75 mg range at this size, so treat 65 mg as an estimate rather than a label reading.",
+    note: "Siggi's 0% plain scaled from the 150 g cup to 3/4 cup (180 g). Sodium isn't off the tub; it's USDA's strained nonfat yogurt at 180 g. Skyr panels run 55–75 mg at this size.",
     tags: ["yogurt", "skyr", "protein", "dairy"],
   },
   {
@@ -531,7 +531,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "3/4 cup (~105 g)",
     gramsPerServing: 105,
     macros: { calories: 60, protein: 2, carbs: 13.5, fat: 0.4, fiber: 4, sugar: 11, sodium: 4 },
-    note: "The jumbleberry line of the Protein Berry Smoothie, added September 20, 2026 when a batch was made with double the fruit and there was no way to log the extra 3/4 cup on its own. Derived by subtraction rather than read anywhere: the recipe's own batch total minus the catalog's 2 whey scoops, 3/4 cup Siggi's skyr and 3/4 cup 2% milk leaves this. That makes it only as good as the recipe table it comes out of, which carries upstream's \"Estimates generated by Claude\" line -- so treat it as a residual, not a reading. USDA's frozen unsweetened berries run ~50 kcal/100 g, which puts 105 g at ~52 against this 60, so read calories as 50-65 and blame the gap on the subtraction absorbing every rounding error in the other three rows. Protein at 2 g is likewise about a gram generous for berries. Atwater lands at 66 against 60, +9%, and closes to -4% once the 4 g of fibre is counted at 2 kcal/g rather than 4. HOLD THIS PER 3/4 CUP because that is the recipe's own unit -- a double-fruit batch logs as the smoothie plus one of these, never as 1.5 batches, which would double the whey and the milk too.",
+    note: "The berries in the Protein Berry Smoothie, added Sep 20 for a double-fruit batch. Worked out by subtracting the whey, skyr and milk from the recipe's total, so it's a leftover rather than a reading. USDA frozen berries would be about 52 kcal here, so call it 50–65. Kept per 3/4 cup: a double-fruit smoothie logs as the smoothie plus one of these, not 1.5 smoothies.",
     tags: ["berry", "berries", "jumbleberry", "frozen", "fruit", "smoothie"],
   },
   {
@@ -551,7 +551,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 cup (226 g)",
     gramsPerServing: 226,
     macros: { calories: 163, protein: 28, carbs: 6.2, fat: 2.3, sodium: 918 },
-    note: "USDA 'Cheese, cottage, lowfat, 1% milkfat', 1 cup (226 g): the 163 kcal / 28 g protein / 6.2 g carbs / 2.3 g fat already here and the 918 mg sodium all come off that one row. This is the largest sodium item in the catalog and brands differ a lot — Breakstone's 1% works out around 880 mg a cup, Friendship around 720 — so read your tub if sodium is what you are watching. No-salt-added versions are under 100 mg with the same macros.",
+    note: "USDA 1% cottage cheese, 1 cup; the sodium is from the same row. The saltiest single item in the catalog, and brands differ a lot (Breakstone's about 880 mg a cup, Friendship about 720). No-salt-added tubs are under 100 mg.",
     tags: ["cottage cheese", "protein", "dairy"],
   },
   {
@@ -561,7 +561,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 g",
     gramsPerServing: 100,
     macros: { calories: 165, protein: 31, carbs: 0, fat: 3.6, sodium: 74 },
-    note: "USDA 'chicken breast, meat only, cooked, roasted', 100 g — the 165/31/3.6 line everyone quotes, and the 74 mg sodium is that same row. That figure is plain unseasoned meat: brined, marinated or salted-in-the-pan chicken runs several times higher, and pre-brined supermarket breasts can pass 300 mg. The calories and protein hold either way.",
+    note: "USDA roasted chicken breast, meat only, 100 g. The 74 mg sodium is plain unseasoned meat; brined or marinated chicken runs several times higher, and pre-brined supermarket breasts can pass 300 mg.",
     tags: ["chicken", "protein", "meat"],
   },
   {
@@ -571,7 +571,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 can (5 oz / ~110 g drained)",
     gramsPerServing: 110,
     macros: { calories: 120, protein: 26, carbs: 0, fat: 1, sodium: 300 },
-    note: "Macros are label-typical for a drained 5 oz can of light tuna in water. Sodium is an estimate at the middle of the range rather than one brand's panel: USDA's canned-light-in-water row is 247 mg/100 g (~270 mg here) and US brand panels (StarKist, Bumble Bee) work out at 300–360 mg a can. Low-sodium packs are roughly half; tuna in oil is a different entry.",
+    note: "Typical label macros for a drained 5 oz can of light tuna in water. Sodium is a middle figure: USDA gives about 270 mg here and US brands 300–360 mg a can. Low-sodium cans are about half; tuna in oil is a different entry.",
     tags: ["tuna", "fish", "protein"],
   },
   {
@@ -590,7 +590,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 slice (~28 g)",
     gramsPerServing: 28,
     macros: { calories: 80, protein: 3, carbs: 15, fat: 1, fiber: 1, sodium: 135 },
-    note: "Serving weight corrected from 43 g to 28 g. 80 kcal in 43 g is 1.9 kcal/g, which no sandwich bread reaches, and 15 g of carbs in 43 g is 35% carb by weight against bread's typical ~50%. The macros were the sound half: 3 g protein / 15 g carbs / 1 g fat is a standard soft-sandwich slice (Sara Lee-class, 28 g / 80 kcal — 2.9 kcal/g, 54% carb by weight), so the gram figure was the wrong number, not the panel. Thick-cut loaves (Oroweat 43 g, Dave's Killer 45 g) are ~110 kcal a slice — log 1.4 servings or edit this entry. Sodium is USDA commercially-prepared white bread (477 mg/100 g) at 28 g; supermarket panels for a slice this size run 130–170 mg.",
+    note: "A standard soft sandwich slice, 28 g and 80 kcal. The weight used to say 43 g; the macros were right, the weight wasn't. Thick-cut slices (about 43 g) are ~110 kcal, so log 1.4 servings. Sodium is USDA white bread at 28 g; store brands run 130–170 mg.",
     tags: ["bread", "toast", "carb"],
   },
   {
@@ -600,7 +600,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "2 tbsp (32 g)",
     gramsPerServing: 32,
     macros: { calories: 190, protein: 7, carbs: 8, fat: 16, fiber: 2, sodium: 150 },
-    note: "Label-typical salted smooth peanut butter (Jif/Skippy: 190 kcal, 7 g protein, 8 g carbs, 16 g fat per 2 tbsp). Sodium of 150 mg is where those panels sit and matches USDA's salted-smooth row (476 mg/100 g = 152 mg at 32 g). Natural unsalted has the same macros with roughly 5 mg sodium — clear the field if that's what's in your jar.",
+    note: "Typical salted smooth peanut butter (Jif, Skippy), 2 tbsp. Sodium matches both the panels and USDA. Natural unsalted has the same macros and about 5 mg sodium, so clear the field for that.",
     tags: ["peanut butter", "fat", "spread"],
   },
   {
@@ -619,7 +619,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 medium (182 g)",
     gramsPerServing: 182,
     macros: { calories: 95, protein: 0.5, carbs: 25, fat: 0.3, fiber: 4.4, sugar: 19, sodium: 2 },
-    note: "USDA raw apple with skin, 1 mg/100 g, so ~2 mg at 182 g. Carried despite being trivial: eaten raw there is no cooking salt to swamp it, so the figure is complete rather than a floor.",
+    note: "USDA raw apple with skin. Eaten raw, so the sodium is the whole figure.",
     tags: ["apple", "fruit", "snack"],
   },
   {
@@ -629,7 +629,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 medium (118 g)",
     gramsPerServing: 118,
     macros: { calories: 105, protein: 1.3, carbs: 27, fat: 0.4, fiber: 3, sodium: 1 },
-    note: "USDA raw banana, 1 mg/100 g, so ~1 mg at 118 g. Carried for the same reason as the apple: raw and unsalted, so this is the whole figure, not a floor.",
+    note: "USDA raw banana. Eaten raw, so the sodium is the whole figure.",
     tags: ["banana", "fruit", "snack"],
   },
   {
@@ -639,7 +639,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 medium (150 g)",
     gramsPerServing: 150,
     macros: { calories: 59, protein: 1.4, carbs: 14.3, fat: 0.4, fiber: 2.3, sugar: 12.6, sodium: 0 },
-    note: "USDA raw peach scaled from its per-100 g row to USDA's own medium fruit at 150 g; added August 28, 2026 when two were eaten and nothing in this catalog covered them. Sodium is a true 0 rather than a floor — raw and unsalted, like the apple and banana above. Atwater lands at 66 against 59, +12%, the widest miss in this file: USDA computes fruit energy with fruit-specific factors instead of the general 4/4/9, and fibre yields well under 4 kcal/g. The apple (+10%) and banana (+11%) miss the same way for the same reason, so read this as the raw-fruit artefact rather than a misread figure — but the size is the real soft input, since a large peach runs nearer 175 g and would add about a quarter.",
+    note: "USDA raw peach at a 150 g medium, added Aug 28. Raw, so the sodium really is 0. Atwater runs 12% high, as with the apple and banana, because USDA uses fruit-specific factors. A large peach (about 175 g) adds a quarter.",
     tags: ["peach", "fruit", "snack"],
   },
   {
@@ -659,7 +659,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 slice (~115 g, iced)",
     gramsPerServing: 115,
     macros: { calories: 475, protein: 4.6, carbs: 56, fat: 26.5, fiber: 1.6, sugar: 39, sodium: 390 },
-    note: "Estimated for a standard caf\u00e9 slice, not read off a panel \u2014 no venue was given on August 26, 2026, so this is built from the type rather than from a product. Density is USDA\u0027s commercially prepared carrot cake with cream cheese frosting at ~415 kcal per 100 g, applied to a ~115 g slice; the icing is taken as cream cheese, which is standard for the cake and supplies much of the 39 g of sugar along with the crumb. Read it as 350\u2013600 kcal and treat slice size as the variable doing nearly all the work, since caf\u00e9 slices run 90\u2013150 g and a bakery wedge goes past that; the icing thickness is the second and moves fat and sugar more than calories. Sodium ~390 mg is baking soda, salt and cream cheese, and is ordinary for the type. IF THE VENUE IS NAMED AND POSTS A PANEL, THIS ENTRY SHOULD BE REPLACED BY IT.",
+    note: "Estimated for a standard café slice with cream cheese icing; no venue given on Aug 26. USDA's carrot cake with frosting at about 415 kcal per 100 g, on a ~115 g slice. Call it 350–600 kcal: café slices run 90–150 g. If the venue turns up with a panel, use that.",
     tags: ["carrot cake", "cake", "dessert", "icing", "cream cheese", "snack"],
   },
   {
@@ -670,7 +670,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 sandwich (~265 g)",
     gramsPerServing: 265,
     macros: { calories: 820, protein: 36, carbs: 67, fat: 43, fiber: 3.5, sugar: 4, sodium: 2200 },
-    note: "Estimated from a photograph on August 27, 2026, not read off a panel \u2014 no venue was named, so this is built from what is visible in the cut: a semolina-dusted ciabatta roll (~120 g), folded mortadella (~90 g), melted provolone or similar (~40 g) and a green spread, pesto or salsa verde, at the bottom edge (~15 g). Read calories as 650\u20131,000, and treat the meat weight as the variable doing most of the work \u2014 a deli that piles it to 150 g adds ~190 kcal and ~750 mg of sodium on its own. THE SODIUM IS THE NUMBER TO WATCH, band 1,500\u20132,800 mg: mortadella runs ~1,250 mg per 100 g and the cheese and bread carry ~350 and ~600, so all three components are salty at once and there is nothing to swap out. Fat is 43 g because mortadella is ~25% fat by weight and the cheese is melted rather than a slice; the 36 g protein is unremarkable for a sandwich that size, which is the honest read of a cured-pork filling.",
+    note: "Estimated from a photo on Aug 27, no venue named: a ~120 g ciabatta, ~90 g mortadella, ~40 g melted provolone and a green spread. Call it 650–1,000 kcal, mostly depending on the meat; piling it to 150 g adds ~190 kcal and ~750 mg sodium. Sodium is the number to watch, 1,500–2,800 mg, since the meat, cheese and bread are all salty.",
     tags: ["mortadella", "sandwich", "panino", "ciabatta", "deli", "italian", "lunch", "takeout"],
   },
   {
@@ -681,7 +681,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 side portion (~325 g)",
     gramsPerServing: 325,
     macros: { calories: 465, protein: 22, carbs: 48.5, fat: 21, fiber: 12, sugar: 8, sodium: 1150 },
-    note: "Estimated from a photograph on August 27, 2026, not read off a panel \u2014 built from what is countable in the container: chickpeas, kidney, black and pinto beans (~170 g drained), diced tomato, cucumber and pickled red onion (~70 g), crumbled cotija or queso fresco (~15 g), a dollop of salsa verde (~35 g), a dressing pooled in the tray (~10 g) and dark browned crumbles (~25 g). THE CRUMBLES ARE THE WEAK POINT: they read as chorizo or a spiced meat and are carried as such, but a roasted mushroom or aubergine would look much the same and would take ~70 kcal, 7 g of fat and 4 g of protein off this entry \u2014 so read protein as 18\u201322 g rather than a firm 22. Calories band 350\u2013600, moving mostly with the bean weight and the dressing, neither of which a photograph pins down well. Sodium ~1,150 mg is the wider estimate at 700\u20131,600 mg and comes from four places at once \u2014 seasoned beans, cotija, salsa and the pickle liquid \u2014 which is the usual reason a salad is not the low-sodium half of a plate.",
+    note: "Estimated from a photo on Aug 27: four kinds of beans (~170 g), tomato, cucumber and pickled onion, cotija, salsa verde, dressing and some dark crumbles. The crumbles looked like chorizo, but if they were mushroom or eggplant, take off ~70 kcal and 4 g protein. Call it 350–600 kcal, and sodium 700–1,600 mg from the beans, cheese, salsa and pickle together.",
     tags: ["bean salad", "beans", "chickpea", "cotija", "salsa verde", "salad", "side", "lunch", "takeout"],
   },
   {
@@ -692,7 +692,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 dog (~107 g, no condiments)",
     gramsPerServing: 107,
     macros: { calories: 330, protein: 11.5, carbs: 28.5, fat: 19, fiber: 1, sugar: 4, sodium: 820 },
-    note: "Estimated from construction on August 27, 2026 \u2014 Rogers Centre publishes allergen guidance but no nutrition panel, so this is a ~57 g all-beef frank on USDA\u0027s frankfurter row (186 kcal, 572 mg sodium) plus a ~50 g bun (145 kcal, 250 mg). CONDIMENTS ARE DELIBERATELY NOT IN HERE: ketchup and mustard have their own per-tablespoon entries so a poured amount logs through the servings multiplier rather than being frozen into this one. Read calories as 260\u2013420 and treat frank size as the variable \u2014 a jumbo, a footlong and the smaller Loonie Dog night dog below are all different items and none should be logged as a multiple of this. Sodium ~820 mg is a floor of sorts and the frank is 70% of it, which is why two plain dogs already outweigh most single restaurant dishes in this catalog on salt alone.",
+    note: "Estimated on Aug 27, since Rogers Centre publishes no nutrition: a ~57 g all-beef frank on USDA's frankfurter row plus a ~50 g bun. Condiments aren't included; ketchup and mustard have their own entries. Call it 260–420 kcal depending on the frank. A jumbo, a footlong and the Loonie Dog are different items, not multiples of this. Sodium ~820 mg, mostly the frank.",
     tags: ["hot dog", "frankfurter", "ballpark", "stadium", "baseball", "rogers centre", "bun"],
   },
   {
@@ -703,7 +703,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 dog (~88 g, no condiments)",
     gramsPerServing: 88,
     macros: { calories: 254, protein: 8.6, carbs: 28.6, fat: 11.2, fiber: 1, sugar: 5, sodium: 570 },
-    note: "The $1 hot dog sold at Rogers Centre on Loonie Dog nights, kept separate from the full-size ballpark dog above because it is a smaller item and not a fraction of one. The frank is Schneiders Red Hots Original, named by the owner on September 15, 2026: a 38 g wiener at 110 kcal, 4 g protein, 2 g carbs, 9 g fat and 320 mg sodium, read through search summaries of Schneiders' own panel because schneiders.ca was blocked at the network egress proxy. The bun is the same ~50 g one the entry above is built on (144 kcal, 4.6 g protein, 248 mg sodium) and is the unsourced half, since Rogers Centre publishes no nutrition — read it as 120–160 kcal, and the whole dog as 215–300. Atwater lands at 250 against 254. WHAT EARNS THIS ITS OWN ROW IS THE PROTEIN: at 8.6 g per 254 kcal the bun carries more of it than the wiener does, so these move a calorie total about three times faster than a protein total and cannot get a day into the 160 g band on their own — the full-size entry above would overstate a night of them by 76 kcal and 2.9 g of protein a dog. Third-party databases put the wiener anywhere from 90 to 120 kcal against Schneiders' own 110, and condiments stay out of this row as they do in the one above.",
+    note: "The $1 hot dog at Rogers Centre on Loonie Dog nights, smaller than the full ballpark dog. The frank is a Schneiders Red Hots Original (38 g, 110 kcal, 4 g protein, 320 mg sodium), from search summaries of Schneiders' panel on Sep 15. The bun is the same ~50 g one as the ballpark dog and is the guessed half, since Rogers Centre posts nothing; call the whole dog 215–300 kcal. There's more protein in the bun than the wiener. Condiments not included.",
     tags: ["hot dog", "loonie dog", "frankfurter", "wiener", "red hots", "schneiders", "ballpark", "stadium", "baseball", "blue jays", "rogers centre", "bun"],
   },
   {
@@ -714,7 +714,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 tbsp (15 g)",
     gramsPerServing: 15,
     macros: { calories: 10, protein: 0.7, carbs: 0.8, fat: 0.6, fiber: 0.6, sugar: 0.1, sodium: 165 },
-    note: "USDA prepared yellow mustard, carried per tablespoon so a poured amount logs through the servings multiplier, matching the ketchup entry above. ATWATER RUNS +14% HERE (11.4 against 10) AND THE GAP IS FIBRE: nearly all of the 0.8 g of carbs is the mustard seed hull, which the 4 kcal/g factor overcounts, and the same gap sits in USDA\u0027s own 100 g row \u2014 nothing is misread. At 10 kcal a tablespoon the calories are noise; the 165 mg of sodium is the only line that moves a day, and it is close enough to ketchup\u0027s 160 that the two are interchangeable on salt despite one being sugar and the other not.",
+    note: "USDA yellow mustard, per tablespoon, like the ketchup. Atwater runs 14% high because the carbs are mostly seed hull fibre; USDA's own row does the same. The calories don't matter; the 165 mg sodium does, about the same as ketchup.",
     tags: ["mustard", "condiment", "yellow", "usda"],
   },
   {
@@ -725,7 +725,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 normal piece (~265 g)",
     gramsPerServing: 265,
     macros: { calories: 395, protein: 33, carbs: 26, fat: 17.5, fiber: 2.5, sugar: 7, sodium: 800 },
-    note: "Estimated from an ordinary 9x13 build on August 30, 2026, not from a recipe card — no quantities were given, so this is one ninth of a pan made with 1 lb of 90/10 ground beef: ~55 g cooked sheets, ~45 g cooked lean beef, ~47 g part-skim ricotta, ~30 g mozzarella, ~8 g Parmesan, ~78 g tomato sauce and a ninth of the egg in the ricotta mix. Atwater lands at 393 against 395. Read calories as 320–550 and treat piece size as the variable doing most of the work, with the cheese hand a close second — a béchamel version or a whole-milk ricotta runs at the top of that band. THE LEAN BEEF IS WHY THE PROTEIN IS THIS HIGH: 33 g under 395 kcal is well above a frozen meat lasagna (Stouffer's is 19 g for 320), and swapping in 80/20 would cost ~4 g of protein and add ~5 g of fat. Sodium ~800 mg is sauce, cheese and seasoning together, band 500–1,200, and it is salted by hand so it moves with the cook rather than with the portion. A LARGER OR SMALLER CUT SHOULD LOG THROUGH THE SERVINGS MULTIPLIER rather than as a fresh estimate.",
+    note: "Estimated on Aug 30 for an ordinary 9x13 pan with 1 lb of 90/10 beef, cut in nine; no recipe given. Built from noodles, lean beef, part-skim ricotta, mozzarella, Parmesan, sauce and egg. Call it 320–550 kcal, mostly the piece size, then the cheese. The lean beef is why the protein is high (Stouffer's is 19 g for 320 kcal). Sodium about 800 mg, 500–1,200. Log a bigger or smaller piece with the servings multiplier.",
     tags: ["lasagna", "lasagne", "pasta", "beef", "lean beef", "homemade", "italian", "dinner"],
   },
   {
@@ -735,7 +735,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 g",
     gramsPerServing: 100,
     macros: { calories: 41, protein: 0.9, carbs: 9.6, fat: 0.2, fiber: 2.8, sugar: 4.7, sodium: 69 },
-    note: "USDA 'Carrots, raw', held per 100 g so a handful of sticks and a full side log against the same row through the servings multiplier. Atwater runs +8% (44 against 41) and the gap is the 2.8 g of fibre, which does not deliver a full 4 kcal/g — the same overcount USDA's own row carries. The 69 mg sodium is that row's figure and is real rather than a floor: carrots are naturally comparatively high in sodium for a vegetable, so unlike the rice and oats above there is nothing added at the plate that this misses.",
+    note: "USDA raw carrots, per 100 g, so a few sticks and a full side use the same entry. Atwater runs a bit high because of the fibre. The 69 mg sodium is the carrot's own; carrots are naturally a little salty for a vegetable.",
     tags: ["carrot", "carrots", "vegetable", "raw", "snack", "side", "usda"],
   },
   {
@@ -745,7 +745,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 medium (66 g)",
     gramsPerServing: 66,
     macros: { calories: 30, protein: 0.5, carbs: 7.5, fat: 0.2, fiber: 0.9, sugar: 6.5, sodium: 0 },
-    note: "USDA 'Plums, raw' (46 kcal / 0.7 g protein / 11.42 g carbs / 1.4 g fibre / 9.92 g sugar per 100 g) scaled to USDA's own one-fruit weight of 66 g, added August 31, 2026 when a small one was eaten and nothing in this catalog covered it. Sodium is a true 0 rather than a floor, like the apple, banana and peach above \u2014 raw and unsalted, so this is the whole figure. Atwater lands at 34 against 30, +13%, which is the same raw-fruit artefact the peach entry documents: USDA computes fruit energy with fruit-specific factors rather than the general 4/4/9, and fibre yields well under 4 kcal/g. SIZE IS THE SOFT INPUT and should log through the servings multiplier rather than a fresh estimate \u2014 a small plum runs about 55\u201360 g and a large one past 80.",
+    note: "USDA raw plum at its 66 g one-fruit weight, added Aug 31. Raw, so the sodium really is 0. Atwater runs 13% high, the same raw-fruit thing as the peach. Small plums are 55–60 g and large ones over 80, so use the servings multiplier.",
     tags: ["plum", "fruit", "snack", "usda"],
   },
   {
@@ -757,7 +757,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "27 chips (50 g)",
     gramsPerServing: 50,
     macros: { calories: 260, protein: 3, carbs: 29, fat: 15, fiber: 2, sugar: 2, sodium: 250 },
-    note: "Every figure read off the Frito-Lay Canada panel for the 190 g bag, whose stated serving is 50 g or 27 chips, re-confirmed against four retailer listings on August 31, 2026 \u2014 no estimated line anywhere in this entry. Atwater lands at 263 against the stated 260, +1.2%. Held at the panel's own 50 g serving so a handful and half a bag both log through the servings multiplier; the full 190 g bag is 3.8 servings. WORTH STATING BECAUSE THE FLAVOUR NAME MISLEADS ON PROTEIN: cacio e pepe here is a cheese-and-pepper seasoning dusted onto a plain kettle chip, so the 3 g of protein is potato rather than cheese, and at 5.2 kcal per gram this is among the least protein-dense things in the catalog.",
+    note: "Every figure off the Frito-Lay Canada panel for the 190 g bag (serving 50 g, 27 chips), checked against four retailer listings on Aug 31. The whole bag is 3.8 servings. Despite the name, the protein is potato, not cheese; it's a seasoned kettle chip.",
     tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "cacio e pepe", "snack", "packaged"],
   },
   {
@@ -769,7 +769,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "28 g (~16 chips)",
     gramsPerServing: 28,
     macros: { calories: 150, protein: 2, carbs: 17, fat: 9, fiber: 1, sugar: 0, sodium: 95 },
-    note: "The plain sibling of the Cacio e Pepe entry above, added September 3, 2026 when a mini bag was eaten and only the flavoured row existed. Read off the published 28 g panel \u2014 150 kcal, 9 g fat, 17 g carbs, 1 g fibre, 2 g protein \u2014 cross-checked against retailer and database listings the same day; Atwater lands at 157 against 150, +4.7%. Held at that 28 g serving rather than at the mini bag, so a 25 g mini logs as 0.87 and a 50 g bag as 1.8. SODIUM IS THE ONE SOFT LINE: US listings give about 90 mg per 28 g and the Canadian Original Recipe panel scales nearer 110, so 95 is the middle of an 80\u2013130 band. Even at the top that is well under half the Cacio e Pepe\u0027s 250 mg per 50 g, because Original carries salt alone and no seasoning dust.",
+    note: "The plain version, added Sep 3 for a mini bag. Off the published 28 g panel, checked against retailer listings. A 25 g mini is 0.87 and a 50 g bag 1.8. Sodium is the soft line: US listings say about 90 mg and the Canadian panel nearer 110, so 95 is the middle of 80–130.",
     tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "original", "sea salt", "snack", "packaged"],
   },
   {
@@ -781,7 +781,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 small bag (28 g, ~13 pieces)",
     gramsPerServing: 28,
     macros: { calories: 160, protein: 2, carbs: 16, fat: 10, fiber: 1, sugar: 1, sodium: 270 },
-    note: "Read off the Frito-Lay panel for the 28 g serving, cross-checked against several retailer and database listings on September 1, 2026 — no estimated line here. THE BAG SIZE IS CONFIRMED RATHER THAN ASSUMED: the eater reported 160 kcal off the bag, which is exactly the 28 g panel, so the portion is pinned by the label and not by a guess at what 'small bag' means. Atwater lands at 162 against the stated 160, +1.3%. Held at the panel's own 28 g serving so a larger bag logs through the servings multiplier. At 5.7 kcal per gram with 2 g of protein this is the least protein-dense thing in the catalog, a shade past the Miss Vickie's above it, and the 270 mg of sodium in a 160 kcal snack is the line worth noticing — the cheese dust carries it. Flavour variants move this: Flamin' Hot and Simply White Cheddar both differ by a gram or two of fat and up to 30 mg of sodium.",
+    note: "Off the Frito-Lay panel for the 28 g bag, checked against several listings on Sep 1. The bag said 160 kcal, which matches the 28 g panel, so the size is confirmed. Very little protein, and 270 mg sodium, mostly the cheese dust. Other flavours differ by a gram or two of fat and up to 30 mg sodium.",
     tags: ["cheetos", "puffs", "cheese", "chips", "crisps", "snack", "packaged", "frito-lay"],
   },
   {
@@ -792,7 +792,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 g",
     gramsPerServing: 100,
     macros: { calories: 490, protein: 7, carbs: 66, fat: 24, fiber: 4.5, sugar: 1, sodium: 450 },
-    note: "Built September 2, 2026 for an unbranded 30 g handful, so this is a typical plain salted corn chip rather than any one panel: the shape follows USDA's plain tortilla chip row and these per-100 g figures were checked against a restaurant-style bag panel, which states 140 kcal / 2 g protein / 19 g carbs / 7 g fat per 28 g and scales to within a few percent of them. Atwater lands at 508 against 490, +3.7%, the gap being the 4.5 g of fibre, which does not deliver a full 4 kcal/g. Held per 100 g like the carrots row so a handful and a shared bowl log against the same entry through the servings multiplier — 30 g is 0.3. Sodium is the soft line and should be read as 350–700 per 100 g: lightly salted restaurant-style chips sit near the bottom and anything flavoured or heavily salted near the top, so a branded bag with a panel on it should override this entry rather than reuse it.",
+    note: "A typical plain salted corn chip, per 100 g, for an unbranded handful; based on USDA's row and a restaurant-style bag panel, which agree within a few percent. 30 g is 0.3. Sodium is the soft line, 350–700 per 100 g depending on how salted they are. A bag with a panel should get its own entry.",
     tags: ["tortilla chips", "chips", "corn chips", "nachos", "snack", "salted"],
   },
   {
@@ -803,7 +803,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 tbsp (15 g)",
     gramsPerServing: 15,
     macros: { calories: 5, protein: 0.2, carbs: 1.1, fat: 0, fiber: 0.3, sugar: 0.6, sodium: 115 },
-    note: "Built September 2, 2026 from the common jarred-salsa panel of 10 kcal / 2 g carbs / 230 mg sodium per 2 tbsp, halved to the tablespoon so a spooned amount logs through the servings multiplier, matching the ketchup and mustard rows above. At 5 kcal a tablespoon the calories are noise and the 115 mg of sodium is the only line that moves a day — half a tablespoon is under 3 kcal and still nearly 60 mg of salt. Atwater lands at 5.2 against 5, which on numbers this small is arithmetic rather than corroboration. The band is wide and it is on sodium, roughly 80–180 mg a tablespoon: fresh pico de gallo runs well under this and a jarred restaurant-style well over, so a jar with a panel should override this entry.",
+    note: "A typical jarred salsa panel (10 kcal and 230 mg sodium per 2 tbsp), halved to the tablespoon. The calories don't matter; the sodium does. Sodium ranges 80–180 mg a tablespoon: fresh pico de gallo is well under this, restaurant-style jars well over.",
     tags: ["salsa", "tomato", "dip", "condiment", "mexican"],
   },
   {
@@ -814,7 +814,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 tbsp (15 mL)",
     gramsPerServing: 15,
     macros: { calories: 5, protein: 0, carbs: 1.2, fat: 0, fiber: 0, sugar: 0, sodium: 330 },
-    note: "Cholula's panel is per 1 tsp and reads 0 kcal / 0 g carbs / 110 mg sodium; this entry is that row tripled to the tablespoon so a shaken amount logs through the servings multiplier, matching the ketchup, mustard and salsa rows above. The 5 kcal and 1.2 g of carbs are NOT off the panel — they are what a tablespoon of a vinegar-and-chile sauce actually carries, recovered from the label's rounding to zero, and Atwater on them lands at 4.8 against 5. Sodium is the only line that moves a day and it is the read figure: at 330 mg a tablespoon this is denser than ketchup or mustard. The name was given as \"chalupa\" and read as Cholula, a chalupa being a dish rather than a sauce brand; another chipotle sauce would move the sodium most.",
+    note: "Cholula's panel is per teaspoon (0 kcal, 110 mg sodium); this is tripled to a tablespoon. The 5 kcal and 1.2 g carbs are estimated, since the label rounds them to zero. Sodium is off the label: 330 mg a tablespoon, more than ketchup or mustard. Logged from \"chalupa\", taken to mean Cholula.",
     tags: ["hot sauce", "chipotle", "cholula", "condiment", "mexican", "spicy"],
   },
   {
@@ -826,7 +826,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 packet (7 g)",
     gramsPerServing: 7,
     macros: { calories: 0, protein: 0, carbs: 0, fat: 0, fiber: 0, sugar: 0, sodium: 55 },
-    note: "Taco Bell's published figures for the 7 g sachet, read September 13, 2026: 0 kcal and 55 mg sodium, with fat, carbs and protein all printed as zero. These are rounded zeroes rather than true ones — the sauce is tomato purée, vinegar and chilli, so a packet carries a gram or two of carbohydrate that label rounding erases — but the error is under 5 kcal even across a handful, which is why sodium is the only line worth carrying. Held per packet because that is how it arrives and a handful logs as a multiplier. THE AUGUST 6, 2026 LOG ROW DISAGREES AND IS BEING LEFT ALONE: it recorded the same sauce as a tablespoon at ~15 g and 75 mg, which works out to 5 mg a gram against this panel's 7.9, so that row understates by roughly 40 mg — too small to be worth rewriting history over, and noted here instead.",
+    note: "Taco Bell's published figures for the 7 g packet, Sep 13: 0 kcal and 55 mg sodium. The zeroes are rounded; there's a gram or two of carbs, but it's under 5 kcal even for a handful. The Aug 6 log row used an older guess (a tablespoon at 75 mg) and runs about 40 mg low; it was left as is.",
     tags: ["hot sauce", "fire sauce", "taco bell", "packet", "sachet", "condiment", "mexican", "spicy"],
   },
   {
@@ -837,7 +837,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 tbsp (12.5 g)",
     gramsPerServing: 12.5,
     macros: { calories: 48, protein: 0, carbs: 12.6, fat: 0, fiber: 0, sugar: 12.6, sodium: 0 },
-    note: "USDA 'Sugars, granulated' at 12.5 g, carried per tablespoon so a spooned amount logs through the servings multiplier. Atwater runs +5% (50.4 against 48), which is USDA's own gap on the row rather than a misread. The zeroes are real by construction — this is sucrose and nothing else — so the blank-sodium convention in this file's header does not apply: unlike rice or oats there is no cooking step that adds salt to a spoonful of sugar. Carbs and sugar are necessarily the same number here.",
+    note: "USDA granulated sugar, per tablespoon. The zeroes are real, since it's just sucrose.",
     tags: ["sugar", "granulated", "sweetener", "usda"],
   },
   {
@@ -848,7 +848,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 tbsp (16 g)",
     gramsPerServing: 16,
     macros: { calories: 8, protein: 1.3, carbs: 0.8, fat: 0, fiber: 0.1, sugar: 0.1, sodium: 900 },
-    note: "USDA soy sauce made from soy and wheat (shoyu); Kikkoman\u0027s own panel gives 920 mg a tablespoon, so 900 is the two agreeing rather than one source. THIS IS A SODIUM ENTRY AND NOTHING ELSE — 8 kcal is a rounding error and 900 mg is a third of a day\u0027s reasonable intake, which is why it gets a row instead of being waved through as a condiment. Unlike the staples above that are left blank for salting to taste, soy sauce arrives already salt and the figure is the whole point of logging it. A takeout dipping cup holds about a tablespoon, so log the fraction actually used; low-sodium versions run about 575 mg and should be logged as a different amount rather than this row.",
+    note: "USDA soy sauce; Kikkoman's panel says 920 mg a tablespoon, so the two agree. Logged for the sodium, not the calories: 900 mg is about a third of a day. A takeout cup is about a tablespoon, so log the part actually used. Low-sodium soy is about 575 mg.",
     tags: ["soy sauce", "shoyu", "condiment", "sushi", "japanese", "sodium"],
   },
   {
@@ -860,7 +860,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 bag (13 g)",
     gramsPerServing: 13,
     macros: { calories: 48, protein: 0.9, carbs: 8.2, fat: 1.3, fiber: 0.4, sugar: 0.3, sodium: 143 },
-    note: "The 13 g bag handed out on an Air Canada flight, scaled from Twigz\u0027s published 30 g pack panel (110 kcal, 19 g carbs, 3 g fat, 2 g protein) at 13/30; Atwater lands at 48.1 against 47.7, which is a real panel scaling cleanly rather than a reconstruction. SODIUM IS THE ONE ESTIMATED LINE and it carries the whole doubt: no Twigz panel was reachable on September 4, 2026 (metro.ca is blocked at the network egress proxy), so 143 mg is built from the ~320 mg per 30 g that published pretzel panels run, and should be read as 100\u2013200. Fibre and sugar are both published as under 1 g per 30 g, so the figures here are the top of that at 13 g and are near enough to nothing. Worth stating the scale: a 13 g bag is under half a normal 30 g snack pack, so this is a 48 kcal item and the sodium is the only line that shows up in a day\u0027s total at all.",
+    note: "The 13 g bag from an Air Canada flight, scaled from Twigz's 30 g panel. Sodium is the one guess: no panel was reachable on Sep 4, so it's based on typical pretzel panels, 100–200 mg. A small snack either way.",
     tags: ["pretzels", "twigz", "snack", "airline", "air canada", "herb", "garlic"],
   },
   {
@@ -872,7 +872,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 pack (15 g, 1 cookie)",
     gramsPerServing: 15,
     macros: { calories: 75, protein: 1, carbs: 10.5, fat: 3, fiber: 0.4, sugar: 7, sodium: 30 },
-    note: "The 15 g single-cookie pack from an Air Canada flight, taken as half of Leclerc\u0027s published two-cookie serving (150 kcal, 21 g carbs, 6 g fat, 2 g protein, 60 mg sodium per ~30 g); Atwater lands at 73 against 75. THE SUGAR IS THE ESTIMATED LINE AND THE WRAPPER BOUNDS IT: the pack photographed on September 4, 2026 carries the Health Canada front-of-pack symbol reading high in saturated fat and sugars, which puts a floor under the figure, so 7 g of the 10.5 g of carbs being sugar is the wrapper\u0027s own warning made numeric rather than a guess from the category. Read it as 6\u20138 g. Nothing here is protein \u2014 1 g against 75 kcal is the least protein-dense entry in this file after the sugar row, and it is a chocolate-coated butter biscuit, which is exactly what the front-of-pack symbol is for.",
+    note: "The single-cookie pack from an Air Canada flight, half of Leclerc's two-cookie serving. Sugar is estimated at 7 g (6–8); the pack's front label says high in sugar, so it's at least that. A chocolate-covered butter biscuit, almost no protein.",
     tags: ["cookie", "biscuit", "leclerc", "celebration", "milk chocolate", "snack", "airline", "air canada"],
   },
   {
@@ -883,7 +883,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 mL",
     gramsPerServing: 104,
     macros: { calories: 48, protein: 0.1, carbs: 11.8, fat: 0.1, fiber: 0.2, sugar: 10, sodium: 4 },
-    note: "USDA apple juice, canned or bottled and unsweetened, at its per-100 g row scaled to 100 mL (juice runs about 1.04 g/mL). Held per 100 mL rather than per cup because the servings that actually turn up are airline cups and half-glasses, so a portion logs as a multiplier instead of a fraction. Sodium is carried at a true 4 mg for the same reason the raw fruit above is: nothing is added to it, so this is the whole figure rather than a floor. WORTH SEEING NEXT TO THE APPLE ROW: 100 mL is 10 g of sugar with 0.2 g of fibre, where a whole apple is 19 g of sugar with 4.4 g of fibre \u2014 the juice is the sugar without the thing that slows it down, and it is not a substitute for the fruit in this log.",
+    note: "USDA unsweetened apple juice, per 100 mL, since the servings are airline cups and half glasses. Nothing added, so the sodium is the whole figure. 100 mL has 10 g of sugar and almost no fibre; a whole apple has 19 g of sugar and 4.4 g of fibre.",
     tags: ["apple juice", "juice", "drink", "airline", "sugar"],
   },
   {
@@ -894,7 +894,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 mL",
     gramsPerServing: 105,
     macros: { calories: 63, protein: 0.4, carbs: 15.5, fat: 0.1, fiber: 0.2, sugar: 14.9, sodium: 5 },
-    note: "USDA grape juice, canned or bottled and unsweetened, at its per-100 g row scaled to 100 mL (grape juice runs about 1.05 g/mL, a little denser than apple because it carries more sugar). Held per 100 mL like the apple juice above so a half-glass logs as a multiplier; Atwater lands at 64 against 63. FIRST LOGGED FOR A HOMEMADE GLASS reported on September 5, 2026 as unsweetened and not sweet, and that report matters: commercial Concord juice at 15 g of sugar per 100 mL is sweeter than apple juice, so a home pressing that tasted of little was almost certainly thinner than this row — tart grapes, or water in the extraction — and the figure is a ceiling rather than a centre, read it as 60–100% of what is here. Sodium is a true 5 mg, nothing being added.",
+    note: "USDA unsweetened grape juice, per 100 mL. First logged for a homemade glass on Sep 5 that was described as not sweet, so it was probably thinner than this; treat this as a ceiling (60–100% of it). Nothing added, so the sodium is the whole figure.",
     tags: ["grape juice", "grape", "juice", "drink", "homemade", "sugar"],
   },
   {
@@ -905,7 +905,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 small puri (~15 g)",
     gramsPerServing: 15,
     macros: { calories: 52, protein: 0.8, carbs: 5.2, fat: 3.1, fiber: 0.8, sugar: 0.2, sodium: 72 },
-    note: "Estimated on September 5, 2026 for a small home-fried spiced puri — the deep-fried atta bread with ajwain, turmeric and chilli in the dough, not the Bangalore chaat that shares the name. First written as a 25 g puri of 12 g atta and 5 g oil, 86 kcal, and cut by 40% the same day on the owner's correction that the meal ran far lighter, which makes it about 7 g of atta and 3 g of oil taken up: a 3-inch puri. Atwater lands at 52 against 52. Read calories as 40–70: THE OIL IS THE WHOLE BAND, since a puri this size absorbs anywhere from 2 to 5 g depending on dough stiffness and oil temperature, while the flour is fixed by the size reported (“not super big”). A regular 4–5 inch puri is closer to 40 g and 130 kcal and should log at about 2.5 of these rather than as a fresh estimate. Sodium ~70 mg is the dough salt at a teaspoon per two cups of atta and moves with the cook.",
+    note: "Estimated on Sep 5 for a small home-fried spiced puri (atta with ajwain, turmeric and chilli), not the chaat. First written as a 25 g puri, then cut 40% the same day when the meal turned out lighter, so about a 3-inch puri with 7 g of atta and 3 g of oil. Call it 40–70 kcal, and the oil is most of that. A regular 4–5 inch puri is about 2.5 of these.",
     tags: ["puri", "poori", "masala puri", "indian", "bread", "fried", "homemade"],
   },
   {
@@ -916,7 +916,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 g",
     gramsPerServing: 100,
     macros: { calories: 245, protein: 4.6, carbs: 38.5, fat: 8, fiber: 0.3, sugar: 36.5, sodium: 40 },
-    note: "Estimated on September 5, 2026 from the standard construction — hung whole-milk curd sweetened at roughly 35% sugar by weight, with cardamom and a little nut — as about 60 g of chakka, 35 g of sugar and 5 g of garnish per 100 g; Atwater lands at 244 against 245, and Amul’s packaged shrikhand panel (about 250 kcal, 4.4 g protein, 41 g carbs and 8.4 g fat per 100 g) sits on top of it. Held per 100 g because it was reported by the cup, and a cup of shrikhand is a dense thing at about 1.05 g/mL: a 250 mL cup is 2.6 servings and a katori is closer to 1.5. The first log against it, September 5, 2026, went in as the 250 mL cup and was cut to 1.56 the same day on the owner's correction that the meal ran far lighter, which puts that cup at the katori rather than the measure. THE SUGAR IS THE FIGURE THAT MATTERS AND IT IS REAL: 36 g per 100 g is what makes shrikhand shrikhand, and a lighter household hand runs 25–30%, so read calories as 200–270 and sugar as 25–40 g. This is a dessert carrying a little protein, not a protein source — the 4.6 g is what survives from the curd once it is cut with its own weight in sugar. Sodium ~40 mg is the curd’s own and is a true figure, nothing being salted.",
+    note: "Estimated on Sep 5 from the usual recipe: hung whole-milk curd with about 35% sugar, cardamom and a few nuts. Amul's packaged shrikhand is close (about 250 kcal per 100 g). Per 100 g, since a 250 mL cup is 2.6 servings and a katori about 1.5. The first log was a full cup, cut to 1.56 the same day when the meal turned out lighter. Call it 200–270 kcal and 25–40 g sugar. A dessert, not a protein source.",
     tags: ["shrikhand", "shrikand", "srikhand", "yogurt", "dessert", "indian", "gujarati", "homemade", "sugar"],
   },
   {
@@ -927,7 +927,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 g",
     gramsPerServing: 100,
     macros: { calories: 156, protein: 1.8, carbs: 18.5, fat: 8.2, fiber: 1.7, sugar: 0.9, sodium: 300 },
-    note: "Estimated on September 5, 2026 for a dry potato sabzi — boiled potato cubes fried in oil with mustard seed, turmeric and chilli, no gravy — as about 90 g of boiled potato and 8 g of oil per 100 g cooked; Atwater lands at 155 against 156. Read calories as 120–200: THE OIL IS THE BAND, a dry aloo fry taking anywhere from 5 to 12 g per 100 g depending on how brown it was cooked, while the potato underneath is USDA boiled potato and barely moves. Held per 100 g because it was reported by the scoop, and a serving-spoon scoop is taken here as about 75 g, so three scoops log as 2.25. Sodium ~300 mg is salt to taste at about 0.7 g per 100 g and moves with the cook; the band is 150–450.",
+    note: "Estimated on Sep 5 for a dry potato sabzi: boiled potato fried with mustard seed, turmeric and chilli, about 8 g of oil per 100 g. Call it 120–200 kcal, depending on the oil. A serving-spoon scoop is taken as about 75 g, so three scoops is 2.25. Sodium is salt to taste, 150–450 mg.",
     tags: ["aloo", "aloo fry", "potato", "sabzi", "curry", "indian", "homemade"],
   },
   {
@@ -938,7 +938,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 sub (~330 g)",
     gramsPerServing: 330,
     macros: { calories: 770, protein: 39, carbs: 61, fat: 40, fiber: 4, sugar: 7, sodium: 2500 },
-    note: "Estimated September 6, 2026 from the standard deli build, with no venue named and no panel anywhere in it: a ~110 g Italian roll, ~100 g of mixed cured meats taken as salami, capicola and ham in roughly equal parts, ~30 g provolone, ~10 g of oil and vinegar, and lettuce, tomato, onion and pepperoncini; Atwater lands at 760 against 770. Read calories as 600-950, the meat weight doing most of that band, since a shop that piles it to 150 g adds about 130 kcal and 700 mg of sodium on its own. THE SODIUM IS THE NUMBER TO WATCH, band 1,800-3,200 mg: three cured meats, the provolone, the roll and the pickled peppers are all salty at once and there is nothing to swap out, the meats alone running about 1,500 mg. Worth setting against the mortadella ciabatta above, the other Italian sandwich in this file, because the two are closer than they look - this one is 50 kcal lighter for 3 g more protein, a mixed cured-pork fill being leaner than mortadella at the same weight.",
+    note: "Estimated on Sep 6 from a standard deli build, no venue named: a ~110 g roll, ~100 g of salami, capicola and ham, provolone, oil and vinegar, and the usual vegetables. Call it 600–950 kcal, mostly the meat. Sodium is the one to watch, 1,800–3,200 mg, since the meats, cheese, bread and peppers are all salty.",
     tags: ["italian sub", "sub", "hoagie", "sandwich", "salami", "capicola", "provolone", "deli", "italian", "lunch", "takeout"],
   },
   {
@@ -948,7 +948,7 @@ export const STAPLE_FOODS: Food[] = [
     source: "claude",
     per: "1 small (12 fl oz)",
     macros: { calories: 200, protein: 6, carbs: 36, fat: 3.5, fiber: 0, sugar: 34, sodium: 130 },
-    note: "Estimated September 6, 2026 with no venue named, built as about 6 fl oz of 2% milk, 5 fl oz of chai concentrate and one pump of vanilla syrup; Atwater lands at 200 on the nose. Starbucks' published tall Chai Tea Latte corroborates that build closely at 190 kcal, 6 g protein, 37 g carbs and 35 g sugar, the vanilla accounting for most of the gap, so this rests on a real panel rather than on construction alone. Read calories as 160-260: the concentrate-to-milk ratio is the band, and a heavy vanilla hand runs two or three pumps rather than one. THE SUGAR IS THE HEADLINE at 34 g, nearly all of it added and most of it in the concentrate rather than the syrup, which makes this a dessert-grade drink that happens to carry a little milk protein. Sodium is the milk's own ~90 mg plus a little from the concentrate, band 90-180.",
+    note: "Estimated on Sep 6, no venue named: about 6 oz of 2% milk, 5 oz of chai concentrate and a pump of vanilla. Starbucks' tall chai latte is close (190 kcal), so this is fairly solid. Call it 160–260 kcal depending on the concentrate and syrup. Most of the 34 g sugar is added.",
     tags: ["chai", "vanilla chai", "chai latte", "tea", "latte", "drink", "cafe"],
   },
   {
@@ -960,7 +960,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 cookie (12.5 g)",
     gramsPerServing: 12.5,
     macros: { calories: 62, protein: 0.5, carbs: 8.9, fat: 2.8, fiber: 0.2, sugar: 4.9, sodium: 20 },
-    note: "Parle's published panel for the 112 g pack scaled to one cookie: 499 kcal, 4 g protein, 71 g carbs, 39.5 g sugar, 22 g fat and 0.4 g salt per 100 g, at 12.5 g a cookie, which is the pack's own two-biscuit 25 g serving halved and puts nine cookies in a pack. Atwater lands at 498 against 499, so this is a label read rather than a reconstruction, and the panel is the only soft part of it \u2014 no wrapper was to hand on September 7, 2026, so the figures come from aggregator listings of it and should move if the pack disagrees. Fibre is the one built line: the panel prints 0 g, which is a rounding of what refined flour carries, so 0.2 g a cookie is a floor rather than a reading. Held per cookie because they get eaten by the handful, and a portion logs as a multiplier.",
+    note: "Parle's panel for the 112 g pack, scaled to one 12.5 g cookie (nine to a pack). From aggregator listings on Sep 7, not the pack. The label says 0 g fibre; 0.2 g is a small estimate for the flour. Per cookie, so a handful uses the multiplier.",
     tags: ["cookie", "biscuit", "hide and seek", "fab", "parle", "vanilla", "cream", "sandwich", "snack", "indian"],
   },
   {
@@ -971,7 +971,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 g",
     gramsPerServing: 100,
     macros: { calories: 30, protein: 0.6, carbs: 7.6, fat: 0.2, fiber: 0.4, sugar: 6.2, sodium: 1 },
-    note: "USDA raw watermelon at its per-100 g row, added September 7, 2026 when a bowl was eaten and nothing here covered it. Held per 100 g rather than per fruit, like the juices above and unlike the apple, banana and peach, because it arrives cut into a bowl and a portion should log as a multiplier: a bowl of cubes is taken here as 200 g, read as 150-300, and that size is the only real variable in the row. Atwater lands at 35 against 30, +15%, which is the raw-fruit artefact the peach and plum entries document rather than a misread figure. Sodium is a true 1 mg and the sugar is all the fruit's own, but the thing worth seeing is how little of anything this is \u2014 watermelon is 91% water, so a 200 g bowl is 60 kcal, about a sixteenth of the calories per gram that this morning's cookies carried.",
+    note: "USDA raw watermelon, per 100 g, added Sep 7. A bowl of cubes is taken as 200 g (150–300), and that's the only real unknown. Atwater runs high, the usual raw-fruit thing. Mostly water: a 200 g bowl is 60 kcal.",
     tags: ["watermelon", "melon", "fruit", "snack", "usda"],
   },
   {
@@ -982,7 +982,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 naan (90 g)",
     gramsPerServing: 90,
     macros: { calories: 262, protein: 8.7, carbs: 45.4, fat: 5.1, fiber: 2, sugar: 3.2, sodium: 419 },
-    note: "USDA \u0027Bread, naan, plain, commercially prepared, refrigerated\u0027 at USDA\u0027s own 90 g piece, scaled from its per-100 g row of 291 kcal, 9.6 g protein, 50.4 g carbs, 2.2 g fibre, 3.6 g sugar and 465 mg sodium. Atwater lands at 262 on the nose \u2014 this is a published row rather than a build, so nothing here is reconstructed. THE PIECE IS THE VARIABLE and it is a wide one: 90 g is USDA\u0027s reference naan, while a full-size supermarket flatbread runs nearer 125 g, so a large one should log at about 1.4 servings rather than through a fresh estimate. Held generic because no brand was named, and note the 419 mg of sodium \u2014 the bread is the salty half of most plates it lands on, ahead of the curry beside it.",
+    note: "USDA plain refrigerated naan at its 90 g piece. A full-size supermarket naan is about 125 g, so log a big one as 1.4. Generic, since no brand was named. The naan is often saltier than the curry next to it.",
     tags: ["naan", "bread", "flatbread", "indian", "store bought", "packaged", "usda"],
   },
   {
@@ -993,7 +993,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 g",
     gramsPerServing: 100,
     macros: { calories: 162, protein: 6.4, carbs: 18.5, fat: 7.4, fiber: 1.4, sugar: 1, sodium: 220 },
-    note: "Estimated September 7, 2026 for a homemade Indo-Chinese noodle stir-fry, built per 100 g as 58 g cooked wheat noodles, 20 g firm tofu, 15 g of cabbage, carrot and pepper, 5 g of wok oil and 2 g of soy and vinegar; Atwater lands at 166 against 162. Held per 100 g like the Bawara and pad thai entries so a scoop and a full plate log against the same figures, with a serving-spoon scoop taken here as 150 g, read as 120-200. The oil is the calorie band as always, 130-210 per 100 g, because nobody measures what the pan carried. Worth setting against the Bawara restaurant row it shadows: near-identical calories, but 6.4 g protein against 4 g because of the tofu, and half the sodium at 220 mg against 450 \u2014 that gap is a home soy-sauce hand rather than anything about the dish, so read it as 120-400.",
+    note: "Estimated on Sep 7 for homemade Indo-Chinese noodles with tofu, per 100 g: noodles, tofu, cabbage, carrot, pepper, a bit of oil and soy. A serving-spoon scoop is taken as 150 g (120–200). Call it 130–210 kcal per 100 g, depending on the oil. Same calories as the Bawara restaurant version but more protein from the tofu and half the sodium (120–400 mg).",
     tags: ["hakka", "noodles", "chow mein", "tofu", "indo-chinese", "homemade", "vegetarian", "lunch"],
   },
   {
@@ -1004,7 +1004,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "100 g",
     gramsPerServing: 100,
     macros: { calories: 461, protein: 9.5, carbs: 56, fat: 23.1, fiber: 4.2, sugar: 3.8, sodium: 500 },
-    note: "Estimated September 8, 2026 for the dry spiced snack mix \u2014 thin flattened rice fried with peanuts, curry leaves, turmeric and a little sugar \u2014 and not the wet kanda poha breakfast, which is a third of this per gram. Built per 170 g batch as 100 g thin poha, 25 g peanuts, 15 g roasted gram, 25 g oil and 5 g sugar; Atwater lands at 470 against 461, and Haldiram\u0027s commercial poha chivda corroborates the middle at roughly 466 kcal and 24 g fat per 100 g. Held per 100 g because it is eaten by the bowl and the handful, with a bowl taken here as 50 g, read as 35-75. THE OIL IS THE BAND at 400-520 kcal per 100 g \u2014 a deep-fried batch runs near 30 g of fat and a dry-roasted one near 15 \u2014 and sodium 500 mg is a salted-snack estimate, band 300-800, with the commercial version at the top of it.",
+    note: "Estimated on Sep 8 for the dry spiced snack mix (fried flattened rice, peanuts, curry leaves, a little sugar), not the wet breakfast poha. Haldiram's is close, about 466 kcal per 100 g. A bowl is taken as 50 g (35–75). Call it 400–520 kcal per 100 g depending on the oil; sodium 300–800 mg.",
     tags: ["poha", "chivda", "chiwda", "namkeen", "snack mix", "flattened rice", "indian", "snack", "breakfast", "homemade"],
   },
   {
@@ -1015,7 +1015,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 debra (~40 g)",
     gramsPerServing: 40,
     macros: { calories: 124, protein: 2.5, carbs: 13.2, fat: 7, fiber: 2.2, sugar: 0.4, sodium: 180 },
-    note: "Estimated September 8, 2026 for a homemade Gujarati dhebra \u2014 bajra-and-wheat dough with chopped fenugreek and spinach, curd and spice, rolled small and pan-fried \u2014 built per piece as 15 g bajra flour, 3.75 g wheat flour, 6 g greens, 4 g curd and 6 g of oil across dough and pan; Atwater lands at 126 against 124. Held per piece because they are counted rather than weighed, with a piece taken here as ~40 g finished, read as 30-55, and that size does most of the work in the band. THE PAN OIL IS THE OTHER HALF OF IT: a light hand runs 3 g a piece and a generous one 8, which puts a debra at 100-165 kcal. Sodium 180 mg is a salted-dough estimate, band 100-300, and the 2.2 g of fibre is high for a flatbread because bajra carries about 11 g per 100 g \u2014 the greens add almost nothing next to that.",
+    note: "Estimated on Sep 8 for homemade Gujarati dhebra: bajra and wheat dough with fenugreek, spinach, curd and spices, pan-fried. A piece is taken as about 40 g (30–55). Call it 100–165 kcal a piece, mostly the size and the pan oil. Sodium 100–300 mg. High in fibre for a flatbread, thanks to the bajra.",
     tags: ["debra", "dhebra", "thepla", "bajra", "millet", "methi", "fenugreek", "spinach", "flatbread", "roti", "gujarati", "indian", "homemade"],
   },
   {
@@ -1026,7 +1026,7 @@ export const STAPLE_FOODS: Food[] = [
     source: "packaged",
     per: "1 mint",
     macros: { calories: 5, protein: 0, carbs: 1, fat: 0, fiber: 0, sugar: 0, sodium: 0 },
-    note: "Wrigley\u0027s sugar-free Excel mint at its label figure of about 5 kcal and 1 g a mint, which is the whole entry \u2014 the carbohydrate is sugar alcohol rather than sugar, so sugar sits at 0 and is a real 0 rather than a blank, as is the sodium. Held per mint because they get eaten one or two at a time. Carried for completeness rather than because it moves a day: two mints are 10 kcal, which is a rounding error against anything else in this file. It is here so a mention in the log has something to point at instead of being re-estimated.",
+    note: "Wrigley's sugar-free Excel mint, about 5 kcal and 1 g sugar alcohol each. Here so a mention has something to log against.",
     tags: ["mint", "mints", "excel", "wrigley", "sugar free", "breath mint", "candy"],
   },
   {
@@ -1037,7 +1037,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 slice (28 g)",
     gramsPerServing: 28,
     macros: { calories: 71, protein: 3.4, carbs: 12.1, fat: 1, fiber: 1.7, sugar: 1.8, sodium: 126 },
-    note: "USDA 'Bread, whole-wheat, commercially prepared' (254 kcal / 12.3 g protein / 43.1 g carbs / 3.55 g fat / 6.0 g fibre / 6.4 g sugar / 450 mg sodium per 100 g) scaled to a 28 g slice, added September 9, 2026 for an avocado toast. Kept separate from the white sandwich slice above rather than folded into it: the fibre is 1.7 g against 1 g and the protein runs a little higher, which is the reason to buy the loaf at all. Slice weight is the soft input and should log through servings \u2014 a thick-cut whole wheat loaf (Dave\u0027s Killer, Oroweat) runs 43\u201345 g and about 110 kcal, so log 1.5 servings for one of those rather than editing this row. Sodium comes off the same USDA row and supermarket panels for a slice this size cluster at 125\u2013170 mg.",
+    note: "USDA whole-wheat bread at a 28 g slice, added Sep 9 for avocado toast. A bit more fibre and protein than the white slice. Thick-cut loaves (Dave's Killer, Oroweat) are 43–45 g, so log 1.5. Store panels for this size run 125–170 mg sodium.",
     tags: ["bread", "whole wheat", "wholemeal", "toast", "carb", "usda"],
   },
   {
@@ -1048,7 +1048,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 roll (28 g)",
     gramsPerServing: 28,
     macros: { calories: 87, protein: 3, carbs: 14, fat: 1.8, fiber: 1, sodium: 131 },
-    note: "USDA 'Rolls, dinner, plain, commercially prepared (includes brown-and-serve)' (310 kcal / 10.86 g protein / 50.04 g carbs / 6.47 g fat / 467 mg sodium per 100 g) scaled to USDA's own one-roll weight of 28 g, added September 20, 2026 when one went beside a stew. The per-100 g figures were confirmed against published listings of that row rather than recalled; FoodData Central itself was unreachable from here, and fibre and sugars are the two lines those listings did not carry. Fibre is therefore estimated at 1 g, read across from the white sandwich slice above, which is the same refined flour at the same weight — call it plus or minus 0.5 g; sugars have no such basis and stay blank. Atwater lands at 84 against 87, -3%. ROLL SIZE IS THE REAL VARIABLE and should log through the servings multiplier: 28 g is a small pan roll, a table or bakery roll runs 40-55 g, so log 1.4 to 2 servings rather than editing this row.",
+    note: "USDA plain dinner roll at its 28 g roll, added Sep 20. Fibre isn't in the listings used, so 1 g is borrowed from the white bread slice (±0.5 g); sugar is blank. A table or bakery roll is 40–55 g, so log 1.4–2.",
     tags: ["dinner roll", "roll", "bun", "bread", "side", "carb", "usda"],
   },
   {
@@ -1059,7 +1059,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 medium (136 g flesh)",
     gramsPerServing: 136,
     macros: { calories: 218, protein: 2.7, carbs: 11.6, fat: 19.9, fiber: 9.1, sugar: 0.9, sodium: 10 },
-    note: "USDA \u0027Avocados, raw, all commercial varieties\u0027 (160 kcal / 2.0 g protein / 8.53 g carbs / 14.66 g fat / 6.7 g fibre / 7 mg sodium per 100 g) scaled to USDA\u0027s own one-fruit flesh weight of 136 g, added September 9, 2026 when one went on toast as a spread. Held per fruit rather than per 100 g because avocados are counted and split \u2014 half on the toast logs as 0.5 servings \u2014 and size is the real variable: a small Hass yields nearer 100 g of flesh and a large one past 170. Atwater lands at 236 against 218, +8%, which is the raw-fruit artefact the peach and plum entries document, driven here by 9 g of fibre yielding well under 4 kcal/g. The 10 mg of sodium is the raw fruit and is the figure to distrust on a plate: mashed avocado on toast is almost always salted, and a pinch at the table adds 100\u2013300 mg that this row does not carry.",
+    note: "USDA raw avocado at a 136 g medium, added Sep 9. Half on toast is 0.5. Small avocados are about 100 g of flesh and large ones over 170. The 10 mg sodium is unsalted; avocado toast is nearly always salted, which adds 100–300 mg.",
     tags: ["avocado", "fruit", "fat", "spread", "toast", "usda"],
   },
   {
@@ -1070,7 +1070,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 cup (245 g)",
     gramsPerServing: 245,
     macros: { calories: 233, protein: 21, carbs: 32, fat: 2.5, sugar: 29, sodium: 98 },
-    note: "Estimated September 9, 2026 for an unbranded honey-flavoured Greek yogurt eaten by the cup, built at 95 kcal / 8.5 g protein / 13 g carbs / 1 g fat / 12 g sugar / 40 mg sodium per 100 g and scaled to USDA\u0027s 245 g cup; Atwater lands at 235 against 233. The plain 0% entry above says flavoured tubs are a different food and this is that lookup, so read it as a band rather than a panel \u2014 nonfat honey tubs (Chobani-class) run near 80 kcal per 100 g and a 2% Fage-class one past 115, which puts a cup anywhere from 195 to 280 kcal and 18 to 23 g of protein. Sugar is what separates it from the plain tub: about two thirds of the 29 g is added honey and cane sugar rather than the milk\u0027s own lactose, where a plain cup carries around 8 g. Fibre is left blank to match the plain and skyr rows above rather than written as a zero, and if the tub in the fridge has a panel it wins over all of this.",
+    note: "Estimated on Sep 9 for an unbranded honey Greek yogurt, 1 cup. Brands vary: nonfat honey tubs are near 80 kcal per 100 g and 2% ones over 115, so a cup is 195–280 kcal and 18–23 g protein. About two thirds of the sugar is added honey. If the tub has a panel, use that.",
     tags: ["yogurt", "yoghurt", "greek", "honey", "flavoured", "protein", "dairy"],
   },
   {
@@ -1090,7 +1090,7 @@ export const STAPLE_FOODS: Food[] = [
       sugar: 35,
       sodium: 10,
     },
-    note: "The 370 mL glass bottle sold in Canada; read from published panels on September 12, 2026 rather than off a bottle in hand, since both the Loblaws listing and Open Food Facts were blocked at the egress proxy and only the search summary of them came through. Atwater lands at 140 on the nose, and the whole of it is cane sugar \u2014 carbs and sugars are identical because there is nothing else in the drink to be a carbohydrate, and protein, fat and fibre are true zeroes rather than unrecorded blanks. THE MARKET IS THE ASSUMPTION, same as the Brisk row above: the US 12.5 fl oz bottle of the same drink is published at roughly 160 kcal and 42 g of sugar, about 15% higher, so read this as 140\u2013160 kcal and 35\u201342 g sugar and take the top of the band if the bottle was bought in the States. Sodium ~10 mg is trivial either way and the US label\u0027s 25 mg would not move a day.",
+    note: "The 370 mL Canadian bottle, from search summaries on Sep 12 (the listings were blocked). All sugar. A US bottle is about 15% more, so if it was bought in the States, use 160 kcal and 42 g sugar.",
     tags: ["drink", "soda", "soft drink", "jarritos", "mango", "mexican", "bottled", "sugar"],
   },
   {
@@ -1110,7 +1110,7 @@ export const STAPLE_FOODS: Food[] = [
       sugar: 39,
       sodium: 35,
     },
-    note: "The Canadian 355 mL can, entered as printed on September 12, 2026. Carbs and sugars are identical because there is nothing else in the drink to be a carbohydrate, and protein, fat and fibre are true zeroes rather than unrecorded blanks. THIS IS THE ONE ENTRY IN THE CATALOG THAT FAILS THE ATWATER CHECK ON PURPOSE: 39 g of sugar is 156 kcal at 4 kcal/g against a stated 140, +11%, just outside the 10% band the catalog holds to. That gap is the panel rather than the row -- a drink whose only macro is sugar has nowhere for a misreading to hide, and Coca-Cola has published 140 for this can for decades under label rounding rules that let it. The number to trust here is the 39 g of sugar; read the calories as 140-155 and note that the check has no power against a single-ingredient product. The market moves nothing that matters: the US can carries the same 140 kcal and 39 g and differs only in listing 45 mg of sodium against this label\u0027s 35.",
+    note: "The Canadian 355 mL can, as printed, Sep 12. Atwater comes out 11% high (156 vs 140), which is label rounding, not a misread. Trust the 39 g of sugar. The US can is the same apart from 45 mg sodium.",
     tags: ["drink", "soda", "soft drink", "cola", "coca-cola", "coke", "can", "sugar"],
   },
   {
@@ -1121,7 +1121,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 puri (assembled, ~31 g)",
     gramsPerServing: 31,
     macros: { calories: 43, protein: 0.8, carbs: 6.6, fat: 1.4, fiber: 0.5, sugar: 1.5, sodium: 115 },
-    note: "Estimated September 9, 2026 for a plate of assembled pani puri, built per piece as a 4 g fried semolina shell (about 2.8 g of flour and 1.2 g of absorbed oil), 12 g of spiced potato-and-chickpea filling, 12.5 ml of mint-tamarind pani and a 2 g drizzle of sweet chutney; Atwater lands at 42 against 43. First written the same evening at 20 ml of pani a piece, 45 kcal and 150 mg of sodium, and corrected within the hour when the owner put the whole plate\u0027s pani at one bowl of about 250 ml across 20 \u2014 that is a dipping plate rather than street service, where each shell is filled to the brim, so the pani volume is the first thing to re-read if a plate is served differently. Distinct from the masala puri above, which is a 15 g deep-fried atta bread eaten as a bread \u2014 the shell here is a quarter of that weight and the filling and water are most of the row. Read calories as 35\u201355 a piece: the shell\u0027s oil and how freely the sweet chutney goes on do nearly all of that. THE SODIUM IS THE WIDE FIGURE, band 80\u2013200 a piece, because chaat pani is salted hard with kala namak and no two cooks agree \u2014 across a plate of 20 that spread is 1,600 to 4,000 mg, so it is the number to distrust here rather than the calories.",
+    note: "Estimated on Sep 9, per assembled piece: a fried semolina shell, spiced potato and chickpea, mint-tamarind water and a little sweet chutney. First written at 20 mL of water a piece and corrected within the hour, since the whole plate of 20 had one bowl (about 250 mL). Call it 35–55 kcal a piece. Sodium is the uncertain part, 80–200 mg a piece, since the water is salted hard with kala namak.",
     tags: ["pani puri", "golgappa", "puchka", "gol gappa", "chaat", "indian", "street food", "snack", "fried"],
   },
   {
@@ -1132,7 +1132,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 slice (~110 g, frosted)",
     gramsPerServing: 110,
     macros: { calories: 390, protein: 4, carbs: 52, fat: 19, fiber: 0.6, sugar: 38, sodium: 300 },
-    note: "Estimated for a standard restaurant birthday slice on September 16, 2026, not read off a panel \u2014 no venue nutrition exists and none was published. Built like the carrot cake row above it: USDA\u0027s commercially prepared yellow cake with frosting at ~355 kcal per 100 g, applied to a ~110 g slice. Read it as 280\u2013500 kcal and treat slice size as the variable doing nearly all the work, since a restaurant comps a wedge rather than measures one; frosting thickness is second and moves fat and sugar more than calories. At 4 g of protein and 38 g of sugar this is sugar and fat with a little flour in it, which is the fair read of the type. IF THE VENUE IS NAMED AND POSTS A PANEL, THIS ENTRY SHOULD BE REPLACED BY IT.",
+    note: "Estimated on Sep 16 for a restaurant birthday slice: USDA yellow cake with frosting at about 355 kcal per 100 g, on a ~110 g slice. Call it 280–500 kcal, mostly the slice size. If the venue posts a panel, use that.",
     tags: ["vanilla cake", "cake", "birthday cake", "dessert", "frosting", "snack"],
   },
   {
@@ -1144,7 +1144,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 bag (~60 g)",
     gramsPerServing: 60,
     macros: { calories: 310, protein: 5.2, carbs: 36, fat: 15.5, fiber: 3, sugar: 2.5, sodium: 390 },
-    note: "ONLY THE CALORIE FIGURE IS READ — 310 for the bag, off the wrapper on September 17, 2026, which is why the entry is held per bag and named for it. Everything else is that 310 scaled from the one Covered Bridge panel that was reachable, a 36 g single-serve at 180 kcal, 3 g protein, 21 g carbs, 9 g fat, 2 g fibre and 230 mg sodium; coveredbridgechips.com was not readable through the egress proxy. Scaling by calories rather than by weight is deliberate — it keeps the macro ratios the panel states and leaves only the bag size uncertain. That size is the soft input: Covered Bridge's single-serve is sold as 60 g and one listing puts a 60 g sour-cream bag at 290 kcal rather than 310, so the wrapper in hand is either a slightly denser flavour or a slightly larger bag. At 310 kcal and 5.2 g of protein this is a 60-to-1 calorie-to-protein item, the least protein-dense thing logged in a normal day here. Sodium ~390 mg is the scaled line and the least supported, band 300–500; kettle chips are fried in the bag's own oil and a seasoned flavour salts harder than a plain one.",
+    note: "Only the calories are off the wrapper: 310 for the bag, Sep 17. The rest is scaled from the one Covered Bridge panel reachable (36 g, 180 kcal), since their site was blocked. One listing puts a 60 g bag at 290, so either this bag is a bit bigger or the flavour a bit denser. Sodium is the weakest figure, 300–500 mg.",
     tags: ["chips", "potato chips", "kettle chips", "sour cream and onion", "covered bridge", "snack", "packaged"],
   },
   {
@@ -1156,7 +1156,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 bag (23 g)",
     gramsPerServing: 23,
     macros: { calories: 90, protein: 2.5, carbs: 14, fat: 2.8, fiber: 2.5, sugar: 0.5, sodium: 190 },
-    note: "ONLY THE CALORIE FIGURE IS READ \u2014 90 for the bag, off the wrapper on September 18, 2026. fromfarmtotable.ca, the brand\u0027s own 23 g nutrition sheet and every retailer listing were blocked at the network egress proxy, so everything else is a reconstruction built to that 90 and should be read as one. Search summaries put this flavour at 70 kcal and the Butter & Salt at 90; the wrapper wins and 70 is the figure to doubt, because 23 g of bare popped corn is already about 89 kcal and a seasoned bag cannot come in under it. Composition taken as roughly 19 g popped corn, 2 g canola oil and 2 g cheese seasoning, then scaled to the 90 \u2014 Atwater lands at 91, which is the reconstruction\u0027s own arithmetic rather than corroboration. Sodium ~190 mg is the least supported line, band 130\u2013260, since all of it sits in the seasoning and none of it was read; the 23 g bag size is the brand\u0027s only single-serve and is the one input two independent searches agree on. At 2.5 g of protein per 90 kcal this is a fibre-and-salt snack, not a protein item.",
+    note: "Only the calories are off the wrapper: 90 for the bag, Sep 18. The rest is rebuilt to match, as about 19 g popcorn, 2 g oil and 2 g cheese seasoning, since every listing was blocked. A search said 70 kcal, but 23 g of plain popcorn is already about 89, so the wrapper wins. Sodium is a guess, 130–260 mg.",
     tags: ["popcorn", "white cheddar", "cheddar", "from farm to table", "farm to table", "snack", "packaged"],
   },
   {
@@ -1168,7 +1168,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 bag (~60 g)",
     gramsPerServing: 60,
     macros: { calories: 300, protein: 5, carbs: 35, fat: 15, fiber: 3.3, sugar: 2, sodium: 385 },
-    note: "NO WRAPPER WAS READ FOR THIS FLAVOUR \u2014 the figures are the one Covered Bridge panel that has ever been reachable from here, a 36 g single-serve at 180 kcal, 3 g protein, 21 g carbs, 9 g fat, 2 g fibre and 230 mg sodium, scaled by weight to the 60 g bag on September 21, 2026; coveredbridgechips.com and the retailer listings were blocked at the egress proxy again. Read calories as 288\u2013310, because 300 sits between two independent figures rather than resting on one: a third-party 50 g listing scales to 288, and the sour-cream wrapper photographed on September 17 read 310. Sodium is the least supported line and the one most likely to move by flavour, band 300\u2013500 \u2014 the ingredient list runs vinegar powder, whey, sea salt, cane sugar, citric acid, onion powder and dill weed, which salts harder than a plain chip; the 2 g of sugar is that cane sugar and is estimated, band 1\u20133. At 5 g of protein per 300 kcal this is the same 60-to-1 snack its sour-cream sibling is.",
+    note: "No wrapper read for this flavour. Scaled by weight from the one reachable Covered Bridge panel (36 g, 180 kcal) to a 60 g bag, Sep 21. Call it 288–310 kcal. Sodium is the weakest figure, 300–500 mg; sugar is estimated at 1–3 g.",
     tags: ["chips", "potato chips", "kettle chips", "dill", "dill pickle", "creamy dill", "covered bridge", "snack", "packaged"],
   },
   {
@@ -1179,7 +1179,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 cookie (~20 g)",
     gramsPerServing: 20,
     macros: { calories: 100, protein: 1, carbs: 11, fat: 5.7, fiber: 0.3, sugar: 3.3, sodium: 75 },
-    note: "THE 100 KCAL IS THE READ FIGURE, stated off the package on September 21, 2026, and everything else is built to it. Cookie It Up\u0027s own panels were blocked at the egress proxy, but search summaries of their chocolate shortbread put one cookie at 90 kcal with 1 g protein, 10 g carbs and 6 g fat, which is the butter-forward shape this is scaled to. The split itself comes from shortbread\u0027s classic 1:2:3 of sugar, butter and flour at a ~20 g cookie \u2014 about 3.3 g sugar, 5.7 g of butter fat and 10 g of flour \u2014 and Atwater lands at 99 against the stated 100, which is the construction\u0027s own arithmetic rather than corroboration. Sodium is the softest line at 75 mg, band 50\u2013110, since it is salted butter plus a pinch and none of it was read; fibre at 0.3 g is refined flour and is a floor. COOKIE WEIGHT IS THE OTHER VARIABLE and should log through the servings multiplier rather than by editing this row.",
+    note: "The 100 kcal is off the package, Sep 21; the rest is built to match. Search summaries of their chocolate shortbread gave the rough shape, and the split follows the usual 1:2:3 of sugar, butter and flour. Sodium is a guess, 50–110 mg. For a bigger or smaller cookie, use the multiplier.",
     tags: ["cookie", "shortbread", "butter", "cookie it up", "bakery", "snack", "dessert"],
   },
   {
@@ -1191,7 +1191,7 @@ export const STAPLE_FOODS: Food[] = [
     per: "1 bag (~60 g)",
     gramsPerServing: 60,
     macros: { calories: 288, protein: 4.8, carbs: 35, fat: 14.4, fiber: 3.6, sugar: 3, sodium: 350 },
-    note: "NO WRAPPER WAS READ \u2014 the figures are this flavour's own third-party listing, 31 chips at 50 g giving 240 kcal, 4 g protein, 12 g fat, 3 g fibre and 290 mg sodium, scaled by weight to the 60 g single-serve on September 22, 2026; coveredbridgechips.com and the retailer listings were blocked at the egress proxy, as they were for the sour-cream and creamy-dill rows. Carbs are absent from that listing and are derived by Atwater from the other four lines, which gives 29 g per 50 g, or 58 g per 100 g \u2014 the same density the 36 g Covered Bridge panel implies, and the closest thing to corroboration this entry has. It runs 288 rather than the 300 and 310 of its two siblings because those were scaled from that 36 g panel at 5.0 kcal/g while this flavour's own listing gives 4.8; read calories as 275\u2013310. Sugar at 3 g is the only wholly built line, band 2\u20135, and it is the BBQ seasoning, which is the thing separating this from a plain chip; sodium ~350 mg, band 280\u2013450. BAG SIZE IS THE ASSUMPTION, 60 g being Covered Bridge's single-serve and the size the two earlier rows used, so a different bag belongs in the servings multiplier rather than in this row.",
+    note: "No wrapper read. This flavour's own listing (50 g: 240 kcal, 4 g protein, 12 g fat, 3 g fibre, 290 mg sodium), scaled to the 60 g bag on Sep 22. Carbs weren't listed, so they're worked out from the calories. A little lower than the other two Covered Bridge flavours, which were scaled from a different panel; call it 275–310 kcal. Sugar is a guess, 2–5 g; sodium 280–450 mg. Assumes the 60 g single-serve bag.",
     tags: ["chips", "potato chips", "kettle chips", "bbq", "barbecue", "smokin sweet bbq", "covered bridge", "snack", "packaged"],
   },
 ];

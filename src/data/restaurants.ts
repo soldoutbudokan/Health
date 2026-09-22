@@ -36,7 +36,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 45,
       sodium: 1350,
     },
-    note: "Estimated from the dish's construction, not a published panel \u2014 the chain posts no nutrition and none was reachable on August 23, 2026. Built as three large buttermilk pancakes (~110 g each, 750 kcal) plus ~50 g cookie butter, ~30 g whipped cream and ~15 g crumbled speculoos, which is what the 59 g fat and the low 24 g protein imply; syrup is NOT included and is logged separately. Read calories as 900\u20131,500: the stack count is the variable, so a two-pancake stack is ~950 and a heavier cookie-butter hand pushes past 1,300. Sodium is the wider band at 800\u20131,900 mg and is mostly the pancakes rather than the topping \u2014 baking powder and batter salt run ~400 mg a pancake, so it tracks the same count the calories do.",
+    note: "Estimated from how it's made; the chain posts no nutrition. Three large buttermilk pancakes (~110 g each) with ~50 g cookie butter, whipped cream and crumbled speculoos. Syrup not included; log it separately. Call it 900–1,500 kcal, mostly the pancake count: two pancakes is about 950. Sodium 800–1,900 mg, mostly the pancakes.",
     tags: ["pancakes", "cookie butter", "speculoos", "biscoff", "stacked", "restaurant", "brunch", "breakfast"],
   },
   {
@@ -55,7 +55,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1.1,
       sodium: 500,
     },
-    note: "Estimated from the dish's construction, not a published panel: ~90 g cooked pasta and ~25 g Pecorino Romano per scoop, which is what the 10 g protein and 12.5 g fat imply. The sodium is the number to be careful with — Pecorino Romano runs ~1,800 mg/100 g, among the saltiest cheeses there is, so the cheese alone is ~450 mg and salted pasta water carries the rest. Band is 350–700 mg per scoop and it tracks the cheese, which is also what drives the calories, so a generous scoop moves both together. Portions here are logged in scoops: 4 scoops is a 2,000 mg dish.",
+    note: "Estimated: about 90 g cooked pasta and 25 g Pecorino Romano per scoop. Watch the sodium: Pecorino is one of the saltiest cheeses, so the cheese alone is about 450 mg. 350–700 mg a scoop, and a generous scoop raises calories and sodium together. Four scoops is about 2,000 mg.",
     tags: ["pasta", "cacio e pepe", "pecorino", "spaghetti western", "restaurant", "takeout"],
   },
   {
@@ -73,7 +73,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 3,
       sodium: 1400,
     },
-    note: "Estimated for a whole sandwich; it is usually logged at 0.5. The 49 g protein implies roughly 170 g of chicken, which is what makes this the largest protein item in the catalog outside the Starbucks latte. Sodium is an estimate in the 1,000–1,900 mg band and comes from four places at once — bread ~450 mg, seasoned chicken ~500 mg, Caesar dressing ~350 mg, Parmesan ~120 mg — so there is no single ingredient to blame or to swap out. Even half a sandwich is a 700 mg item.",
+    note: "Estimated for a whole sandwich; usually logged as half. The 49 g protein means roughly 170 g of chicken. Sodium 1,000–1,900 mg, spread across the bread, chicken, dressing and Parmesan, so nothing to swap out. Half a sandwich is still about 700 mg.",
     tags: ["sandwich", "chicken", "caesar", "spaghetti western", "restaurant", "takeout", "lunch"],
   },
   {
@@ -91,7 +91,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 7,
       sodium: 1700,
     },
-    note: "Estimated from the burger's construction, not a published panel — Aloette publishes no nutrition. Built as a double patty (~120 g cooked 80/20 chuck), two slices of cheese, a mayo-based special sauce (~35 g), pickles and lettuce on a soft potato-style bun. Fat is what drives this and it comes from three places at once: patties ~25 g, cheese ~11 g, sauce ~17 g, so the 57 g total is not one indulgent component but the whole build. Calorie band is 750-1,000; a smash-style patty pair at the light end and a thicker griddled pair at the heavy. Sodium is wider still at 1,200-2,300 mg because the sauce and the cheese are both unmeasurable from the outside — treat 1,700 as the middle of a range, not a reading. For reference, a Shake Shack Double ShackBurger, which does publish, is 770 kcal / 1,120 mg; this is estimated a little richer because the sauce is more generous.",
+    note: "Estimated; Aloette posts no nutrition. A double patty (~120 g cooked 80/20), two slices of cheese, ~35 g of mayo-based sauce, pickles and lettuce on a potato bun. The fat comes from the patties, cheese and sauce together. Call it 750–1,000 kcal and 1,200–2,300 mg sodium. For comparison, a Shake Shack Double ShackBurger is 770 kcal and 1,120 mg.",
     tags: ["burger", "beef", "cheeseburger", "aloette", "restaurant", "takeout", "lunch", "toronto"],
   },
   {
@@ -110,7 +110,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.5,
       sodium: 480,
     },
-    note: "Estimated for restaurant deep-fried potato at a typical oil uptake, held per 100 g rather than per portion so a handful and a full side both log honestly against the same entry — a served side is roughly 150 g. Calorie band is 280-360 per 100 g and it tracks cut thickness: thinner fries carry more oil per gram, not less. Sodium is the least certain figure here at 300-700 mg per 100 g, because fries are salted by hand at the pass and no two orders match.",
+    note: "Estimated for restaurant fries at a typical oil uptake, per 100 g; a side is about 150 g. 280–360 kcal per 100 g, and thinner fries hold more oil. Sodium 300–700 mg per 100 g, since fries are salted by hand.",
     tags: ["fries", "potato", "side", "aloette", "restaurant", "takeout", "toronto"],
   },
   {
@@ -129,7 +129,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 32,
       sodium: 275,
     },
-    note: "A bakery-style chocolate chip cookie. Size is the assumption doing nearly all the work here, since cookies of this style are fairly consistent per gram at ~4.7 kcal/g — so this entry is really a weight estimate wearing a macro breakdown. First estimated at 75 g on August 11, 2026 and corrected the same day to 86 g, on the report that the cookie was noticeably bigger than that — roughly 15% — which is the observation the original note said the band turned on. That is one eyeballed sighting rather than a scale reading, so the band is still 330-480 kcal and still tracks size alone; it is narrower than the opening 250-450 only because the small-supermarket-cookie end has been ruled out. Sodium ~275 mg is ordinary for the type and the least consequential number in the row.",
+    note: "A bakery-style chocolate chip cookie, about 4.7 kcal a gram, so the size is what matters. First estimated at 75 g on Aug 11 and raised to 86 g the same day because it was noticeably bigger. Call it 330–480 kcal.",
     tags: ["cookie", "dessert", "chocolate chip", "aloette", "restaurant", "takeout", "toronto"],
   },
   {
@@ -147,7 +147,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 5,
       sodium: 350,
     },
-    note: "NO VENUE — this is a generic Thai-restaurant pad thai rather than a particular kitchen's, because none was named when it was first logged on August 13, 2026. If it turns out to come from somewhere ordered from repeatedly, split this into a branded entry rather than letting one set of numbers stand for every restaurant in the city. Held per 100 g so a lunch portion and a full plate log against the same figures; a served portion runs 350-500 g. Estimated from the dish's construction, not a panel: per 100 g, roughly 45 g cooked rice noodles, 27 g beef, 10 g egg, 12 g bean sprouts and garlic chives, 10 g tamarind-and-palm-sugar sauce, 4 g wok oil and 3 g crushed peanuts. Two things move the total and neither is visible from the outside: how much oil the wok carried, and how much beef is actually in it. Calorie band is 155-260 per 100 g on that basis. Sodium is wider at 250-500 mg per 100 g and tracks the fish sauce alone, which is the usual asymmetry here — a portion can be eyeballed, a sauce cannot. Two published figures bracket this: P.F. Chang's beef pad thai is 760 kcal / 28 g protein / 1,670 mg sodium for a large restaurant plate, and a 300 g reference serving is commonly given as 600 kcal / 35 g protein, which is 200 kcal per 100 g — the same density this entry carries. The 5 g of sugar per 100 g is real and worth noticing: pad thai sauce is palm sugar and tamarind, so a 400 g plate is a 20 g sugar item before anything sweet is ordered.",
+    note: "A generic restaurant pad thai, per 100 g, since no venue was named on Aug 13. A plate is 350–500 g. Estimated from rice noodles, beef, egg, sprouts, chives, tamarind-palm sugar sauce, oil and peanuts. 155–260 kcal per 100 g depending on the oil and beef; sodium 250–500 mg, mostly fish sauce. A 300 g reference serving is often given as 600 kcal, which matches. The sauce makes a 400 g plate about 20 g of sugar.",
     tags: ["pad thai", "thai", "noodles", "beef", "restaurant", "takeout", "lunch"],
   },
   {
@@ -167,7 +167,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 5,
       sodium: 620,
     },
-    note: "Patties Express publishes no nutrition — searched August 14, 2026 and the site carries a menu and prices only — so this is anchored to Golden Krust's published panel for the same product, a 142 g Jamaican-style spicy beef patty at 340 kcal / 11 g protein / 50 g carbs / 12 g fat / 2 g fibre / 8 g sugar / 620 mg sodium. Two independent searches returned those seven figures identically and Atwater lands at 352 against 340, so the anchor is a real panel rather than a database reconstruction. This entry is nudged up ~10 kcal and ~2.5 g fat on it for a shop-baked patty over a frozen retail one, on the reasoning that hand-laid pastry carries more shortening; that adjustment is a judgement, not a reading. Calorie band is 300-400. THE PASTRY, NOT THE FILLING, IS THE DISH: about two-thirds of the calories and nearly all of the carbs are the shell, which is why brand-to-brand variation stays inside ~50 kcal and why the beef and chicken entries here land within 10 kcal of each other. Published full-size patties bracketing this: Patty King 300 kcal, Tastee 300, 7-Eleven 310, Golden Krust 340, a generic reference 391. Sodium is the widest figure at 450-800 mg and carries the least support, since a shop seasons by hand — the published brands run 400-650. Size is the other soft input: 145 g is the standard Jamaican patty and Golden Krust's is 142 g, but no Patties Express patty has been weighed, and the whole row scales with it. SPICE LEVEL IS RECORDED, NOT PRICED IN: spicy versus mild is scotch bonnet and seasoning, which moves no macro line, so the variant is for the record only.",
+    note: "Patties Express posts no nutrition, so this is based on Golden Krust's 142 g spicy beef patty (340 kcal, 11 g protein, 620 mg sodium), nudged up about 10 kcal for a shop-baked shell. Call it 300–400 kcal. The pastry is most of it, which is why brands only differ by about 50 kcal and beef and chicken are within 10. Sodium 450–800 mg. Spicy or mild doesn't change the numbers.",
     tags: ["patty", "jamaican", "beef", "patties express", "restaurant", "takeout", "lunch", "toronto", "caribbean"],
   },
   {
@@ -187,7 +187,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 5,
       sodium: 560,
     },
-    note: "Built the same way as the beef patty above and subject to every caveat in that note — no published figures from Patties Express, anchored to Golden Krust's 142 g Jamaican-style chicken patty at 330 kcal / 10 g protein / 47 g carbs / 12 g fat / 2 g fibre / 8 g sugar / 540 mg sodium, then nudged for a shop-baked shell. Calorie band is 290-400. Chicken sits slightly below beef here on both calories and sodium, which is the direction the published panels agree on (Golden Krust: 330 against 340, 540 mg against 620), but the gap is inside both bands and should not be read as a reason to choose one. THE FILLINGS ARE CLOSER THAN THEY SOUND: chicken patty filling is dark meat with the same seasoning and the same thickened gravy, so it is not the leaner option a chicken-versus-beef framing implies, and at 12 g of protein per 340 kcal neither patty is a protein item. Chicken brands are more scattered than beef, which is why the band's floor is lower: Golden Krust 330, Caribbean Food Delights 330 (but 19 g fat), Juici 380, George's Tastee 290. Sodium band is 400-750 mg. One published Golden Krust jerk-chicken figure of 390 kcal / 17 g fat was also returned and is NOT used here — it is the in-store jerk patty rather than the 142 g retail one, a different product, and mixing the two would be the confusable-sibling error.",
+    note: "Same approach as the beef patty, based on Golden Krust's chicken patty (330 kcal, 10 g protein, 540 mg sodium). Call it 290–400 kcal and 400–750 mg sodium. The filling is dark meat with the same gravy, so it isn't leaner than beef, and neither patty is much protein.",
     tags: ["patty", "jamaican", "chicken", "patties express", "restaurant", "takeout", "lunch", "toronto", "caribbean"],
   },
   {
@@ -206,7 +206,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 23.5,
       sodium: 1085,
     },
-    note: "UNLIKE THE OTHER ENTRIES IN THIS FILE, MOST OF THIS IS PUBLISHED — Subway posts panels, so this is an addition of four sourced rows rather than a reconstruction, which is why it carries the narrowest band here at 470-570 kcal. Built as: the standard 6-inch Sweet Onion Chicken Teriyaki (340 kcal / 24 g protein / 54 g carbs / 4 g fat / 4 g fibre / 22 g sugar / 790 mg sodium for a 262 g sub, Atwater 348 against 340), which already includes the bread, the chicken, the standard veg and the sweet onion sauce; plus cheddar (60 kcal / 4 g protein / 4.5 g fat / 90 mg sodium); plus black olives (0 kcal, 25 mg sodium — three rings are a rounding error in everything but salt); plus Sub Sauce. THE SUB SAUCE IS THE ONE ESTIMATED LINE. Only its calories are published, 110 per 3 tsp (21 g), so the split into 11 g fat / 2.5 g carbs is back-calculated and the ~180 mg sodium is inferred from Subway's own mayonnaise (65-70 mg per 14 g) adjusted upward because at 5.2 kcal/g this is a thinner, more seasoned sauce than mayonnaise's 7.1 — read it as 100-300 mg. It is nonetheless a fifth of the sandwich's calories and more than half its fat, so a sub ordered without it is a genuinely different item, near 400 kcal. BREAD IS THE OTHER ASSUMPTION: the 340 kcal base is the default wheat/Italian, and Italian Herb & Cheese would add roughly 40-50 kcal — that is most of the calorie band. Tomato is in the published base but was not ordered, worth about -5 kcal, which is below the noise and has not been subtracted. The 23.5 g of sugar is real and is the teriyaki glaze plus the sweet onion sauce, not the bread; this is a sweet sandwich by construction. At 28 g protein for 510 kcal it is the best protein-per-calorie restaurant item in this file.",
+    note: "Mostly Subway's published panels added together, so it's fairly solid: 470–570 kcal. The 6-inch Sweet Onion Chicken Teriyaki (340 kcal, 24 g protein, 790 mg sodium) plus cheddar, black olives and Sub Sauce. Only the Sub Sauce is estimated: Subway gives its calories (110) but not the split, so its fat and sodium (100–300 mg) are worked out. Without the sauce it's about 400 kcal. Italian Herb & Cheese bread adds 40–50. The sugar is the teriyaki and sweet onion sauce.",
     tags: ["subway", "sub", "sandwich", "chicken", "teriyaki", "sweet onion", "restaurant", "takeout", "dinner"],
   },
   {
@@ -225,7 +225,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 6,
       sodium: 1180,
     },
-    note: "Tim Hortons' published figures as relayed by nutrition aggregators on August 21, 2026 \u2014 timhortons.ca and every aggregator page were blocked at the network egress proxy, so this is read off search summaries rather than off a panel, which puts it below the Subway entry in confidence and well above the reconstructions around it. THIS IS THE GRILLED ONE, not the Habanero Crispy Chicken Loaded Wrap, a different item near 620 kcal; if the receipt says crispy this entry is wrong. Sources split on calories, 510 against 560, while agreeing on 51 g carbs / 22 g fat / 25 g protein \u2014 Atwater on those macros lands at 502, so 510 is carried and 560 is the figure that does not reconcile. Sodium is the weakest line and is not a reading: the with-cheese version is published at 1,360 mg and subtracting a cheese slice's ~180 mg gives the ~1,180 mg here, so read it as 1,000\u20131,400 mg. Fibre is the with-cheese figure carried across unchanged since cheese contributes none, and the 6 g sugar is an estimate off the tortilla and the habanero sauce with nothing published behind it \u2014 read that as 4\u20139 g.",
+    note: "Tim Hortons' published figures via search summaries on Aug 21 (their site was blocked). The grilled one, not the Crispy Chicken wrap (about 620 kcal). Sources say 510 or 560 kcal; 510 is the one that adds up. Sodium is estimated from the with-cheese version (1,360 mg) minus a slice of cheese, so 1,000–1,400. Sugar is a guess, 4–9 g.",
     tags: ["tim hortons", "timmies", "wrap", "chicken", "habanero", "grilled", "restaurant", "lunch"],
   },
   {
@@ -245,7 +245,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 7,
       sodium: 1280,
     },
-    note: "Estimated from the published ingredient list, not a panel — mandys.ca was blocked at the network egress proxy on August 25, 2026, and Mandy's posts no nutrition anywhere, so this is a reconstruction and sits at the low-confidence end of this file. Two independent searches agree on what is in it: romaine, mixed greens, cherry tomatoes, avocado, green onions, mushrooms, baked pita chips, bacon and a free-run hard boiled egg. WHAT IS NOT IN IT MATTERS MORE THAN WHAT IS — Mandy's Cobb carries no chicken and no blue cheese, unlike the classic, which is why 25 g of protein sits under 730 kcal and why the name oversells it as a protein dish; a version with chicken added is a different entry and roughly +30 g. Built as ~100 g greens, 60 g cherry tomatoes, half an avocado, 15 g green onion, 40 g mushrooms, 30 g pita chips, three rashers of bacon, one large egg and ~50 ml of dressing, 439 g plated; Atwater lands at 747 against 730, +2.3%. Read calories as 550–950: the dressing is the whole band, worth about a third of the total on its own, and Mandy's dresses generously — an undressed or side-dressed bowl is nearer 500. The dressing is also the least-sourced line, taken as a creamy Caesar on one weak search signal rather than a menu reading, so a vinaigrette instead would cut roughly 80 kcal and most of the saturated fat. Sodium is the widest band at 900–1,800 mg and is mostly bacon, pita chips and dressing rather than the salad.",
+    note: "Estimated from the published ingredient list; Mandy's posts no nutrition and the site was blocked on Aug 25. Romaine, mixed greens, cherry tomatoes, avocado, green onion, mushrooms, pita chips, bacon and a boiled egg. No chicken and no blue cheese, which is why the protein is low for 730 kcal; with chicken added it's about +30 g. Call it 550–950 kcal, mostly the dressing, which was guessed as a creamy Caesar. Sodium 900–1,800 mg, mostly bacon, pita chips and dressing.",
     tags: ["mandys", "mandy's", "cobb", "salad", "avocado", "bacon", "egg", "restaurant", "lunch"],
   },
   {
@@ -265,7 +265,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 26,
       sodium: 190,
     },
-    note: "Reconstructed around one published anchor — Oakberry states 32 g of protein for the Super Whey and publishes nothing else, so the protein is theirs and every other line here is built. Two searches on August 25, 2026 agree on the 32 g but disagree on the contents: one describes acai, banana, whey and peanut butter, the other acai, strawberries and whey, and the second is carried because the first appears to have merged it with the PB & Whey, a separate item on the same menu with exactly that build. IF THIS DRINK HAD PEANUT BUTTER IN IT THIS ENTRY IS WRONG by roughly +150 kcal and +12 g fat, so check the cup. Built as ~200 g of Oakberry acai sorbet base, ~80 g strawberries and ~38 g of whey powder, 318 g in the Works size the drink is said to come in; Atwater lands at 378 against 375. Read calories as 300-500, the acai base being the whole band — it is a sweetened sorbet rather than plain pulp, which is where the 26 g of sugar comes from and why the calories run well above what a whey shake alone would. Sodium is a straight inference from the whey and should be read as 100-350 mg.",
+    note: "Only the 32 g of protein is Oakberry's; the rest is built. Assumed to be acai, strawberries and whey (~200 g acai sorbet base, ~80 g berries, ~38 g whey). If it had peanut butter in it, add about 150 kcal and 12 g fat. Call it 300–500 kcal, mostly the sweetened acai base, which is also where the sugar comes from. Sodium 100–350 mg.",
     tags: ["oakberry", "acai", "whey", "protein", "smoothie", "shake", "strawberry", "drink"],
   },
   {
@@ -284,7 +284,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.5,
       sodium: 240,
     },
-    note: "Deliberately venue-agnostic — this is one restaurant pork-and-chive jiaozi averaged across a four-stop Toronto dumpling crawl on August 25, 2026, where no single shop was identified and the cooking split was mixed, so a per-shop entry would be a precision the evening does not support. Built as a ~38 g dumpling: 16 g wrapper, 22 g filling of roughly 11 g ground pork plus garlic chives and aromatics, taken as a 50/50 steamed and pan-fried average (steamed ~84 kcal, pan-fried ~97, the 13 kcal gap being pan oil), with light dipping sauce folded in at 4 kcal and 40 mg sodium. WORTH STATING BECAUSE THE NAME MISLEADS ON PROTEIN: only about 1.9 g of the 3.4 g comes from the pork and the rest is wrapper flour, which is why a dozen of these carry 41 g rather than the 60-plus a meat dish of the same calories would. Read calories as 75-120 per dumpling — size is the variable and shops run anywhere from 30 to 45 g. Sodium is the widest line at 150-350 mg and moves with both the filling seasoning and how hard the vinegar-soy is used; the 40 mg sauce figure here reflects a light hand and a normal one would roughly double it.",
+    note: "An average pork-and-chive dumpling from a four-stop Toronto dumpling crawl on Aug 25, half steamed and half pan-fried, with a little dipping sauce. About 38 g: 16 g wrapper, 22 g filling. Only about half the protein is pork; the rest is wrapper, so a dozen is about 41 g of protein. Call it 75–120 kcal each, mostly size. Sodium 150–350 mg, more with a heavy hand on the sauce.",
     tags: ["dumpling", "jiaozi", "potsticker", "gyoza", "pork", "chive", "chinese", "restaurant", "dinner"],
   },
   {
@@ -304,7 +304,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 8,
       sodium: 1710,
     },
-    note: "BIGBELLY publishes no nutrition and bigbellygreek.com was unreachable from this machine on August 20, 2026 (blocked at the network egress proxy), so this is reconstructed from a photograph of the bowl plus menu listings, never a panel. The rice and the fried pita are separate entries, so a partly-eaten base logs as a fraction of one. Built as ~260 g of chopped grilled chicken breast, ~190 g of the mixed salad layer (sweetcorn, chickpeas, pickled onion, greens, cucumber) and ~125 g of sauces. The first draft was written blind from review descriptions at ~190 g of meat and came in low at 575 kcal; the photograph corrected it, and the owner confirmed the revision reads right — which is agreement from the person who ate it, not a measurement. The meat is the whole row: 210–320 g of cooked chicken is 65–99 g of protein and 700–950 kcal, and one kitchen-scale reading would beat this volume estimate. Sodium is 1,200–2,300 mg across the marinade, the pickles and the sauces; which sauces were ordered is not recorded, and greek lemon instead of a creamy one would take 60–90 kcal off.",
+    note: "Big Belly posts no nutrition and the site was unreachable on Aug 20, so this is built from a photo and menu listings. Toppings only; the rice and fried pita are their own entries. About 260 g of grilled chicken, 190 g of salad (corn, chickpeas, pickled onion, greens, cucumber) and 125 g of sauces. The first version guessed 190 g of chicken and 575 kcal; the photo raised it. The chicken is everything: 210–320 g is 65–99 g protein and 700–950 kcal. Sodium 1,200–2,300 mg. Which sauces isn't recorded.",
     tags: ["bowl", "souvlaki", "chicken", "greek", "bigbelly", "restaurant", "takeout", "toronto", "lunch"],
   },
   {
@@ -324,7 +324,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.6,
       sodium: 800,
     },
-    note: "The lemon rice that forms the base of a BIGBELLY bowl, held as its own entry so a base that was only partly eaten logs as a fraction of one serving rather than as a fresh estimate of the whole bowl — its first use, on August 20, 2026, was 60% of the rice. Composition is ordinary pilaf-style rice cooked in broth with olive oil and lemon: per 100 g, ~160 kcal, 3 g protein, 26 g carbs, 4.5 g fat, which is white rice's ~130 kcal plus the oil the pan carried. PORTION IS THE SOFTEST NUMBER: ~320 g cooked is a large-container base and the band is 250–400 g, i.e. 400–640 kcal for a full serving. The oil is the other soft input and it is invisible — a tray finished with a generous pour runs 200 kcal above one that is not, which is more than the portion band buys. Sodium at ~250 mg per 100 g is broth and salt, band 150–350 per 100 g; unlike the staples that are deliberately left blank for salting to taste, this arrives already seasoned and a floor of zero would be the worse answer.",
+    note: "The lemon rice base from a Big Belly bowl, kept separate so a partly eaten base logs as a fraction (the first time, 60%). Rice cooked in broth with olive oil and lemon, about 160 kcal per 100 g. A full base is about 320 g (250–400), so 400–640 kcal, plus however heavy the oil was. Sodium about 250 mg per 100 g, since it arrives seasoned.",
     tags: ["rice", "greek", "lemon rice", "pilaf", "bigbelly", "restaurant", "takeout", "toronto", "side"],
   },
   {
@@ -344,7 +344,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.6,
       sodium: 300,
     },
-    note: "The deep-fried pita triangles that come with a BIGBELLY bowl — two of them, about a quarter-pita each, confirmed by photograph on August 20, 2026 after the bowl entry's blind first draft left them out. Kept separate because they do not always arrive and are the easiest thing in the container to leave. Estimated as ~55 g of pita that absorbed ~10 g of frying oil: the bread alone is ~150 kcal and the fryer adds the other ~90, so time in the oil moves this row more than size does. Band 180–320 kcal; the ~300 mg sodium is ordinary bread salt.",
+    note: "The two fried pita triangles that come with a Big Belly bowl, spotted in the photo on Aug 20 after the first pass missed them. About 55 g of pita plus 10 g of fryer oil. Call it 180–320 kcal, depending on the fryer.",
     tags: ["pita", "fried", "bread", "greek", "bigbelly", "restaurant", "takeout", "toronto", "side"],
   },
   {
@@ -364,7 +364,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 11,
       sodium: 1550,
     },
-    note: "Estimated from Chop Hop's own published salad description, not a panel \u2014 chophop.com and every menu mirror were blocked at the network egress proxy on August 26, 2026, so this is a reconstruction and sits at the low-confidence end of this file. WHAT THE CHAIN PUBLISHES FOR THE COBB IS A BACON AND EGG BASE, A BLUE CHEESE MISO SPREAD AS THE DRESSING AND SPICY CANDIED PECANS as the garnish, which makes it not the classic: no avocado is named so none is counted here, and neither pecans nor miso belong to the classic at all. Built as ~140 g chopped greens, 30 g bacon, one large egg, 110 g of the added herb roasted chicken, ~50 g of the spread, 20 g candied pecans and 50 g cherry tomato; Atwater lands at 822 against 820. Read calories as 600\u20131,050, with the spread carrying nearly all of that band \u2014 it is the least-sourced line, taken as a creamy dressing at ~50 g because no quantity is published. SODIUM WAS FIRST WRITTEN 1,840 AND IS NOW 1,550, corrected the same day: the component masses are unchanged and the error was in the per-gram densities, which had been taken near the top of the range on the chicken and the candied pecans at once rather than centred. Rebuilt at ~1,800 mg/100 g for the bacon, ~220 for the roasted chicken, ~1,250 for the spread and ~250 for the pecans; band 1,150\u20132,100, still the widest line here because bacon, blue cheese and miso stack three salt sources. For scale, Chick-fil-A\u0027s Cobb with dressing publishes about 1,890 mg and Panera\u0027s Green Goddess Cobb with chicken about 1,350, so a Cobb of this build sits between two real panels rather than above both. The herb roasted chicken is as reported: the opening-menu protein list ran Korean short rib, piri-piri chicken, Cajun shrimp, yuzu pork belly and chipotle jackfruit, so the menu has moved since and the chicken\u0027s 110 g portion is unconfirmed.",
+    note: "Estimated from Chop Hop's salad description; their site and menus were blocked on Aug 26. Their Cobb is greens, bacon, egg, a blue cheese miso spread and spicy candied pecans, plus the added herb chicken (~110 g); no avocado listed. Call it 600–1,050 kcal, mostly the spread, which was guessed at 50 g. Sodium was first 1,840 and corrected to 1,550 the same day; range 1,150–2,100, from the bacon, blue cheese and miso. Chick-fil-A's and Panera's Cobbs land either side of it.",
     tags: ["chop hop", "chophop", "cobb", "salad", "chopped salad", "chicken", "bacon", "blue cheese", "restaurant", "toronto", "lunch"],
   },
   {
@@ -384,7 +384,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 13.3,
       sodium: 1660,
     },
-    note: "Estimated September 15, 2026 from Chop Hop's published salad description, not a panel — chophop.com, Uber Eats, Ritual and every menu mirror were blocked at the network egress proxy again, so this is a reconstruction and carries the same low confidence as the Cobb above. Two independent search summaries agree the current Jefe is red cabbage and romaine, cilantro, peppers, corn, apple, tomato, pickled onion, black bean, cotija, pepper jack, crispy jalapeño, corn crisps and tajin under an avocado vinaigrette; the opening-menu press description instead had quinoa and jicama and named no dressing, so the menu has moved and that older build is not what this row is. Built as 120 g greens, 45 g black bean, 42 g vinaigrette, 32 g across the two cheeses, 26 g across the fried garnishes, ~135 g of the other fruit and veg, 1 g tajin and 110 g of the added herb seasoned chicken; Atwater lands at 738 against 735. Read calories as 550–950, the vinaigrette doing most of that band at an unpublished ~42 g. SODIUM IS THE WIDEST LINE at 1,150–2,300 mg because tajin, cotija, pepper jack, crispy jalapeño, pickled onion and the dressing all salt at once — the tajin alone is ~270 mg from about a gram and is the least-sourced figure here. The chicken is carried at the Cobb entry's 110 g and ~220 mg/100 g for consistency; it was reported as herb roasted in August and herb seasoned now, and is taken as the same item.",
+    note: "Estimated on Sep 15 from Chop Hop's salad description; the site and delivery menus were blocked. Red cabbage, romaine, cilantro, peppers, corn, apple, tomato, pickled onion, black beans, cotija, pepper jack, crispy jalapeño, corn crisps and tajin with avocado vinaigrette, plus ~110 g herb chicken. Call it 550–950 kcal, mostly the dressing. Sodium 1,150–2,300 mg, since the tajin, both cheeses, jalapeño, pickled onion and dressing are all salty.",
     tags: ["chop hop", "chophop", "jefe", "salad", "chopped salad", "chicken", "mexican", "avocado", "restaurant", "toronto", "lunch"],
   },
   {
@@ -403,7 +403,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 15,
       sodium: 3470,
     },
-    note: "Estimated from the menu description and a plate photo on August 29, 2026, not a published panel — L'Avenue posts no nutrition and its site was blocked at the egress proxy. Built as 2 fried eggs, 2 strips of bacon, a house sausage link, a slice of honey-orange glazed ham, a ~30 g scoop of pâté, one buttermilk pancake, one slice of French toast, the breakfast potatoes and the bread choice with butter (~225 kcal, roughly alike across baguette, multigrain, bagel and naan); the eggs and four meats carry ~42 g of the 64 g protein in only ~660 kcal and the starch half the rest. Read calories as 1,300–2,100, subtracting ~225 if the bread goes uneaten; the unlimited maple syrup is NOT included and is logged separately, same as the Stacked entry. Sodium is the widest band at 2,300–4,600 mg — four cured or seasoned meats, seasoned potatoes and batter salt at once, and a cure cannot be eyeballed the way a portion can.",
+    note: "Estimated from the menu and a photo on Aug 29; L'Avenue posts no nutrition. Two fried eggs, two strips of bacon, sausage, glazed ham, pâté, a pancake, a slice of French toast, breakfast potatoes, and bread with butter (~225 kcal). Syrup not included; log it separately. Call it 1,300–2,100 kcal, less 225 if the bread goes uneaten. Sodium 2,300–4,600 mg, with four cured or seasoned meats.",
     tags: ["lavenue", "l'avenue", "brunch", "breakfast", "restaurant", "toronto", "eggs", "bacon", "sausage", "ham", "pate", "pancake", "french toast", "full breakfast"],
   },
   {
@@ -422,7 +422,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 4,
       sodium: 1885,
     },
-    note: "Estimated from the brunch menu's own description — peameal bacon, house greens — and the standard build of the dish, not a panel; the pub publishes no nutrition and queenandbeaverpub.ca was blocked at the network egress proxy on August 30, 2026, so the menu was read from a photograph. FIRST WRITTEN AT 645 KCAL AND CORRECTED THE SAME DAY TO 840, on the report from the person who ate it that the plate was heavier than that by roughly 30% — one diner's recollection rather than a weighing, but it is the observation the original band existed to absorb, and 840 sits at the top of the 550–850 that band stated rather than outside it. The whole row was scaled uniformly because no component was named as the heavy one, which is the weakest step here: if the extra was mostly hollandaise the protein is overstated by several grams, and if it was a thicker peameal cut it is about right. On the revised build that is two poached eggs and ~100 g of peameal under ~70 g of hollandaise on an English muffin, with dressed house greens; Atwater lands at 825 against 840. Peameal is why this is still the menu's best protein-per-calorie plate — cured pork loin rather than belly. Sodium is the widest line at 1,300–2,600 mg, the brine and the sauce stacking; a cure cannot be eyeballed the way a portion can.",
+    note: "Estimated from the menu (peameal bacon, house greens) and the usual build; the pub posts no nutrition. First written at 645 kcal and raised to 840 the same day, since the plate was about 30% heavier than that. Two poached eggs, ~100 g peameal, ~70 g hollandaise, an English muffin, dressed greens. If the extra was mostly hollandaise, the protein is a few grams high. Sodium 1,300–2,600 mg.",
     tags: ["queen and beaver", "q&b", "eggs benedict", "benedict", "peameal", "eggs", "hollandaise", "brunch", "breakfast", "restaurant", "toronto", "pub"],
   },
   {
@@ -442,7 +442,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 3,
       sodium: 2760,
     },
-    note: "Straight off Cactus Club's published nutrition guide, which makes this the rare entry in this file with no reconstructed line \u2014 800 kcal / 52 g protein / 41 g carbs / 48 g fat / 6 g fibre / 2,760 mg sodium for a 503 g plate of blackened chicken breast, creole butter, buttered mashed potatoes and seasonal vegetables. THE FIGURES CAME FROM THIRD-PARTY MIRRORS OF THAT GUIDE RATHER THAN THE GUIDE ITSELF: cactusclubcafe.com was blocked at the network egress proxy on August 31, 2026, so FatSecret and Fitia stand in for the PDF, and the 3 g of sugar is the one line only a search summary asserted rather than a mirror table \u2014 read that figure as 0\u20138 g, and note that nothing else on the row depends on it. Atwater lands at 804 against the stated 800, a 0.5% miss and the tightest reconciliation in this file, which is roughly what separates a real panel from a good estimate. THE SODIUM IS THE POINT OF THIS ENTRY: 2,760 mg on one plate exceeds a full day's recommended limit on its own, and this log's own history \u2014 Aug 28 and Aug 30 \u2014 says a day like that lands as a pound or more of water on the next morning's scale before it is anything else.",
+    note: "Cactus Club's published nutrition guide: 800 kcal, 52 g protein, 2,760 mg sodium for a 503 g plate. From FatSecret and Fitia copies of the guide, since their site was blocked on Aug 31. The 3 g sugar is the one figure only a search summary gave (0–8 g). 2,760 mg of sodium is more than a day's limit on one plate, and past days like that have shown up as a pound of water the next morning.",
     tags: ["cactus club", "blackened", "creole", "chicken", "cajun", "mashed potatoes", "restaurant", "lunch", "dinner"],
   },
   {
@@ -462,7 +462,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 2,
       sodium: 290,
     },
-    note: "Estimated from the dish's construction, not a panel — Bawara publishes no nutrition and bawara.ca, skipthedishes.com and ubereats.com were all blocked at the network egress proxy on September 1, 2026, so the menu was read from search results: fried momos are the steamed dumpling deep-fried and then tossed in a chilli, Manchurian, Szechuan or honey-ginger-sesame sauce, and no piece count is published. Built per piece as an 18 g wrapper and a 22 g chicken-and-aromatics filling, plus roughly 5 g of absorbed frying oil and 10 g of sauce, which is where half the fat and most of the sugar come from. HELD PER PIECE RATHER THAN PER ORDER because the order size is exactly what could not be confirmed; multiply by however many were actually eaten. Read calories as 110–190 — momo size runs 30–45 g across kitchens and the frying absorption is the other half of the band. Sodium is wider at 200–420 mg and tracks the sauce toss rather than the dumpling, the usual asymmetry here.",
+    note: "Estimated; Bawara posts no nutrition and every source was blocked on Sep 1. Fried momos are steamed dumplings deep-fried and tossed in sauce. Per piece: 18 g wrapper, 22 g chicken filling, about 5 g of fryer oil and 10 g of sauce. Per piece because the order size isn't known. Call it 110–190 kcal each; sodium 200–420 mg, mostly the sauce.",
     tags: ["momo", "momos", "dumpling", "chicken", "fried", "hakka", "indian", "nepali", "bawara", "restaurant", "lunch"],
   },
   {
@@ -482,7 +482,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1.5,
       sodium: 200,
     },
-    note: "Same estimate basis and the same blocked sources as the fried momo entry — built per piece as an 18 g wrapper and a 22 g cabbage-carrot-onion filling, steamed rather than fried, with the menu's tomato-garlic sauce folded in at a light 8 g. WORTH STATING BECAUSE THE NAME MISLEADS ON PROTEIN: at 2.2 g a piece this is essentially a flour item, the wrapper carrying more of it than the filling does, so veg momos are a carb on this plate and not a protein. The steamed-to-fried gap is the honest headline — 85 kcal against the fried version's 150 for the same dumpling, and the 65 kcal is frying oil and sauce. Read calories as 65–115 and sodium as 130–320 mg, the sauce being most of the latter and a heavier dipping hand roughly doubling it. Assumes plain veg rather than the veg-and-paneer option, which would add roughly 15 kcal and 1.5 g protein a piece.",
+    note: "Same basis as the fried momo: 18 g wrapper, 22 g cabbage-carrot-onion filling, steamed, with a little tomato-garlic sauce. Almost all flour, so not a protein. 85 kcal against the fried one's 150; the difference is oil and sauce. Call it 65–115 kcal and 130–320 mg sodium. Assumes plain veg; veg and paneer adds about 15 kcal and 1.5 g protein each.",
     tags: ["momo", "momos", "dumpling", "veg", "vegetarian", "steamed", "hakka", "indian", "nepali", "bawara", "restaurant", "lunch"],
   },
   {
@@ -502,7 +502,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1,
       sodium: 450,
     },
-    note: "Held per 100 g, like the pad thai entry, so a scoop on a shared plate and a full order log against the same figures — a plated portion runs 120–250 g and a full restaurant order 350–450 g. Estimated from the construction rather than a panel, the sources being blocked as described on the fried momo entry: per 100 g, roughly 70 g cooked egg noodles, 20 g of cabbage, carrot and pepper, and 8 g of wok oil and soy-vinegar sauce. The oil is the whole calorie band, 120–200 per 100 g, because a wok-tossed noodle carries however much the pan carried and nobody measures it. Sodium is the wider line at 300–650 mg per 100 g and is soy sauce almost entirely, which makes this a saltier item per calorie than it looks. Bawara's menu lists Szechuan Noodles, Hakka Chow Mein and Chilli Garlic Noodles rather than a plain 'Hakka noodles', so this row stands for the vegetable chow mein family; the chilli-garlic version would run higher on both oil and sodium.",
+    note: "Per 100 g, like the pad thai; a plated scoop is 120–250 g and a full order 350–450 g. Estimated: about 70 g egg noodles, 20 g vegetables, 8 g oil and soy-vinegar sauce. Call it 120–200 kcal per 100 g, all down to the oil. Sodium 300–650 mg, mostly soy. The menu has Szechuan, Hakka Chow Mein and Chilli Garlic noodles; this stands for the vegetable chow mein, and chilli garlic runs higher.",
     tags: ["hakka", "noodles", "chow mein", "szechuan", "vegetable", "indo-chinese", "bawara", "restaurant", "lunch"],
   },
   {
@@ -522,7 +522,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 5,
       sodium: 650,
     },
-    note: "The menu describes this as Bombay street food — fried chicken tossed with onions, green chillies and a tangy, spicy sauce — so it is built as a battered-and-fried chilli chicken rather than a curry: per scoop, about 55 g of chicken under 12 g of batter with 8 g of absorbed frying oil, 30 g of sautéed onion and pepper, and 15 g of sweet-hot sauce. THE BATTER AND THE FRY ARE WHY THIS IS NOT THE PROTEIN ITEM IT SOUNDS LIKE: 16 g of protein against 250 kcal is a worse ratio than plain chicken by roughly half, the difference being flour and oil. Held per scoop because it was served from a tray rather than plated by the kitchen, so the portion is an eyeballed one; read calories as 190–330 and let the scoop size, not the recipe, be the variable. Sodium is the widest line at 400–950 mg and stacks a marinade under a sauce, neither of which can be seen from the outside.",
+    note: "Fried chicken tossed with onions, green chillies and a tangy sauce, per the menu. Per scoop: about 55 g chicken, 12 g batter, 8 g fryer oil, onion and pepper, and sauce. The batter and oil halve the protein ratio compared with plain chicken. Served from a tray, so the scoop is eyeballed; call it 190–330 kcal. Sodium 400–950 mg.",
     tags: ["masala", "chicken", "chilli", "chili", "indo-chinese", "bombay", "street food", "bawara", "restaurant", "lunch"],
   },
   {
@@ -541,7 +541,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1.5,
       sodium: 450,
     },
-    note: "The menu lists samosas as potato, green peas and cumin with the house chutneys, sold two to an order; this row is one piece, and THE CHUTNEYS ARE NOT IN IT — a tamarind chutney is mostly sugar and would add roughly 40 kcal and 8 g of it per tablespoon, so log it separately if it was used. Estimated from the construction rather than a panel, the sources being blocked as described on the fried momo entry: about 45 g of maida-and-fat pastry around a 65 g potato-and-pea filling, plus roughly 6 g of oil absorbed in the fry. The pastry is the surprise — it carries more of the 320 kcal than the filling does, which is why a samosa runs closer to a pastry than to a vegetable side. Read calories as 250–400, the band being size: restaurant samosas run 90–140 g and a cocktail-sized one is half this. Sodium is 300–650 mg, split between the dough and the filling's salt.",
+    note: "One samosa, potato, peas and cumin; chutney not included (tamarind adds about 40 kcal a tablespoon). About 45 g pastry around 65 g filling, plus fryer oil. The pastry is more of the calories than the filling. Call it 250–400 kcal, mostly size. Sodium 300–650 mg.",
     tags: ["samosa", "veg", "vegetarian", "potato", "peas", "pastry", "fried", "indian", "bawara", "restaurant", "lunch", "snack"],
   },
   {
@@ -561,7 +561,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 8,
       sodium: 110,
     },
-    note: "The chutney the samosa entry deliberately excludes, split out so a portion can be logged at whatever it actually was — held per tablespoon for that reason. Estimated from the standard build rather than a panel, the sources being blocked as described on the fried momo entry: tamarind pulp with jaggery or sugar and dates, which is why 8 of the 10 g of carbs are sugar and why this is essentially a sweetener with spices in it. WHICH CHUTNEY IT WAS IS THE ASSUMPTION HERE: Bawara serves the usual pair, and the green mint-coriander one is roughly 5 kcal a tablespoon rather than 40, so a mint dip makes this row about 35 kcal too high. Read calories as 30–55 per tablespoon, the sugar-to-tamarind ratio being the band. Sodium is 70–170 mg and comes from the black salt these are normally finished with, not from the fruit.",
+    note: "The samosa chutney, per tablespoon. Tamarind with jaggery or sugar and dates, so mostly sugar. Assumes the tamarind one; the green mint chutney is only about 5 kcal a tablespoon. Call it 30–55 kcal. Sodium 70–170 mg, from black salt.",
     tags: ["chutney", "tamarind", "imli", "sauce", "condiment", "indian", "bawara", "restaurant"],
   },
   {
@@ -581,7 +581,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0,
       sodium: 5,
     },
-    note: "First of eight Doraji components, added September 3, 2026 and broken out scoop by scoop on the Pantry pattern, because the plate eaten was a build-your-own platter rather than one of the menu\u0027s single-protein bowls. Cooked short-grain white rice at USDA\u0027s 130 kcal/100 g; the only estimate is the scoop, read as 150-220 g, which is a band of about \u00b160 kcal. Sodium is near zero on purpose rather than blank: bibimbap rice is served plain and the gochujang carries the salt, so unlike the home rice staple this one is not a floor dressed as a total. Doraji also offers purple rice, quinoa and glass noodles as the base, and the figures here are for white.",
+    note: "White rice for a Doraji build-your-own platter, added Sep 3. Short-grain rice at USDA's 130 kcal per 100 g; the scoop (150–220 g) is the only guess, about ±60 kcal. Sodium is near zero because bibimbap rice is served plain. Purple rice, quinoa and glass noodles are other options.",
     tags: ["rice", "white rice", "bibimbap", "korean", "doraji", "restaurant"],
   },
   {
@@ -601,7 +601,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 3,
       sodium: 140,
     },
-    note: "Estimated from the standard banchan build, not a panel \u2014 doraji.ca was blocked at the network egress proxy on September 3, 2026, so the menu itself was unreadable and this is a reconstruction. Built as 60 g of carrot on USDA\u0027s raw figures plus about 2 g of sesame oil, which is where two of the six grams of carbohydrate\u0027s worth of calories and all of the fat come from. Sodium 60-250 mg: the carrot\u0027s own 41 mg is the only firm part and the seasoning salt is the band. The oil is the calorie variable \u2014 a heavy pan puts this nearer 65 kcal.",
+    note: "Estimated; doraji.ca was blocked on Sep 3. 60 g of carrot plus about 2 g of sesame oil. Sodium 60–250 mg, mostly seasoning. A heavier hand with the oil puts it nearer 65 kcal.",
     tags: ["carrot", "vegetable", "namul", "banchan", "bibimbap", "korean", "doraji", "restaurant"],
   },
   {
@@ -621,7 +621,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1,
       sodium: 250,
     },
-    note: "Estimated on the same basis as the carrots, the site being blocked. Built as 60 g of mushroom at USDA\u0027s 22 kcal/100 g plus about 2 g of sesame oil and a teaspoon of soy, which is nearly all of the sodium \u2014 the mushrooms themselves are under 10 mg. Sodium band 100-450 mg and it is the widest line on any of the three vegetables, because a soy-seasoned namul is salted twice, in the pan and at the finish. Calories barely move: even a doubled oil hand only reaches about 50.",
+    note: "Estimated like the carrots. 60 g of mushroom, about 2 g of sesame oil and a teaspoon of soy, which is nearly all the sodium. Sodium 100–450 mg. Calories barely move; double the oil is only about 50.",
     tags: ["mushroom", "vegetable", "namul", "banchan", "bibimbap", "korean", "doraji", "restaurant"],
   },
   {
@@ -641,7 +641,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1.5,
       sodium: 180,
     },
-    note: "Sukju namul, estimated on the same basis as the other two vegetables. Built as 60 g of mung bean sprouts at USDA\u0027s 30 kcal/100 g, blanched and dressed with about 2 g of sesame oil, garlic and scallion. Sodium 80-320 mg, all of it the dressing salt. Whether the sprouts were mung or soybean moves this very little \u2014 soybean sprouts run a few grams of protein higher per scoop and about 10 kcal more.",
+    note: "Estimated like the other vegetables. 60 g of mung bean sprouts, blanched, with about 2 g of sesame oil, garlic and scallion. Sodium 80–320 mg. Soybean sprouts would add a few grams of protein and about 10 kcal.",
     tags: ["bean sprouts", "sukju", "namul", "vegetable", "banchan", "bibimbap", "korean", "doraji", "restaurant"],
   },
   {
@@ -661,7 +661,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 2.5,
       sodium: 450,
     },
-    note: "Estimated, the site being blocked, and the least certain of the three proteins because the cut is unknown. Built as 90 g of cooked skinless thigh plus a soy-sugar-sesame marinade; breast instead would drop this to about 150 kcal and 4 g of fat while holding the protein, so read calories as 150-250 and treat the 11 g of fat as the figure most likely to be wrong. Protein is the firm part at 22-25 g either way. Sodium 300-650 mg, the marinade carrying essentially all of it \u2014 plain cooked chicken is about 80 mg per 100 g.",
+    note: "Estimated, and the least certain protein because the cut isn't known. 90 g of cooked thigh in a soy-sugar-sesame marinade. Breast would be about 150 kcal with 4 g fat and the same protein, so call it 150–250 kcal. Sodium 300–650 mg, nearly all marinade.",
     tags: ["chicken", "protein", "bibimbap", "korean", "doraji", "restaurant"],
   },
   {
@@ -680,7 +680,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 5,
       sodium: 600,
     },
-    note: "Estimated from the standard bulgogi build, the site being blocked: thin-sliced sirloin or ribeye marinated in soy, sugar, pear, garlic and sesame oil. Calories 175-290 per scoop and the cut is the whole band \u2014 ribeye carries roughly half again the fat of sirloin, and the marinade is why five of the six grams of carbohydrate are sugar. Sodium 400-850 mg. Bulgogi is the saltiest of the three proteins after the spicy pork because the marinade is soy-based and the meat sits in it.",
+    note: "Estimated from the usual bulgogi: thin sirloin or ribeye marinated in soy, sugar, pear, garlic and sesame oil. Call it 175–290 kcal, depending on the cut. The sugar is the marinade. Sodium 400–850 mg.",
     tags: ["beef", "bulgogi", "protein", "bibimbap", "korean", "doraji", "restaurant"],
   },
   {
@@ -700,7 +700,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 5,
       sodium: 700,
     },
-    note: "Estimated from the standard jeyuk bokkeum build, the site being blocked: pork shoulder stir-fried in gochujang, gochugaru, soy, sugar and sesame oil. Calories 200-310, the band being how fatty the shoulder was and how wet the sauce hand. The saltiest line on the platter at 450-1,000 mg, because gochujang and soy stack two salt sources and neither was measured \u2014 gochujang alone runs about 1,200 mg per 100 g. Shoulder is assumed; a leaner cut takes roughly 50 kcal off.",
+    note: "Estimated from the usual jeyuk bokkeum: pork shoulder stir-fried in gochujang, gochugaru, soy, sugar and sesame oil. Call it 200–310 kcal. The saltiest thing on the platter, 450–1,000 mg, from the gochujang and soy. A leaner cut takes off about 50 kcal.",
     tags: ["pork", "spicy pork", "jeyuk", "protein", "bibimbap", "korean", "doraji", "restaurant"],
   },
   {
@@ -719,7 +719,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.2,
       sodium: 95,
     },
-    note: "The egg that tops a bibimbap, kept separate from the plain `staple-egg-large` because a restaurant fries it in oil and salts it: about 18 kcal and 2 g of fat more than the raw egg, and a sodium figure where the staple deliberately carries none. Sodium 70-140 mg, the egg\u0027s own 71 mg plus a pinch. The only real variable is the pan \u2014 a well-oiled one adds another 20 kcal.",
+    note: "The fried egg on top of bibimbap, separate from the plain egg staple because it's fried in oil and salted: about 18 kcal and 2 g fat more. Sodium 70–140 mg. A well-oiled pan adds another 20 kcal.",
     tags: ["egg", "fried egg", "bibimbap", "korean", "doraji", "restaurant"],
   },
   {
@@ -739,7 +739,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.8,
       sodium: 60,
     },
-    note: "Held per PIECE rather than per set, because the piece count is the softest input in the whole row and a set that turns out to be 8 rather than 6 should change a multiplier, not send anyone back to re-estimate a dish. Oi Sushi publishes no nutrition (searched September 4, 2026; only menu mirrors came back, and kurasushi.com — the one chain with a real published panel — is blocked at the network egress proxy), so this is built from the construction: ~20 g of vinegared rice and ~14 g of fish per piece, averaged across the mixed set in the photograph, which read as salmon, two ebi and two or three pale white-fish pieces. Two published figures bracket it — salmon nigiri is widely given as 66 kcal for a 40 g piece, and nigiri generally as 40–60 kcal and 3–4 g protein — so the band is 45–70 kcal a piece, with salmon at the top and ebi at the bottom. THE RICE IS MOST OF THIS ROW: fish is only about a third of the weight and almost none of the carbohydrate, which is why swapping which fish it was moves the total far less than miscounting the pieces does. Sodium at 60 mg is the vinegar-sugar-salt seasoning in the rice only, band 40–90, and it deliberately excludes the dipping soy — that is `staple-soy-sauce` and is logged on its own row, because a tablespoon of it would more than double the set\u0027s sodium by itself.",
+    note: "Per piece, since the count is the main unknown. Oi Sushi posts no nutrition. About 20 g of rice and 14 g of fish, averaged over the set in the photo (salmon, ebi and a few white fish). Published nigiri figures run 40–66 kcal, so call it 45–70 a piece. Mostly rice, so the count matters more than the fish. Sodium is the rice seasoning only, 40–90 mg; soy sauce is its own row.",
     tags: ["sushi", "nigiri", "salmon", "ebi", "shrimp", "white fish", "japanese", "oi sushi", "restaurant", "takeout", "lunch"],
   },
   {
@@ -759,7 +759,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 2,
       sodium: 620,
     },
-    note: "Held per 100 g like the pad thai and hakka noodle entries, so a box that was bigger or only half finished logs as a different multiplier rather than a fresh guess — a takeout box runs 200–300 g as served. Estimated from the construction, not a panel: per 100 g, roughly 84 g of potato-starch-fried chicken thigh, 8 g of spicy mayo, 6 g of a takoyaki-style brown sauce and 2 g of aonori, sesame and scallion, which is what the photograph shows on top. Plain karaage is published at 250 kcal / 20 g protein / 10 g carbs / 15 g fat per 100 g, and the gap between that and this row is the drizzle: the mayo alone is about 55 of these calories and 6 g of the fat, so THE SAUCE, NOT THE CHICKEN, IS WHY THIS IS A 279 KCAL DISH RATHER THAN A 250 ONE. Calorie band is 240–330 per 100 g, driven by the fryer and how heavy the mayo hand was, neither of which is visible from the outside. Sodium is the wider line at 450–850 mg per 100 g, stacking the soy-and-ginger marinade, the brown sauce and the mayo, and it is the least supported figure here. Whether anything sat under the chicken is not recorded and none is counted — a rice bed would add roughly 200–250 kcal to the box.",
+    note: "Per 100 g, like the noodle entries; a takeout box is 200–300 g. Estimated: about 84 g of fried chicken thigh, 8 g spicy mayo, 6 g brown sauce and some aonori, sesame and scallion. Plain karaage is about 250 kcal per 100 g; the mayo makes the difference. Call it 240–330 kcal per 100 g and 450–850 mg sodium. If there was rice underneath, add 200–250 kcal.",
     tags: ["karaage", "chicken", "fried chicken", "japanese", "spicy mayo", "aonori", "oi sushi", "restaurant", "takeout", "lunch"],
   },
   {
@@ -778,7 +778,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 8,
       sodium: 1000,
     },
-    note: "A HALF-PUBLISHED ENTRY, and the split matters: 490 kcal, 13 g protein, 9 g fibre and the 240 g serving are A&W\u0027s own published figures, while carbs, fat, sugar and sodium are not — web.aw.ca and fatsecret.ca are both blocked at the network egress proxy, so they could not be read on September 4, 2026. Carbs and fat are back-calculated to fit the published calories at the published protein (57 and 23 reconcile to 487 against 490), which means this row passing an Atwater check is arithmetic rather than corroboration; read them as ±8 g and ±4 g. Sodium at 1,000 mg is the weakest line, taken from the band A&W\u0027s beef burgers publish — the Teen Burger is 1,130 and the Mama 850 — so read it as 800–1,300 and replace it the moment the panel is reachable. WHAT MAKES THIS BURGER UNUSUAL IS THE FIBRE, NOT THE PROTEIN: 9 g in one sandwich is more than any other entry in this file, and at 13 g of protein it carries less than half the Teen Burger\u0027s 27 for nearly the same calories, so swapping a beef patty for this one is a real trade rather than a like-for-like.",
+    note: "Half published: the 490 kcal, 13 g protein, 9 g fibre and 240 g are A&W's own. Carbs and fat are worked out to fit (±8 g and ±4 g), since the full panel was blocked on Sep 4. Sodium is a guess from A&W's beef burgers (850–1,130 mg), so 800–1,300; replace it when the panel is reachable. Lots of fibre, but less than half the Teen Burger's protein for about the same calories.",
     tags: ["burger", "veggie burger", "masala", "vegetarian", "a&w", "aw", "airport", "pearson", "restaurant", "fast food"],
   },
   {
@@ -797,7 +797,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.5,
       sodium: 640,
     },
-    note: "A&W\u0027s published panel for the regular thick-cut fries — 390 kcal, 5 g protein, 54 g total carbs against 49 g net (which is where the 5 g of fibre comes from), 18 g fat, 640 mg sodium — read from nutrition aggregators on September 4, 2026 rather than from aw.ca, which is blocked at the network egress proxy. Atwater lands at 398 against 390, +2%, the signature of a real panel rather than a reconstruction. Only the 0.5 g of sugar is estimated, and it is a rounding error. SIZE IS THE ONE THING TO GET RIGHT: this is the regular that comes with a combo, and A&W\u0027s range runs 250 kcal for kids up to this — a larger size is not covered by this row and should not be logged as a fraction of it, since the sodium does not scale the way the calories do.",
+    note: "A&W's published panel for regular fries, via nutrition sites on Sep 4 (aw.ca was blocked). Only the 0.5 g sugar is estimated. This is the combo size; a larger size needs its own entry, not a multiple of this.",
     tags: ["fries", "french fries", "russet", "side", "a&w", "aw", "airport", "pearson", "restaurant", "fast food"],
   },
   {
@@ -817,7 +817,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 10,
       sodium: 2200,
     },
-    note: "Estimated September 6, 2026 from the menu description and a photograph of the plate; Il Terrazzo is independent and publishes no nutrition, and BC menu labelling binds only chains, so there is no panel to check this against. Built as ~130 g dry fusilli, ~120 g raw ground beef, a tomato-soffritto base, ~70 g cream, ~25 g butter, ~40 g parmesan split between the sauce and the grating on top, ~90 g mozzarella baked over it, wilted spinach and ~10 g of oil; Atwater lands at 1,698 against 1,700. THE FIRST DRAFT OF THIS ENTRY WAS 1,360 AND OMITTED BUTTER ENTIRELY, which is the correction worth recording: a restaurant pan sauce finished without butter is the exception rather than the rule, and adding it alongside a less timid cream and cheese hand accounts for the whole 340 kcal revision, made the same evening on the owner's report that the plate had left them far fuller than 1,360 would explain. Read calories as 1,300-2,100, the widest band in this file, because the two things setting the number — dry pasta weight, and how heavy the cream, butter and cheese hand was — are both invisible once a dish is baked under melted mozzarella. Sodium 1,600-3,000 mg, the two cheeses carrying about 1,200 of it before anything is deliberately seasoned. At 80 g of protein this is the second-highest entry in the catalog and comfortably the least efficient of them, costing 21.3 kcal per gram against the Big Belly chicken bowl's 9.2, so it is a pasta dish that happens to be high in protein rather than a protein source; portion goes through the servings multiplier rather than a fresh estimate, and the first log against it settled at 1.05 after starting at 1.2 — the owner's own read of the plate, which at ~756 g is a large serving rather than the outlier 1.2 implied.",
+    note: "Estimated on Sep 6 from the menu and a photo; Il Terrazzo publishes no nutrition. About 130 g dry fusilli, 120 g ground beef, tomato-soffritto base, 70 g cream, 25 g butter, 40 g parmesan, 90 g mozzarella baked on top, spinach and a little oil. The first version was 1,360 and left out butter; it was raised to 1,700 that evening because the plate was far more filling than 1,360. Call it 1,300–2,100 kcal and 1,600–3,000 mg sodium. High in protein, but a lot of calories per gram of it. First logged at 1.05.",
     tags: ["fusilli", "pasta", "bolognese", "sugo di manzo", "beef", "baked pasta", "mozzarella", "parmesan", "il terrazzo", "victoria", "italian", "restaurant", "dinner"],
   },
   {
@@ -828,7 +828,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "claude",
     per: "1 portion (the plate's third)",
     macros: { calories: 510, protein: 42, carbs: 26, fat: 28, fiber: 2, sugar: 7, sodium: 1150 },
-    note: "Olive Garden\u0027s published Tour of Italy panel \u2014 1,520 kcal, 75 g protein, 92 g carbs, 96 g fat, 6 g fibre, 19 g sugar and 3,250 mg sodium for the dinner plate \u2014 split across its three parts, because the plate gets eaten unevenly and one multiplier over the whole thing would misstate the fat. THE PLATE TOTAL IS A READ PANEL AND THE SPLIT IS NOT: the three components sum back to it exactly, but the division between them is built from Olive Garden\u0027s own standalone entr\u00e9es, the alfredo taken at about 45% of its 1,310 kcal full portion and the lasagna at about 45% of its 930, with this cutlet as the remainder. Read each component as \u00b120% while the plate total stands at \u00b10 \u2014 an error here moves calories between the three rows rather than changing their sum. This is the breaded cutlet with marinara and melted mozzarella and no pasta beneath it, which is why it is the protein-dense third at 12 kcal per gram of protein against the alfredo\u0027s 49.",
+    note: "Olive Garden's published Tour of Italy plate (1,520 kcal, 75 g protein, 96 g fat, 3,250 mg sodium) split into its three parts, since the plate gets eaten unevenly. The plate total is published; the split is estimated from Olive Garden's standalone dishes, so each part is ±20% while the three add up exactly. This is the breaded chicken with marinara and mozzarella, the most protein-dense third.",
     tags: ["chicken parmigiana", "chicken parm", "tour of italy", "olive garden", "italian", "chain", "restaurant", "dinner"],
   },
   {
@@ -839,7 +839,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "claude",
     per: "1 portion (the plate's third)",
     macros: { calories: 420, protein: 21, carbs: 25, fat: 23, fiber: 2, sugar: 8, sodium: 1150 },
-    note: "The lasagna third of Olive Garden\u0027s Tour of Italy, a slice with meat sauce, taken at about 45% of the chain\u0027s standalone 930 kcal Lasagna Classico \u2014 see the chicken parmigiana entry for how the published 1,520 kcal plate panel was divided, and read this as \u00b120% while the three components still sum exactly back to it. Atwater lands at 391 against 420, -7%, which is the rounding the chain publishes at rather than anything unaccounted. Sodium 1,150 mg is its share of the plate\u0027s 3,250 and is the figure worth seeing: one slice is half a day\u0027s allowance before anything else reaches the table.",
+    note: "The lasagna third of the Tour of Italy, about 45% of the standalone Lasagna Classico; see the chicken parm entry for the split. ±20%. 1,150 mg of sodium in one slice.",
     tags: ["lasagna", "lasagna classico", "tour of italy", "olive garden", "beef", "italian", "chain", "restaurant", "dinner"],
   },
   {
@@ -850,7 +850,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "claude",
     per: "1 portion (the plate's third)",
     macros: { calories: 590, protein: 12, carbs: 41, fat: 45, fiber: 2, sugar: 4, sodium: 950 },
-    note: "The fettuccine alfredo third of Olive Garden\u0027s Tour of Italy, taken at about 45% of the chain\u0027s standalone 1,310 kcal dinner portion \u2014 see the chicken parmigiana entry for how the published 1,520 kcal plate panel was divided, and read this as \u00b120% while the three still sum exactly back to it. THIS IS THE FATTY THIRD AND THE LEAST PROTEIN-DENSE THING IN THE FILE: 590 kcal for 12 g of protein is 49 kcal a gram, against the cutlet beside it at 12, which is what cream, butter and parmesan on pasta looks like as a ratio. It is also the largest of the three at 590 kcal, so leaving half of it on the plate saves more than skipping two breadsticks. Atwater lands at 617 against 590, +5%, on the chain\u0027s own rounding.",
+    note: "The fettuccine alfredo third of the Tour of Italy, about 45% of the standalone dinner portion; see the chicken parm entry for the split. ±20%. The biggest and fattiest third, with very little protein, so leaving half of it saves more than skipping two breadsticks.",
     tags: ["fettuccine alfredo", "alfredo", "pasta", "cream", "tour of italy", "olive garden", "italian", "chain", "restaurant", "dinner"],
   },
   {
@@ -860,7 +860,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "packaged",
     per: "1 dinner portion",
     macros: { calories: 1390, protein: 64, carbs: 75, fat: 94, fiber: 4, sugar: 10, sodium: 2050 },
-    note: "Olive Garden's published panel for the dinner portion, added September 10, 2026: 1,390 kcal, 64 g protein, 75 g carbs, 94 g fat and 2,050 mg sodium, with Atwater landing at 1,402 against 1,390. It is a read figure like the minestrone and breadstick beside it but a softer one, because olivegarden.com was unreachable and this comes from aggregator listings of the panel, which spread from 1,370 to 1,590 kcal \u2014 read it as \u00b110% rather than the \u00b10 the other read rows carry. Fibre 4 g and sugar 10 g are the built lines, taken from the shrimp-only Carbonara's listing because neither is printed for this item. THE PROTEIN IS WHAT SEPARATES IT FROM THE ALFREDO: 22 kcal per gram of protein against that row's 49, the same cream sauce carrying chicken and shrimp rather than nothing. Held per dinner portion, so a lunch portion is a different size and should not log against this row.",
+    note: "Olive Garden's published dinner panel, added Sep 10, via aggregator listings since the site was unreachable. Listings range 1,370–1,590 kcal, so ±10%. Fibre and sugar are borrowed from the shrimp-only carbonara. Same cream sauce as the alfredo but with chicken and shrimp, so far more protein. Dinner portion only; lunch is a different size.",
     tags: ["carbonara", "chicken and shrimp carbonara", "shrimp", "chicken", "spaghetti", "pasta", "cream", "bacon", "olive garden", "italian", "chain", "restaurant", "dinner"],
   },
   {
@@ -870,7 +870,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "packaged",
     per: "1 bowl",
     macros: { calories: 110, protein: 5, carbs: 17, fat: 1, fiber: 4, sugar: 4, sodium: 810 },
-    note: "Olive Garden\u0027s published panel for a bowl, entered as printed rather than reconstructed: 110 kcal, 5 g protein, 17 g carbs, 1 g fat, 4 g fibre, 4 g sugar and 810 mg sodium. Atwater lands at 97 against 110, -12%, the widest miss in this file and plain rounding on small numbers \u2014 a printed 1 g of fat is anything from 0.5 to 1.4, which covers most of the gap on its own. THE SODIUM IS THE WHOLE STORY at 810 mg for 110 kcal, roughly three times the sodium per calorie of the Tour of Italy plate and the densest in the catalog by that measure. It is nonetheless the lightest thing on this menu and the only one here carrying real fibre.",
+    note: "Olive Garden's published panel for a bowl. Atwater misses by 12%, which is rounding on small numbers. The sodium is the story: 810 mg for 110 kcal. Still the lightest thing on the menu, and one of the few with real fibre.",
     tags: ["minestrone", "soup", "vegetable", "olive garden", "italian", "chain", "restaurant"],
   },
   {
@@ -882,7 +882,7 @@ export const RESTAURANT_FOODS: Food[] = [
     per: "1 breadstick (~74 g)",
     gramsPerServing: 74,
     macros: { calories: 140, protein: 4, carbs: 25, fat: 2, fiber: 1, sugar: 2, sodium: 460 },
-    note: "Olive Garden\u0027s published panel for one garlic-topped breadstick, entered as printed: 140 kcal, 4 g protein, 25 g carbs, 2 g fat and 460 mg sodium; Atwater lands at 134 against 140. Fibre and sugar are the built lines at 1 g and 2 g, ordinary for white-flour bread rather than read off the panel. Held per stick because they arrive in a basket and get counted, so a portion logs as a multiplier. The 460 mg of sodium is what makes a second one cost more than its 140 calories suggest \u2014 two breadsticks carry more salt than the minestrone beside them.",
+    note: "Olive Garden's published panel for one breadstick. Fibre and sugar are estimated. Per stick, so the count is the multiplier. Two breadsticks have more salt than a bowl of minestrone.",
     tags: ["breadstick", "bread", "garlic", "olive garden", "italian", "chain", "restaurant"],
   },
   {
@@ -893,7 +893,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "packaged",
     per: "1 serving",
     macros: { calories: 150, protein: 3, carbs: 13, fat: 10, fiber: 3, sugar: 4, sodium: 770 },
-    note: "Olive Garden\u0027s published panel for a serving of house salad dressed with the signature Italian, entered as printed: 150 kcal, 3 g protein, 13 g carbs, 10 g fat and 770 mg sodium; Atwater lands at 154 against 150. Fibre 3 g and sugar 4 g are built rather than read. THE DRESSING IS NEARLY THE WHOLE ROW \u2014 undressed the salad runs about a third of these calories and a fraction of the sodium \u2014 so a salad ordered dry should not log against this entry. Held per serving because it arrives family-style, and a portion down to a couple of bites logs through the multiplier.",
+    note: "Olive Garden's published panel for a serving of house salad with the Italian dressing. Fibre and sugar are estimated. The dressing is most of it: undressed, the salad is about a third of the calories. Per serving, since it comes family-style.",
     tags: ["house salad", "salad", "italian dressing", "olive garden", "chain", "restaurant"],
   },
   {
@@ -912,7 +912,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 4,
       sodium: 2200,
     },
-    note: "NO VENUE — a generic shop tonkotsu bowl rather than a particular kitchen's, because none was named when it was first logged on September 12, 2026; split this into a branded entry if it turns out to come from somewhere ordered from repeatedly. Estimated from the construction, not a panel: ~200 g cooked thin noodles (290 kcal), ~400 ml emulsified pork broth (240 kcal and most of the fat), two chashu slices at ~50 g (140 kcal), and the kikurage, scallion and aromatics, which are ~25 kcal between them. No ajitama is counted — add ~70 kcal and 6 g protein if one came with it. Calorie band is 550–950, and the two things moving it are invisible from the outside: how rich the broth was rendered, and HOW MUCH OF IT WAS ACTUALLY DRUNK. A bowl left half full of broth is ~120 kcal and ~900 mg of sodium lighter than this row says, so log that as 0.8 of a serving rather than re-estimating the dish. Sodium at 2,200 mg is the widest figure, band 1,500–3,500, and it is nearly all tare and broth — published shop bowls run 2,000–4,000 mg when the broth goes down, which makes one of these most of a day's salt. The kikurage is a texture topping and not a macro line: ~15 g rehydrated is 10 kcal and about 1.5 g of the fibre. The 650 g bowl this row is built on is the soft input at the other end: its own first use was logged at 1.2 servings the same day, because the eater reported it more filling than this — which is what the multiplier is for, and the reason to keep 650 g here rather than inflate the entry to fit one bowl.",
+    note: "A generic tonkotsu bowl, since no shop was named on Sep 12. Estimated: ~200 g noodles, ~400 mL pork broth, two slices of chashu, plus kikurage and scallion. No egg; add ~70 kcal and 6 g protein if there was one. Call it 550–950 kcal, depending on how rich the broth was and how much got drunk. Half the broth left is about 120 kcal and 900 mg sodium less, so log 0.8. Sodium 1,500–3,500 mg. First logged at 1.2 because it was more filling than 650 g.",
     tags: ["ramen", "tonkotsu", "noodles", "pork", "chashu", "kikurage", "wood ear", "japanese", "restaurant", "lunch"],
   },
   {
@@ -931,7 +931,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 3,
       sodium: 1000,
     },
-    note: "Taco Bell's published panel, entered as printed on September 13, 2026: 470 kcal, 18 g protein, 41 g carbs, 24 g fat, 3 g fibre, 3 g sugars, 1,000 mg sodium, with 13 g of that fat saturated. Read from four independent aggregator listings that agreed on every line, since tacobell.com did not come through the egress proxy; Atwater lands at 452 against 470, -4%, which is a real panel rather than a reconstruction. THE US PANEL IS THE ASSUMPTION — Taco Bell Canada publishes its own figures and they were not reachable, so a Canadian store may differ by a few grams; the recipe is the same three-cheese blend and creamy jalapeño sauce in a grilled flour tortilla either way. The sauce is why this is not merely cheese on bread: it carries a good share of the 24 g of fat, and asking for it held would take the row off by more than a rounding. At 18 g of protein per 470 kcal it is middling, and the 1,000 mg of sodium is the line that shows up in a day — it is over a third of a day's allowance in one hand-sized item.",
+    note: "Taco Bell's US panel, from four aggregator listings on Sep 13 that agreed on every line. The Canadian panel wasn't reachable and may differ by a few grams. The creamy jalapeño sauce carries a good share of the fat. 1,000 mg of sodium in one item.",
     tags: ["quesadilla", "cheese quesadilla", "taco bell", "mexican", "fast food", "restaurant", "chain", "tortilla"],
   },
   {
@@ -950,7 +950,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 2,
       sodium: 500,
     },
-    note: "Held per 100 g like the pad thai, hakka noodle and karaage entries, so a scoop in a combo box and a full order log against the same figures \u2014 the noodle compartment of a four-item food-court box runs 250\u2013320 g. Estimated from the construction, not a panel: Schezwan Express publishes no nutrition and none was reachable on September 16, 2026. Per 100 g, roughly 75 g cooked thick wheat Shanghai noodles, 16 g of cabbage, carrot and onion, and 8 g of wok oil and dark soy. These run heavier than the Bawara hakka noodle row\u0027s 155 because a thick Shanghai noodle carries more oil per gram, not because the portion is bigger. Calorie band is 145\u2013230 per 100 g and it is all wok oil, which nobody measures; sodium is the wider line at 350\u2013700 mg per 100 g and is dark soy almost entirely.",
+    note: "Per 100 g; the noodle part of a four-item food-court box is 250–320 g. Estimated, since Schezwan Express posts no nutrition: thick Shanghai noodles, cabbage, carrot and onion, oil and dark soy. Thick noodles hold more oil than hakka noodles. Call it 145–230 kcal per 100 g and 350–700 mg sodium.",
     tags: ["shanghai noodles", "noodles", "chow mein", "schezwan express", "szechuan express", "chinese", "food court", "restaurant", "takeout", "lunch"],
   },
   {
@@ -969,7 +969,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 11,
       sodium: 420,
     },
-    note: "Same basis and the same absent panel as the Shanghai noodle entry, held per 100 g; a meat compartment in a four-item box runs 120\u2013160 g. Built per 100 g as roughly 72 g of battered, deep-fried chicken breast and 28 g of the thick sweet lemon sauce, which is where 11 of the 24 g of carbs and nearly all the sugar come from. WORTH STATING BECAUSE THE NAME READS AS A PROTEIN: at 13 g per 100 g this is about half the density of plain chicken breast, the batter and sauce being the other half of the weight, so a meat compartment here is roughly 18 g of protein and not 30. Calorie band is 200\u2013300 per 100 g, driven by the fryer and how heavily the tray was sauced, neither visible from the outside. Sodium is the wider line at 300\u2013650 mg per 100 g, less than the General Tao because a lemon sauce leans on sugar and acid rather than soy.",
+    note: "Per 100 g; the meat part of a four-item box is 120–160 g. About 72 g battered fried chicken breast and 28 g thick lemon sauce, which is most of the sugar. Only about half the protein of plain chicken, so a box's worth is about 18 g, not 30. Call it 200–300 kcal per 100 g and 300–650 mg sodium.",
     tags: ["lemon chicken", "chicken", "fried chicken", "schezwan express", "szechuan express", "chinese", "food court", "restaurant", "takeout", "lunch"],
   },
   {
@@ -988,7 +988,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 10,
       sodium: 600,
     },
-    note: "Same basis and the same absent panel as the other Schezwan Express rows, held per 100 g; a meat compartment runs 120\u2013160 g. Built per 100 g as roughly 74 g of battered, deep-fried chicken thigh and 26 g of the sweet-and-spicy soy, vinegar and sugar glaze. It sits close to the lemon chicken on calories and protein and the difference that matters is salt: 600 mg against 420, because this glaze is soy-based where the lemon one is not, so the two meats are not interchangeable on a day already carrying sodium. Calorie band is 210\u2013320 per 100 g on the fryer and the sauce hand; sodium is the wider line at 450\u2013900 mg per 100 g and is the least supported figure here.",
+    note: "Per 100 g; the meat part of a box is 120–160 g. About 74 g battered fried thigh and 26 g sweet-spicy soy glaze. Close to the lemon chicken on calories, but saltier because the glaze is soy. Call it 210–320 kcal per 100 g and 450–900 mg sodium.",
     tags: ["general tao", "general tso", "chicken", "fried chicken", "schezwan express", "szechuan express", "chinese", "food court", "restaurant", "takeout", "lunch"],
   },
   {
@@ -1008,7 +1008,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 2.5,
       sodium: 300,
     },
-    note: "Same basis and the same absent panel as the other Schezwan Express rows, held per 100 g; the vegetable compartment runs 90\u2013130 g. Built per 100 g as roughly 92 g of bok choy, gai lan and cabbage with 5 g of wok oil and 3 g of garlic, soy and stock, which is the whole of the fat and most of the sodium. Which green it actually was is the soft input and is not recorded \u2014 gai lan, bok choy and a mixed stir-fry are within about 10 kcal of each other per 100 g, so the distinction costs less than the oil does. Calorie band is 45\u2013110 per 100 g, the wok oil being the entire spread; sodium is 180\u2013500 mg. This is the only item in the box with real fibre in it, and at 2.2 g of protein per 100 g it is a vegetable and not a second protein.",
+    note: "Per 100 g; the vegetable part of a box is 90–130 g. About 92 g of bok choy, gai lan or cabbage with a little oil, garlic and soy. Which green isn't recorded, but it barely matters. Call it 45–110 kcal per 100 g and 180–500 mg sodium. The only thing in the box with real fibre.",
     tags: ["chinese greens", "gai lan", "bok choy", "vegetables", "stir fry", "schezwan express", "szechuan express", "chinese", "food court", "restaurant", "takeout", "lunch"],
   },
   {
@@ -1028,7 +1028,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 7,
       sodium: 1000,
     },
-    note: "The skillet alone \u2014 tortillas, rice, beans and the garnishes are separate rows, so a plate half finished logs as six multipliers rather than one guess. Estimated from the dish\u0027s construction on September 16, 2026, not a panel: 3mariachis.ca and every delivery mirror were blocked at the network, so nothing published was read. Built as ~225 g of cooked fajita-marinated chicken breast and ~150 g of peppers and onions seared in oil. CALORIES ARE 200\u2013300 HIGHER THAN THE MEAT SUGGESTS BECAUSE OF THE PAN: a fajita skillet is finished in oil and butter and the vegetables carry most of it, which is why 23 g of fat sits against a lean cut. Read calories as 400\u2013700 and protein as 52\u201375 g, the meat portion being the variable \u2014 a restaurant skillet runs 180\u2013280 g of cooked protein and nobody publishes which. Sodium 1,000 mg, band 700\u20131,500, is the marinade and the seasoning salt.",
+    note: "The skillet only; tortillas, rice, beans and sides are their own rows. Estimated on Sep 16, since the site and delivery menus were blocked. About 225 g of marinated chicken breast and 150 g of peppers and onions cooked in oil and butter, which is why the fat is high for lean chicken. Call it 400–700 kcal and 52–75 g protein, depending on the meat. Sodium 700–1,500 mg.",
     tags: ["fajitas", "chicken fajitas", "chicken", "grilled", "3 mariachis", "mexican", "restaurant", "dinner", "toronto"],
   },
   {
@@ -1048,7 +1048,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1,
       sodium: 300,
     },
-    note: "Held per tortilla so the count eaten is the multiplier \u2014 a fajita order arrives with three to five. Estimated from the type rather than a panel, the sources being blocked as described on the fajita skillet entry; a 6-inch restaurant flour tortilla runs 40\u201350 g and the common commercial panel is ~310 kcal per 100 g. Read calories as 120\u2013190 a tortilla, the size doing all of it. Sodium ~300 mg each is the line that stacks: four tortillas is 1,200 mg before anything is put in them, more than the chicken they wrap.",
+    note: "Per tortilla; fajitas come with three to five. A 6-inch restaurant flour tortilla is 40–50 g, so 120–190 kcal. About 300 mg sodium each, so four tortillas have more salt than the chicken.",
     tags: ["tortilla", "flour tortilla", "3 mariachis", "mexican", "restaurant", "side"],
   },
   {
@@ -1067,7 +1067,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 2,
       sodium: 550,
     },
-    note: "The rice that comes alongside, estimated from the type on September 16, 2026 rather than read \u2014 same blocked sources as the fajita skillet entry. Built as long-grain rice cooked in tomato, stock and oil at ~165 kcal per 100 g, applied to a ~150 g restaurant scoop. Read calories as 190\u2013340, scoop size being most of the spread and the cooking oil the rest. Sodium ~550 mg, band 350\u2013800, is the stock and is why a plain-looking side is not a plain-tasting one.",
+    note: "Estimated on Sep 16: rice cooked in tomato, stock and oil, about 165 kcal per 100 g, on a ~150 g scoop. Call it 190–340 kcal. Sodium 350–800 mg, mostly the stock.",
     tags: ["mexican rice", "rice", "arroz", "3 mariachis", "mexican", "restaurant", "side"],
   },
   {
@@ -1086,7 +1086,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1,
       sodium: 480,
     },
-    note: "The bean side, estimated from the type on September 16, 2026 rather than read \u2014 same blocked sources as the fajita skillet entry. Built as black beans mashed and fried in a little oil at ~140 kcal per 100 g, applied to a ~120 g scoop. This is the most useful thing on the plate per calorie: 9 g of protein and 8 g of fibre for 170 kcal, and it carries nearly all the fibre a fajita order has. Read calories as 130\u2013230, the fat depending on whether lard or oil was used and how much. Sodium ~480 mg, band 300\u2013750.",
+    note: "Estimated on Sep 16: black beans mashed and fried in a little oil, about 140 kcal per 100 g, on a ~120 g scoop. The best thing on the plate per calorie, with 9 g protein and 8 g fibre. Call it 130–230 kcal. Sodium 300–750 mg.",
     tags: ["refried beans", "black beans", "beans", "3 mariachis", "mexican", "restaurant", "side"],
   },
   {
@@ -1106,7 +1106,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 2,
       sodium: 180,
     },
-    note: "The fresh tomato-onion salsa on the side, estimated from the type on September 16, 2026 rather than read \u2014 same blocked sources as the fajita skillet entry. Held as one side so a ramekin left part finished logs as a fraction, which is what happened the first time this was used. At 15 kcal the calories are noise; sodium ~180 mg, band 100\u2013300, is the only line it moves, and a fresh pico sits at the bottom of that band where a jarred restaurant-style sits at the top. Whether this arrived as pico de gallo or a smoother salsa roja is not recorded and is worth under 10 kcal either way.",
+    note: "The fresh tomato-onion salsa on the side, one ramekin. Calories don't matter; sodium 100–300 mg.",
     tags: ["salsa", "pico de gallo", "3 mariachis", "mexican", "restaurant", "condiment", "side"],
   },
   {
@@ -1126,7 +1126,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1.5,
       sodium: 130,
     },
-    note: "The two garnish ramekins taken together, estimated from the type on September 16, 2026 rather than read \u2014 same blocked sources as the fajita skillet entry. Built as ~30 g of sour cream and ~40 g of guacamole, which is what a fajita order normally carries. WHETHER BOTH ACTUALLY ARRIVED IS THE ASSUMPTION HERE and it is the widest one on the plate: this row is the difference between a 1,700 kcal fajita order and a 1,530 kcal one, so drop it to 0.5 for sour cream only, or to 0 if neither came. Read calories as 90\u2013260 when they do, the guacamole scoop doing nearly all of it. Sodium ~130 mg is the one small figure in a very salty meal.",
+    note: "The two side ramekins together, about 30 g sour cream and 40 g guacamole. Assumes both came; use 0.5 for sour cream only, or 0 if neither. Call it 90–260 kcal, mostly the guacamole.",
     tags: ["sour cream", "guacamole", "crema", "garnish", "3 mariachis", "mexican", "restaurant", "condiment"],
   },
   {
@@ -1145,7 +1145,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.4,
       sodium: 195,
     },
-    note: "First of six entries for the Toronto shop at 日常馄饨, added September 17, 2026 off a catered work lunch whose printed menu named the fillings but no portion. The shop publishes no panel and its retail pages at jillstable.ca and lfbr.ca were both blocked at the egress proxy, so this is built from the construction: a ~12 g wonton wrapper (290 kcal, 9.5 g protein, 57 g carbs per 100 g) around ~14 g of filling — roughly 9 g ground pork, 4 g salted mustard greens and 1 g of soy, sesame oil and aromatics. THESE ARE WONTONS, NOT JIAOZI, and that is why they are lighter than the venue-agnostic pork-and-chive dumpling entry's 95 kcal: a Shanghai wonton is thinner-wrapped, smaller and boiled rather than pan-fried, so there is no pan oil in it. One aggregator figure exists and is not used — 333 kcal, 13 g protein, 63 g carbs and 6 g fat for 8 pieces of the shop's plain Shanghai wontons. Its carbs corroborate the wrapper here almost exactly, but 13 g of protein across 8 pieces leaves under 2 g of meat in each after the wrapper's own protein, which no wonton has, so it was read as a mis-scaled entry rather than a panel. Calories are 50–85: wonton size is the whole band and shops run 20 to 32 g. Sodium at 195 mg is the wider line, band 120–320, and it is the wrapper and the preserved mustard greens between them — xuecai is salt-cured, which makes this the saltiest of the three fillings logged.",
+    note: "From a catered work lunch on Sep 17 at The Daily Dumpling Wonton Co.; the menu named fillings but no portions and no panel was reachable. A ~12 g wrapper around ~14 g of pork and salted mustard greens. Wontons, not dumplings: thinner, smaller and boiled, so lighter than the pork-and-chive dumpling. Call it 50–85 kcal each, mostly size. Sodium 120–320 mg; the mustard greens are salt-cured, so this is the saltiest of the three.",
     tags: ["wonton", "dumpling", "jiaozi", "pork", "mustard greens", "xuecai", "shanghai", "daily dumpling", "chinese", "toronto", "restaurant", "catering", "lunch"],
   },
   {
@@ -1164,7 +1164,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.4,
       sodium: 190,
     },
-    note: "Same wrapper, same basis and the same absent panel as the pork and mustard greens entry — ~12 g of wrapper around ~14 g of filling, here roughly 9 g of 85/15 ground beef, 4 g of celery and 1 g of soy, sesame oil and aromatics. The three fillings land within 7 kcal of each other and the wrapper is most of all three, so which one was eaten barely moves a day; the beef is the leanest of them at 2.2 g of fat because 85/15 beef carries less than the pork does, and celery brings nothing but water. Calories 50–80 on wonton size. Sodium 190 mg, band 120–300, nearly all of it the wrapper and the seasoning salt rather than the filling — raw beef and celery are together under 10 mg.",
+    note: "Same wrapper and approach as the pork wonton, with beef and celery. The three fillings are within 7 kcal of each other since the wrapper is most of it. Call it 50–80 kcal and 120–300 mg sodium.",
     tags: ["wonton", "dumpling", "jiaozi", "beef", "celery", "shanghai", "daily dumpling", "chinese", "toronto", "restaurant", "catering", "lunch"],
   },
   {
@@ -1183,7 +1183,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.5,
       sodium: 185,
     },
-    note: "Same wrapper, same basis and the same absent panel as the other two — ~12 g of wrapper around ~14 g of filling, here roughly 7 g of ground chicken with 3 g corn, 2.5 g squash and 1.5 g of leek, soy and oil. Three of the four named ingredients are vegetables, which is why this is the lightest and least protein-dense of the three eaten: 2.6 g against the pork's 2.9, and half of that is wrapper flour. WORTH STATING BECAUSE SEVEN OF THESE IS NOT A PROTEIN LUNCH — a wonton is a flour item with a garnish of meat in it, and the whole plate logged on September 17, 2026 came to 19 g of protein. Calories 45–75 on wonton size. Sodium 185 mg, band 110–300, the wrapper carrying most of it; the chicken filling is the mildest-seasoned of the three and sits a little under the other two.",
+    note: "Same wrapper and approach, with chicken, corn, squash and leek. Mostly vegetables, so the lightest of the three and the least protein. Seven wontons is not a protein lunch; the whole Sep 17 plate came to 19 g. Call it 45–75 kcal and 110–300 mg sodium.",
     tags: ["wonton", "dumpling", "jiaozi", "chicken", "corn", "squash", "leek", "shanghai", "daily dumpling", "chinese", "toronto", "restaurant", "catering", "lunch"],
   },
   {
@@ -1202,7 +1202,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 1.2,
       sodium: 230,
     },
-    note: "Held per 100 g like the Schezwan Express greens and the hakka noodle rows, so a scoop on a shared plate and a full side order log against the same figures — a scoop runs 80–130 g and the menu's own side portion nearer 180 g. Same absent panel as the wonton entries. Built per 100 g as ~92 g of blanched yu choy with ~4 g of oil and ~4 g of soy, oyster sauce and garlic over it. Lighter than the Schezwan Express greens' 70 kcal for a reason worth keeping: a wonton shop blanches and drizzles where a food-court wok fries, and the ~25 kcal between them is entirely that oil. Calorie band 30–90 per 100 g, the dressing being the whole spread; sodium 230 mg, band 120–450, and it is the sauce rather than the vegetable. This is the only item on the plate with real fibre in it.",
+    note: "Per 100 g; a scoop is 80–130 g and a side order about 180 g. Blanched yu choy with a little oil, soy, oyster sauce and garlic. Lighter than the stir-fried food-court greens because it's blanched, not fried. Call it 30–90 kcal per 100 g and 120–450 mg sodium.",
     tags: ["yu choy", "choy sum", "greens", "vegetables", "blanched", "daily dumpling", "chinese", "toronto", "restaurant", "catering", "side", "lunch"],
   },
   {
@@ -1222,7 +1222,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 2.5,
       sodium: 600,
     },
-    note: "The menu's romanization of 葱油拌面, described on the shop's own listings as noodles in a house-made soy sauce with green onions. Held per 100 g like the other noodle entries; a scoop beside dumplings runs 80–130 g and a full side order nearer 200 g. Same absent panel as the rest of the venue. Built per 100 g as ~80 g of cooked thin wheat noodles, ~8 g of scallion-infused oil and ~8 g of the soy-and-sugar dressing, plus the scallions. THE OIL IS THE DISH, not an accident of the wok — scallion oil noodles are noodles dressed in fried-scallion oil, so unlike the hakka and Shanghai noodle rows the fat here cannot be cooked out or asked for light. That is why this runs 205 per 100 g against the Bawara hakka's 155. Calorie band 150–280 and it is the oil hand from end to end; sodium 600 mg, band 400–900, almost entirely the soy dressing, which makes a modest scoop of this the saltiest thing on a dumpling plate.",
+    note: "Scallion oil noodles (葱油拌面) in house soy sauce, per 100 g; a scoop is 80–130 g. About 80 g of noodles, 8 g of scallion oil and 8 g of soy-sugar dressing. The oil is the dish, so it's heavier than hakka noodles. Call it 150–280 kcal per 100 g. Sodium 400–900 mg, so even a small scoop is the saltiest thing on the plate.",
     tags: ["tsong yo", "cong you ban mian", "scallion oil noodles", "noodles", "shanghai", "daily dumpling", "chinese", "toronto", "restaurant", "catering", "side", "lunch"],
   },
   {
@@ -1241,7 +1241,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 0.4,
       sodium: 50,
     },
-    note: "One of the three dipping sauces on the menu, held per teaspoon rather than per ramekin because that is the unit a dipping hand actually reports — a tablespoon is three of these and a full ramekin five or six. Same absent panel as the rest of the venue. Built per 100 g as ~330 kcal, 12 g protein, 14 g carbs and 26 g fat: roughly half peanut butter or sesame-peanut paste, thinned with soy, sesame oil, black vinegar, sugar and water. Calorie band 13–24 per teaspoon, driven by how far the paste was thinned, which is invisible once it is in the ramekin. Sodium ~50 mg, band 30–90. Two teaspoons is 36 kcal, so at the portions it is used in this is a rounding on a plate and only becomes a line if someone dresses the noodles with it.",
+    note: "One of the three dipping sauces, per teaspoon (a tablespoon is 3, a ramekin 5 or 6). Roughly half peanut or sesame paste, thinned with soy, sesame oil, black vinegar and sugar. Call it 13–24 kcal a teaspoon. Only matters if it goes on the noodles.",
     tags: ["peanut sauce", "shanghai peanut sauce", "dipping sauce", "condiment", "daily dumpling", "chinese", "toronto", "restaurant", "catering"],
   },
   {
@@ -1261,7 +1261,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 8,
       sodium: 1080,
     },
-    note: "THE RICE IS NOT IN THIS ENTRY \u2014 a bowl logs as this plus however much of the base was eaten, through staple-rice-cooked-cup, because leaving a third of the rice is normal and one all-in row could not record it. Estimated from a photo on September 22, 2026 rather than a panel: pokito.ca, the Toast and Ritual menus and the delivery listings were all blocked at the egress proxy, so only search summaries of the menu were reachable, and they give the Creamy Spicy Salmon Bowl as rice, salmon, crab salad, seaweed and edamame \u2014 which is what the photo shows, plus cucumber. Built as ~115 g raw Atlantic salmon, ~30 g spicy mayo, ~70 g kani salad of surimi and mayo, ~40 g seasoned wakame, ~35 g shelled edamame, ~60 g cucumber and ~10 g of sesame, scallion and chili garnish; Atwater lands at 697 against 710, -2%. Read calories as 550\u2013900 and the mayo is the whole band, since it appears twice \u2014 coating the salmon and binding the crab \u2014 and neither hand is visible once the bowl is assembled. Sodium ~1,080 mg, band 800\u20131,500, and it is the surimi and the seaweed salad rather than the fish, both being cured in salt before anything is dressed. The salmon weight is the second variable at roughly 45 kcal and 4 g of protein an ounce, so if Pokito ever states a scoop size this entry should be rebuilt to it.",
+    note: "Toppings only; log the rice separately with the rice staple, so leaving some is easy to record. Estimated from a photo on Sep 22; Pokito's site and menus were blocked, and search summaries list the bowl as rice, salmon, crab salad, seaweed and edamame, which matches the photo plus cucumber. About 115 g salmon, 30 g spicy mayo, 70 g crab salad, 40 g seaweed salad, 35 g edamame, 60 g cucumber and garnish. Call it 550–900 kcal; the mayo is in there twice and hard to judge. Sodium 800–1,500 mg, mostly the crab and seaweed salad.",
     tags: ["poke", "poke bowl", "pokito", "spicy salmon", "salmon", "crab salad", "kani", "seaweed", "edamame", "toronto", "restaurant", "lunch"],
   },
 ];

@@ -181,13 +181,11 @@ export default function TrainingPage() {
             ))}
           </div>
           <p className="mt-2 text-[11px] leading-relaxed text-muted">
-            Each day&rsquo;s best set restated as an estimated 1-, 3- and 5-rep
-            max via Epley — weight × (1 + reps ÷ 30). These are estimates, not
-            lifted weights: rep-max formulas disagree by roughly ±5–10%, and the
-            error grows with the rep count of the set the estimate came from. A
-            set already at 5 reps passes through the e5RM line unchanged, so
-            that curve never contradicts the log. The goals above are graded on
-            real top sets only — nothing estimated feeds them.
+            Each day&rsquo;s best set turned into an estimated 1-, 3- and 5-rep max with
+            the Epley formula, weight × (1 + reps ÷ 30). These are estimates, not weights
+            anyone lifted: formulas like this are off by about ±5–10%, more so the higher
+            the reps. A set of 5 lands on the 5-rep line exactly, so that line always
+            agrees with the log. The goals above only count real sets.
           </p>
         </div>
       )}
@@ -197,9 +195,8 @@ export default function TrainingPage() {
           <header className="border-b border-hairline px-4 py-3">
             <h2 className="text-base font-semibold">Interruptions</h2>
             <p className="mt-0.5 text-xs leading-snug text-muted">
-              Recorded so a gap in the log reads as a gap in training rather than a
-              gap in record-keeping — and so a lift that came back lower has an
-              explanation attached to it.
+              So a gap shows up as a break from training, not a break from tracking, and a
+              lift that came back lower has a reason next to it.
             </p>
           </header>
           <ul className="divide-y divide-[color:var(--border)]">
