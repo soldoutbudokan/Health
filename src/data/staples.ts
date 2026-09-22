@@ -1194,4 +1194,16 @@ export const STAPLE_FOODS: Food[] = [
     note: "No wrapper read. This flavour's own listing (50 g: 240 kcal, 4 g protein, 12 g fat, 3 g fibre, 290 mg sodium), scaled to the 60 g bag on Sep 22. Carbs weren't listed, so they're worked out from the calories. A little lower than the other two Covered Bridge flavours, which were scaled from a different panel; call it 275–310 kcal. Sugar is a guess, 2–5 g; sodium 280–450 mg. Assumes the 60 g single-serve bag.",
     tags: ["chips", "potato chips", "kettle chips", "bbq", "barbecue", "smokin sweet bbq", "covered bridge", "snack", "packaged"],
   },
+  {
+    id: "pkg-madegood-crispy-squares-smores",
+    name: "Crispy Squares",
+    variant: "S'mores",
+    brand: "MadeGood",
+    source: "packaged",
+    per: "1 bar (22 g)",
+    gramsPerServing: 22,
+    macros: { calories: 80, protein: 2, carbs: 17, fat: 1.5, fiber: 2, sugar: 5, sodium: 65 },
+    note: "Every figure off the Canadian panel in a photo, Sep 22. The brand is taken from the name, since the photo shows only the panel; MadeGood sells Crispy Squares in this 22 g size. Atwater comes out 12% high, which is the 2 g of fibre plus label rounding on small numbers; counting fibre at 2 kcal a gram brings it to 7%. A small snack, not a protein one.",
+    tags: ["crispy squares", "smores", "s'mores", "madegood", "made good", "rice crisp", "bar", "snack", "packaged"],
+  },
 ];
