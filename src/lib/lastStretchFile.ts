@@ -26,12 +26,23 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * it is the light-lower days only — the heavy day's jumps are bodyweight by
  * prescription. Blank before October 3 for the same reason the accessories
  * are blank before September 21.
+ *
+ * `leg_curl` and `cable_row` can also carry a rep target, `120×6`, added
+ * September 22, 2026: both stacks move in 10s, so a planned 5 lb step is
+ * written as the pin below it for one more rep (Epley puts 120 × 6 within
+ * about 1% of 125 × 5). A bare number means the program's usual reps.
  */
 
 const SESSION_TYPES = Object.keys(SESSION_LABELS) as SessionType[];
 
 function isSlot(s: string | undefined): s is PlanSlot {
   return s === "rest" || (s !== undefined && SESSION_TYPES.includes(s as SessionType));
+}
+
+/** "120", or "120×6" / "120x6" where the plan sets the reps too. */
+function optionalLoad(v: string | undefined): { lbs?: number; reps?: number } {
+  const m = v?.trim().match(/^(\d+(?:\.\d+)?)\s*(?:[x×]\s*(\d+))?$/i);
+  return m ? { lbs: Number(m[1]), reps: m[2] ? Number(m[2]) : undefined } : {};
 }
 
 export function parseLastStretchCsv(csv: string): PlanDay[] {
@@ -47,6 +58,8 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
     const date = c[0]?.trim();
     if (!isDateKey(date)) continue;
     const slot = optional(c[1])?.toLowerCase();
+    const legCurl = optionalLoad(c[7]);
+    const cableRow = optionalLoad(c[12]);
     days.push({
       date,
       slot: isSlot(slot) ? slot : "rest",
@@ -55,12 +68,14 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
       optional: /^(y|yes|true|1)$/i.test(c[4]?.trim() ?? ""),
       trapBar: optionalNumber(c[5]),
       squat: optionalNumber(c[6]),
-      legCurl: optionalNumber(c[7]),
+      legCurl: legCurl.lbs,
+      legCurlReps: legCurl.reps,
       weightedJumps: optionalNumber(c[8]),
       bench: optionalNumber(c[9]),
       benchBackoff: optionalNumber(c[10]),
       pullups: optional(c[11]),
-      cableRow: optionalNumber(c[12]),
+      cableRow: cableRow.lbs,
+      cableRowReps: cableRow.reps,
       latPulldown: optionalNumber(c[13]),
       preacherCurl: optionalNumber(c[14]),
       yRaise: optionalNumber(c[15]),

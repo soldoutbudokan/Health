@@ -174,7 +174,7 @@ milestone,note
 |---|---|
 | `session` | a `sessions.csv` session type, or `rest` |
 | `phase` | `break` \| `return` \| `trip` \| `block-1` \| `deload` \| `block-2` \| `contingency` |
-| `trap_bar`, `squat`, `leg_curl`, `bench`, `bench_backoff` | planned top-set lbs. Blank means no such lift that day, never zero |
+| `trap_bar`, `squat`, `leg_curl`, `bench`, `bench_backoff` | planned top-set lbs. Blank means no such lift that day, never zero. `leg_curl` and `cable_row` may also carry reps, `120×6`; see below |
 | `weighted_jumps` | lbs **per dumbbell**, light lower days only, added September 19, 2026. Blank on the heavy days, whose jumps are bodyweight by prescription, and blank before October 3 |
 | `pullups` | free text: `2×5`, `test (9)`, `2×4 easy, optional` |
 | `cable_row`, `lat_pulldown`, `preacher_curl`, `y_raise`, `cable_fly` | planned lbs on the upper days, added September 17, 2026. Blank on lower days and on every row before September 21 — no accessory plan existed for those, so none is written in after the fact |
@@ -214,6 +214,13 @@ clean repeats the number, as on the main lifts, and the same slide applies.
 Deloads take them down 10–15% with everything else. Don't chase any of them —
 insurance that gets progressed like a goal becomes a fourth load on the same
 joint. Section 10 of `docs/training-plan.md` has the reasoning.
+
+**The leg curl and cable row stacks move in 10s.** Asked for on September 22,
+2026. A planned 5 lb step on either is written as the pin below it for one more
+rep, `120×6` for 125 × 5, which Epley puts within about 1%; a deload row just
+rounds down. The page grades those rows on reps as well as weight: every set at
+the planned pin has to reach the reps. The lat pulldown still steps by 5; check
+its stack before assuming it needs the same.
 
 **The weighted jump holds; every other jump is bodyweight.** Asked for on
 September 19, 2026 — a prescription for every lift in the schedule, not just the

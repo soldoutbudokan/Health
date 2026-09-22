@@ -59,6 +59,12 @@ export interface PlanDay {
   squat?: number;
   legCurl?: number;
   /**
+   * Reps for the leg curl and cable row where the plan sets them, added
+   * September 22, 2026. Both stacks move in 10s, so a 5 lb step is written as
+   * the pin below for one more rep. Absent means the program's usual reps.
+   */
+  legCurlReps?: number;
+  /**
    * Per dumbbell, on the light lower days only, added September 19, 2026.
    * The heavy day's jumps are bodyweight by prescription and carry no number
    * on purpose. This one holds rather than climbs: the jump is graded on
@@ -79,6 +85,7 @@ export interface PlanDay {
    * docs/training-plan.md says why. Graded like the other loads.
    */
   cableRow?: number;
+  cableRowReps?: number;
   latPulldown?: number;
   preacherCurl?: number;
   yRaise?: number;
@@ -166,7 +173,8 @@ export interface PlannedLift {
 export interface LoggedLift {
   exercise: string;
   sets: string;
-  planned?: number;
+  /** "125", or "120 × 6" where the plan sets the reps. */
+  planned?: string;
   verdict?: "hit" | "under" | "over";
 }
 
@@ -235,6 +243,13 @@ function plannedNumber(plan: PlanDay, exercise: string): number | undefined {
   if (sameExercise(exercise, "Preacher curl")) return plan.preacherCurl;
   if (sameExercise(exercise, "Seated Y raise")) return plan.yRaise;
   if (sameExercise(exercise, "Cable fly")) return plan.cableFly;
+  return undefined;
+}
+
+/** Reps the plan sets for a lift, where it overrides the program's. */
+function plannedReps(plan: PlanDay, exercise: string): number | undefined {
+  if (sameExercise(exercise, "Lying leg curl")) return plan.legCurlReps;
+  if (sameExercise(exercise, "Cable row")) return plan.cableRowReps;
   return undefined;
 }
 
@@ -323,14 +338,18 @@ export function dayView(
   const status = statusOf(plan, logged, today);
   const program = plan.slot === "rest" ? undefined : PROGRAM.find((p) => p.id === plan.slot);
 
-  const lifts: PlannedLift[] = (program?.exercises ?? []).map((e) => ({
-    exercise: e.name,
-    prescription: e.prescription,
-    planned: plannedLoad(plan, e.name),
-    last: lastPerformed(sets, e.name, plan.date, today),
-    optional: e.optional,
-    note: e.note,
-  }));
+  const lifts: PlannedLift[] = (program?.exercises ?? []).map((e) => {
+    const reps = plannedReps(plan, e.name);
+    return {
+      exercise: e.name,
+      prescription:
+        reps !== undefined && e.sets !== undefined ? `${e.sets} × ${reps}` : e.prescription,
+      planned: plannedLoad(plan, e.name),
+      last: lastPerformed(sets, e.name, plan.date, today),
+      optional: e.optional,
+      note: e.note,
+    };
+  });
 
   const view: DayView = { plan, status, summary: summaryOf(plan), lifts };
 
@@ -343,19 +362,31 @@ export function dayView(
       .map((g) => {
         const top = topSet(g.sets, g.exercise);
         const planned = plannedNumber(plan, g.exercise);
+        const reps = plannedReps(plan, g.exercise);
         const weight = top?.weightLbs;
-        const verdict =
-          planned === undefined || weight === undefined
-            ? undefined
-            : weight >= planned
-              ? weight > planned
-                ? "over"
-                : "hit"
-              : "under";
+        let verdict: LoggedLift["verdict"];
+        if (planned !== undefined && weight !== undefined) {
+          if (weight !== planned) verdict = weight > planned ? "over" : "under";
+          else {
+            // Same pin as planned: where the plan sets reps, every set at that
+            // pin has to reach them, the way a set that is not clean repeats.
+            const done = g.sets
+              .filter((s) => s.weightLbs === weight && s.reps !== undefined)
+              .map((s) => s.reps!);
+            const fewest = done.length > 0 ? Math.min(...done) : undefined;
+            verdict =
+              reps === undefined || fewest === undefined || fewest === reps
+                ? "hit"
+                : fewest > reps
+                  ? "over"
+                  : "under";
+          }
+        }
         return {
           exercise: g.exercise,
           sets: g.sets.map(setLabel).join("  "),
-          planned,
+          planned:
+            planned === undefined ? undefined : reps !== undefined ? `${planned} × ${reps}` : `${planned}`,
           verdict,
         };
       });
