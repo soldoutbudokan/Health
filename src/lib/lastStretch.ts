@@ -59,8 +59,8 @@ export interface PlanDay {
   squat?: number;
   legCurl?: number;
   /**
-   * Reps for the leg curl and cable row where the plan sets them, added
-   * September 22, 2026. Both stacks move in 10s, so a 5 lb step is written as
+   * Reps for the leg curl, cable row and lat pulldown where the plan sets
+   * them, added September 22, 2026. All three stacks move in 10s, so a 5 lb step is written as
    * the pin below for one more rep. Absent means the program's usual reps.
    */
   legCurlReps?: number;
@@ -87,6 +87,7 @@ export interface PlanDay {
   cableRow?: number;
   cableRowReps?: number;
   latPulldown?: number;
+  latPulldownReps?: number;
   preacherCurl?: number;
   yRaise?: number;
   cableFly?: number;
@@ -250,6 +251,7 @@ function plannedNumber(plan: PlanDay, exercise: string): number | undefined {
 function plannedReps(plan: PlanDay, exercise: string): number | undefined {
   if (sameExercise(exercise, "Lying leg curl")) return plan.legCurlReps;
   if (sameExercise(exercise, "Cable row")) return plan.cableRowReps;
+  if (sameExercise(exercise, "Lat pulldown")) return plan.latPulldownReps;
   return undefined;
 }
 

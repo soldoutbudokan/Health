@@ -26,11 +26,11 @@ date,session,phase,deload,optional,trap_bar,squat,leg_curl,weighted_jumps,bench,
 2026-10-01,heavy-upper,block-1,,,,,,,170,155,2×5,140,130,30,20,,1×10,,Bench 170 if the two 165s moved well. Back-offs 155.
 2026-10-02,off-b,block-1,,,,,,,,,,,,,,,,,Or basketball instead.
 2026-10-03,light-lower,block-1,,,235,165,110×6,20,,,"2×4 easy, optional",,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
-2026-10-04,light-upper,block-1,,,,,,,140,,test (9),140,135,30,20,35,1×10,,"First weekend light upper. Pullup test as the first set, six weeks after the 8 on Aug 22: nine is the target. Bench to 140 for the 3 x 8 if the 135s on Aug 30 left room."
+2026-10-04,light-upper,block-1,,,,,,,140,,test (9),140,130×6,30,20,35,1×10,,"First weekend light upper. Pullup test as the first set, six weeks after the 8 on Aug 22: nine is the target. Bench to 140 for the 3 x 8 if the 135s on Aug 30 left room."
 2026-10-05,stretch,block-1,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
 2026-10-06,heavy-lower,block-1,,,290,205,130,,,,"2×4 easy, optional",,,,,,,,Last heavy lower before the deload. 290 and 205.
 2026-10-07,off-a,block-1,,,,,,,,,,,,,,,,,
-2026-10-08,heavy-upper,block-1,,,,,,,175,160,2×5,140×6,135,30,20,,1×10,,
+2026-10-08,heavy-upper,block-1,,,,,,,175,160,2×5,140×6,130×6,30,20,,1×10,,
 2026-10-09,off-b,block-1,,,,,,,,,,,,,,,,,Or basketball instead.
 2026-10-10,light-lower,block-1,,,240,170,120,20,,,"2×4 easy, optional",,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
 2026-10-11,light-upper,block-1,,,,,,,140,,2 sets,140×6,140,30,20,35,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
@@ -47,11 +47,11 @@ date,session,phase,deload,optional,trap_bar,squat,leg_curl,weighted_jumps,bench,
 2026-10-22,heavy-upper,block-2,,,,,,,175,160,2×5,140×6,140,35,20,,1×10,,Bench stays at 175 after the deload; it goes up next week.
 2026-10-23,off-b,block-2,,,,,,,,,,,,,,,,,Or basketball instead.
 2026-10-24,light-lower,block-2,,,240,170,120,20,,,"2×4 easy, optional",,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
-2026-10-25,light-upper,block-2,,,,,,,140,,test (9–10),140×6,145,35,20,35,1×10,,"Pullup test as the first set, three weeks after Oct 4. Nine keeps it on track; ten closes the goal early."
+2026-10-25,light-upper,block-2,,,,,,,140,,test (9–10),140×6,140×6,35,20,35,1×10,,"Pullup test as the first set, three weeks after Oct 4. Nine keeps it on track; ten closes the goal early."
 2026-10-26,stretch,block-2,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
 2026-10-27,heavy-lower,block-2,,,300,215,130×6,,,,"2×4 easy, optional",,,,,,,Trap bar 300 × 5 — goal,"Trap bar 300 for 2 × 5, the goal, if everything's gone well. Once it lands, hold 300 for the rest of the stretch. The squat is still open and the back's effort goes there."
 2026-10-28,off-a,block-2,,,,,,,,,,,,,,,,,
-2026-10-29,heavy-upper,block-2,,,,,,,180,165,2×5,150,145,35,20,,1×10,,"Bench 180, back-offs 165."
+2026-10-29,heavy-upper,block-2,,,,,,,180,165,2×5,150,140×6,35,20,,1×10,,"Bench 180, back-offs 165."
 2026-10-30,off-b,block-2,,,,,,,,,,,,,,,,,Or basketball instead.
 2026-10-31,light-lower,block-2,,,245,175,120,20,,,"2×4 easy, optional",,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
 2026-11-01,light-upper,block-2,,,,,,,145,,2 sets,150,150,35,20,35,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
@@ -68,11 +68,11 @@ date,session,phase,deload,optional,trap_bar,squat,leg_curl,weighted_jumps,bench,
 2026-11-12,heavy-upper,contingency,,,,,,,185,170,2×5,150×6,150,35,20,,1×10,,Bench stays at 185; it goes up next week.
 2026-11-13,off-b,contingency,,,,,,,,,,,,,,,,,Or basketball instead.
 2026-11-14,light-lower,contingency,,,245,185,120×6,20,,,"2×4 easy, optional",,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
-2026-11-15,light-upper,contingency,,,,,,,145,,"test, if 10 is still open",150×6,155,35,20,35,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
+2026-11-15,light-upper,contingency,,,,,,,145,,"test, if 10 is still open",150×6,150×6,35,20,35,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
 2026-11-16,stretch,contingency,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
 2026-11-17,heavy-lower,contingency,,,300,225,140,,,,"2×4 easy, optional",,,,,,,,"Only if a goal is still open. Same weights as the goal rows. A stall means repeat, not skip past it."
 2026-11-18,off-a,contingency,,,,,,,,,,,,,,,,,
-2026-11-19,heavy-upper,contingency,,,,,,,190,175,2×5,160,155,40,20,,1×10,,"Bench 190, back-offs 175."
+2026-11-19,heavy-upper,contingency,,,,,,,190,175,2×5,160,150×6,40,20,,1×10,,"Bench 190, back-offs 175."
 2026-11-20,off-b,contingency,,,,,,,,,,,,,,,,,Or basketball instead.
 2026-11-21,light-lower,contingency,,,245,185,120×6,20,,,"2×4 easy, optional",,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
 2026-11-22,light-upper,contingency,,,,,,,145,,2 sets,160,160,40,20,35,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
@@ -82,7 +82,7 @@ date,session,phase,deload,optional,trap_bar,squat,leg_curl,weighted_jumps,bench,
 2026-11-26,heavy-upper,contingency,yes,,,,,,165,150,2×5,140,140,30,15,,1×8,,"Deload bench, 165 then 150."
 2026-11-27,off-b,contingency,yes,,,,,,,,,,,,,,,,Or basketball instead.
 2026-11-28,light-lower,contingency,yes,,210,155,100,15,,,"2×4 easy, optional",,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
-2026-11-29,light-upper,contingency,yes,,,,,,125,,2 sets,140,135,30,15,30,1×8,,"Fasted. Keep the 3 x 8 smooth, no grinding."
+2026-11-29,light-upper,contingency,yes,,,,,,125,,2 sets,140,130,30,15,30,1×8,,"Fasted. Keep the 3 x 8 smooth, no grinding."
 2026-11-30,stretch,contingency,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
 2026-12-01,heavy-lower,contingency,,,300,225,140,,,,"2×4 easy, optional",,,,,,,,Goal weights again after the deload.
 2026-12-02,off-a,contingency,,,,,,,,,,,,,,,,,
@@ -96,11 +96,11 @@ date,session,phase,deload,optional,trap_bar,squat,leg_curl,weighted_jumps,bench,
 2026-12-10,heavy-upper,contingency,,,,,,,200,185,2×5,160×6,160,40,20,,1×10,,"Bench 200, back-offs 185. The plan's realistic December number."
 2026-12-11,off-b,contingency,,,,,,,,,,,,,,,,,Or basketball instead.
 2026-12-12,light-lower,contingency,,,245,185,120×6,20,,,"2×4 easy, optional",,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
-2026-12-13,light-upper,contingency,,,,,,,145,,2 sets,160×6,165,40,20,35,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
+2026-12-13,light-upper,contingency,,,,,,,145,,2 sets,160×6,160×6,40,20,35,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
 2026-12-14,stretch,contingency,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
 2026-12-15,heavy-lower,contingency,,,300,225,140,,,,"2×4 easy, optional",,,,,,,,"The plan ends Dec 20. If a goal is still open then, keep going with the same pattern; the deadline is Dec 31."
 2026-12-16,off-a,contingency,,,,,,,,,,,,,,,,,
-2026-12-17,heavy-upper,contingency,,,,,,,200,185,2×5,160×6,165,40,20,,1×10,,Bench stays at 200.
+2026-12-17,heavy-upper,contingency,,,,,,,200,185,2×5,160×6,160×6,40,20,,1×10,,Bench stays at 200.
 2026-12-18,off-b,contingency,,,,,,,,,,,,,,,,,Or basketball instead.
 2026-12-19,light-lower,contingency,,,245,185,120×6,20,,,"2×4 easy, optional",,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
-2026-12-20,light-upper,contingency,,,,,,,145,,"test, if 10 is still open",160×6,165,40,20,35,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
+2026-12-20,light-upper,contingency,,,,,,,145,,"test, if 10 is still open",160×6,160×6,40,20,35,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."

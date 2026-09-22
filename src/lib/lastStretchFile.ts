@@ -27,8 +27,8 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * prescription. Blank before October 3 for the same reason the accessories
  * are blank before September 21.
  *
- * `leg_curl` and `cable_row` can also carry a rep target, `120×6`, added
- * September 22, 2026: both stacks move in 10s, so a planned 5 lb step is
+ * `leg_curl`, `cable_row` and `lat_pulldown` can also carry a rep target,
+ * `120×6`, added September 22, 2026: all three stacks move in 10s, so a planned 5 lb step is
  * written as the pin below it for one more rep (Epley puts 120 × 6 within
  * about 1% of 125 × 5). A bare number means the program's usual reps.
  */
@@ -60,6 +60,7 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
     const slot = optional(c[1])?.toLowerCase();
     const legCurl = optionalLoad(c[7]);
     const cableRow = optionalLoad(c[12]);
+    const latPulldown = optionalLoad(c[13]);
     days.push({
       date,
       slot: isSlot(slot) ? slot : "rest",
@@ -76,7 +77,8 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
       pullups: optional(c[11]),
       cableRow: cableRow.lbs,
       cableRowReps: cableRow.reps,
-      latPulldown: optionalNumber(c[13]),
+      latPulldown: latPulldown.lbs,
+      latPulldownReps: latPulldown.reps,
       preacherCurl: optionalNumber(c[14]),
       yRaise: optionalNumber(c[15]),
       cableFly: optionalNumber(c[16]),

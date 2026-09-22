@@ -91,7 +91,7 @@ export default function LastStretchPage() {
               with the bench and stays near 83% of it, the pulldown goes up each light
               upper toward bodyweight, the curl goes up once a block, and the Y raise, fly
               and dips stay put. If a set isn&rsquo;t clean, repeat the number, same as the main
-              lifts. The cable row and leg curl machines go up in 10s, so a 5 lb step shows
+              lifts. The cable row, pulldown and leg curl machines go up in 10s, so a 5 lb step shows
               as the lower weight for 6 reps: 120 &times; 6 stands in for 125 &times; 5.
             </dd>
           </div>
