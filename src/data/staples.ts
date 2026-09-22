@@ -1182,4 +1182,16 @@ export const STAPLE_FOODS: Food[] = [
     note: "THE 100 KCAL IS THE READ FIGURE, stated off the package on September 21, 2026, and everything else is built to it. Cookie It Up\u0027s own panels were blocked at the egress proxy, but search summaries of their chocolate shortbread put one cookie at 90 kcal with 1 g protein, 10 g carbs and 6 g fat, which is the butter-forward shape this is scaled to. The split itself comes from shortbread\u0027s classic 1:2:3 of sugar, butter and flour at a ~20 g cookie \u2014 about 3.3 g sugar, 5.7 g of butter fat and 10 g of flour \u2014 and Atwater lands at 99 against the stated 100, which is the construction\u0027s own arithmetic rather than corroboration. Sodium is the softest line at 75 mg, band 50\u2013110, since it is salted butter plus a pinch and none of it was read; fibre at 0.3 g is refined flour and is a floor. COOKIE WEIGHT IS THE OTHER VARIABLE and should log through the servings multiplier rather than by editing this row.",
     tags: ["cookie", "shortbread", "butter", "cookie it up", "bakery", "snack", "dessert"],
   },
+  {
+    id: "pkg-covered-bridge-smokin-sweet-bbq-60g",
+    name: "Smokin' Sweet BBQ Kettle Chips",
+    variant: "single-serve bag",
+    brand: "Covered Bridge",
+    source: "packaged",
+    per: "1 bag (~60 g)",
+    gramsPerServing: 60,
+    macros: { calories: 288, protein: 4.8, carbs: 35, fat: 14.4, fiber: 3.6, sugar: 3, sodium: 350 },
+    note: "NO WRAPPER WAS READ \u2014 the figures are this flavour's own third-party listing, 31 chips at 50 g giving 240 kcal, 4 g protein, 12 g fat, 3 g fibre and 290 mg sodium, scaled by weight to the 60 g single-serve on September 22, 2026; coveredbridgechips.com and the retailer listings were blocked at the egress proxy, as they were for the sour-cream and creamy-dill rows. Carbs are absent from that listing and are derived by Atwater from the other four lines, which gives 29 g per 50 g, or 58 g per 100 g \u2014 the same density the 36 g Covered Bridge panel implies, and the closest thing to corroboration this entry has. It runs 288 rather than the 300 and 310 of its two siblings because those were scaled from that 36 g panel at 5.0 kcal/g while this flavour's own listing gives 4.8; read calories as 275\u2013310. Sugar at 3 g is the only wholly built line, band 2\u20135, and it is the BBQ seasoning, which is the thing separating this from a plain chip; sodium ~350 mg, band 280\u2013450. BAG SIZE IS THE ASSUMPTION, 60 g being Covered Bridge's single-serve and the size the two earlier rows used, so a different bag belongs in the servings multiplier rather than in this row.",
+    tags: ["chips", "potato chips", "kettle chips", "bbq", "barbecue", "smokin sweet bbq", "covered bridge", "snack", "packaged"],
+  },
 ];
