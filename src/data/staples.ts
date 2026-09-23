@@ -1217,4 +1217,14 @@ export const STAPLE_FOODS: Food[] = [
     note: "Estimated on Sep 22 from how scones are made (flour, butter, sugar, milk or cream, egg, baking powder); no brand or bakery was named and USDA's own rows weren't reachable. Published figures bracket it: one FNDDS-style listing gives 353 kcal per 100 g, and Starbucks' blueberry scone works out to about 335. Per 100 g because size varies a lot: a small homemade one is about 60 g, a coffee-shop one 110–120 g. Call it 320–420 kcal per 100 g, more for a cream scone or a glazed top. Sodium is 300–700 mg per 100 g, mostly baking powder.",
     tags: ["scone", "baked", "bakery", "pastry", "dessert", "snack"],
   },
+  {
+    id: "staple-pear",
+    name: "Pear, raw",
+    source: "usda",
+    per: "1 medium (178 g)",
+    gramsPerServing: 178,
+    macros: { calories: 101, protein: 0.6, carbs: 27.1, fat: 0.3, fiber: 5.5, sugar: 17.4, sodium: 2 },
+    note: "USDA raw pear (57 kcal per 100 g) at USDA's 178 g medium, added Sep 22. Eaten raw, so the sodium is the whole figure. Atwater runs 12% high, the same raw-fruit thing as the peach and plum. A small pear is about 150 g and a large one 230 g, so use the multiplier.",
+    tags: ["pear", "fruit", "raw", "snack"],
+  },
 ];
