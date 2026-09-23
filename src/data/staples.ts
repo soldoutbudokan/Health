@@ -773,6 +773,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "original", "sea salt", "snack", "packaged"],
   },
   {
+    id: "pkg-miss-vickies-jalapeno",
+    name: "Kettle Cooked Potato Chips",
+    variant: "Jalapeño",
+    brand: "Miss Vickie's",
+    source: "packaged",
+    per: "28 chips (50 g)",
+    gramsPerServing: 50,
+    macros: { calories: 260, protein: 4, carbs: 29, fat: 15, fiber: 2, sugar: 1, sodium: 320 },
+    note: "The Frito-Lay Canada 50 g panel as quoted by search listings on Sep 23; the brand and retailer pages were blocked, so the pack itself wasn't seen. Sodium came from one listing only, so read it as 250–350 mg. A 40 g single-serve bag is 0.8, which matches the 200 kcal listed for it, and the 200 g bag is 4.",
+    tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "jalapeno", "jalapeño", "spicy", "snack", "packaged"],
+  },
+  {
     id: "pkg-cheetos-puffs",
     name: "Cheetos Puffs",
     variant: "cheese flavoured",
