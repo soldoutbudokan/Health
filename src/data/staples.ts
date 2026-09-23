@@ -1206,4 +1206,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "Every figure off the Canadian panel in a photo, Sep 22. The brand is taken from the name, since the photo shows only the panel; MadeGood sells Crispy Squares in this 22 g size. Atwater comes out 12% high, which is the 2 g of fibre plus label rounding on small numbers; counting fibre at 2 kcal a gram brings it to 7%. A small snack, not a protein one.",
     tags: ["crispy squares", "smores", "s'mores", "madegood", "made good", "rice crisp", "bar", "snack", "packaged"],
   },
+  {
+    id: "staple-scone-100g",
+    name: "Scone",
+    variant: "plain or fruit, bakery-style",
+    source: "claude",
+    per: "100 g",
+    gramsPerServing: 100,
+    macros: { calories: 360, protein: 7, carbs: 50, fat: 15, fiber: 1.8, sugar: 15, sodium: 550 },
+    note: "Estimated on Sep 22 from how scones are made (flour, butter, sugar, milk or cream, egg, baking powder); no brand or bakery was named and USDA's own rows weren't reachable. Published figures bracket it: one FNDDS-style listing gives 353 kcal per 100 g, and Starbucks' blueberry scone works out to about 335. Per 100 g because size varies a lot: a small homemade one is about 60 g, a coffee-shop one 110–120 g. Call it 320–420 kcal per 100 g, more for a cream scone or a glazed top. Sodium is 300–700 mg per 100 g, mostly baking powder.",
+    tags: ["scone", "baked", "bakery", "pastry", "dessert", "snack"],
+  },
 ];
