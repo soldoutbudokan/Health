@@ -1437,4 +1437,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Sep 25 at the same density as the small piece logged Aug 15 (about 300 kcal per 100 g), scaled to a café portion of about 125 g. Call it 280–500 kcal, mostly the portion size and the mascarpone.",
     tags: ["tiramisu", "dessert", "mascarpone", "espresso", "italian", "olimpico", "olympico", "cafe", "montreal"],
   },
+  {
+    id: "poutine-small",
+    name: "Poutine",
+    variant: "small",
+    source: "claude",
+    per: "1 small (~330 g)",
+    gramsPerServing: 330,
+    macros: {
+      calories: 745,
+      protein: 21,
+      carbs: 70,
+      fat: 42,
+      fiber: 6,
+      sugar: 1.5,
+      sodium: 1450,
+    },
+    note: "Estimated on Sep 25 for a small from an unnamed Montreal spot: about 150 g of fries, 60 g of cheese curds and 120 g of gravy. Call it 550–1,000 kcal, mostly the fries and how generous the curds are. Sodium 1,000–2,000 mg, most of it in the gravy.",
+    tags: ["poutine", "fries", "cheese curds", "gravy", "quebec", "montreal", "snack"],
+  },
 ];
