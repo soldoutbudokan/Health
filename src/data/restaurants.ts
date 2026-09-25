@@ -1342,4 +1342,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Sep 24 from how it's described; 49th Parallel posts no nutrition for its Lucky's doughnuts. About 75 g of fried yeast-raised dough, 35 g of pumpkin cheesecake filling, and 25 g of cream and crumb on top. Call it 380–600 kcal, mostly size and how much filling. Sodium 300–550 mg.",
     tags: ["doughnut", "donut", "pumpkin", "cheesecake", "filled", "seasonal", "lucky's", "luckys", "49th parallel", "cafe", "pastry", "montreal", "dessert", "snack"],
   },
+  {
+    id: "il-focolaio-tartufo-pizza",
+    name: "Tartufo Pizza",
+    variant: "mozzarella, goat cheese, black truffle, cherry tomatoes, Parmigiano",
+    brand: "Il Focolaio",
+    source: "claude",
+    per: "1 pizza (10–10.5 in)",
+    macros: {
+      calories: 920,
+      protein: 40,
+      carbs: 92,
+      fat: 44,
+      fiber: 4.3,
+      sugar: 3.5,
+      sodium: 2300,
+    },
+    note: "Estimated on Sep 24 from the menu's topping list via search summaries; Il Focolaio posts no nutrition and its site was blocked. Their FAQ puts the individual thin crust at 10–10.5 inches, so about 180 g of dough, with 80 g mozzarella, 30 g goat cheese, 20 g black truffle paste (made with anchovies, olives and corn oil), cherry tomatoes in olive oil and some Parmigiano. Call it 750–1,150 kcal, mostly the cheese and oil. Sodium 1,700–3,000 mg, about half of it in the dough.",
+    tags: ["pizza", "tartufo", "truffle", "goat cheese", "mozzarella", "wood-fired", "thin crust", "il focolaio", "focolaio", "montreal", "restaurant", "dinner"],
+  },
 ];
