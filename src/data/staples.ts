@@ -31,6 +31,17 @@ export const PACKAGED_FOODS: Food[] = [
     tags: ["maple", "syrup", "sweetener", "pancakes", "breakfast"],
   },
   {
+    id: "staple-sugar-packet",
+    name: "Sugar",
+    variant: "1 packet",
+    source: "usda",
+    per: "1 packet (~4 g)",
+    gramsPerServing: 4,
+    macros: { calories: 15.5, protein: 0, carbs: 4, fat: 0, fiber: 0, sugar: 4, sodium: 0 },
+    note: "USDA granulated sugar, 387 kcal per 100 g, for a 4 g packet. Packet size is the guess: North American cafés use 3–4 g, Italian-style sticks are 5 g. So 12–19 kcal a packet.",
+    tags: ["sugar", "packet", "sachet", "sweetener", "coffee"],
+  },
+  {
     id: "staple-ketchup",
     name: "Ketchup",
     brand: "Heinz",
