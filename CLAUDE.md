@@ -292,7 +292,9 @@ estimate from a photo deserve different trust. Every food in `src/data/` carries
 
 **Check the arithmetic reconciles.** Protein × 4 + carbs × 4 + fat × 9 should land
 within about 10% of the stated calories. Every entry in this catalog passes; if
-yours doesn't, you've misread a label. Fibre counts inside carbs here.
+yours doesn't, you've misread a label. Fibre counts inside carbs here. Alcohol is
+the one exception: 7 kcal a gram that no column holds, so a drink's `note` states
+the grams of alcohol and the sum is checked with them added back.
 
 **Leave a value blank rather than guessing it.** Three recipes deliberately have
 no sodium because they specify "salt to taste" and any figure would be invention.

@@ -1456,4 +1456,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Sep 25 for a small from an unnamed Montreal spot: about 150 g of fries, 60 g of cheese curds and 120 g of gravy. Call it 550–1,000 kcal, mostly the fries and how generous the curds are. Sodium 1,000–2,000 mg, most of it in the gravy.",
     tags: ["poutine", "fries", "cheese curds", "gravy", "quebec", "montreal", "snack"],
   },
+  {
+    id: "coldroom-internal-affairs",
+    name: "Internal Affairs",
+    variant: "tequila, verjus, tea, basil, hot pepper, soda, egg white",
+    brand: "The Coldroom",
+    source: "claude",
+    per: "1 cocktail",
+    macros: {
+      calories: 200,
+      protein: 3.4,
+      carbs: 12.7,
+      fat: 0.1,
+      fiber: 0,
+      sugar: 12.5,
+      sodium: 70,
+    },
+    note: "Estimated on Sep 25 from the menu's ingredient list; no volumes are given. Assumes 2 oz of Espolòn Blanco, about 19 g of alcohol and 132 kcal, which no macro column holds, so protein, carbs and fat add up to only 65. The rest is half an ounce of tea syrup, some verjus and an egg white. Call it 150–260 kcal, mostly the pour and how much syrup.",
+    tags: ["cocktail", "tequila", "espolon", "verjus", "egg white", "alcohol", "drink", "coldroom", "cold room", "bar", "montreal"],
+  },
 ];
