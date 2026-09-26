@@ -1495,4 +1495,21 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Sep 25 from the menu description via search summaries; Dunya posts no nutrition. Assumes an 80 g Lebanese pita, 110 g of chicken, 20 g of toum, a few fries and pickles rolled inside. Call it 550–900 kcal, mostly the toum, which is nearly all oil. Sodium 1,000–2,000 mg from the marinade, pickles and bread.",
     tags: ["shawarma", "chicken", "sandwich", "wrap", "toum", "garlic", "pickles", "fries", "lebanese", "middle eastern", "dunya", "montreal", "dinner"],
   },
+  {
+    id: "falafel-ball",
+    name: "Falafel",
+    variant: "1 ball",
+    source: "usda",
+    per: "1 ball (~25 g)",
+    gramsPerServing: 25,
+    macros: {
+      calories: 83,
+      protein: 3.3,
+      carbs: 8,
+      fat: 4.5,
+      sodium: 74,
+    },
+    note: "USDA home-prepared falafel, 333 kcal per 100 g, for a 25 g restaurant ball; the USDA patty is 17 g. USDA has no fibre or sugar figure, so both stay blank rather than zero. Frying time and ball size move it most, call it 60–110 kcal a ball.",
+    tags: ["falafel", "chickpea", "fried", "lebanese", "middle eastern", "vegetarian", "dunya"],
+  },
 ];
