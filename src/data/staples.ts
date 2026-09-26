@@ -448,6 +448,18 @@ export const PACKAGED_FOODS: Food[] = [
     note: "Per 100 g, because naan size varies a lot (Stonefire's full naan is 126 g, restaurant naan 90–120 g). USDA and Stonefire agree on calories within 2%. Sodium is 550 in a 450–750 range, because USDA and Stonefire disagree. Plain naan only; butter or garlic naan runs 15–25% higher.",
     tags: ["naan", "bread", "flatbread", "indian", "curry", "side"],
   },
+  {
+    id: "pkg-st-viateur-sesame-bagel",
+    name: "Sesame bagel",
+    variant: "Montreal style",
+    brand: "St-Viateur",
+    source: "packaged",
+    per: "1 bagel (80 g)",
+    gramsPerServing: 80,
+    macros: { calories: 240, protein: 8, carbs: 40, fat: 5, fiber: 1, sugar: 3, sodium: 10 },
+    note: "St-Viateur's bagged-bagel panel via search summaries on Sep 26; their site and the listings were blocked. The Atwater sum is 237. Summaries put sodium at 5 or 15 mg, which fits a dough with next to no salt, so 10. The plain one is the same 240 kcal with 42 g carbs and 4.5 g fat.",
+    tags: ["st-viateur", "st viateur", "bagel", "sesame", "montreal", "bread", "breakfast"],
+  },
 ];
 
 /**
@@ -1309,5 +1321,16 @@ export const STAPLE_FOODS: Food[] = [
     macros: { calories: 101, protein: 0.6, carbs: 27.1, fat: 0.3, fiber: 5.5, sugar: 17.4, sodium: 2 },
     note: "USDA raw pear (57 kcal per 100 g) at USDA's 178 g medium, added Sep 22. Eaten raw, so the sodium is the whole figure. Atwater runs 12% high, the same raw-fruit thing as the peach and plum. A small pear is about 150 g and a large one 230 g, so use the multiplier.",
     tags: ["pear", "fruit", "raw", "snack"],
+  },
+  {
+    id: "staple-cream-cheese-schmear",
+    name: "Cream cheese",
+    variant: "plain, one bagel's schmear",
+    source: "claude",
+    per: "1 schmear (~40 g)",
+    gramsPerServing: 40,
+    macros: { calories: 140, protein: 2.5, carbs: 2.2, fat: 13.8, fiber: 0, sugar: 1.5, sodium: 125 },
+    note: "USDA regular cream cheese (350 kcal and 314 mg sodium per 100 g) at an estimated 40 g, added Sep 26 for a St-Viateur bagel. Bagel shops spread anywhere from 25 to 60 g, so call it 90–210 kcal. The portion is the only real unknown.",
+    tags: ["cream cheese", "schmear", "spread", "bagel", "dairy", "breakfast"],
   },
 ];
