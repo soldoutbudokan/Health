@@ -1352,4 +1352,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "USDA regular cream cheese (350 kcal and 314 mg sodium per 100 g) at an estimated 40 g, added Sep 26 for a St-Viateur bagel. Bagel shops spread anywhere from 25 to 60 g, so call it 90–210 kcal. The portion is the only real unknown.",
     tags: ["cream cheese", "schmear", "spread", "bagel", "dairy", "breakfast"],
   },
+  {
+    id: "staple-red-velvet-cake-square",
+    name: "Red velvet cake",
+    variant: "1 square, cream cheese frosting",
+    source: "claude",
+    per: "1 square (~110 g, frosted)",
+    gramsPerServing: 110,
+    macros: { calories: 405, protein: 4.2, carbs: 59.5, fat: 16.8, fiber: 1, sugar: 44, sodium: 270 },
+    note: "Estimated on Sep 26 with no venue named, from about 370 kcal and 243 mg sodium per 100 g for frosted red velvet via search summaries, at a ~110 g square. Squares run 80–150 g, so call it 300–560 kcal. Sugar is a guess at 35–50 g, since no source gave it. If the bakery turns up with a panel, use that.",
+    tags: ["red velvet", "cake", "square", "cream cheese", "frosting", "dessert", "bakery", "snack"],
+  },
 ];
