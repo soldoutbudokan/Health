@@ -479,6 +479,18 @@ export const PACKAGED_FOODS: Food[] = [
     note: "St-Viateur's bagged-bagel panel via search summaries on Sep 26; their site and the listings were blocked. The Atwater sum is 237. Summaries put sodium at 5 or 15 mg, which fits a dough with next to no salt, so 10. The plain one is the same 240 kcal with 42 g carbs and 4.5 g fat.",
     tags: ["st-viateur", "st viateur", "bagel", "sesame", "montreal", "bread", "breakfast"],
   },
+  {
+    id: "pkg-st-viateur-plain-bagel",
+    name: "Plain bagel",
+    variant: "Montreal style",
+    brand: "St-Viateur",
+    source: "packaged",
+    per: "1 bagel (80 g)",
+    gramsPerServing: 80,
+    macros: { calories: 240, protein: 8, carbs: 42, fat: 4.5, fiber: 1, sugar: 3, sodium: 10 },
+    note: "Calories, protein, carbs and fat off St-Viateur's panel via search summaries on Sep 26; the site was blocked. No summary gave fibre, sugar or sodium, so those are the sesame bagel's, since the dough is the same. The Atwater sum is 240.",
+    tags: ["st-viateur", "st viateur", "bagel", "plain", "montreal", "bread", "breakfast", "snack"],
+  },
 ];
 
 /**
