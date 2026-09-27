@@ -1156,6 +1156,17 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["dinner roll", "roll", "bun", "bread", "side", "carb", "usda"],
   },
   {
+    id: "staple-baguette-slice",
+    name: "Baguette",
+    variant: "white",
+    source: "usda",
+    per: "1 slice (~20 g)",
+    gramsPerServing: 20,
+    macros: { calories: 54, protein: 2.2, carbs: 10.4, fat: 0.5, fiber: 0.4, sodium: 120 },
+    note: "USDA French bread, 272 kcal per 100 g, at a 20 g slice; added Sep 27 for a brunch side. Sugar is left blank rather than guessed. Bakery baguettes run 100–150 mg sodium a slice. Butter or jam isn't included.",
+    tags: ["baguette", "french bread", "bread", "toast", "side", "carb", "usda"],
+  },
+  {
     id: "staple-avocado",
     name: "Avocado",
     variant: "raw, flesh only",
