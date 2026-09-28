@@ -31,6 +31,16 @@ export const PACKAGED_FOODS: Food[] = [
     tags: ["maple", "syrup", "sweetener", "pancakes", "breakfast"],
   },
   {
+    id: "staple-honey",
+    name: "Honey",
+    source: "usda",
+    per: "1 tbsp (21 g)",
+    gramsPerServing: 21,
+    macros: { calories: 64, protein: 0.1, carbs: 17.3, fat: 0, fiber: 0, sugar: 17.2, sodium: 1 },
+    note: "USDA honey, 304 kcal per 100 g, at a 21 g tablespoon; added Sep 27. Weighed amounts log as grams over 21. Atwater runs about 8% high, since honey's sugars carry a little less than 4 kcal a gram.",
+    tags: ["honey", "sweetener", "sugar", "yogurt"],
+  },
+  {
     id: "staple-sugar-packet",
     name: "Sugar",
     variant: "1 packet",
