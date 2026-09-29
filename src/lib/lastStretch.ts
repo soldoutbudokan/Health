@@ -56,7 +56,14 @@ export interface PlanDay {
   optional: boolean;
   /** Planned top-set loads. Absent where the day has no such lift. */
   trapBar?: number;
+  /**
+   * The heavy lower's back-off sets, added September 29, 2026: a top set of 5,
+   * then one set of 5 about 10% lighter. Absent means both sets at the top
+   * weight, which is every light lower and every deload.
+   */
+  trapBarBackoff?: number;
   squat?: number;
+  squatBackoff?: number;
   legCurl?: number;
   /**
    * Reps for the leg curl, cable row and lat pulldown where the plan sets
@@ -184,7 +191,8 @@ export interface DayView {
   status: DayStatus;
   /**
    * What the cell shows under the session name, one entry per line:
-   * "270 / 185" on a lower day, "165 / 150" (top set, back-offs) on a heavy
+   * "270 / 185" (trap bar, squat — top sets only; the back-offs are in the
+   * day's detail) on a lower day, "165 / 150" (top set, back-offs) on a heavy
    * upper, "135 ×8" then "test" on a light upper with a pullup test. A phone
    * splits the "a / b" line in two.
    */
@@ -210,8 +218,10 @@ export interface WeekView {
 /** Which plan column an exercise on the program reads its load from. */
 function plannedLoad(plan: PlanDay, exercise: string): string | undefined {
   const fmt = (n: number | undefined) => (n === undefined ? undefined : `${n} lbs`);
-  if (sameExercise(exercise, "Trap bar deadlift")) return fmt(plan.trapBar);
-  if (sameExercise(exercise, "Smith machine squat")) return fmt(plan.squat);
+  const withBackoff = (top: number | undefined, backoff: number | undefined) =>
+    top !== undefined && backoff !== undefined ? `${top} lbs, back-off ${backoff}` : fmt(top);
+  if (sameExercise(exercise, "Trap bar deadlift")) return withBackoff(plan.trapBar, plan.trapBarBackoff);
+  if (sameExercise(exercise, "Smith machine squat")) return withBackoff(plan.squat, plan.squatBackoff);
   if (sameExercise(exercise, "Lying leg curl")) return fmt(plan.legCurl);
   if (sameExercise(exercise, "Weighted jumps")) {
     return plan.weightedJumps === undefined ? undefined : `${plan.weightedJumps} lbs a hand`;

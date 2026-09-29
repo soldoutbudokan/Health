@@ -81,7 +81,9 @@ export const PROGRAM: PlannedSession[] = [
         reps: 5,
         // Sep 5, 2026: the belt and the neck cue, after the second back
         // episode. Both are argued in docs/training-plan.md section 9.
-        note: "Add 5 lbs when both sets move well, never 10; the 10 lb jump is the likely cause of the September back soreness. Belt on for these two sets only, not the ramp. Chin tucked, eyes on the floor a couple of metres ahead: the belt holds the trunk, the eyes hold the neck.",
+        // Sep 29, 2026: top set plus a back-off, asked for after the second
+        // set at the top weight failed twice. Section 10 of the plan.
+        note: "A top set of 5, then a back-off set of 5 about 10% lighter. Add 5 lbs when both sets move well, never 10; the 10 lb jump is the likely cause of the September back soreness. Belt on for these two sets only, not the ramp. Chin tucked, eyes on the floor a couple of metres ahead: the belt holds the trunk, the eyes hold the neck.",
       },
       {
         name: "Smith machine squat",
@@ -89,7 +91,7 @@ export const PROGRAM: PlannedSession[] = [
         prescription: "2 × 5",
         sets: 2,
         reps: 5,
-        note: "Belt on for the work sets, off for the ramp. Add 5 lbs when both sets move well.",
+        note: "A top set of 5, then a back-off set of 5 about 10% lighter. Belt on for the work sets, off for the ramp. Add 5 lbs when both sets move well.",
       },
       {
         name: "Lying leg curl",

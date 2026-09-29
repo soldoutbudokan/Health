@@ -10,9 +10,10 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  *
  * Columns, in order:
  *
- *   date, session, phase, deload, optional, trap_bar, squat, leg_curl,
- *   weighted_jumps, bench, bench_backoff, pullups, cable_row, lat_pulldown,
- *   preacher_curl, y_raise, cable_fly, dips, milestone, note
+ *   date, session, phase, deload, optional, trap_bar, trap_bar_backoff,
+ *   squat, squat_backoff, leg_curl, weighted_jumps, bench, bench_backoff,
+ *   pullups, cable_row, lat_pulldown, preacher_curl, y_raise, cable_fly,
+ *   dips, milestone, note
  *
  * `session` is a SessionType or `rest`. The load columns are the planned
  * top-set weights in pounds and are blank where the day has no such lift;
@@ -31,6 +32,12 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * `120×6`, added September 22, 2026: all three stacks move in 10s, so a planned 5 lb step is
  * written as the pin below it for one more rep (Epley puts 120 × 6 within
  * about 1% of 125 × 5). A bare number means the program's usual reps.
+ *
+ * `trap_bar_backoff` and `squat_backoff` came September 29, 2026, each placed
+ * after its lift the way `bench_backoff` follows `bench`: the heavy lower
+ * went from 2 × 5 at one weight to a top set of 5 and a back-off set of 5
+ * about 10% lighter. Blank means both sets at the top weight — every light
+ * lower, every deload, and every row before October 6.
  */
 
 const SESSION_TYPES = Object.keys(SESSION_LABELS) as SessionType[];
@@ -58,9 +65,9 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
     const date = c[0]?.trim();
     if (!isDateKey(date)) continue;
     const slot = optional(c[1])?.toLowerCase();
-    const legCurl = optionalLoad(c[7]);
-    const cableRow = optionalLoad(c[12]);
-    const latPulldown = optionalLoad(c[13]);
+    const legCurl = optionalLoad(c[9]);
+    const cableRow = optionalLoad(c[14]);
+    const latPulldown = optionalLoad(c[15]);
     days.push({
       date,
       slot: isSlot(slot) ? slot : "rest",
@@ -68,23 +75,25 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
       deload: /^(y|yes|true|1)$/i.test(c[3]?.trim() ?? ""),
       optional: /^(y|yes|true|1)$/i.test(c[4]?.trim() ?? ""),
       trapBar: optionalNumber(c[5]),
-      squat: optionalNumber(c[6]),
+      trapBarBackoff: optionalNumber(c[6]),
+      squat: optionalNumber(c[7]),
+      squatBackoff: optionalNumber(c[8]),
       legCurl: legCurl.lbs,
       legCurlReps: legCurl.reps,
-      weightedJumps: optionalNumber(c[8]),
-      bench: optionalNumber(c[9]),
-      benchBackoff: optionalNumber(c[10]),
-      pullups: optional(c[11]),
+      weightedJumps: optionalNumber(c[10]),
+      bench: optionalNumber(c[11]),
+      benchBackoff: optionalNumber(c[12]),
+      pullups: optional(c[13]),
       cableRow: cableRow.lbs,
       cableRowReps: cableRow.reps,
       latPulldown: latPulldown.lbs,
       latPulldownReps: latPulldown.reps,
-      preacherCurl: optionalNumber(c[14]),
-      yRaise: optionalNumber(c[15]),
-      cableFly: optionalNumber(c[16]),
-      dips: optional(c[17]),
-      milestone: optional(c[18]),
-      note: optional(c[19]),
+      preacherCurl: optionalNumber(c[16]),
+      yRaise: optionalNumber(c[17]),
+      cableFly: optionalNumber(c[18]),
+      dips: optional(c[19]),
+      milestone: optional(c[20]),
+      note: optional(c[21]),
     });
   }
   return days.sort((a, b) => a.date.localeCompare(b.date));

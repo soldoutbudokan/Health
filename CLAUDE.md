@@ -165,16 +165,17 @@ Rendered at `/last-stretch`. Asked for on September 7, 2026; the reasoning is
 Section 10 of `docs/training-plan.md`. One row per day:
 
 ```
-date,session,phase,deload,optional,trap_bar,squat,leg_curl,weighted_jumps,bench,
-bench_backoff,pullups,cable_row,lat_pulldown,preacher_curl,y_raise,cable_fly,dips,
-milestone,note
+date,session,phase,deload,optional,trap_bar,trap_bar_backoff,squat,squat_backoff,
+leg_curl,weighted_jumps,bench,bench_backoff,pullups,cable_row,lat_pulldown,
+preacher_curl,y_raise,cable_fly,dips,milestone,note
 ```
 
 | Column | Notes |
 |---|---|
 | `session` | a `sessions.csv` session type, or `rest` |
 | `phase` | `break` \| `return` \| `trip` \| `block-1` \| `deload` \| `block-2` \| `contingency` |
-| `trap_bar`, `squat`, `leg_curl`, `bench`, `bench_backoff` | planned top-set lbs. Blank means no such lift that day, never zero. `leg_curl`, `cable_row` and `lat_pulldown` may also carry reps, `120×6`; see below |
+| `trap_bar`, `squat`, `leg_curl`, `bench` | planned top-set lbs. Blank means no such lift that day, never zero. `leg_curl`, `cable_row` and `lat_pulldown` may also carry reps, `120×6`; see below |
+| `trap_bar_backoff`, `squat_backoff`, `bench_backoff` | planned back-off lbs. Blank means every set at the top weight. The lower two were added September 29, 2026; see below |
 | `weighted_jumps` | lbs **per dumbbell**, light lower days only, added September 19, 2026. Blank on the heavy days, whose jumps are bodyweight by prescription, and blank before October 3 |
 | `pullups` | free text: `2×5`, `test (9)`, `2×4 easy, optional` |
 | `cable_row`, `lat_pulldown`, `preacher_curl`, `y_raise`, `cable_fly` | planned lbs on the upper days, added September 17, 2026. Blank on lower days and on every row before September 21 — no accessory plan existed for those, so none is written in after the fact |
@@ -200,10 +201,22 @@ back-off lost form on the fifth rep and the squat was cut to 135. So the trap ba
 restarts at 270 on September 29 and climbs in fives, and the squat takes its
 skipped jump to 195 the same day and runs its old line a week late. The goals
 now close November 8 (pullups) and November 17 (trap bar and squat together).
-Rows after November 17 are contingency, for stalls. **When the three
-close, the last stretch is over** and the next block is cardio, whatever the
-bench is doing — the owner said so on September 7. Don't extend the stretch to
+Rows after November 17 are contingency, for stalls. Redrawn again September 29:
+the second set at 270 stopped at 3, so the heavy lower went to back-off sets
+(below), and the owner put the trap bar at 280 on October 6, a weight that went
+for 5 on the 22nd. It holds at 280 after the deload, so the dates stand.
+**When the three close, the last stretch is over** and the next block is
+cardio, whatever the bench is doing — the owner said so on September 7. Don't extend the stretch to
 chase the bench.
+
+**The heavy lower is a top set and a back-off.** Asked for on September 29,
+2026, after the second set failed on two heavy lowers running (260 lost form on
+the 22nd, 270 stopped at 3 on the 29th). The trap bar and squat each take a top
+set of 5, then one set of 5 about 10% lighter — 30 lbs off the trap bar, 20 off
+the squat — the way the bench has run since September 17. Progression keys on
+the top set, and both sets have to be clean for it to step. Light lowers and
+deloads keep straight sets, blank in the back-off columns. The page grades the
+top set only, as it does the bench.
 
 **The accessories are rules rendered as numbers, not targets.** Asked for on
 September 17, 2026, after the row had sat at 130 for seven clean sessions
