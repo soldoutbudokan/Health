@@ -259,3 +259,13 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-09-22-08,2026-09-22,heavy-lower,Smith machine squat,compound,2,5,135,,,,logged
 2026-09-22-09,2026-09-22,heavy-lower,Lying leg curl,isolation,1,6,120,,,120 x 6 as planned; the stack has no 125.,logged
 2026-09-22-10,2026-09-22,heavy-lower,Lying leg curl,isolation,2,6,120,,,,logged
+2026-09-29-01,2026-09-29,heavy-lower,Sled,warmup,1,,,,,,logged
+2026-09-29-02,2026-09-29,heavy-lower,Seated good mornings,warmup,1,,,,,Not in the program. No reps noted.,logged
+2026-09-29-03,2026-09-29,heavy-lower,Hip abduction,warmup,1,,,,,Not in the program. No reps or weight noted.,logged
+2026-09-29-04,2026-09-29,heavy-lower,Glute bridge,warmup,1,,,,,Not in the program. No reps noted.,logged
+2026-09-29-05,2026-09-29,heavy-lower,Trap bar deadlift,compound,1,5,270,,,"5, then stopped the second set at 3. Could maybe have got 5 but was scared of straining again.",logged
+2026-09-29-06,2026-09-29,heavy-lower,Trap bar deadlift,compound,2,3,270,,,,logged
+2026-09-29-07,2026-09-29,heavy-lower,Smith machine squat,compound,1,5,195,,9,Maybe one more rep on the first set.,logged
+2026-09-29-08,2026-09-29,heavy-lower,Smith machine squat,compound,2,5,195,,,,logged
+2026-09-29-09,2026-09-29,heavy-lower,Lying leg curl,isolation,1,6,120,,,"Probably a bit more in me, not much.",logged
+2026-09-29-10,2026-09-29,heavy-lower,Lying leg curl,isolation,2,6,120,,,,logged
