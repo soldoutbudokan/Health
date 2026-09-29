@@ -509,3 +509,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-09-28-lunch-freshwest-tomatoes,2026-09-28,lunch,Tomatoes,diced,Freshwest Grill,1 scoop (~2 oz / 57 g),1.25,10,0.5,2.2,0.1,0.7,1.5,3,usda,2026-09-28T17:27:02.000Z
 2026-09-28-lunch-freshwest-burrito-sauce,2026-09-28,lunch,Burrito Sauce,thin salsa-style,Freshwest Grill,~1 oz,0.625,20,0.5,4.5,0,0.5,2,220,claude,2026-09-28T17:27:02.000Z
 2026-09-28-lunch-freshwest-hot-sauce,2026-09-28,lunch,Hot Sauce,,Freshwest Grill,~1 tbsp,0.625,0,0,0,0,0,0,150,claude,2026-09-28T17:27:02.000Z
+2026-09-28-dinner-lentil-soup,2026-09-28,dinner,Lentil Soup,soup only,,1 serving (1/5 recipe),1,380,16,43,18,7,,470,recipe,2026-09-29T00:36:12.000Z
+2026-09-28-dinner-ciabatta,2026-09-28,dinner,Ciabatta roll,plain,,1 roll (~85 g),1,213,7.2,42.5,1.7,1.7,,485,claude,2026-09-29T00:36:12.000Z
+2026-09-28-dinner-butter,2026-09-28,dinner,Butter,"salted, ~10 g",,1 tbsp (14 g),0.7,100,0.1,0,11.4,0,0,90,usda,2026-09-29T00:36:12.000Z
+2026-09-28-dinner-whey-shake,2026-09-28,dinner,Protein Shake,"2 scoops ON Gold Standard vanilla, water",Optimum Nutrition,2 scoops (~61 g) in water,1,240,48,6,2,1,2,260,packaged,2026-09-29T00:36:12.000Z
