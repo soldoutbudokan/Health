@@ -122,22 +122,21 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   "block-1": {
     label: "Block 1",
     blurb:
-      "The first uninterrupted weeks, on the standing shape: heavy lower Tuesday, heavy upper Thursday, the fasted weekend for the light days. Five pounds a session on the heavy days when both sets move well.",
+      "The first uninterrupted weeks, on the standing shape: heavy lower Tuesday, heavy upper Thursday, the fasted weekend for the light days. Five pounds a session on the heavy days when both sets move well. No deload: the one planned for the week of Oct 12 came off on Sep 30, and that week's heavy days are in Ottawa.",
   },
   deload: {
     label: "Deload",
-    blurb:
-      "Same sessions, every weight down 10–15%, placed so the Oct 14–16 off days fall inside it. The heavy days move to Monday and Tuesday for this week only.",
+    blurb: "Same sessions, every weight down 10–15%.",
   },
   "block-2": {
     label: "Block 2",
     blurb:
-      "Where the goals close on the all-goes-well line: ten pullups on Nov 8, then trap bar 300 and squat 225 on Nov 17.",
+      "Where the goals close on the all-goes-well line: ten pullups on Nov 8, trap bar 300 on Nov 10, squat 225 on Nov 17. The first week's heavy days are in Ottawa.",
   },
   contingency: {
     label: "Contingency",
     blurb:
-      "Only if a goal is still open. Goal weights repeated, a deload in the week of Nov 23, and the file ends Dec 20; the deadline is Dec 31.",
+      "Only if a goal is still open. Goal weights repeated, no deload, and the file ends Dec 20; the deadline is Dec 31.",
   },
 };
 

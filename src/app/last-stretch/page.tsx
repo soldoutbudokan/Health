@@ -108,11 +108,11 @@ export default function LastStretchPage() {
           <div>
             <dt className="text-sm font-medium">Where it ends</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              Ten pullups on Nov 8, then trap bar 300 and squat 225 on Nov 17. Once all
+              Ten pullups on Nov 8, trap bar 300 on Nov 10, squat 225 on Nov 17. Once all
               three are done, the stretch is over, whatever the bench is doing. The rows
               after that are backup: the same goal weights repeated for any lift that
-              stalls, a deload the week of Nov 23, and the plan ending Dec 20. The
-              deadline is still Dec 31.
+              stalls, and the plan ending Dec 20. The deadline is still Dec 31. There&rsquo;s
+              no deload on the calendar before then; I took them off on Sep 30.
             </dd>
           </div>
           <div>
@@ -121,8 +121,9 @@ export default function LastStretchPage() {
               Weekends are the likeliest training days and they&rsquo;re fasted, so they get the
               light days: light lower Saturday, light upper Sunday. The heavy days are
               Tuesday and Thursday, fed. The first week back ran on weekdays because that
-              weekend was taken, and the deload week moves its heavy days to Monday and
-              Tuesday because I&rsquo;m away for the rest of it.
+              weekend was taken. Oct 13&ndash;23 is a work trip to Ottawa with the weekend
+              home, so the heavy days that fortnight run at a gym there and the light days
+              stay put.
             </dd>
           </div>
           <div>

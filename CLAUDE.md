@@ -194,18 +194,23 @@ The plan file never records what happened; that is `sessions.csv` and
 `workouts.csv`, as always.
 
 **The all-goes-well line is the plan.** Belt session September 14 at 270 and 185,
-the one 10 lb belt jump on September 22, five pounds a heavy session after that,
-a deload in the week of October 12 placed around the October 14–16 off days.
+the one 10 lb belt jump on September 22, five pounds a heavy session after that.
 Redrawn September 22: the trap bar took its jump to 280 for one set, but the 260
 back-off lost form on the fifth rep and the squat was cut to 135. So the trap bar
 restarts at 270 on September 29 and climbs in fives, and the squat takes its
-skipped jump to 195 the same day and runs its old line a week late. The goals
-now close November 8 (pullups) and November 17 (trap bar and squat together).
+skipped jump to 195 the same day and runs its old line a week late. That put the
+goals at November 8 (pullups) and November 17 (trap bar and squat together).
 Rows after November 17 are contingency, for stalls. Redrawn again September 29:
 the second set at 270 stopped at 3, so the heavy lower went to back-off sets
 (below), and the owner put the trap bar at 280 on October 6, a weight that went
-for 5 on the 22nd. It holds at 280 after the deload, so the dates stand.
-**When the three close, the last stretch is over** and the next block is
+for 5 on the 22nd. Redrawn September 30: the owner took out the deload in the
+week of October 12, and the contingency one with it — **no deload before the new
+year**, though one may go back in. That week and the next are a work trip to
+Ottawa (October 13–16 and 19–23, home for the weekend), so the heavy days run at
+a gym there. The first heavy lower on the Ottawa kit repeats October 6's numbers,
+since a new tool is learned at the last settled weight, so the goals now close
+November 8 (pullups), November 10 (trap bar, then holding at 300) and November 17
+(squat). **When the three close, the last stretch is over** and the next block is
 cardio, whatever the bench is doing — the owner said so on September 7. Don't extend the stretch to
 chase the bench.
 
@@ -259,8 +264,7 @@ Sunday. Heavy days are weekdays, Tuesday and Thursday, fed; Monday is the
 stretch day and Off A and B sit on Wednesday and Friday. The first week back
 (September 14–22) was written for weekdays because that weekend was spoken for,
 though the light lower ended up on Saturday the 19th after work took Friday —
-which is where the standing shape puts it anyway; and the deload week moves its
-heavy days to Monday and Tuesday because the rest of it is away. When shifting rows, keep a heavy day off the weekend.
+which is where the standing shape puts it anyway. When shifting rows, keep a heavy day off the weekend.
 
 **Ticks are derived, never clicked.** A day is done when `sessions.csv` carries a
 session of the planned type on that date. Nothing on the page saves anything;
