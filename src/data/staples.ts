@@ -1418,4 +1418,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "USDA salted butter, 717 kcal per 100 g, at a 14 g tablespoon; added Sep 28. A restaurant pat is about 5 g, a third of a serving. Sodium runs 80–90 mg a tablespoon by brand, and unsalted is near zero.",
     tags: ["butter", "fat", "spread", "dairy"],
   },
+  {
+    id: "staple-peanut-butter-brownie-square",
+    name: "Peanut butter brownie",
+    variant: "homemade, 1 small square",
+    source: "claude",
+    per: "1 small square (~45 g)",
+    gramsPerServing: 45,
+    macros: { calories: 210, protein: 4.5, carbs: 22, fat: 12, fiber: 1.3, sugar: 15, sodium: 110 },
+    note: "Estimated on Sep 29 with no recipe, taking a peanut butter brownie at about 470 kcal per 100 g and a small 45 g square, since it was described as fairly light. Call it 150–320 kcal depending on the size and how much peanut butter; sodium 60–180 mg.",
+    tags: ["brownie", "peanut butter", "chocolate", "square", "homemade", "dessert", "snack"],
+  },
 ];
