@@ -501,6 +501,18 @@ export const PACKAGED_FOODS: Food[] = [
     note: "Calories, protein, carbs and fat off St-Viateur's panel via search summaries on Sep 26; the site was blocked. No summary gave fibre, sugar or sodium, so those are the sesame bagel's, since the dough is the same. The Atwater sum is 240.",
     tags: ["st-viateur", "st viateur", "bagel", "plain", "montreal", "bread", "breakfast", "snack"],
   },
+  {
+    id: "pkg-handfuel-himalayan-salt-pistachios",
+    name: "Dry Roasted Pistachios",
+    variant: "Himalayan salt, shelled",
+    brand: "Handfuel",
+    source: "packaged",
+    per: "1 pack (40 g)",
+    gramsPerServing: 40,
+    macros: { calories: 230, protein: 9, carbs: 11, fat: 19, fiber: 4, sugar: 3, sodium: 170 },
+    note: "Handfuel's panel for the 40 g pack via search summaries on Oct 1; their site was blocked. The 230 kcal matches the figure on the pack. The Atwater sum is 251, about 9% over, which is usual for nuts because some of the fibre isn't absorbed.",
+    tags: ["handfuel", "pistachio", "pistachios", "nuts", "himalayan salt", "salted", "roasted", "snack"],
+  },
 ];
 
 /**
