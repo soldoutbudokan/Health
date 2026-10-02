@@ -269,3 +269,17 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-09-29-08,2026-09-29,heavy-lower,Smith machine squat,compound,2,5,195,,,,logged
 2026-09-29-09,2026-09-29,heavy-lower,Lying leg curl,isolation,1,6,120,,,"Probably a bit more in me, not much.",logged
 2026-09-29-10,2026-09-29,heavy-lower,Lying leg curl,isolation,2,6,120,,,,logged
+2026-10-02-01,2026-10-02,heavy-upper,Elliptical,warmup,1,,,5,,Five minutes in place of the sled.,logged
+2026-10-02-02,2026-10-02,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-10-02-03,2026-10-02,heavy-upper,Pullups,compound,1,5,,,,"2 x 5, felt pretty easy.",logged
+2026-10-02-04,2026-10-02,heavy-upper,Pullups,compound,2,5,,,,,logged
+2026-10-02-05,2026-10-02,heavy-upper,Bench press,compound,1,5,165,,,"165 x 5 again. Reasonably hard, where on Sep 21 it took everything.",logged
+2026-10-02-06,2026-10-02,heavy-upper,Bench press,compound,2,5,150,,,Both back-offs at 150 felt pretty easy.,logged
+2026-10-02-07,2026-10-02,heavy-upper,Bench press,compound,3,5,150,,,,logged
+2026-10-02-08,2026-10-02,heavy-upper,Cable row,compound,1,6,130,,,"2 x 6 at 130, standing in for 135. Probably had more reps in the first set, maybe the second too.",logged
+2026-10-02-09,2026-10-02,heavy-upper,Cable row,compound,2,6,130,,,,logged
+2026-10-02-10,2026-10-02,heavy-upper,Preacher curl,isolation,1,4,30,,,"4 at 30, then down to 25 for 5. Felt bad on the joints.",logged
+2026-10-02-11,2026-10-02,heavy-upper,Preacher curl,isolation,2,5,25,,,,logged
+2026-10-02-12,2026-10-02,heavy-upper,Seated Y raise,isolation,1,5,20,,,Could probably have done six on the first set.,logged
+2026-10-02-13,2026-10-02,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-10-02-14,2026-10-02,heavy-upper,Dips,isolation,1,10,,,,,logged
