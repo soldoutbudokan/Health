@@ -544,3 +544,12 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-01-dinner-whey-shake,2026-10-01,dinner,Protein Shake,"2 scoops ON Gold Standard vanilla, water",Optimum Nutrition,2 scoops (~61 g) in water,1,240,48,6,2,1,2,260,packaged,2026-10-02T00:12:24.000Z
 2026-10-01-snack-vanilla-cake-slice,2026-10-01,snack,Vanilla cake,"1 slice, frosted; kind not noted",,"1 slice (~110 g, frosted)",1,390,4,52,19,0.6,38,300,claude,2026-10-02T01:51:05.000Z
 2026-10-01-snack-pear,2026-10-01,snack,"Pear, raw",,,1 medium (178 g),1,101,0.6,27.1,0.3,5.5,17.4,2,usda,2026-10-02T01:51:05.000Z
+2026-10-02-breakfast-sbux-protein-latte,2026-10-02,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-02T16:34:07.000Z
+2026-10-02-lunch-freshwest-chicken,2026-10-02,lunch,Grilled Chicken,,Freshwest Grill,1 scoop (~4 oz),1.25,180,32,0,7,0,0,310,claude,2026-10-02T16:34:07.000Z
+2026-10-02-lunch-freshwest-refried-beans,2026-10-02,lunch,Refried Beans,,Freshwest Grill,1 scoop (~1/2 cup),1.25,130,7,21,2.5,7,1,480,claude,2026-10-02T16:34:07.000Z
+2026-10-02-lunch-freshwest-fajita-veg,2026-10-02,lunch,Fajita Vegetables,peppers and onions,Freshwest Grill,1 scoop (~2 oz),1.25,30,1,5,1,1,3,160,claude,2026-10-02T16:34:07.000Z
+2026-10-02-lunch-freshwest-cheese,2026-10-02,lunch,Shredded Cheese,,Freshwest Grill,1 scoop (~1 oz),1.25,110,6,1,9,0,0,180,claude,2026-10-02T16:34:07.000Z
+2026-10-02-lunch-freshwest-lettuce,2026-10-02,lunch,Lettuce,shredded,Freshwest Grill,1 handful (~40 g),1.25,6,0.4,1.2,0.1,0.5,0.8,4,usda,2026-10-02T16:34:07.000Z
+2026-10-02-lunch-freshwest-tomatoes,2026-10-02,lunch,Tomatoes,diced,Freshwest Grill,1 scoop (~2 oz / 57 g),1.25,10,0.5,2.2,0.1,0.7,1.5,3,usda,2026-10-02T16:34:07.000Z
+2026-10-02-lunch-freshwest-burrito-sauce,2026-10-02,lunch,Burrito Sauce,thin salsa-style,Freshwest Grill,~1 oz,0.625,20,0.5,4.5,0,0.5,2,220,claude,2026-10-02T16:34:07.000Z
+2026-10-02-lunch-freshwest-hot-sauce,2026-10-02,lunch,Hot Sauce,,Freshwest Grill,~1 tbsp,0.625,0,0,0,0,0,0,150,claude,2026-10-02T16:34:07.000Z
