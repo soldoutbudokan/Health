@@ -12,7 +12,7 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  *
  *   date, session, phase, deload, optional, trap_bar, trap_bar_backoff,
  *   squat, squat_backoff, leg_curl, weighted_jumps, bench, bench_backoff,
- *   pullups, cable_row, lat_pulldown, preacher_curl, y_raise, cable_fly,
+ *   pullups, cable_row, lat_pulldown, curl, y_raise, cable_fly,
  *   dips, milestone, note
  *
  * `session` is a SessionType or `rest`. The load columns are the planned
@@ -32,6 +32,10 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * `120×6`, added September 22, 2026: all three stacks move in 10s, so a planned 5 lb step is
  * written as the pin below it for one more rep (Epley puts 120 × 6 within
  * about 1% of 125 × 5). A bare number means the program's usual reps.
+ *
+ * `curl` was `preacher_curl` until October 3, 2026, when the Bayesian cable
+ * curl replaced the preacher curl. Rows through October 2 hold preacher
+ * numbers and rows after it Bayesian ones, a side.
  *
  * `trap_bar_backoff` and `squat_backoff` came September 29, 2026, each placed
  * after its lift the way `bench_backoff` follows `bench`: the heavy lower
@@ -88,7 +92,7 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
       cableRowReps: cableRow.reps,
       latPulldown: latPulldown.lbs,
       latPulldownReps: latPulldown.reps,
-      preacherCurl: optionalNumber(c[16]),
+      curl: optionalNumber(c[16]),
       yRaise: optionalNumber(c[17]),
       cableFly: optionalNumber(c[18]),
       dips: optional(c[19]),

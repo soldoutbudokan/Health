@@ -217,12 +217,16 @@ export const PROGRAM: PlannedSession[] = [
         note: "Pick one; can alternate week to week.",
       },
       {
-        name: "Preacher curl",
+        // Oct 3, 2026: replaced the preacher curl, which bothered the joints.
+        // The preacher stays as the alternative so sessions before the swap
+        // still fill the slot.
+        name: "Bayesian cable curl",
         kind: "isolation",
-        prescription: "2 × 5",
+        prescription: "2 × 8 a side",
         sets: 2,
-        reps: 5,
-        note: "Protects the elbows as pullup volume grows.",
+        reps: 8,
+        alternative: "Preacher curl",
+        note: "Protects the elbows as pullup volume grows. Elbow only a little behind the body, stop short of a locked elbow at the bottom; a pinch at the front of the shoulder means the arm is too far back.",
       },
       {
         name: "Seated Y raise",
@@ -267,7 +271,14 @@ export const PROGRAM: PlannedSession[] = [
       },
       { name: "Lat pulldown", kind: "compound", prescription: "2 × 5", sets: 2, reps: 5 },
       { name: "Cable row", kind: "compound", prescription: "2 × 5", sets: 2, reps: 5 },
-      { name: "Preacher curl", kind: "isolation", prescription: "2 × 5", sets: 2, reps: 5 },
+      {
+        name: "Bayesian cable curl",
+        kind: "isolation",
+        prescription: "2 × 8 a side",
+        sets: 2,
+        reps: 8,
+        alternative: "Preacher curl",
+      },
       { name: "Seated Y raise", kind: "isolation", prescription: "2 × 5", sets: 2, reps: 5 },
       {
         name: "Cable fly",
@@ -674,7 +685,7 @@ export const RATIONALE: { title: string; body: string }[] = [
   },
   {
     title: "Kept on purpose",
-    body: "Preacher curls for elbow protection under rising pullup volume, Y raises for shoulder health, leg curls because hamstrings drive both the deadlift and the jump, and the sled — full-body blood flow with no eccentric, so no added soreness, plus free work capacity.",
+    body: "A curl for elbow protection under rising pullup volume (the preacher curl until October 3, 2026, then the Bayesian cable curl, which is easier on the joints), Y raises for shoulder health, leg curls because hamstrings drive both the deadlift and the jump, and the sled — full-body blood flow with no eccentric, so no added soreness, plus free work capacity.",
   },
   {
     title: "Never superset explosive work",

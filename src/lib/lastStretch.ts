@@ -95,7 +95,8 @@ export interface PlanDay {
   cableRowReps?: number;
   latPulldown?: number;
   latPulldownReps?: number;
-  preacherCurl?: number;
+  /** The curl slot: preacher until Oct 2, 2026, Bayesian cable curl after. */
+  curl?: number;
   yRaise?: number;
   cableFly?: number;
   /** "1×10", "1×8" on a deload — bodyweight, so a string like pullups. */
@@ -214,6 +215,10 @@ export interface WeekView {
   days: DayView[];
 }
 
+/** The curl column holds whichever curl the slot carried on that date. */
+const isCurl = (exercise: string) =>
+  sameExercise(exercise, "Bayesian cable curl") || sameExercise(exercise, "Preacher curl");
+
 /** Which plan column an exercise on the program reads its load from. */
 function plannedLoad(plan: PlanDay, exercise: string): string | undefined {
   const fmt = (n: number | undefined) => (n === undefined ? undefined : `${n} lbs`);
@@ -234,7 +239,7 @@ function plannedLoad(plan: PlanDay, exercise: string): string | undefined {
   if (sameExercise(exercise, "Pullups")) return plan.pullups;
   if (sameExercise(exercise, "Cable row")) return fmt(plan.cableRow);
   if (sameExercise(exercise, "Lat pulldown")) return fmt(plan.latPulldown);
-  if (sameExercise(exercise, "Preacher curl")) return fmt(plan.preacherCurl);
+  if (isCurl(exercise)) return fmt(plan.curl);
   if (sameExercise(exercise, "Seated Y raise")) return fmt(plan.yRaise);
   if (sameExercise(exercise, "Cable fly")) return fmt(plan.cableFly);
   if (sameExercise(exercise, "Dips")) return plan.dips;
@@ -250,7 +255,7 @@ function plannedNumber(plan: PlanDay, exercise: string): number | undefined {
   if (sameExercise(exercise, "Bench press")) return plan.bench;
   if (sameExercise(exercise, "Cable row")) return plan.cableRow;
   if (sameExercise(exercise, "Lat pulldown")) return plan.latPulldown;
-  if (sameExercise(exercise, "Preacher curl")) return plan.preacherCurl;
+  if (isCurl(exercise)) return plan.curl;
   if (sameExercise(exercise, "Seated Y raise")) return plan.yRaise;
   if (sameExercise(exercise, "Cable fly")) return plan.cableFly;
   return undefined;
