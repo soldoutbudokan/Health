@@ -12,7 +12,7 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  *
  *   date, session, phase, deload, optional, trap_bar, trap_bar_backoff,
  *   squat, squat_backoff, leg_curl, weighted_jumps, bench, bench_backoff,
- *   pullups, cable_row, lat_pulldown, curl, y_raise, cable_fly,
+ *   pullups, cable_row, lat_pulldown, curl, curl_backup, y_raise, cable_fly,
  *   dips, milestone, note
  *
  * `session` is a SessionType or `rest`. The load columns are the planned
@@ -35,7 +35,10 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  *
  * `curl` was `preacher_curl` until October 3, 2026, when the Bayesian cable
  * curl replaced the preacher curl. Rows through October 2 hold preacher
- * numbers and rows after it Bayesian ones, a side.
+ * numbers and rows after it Bayesian ones, a side. `curl_backup` followed the
+ * same day, inserted after `curl`: the incline dumbbell curl, a hand, for
+ * when the cables are taken. It steps on the same dates and is blank before
+ * October 4.
  *
  * `trap_bar_backoff` and `squat_backoff` came September 29, 2026, each placed
  * after its lift the way `bench_backoff` follows `bench`: the heavy lower
@@ -93,11 +96,12 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
       latPulldown: latPulldown.lbs,
       latPulldownReps: latPulldown.reps,
       curl: optionalNumber(c[16]),
-      yRaise: optionalNumber(c[17]),
-      cableFly: optionalNumber(c[18]),
-      dips: optional(c[19]),
-      milestone: optional(c[20]),
-      note: optional(c[21]),
+      curlBackup: optionalNumber(c[17]),
+      yRaise: optionalNumber(c[18]),
+      cableFly: optionalNumber(c[19]),
+      dips: optional(c[20]),
+      milestone: optional(c[21]),
+      note: optional(c[22]),
     });
   }
   return days.sort((a, b) => a.date.localeCompare(b.date));

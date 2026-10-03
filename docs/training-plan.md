@@ -74,7 +74,7 @@ Days are slotted into the week by the athlete. Three scheduling rules:
 | 3 | Pullups | 2 sets of 4–5 | Clean reps only, no grinding. |
 | 4 | Bench press | **3–4 x 5** | The one exception to the 2-set cap, because bench needs the most volume of any lift here. Add 2.5–5 lbs when all sets move well. Shoulder blades pinned, stop short of hard lockout, don't let the bar sink so deep the shoulders roll forward. |
 | 5 | Seated row **or** lat pulldown | 2 x 5 | Pick one; can alternate week to week. |
-| 6 | Bayesian cable curls | 2 x 8 a side | Protects elbows as pullup volume grows. Preacher curls until October 3, 2026 *(see Section 10)*. |
+| 6 | Bayesian cable curls **or** incline dumbbell curls | 2 x 8 a side | Protects elbows as pullup volume grows. The incline curl is for when the cables are taken. Preacher curls until October 3, 2026 *(see Section 10)*. |
 | 7 | Seated Y raise | 2 x 5 | Shoulder insurance. |
 | 8 | Dips | 1 x 10 | Stop just short of lockout. |
 
@@ -87,7 +87,7 @@ Days are slotted into the week by the athlete. Three scheduling rules:
 | 3 | Bench press | 3 x 8 @ 135–145 lbs | Smooth bar speed, no grinding. |
 | 4 | Lat pulldown | 2 x 5 | Both pulls fit today since bench is lighter. |
 | 5 | Seated row | 2 x 5 | |
-| 6 | Bayesian cable curls | 2 x 8 a side | |
+| 6 | Bayesian cable curls **or** incline dumbbell curls | 2 x 8 a side | |
 | 7 | Seated Y raise | 2 x 5 | |
 | 8 | Cable flies | 2 sets (optional) | This day only. Cut from heavy day as redundant pressing. |
 | 9 | Dips | 1 x 10 | |
@@ -413,7 +413,7 @@ Pullups: 2 × 5 on heavy upper, two sets on light upper, and Section 4's optiona
 |---|---|---|
 | Cable row | Step 5 lbs on each heavy upper; hold that number on the light upper after it. Rides at 82–84% of the planned bench. | 135 Sep 21 · 140 Oct 1 · 145 Oct 8 · 150 Oct 29 · 155 Nov 5 · 160 Nov 19 · 165 Dec 10 |
 | Lat pulldown | Step 5 lbs on each light upper; hold on a pullup test day. Heavy upper carries the last light upper's number if it is the pull chosen. | 135 Oct 4 · 140 Oct 11 · 145 Oct 25 · 150 Nov 1 · 155 Nov 15 · 160 Nov 22 · 165 Dec 13 — 89% of bodyweight |
-| Curl | Step 5 lbs once a block, after two clean sessions. A Bayesian cable curl, 2 × 8 a side, from October 4; the preacher curl, 2 × 5, before it. | Preacher 30 Oct 1 · Bayesian 20 Oct 4 · 25 Oct 22 · 30 Nov 19 |
+| Curl | Step 5 lbs once a block, after two clean sessions. A Bayesian cable curl, 2 × 8 a side, from October 4, with an incline dumbbell curl as the backup on the same dates; the preacher curl, 2 × 5, before it. | Preacher 30 Oct 1 · Bayesian and incline 20 Oct 4 · 25 Oct 22 · 30 Nov 19 |
 | Seated Y raise | Hold 20. | 20 throughout, 15 on a deload |
 | Cable fly | Hold 35, two sets, optional, light upper only. | 35 throughout, 30 on a deload |
 | Dips | Hold 1 × 10. No added weight — the goal is closed and rule 1 of Section 7 says the lockout is where not to spend anything. | 1 × 10, 1 × 8 on a deload |
@@ -443,5 +443,7 @@ The owner also put the trap bar at 280 on October 6 rather than the 275 the redr
 **The heavy upper a day late (October 2, 2026).** Work took Thursday, October 1, so its heavy upper swapped with Friday the 2nd's Off B, two days before the Sunday light upper instead of three. The bench repeats 165 there instead of taking 170: the one barbell 165, on September 21, barely went and both back-offs were very hard, so the October 1 row's condition was not met. The bench line slides a week from that day and the row slides with it, which puts the bench at 200 on December 10 and 205 on December 17. The October 4 light upper keeps its bench at 135, since the third set on August 30 was close to failure, and hands the pullup test to October 11, the next light upper and three days after a heavy one, because a max set two days after heavy pullups would read low. The pulldown holds for the test there, so its line runs a step behind from October 11 and ends at 160 × 6 instead of 170. None of the three goals moves.
 
 **The curl swap (October 3, 2026).** The preacher curl bothered the joints on October 2, when 30 went for 4 and the second set dropped to 25, and Bayesian cable curls have always felt better. The curl is there to protect the elbows as pullup volume grows, so one that hurts them is not doing its job. On the preacher the pad pins the upper arm and the load pulls the elbow toward straight at the bottom, which is where a hypermobile elbow goes past it; a cable pulls evenly through the bottom with nothing levering the elbow open. The Bayesian puts the arm behind the body instead, so the elbow sits only a little behind the torso, the bottom stops short of a locked elbow, and a pinch at the front of the shoulder means the arm has gone too far back. It runs 2 × 8 a side rather than 2 × 5, because on a lift kept for the joints a lighter weight is the point. Neither the log nor the old spreadsheet records a Bayesian curl, so October 4 starts at a guessed 20 a side: the preacher's best was 25 × 7, the spreadsheet's Bicep Curl reached 35 × 5 in January 2026 without saying cable or dumbbell, and the Bayesian loads the biceps where they are weakest. The once-a-block step keeps its dates, 25 on October 22 and 30 on November 19, and the first session sets the real number for the rows after it. The program keeps the preacher as the slot's alternative so sessions before the swap still fill it, and the plan column is now `curl`.
+
+**A backup for the curl (October 3, 2026).** The cables at the home gym are often taken, so the slot has a second lift that steps on the same dates: the incline dumbbell curl, 2 × 8, on a bench at about 60° with the arms hanging straight down. It is the closest free-weight match to the Bayesian, the same biceps at the same stretch, and like the cable it does not pry the elbow open at the bottom, because a hanging dumbbell pulls straight down the forearm there rather than across the joint. The bench sits at 60° rather than the usual 45° so the shoulder goes less far behind the body. It has its own column, `curl_backup`, at 20 a hand to start, also a guess, because a dumbbell and a cable stack do not read the same and each settles on its own number. Whichever is done that day is graded against its own column, and the next step waits for two clean sessions of either.
 
 **What the page does and does not do.** It shows every planned day, marks a day done when `data/sessions.csv` carries a session of that type on it — a finished lifting session shades green, off days and the away routine keep their own fill — and opens any day to the program for that session with the planned load beside the last logged one. It has no checkbox that saves: the log is the only writer, and a tick that lived in the browser would be a second copy of the truth. Logging the session is what ticks the box.

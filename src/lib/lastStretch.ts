@@ -97,6 +97,8 @@ export interface PlanDay {
   latPulldownReps?: number;
   /** The curl slot: preacher until Oct 2, 2026, Bayesian cable curl after. */
   curl?: number;
+  /** The incline dumbbell curl, a hand, for when the cables are taken. */
+  curlBackup?: number;
   yRaise?: number;
   cableFly?: number;
   /** "1×10", "1×8" on a deload — bodyweight, so a string like pullups. */
@@ -239,7 +241,13 @@ function plannedLoad(plan: PlanDay, exercise: string): string | undefined {
   if (sameExercise(exercise, "Pullups")) return plan.pullups;
   if (sameExercise(exercise, "Cable row")) return fmt(plan.cableRow);
   if (sameExercise(exercise, "Lat pulldown")) return fmt(plan.latPulldown);
-  if (isCurl(exercise)) return fmt(plan.curl);
+  if (isCurl(exercise)) {
+    if (plan.curl === undefined) return undefined;
+    return plan.curlBackup === undefined
+      ? `${plan.curl} lbs`
+      : `${plan.curl} lbs, or ${plan.curlBackup} a hand on the incline curl`;
+  }
+  if (sameExercise(exercise, "Incline dumbbell curl")) return fmt(plan.curlBackup);
   if (sameExercise(exercise, "Seated Y raise")) return fmt(plan.yRaise);
   if (sameExercise(exercise, "Cable fly")) return fmt(plan.cableFly);
   if (sameExercise(exercise, "Dips")) return plan.dips;
@@ -256,6 +264,7 @@ function plannedNumber(plan: PlanDay, exercise: string): number | undefined {
   if (sameExercise(exercise, "Cable row")) return plan.cableRow;
   if (sameExercise(exercise, "Lat pulldown")) return plan.latPulldown;
   if (isCurl(exercise)) return plan.curl;
+  if (sameExercise(exercise, "Incline dumbbell curl")) return plan.curlBackup;
   if (sameExercise(exercise, "Seated Y raise")) return plan.yRaise;
   if (sameExercise(exercise, "Cable fly")) return plan.cableFly;
   return undefined;

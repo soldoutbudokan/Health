@@ -52,6 +52,12 @@ const ALIASES: Record<string, string> = {
   bayesiancurls: "bayesian cable curl",
   bayesiancablecurl: "bayesian cable curl",
   bayesiancablecurls: "bayesian cable curl",
+  inclinecurl: "incline dumbbell curl",
+  inclinecurls: "incline dumbbell curl",
+  inclinedbcurl: "incline dumbbell curl",
+  inclinedbcurls: "incline dumbbell curl",
+  inclinedumbbellcurl: "incline dumbbell curl",
+  inclinedumbbellcurls: "incline dumbbell curl",
   seatedyraise: "seated y raise",
   yraise: "seated y raise",
   dip: "dips",
@@ -509,7 +515,8 @@ export function comparePlan(plan: PlannedSession, sets: WorkoutSet[]): PlanLine[
     // incline pressed beside flat bench counts toward the bench 3–4.
     // Slots without a set count (the sled's "5–10 min") take one match only,
     // so a second sled bout at the end of a session stays visible as its own
-    // line instead of vanishing into the warmup's.
+    // line instead of vanishing into the warmup's. A lift the slot replaced
+    // still answers to it on sessions up to the swap, and not after.
     const pools = planned.sets !== undefined;
     const matches: number[] = [];
     for (const [i, d] of done.entries()) {
@@ -518,7 +525,10 @@ export function comparePlan(plan: PlannedSession, sets: WorkoutSet[]): PlanLine[
       if (
         sameExercise(d.exercise, planned.name) ||
         (planned.alternative !== undefined &&
-          sameExercise(d.exercise, planned.alternative))
+          sameExercise(d.exercise, planned.alternative)) ||
+        (planned.replaced !== undefined &&
+          sameExercise(d.exercise, planned.replaced.name) &&
+          d.sets[0].date <= planned.replaced.until)
       ) {
         matches.push(i);
       }

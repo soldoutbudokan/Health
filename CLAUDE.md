@@ -167,7 +167,7 @@ Section 10 of `docs/training-plan.md`. One row per day:
 ```
 date,session,phase,deload,optional,trap_bar,trap_bar_backoff,squat,squat_backoff,
 leg_curl,weighted_jumps,bench,bench_backoff,pullups,cable_row,lat_pulldown,
-curl,y_raise,cable_fly,dips,milestone,note
+curl,curl_backup,y_raise,cable_fly,dips,milestone,note
 ```
 
 | Column | Notes |
@@ -179,6 +179,7 @@ curl,y_raise,cable_fly,dips,milestone,note
 | `weighted_jumps` | lbs **per dumbbell**, light lower days only, added September 19, 2026. Blank on the heavy days, whose jumps are bodyweight by prescription, and blank before October 3 |
 | `pullups` | free text: `2×5`, `test (9)`, `2×4 easy, optional` |
 | `cable_row`, `lat_pulldown`, `curl`, `y_raise`, `cable_fly` | planned lbs on the upper days, added September 17, 2026. Blank on lower days and on every row before September 21 — no accessory plan existed for those, so none is written in after the fact. `curl` was `preacher_curl` until October 3, 2026: preacher numbers through October 2, Bayesian cable curl numbers a side after |
+| `curl_backup` | the incline dumbbell curl, lbs a hand, for when the cables are taken. Added October 3, 2026, after `curl`; steps on the same dates and is blank before October 4 |
 | `dips` | free text like `pullups`: `1×10`, `1×8` on a deload |
 | `milestone` | a goal closing, or a step worth naming. The page reads the goal dates from it |
 | `optional` | `yes` when skipping it is following the plan |
@@ -232,7 +233,8 @@ chased climb, and the pulldown builds the pullup directly. So: the row steps
 at 82–84% of the planned bench; the pulldown steps 5 lbs each light upper, held
 on a pullup test day, toward bodyweight by December; the curl steps 5 lbs once
 a block (a Bayesian cable curl since October 3, 2026, after the preacher curl
-bothered the joints); the Y raise, the fly and the dips hold. A set that is not
+bothered the joints, with an incline dumbbell curl as the backup that steps on
+the same dates); the Y raise, the fly and the dips hold. A set that is not
 clean repeats the number, as on the main lifts, and the same slide applies.
 Deloads take them down 10–15% with everything else. Don't chase any of them —
 insurance that gets progressed like a goal becomes a fourth load on the same

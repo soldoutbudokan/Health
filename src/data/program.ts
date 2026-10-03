@@ -29,6 +29,12 @@ export interface PlannedExercise {
   optional?: boolean;
   /** An accepted substitute, e.g. seated row *or* lat pulldown. */
   alternative?: string;
+  /**
+   * The lift this slot ran before a swap, and the last date it applies to.
+   * Sessions up to that date still fill the slot with it; after that date
+   * the old lift reads as the deviation it is.
+   */
+  replaced?: { name: string; until: string };
   note?: string;
 }
 
@@ -218,15 +224,16 @@ export const PROGRAM: PlannedSession[] = [
       },
       {
         // Oct 3, 2026: replaced the preacher curl, which bothered the joints.
-        // The preacher stays as the alternative so sessions before the swap
-        // still fill the slot.
+        // The incline dumbbell curl is the backup for when the cables are
+        // taken; it steps on the same dates from its own plan column.
         name: "Bayesian cable curl",
         kind: "isolation",
         prescription: "2 × 8 a side",
         sets: 2,
         reps: 8,
-        alternative: "Preacher curl",
-        note: "Protects the elbows as pullup volume grows. Elbow only a little behind the body, stop short of a locked elbow at the bottom; a pinch at the front of the shoulder means the arm is too far back.",
+        alternative: "Incline dumbbell curl",
+        replaced: { name: "Preacher curl", until: "2026-10-02" },
+        note: "Protects the elbows as pullup volume grows. Elbow only a little behind the body, stop short of a locked elbow at the bottom; a pinch at the front of the shoulder means the arm is too far back. If the cables are taken, incline dumbbell curls on a bench at about 60°, arms hanging straight down.",
       },
       {
         name: "Seated Y raise",
@@ -277,7 +284,8 @@ export const PROGRAM: PlannedSession[] = [
         prescription: "2 × 8 a side",
         sets: 2,
         reps: 8,
-        alternative: "Preacher curl",
+        alternative: "Incline dumbbell curl",
+        replaced: { name: "Preacher curl", until: "2026-10-02" },
       },
       { name: "Seated Y raise", kind: "isolation", prescription: "2 × 5", sets: 2, reps: 5 },
       {
