@@ -307,3 +307,5 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-04-10,2026-10-04,light-upper,Cable row,compound,2,6,130,,,,logged
 2026-10-04-11,2026-10-04,light-upper,Bayesian cable curl,isolation,1,8,20.5,,,"First Bayesian curls, 20.5 a side: 8 then 5 each arm. More rested I could have done more.",logged
 2026-10-04-12,2026-10-04,light-upper,Bayesian cable curl,isolation,2,5,20.5,,,,logged
+2026-10-04-13,2026-10-04,light-upper,Seated Y raise,isolation,1,5,20,,,,logged
+2026-10-04-14,2026-10-04,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
