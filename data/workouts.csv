@@ -283,3 +283,15 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-02-12,2026-10-02,heavy-upper,Seated Y raise,isolation,1,5,20,,,Could probably have done six on the first set.,logged
 2026-10-02-13,2026-10-02,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
 2026-10-02-14,2026-10-02,heavy-upper,Dips,isolation,1,10,,,,,logged
+2026-10-03-01,2026-10-03,light-lower,Backwards treadmill walk,warmup,1,,,5,,Five minutes walking backwards instead of the sled.,logged
+2026-10-03-02,2026-10-03,light-lower,Seated pancakes,warmup,1,,,,,No time noted.,logged
+2026-10-03-03,2026-10-03,light-lower,Trap bar deadlift,compound,1,5,225,,,"2 x 5, as planned. The lifts went first because the jump area wasn't open.",logged
+2026-10-03-04,2026-10-03,light-lower,Trap bar deadlift,compound,2,5,225,,,,logged
+2026-10-03-05,2026-10-03,light-lower,Smith machine squat,compound,1,5,165,,,"2 x 5 at 165, five over the planned 160.",logged
+2026-10-03-06,2026-10-03,light-lower,Smith machine squat,compound,2,5,165,,,,logged
+2026-10-03-07,2026-10-03,light-lower,Weighted jumps,jump,1,5,20,,,"Two 20 lb dumbbells. After the lifts instead of before, and clearly weaker for it.",logged
+2026-10-03-08,2026-10-03,light-lower,Weighted jumps,jump,2,5,20,,,,logged
+2026-10-03-09,2026-10-03,light-lower,Depth jumps,jump,1,5,,,,"After the weighted jumps this time, also weaker.",logged
+2026-10-03-10,2026-10-03,light-lower,Depth jumps,jump,2,5,,,,,logged
+2026-10-03-11,2026-10-03,light-lower,Lying leg curl,isolation,1,6,110,,,"110 x 6, as planned.",logged
+2026-10-03-12,2026-10-03,light-lower,Lying leg curl,isolation,2,6,110,,,,logged
