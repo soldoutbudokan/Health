@@ -295,3 +295,11 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-03-10,2026-10-03,light-lower,Depth jumps,jump,2,5,,,,,logged
 2026-10-03-11,2026-10-03,light-lower,Lying leg curl,isolation,1,6,110,,,"110 x 6, as planned.",logged
 2026-10-03-12,2026-10-03,light-lower,Lying leg curl,isolation,2,6,110,,,,logged
+2026-10-04-01,2026-10-04,light-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-10-04-02,2026-10-04,light-upper,Pullups,compound,1,5,,,,,logged
+2026-10-04-03,2026-10-04,light-upper,Pullups,compound,2,5,,,,,logged
+2026-10-04-04,2026-10-04,light-upper,Bench press,compound,1,8,135,,,"8, 8, then 7 at 135. The weight wasn't heavy; I was still sore from a couple of days ago.",logged
+2026-10-04-05,2026-10-04,light-upper,Bench press,compound,2,8,135,,,,logged
+2026-10-04-06,2026-10-04,light-upper,Bench press,compound,3,7,135,,,,logged
+2026-10-04-07,2026-10-04,light-upper,Lat pulldown,compound,1,5,130,,,"2 x 5 at 130, a rep short of the planned 130 x 6.",logged
+2026-10-04-08,2026-10-04,light-upper,Lat pulldown,compound,2,5,130,,,,logged
