@@ -28,14 +28,14 @@ date,session,phase,deload,optional,trap_bar,trap_bar_backoff,squat,squat_backoff
 2026-10-03,light-lower,block-1,,,225,,160,,110×6,20,,,"2×4 easy, optional",,,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
 2026-10-04,light-upper,block-1,,,,,,,,,135,,2 sets,130×6,130×6,20,20,20,35,1×10,,"First weekend light upper, two days after Friday's heavy upper instead of three, so keep it light. Bench stays at 135 for the 3 x 8, since the third set on Aug 30 was close to failure. The pullup test moves to Oct 11; a max set this soon after heavy pullups would read low. First Bayesian cable curl: 20 a side is a guess, so if 8 comes with plenty left, go up for the second set and log what the stack says."
 2026-10-05,stretch,block-1,,,,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
-2026-10-06,heavy-lower,block-1,,,280,250,200,180,130,,,,"2×4 easy, optional",,,,,,,,,"Last heavy lower before the deload. Top sets 280 and 200, then back-offs at 250 and 180. 280 is a 10 lb step, but it went for 5 on the 22nd. The second set was what failed, and the back-off answers that."
-2026-10-07,off-a,block-1,,,,,,,,,,,,,,,,,,,,
+2026-10-06,off-a,block-1,,,,,,,,,,,,,,,,,,,,"Swapped with Wednesday's heavy lower for an extra day's rest after three sessions in three days. Keep it light, or skip it."
+2026-10-07,heavy-lower,block-1,,,280,250,200,180,130,,,,"2×4 easy, optional",,,,,,,,,"Moved from Tuesday for an extra day's rest. Top sets 280 and 200, then back-offs at 250 and 180. 280 is a 10 lb step, but it went for 5 on the 22nd. The second set was what failed, and the back-off answers that."
 2026-10-08,heavy-upper,block-1,,,,,,,,,170,155,2×5,140,130×6,20,20,20,,1×10,,"Bench 170 if Friday's 165 moved well, else 165 again and the rows slide another week. Back-offs 155."
 2026-10-09,off-b,block-1,,,,,,,,,,,,,,,,,,,,Or basketball instead.
 2026-10-10,light-lower,block-1,,,225,,165,,120,20,,,"2×4 easy, optional",,,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
 2026-10-11,light-upper,block-1,,,,,,,,,140,,test (9),140,130×6,20,20,20,35,1×10,,"Pullup test as the first set, moved from Oct 4 so it gets three days after the heavy upper: nine is the target. The pulldown holds for it. Fasted. Keep the 3 x 8 smooth, no grinding."
 2026-10-12,stretch,block-1,,,,,,,,,,,,,,,,,,,,"Thanksgiving, and the day before Ottawa. Stretch under tension, or a 30-minute walk. This was the deload week until Sep 30; there is no deload now before the new year."
-2026-10-13,heavy-lower,block-1,,,280,250,200,180,130,,,,"2×4 easy, optional",,,,,,,,,"First heavy lower in Ottawa, on a trap bar and Smith I don't know, so both repeat last Tuesday's numbers. Ask what the trap bar weighs and count it. If today is the travel day, swap with Wednesday's Off A."
+2026-10-13,heavy-lower,block-1,,,280,250,200,180,130,,,,"2×4 easy, optional",,,,,,,,,"First heavy lower in Ottawa, on a trap bar and Smith I don't know, so both repeat last Wednesday's numbers. Ask what the trap bar weighs and count it. If today is the travel day, swap with Wednesday's Off A."
 2026-10-14,off-a,block-1,,,,,,,,,,,,,,,,,,,,Ottawa. Hotel gym or the room; a 35 lb dumbbell stands in for the bell.
 2026-10-15,heavy-upper,block-1,,,,,,,,,175,160,2×5,140×6,130×6,20,20,20,,1×10,,"Ottawa. Bench 175, back-offs 160. The cable stacks won't match home: set them near the planned number and log what the pin says."
 2026-10-16,off-b,block-1,,,,,,,,,,,,,,,,,,,,"Ottawa, or the trip home. Off B in the room if there's 15 minutes."
@@ -49,7 +49,7 @@ date,session,phase,deload,optional,trap_bar,trap_bar_backoff,squat,squat_backoff
 2026-10-24,light-lower,block-2,,,235,,170,,120,20,,,"2×4 easy, optional",,,,,,,,,"Home. Fasted, beltless, jumps first. Focus on bar speed, not weight."
 2026-10-25,light-upper,block-2,,,,,,,,,145,,test (9–10),140×6,140,25,25,20,35,1×10,,"Pullup test as the first set, two weeks after Oct 11. Nine keeps it on track; ten closes the goal early."
 2026-10-26,stretch,block-2,,,,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
-2026-10-27,heavy-lower,block-2,,,290,260,210,190,130×6,,,,"2×4 easy, optional",,,,,,,,,"Back on the home bar and Smith, 10 lbs over Oct 6 on each. If the Ottawa kit felt lighter than home, repeat Oct 20's numbers instead and slide the rows."
+2026-10-27,heavy-lower,block-2,,,290,260,210,190,130×6,,,,"2×4 easy, optional",,,,,,,,,"Back on the home bar and Smith, 10 lbs over Oct 7 on each. If the Ottawa kit felt lighter than home, repeat Oct 20's numbers instead and slide the rows."
 2026-10-28,off-a,block-2,,,,,,,,,,,,,,,,,,,,
 2026-10-29,heavy-upper,block-2,,,,,,,,,180,165,2×5,150,140,25,25,20,,1×10,,"Bench 180, back-offs 165."
 2026-10-30,off-b,block-2,,,,,,,,,,,,,,,,,,,,Or basketball instead.

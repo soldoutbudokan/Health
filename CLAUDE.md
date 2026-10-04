@@ -203,12 +203,12 @@ skipped jump to 195 the same day and runs its old line a week late. That put the
 goals at November 8 (pullups) and November 17 (trap bar and squat together).
 Rows after November 17 are contingency, for stalls. Redrawn again September 29:
 the second set at 270 stopped at 3, so the heavy lower went to back-off sets
-(below), and the owner put the trap bar at 280 on October 6, a weight that went
+(below), and the owner put the trap bar at 280 on October 7, a weight that went
 for 5 on the 22nd. Redrawn September 30: the owner took out the deload in the
 week of October 12, and the contingency one with it — **no deload before the new
 year**, though one may go back in. That week and the next are a work trip to
 Ottawa (October 13–16 and 19–23, home for the weekend), so the heavy days run at
-a gym there. The first heavy lower on the Ottawa kit repeats October 6's numbers,
+a gym there. The first heavy lower on the Ottawa kit repeats October 7's numbers,
 since a new tool is learned at the last settled weight, so the goals now close
 November 8 (pullups), November 10 (trap bar, then holding at 300) and November 17
 (squat). **When the three close, the last stretch is over** and the next block is
