@@ -303,3 +303,7 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-04-06,2026-10-04,light-upper,Bench press,compound,3,7,135,,,,logged
 2026-10-04-07,2026-10-04,light-upper,Lat pulldown,compound,1,5,130,,,"2 x 5 at 130, a rep short of the planned 130 x 6.",logged
 2026-10-04-08,2026-10-04,light-upper,Lat pulldown,compound,2,5,130,,,,logged
+2026-10-04-09,2026-10-04,light-upper,Cable row,compound,1,6,130,,,"2 x 6 at 130 as planned, but the reps were trash.",logged
+2026-10-04-10,2026-10-04,light-upper,Cable row,compound,2,6,130,,,,logged
+2026-10-04-11,2026-10-04,light-upper,Bayesian cable curl,isolation,1,8,20.5,,,"First Bayesian curls, 20.5 a side: 8 then 5 each arm. More rested I could have done more.",logged
+2026-10-04-12,2026-10-04,light-upper,Bayesian cable curl,isolation,2,5,20.5,,,,logged
