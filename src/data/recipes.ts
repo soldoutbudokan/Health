@@ -51,8 +51,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "salad only",
     source: "recipe",
     per: "1 serving (1/6 recipe), no dressing",
-    macros: { calories: 425, protein: 44, carbs: 20, fat: 19, fiber: 4, sodium: 1050 },
-    note: "Based on 6 servings with chicken breasts and finely grated Parmesan. Fibre and sodium estimated from the ingredient list: about 1 kg of romaine and the baguette croutons for the fibre; the store-bought marinated chicken (taken at ~400 mg/100 g raw), the croutons' bread and salt, and the Parmesan for the sodium. The marinade is the unknown, so read sodium as 700–1,500 mg. Thighs add ~40 kcal and 8 g fat.",
+    macros: { calories: 595, protein: 57, carbs: 20, fat: 32, fiber: 4, sodium: 1400 },
+    note: "Based on 6 servings with 1.5 marinated chicken thighs each (3.45 lbs a batch) and finely grated Parmesan; the recipe went up from 2.3 lbs of breasts on Oct 6, so log rows through Oct 5 carry the old 425 kcal. Fibre and sodium estimated from the ingredient list: about 1 kg of romaine and the baguette croutons for the fibre; the chicken (taken at ~400 mg/100 g raw), the croutons' bread and salt, and the Parmesan for the sodium. The marinade is the unknown, so read sodium as 900–2,100 mg. Breasts instead of thighs cut ~60 kcal and 10 g fat.",
     tags: ["salad", "caesar", "chicken", "romaine", "croutons", "meal prep", "dinner"],
   },
   {
@@ -61,8 +61,8 @@ export const RECIPE_FOODS: Food[] = [
     variant: "with 3 tbsp dressing",
     source: "recipe",
     per: "1 serving (1/6 recipe) + 3 tbsp dressing",
-    macros: { calories: 670, protein: 45, carbs: 21, fat: 45, fiber: 4, sodium: 1600 },
-    note: "Based on 6 servings. Fibre and sodium estimated from the ingredient list: the salad-only figures plus 3 tbsp from a 1½-cup batch of dressing, whose sodium is mostly the 0.8 tsp of salt, the mayo, the Dijon and the Worcestershire, about 180 mg a tablespoon. Each extra tablespoon adds ~80 kcal, 9 g fat and ~180 mg sodium. Read sodium as 1,200–2,100 mg.",
+    macros: { calories: 840, protein: 58, carbs: 21, fat: 58, fiber: 4, sodium: 1950 },
+    note: "Based on 6 servings with 1.5 chicken thighs each, the Oct 6 recipe; log rows through Oct 5 carry the old 670 kcal. Fibre and sodium estimated from the ingredient list: the salad-only figures plus 3 tbsp from a 1½-cup batch of dressing, whose sodium is mostly the 0.8 tsp of salt, the mayo, the Dijon and the Worcestershire, about 180 mg a tablespoon. Each extra tablespoon adds ~80 kcal, 9 g fat and ~180 mg sodium. Read sodium as 1,400–2,700 mg.",
     tags: ["salad", "caesar", "chicken", "romaine", "croutons", "dressing", "meal prep", "dinner"],
   },
   {
