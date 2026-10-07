@@ -309,3 +309,13 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-04-12,2026-10-04,light-upper,Bayesian cable curl,isolation,2,5,20.5,,,,logged
 2026-10-04-13,2026-10-04,light-upper,Seated Y raise,isolation,1,5,20,,,,logged
 2026-10-04-14,2026-10-04,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-10-07-01,2026-10-07,heavy-lower,Backwards treadmill walk,warmup,1,,,5,,Five minutes walking backwards instead of the sled.,logged
+2026-10-07-02,2026-10-07,heavy-lower,Hip abduction,warmup,1,,,,,Not in the program. No reps or weight noted.,logged
+2026-10-07-03,2026-10-07,heavy-lower,Glute bridge,warmup,1,,,,,Not in the program. No reps noted.,logged
+2026-10-07-04,2026-10-07,heavy-lower,Seated pancakes,warmup,1,,,,,As normal. No time noted.,logged
+2026-10-07-05,2026-10-07,heavy-lower,Trap bar deadlift,compound,1,5,280,,,"First three reps easy, the fourth medium-hard, the fifth hard.",logged
+2026-10-07-06,2026-10-07,heavy-lower,Trap bar deadlift,compound,2,5,250,,,"Back-off, and oddly harder than the top set.",logged
+2026-10-07-07,2026-10-07,heavy-lower,Smith machine squat,compound,1,5,200,,,Harder than the back-off.,logged
+2026-10-07-08,2026-10-07,heavy-lower,Smith machine squat,compound,2,5,180,,,,logged
+2026-10-07-09,2026-10-07,heavy-lower,Lying leg curl,isolation,1,5,130,,,,logged
+2026-10-07-10,2026-10-07,heavy-lower,Lying leg curl,isolation,2,5,130,,,,logged
