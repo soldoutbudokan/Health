@@ -38,8 +38,9 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * numbers and rows after it Bayesian ones, a side. `curl_backup` followed the
  * same day, inserted after `curl`: the incline dumbbell curl, a hand, for
  * when the cables are taken. It steps on the same dates and is blank before
- * October 4. From October 11 the `curl` numbers end in .5: the home stack
- * starts at 2.5, climbs in 5s and has 1.5 lb add-ons, so 20 can't be set.
+ * October 4. From October 11 the `curl` and `cable_fly` numbers end in .5:
+ * the home stack they share starts at 2.5, climbs in 5s and has 1.5 lb
+ * add-ons, so 20 can't be set.
  *
  * `trap_bar_backoff` and `squat_backoff` came September 29, 2026, each placed
  * after its lift the way `bench_backoff` follows `bench`: the heavy lower
