@@ -246,6 +246,12 @@ below it for one more rep, `120×6` for 125 × 5, which Epley puts within about
 1%; a deload row just rounds down. The page grades those rows on reps as well as
 weight: every set at the planned pin has to reach the reps.
 
+**The curl stack starts at 2.5 and climbs in 5s.** Found on October 8, 2026: the
+home cable stack the Bayesian curl uses has two 1.5 lb add-ons, so 20 can't be
+set and 20.5 can. From October 11 the `curl` column carries the half above each
+old figure (20.5, 25.5, 30.5), and the 5 lb steps still land on the stack.
+`curl_backup` is dumbbells and keeps its round numbers.
+
 **The weighted jump holds; every other jump is bodyweight.** Asked for on
 September 19, 2026 — a prescription for every lift in the schedule, not just the
 ones a goal is named after. An audit of `program.ts` against the plan file found
