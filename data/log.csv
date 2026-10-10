@@ -626,3 +626,9 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-09-dinner-nachos-chipotle,2026-10-09,dinner,Chipotle hot sauce,"mixed into the lentils; taken as Cholula, 1 tbsp",Cholula,1 tbsp (15 mL),1,5,0,1.2,0,0,0,330,packaged,2026-10-10T00:19:46.000Z
 2026-10-09-dinner-nachos-cheddar,2026-10-09,dinner,Cheddar cheese,"shredded, melted over the nachos; ~1/2 cup (~56 g) assumed",,1 slice (~21 g),2.67,85,5.2,0.3,7,0,0.1,130,usda,2026-10-10T00:19:46.000Z
 2026-10-09-dinner-nachos-salsa,2026-10-09,dinner,Salsa,"jarred, tomato; on the nachos",,1 tbsp (15 g),2,5,0.2,1.1,0,0.3,0.6,115,claude,2026-10-10T00:19:46.000Z
+2026-10-10-breakfast-kirkland-chewy-bar,2026-10-10,breakfast,Kirkland Signature Protein Bar,chewy,Kirkland Signature,1 bar (40 g),1,190,10,16,11,6,6,120,packaged,2026-10-10T14:00:46.000Z
+2026-10-10-lunch-egg-burrito,2026-10-10,lunch,Egg Burrito,,,1 burrito (whole recipe),2,440,19.1,38,21.5,2,,780,recipe,2026-10-10T14:00:46.000Z
+2026-10-10-dinner-dannys-mozzarella-sticks,2026-10-10,dinner,Mozzarella Stick,"house-made, crumbed and fried, topped with grated Parmigiano and chives",Danny's Pizza Tavern,1 stick (~80 g),2,310,15,14,21.5,0.5,0.5,530,claude,2026-10-10T14:00:46.000Z
+2026-10-10-dinner-dannys-marinara,2026-10-10,dinner,Marinara sauce,"for dipping the mozzarella sticks, about 2 tbsp assumed",,2 tbsp (~32 g),1,16,0.5,2.6,0.5,0.6,1.7,140,usda,2026-10-10T14:00:46.000Z
+2026-10-10-dinner-dannys-cacio-e-pepe-pizza,2026-10-10,dinner,Cacio e Pepe Pizza,"Chicago tavern-style white pie, cracker-thin; half of a ~14 in pie, split two ways",Danny's Pizza Tavern,1 pizza (~14 in),0.5,1450,73,118,73.5,4.5,3,2900,claude,2026-10-10T14:00:46.000Z
+2026-10-10-dinner-dannys-pepperoni-pizza,2026-10-10,dinner,Pepperoni Pizza,"Chicago tavern-style, cracker-thin, cup-and-char pepperoni; half of a ~14 in pie, split two ways",Danny's Pizza Tavern,1 pizza (~14 in),0.5,1730,83,128,96,6,7,4300,claude,2026-10-10T14:00:46.000Z
