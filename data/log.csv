@@ -622,7 +622,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-09-snack-kirkland-chewy-bar,2026-10-09,snack,Kirkland Signature Protein Bar,chewy,Kirkland Signature,1 bar (40 g),1,190,10,16,11,6,6,120,packaged,2026-10-09T20:11:56.000Z
 2026-10-09-snack-vickies-jalapeno,2026-10-09,snack,Kettle Cooked Potato Chips,Jalapeño,Miss Vickie's,28 chips (50 g),0.8,260,4,29,15,2,1,320,packaged,2026-10-09T20:11:56.000Z
 2026-10-09-dinner-nachos-chips,2026-10-09,dinner,Tortilla Chips,"plain, salted; the base of the lentil nachos, one plate taken as ~60 g",,100 g,0.6,490,7,66,24,4.5,1,450,claude,2026-10-10T00:19:46.000Z
-2026-10-09-dinner-nachos-lentils,2026-10-09,dinner,"Lentils, cooked","nacho topping, 1 cup assumed; sodium blank, cooking salt unknown",,1 cup (198 g),1,230,17.9,39.9,0.8,15.6,3.6,,usda,2026-10-10T00:19:46.000Z
+2026-10-09-dinner-nachos-lentils,2026-10-09,dinner,"Lentils, cooked","cooked from dry, nacho topping, 1 cup assumed; sodium blank, cooking salt unknown",,1 cup (198 g),1,230,17.9,39.9,0.8,15.6,3.6,,usda,2026-10-10T00:19:46.000Z
 2026-10-09-dinner-nachos-chipotle,2026-10-09,dinner,Chipotle hot sauce,"mixed into the lentils; taken as Cholula, 1 tbsp",Cholula,1 tbsp (15 mL),1,5,0,1.2,0,0,0,330,packaged,2026-10-10T00:19:46.000Z
 2026-10-09-dinner-nachos-cheddar,2026-10-09,dinner,Cheddar cheese,"shredded, melted over the nachos; ~1/2 cup (~56 g) assumed",,1 slice (~21 g),2.67,85,5.2,0.3,7,0,0.1,130,usda,2026-10-10T00:19:46.000Z
 2026-10-09-dinner-nachos-salsa,2026-10-09,dinner,Salsa,"jarred, tomato; on the nachos",,1 tbsp (15 g),2,5,0.2,1.1,0,0.3,0.6,115,claude,2026-10-10T00:19:46.000Z
