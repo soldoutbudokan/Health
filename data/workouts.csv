@@ -333,3 +333,15 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-08-12,2026-10-08,heavy-upper,Bayesian cable curl,isolation,1,8,20.5,,,"2 x 8 at 20.5 a side. The stack can't do 20: it starts at 2.5, goes up in 5s, and has two 1.5 lb add-ons.",logged
 2026-10-08-13,2026-10-08,heavy-upper,Bayesian cable curl,isolation,2,8,20.5,,,,logged
 2026-10-08-14,2026-10-08,heavy-upper,Dips,isolation,1,10,,,,,logged
+2026-10-10-01,2026-10-10,light-lower,Sled push + pull,warmup,1,,,5,,,logged
+2026-10-10-02,2026-10-10,light-lower,Depth jumps,jump,1,5,,,,Jumps first this time.,logged
+2026-10-10-03,2026-10-10,light-lower,Depth jumps,jump,2,5,,,,,logged
+2026-10-10-04,2026-10-10,light-lower,Weighted jumps,jump,1,5,20,,,Two 20 lb dumbbells.,logged
+2026-10-10-05,2026-10-10,light-lower,Weighted jumps,jump,2,5,20,,,,logged
+2026-10-10-06,2026-10-10,light-lower,Seated pancakes,warmup,1,,,,,No time noted.,logged
+2026-10-10-07,2026-10-10,light-lower,Trap bar deadlift,compound,1,9,200,,,"200 instead of the planned 225, with nine reps to match it. Not even remotely hard.",logged
+2026-10-10-08,2026-10-10,light-lower,Trap bar deadlift,compound,2,9,200,,,,logged
+2026-10-10-09,2026-10-10,light-lower,Bulgarian split squat,compound,1,5,25,,,"Instead of the Smith squat, since the squat rack was taken. Weight is per dumbbell, 5 per leg. 25 was too easy.",logged
+2026-10-10-10,2026-10-10,light-lower,Bulgarian split squat,compound,2,5,30,,,"Up to 30, and still not close to failure.",logged
+2026-10-10-11,2026-10-10,light-lower,Lying leg curl,isolation,1,5,120,,,"120 x 5, as planned.",logged
+2026-10-10-12,2026-10-10,light-lower,Lying leg curl,isolation,2,5,120,,,,logged
