@@ -345,3 +345,16 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-10-10,2026-10-10,light-lower,Bulgarian split squat,compound,2,5,30,,,"Up to 30, and still not close to failure.",logged
 2026-10-10-11,2026-10-10,light-lower,Lying leg curl,isolation,1,5,120,,,"120 x 5, as planned.",logged
 2026-10-10-12,2026-10-10,light-lower,Lying leg curl,isolation,2,5,120,,,,logged
+2026-10-11-01,2026-10-11,light-upper,Elliptical,warmup,1,,,,,In place of the sled. No time noted.,logged
+2026-10-11-02,2026-10-11,light-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-10-11-03,2026-10-11,light-upper,Pullups,compound,1,8,,,,"All-out test: 8, one short of the nine I was after.",logged
+2026-10-11-04,2026-10-11,light-upper,Pullups,compound,2,3,,,,,logged
+2026-10-11-05,2026-10-11,light-upper,Bench press,compound,1,8,140,,,"3 x 8 at 140. The first set was easy; the third went to failure.",logged
+2026-10-11-06,2026-10-11,light-upper,Bench press,compound,2,8,140,,,,logged
+2026-10-11-07,2026-10-11,light-upper,Bench press,compound,3,8,140,,,,logged
+2026-10-11-08,2026-10-11,light-upper,Lat pulldown,compound,1,6,130,,,"2 x 6 at 130, as planned.",logged
+2026-10-11-09,2026-10-11,light-upper,Lat pulldown,compound,2,6,130,,,,logged
+2026-10-11-10,2026-10-11,light-upper,Cable row,compound,1,5,140,,,"2 x 5 at 140, not the best reps.",logged
+2026-10-11-11,2026-10-11,light-upper,Cable row,compound,2,5,140,,,,logged
+2026-10-11-12,2026-10-11,light-upper,Bayesian cable curl,isolation,1,8,20.5,,,"8 at 20.5, then up to 22.5 for 7, which went to failure.",logged
+2026-10-11-13,2026-10-11,light-upper,Bayesian cable curl,isolation,2,7,22.5,,,,logged
