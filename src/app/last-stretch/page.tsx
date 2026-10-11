@@ -108,7 +108,7 @@ export default function LastStretchPage() {
           <div>
             <dt className="text-sm font-medium">Where it ends</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              Ten pullups on Nov 8, trap bar 300 on Nov 10, squat 225 on Nov 17. Once all
+              Trap bar 300 on Nov 10, squat 225 on Nov 17, ten pullups on Nov 22. Once all
               three are done, the stretch is over, whatever the bench is doing. The rows
               after that are backup: the same goal weights repeated for any lift that
               stalls, and the plan ending Dec 20. The deadline is still Dec 31. There&rsquo;s

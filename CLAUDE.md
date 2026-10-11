@@ -211,7 +211,9 @@ Ottawa (October 13–16 and 19–23, home for the weekend), so the heavy days ru
 a gym there. The first heavy lower on the Ottawa kit repeats October 7's numbers,
 since a new tool is learned at the last settled weight, so the goals now close
 November 8 (pullups), November 10 (trap bar, then holding at 300) and November 17
-(squat). **When the three close, the last stretch is over** and the next block is
+(squat). Redrawn October 11: the pullup test went 8, not the 9 it aimed at, so
+each test slides one and the pullups close November 22, which is now where the
+stretch ends. **When the three close, the last stretch is over** and the next block is
 cardio, whatever the bench is doing — the owner said so on September 7. Don't extend the stretch to
 chase the bench.
 
