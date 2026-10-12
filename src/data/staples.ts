@@ -1526,4 +1526,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "Table salt is 39% sodium, so a pinch of 0.3–0.5 g is 120–200 mg; added Oct 1. Kosher salt has bigger crystals, so a pinch of it carries less.",
     tags: ["salt", "pinch", "sea salt", "seasoning", "sodium"],
   },
+  {
+    id: "staple-salted-caramel-truffle-small",
+    name: "Chocolate truffle",
+    variant: "salted caramel, small",
+    source: "claude",
+    per: "1 small truffle (~10 g)",
+    gramsPerServing: 10,
+    macros: { calories: 50, protein: 0.5, carbs: 5.5, fat: 3, fiber: 0.3, sugar: 5, sodium: 20 },
+    note: "Estimated on Oct 12 for a small salted caramel chocolate truffle, no brand noted, at about 500 kcal per 100 g. A Lindor ball is 12.5 g and 75 kcal for scale. Call it 35–80 kcal, mostly the size; sodium 10–50 mg with the salt.",
+    tags: ["truffle", "chocolate", "salted caramel", "caramel", "candy", "dessert", "sweet"],
+  },
 ];
