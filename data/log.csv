@@ -649,3 +649,8 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-12-snack-kirkland-chewy-bars,2026-10-12,snack,Kirkland Signature Protein Bar,chewy,Kirkland Signature,1 bar (40 g),2,190,10,16,11,6,6,120,packaged,2026-10-12T20:10:23.000Z
 2026-10-12-snack-harvest-strawberry-banana-smoothie,2026-10-12,snack,Strawberry Banana Smoothie,"banana, strawberries, vanilla yogurt, orange juice, dates",HARVEST Clean Eats,1 smoothie (~16 oz),1,390,9,91,2.5,8,68,90,claude,2026-10-12T21:11:57.000Z
 2026-10-12-snack-harvest-biosteel-whey-booster,2026-10-12,snack,100% Whey Protein,"Vanilla, 1 scoop; the booster in the Harvest smoothie",BioSteel,1 scoop (30 g),1,110,24,3,1,1,1,90,packaged,2026-10-12T21:11:57.000Z
+2026-10-12-dinner-via-brisket-mac,2026-10-12,dinner,Beef brisket on mac and cheese,"with Brussels sprouts, business class hot dish",VIA Rail,1 hot dish,1,820,53,57,42,4,17,1500,claude,2026-10-12T23:13:32.000Z
+2026-10-12-dinner-via-ciabatta-roll,2026-10-12,dinner,Ciabatta roll,"plain; the VIA Rail bread roll, taken as ~68 g",,1 roll (~85 g),0.8,213,7.2,42.5,1.7,1.7,,485,claude,2026-10-12T23:13:32.000Z
+2026-10-12-dinner-via-butter,2026-10-12,dinner,Butter,"salted; one portion cup, taken as ~7 g",,1 tbsp (14 g),0.5,100,0.1,0,11.4,0,0,90,usda,2026-10-12T23:13:32.000Z
+2026-10-12-dinner-via-mozzarella-pear,2026-10-12,dinner,Fresh mozzarella with poached pear,"business class starter, balsamic glaze, greens",VIA Rail,1 starter,1,190,8,20,9,2,15,140,claude,2026-10-12T23:13:32.000Z
+2026-10-12-dinner-via-chocolate-caramel-cake,2026-10-12,dinner,Chocolate salted caramel cake,small slice,VIA Rail,1 slice (~60 g),1,240,3,30,12,1,21,150,claude,2026-10-12T23:13:32.000Z
