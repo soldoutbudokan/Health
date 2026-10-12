@@ -644,5 +644,5 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-11-dinner-cacio-e-pepe-pecorino,2026-10-11,dinner,Pecorino Romano,"grated into the cacio e pepe; 50 g assumed",,100 g,0.5,387,31.8,3.6,26.9,0,0.7,1433,usda,2026-10-12T00:02:07.000Z
 2026-10-11-dinner-premier-shake,2026-10-11,dinner,Premier Protein Shake,flavour not noted,Premier Protein,1 bottle (11 fl oz / 325 ml),1,160,30,5,3,,1,200,packaged,2026-10-12T00:02:07.000Z
 2026-10-12-breakfast-sbux-protein-latte,2026-10-12,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-12T13:40:05.000Z
-2026-10-12-lunch-mcd-garlic-pepper-mcnuggets,2026-10-12,lunch,Garlic & Black Pepper Chicken McNuggets,"10 piece, no sauce",McDonald's,10 pieces (~160 g),1,420,24,25,25,,,840,claude,2026-10-12T16:52:03.000Z
-2026-10-12-lunch-mcd-spicy-mcveggie,2026-10-12,lunch,Spicy McVeggie,"breaded veggie patty, lettuce, habanero sauce",McDonald's,1 sandwich (~190 g),1,450,11,56,20,,,750,claude,2026-10-12T16:52:03.000Z
+2026-10-12-lunch-mcd-garlic-pepper-mcnuggets,2026-10-12,lunch,Garlic & Black Pepper Chicken McNuggets,"10 piece, no sauce",McDonald's,10 pieces (~160 g),1,420,26,25,23,1,0,780,claude,2026-10-12T16:52:03.000Z
+2026-10-12-lunch-mcd-spicy-mcveggie,2026-10-12,lunch,Spicy McVeggie,"breaded veggie patty, lettuce, habanero sauce",McDonald's,1 sandwich (~190 g),1,450,11,56,20,5,9,710,claude,2026-10-12T16:52:03.000Z
