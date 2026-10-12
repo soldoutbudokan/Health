@@ -1849,4 +1849,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Split out of McDonald's Canada's nutrition calculator for this and 10 garlic and black pepper McNuggets together (see that entry). The macros are FatSecret's for a 190 g sandwich, the sodium is the plain McVeggie's, and nearly all the order's fibre and sugar are put here, since the nuggets carry almost none. The patty is vegetables and soy in a crumb, which is why the protein is low for a sandwich.",
     tags: ["mcveggie", "spicy mcveggie", "veggie burger", "vegetarian", "habanero", "sandwich", "mcdonald's", "mcdonalds", "fast food"],
   },
+  {
+    id: "harvest-strawberry-banana-smoothie",
+    name: "Strawberry Banana Smoothie",
+    variant: "banana, strawberries, vanilla yogurt, orange juice, dates",
+    brand: "HARVEST Clean Eats",
+    source: "claude",
+    per: "1 smoothie (~16 oz)",
+    macros: {
+      calories: 390,
+      protein: 9,
+      carbs: 91,
+      fat: 2.5,
+      fiber: 8,
+      sugar: 68,
+      sodium: 90,
+    },
+    note: "Estimated on Oct 12 from the ingredient list on Harvest's menu; they post no nutrition or cup size. Built as a 16 oz cup: a medium banana, 120 g of strawberries, 125 g of low-fat vanilla yogurt, half a cup of orange juice and about 30 g of dates. Call it 300–520 kcal, mostly the cup size and the dates; sodium 60–150 mg. A whey booster is a separate entry (BioSteel vanilla).",
+    tags: ["smoothie", "strawberry", "banana", "strawberry banana", "yogurt", "dates", "orange juice", "harvest", "harvest clean eats", "ottawa", "drink"],
+  },
 ];

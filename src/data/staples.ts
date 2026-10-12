@@ -21,6 +21,18 @@ export const PACKAGED_FOODS: Food[] = [
     tags: ["whey", "protein", "powder", "scoop", "on", "optimum", "vanilla"],
   },
   {
+    id: "pkg-biosteel-whey-vanilla-scoop",
+    name: "100% Whey Protein",
+    variant: "Vanilla, 1 scoop",
+    brand: "BioSteel",
+    source: "packaged",
+    per: "1 scoop (30 g)",
+    gramsPerServing: 30,
+    macros: { calories: 110, protein: 24, carbs: 3, fat: 1, fiber: 1, sugar: 1, sodium: 90 },
+    note: "BioSteel Canada's vanilla panel via search summaries on Oct 12; their site was blocked. It's the whey booster Harvest Clean Eats adds to a smoothie, logged as one scoop. A BioSteel FAQ says 28 g protein a scoop, but the panel says 24 and the panel wins.",
+    tags: ["whey", "protein", "powder", "scoop", "biosteel", "vanilla", "booster", "harvest", "smoothie"],
+  },
+  {
     id: "staple-maple-syrup",
     name: "Maple syrup",
     source: "usda",
