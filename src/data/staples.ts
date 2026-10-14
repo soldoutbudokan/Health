@@ -1581,4 +1581,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "Estimated on Oct 13 for a cafeteria side: skin-on potatoes roasted in about 5 g of oil per 100 g. Call it 120–200 kcal per 100 g, mostly the oil, and sodium 100–400 mg with the salt. A side scoop is about 150 g.",
     tags: ["potatoes", "roasted potatoes", "roast potatoes", "side", "cafeteria", "catering"],
   },
+  {
+    id: "staple-caesar-dressing-tbsp",
+    name: "Caesar dressing",
+    variant: "creamy, regular",
+    source: "usda",
+    per: "1 tbsp (14.7 g)",
+    gramsPerServing: 14.7,
+    macros: { calories: 80, protein: 0.3, carbs: 0.5, fat: 8.5, fiber: 0, sodium: 178 },
+    note: "USDA regular Caesar dressing (FDC 169055), 542 kcal and 1,209 mg sodium per 100 g, read off a mirror on Oct 14 since FoodData Central was blocked. Sugar left blank because the mirror didn't give it. Deli and market dressings vary; sodium runs 150–250 mg a tablespoon.",
+    tags: ["caesar", "caesar dressing", "dressing", "salad dressing", "sauce", "condiment"],
+  },
 ];
