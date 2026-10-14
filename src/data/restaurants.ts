@@ -1927,4 +1927,23 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Oct 12 from a photo of a small wrapped slice, taken as 45 g at about 400 kcal per 100 g, which is usual for a chocolate cake with a caramel layer. First built at 60 g and cut the same evening, as with the hot dish. Call it 130–260 kcal, mostly the size; sodium 60–180 mg with the salt in the caramel.",
     tags: ["via rail", "via", "train", "cake", "chocolate", "salted caramel", "caramel", "dessert", "business class"],
   },
+  {
+    id: "thali-ottawa-maha-thali-chicken-lamb",
+    name: "Maha Thali",
+    variant: "chicken and lamb, with rice, naan and sides",
+    brand: "Thali (Ottawa)",
+    source: "claude",
+    per: "1 thali",
+    macros: {
+      calories: 1480,
+      protein: 69,
+      carbs: 148,
+      fat: 67.5,
+      fiber: 14.5,
+      sugar: 20,
+      sodium: 3300,
+    },
+    note: "Estimated on Oct 13; Thali posts no nutrition and its site was blocked. Reviews say the Maha Thali is two proteins with basmati rice, naan, a papadum and several sides, so it's built as a 150 g bowl each of chicken and lamb curry, 175 g rice, a naan brushed with ghee, dal, two small vegetable curries, raita and pickle. Call it 1,150–1,900 kcal, mostly the portions and the oil in the curries; sodium 2,300–4,500 mg. No dessert is included.",
+    tags: ["thali", "maha thali", "indian", "kerala", "curry", "chicken", "lamb", "naan", "rice", "dal", "ottawa", "restaurant", "dinner"],
+  },
 ];
