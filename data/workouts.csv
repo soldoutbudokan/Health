@@ -367,3 +367,15 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-13-07,2026-10-13,heavy-lower,Smith machine squat,compound,1,5,205,,,"205, since this Smith can't load 200. So easy that the bar probably weighs something different from the one at home.",logged
 2026-10-13-08,2026-10-13,heavy-lower,Smith machine squat,compound,2,5,185,,,"Back-off at 185, since 180 can't be loaded either.",logged
 2026-10-13-09,2026-10-13,heavy-lower,Leg curl,isolation,1,,,,,"To failure on a machine different enough from home that the weight wouldn't mean much, so none is logged. Sets not noted.",logged
+2026-10-14-01,2026-10-14,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-10-14-02,2026-10-14,heavy-upper,Pullups,compound,1,5,,,,"2 x 5. The order was all over the place, going by which machines were free.",logged
+2026-10-14-03,2026-10-14,heavy-upper,Pullups,compound,2,5,,,,,logged
+2026-10-14-04,2026-10-14,heavy-upper,Cable row,compound,1,6,140,,,"2 x 6 at 140 on a different machine from home, so the number is rough.",logged
+2026-10-14-05,2026-10-14,heavy-upper,Cable row,compound,2,6,140,,,,logged
+2026-10-14-06,2026-10-14,heavy-upper,Smith machine bench press,compound,1,5,155,,,"Smith instead of the barbell. Felt much, much heavier than the bench at home, so it doesn't compare.",logged
+2026-10-14-07,2026-10-14,heavy-upper,Smith machine bench press,compound,2,5,135,,,Back-offs at 135.,logged
+2026-10-14-08,2026-10-14,heavy-upper,Smith machine bench press,compound,3,5,135,,,,logged
+2026-10-14-09,2026-10-14,heavy-upper,Seated Y raise,isolation,1,5,20,,,,logged
+2026-10-14-10,2026-10-14,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-10-14-11,2026-10-14,heavy-upper,Bayesian cable curl,isolation,1,11,,,,"11, then 6 on a heavier pin. The stack read 80 and 100 a side, which can't be the real load, so no weight is logged.",logged
+2026-10-14-12,2026-10-14,heavy-upper,Bayesian cable curl,isolation,2,6,,,,,logged
