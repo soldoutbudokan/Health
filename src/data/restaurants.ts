@@ -1948,11 +1948,13 @@ export const RESTAURANT_FOODS: Food[] = [
   },
   /*
    * Nando's Canada, from a photo of the dine-in menu in Ottawa on Oct 14, 2026.
-   * The menu prints calories only, so the entries below take their calories
-   * from it and split them into protein, carbs and fat by estimate; the quarter
-   * breast and the fries also match Nando's US panel. Sodium is estimated
-   * throughout. For a large side, log the regular entry at large ÷ regular
-   * calories. The rest of the menu, in calories, for anything not built yet:
+   * The menu prints calories only. Where Nando's figures from another country
+   * turned up (US, UK, South Africa, Australia, mostly via calorie databases),
+   * an entry takes that panel's protein, carbs and fat and scales them to the
+   * Canadian calories, and its note names the panel. Where none did, the split
+   * is estimated from the dish. Fibre, sugar and sodium are estimated unless a
+   * note says otherwise. For a large side, log the regular entry at large ÷
+   * regular calories. The rest of the menu, in calories:
    *
    *   Chicken: 3 boneless thighs 950 (doesn't square with the 140 boneless
    *     thigh extra, so check it first), chicken livers with garlic bread 920,
@@ -1981,8 +1983,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "1 quarter breast",
-    macros: { calories: 430, protein: 38, carbs: 2, fat: 30, fiber: 0, sodium: 750 },
-    note: "430 kcal on Nando's Canada's menu (photo, Oct 14), the same as Nando's US allergen guide, which gives 38 g protein and 750 mg sodium. Fat is worked back from the calories. Sodium 600–950 mg with the spice level.",
+    macros: { calories: 430, protein: 61, carbs: 0, fat: 21, fiber: 0, sodium: 750 },
+    note: "430 kcal on Nando's Canada's menu (photo, Oct 14). The split is the UK quarter breast (290 kcal, 42 g protein, 14 g fat) scaled to 430. A summary of the US guide gave 38 g protein, which can't be right next to the 240 kcal butterfly breast, so call it 55–65 g. Sodium is the US figure.",
     tags: ["peri-peri", "peri peri", "chicken", "chicken breast", "quarter chicken", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
@@ -1992,8 +1994,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "1 quarter leg",
-    macros: { calories: 340, protein: 32, carbs: 2, fat: 22, fiber: 0, sodium: 650 },
-    note: "340 kcal on Nando's Canada's menu (photo, Oct 14). Thigh and drumstick, skin on; the split is estimated from roast leg meat with the baste, so read the protein as 28–36 g. Sodium 450–900 mg.",
+    macros: { calories: 340, protein: 38, carbs: 1, fat: 20, fiber: 0, sodium: 570 },
+    note: "340 kcal on Nando's Canada's menu (photo, Oct 14). No leg panel turned up, so the split and sodium are South Africa's chicken per 100 g (26 g protein, 13 g fat, much like roast leg with skin) scaled to 340. Protein 34–42 g, sodium 450–800 mg.",
     tags: ["peri-peri", "peri peri", "chicken", "chicken leg", "thigh", "drumstick", "quarter chicken", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
@@ -2003,8 +2005,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "1 half chicken",
-    macros: { calories: 760, protein: 70, carbs: 4, fat: 52, fiber: 0, sodium: 1400 },
-    note: "760 kcal on Nando's Canada's menu (photo, Oct 14), which is the breast and leg quarters together less 10, so the split is those two added up. Protein 65–75 g, sodium 1,050–1,850 mg.",
+    macros: { calories: 760, protein: 90, carbs: 1, fat: 44, fiber: 0, sodium: 1260 },
+    note: "760 kcal on Nando's Canada's menu (photo, Oct 14). South Africa's half chicken scaled to 760 gives 88 g protein and the two quarters here add to 99, so it's set at 90; call it 85–100. Sodium scaled from the same panel, 1,000–1,600 mg.",
     tags: ["peri-peri", "peri peri", "chicken", "half chicken", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
@@ -2014,8 +2016,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "1 butterfly breast",
-    macros: { calories: 240, protein: 40, carbs: 2, fat: 8, fiber: 0, sodium: 600 },
-    note: "240 kcal on Nando's Canada's menu (photo, Oct 14). Skinless, so it is mostly protein: about 140 g of grilled breast with the marinade. Protein 36–44 g, sodium 400–800 mg.",
+    macros: { calories: 240, protein: 44, carbs: 0, fat: 7, fiber: 0, sodium: 450 },
+    note: "240 kcal on Nando's Canada's menu (photo, Oct 14). The split is the UK butterfly breast (310–330 kcal, 57–60 g protein, 7–11 g fat) scaled to 240. Skinless, so nearly all protein: call it 40–46 g. Sodium 300–800 mg.",
     tags: ["peri-peri", "peri peri", "chicken", "chicken breast", "butterfly", "boneless", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
@@ -2025,8 +2027,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "2 skewers",
-    macros: { calories: 260, protein: 40, carbs: 4, fat: 9, fiber: 0, sodium: 700 },
-    note: "Two skewers are 260 kcal on Nando's Canada's menu (photo, Oct 14); a single extra skewer is 130, or 0.5. Split estimated as grilled breast tenders with the baste. Protein 35–44 g, sodium 450–900 mg.",
+    macros: { calories: 260, protein: 40, carbs: 7, fat: 8, fiber: 0, sodium: 450 },
+    note: "Two skewers are 260 kcal on Nando's Canada's menu (photo, Oct 14); a single extra skewer is 130, or 0.5. The split is the UK pair of thigh skewers (310 kcal, 46 g protein, 8 g carbs, 9 g fat) scaled to 260; these are tenders, so if anything leaner. Sodium 300–900 mg.",
     tags: ["peri-peri", "peri peri", "chicken", "skewers", "tenders", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
@@ -2036,8 +2038,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "5 wings",
-    macros: { calories: 320, protein: 28, carbs: 2, fat: 22, fiber: 0, sodium: 600 },
-    note: "Five are 320 kcal on Nando's Canada's menu (photo, Oct 14) and ten are 640, or 2. Split estimated from roast wings with the skin on. Protein 24–32 g, sodium 400–900 mg.",
+    macros: { calories: 320, protein: 34, carbs: 3, fat: 19, fiber: 0, sodium: 580 },
+    note: "Five are 320 kcal on Nando's Canada's menu (photo, Oct 14) and ten are 640, or 2. The split and sodium are an old Australian five-wing panel (363 kcal, 38 g protein, 22 g fat, 651 mg) scaled to 320. Protein 30–38 g.",
     tags: ["peri-peri", "peri peri", "chicken", "wings", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
@@ -2047,8 +2049,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "1 regular side",
-    macros: { calories: 420, protein: 4, carbs: 48, fat: 23, fiber: 4, sodium: 1480 },
-    note: "420 kcal regular and 610 large (1.45) on Nando's Canada's menu (photo, Oct 14), the same as a US listing that gives 4 g protein, 48 g carbs and 1,480 mg sodium. Fat is worked back from the calories and the fibre is usual for about 150 g of fries. Sodium 900–1,500 mg, mostly the PERi salt.",
+    macros: { calories: 420, protein: 5, carbs: 54, fat: 20, fiber: 4, sodium: 1480 },
+    note: "420 kcal regular and 610 large (1.45) on Nando's Canada's menu (photo, Oct 14). The split is a US regular (300 kcal, 4 g protein, 40 g carbs, 15 g fat) scaled to 420; another US listing gives 420 kcal and 1,480 mg sodium outright. Sodium 900–1,500 mg, mostly the PERi salt.",
     tags: ["fries", "chips", "peri-peri", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2058,8 +2060,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "1 regular side",
-    macros: { calories: 240, protein: 5, carbs: 42, fat: 6, fiber: 2, sugar: 2, sodium: 600 },
-    note: "240 kcal regular and 480 large (2) on Nando's Canada's menu (photo, Oct 14). Split estimated as about 170 g of cooked rice with peppers, onion, spice and a little oil. Sodium 400–900 mg.",
+    macros: { calories: 240, protein: 5.5, carbs: 50, fat: 2, fiber: 2, sugar: 2, sodium: 600 },
+    note: "240 kcal regular and 480 large (2) on Nando's Canada's menu (photo, Oct 14). The split is Australia's regular spicy rice (262 kcal, 5.7 g protein, 54 g carbs, 2 g fat) scaled to 240. Sodium 400–900 mg.",
     tags: ["rice", "spiced rice", "spicy rice", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2070,7 +2072,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "claude",
     per: "1 regular side",
     macros: { calories: 230, protein: 2, carbs: 27, fat: 13, fiber: 2.5, sugar: 2, sodium: 800 },
-    note: "230 kcal regular and 470 large (2) on Nando's Canada's menu (photo, Oct 14). The split is the US red skin mash scaled down from its 260 kcal, which is what the Oct 14 dinner was first logged at. Sodium 600–1,050 mg.",
+    note: "230 kcal regular and 470 large (2) on Nando's Canada's menu (photo, Oct 14). The split, fibre, sugar and sodium are the US red skin mash (260 kcal) scaled to 230. Sodium 600–1,050 mg.",
     tags: ["mash", "mashed potatoes", "garlic mash", "potatoes", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2081,7 +2083,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "claude",
     per: "1 regular side",
     macros: { calories: 270, protein: 1, carbs: 12, fat: 24, fiber: 2, sugar: 9, sodium: 350 },
-    note: "270 kcal regular and 530 large (2) on Nando's Canada's menu (photo, Oct 14). Split estimated as a creamy mayo slaw, so most of it is fat. Sodium 200–500 mg.",
+    note: "270 kcal regular and 530 large (2) on Nando's Canada's menu (photo, Oct 14). No panel turned up, so it's estimated as a creamy mayo slaw, mostly fat. Sodium 200–500 mg.",
     tags: ["coleslaw", "slaw", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2091,8 +2093,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "1 regular side",
-    macros: { calories: 160, protein: 4, carbs: 26, fat: 5, fiber: 3, sugar: 6, sodium: 200 },
-    note: "160 kcal regular and 310 large (2) on Nando's Canada's menu (photo, Oct 14). Split estimated as one cob with a little butter or oil. Sodium 50–400 mg, depending on the seasoning.",
+    macros: { calories: 160, protein: 6.5, carbs: 25.5, fat: 3.5, fiber: 3, sugar: 6, sodium: 200 },
+    note: "160 kcal regular and 310 large (2) on Nando's Canada's menu (photo, Oct 14). The split is Australia's regular cob (322 kcal, 12 g protein, 46 g carbs, 6.5 g fat) scaled to 160. Sodium 50–400 mg with the seasoning.",
     tags: ["corn", "corn on the cob", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2103,7 +2105,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "claude",
     per: "1 regular side",
     macros: { calories: 130, protein: 3, carbs: 12, fat: 8, fiber: 4, sugar: 5, sodium: 350 },
-    note: "130 kcal regular and 260 large (2) on Nando's Canada's menu (photo, Oct 14). The vegetables change, so the split is a guess at roasted mixed vegetables in oil. Sodium 200–550 mg.",
+    note: "130 kcal regular and 260 large (2) on Nando's Canada's menu (photo, Oct 14). No panel turned up, so it's estimated as roasted mixed vegetables in oil; the vegetables change with the season. Sodium 200–550 mg.",
     tags: ["vegetables", "veg", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2114,7 +2116,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "claude",
     per: "1 regular side",
     macros: { calories: 35, protein: 1.5, carbs: 6, fat: 0.5, fiber: 2, sugar: 3, sodium: 50 },
-    note: "35 kcal regular and 70 large (2) on Nando's Canada's menu (photo, Oct 14). At 35 it can't carry much dressing, so it is leaves and vegetables. Sodium 20–150 mg.",
+    note: "35 kcal regular and 70 large (2) on Nando's Canada's menu (photo, Oct 14). No panel turned up, so it's estimated as leaves and vegetables, since 35 kcal can't carry much dressing. Sodium 20–150 mg.",
     tags: ["salad", "casa salad", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2124,8 +2126,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "1 regular side",
-    macros: { calories: 340, protein: 13, carbs: 36, fat: 16, fiber: 1.5, sugar: 4, sodium: 800 },
-    note: "340 kcal regular and 670 large (2) on Nando's Canada's menu (photo, Oct 14). Split estimated as a baked mac and cheese. Sodium 550–1,100 mg, mostly the cheese.",
+    macros: { calories: 340, protein: 13, carbs: 44, fat: 12.5, fiber: 1.5, sugar: 4, sodium: 1200 },
+    note: "340 kcal regular and 670 large (2) on Nando's Canada's menu (photo, Oct 14). The split and sodium are South Africa's single mac 'n cheese (321 kcal, 12 g protein, 41 g carbs, 11 g fat) scaled to 340. Sodium 800–1,500 mg.",
     tags: ["mac and cheese", "peri mac", "pasta", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2136,7 +2138,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "claude",
     per: "1 regular side",
     macros: { calories: 470, protein: 12, carbs: 18, fat: 39, fiber: 3, sugar: 3, sodium: 900 },
-    note: "470 kcal regular and 940 large (2) on Nando's Canada's menu (photo, Oct 14). Split estimated from romaine, PERi pita croutons, parmesan and dressing, so most of it is the dressing. Sodium 650–1,250 mg.",
+    note: "470 kcal regular and 940 large (2) on Nando's Canada's menu (photo, Oct 14). No panel turned up, so it's estimated from romaine, PERi pita croutons, parmesan and dressing, mostly the dressing. Sodium 650–1,250 mg.",
     tags: ["caesar", "caesar salad", "salad", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2147,7 +2149,7 @@ export const RESTAURANT_FOODS: Food[] = [
     source: "claude",
     per: "1 regular side",
     macros: { calories: 170, protein: 5, carbs: 14, fat: 11, fiber: 5, sugar: 3, sodium: 350 },
-    note: "170 kcal on Nando's Canada's menu (photo, Oct 14), which offers them in regular only. Split estimated as roasted sprouts in oil. Sodium 200–550 mg.",
+    note: "170 kcal on Nando's Canada's menu (photo, Oct 14), which offers them in regular only. No panel turned up, so it's estimated as roasted sprouts in oil. Sodium 200–550 mg.",
     tags: ["brussels sprouts", "sprouts", "vegetables", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
@@ -2156,8 +2158,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "1 tart",
-    macros: { calories: 180, protein: 3, carbs: 22, fat: 9, fiber: 0.5, sugar: 11, sodium: 90 },
-    note: "Not on the menu page photographed on Oct 14; the 180 kcal is Nando's Canada's 2023 menu, via a search summary. The protein, carbs and fat are split as for a typical 60 g custard tart, and the sodium is a guess at 60–130 mg.",
+    macros: { calories: 180, protein: 2.7, carbs: 19, fat: 10.5, fiber: 0.5, sugar: 10.5, sodium: 90 },
+    note: "Not on the menu page photographed on Oct 14; the 180 kcal is Nando's Canada's 2023 menu, via a search summary. The split and sugar are a generic pastel de nata (176 kcal, 2.7 g protein, 19 g carbs, 10 g fat) scaled to 180. Sodium 60–130 mg.",
     tags: ["pastel de nata", "nata", "naughty natas", "custard tart", "portuguese", "dessert", "nandos", "nando's", "chain", "restaurant"],
   },
 ];
