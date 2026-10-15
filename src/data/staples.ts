@@ -1550,6 +1550,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["core power", "fairlife", "protein shake", "shake", "milk", "chocolate", "protein", "drink", "packaged"],
   },
   {
+    id: "pkg-milk2go-sport-pro-vanilla",
+    name: "Milk 2 Go Sport Pro High Protein Milk Shake",
+    variant: "Vanilla",
+    brand: "Milk2Go",
+    source: "packaged",
+    per: "1 bottle (473 mL)",
+    gramsPerServing: 473,
+    macros: { calories: 220, protein: 38, carbs: 16, fat: 0.5, fiber: 0, sugar: 15, sodium: 180 },
+    note: "The Canadian panel via Wholesale Club and Open Food Facts listings on Oct 15. Save-On-Foods lists 14 g sugar; everything else agrees. The 325 mL Sport bottle is a different shake, with 26 g protein.",
+    tags: ["milk2go", "milk 2 go", "sport pro", "protein shake", "shake", "milk", "vanilla", "protein", "drink", "packaged"],
+  },
+  {
     id: "staple-mayonnaise-tbsp",
     name: "Mayonnaise",
     variant: "regular",
