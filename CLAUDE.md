@@ -298,13 +298,14 @@ for the reasoning; if the two disagree, the document wins and the file is stale.
 
 ## Before inventing a food, check the catalog
 
-60 entries live in `src/data/`, and reusing one keeps the numbers consistent:
+The catalog lives in `src/data/`, and reusing an entry keeps the numbers consistent:
 
 | File | What's in it |
 |---|---|
 | `recipes.ts` | 35 entries from the [Templates](https://github.com/soldoutbudokan/Templates/tree/master/Recipes) recipes, one per serving-suggestion column |
 | `staples.ts` | 21 staples plus packaged goods (bars, shakes, the Starbucks latte) |
 | `pantry.ts` | 4 components of the Toronto catered plate |
+| `restaurants.ts` | Restaurant and chain dishes. Nando's Canada is there in full: every chicken cut and side as an entry, and the rest of the menu's calories in the comment above them, read off the dine-in menu on October 14, 2026 |
 
 ```bash
 grep -n -i -A6 'chilli' src/data/recipes.ts
