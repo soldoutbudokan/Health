@@ -1946,6 +1946,26 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Oct 13 from a photo; Thali posts no nutrition. The bowls are small: about 110 g of chicken curry with one piece, 100 g of lamb curry, 180 g of basmati, one Kerala parotta, a papadum, and 60–70 g each of dal, pumpkin, black chickpeas, yogurt pachadi, raita and a side hidden behind the papadum. First built at 1,480 from reviews, then 2,030 from the photo with fuller bowls and the semiya payasam, and cut the same evening because the bowls were smaller and the payasam went uneaten. Call it 1,050–1,700 kcal, mostly the parotta and the curry oil; sodium 1,800–3,800 mg.",
     tags: ["thali", "maha thali", "indian", "kerala", "curry", "chicken", "lamb", "parotta", "rice", "dal", "ottawa", "restaurant", "dinner"],
   },
+  {
+    id: "mrfez-chicken-shawarma-salad",
+    name: "Chicken shawarma salad",
+    variant: "light garlic sauce and tahini",
+    brand: "Mr. Fez (Ottawa)",
+    source: "claude",
+    per: "1 bowl (~420 g)",
+    gramsPerServing: 420,
+    macros: {
+      calories: 730,
+      protein: 56,
+      carbs: 14,
+      fat: 50,
+      fiber: 3,
+      sugar: 4,
+      sodium: 1550,
+    },
+    note: "Estimated on Oct 15 from a photo; Mr. Fez posts no nutrition. A heaped 32 oz bowl: about 220 g of chicken shawarma, taken as thigh at 210 kcal per 100 g, on roughly 150 g of salad mostly hidden under it, with about 2 tbsp of garlic sauce and a spoonful of tahini, ordered light on sauce. Call it 550–950 kcal, mostly the garlic sauce, which is nearly all oil, and how deep the chicken goes. Sodium 1,100–2,300 mg from the marinade and sauces.",
+    tags: ["shawarma", "chicken", "salad", "bowl", "garlic sauce", "toum", "tahini", "lebanese", "middle eastern", "mr fez", "mr. fez", "ottawa", "restaurant", "lunch"],
+  },
   /*
    * Nando's Canada, from a photo of the dine-in menu in Ottawa on Oct 14, 2026.
    * The menu prints calories only. Where Nando's figures from another country
