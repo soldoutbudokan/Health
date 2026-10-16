@@ -1976,8 +1976,8 @@ export const RESTAURANT_FOODS: Food[] = [
    * note says otherwise. For a large side, log the regular entry at large ÷
    * regular calories. The rest of the menu, in calories:
    *
-   *   Chicken: 3 boneless thighs 950 (doesn't square with the 140 boneless
-   *     thigh extra, so check it first), chicken livers with garlic bread 920,
+   *   Chicken: 3 boneless thighs 950 (likely with sides; see the boneless
+   *     thigh entry), chicken livers with garlic bread 920,
    *     whole chicken 1,520.
    *   Snacks: garlic bread 530, hummus with PERi-PERi drizzle 640, spicy mixed
    *     olives 150, grilled halloumi sticks and dip 640.
@@ -2039,6 +2039,17 @@ export const RESTAURANT_FOODS: Food[] = [
     macros: { calories: 240, protein: 44, carbs: 0, fat: 7, fiber: 0, sodium: 450 },
     note: "240 kcal on Nando's Canada's menu (photo, Oct 14). The split is the UK butterfly breast (310–330 kcal, 57–60 g protein, 7–11 g fat) scaled to 240. Skinless, so nearly all protein: call it 40–46 g. Sodium 300–800 mg.",
     tags: ["peri-peri", "peri peri", "chicken", "chicken breast", "butterfly", "boneless", "nandos", "nando's", "chain", "restaurant", "dinner"],
+  },
+  {
+    id: "nandos-boneless-thigh",
+    name: "Boneless chicken thigh",
+    variant: "PERi-PERi",
+    brand: "Nando's",
+    source: "claude",
+    per: "1 boneless thigh",
+    macros: { calories: 140, protein: 13.7, carbs: 0, fat: 9.5, fiber: 0, sodium: 200 },
+    note: "140 kcal as an extra on Nando's Canada's menu (photo, Oct 14). The split is the US boneless thigh (140 kcal, 13 g protein, 9 g fat), scaled up the 5% its own sum falls short. The menu's 950 for three thighs doesn't square with this, the US and UK panels (120–140 a thigh) or the 610 two-thigh sandwich, so it likely counts two sides. Sodium 120–350 mg a thigh.",
+    tags: ["peri-peri", "peri peri", "chicken", "chicken thigh", "thighs", "boneless", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
     id: "nandos-chicken-tender-skewers",
