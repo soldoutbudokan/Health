@@ -1967,8 +1967,9 @@ export const RESTAURANT_FOODS: Food[] = [
     tags: ["shawarma", "chicken", "salad", "bowl", "garlic sauce", "toum", "tahini", "lebanese", "middle eastern", "mr fez", "mr. fez", "ottawa", "restaurant", "lunch"],
   },
   /*
-   * Nando's Canada, from a photo of the dine-in menu in Ottawa on Oct 14, 2026.
-   * The menu prints calories only. Where Nando's figures from another country
+   * Nando's Canada, from a photo of the dine-in menu in Ottawa on Oct 14, 2026,
+   * checked against nandos.ca on Oct 16; where the two differ, the site's
+   * figure is used. Both print calories only. Where Nando's figures from another country
    * turned up (US, UK, South Africa, Australia, mostly via calorie databases),
    * an entry takes that panel's protein, carbs and fat and scales them to the
    * Canadian calories, and its note names the panel. Where none did, the split
@@ -1976,15 +1977,15 @@ export const RESTAURANT_FOODS: Food[] = [
    * note says otherwise. For a large side, log the regular entry at large ÷
    * regular calories. The rest of the menu, in calories:
    *
-   *   Chicken: 3 boneless thighs 950 (likely with sides; see the boneless
-   *     thigh entry), chicken livers with garlic bread 920,
-   *     whole chicken 1,520.
-   *   Snacks: garlic bread 530, hummus with PERi-PERi drizzle 640, spicy mixed
+   *   Chicken: double leg 680, double whole breast 860 (two bone-in breasts),
+   *     10 whole wings 640, chicken livers with garlic bread 920, whole
+   *     chicken 1,520.
+   *   Snacks: garlic bread 530, hummus with PERi-PERi drizzle 840, spicy mixed
    *     olives 150, grilled halloumi sticks and dip 640.
-   *   Handhelds, before sides: chicken sandwich 530, garlic bread CLT 700, The
-   *     Chickie 980, Nandocas' Choice 870, Thigh & Mighty sandwich 610, chicken
-   *     wrap 560, classic chicken Caesar wrap 700, mushroom and halloumi wrap
-   *     920, and a burger at 430 whose name is cut off (likely the veggie one).
+   *   Handhelds, before sides: chicken sandwich 390, garlic bread CLT 700, The
+   *     Chickle 980 (menu photo; the site gives none), Nandocas' Choice 870,
+   *     Thigh & Mighty sandwich 610, chicken wrap 560, classic chicken Caesar
+   *     wrap 700, mushroom and halloumi wrap 920, veggie burger 430.
    *   Bowls and salads: chicken and spiced rice bowl 1,080–1,200, PERi-PERi
    *     chicken bowl 730–1,090, rainbow bowl 1,010–1,420, classic chicken
    *     Caesar salad 940–1,370, Mediterranean salad 370–760.
@@ -1993,7 +1994,7 @@ export const RESTAURANT_FOODS: Food[] = [
    *     slice 120, half avocado 140, portobello slices 70, pineapple slice 20,
    *     PERinaise 80, PERi-PERi drizzle 140, chilli jam 45, bottled PERi-PERi
    *     sauce 0–5 a serving.
-   *   Platters, per person: full 730–1,310, family 630–1,280, no bones
+   *   Platters, per person: full 730–1,310, family 630–1,330, no bones
    *     550–1,200, jumbo 640–1,220.
    */
   {
@@ -2032,23 +2033,23 @@ export const RESTAURANT_FOODS: Food[] = [
   {
     id: "nandos-butterfly-breast",
     name: "Boneless butterfly breast",
-    variant: "PERi-PERi, skinless",
+    variant: "PERi-PERi, skin-on",
     brand: "Nando's",
     source: "claude",
     per: "1 butterfly breast",
     macros: { calories: 240, protein: 44, carbs: 0, fat: 7, fiber: 0, sodium: 450 },
-    note: "240 kcal on Nando's Canada's menu (photo, Oct 14). The split is the UK butterfly breast (310–330 kcal, 57–60 g protein, 7–11 g fat) scaled to 240. Skinless, so nearly all protein: call it 40–46 g. Sodium 300–800 mg.",
+    note: "240 kcal on Nando's Canada's menu (photo, Oct 14), and skin-on per nandos.ca on Oct 16; it was first entered here as skinless. The split is the UK butterfly breast (310–330 kcal, 57–60 g protein, 7–11 g fat), also skin-on, scaled to 240. 240 is low beside the same menu's 430 for a bone-in quarter breast, so call protein 34–46 g. Sodium 300–800 mg.",
     tags: ["peri-peri", "peri peri", "chicken", "chicken breast", "butterfly", "boneless", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
-    id: "nandos-boneless-thigh",
-    name: "Boneless chicken thigh",
-    variant: "PERi-PERi",
+    id: "nandos-boneless-thighs-3",
+    name: "Boneless chicken thighs",
+    variant: "PERi-PERi, skin-on",
     brand: "Nando's",
     source: "claude",
-    per: "1 boneless thigh",
-    macros: { calories: 140, protein: 13.7, carbs: 0, fat: 9.5, fiber: 0, sodium: 200 },
-    note: "140 kcal as an extra on Nando's Canada's menu (photo, Oct 14). The split is the US boneless thigh (140 kcal, 13 g protein, 9 g fat), scaled up the 5% its own sum falls short. The menu's 950 for three thighs doesn't square with this, the US and UK panels (120–140 a thigh) or the 610 two-thigh sandwich, so it likely counts two sides. Sodium 120–350 mg a thigh.",
+    per: "3 boneless thighs",
+    macros: { calories: 950, protein: 80, carbs: 2, fat: 69, fiber: 0, sodium: 1300 },
+    note: "950 kcal for the three on nandos.ca (Oct 16), skin-on, sides not included. That is 317 a thigh, against 140 for an extra thigh on the dine-in menu, about 195 in a 2024 Nando's guide (two at 390) and the 610 Thigh & Mighty with two thighs in a bun, so it runs high for its own menu. The split is built as three ~115 g skin-on thighs plus about 20 g of oil in the baste; call protein 60–95 g, depending on whether the thighs or the baste fill the gap. Sodium 900–1,900 mg.",
     tags: ["peri-peri", "peri peri", "chicken", "chicken thigh", "thighs", "boneless", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
