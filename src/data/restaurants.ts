@@ -1966,6 +1966,26 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Oct 15 from a photo; Mr. Fez posts no nutrition. A heaped 32 oz bowl: about 190 g of chicken shawarma, taken as thigh at 210 kcal per 100 g, on about 200 g of salad, with about 2 tbsp of garlic sauce and a spoonful of tahini, ordered light on sauce. First built at 730 with 220 g of chicken and cut the same day when told much of the bowl was vegetables. Call it 520–880 kcal, mostly the garlic sauce, which is nearly all oil; sodium 1,000–2,100 mg.",
     tags: ["shawarma", "chicken", "salad", "bowl", "garlic sauce", "toum", "tahini", "lebanese", "middle eastern", "mr fez", "mr. fez", "ottawa", "restaurant", "lunch"],
   },
+  {
+    id: "laurier-burgers-chicken-caesar-salad",
+    name: "Chicken Caesar salad",
+    variant: "with bacon",
+    brand: "Burger shop on Laurier (Ottawa)",
+    source: "claude",
+    per: "1 takeout box (~400 g)",
+    gramsPerServing: 400,
+    macros: {
+      calories: 800,
+      protein: 57,
+      carbs: 20,
+      fat: 54,
+      fiber: 4,
+      sugar: 4,
+      sodium: 1800,
+    },
+    note: "Estimated on Oct 16 from a photo. The receipt reads 'Ma… Handmade Burgers', 407 Laurier Ave W, with the name cut off, and nothing about the place turned up online. A 9 × 6 takeout box: about 150 g of romaine, 140 g of grilled chicken, 20 g of bacon, 20 g of croutons, a little Parmesan, and about 4 tbsp of creamy Caesar poured over the top. Call it 600–1,050 kcal, mostly the dressing, which covers nearly everything; sodium 1,200–2,600 mg, spread across the chicken, bacon and dressing.",
+    tags: ["caesar", "caesar salad", "salad", "chicken", "bacon", "croutons", "burgers", "ottawa", "restaurant", "lunch"],
+  },
   /*
    * Nando's Canada, from a photo of the dine-in menu in Ottawa on Oct 14, 2026,
    * checked against nandos.ca on Oct 16; where the two differ, the site's

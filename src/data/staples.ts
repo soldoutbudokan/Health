@@ -1550,6 +1550,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["core power", "fairlife", "protein shake", "shake", "milk", "chocolate", "protein", "drink", "packaged"],
   },
   {
+    id: "pkg-core-power-26g-vanilla",
+    name: "Core Power 26g High Protein Milk Shake",
+    variant: "Vanilla",
+    brand: "fairlife",
+    source: "packaged",
+    per: "1 bottle (414 mL)",
+    gramsPerServing: 414,
+    macros: { calories: 170, protein: 26, carbs: 6, fat: 4.5, fiber: 1, sugar: 5, sodium: 270 },
+    note: "Coca-Cola Canada's panel for the 414 mL vanilla bottle, matched by Voilà's listing, via search on Oct 16. The summary gave no fat, so the 4.5 g is the US 14 fl oz panel, which closes the sum at 169. US listings say 260 mg sodium where Canada says 270. Same bottle as the 42 g, with less protein in it.",
+    tags: ["core power", "fairlife", "protein shake", "shake", "milk", "vanilla", "protein", "drink", "packaged"],
+  },
+  {
     id: "pkg-milk2go-sport-pro-vanilla",
     name: "Milk 2 Go Sport Pro High Protein Milk Shake",
     variant: "Vanilla",
