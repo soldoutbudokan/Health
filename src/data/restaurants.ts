@@ -2048,8 +2048,8 @@ export const RESTAURANT_FOODS: Food[] = [
     brand: "Nando's",
     source: "claude",
     per: "3 boneless thighs",
-    macros: { calories: 950, protein: 80, carbs: 2, fat: 69, fiber: 0, sodium: 1300 },
-    note: "950 kcal for the three on nandos.ca (Oct 16), skin-on, sides not included. That is 317 a thigh, against 140 for an extra thigh on the dine-in menu, about 195 in a 2024 Nando's guide (two at 390) and the 610 Thigh & Mighty with two thighs in a bun, so it runs high for its own menu. The split is built as three ~115 g skin-on thighs plus about 20 g of oil in the baste; call protein 60–95 g, depending on whether the thighs or the baste fill the gap. Sodium 900–1,900 mg.",
+    macros: { calories: 690, protein: 59, carbs: 2, fat: 49, fiber: 0, sodium: 950 },
+    note: "nandos.ca lists the three at 950 (Oct 16), skin-on, sides not included. That is 317 a thigh, against 140 for an extra thigh on the dine-in menu, about 195 in a 2024 Nando's guide and under 200 in the two-thigh Thigh & Mighty, so it's taken as 690, about 230 a thigh, in between. Built as three ~85 g skin-on thighs plus about 12 g of oil in the baste; call it 420–950 kcal and 45–70 g protein. Sodium 650–1,400 mg.",
     tags: ["peri-peri", "peri peri", "chicken", "chicken thigh", "thighs", "boneless", "nandos", "nando's", "chain", "restaurant", "dinner"],
   },
   {
