@@ -1562,6 +1562,16 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["core power", "fairlife", "protein shake", "shake", "milk", "vanilla", "protein", "drink", "packaged"],
   },
   {
+    id: "pkg-natursource-sweet-heat-mix",
+    name: "Sweet Heat mix",
+    brand: "naturSource",
+    source: "claude",
+    per: "1 pack (~20 g)",
+    macros: { calories: 110, protein: 3.5, carbs: 8, fat: 7.5, fiber: 1, sugar: 3, sodium: 120 },
+    note: "The 110 kcal is the pack's, as given on Oct 16 for one handed out on VIA Rail; no panel turned up online. The split is a typical sweet-and-spicy nut mix scaled to 110: naturSource's other mixes run about 150 kcal, 11 g fat, 12 g carbs and 5 g protein per 28 g, and Truly Good's Sweet Heat 170 kcal and 180 mg sodium per 30 g. Sodium 70–180 mg.",
+    tags: ["natursource", "sweet heat", "snack mix", "nut mix", "nuts", "trail mix", "via rail", "train", "snack", "packaged"],
+  },
+  {
     id: "pkg-milk2go-sport-pro-vanilla",
     name: "Milk 2 Go Sport Pro High Protein Milk Shake",
     variant: "Vanilla",
