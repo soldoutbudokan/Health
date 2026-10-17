@@ -386,8 +386,8 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-17-05,2026-10-17,light-lower,Depth jumps,jump,2,5,,,,,logged
 2026-10-17-06,2026-10-17,light-lower,Weighted jumps,jump,1,5,25,,,"Two 25 lb dumbbells, since the 20s weren't available. Easy.",logged
 2026-10-17-07,2026-10-17,light-lower,Weighted jumps,jump,2,5,25,,,,logged
-2026-10-17-08,2026-10-17,light-lower,Trap bar deadlift,compound,1,5,240,,,"240, 10 over the planned 230. Didn't feel heavy, but the back was talking a bit.",logged
-2026-10-17-09,2026-10-17,light-lower,Trap bar deadlift,compound,2,5,240,,,,logged
+2026-10-17-08,2026-10-17,light-lower,Trap bar deadlift,compound,1,5,230,,,"Didn't feel heavy, but the back was talking a bit.",logged
+2026-10-17-09,2026-10-17,light-lower,Trap bar deadlift,compound,2,5,230,,,,logged
 2026-10-17-10,2026-10-17,light-lower,Smith machine squat,compound,1,5,165,,,Easy.,logged
 2026-10-17-11,2026-10-17,light-lower,Smith machine squat,compound,2,5,165,,,,logged
 2026-10-17-12,2026-10-17,light-lower,Lying leg curl,isolation,1,5,120,,,"120 x 5, as planned.",logged
