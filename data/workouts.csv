@@ -379,3 +379,16 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-14-10,2026-10-14,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
 2026-10-14-11,2026-10-14,heavy-upper,Bayesian cable curl,isolation,1,11,,,,"11, then 6 on a heavier pin. The stack read 80 and 100 a side, which can't be the real load, so no weight is logged.",logged
 2026-10-14-12,2026-10-14,heavy-upper,Bayesian cable curl,isolation,2,6,,,,,logged
+2026-10-17-01,2026-10-17,light-lower,Hip abduction,warmup,1,,,,,Not in the program. No reps or weight noted.,logged
+2026-10-17-02,2026-10-17,light-lower,Glute bridge,warmup,1,,,,,Not in the program. No reps noted.,logged
+2026-10-17-03,2026-10-17,light-lower,Seated pancakes,warmup,1,,,,,No time noted.,logged
+2026-10-17-04,2026-10-17,light-lower,Depth jumps,jump,1,5,,,,,logged
+2026-10-17-05,2026-10-17,light-lower,Depth jumps,jump,2,5,,,,,logged
+2026-10-17-06,2026-10-17,light-lower,Weighted jumps,jump,1,5,25,,,"Two 25 lb dumbbells, since the 20s weren't available. Easy.",logged
+2026-10-17-07,2026-10-17,light-lower,Weighted jumps,jump,2,5,25,,,,logged
+2026-10-17-08,2026-10-17,light-lower,Trap bar deadlift,compound,1,5,240,,,"240, 10 over the planned 230. Didn't feel heavy, but the back was talking a bit.",logged
+2026-10-17-09,2026-10-17,light-lower,Trap bar deadlift,compound,2,5,240,,,,logged
+2026-10-17-10,2026-10-17,light-lower,Smith machine squat,compound,1,5,165,,,Easy.,logged
+2026-10-17-11,2026-10-17,light-lower,Smith machine squat,compound,2,5,165,,,,logged
+2026-10-17-12,2026-10-17,light-lower,Lying leg curl,isolation,1,5,120,,,"120 x 5, as planned.",logged
+2026-10-17-13,2026-10-17,light-lower,Lying leg curl,isolation,2,5,120,,,,logged
