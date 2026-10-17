@@ -2274,4 +2274,15 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Not on the menu page photographed on Oct 14; the 180 kcal is Nando's Canada's 2023 menu, via a search summary. The split and sugar are a generic pastel de nata (176 kcal, 2.7 g protein, 19 g carbs, 10 g fat) scaled to 180. Sodium 60–130 mg.",
     tags: ["pastel de nata", "nata", "naughty natas", "custard tart", "portuguese", "dessert", "nandos", "nando's", "chain", "restaurant"],
   },
+  {
+    id: "bombay-methi-matar-malai",
+    name: "Methi Matar Malai",
+    brand: "The Bombay (Toronto)",
+    source: "claude",
+    per: "1 order (~450 g)",
+    gramsPerServing: 450,
+    macros: { calories: 900, protein: 24, carbs: 45, fat: 70, fiber: 10, sugar: 15, sodium: 1300 },
+    note: "No published nutrition, so built from the menu's description: peas, grated paneer and fresh fenugreek in a cream gravy. Taken as 150 g peas, 50 g paneer, 80 g cream, 20 g cashew and 25 g butter or oil, plus onion and spice. Call it 600–1,200 kcal; the cream and butter are the unknowns. Sodium 650–1,950 mg.",
+    tags: ["methi", "matar", "mutter", "malai", "methi matar malai", "peas", "paneer", "fenugreek", "curry", "indian", "vegetarian", "bombay", "the bombay", "toronto", "restaurant"],
+  },
 ];
