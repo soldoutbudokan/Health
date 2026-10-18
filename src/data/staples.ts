@@ -131,6 +131,18 @@ export const PACKAGED_FOODS: Food[] = [
     tags: ["paratha", "flatbread", "bread", "shana", "frozen", "indian", "pakistani"],
   },
   {
+    id: "pkg-deep-homestyle-paratha",
+    name: "Paratha",
+    variant: "Homestyle",
+    brand: "Deep",
+    source: "packaged",
+    per: "1 paratha (~66 g)",
+    gramsPerServing: 66,
+    macros: { calories: 220, protein: 5, carbs: 32, fat: 8, sodium: 310 },
+    note: "Deep's Homestyle Paratha panel off a US ShopRite listing, via search summaries on Oct 18; the site was blocked. The 5-count pack is 11.7 oz, so about 66 g a piece. Fibre and sugar are blank because the summary didn't carry them. A calorie-database entry for the same piece says 215 kcal but 560 mg sodium, so the sodium is the soft number.",
+    tags: ["paratha", "flatbread", "bread", "deep", "homestyle", "frozen", "indian"],
+  },
+  {
     id: "pkg-gatorade-caramel-bar",
     name: "Gatorade Recover Whey Protein Bar",
     variant: "Chocolate Caramel",
