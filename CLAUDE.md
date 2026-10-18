@@ -252,7 +252,8 @@ weight: every set at the planned pin has to reach the reps.
 2026: the home cable machine the Bayesian curl and the cable fly share has two
 1.5 lb add-ons, so 20 can't be set and 20.5 can. From October 11 the `curl` and
 `cable_fly` columns carry the half above each old figure (curl 20.5, 25.5, 30.5;
-fly 35.5), and the 5 lb steps still land on the stack. `curl_backup` is
+fly 35.5), and the 5 lb steps still land on the stack. The fly's figure is both
+handles together, so 22.5 a hand logs as 45. `curl_backup` is
 dumbbells and keeps its round numbers.
 
 **The weighted jump holds; every other jump is bodyweight.** Asked for on
