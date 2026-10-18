@@ -392,3 +392,18 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-17-11,2026-10-17,light-lower,Smith machine squat,compound,2,5,165,,,,logged
 2026-10-17-12,2026-10-17,light-lower,Lying leg curl,isolation,1,5,120,,,"120 x 5, as planned.",logged
 2026-10-17-13,2026-10-17,light-lower,Lying leg curl,isolation,2,5,120,,,,logged
+2026-10-18-01,2026-10-18,light-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-10-18-02,2026-10-18,light-upper,Pullups,compound,1,5,,,,"2 x 5, the last couple of reps hard.",logged
+2026-10-18-03,2026-10-18,light-upper,Pullups,compound,2,5,,,,,logged
+2026-10-18-04,2026-10-18,light-upper,Bench press,compound,1,5,140,,,"3 x 5 at 140. The first set was easy, the second fine, and the last couple of reps of the third hard.",logged
+2026-10-18-05,2026-10-18,light-upper,Bench press,compound,2,5,140,,,,logged
+2026-10-18-06,2026-10-18,light-upper,Bench press,compound,3,5,140,,,,logged
+2026-10-18-07,2026-10-18,light-upper,Lat pulldown,compound,1,5,140,,,"2 x 5 at 140, up from 130. The second set was a real push.",logged
+2026-10-18-08,2026-10-18,light-upper,Lat pulldown,compound,2,5,140,,,,logged
+2026-10-18-09,2026-10-18,light-upper,Cable row,compound,1,5,140,,,2 x 5 at 140. The second set was pretty hard.,logged
+2026-10-18-10,2026-10-18,light-upper,Cable row,compound,2,5,140,,,,logged
+2026-10-18-11,2026-10-18,light-upper,Seated Y raise,isolation,1,5,20,,,,logged
+2026-10-18-12,2026-10-18,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-10-18-13,2026-10-18,light-upper,Bayesian cable curl,isolation,1,8,22.5,,,2 x 8 at 22.5. The second set went to failure.,logged
+2026-10-18-14,2026-10-18,light-upper,Bayesian cable curl,isolation,2,8,22.5,,,,logged
+2026-10-18-15,2026-10-18,light-upper,Cable fly,isolation,1,5,22.5,,,"One set of 5 at 22.5 a hand, to failure.",logged
