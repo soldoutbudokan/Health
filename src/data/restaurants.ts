@@ -2079,7 +2079,7 @@ export const RESTAURANT_FOODS: Food[] = [
    *   Chicken: double leg 680, double whole breast 860 (two bone-in breasts),
    *     10 whole wings 640, chicken livers with garlic bread 920, whole
    *     chicken 1,520.
-   *   Snacks: garlic bread 530, hummus with PERi-PERi drizzle 840, spicy mixed
+   *   Snacks: hummus with PERi-PERi drizzle 840, spicy mixed
    *     olives 150, grilled halloumi sticks and dip 640.
    *   Handhelds, before sides: chicken sandwich 390, garlic bread CLT 700, The
    *     Chickle 980 (menu photo; the site gives none), Nandocas' Choice 870,
@@ -2282,6 +2282,16 @@ export const RESTAURANT_FOODS: Food[] = [
     macros: { calories: 170, protein: 5, carbs: 14, fat: 11, fiber: 5, sugar: 3, sodium: 350 },
     note: "170 kcal on Nando's Canada's menu (photo, Oct 14), which offers them in regular only. No panel turned up, so it's estimated as roasted sprouts in oil. Sodium 200–550 mg.",
     tags: ["brussels sprouts", "sprouts", "vegetables", "side", "nandos", "nando's", "chain", "restaurant"],
+  },
+  {
+    id: "nandos-garlic-bread",
+    name: "Garlic bread",
+    brand: "Nando's",
+    source: "claude",
+    per: "1 order",
+    macros: { calories: 530, protein: 12.5, carbs: 56, fat: 27.5, fiber: 3, sugar: 4, sodium: 825 },
+    note: "530 kcal on Nando's Canada's menu (photo, Oct 14), listed as a snack. The split, sugar and sodium are Nando's Australia's regular garlic bread (388 kcal, 9.2 g protein, 41 g carbs, 20 g fat, 605 mg sodium, via FatSecret, updated May 2026) scaled to 530. An older Australian listing has half the fat, so call the fat 15–30 g and the sodium 650–1,100 mg. Fibre is estimated from the bread.",
+    tags: ["garlic bread", "bread", "garlic butter", "snack", "side", "nandos", "nando's", "chain", "restaurant"],
   },
   {
     id: "nandos-pastel-de-nata",
