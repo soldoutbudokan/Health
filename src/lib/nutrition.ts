@@ -277,6 +277,22 @@ export interface HitRate {
 }
 
 /**
+ * Which of the day's two targets a total met. `both` is a day on target;
+ * `protein` means the calories went over, `calories` that protein came up
+ * short of the band's floor. Over the band's top is still a hit.
+ */
+export type TargetStatus = "both" | "protein" | "calories" | "neither";
+
+export function targetStatus(
+  t: { calories: number; protein: number },
+  goals: Goals,
+): TargetStatus {
+  const cal = t.calories <= goals.calories;
+  const prot = t.protein >= goals.proteinMin;
+  return cal && prot ? "both" : prot ? "protein" : cal ? "calories" : "neither";
+}
+
+/**
  * How often both targets were met: calories at or under the goal and protein
  * at or over the band's floor. Asked for on October 20, 2026.
  *
@@ -303,14 +319,11 @@ export function hitRate(
     t.protein += e.macros.protein * e.servings;
     byDate.set(e.date, t);
   }
-  const onTarget = (calories: number, protein: number) =>
-    calories <= goals.calories && protein >= goals.proteinMin;
-
   const days: HitRate = { hit: 0, of: 0 };
   const byWeek = new Map<string, { calories: number; protein: number; n: number }>();
   for (const [date, t] of byDate) {
     days.of++;
-    if (onTarget(t.calories, t.protein)) days.hit++;
+    if (targetStatus(t, goals) === "both") days.hit++;
     const monday = addDays(date, -((parseDateKey(date).getDay() + 6) % 7));
     const w = byWeek.get(monday) ?? { calories: 0, protein: 0, n: 0 };
     w.calories += t.calories;
@@ -323,7 +336,8 @@ export function hitRate(
   for (const [monday, w] of byWeek) {
     if (addDays(monday, 6) >= before) continue;
     weeks.of++;
-    if (onTarget(w.calories / w.n, w.protein / w.n)) weeks.hit++;
+    const avg = { calories: w.calories / w.n, protein: w.protein / w.n };
+    if (targetStatus(avg, goals) === "both") weeks.hit++;
   }
   return { days, weeks };
 }

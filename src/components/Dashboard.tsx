@@ -23,6 +23,7 @@ import { MealList } from "@/components/MealList";
 import { GapClosers, StatTile } from "@/components/StatTiles";
 import { TrendChart, type TrendBreak, type TrendPoint } from "@/components/TrendChart";
 import { BodyweightChart } from "@/components/BodyweightChart";
+import { TargetCalendar } from "@/components/TargetCalendar";
 
 interface Props {
   /** The whole log, parsed from `data/log.csv` on the build machine. */
@@ -314,6 +315,15 @@ export function Dashboard({
           hint={`${hits.home.weeks.hit} of ${hits.home.weeks.of} on weekly averages · ${hits.all.weeks.hit} of ${hits.all.weeks.of} counting breaks`}
         />
       </div>
+
+      <TargetCalendar
+        entries={entries}
+        goals={goals}
+        builtOn={builtOn}
+        breaks={breaks}
+        selected={date}
+        onSelect={onDateChange}
+      />
 
       {/* Gap closers — only when there's actually a gap to close. */}
       {progress.protein.toMin > 0 && dayEntries.length > 0 && (
