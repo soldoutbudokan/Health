@@ -225,7 +225,7 @@ export const RESTAURANT_FOODS: Food[] = [
       sugar: 7,
       sodium: 1350,
     },
-    note: "The Ottawa meal matrix's lunch order, taken from it on Oct 19. Subway Canada lists the 6-inch at 450 kcal and 30 g protein as built; the second portion of chicken and the mustard in place of mayo are estimated, so call it 440–540 kcal. Sodium and sugar aren't in the matrix: they start from US listings for the plain 6-inch (540–750 mg, 5–6 g sugar) and add the extra chicken, mustard and pickles, so call the sodium 1,000–1,800 mg. Keeping the mayo adds about 80 kcal.",
+    note: "The Ottawa meal matrix's lunch order, taken from it on Oct 19. Subway Canada lists the 6-inch at 450 kcal and 30 g protein as built; the second portion of chicken and the mustard in place of mayo are estimated, so call it 440–540 kcal. Sodium and sugar aren't in the matrix: they start from US listings for the plain 6-inch (540–750 mg, 5–6 g sugar) and add the extra chicken, mustard and pickles, so call the sodium 1,000–1,800 mg. Keeping the mayo adds about 80 kcal. Italian Herbs & Cheese bread in place of multigrain adds about 40 kcal, 2 g fat and 150 mg sodium and takes 2 g of fibre off, from third-party listings of the two breads (200 vs 230–250 kcal, 360 vs 440–580 mg).",
     tags: ["subway", "sub", "sandwich", "chicken", "rotisserie", "fresh fit", "double meat", "restaurant", "takeout", "lunch", "ottawa"],
   },
   {
