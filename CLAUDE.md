@@ -399,6 +399,11 @@ standing (day-independent) elements are few because they are historical context,
 not a day's record: the week strip and the lbs-moved chart in the training
 column, and the bodyweight chart in the food column — moved there on August 9,
 2026, because bodyweight follows diet more than it follows any single session.
+The days- and weeks-on-target tiles joined them on October 20, 2026, by request
+(`hitRate()`): a day is on target at or under the calorie goal with protein at or
+over the band's floor, a week on its average over the days logged in it. Both
+leave out the diet breaks and the unfinished build day, with the figure counting
+breaks given beside them.
 
 **A plan slot with a set count pools its alternatives.** `comparePlan()` counts
 incline bench toward the heavy-day bench 3–4 × 5 (revised August 5, 2026 — see

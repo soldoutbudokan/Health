@@ -8,7 +8,7 @@ import type {
   TrainingBreak,
   WorkoutSet,
 } from "@/lib/trainingTypes";
-import { loggedDates } from "@/lib/nutrition";
+import { loggedDates, type HitRate } from "@/lib/nutrition";
 import { bodyweightSeries } from "@/lib/training";
 import { Dashboard } from "@/components/Dashboard";
 import { TrainingDay } from "@/components/TrainingDay";
@@ -25,6 +25,7 @@ export function TodayView({
   builtOn,
   builtHour,
   streak,
+  hits,
   sets,
   sessions,
   breaks,
@@ -36,6 +37,7 @@ export function TodayView({
   builtOn: string;
   builtHour: number;
   streak: number;
+  hits: Record<"home" | "all", { days: HitRate; weeks: HitRate }>;
   sets: WorkoutSet[];
   sessions: Session[];
   breaks: TrainingBreak[];
@@ -69,6 +71,7 @@ export function TodayView({
           builtOn={builtOn}
           builtHour={builtHour}
           streak={streak}
+          hits={hits}
           bodyweight={bodyweight}
           breaks={dietBreaks}
           date={date}

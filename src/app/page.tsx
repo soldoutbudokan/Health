@@ -6,7 +6,7 @@ import {
   readSessions,
   readWorkouts,
 } from "@/lib/trainingFile";
-import { proteinStreak, toDateKey } from "@/lib/nutrition";
+import { hitRate, proteinStreak, toDateKey } from "@/lib/nutrition";
 import { dietBreaks } from "@/lib/training";
 import { TodayView } from "@/components/TodayView";
 
@@ -18,15 +18,16 @@ import { TodayView } from "@/components/TodayView";
  * only ever run on the build machine; what ships to the browser is JSON baked
  * into the HTML. The client half owns nothing but which day you are looking at.
  *
- * The two clock-derived values are computed here rather than in the browser.
- * `proteinStreak` calls `toDateKey()` internally, and anything that reads the
- * clock during render produces one answer while pre-rendering and a different
- * one on hydration.
+ * The clock-derived values are computed here rather than in the browser.
+ * `proteinStreak` calls `toDateKey()` internally, `hitRate` needs to know
+ * which day is unfinished, and anything that reads the clock during render
+ * produces one answer while pre-rendering and a different one on hydration.
  */
 export default function Page() {
   const entries = readLog();
   const goals = readGoals();
   const breaks = readBreaks();
+  const diet = dietBreaks(breaks);
   const now = new Date();
   const today = toDateKey(now);
 
@@ -40,10 +41,14 @@ export default function Page() {
       builtOn={today}
       builtHour={now.getHours()}
       streak={proteinStreak(entries, goals)}
+      hits={{
+        home: hitRate(entries, goals, today, diet),
+        all: hitRate(entries, goals, today, []),
+      }}
       sets={readWorkouts()}
       sessions={readSessions()}
       breaks={breaks}
-      dietBreaks={dietBreaks(breaks)}
+      dietBreaks={diet}
       checkins={readCheckins()}
     />
   );

@@ -6,6 +6,7 @@ import type { Goals, LogEntry } from "@/lib/types";
 import {
   addDays,
   computeProgress,
+  type HitRate,
   entriesForDate,
   loggedDates,
   microTotals,
@@ -33,6 +34,9 @@ interface Props {
   builtHour: number;
   /** Computed server-side, because `proteinStreak` reads the clock. */
   streak: number;
+  /** Days and weeks on target, outside the diet breaks and with them. Also
+      server-side: which day is unfinished depends on the clock. */
+  hits: Record<"home" | "all", { days: HitRate; weeks: HitRate }>;
   /** Bodyweight readings — training-file data that renders with the food. */
   bodyweight: BodyweightPoint[];
   /** Shaded on the trend charts, so a week away doesn't read as a collapse. */
@@ -41,6 +45,8 @@ interface Props {
   date: string;
   onDateChange: (date: string) => void;
 }
+
+const pct = (r: HitRate) => (r.of > 0 ? `${Math.round((r.hit / r.of) * 100)}%` : "—");
 
 /**
  * The dashboard. Every number on it is derived from props — there is no store,
@@ -59,6 +65,7 @@ export function Dashboard({
   builtOn,
   builtHour,
   streak,
+  hits,
   bodyweight,
   breaks,
   date,
@@ -234,9 +241,10 @@ export function Dashboard({
         )}
       </section>
 
-      {/* KPI row. Back to 2×2 at lg, where the dashboard shares the page with
-          the training column and four-across tiles would be crushed. */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
+      {/* KPI row. Back to two across at lg, where the dashboard shares the
+          page with the training column and three-across tiles would be
+          crushed. */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2">
         {isSnapshotDay ? (
           <StatTile
             label="Protein pace"
@@ -291,6 +299,19 @@ export function Dashboard({
               : "No days logged yet"
           }
           tone={logged7 > 0 && avg7.protein >= goals.proteinMin ? "good" : "neutral"}
+        />
+        {/* Standing, like the streak: they ignore the selected day, and the
+            build day, which isn't over. The lead figure leaves the diet breaks
+            out, since a trip isn't a day the targets were set for. */}
+        <StatTile
+          label="Days on target"
+          value={pct(hits.home.days)}
+          hint={`${hits.home.days.hit} of ${hits.home.days.of} at ≤${goals.calories.toLocaleString()} kcal and ${goals.proteinMin}g+ · ${pct(hits.all.days)} counting breaks`}
+        />
+        <StatTile
+          label="Weeks on target"
+          value={pct(hits.home.weeks)}
+          hint={`${hits.home.weeks.hit} of ${hits.home.weeks.of} on weekly averages · ${hits.all.weeks.hit} of ${hits.all.weeks.of} counting breaks`}
         />
       </div>
 

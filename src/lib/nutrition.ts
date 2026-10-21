@@ -270,3 +270,60 @@ export function proteinStreak(entries: LogEntry[], goals: Goals): number {
   }
   return streak;
 }
+
+export interface HitRate {
+  hit: number;
+  of: number;
+}
+
+/**
+ * How often both targets were met: calories at or under the goal and protein
+ * at or over the band's floor. Asked for on October 20, 2026.
+ *
+ * Only finished days count, so `before` (the build day) is left out — a
+ * snapshot taken after breakfast would otherwise score the day a miss. A week
+ * runs Monday to Sunday, counts once its Sunday is before `before`, and is
+ * scored on its average over the days logged in it, never divided by seven.
+ * Days inside `skip` (the diet breaks) drop out of both; a week with nothing
+ * left drops out with them.
+ */
+export function hitRate(
+  entries: LogEntry[],
+  goals: Goals,
+  before: string,
+  skip: { start: string; end: string }[],
+): { days: HitRate; weeks: HitRate } {
+  const byDate = new Map<string, { calories: number; protein: number }>();
+  for (const e of entries) {
+    if (e.date >= before || skip.some((b) => e.date >= b.start && e.date <= b.end)) {
+      continue;
+    }
+    const t = byDate.get(e.date) ?? { calories: 0, protein: 0 };
+    t.calories += e.macros.calories * e.servings;
+    t.protein += e.macros.protein * e.servings;
+    byDate.set(e.date, t);
+  }
+  const onTarget = (calories: number, protein: number) =>
+    calories <= goals.calories && protein >= goals.proteinMin;
+
+  const days: HitRate = { hit: 0, of: 0 };
+  const byWeek = new Map<string, { calories: number; protein: number; n: number }>();
+  for (const [date, t] of byDate) {
+    days.of++;
+    if (onTarget(t.calories, t.protein)) days.hit++;
+    const monday = addDays(date, -((parseDateKey(date).getDay() + 6) % 7));
+    const w = byWeek.get(monday) ?? { calories: 0, protein: 0, n: 0 };
+    w.calories += t.calories;
+    w.protein += t.protein;
+    w.n++;
+    byWeek.set(monday, w);
+  }
+
+  const weeks: HitRate = { hit: 0, of: 0 };
+  for (const [monday, w] of byWeek) {
+    if (addDays(monday, 6) >= before) continue;
+    weeks.of++;
+    if (onTarget(w.calories / w.n, w.protein / w.n)) weeks.hit++;
+  }
+  return { days, weeks };
+}
