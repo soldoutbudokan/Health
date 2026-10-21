@@ -1,5 +1,5 @@
-import type { CSSProperties } from "react";
-import type { Goals, LogEntry } from "@/lib/types";
+import { useMemo, useRef, useState, type CSSProperties } from "react";
+import type { Goals, LogEntry, MealSlot } from "@/lib/types";
 import {
   addDays,
   entryMacros,
@@ -9,7 +9,7 @@ import {
   toDateKey,
   type TargetStatus,
 } from "@/lib/nutrition";
-import { formatFullDay } from "@/lib/labels";
+import { formatDay, formatFullDay } from "@/lib/labels";
 import type { TrendBreak } from "@/components/TrendChart";
 
 /**
@@ -25,7 +25,9 @@ import type { TrendBreak } from "@/components/TrendChart";
  * and the build day stays unfilled until it's over, as it does in the tiles.
  *
  * Standing, like the tiles: the months don't move with the selected day. The
- * selected day is ringed, and any logged-range cell selects its day.
+ * selected day is ringed, and any logged-range cell selects its day. Hovering
+ * or focusing a cell opens a card with the day's two meters and where its
+ * calories went, so a yellow day says how far over it ran.
  */
 
 const STATUS: Record<TargetStatus, { color: string; label: string; detail: string }> = {
@@ -46,6 +48,19 @@ const STATUS: Record<TargetStatus, { color: string; label: string; detail: strin
     detail: "calories over, protein short",
   },
 };
+
+const SLOTS: MealSlot[] = ["breakfast", "lunch", "dinner", "snack"];
+
+/** The hover card's width, so it can be kept inside the calendar. */
+const CARD_W = 232;
+
+interface DayTotals {
+  calories: number;
+  protein: number;
+  meals: Record<MealSlot, number>;
+  /** The single biggest item by calories. */
+  top: { name: string; calories: number };
+}
 
 /** How much of the status colour a break day keeps. */
 const BREAK_MIX = 50;
@@ -81,22 +96,54 @@ export function TargetCalendar({
   selected,
   onSelect,
 }: Props) {
-  if (entries.length === 0) return null;
+  const sectionRef = useRef<HTMLElement>(null);
+  const [hover, setHover] = useState<{
+    date: string;
+    x: number;
+    top: number;
+    bottom: number;
+    width: number;
+  } | null>(null);
 
-  const totals = new Map<string, { calories: number; protein: number }>();
-  for (const e of entries) {
-    const m = entryMacros(e);
-    const t = totals.get(e.date) ?? { calories: 0, protein: 0 };
-    t.calories += m.calories;
-    t.protein += m.protein;
-    totals.set(e.date, t);
-  }
+  const totals = useMemo(() => {
+    const out = new Map<string, DayTotals>();
+    for (const e of entries) {
+      const m = entryMacros(e);
+      const t = out.get(e.date) ?? {
+        calories: 0,
+        protein: 0,
+        meals: { breakfast: 0, lunch: 0, dinner: 0, snack: 0 },
+        top: { name: "", calories: -1 },
+      };
+      t.calories += m.calories;
+      t.protein += m.protein;
+      t.meals[e.slot] += m.calories;
+      if (m.calories > t.top.calories) t.top = { name: e.name, calories: m.calories };
+      out.set(e.date, t);
+    }
+    return out;
+  }, [entries]);
+
+  if (entries.length === 0) return null;
   const first = [...totals.keys()].sort()[0];
 
-  // Newest month first, so the current one leads on a phone.
+  const show = (date: string, el: HTMLElement) => {
+    const box = sectionRef.current?.getBoundingClientRect();
+    if (!box) return;
+    const r = el.getBoundingClientRect();
+    setHover({
+      date,
+      x: r.left + r.width / 2 - box.left,
+      top: r.top - box.top,
+      bottom: r.bottom - box.top,
+      width: box.width,
+    });
+  };
+
+  // Oldest month first, so time runs left to right like the trend charts.
   const months: string[] = [];
   for (let m = `${first.slice(0, 7)}-01`; m <= builtOn; m = nextMonth(m)) {
-    months.unshift(m);
+    months.push(m);
   }
 
   const cell = (date: string, month: string) => {
@@ -122,16 +169,17 @@ export function TargetCalendar({
     const brk = breaks.find((b) => date >= b.start && date <= b.end);
     let className = base;
     let style: CSSProperties = { ...ring };
-    let title = formatFullDay(date);
+    // The card is for the eye; the label carries the same day for a reader.
+    let label = formatFullDay(date);
 
     if (t === undefined) {
       className += " border border-dashed border-hairline text-muted";
-      title += " · nothing logged";
+      label += " · nothing logged";
     } else {
-      title += ` · ${round(t.calories).toLocaleString("en-US")} kcal · ${round(t.protein, 1)} g protein`;
+      label += ` · ${round(t.calories).toLocaleString("en-US")} kcal · ${round(t.protein, 1)} g protein`;
       if (date === builtOn) {
         className += " border border-hairline text-ink";
-        title += " · in progress";
+        label += " · in progress";
       } else {
         const s = STATUS[targetStatus(t, goals)];
         style = {
@@ -144,9 +192,9 @@ export function TargetCalendar({
             : s.color,
           color: brk ? "var(--text-primary)" : "#0b0b0b",
         };
-        title += ` · ${s.detail}`;
+        label += ` · ${s.detail}`;
       }
-      if (brk) title += ` · ${brk.label}`;
+      if (brk) label += ` · ${brk.label}`;
     }
 
     return (
@@ -154,8 +202,10 @@ export function TargetCalendar({
         key={date}
         type="button"
         onClick={() => onSelect(date)}
-        aria-label={title}
-        title={title}
+        onMouseEnter={(e) => show(date, e.currentTarget)}
+        onFocus={(e) => show(date, e.currentTarget)}
+        onBlur={() => setHover(null)}
+        aria-label={label}
         className={className}
         style={style}
       >
@@ -165,7 +215,11 @@ export function TargetCalendar({
   };
 
   return (
-    <section className="card p-4">
+    <section
+      ref={sectionRef}
+      className="card relative p-4"
+      onMouseLeave={() => setHover(null)}
+    >
       <h2 className="text-sm font-semibold">Calendar</h2>
 
       <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3">
@@ -212,6 +266,173 @@ export function TargetCalendar({
           Not logged
         </span>
       </div>
+
+      {hover && (
+        <DayCard
+          date={hover.date}
+          t={totals.get(hover.date)}
+          goals={goals}
+          builtOn={builtOn}
+          brk={breaks.find((b) => hover.date >= b.start && hover.date <= b.end)}
+          style={{
+            width: CARD_W,
+            left: Math.max(4, Math.min(hover.x - CARD_W / 2, hover.width - CARD_W - 4)),
+            // Above the cell when there's room, which keeps the finger or
+            // pointer off it; below on the top row.
+            ...(hover.top > 180
+              ? { top: hover.top - 8, transform: "translateY(-100%)" }
+              : { top: hover.bottom + 8 }),
+          }}
+        />
+      )}
     </section>
+  );
+}
+
+function DayCard({
+  date,
+  t,
+  goals,
+  builtOn,
+  brk,
+  style,
+}: {
+  date: string;
+  t: DayTotals | undefined;
+  goals: Goals;
+  builtOn: string;
+  brk: TrendBreak | undefined;
+  style: CSSProperties;
+}) {
+  const status = t && date !== builtOn ? STATUS[targetStatus(t, goals)] : undefined;
+  const meals = t ? SLOTS.filter((s) => t.meals[s] > 0) : [];
+
+  return (
+    <div
+      aria-hidden
+      className="card pointer-events-none absolute z-20 p-3 text-xs"
+      style={{ ...style, boxShadow: "0 6px 24px rgba(0,0,0,0.18)" }}
+    >
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="font-semibold">{formatDay(date, builtOn)}</span>
+        {brk && <span className="truncate text-[11px] text-muted">{brk.label}</span>}
+      </div>
+
+      {t === undefined ? (
+        <p className="mt-1.5 text-muted">Nothing logged.</p>
+      ) : (
+        <>
+          <div className="mt-1.5 flex items-center gap-1.5 text-[11px] text-ink-2">
+            <span
+              className="h-[10px] w-[10px] shrink-0 rounded-[2px]"
+              style={{
+                background: status
+                  ? brk
+                    ? `color-mix(in srgb, ${status.color} ${BREAK_MIX}%, transparent)`
+                    : status.color
+                  : undefined,
+                border: status ? undefined : "1px solid var(--hairline)",
+              }}
+            />
+            {status
+              ? status.detail[0].toUpperCase() + status.detail.slice(1)
+              : "In progress"}
+          </div>
+
+          <Meter
+            label="Calories"
+            value={`${round(t.calories).toLocaleString("en-US")} / ${goals.calories.toLocaleString("en-US")}`}
+            amount={t.calories}
+            scale={Math.max(goals.calories, t.calories) * 1.08}
+            color="var(--series-carbs)"
+            ticks={[goals.calories]}
+          />
+          <Meter
+            label="Protein"
+            value={`${round(t.protein)}g / ${goals.proteinMin}–${goals.proteinMax}g`}
+            amount={t.protein}
+            scale={Math.max(goals.proteinMax, t.protein) * 1.08}
+            color="var(--series-protein)"
+            band={[goals.proteinMin, goals.proteinMax]}
+          />
+
+          {meals.length > 0 && (
+            <div className="mt-2.5 border-t border-hairline pt-2 text-[11px]">
+              <div
+                className="grid gap-1"
+                style={{ gridTemplateColumns: `repeat(${meals.length}, minmax(0, 1fr))` }}
+              >
+                {meals.map((s) => (
+                  <div key={s} className="min-w-0">
+                    <div className="truncate text-[10px] text-muted">
+                      {s[0].toUpperCase() + s.slice(1)}
+                    </div>
+                    <div className="tnum">{round(t.meals[s]).toLocaleString("en-US")}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-1.5 flex justify-between gap-2 text-ink-2">
+                <span className="truncate">Biggest: {t.top.name}</span>
+                <span className="tnum shrink-0">
+                  {round(t.top.calories).toLocaleString("en-US")} kcal
+                </span>
+              </div>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+/** A thin bar against its target: a tick at a goal, a shaded band for a range. */
+function Meter({
+  label,
+  value,
+  amount,
+  scale,
+  color,
+  ticks = [],
+  band,
+}: {
+  label: string;
+  value: string;
+  amount: number;
+  scale: number;
+  color: string;
+  ticks?: number[];
+  band?: [number, number];
+}) {
+  const pct = (n: number) => `${Math.min(100, (n / scale) * 100)}%`;
+  return (
+    <div className="mt-2">
+      <div className="flex items-baseline justify-between text-[11px]">
+        <span className="text-muted">{label}</span>
+        <span className="tnum">{value}</span>
+      </div>
+      <div className="relative mt-1 h-[6px] rounded-full bg-surface-2">
+        {band && (
+          <div
+            className="absolute inset-y-0"
+            style={{
+              left: pct(band[0]),
+              width: `calc(${pct(band[1])} - ${pct(band[0])})`,
+              background: `color-mix(in srgb, ${color} 25%, transparent)`,
+            }}
+          />
+        )}
+        <div
+          className="absolute inset-y-0 left-0 rounded-full"
+          style={{ width: pct(amount), background: color }}
+        />
+        {[...ticks, ...(band ?? [])].map((v) => (
+          <div
+            key={v}
+            className="absolute -top-[2px] h-[10px] w-[2px] rounded-full"
+            style={{ left: `calc(${pct(v)} - 1px)`, background: "var(--text-secondary)" }}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
