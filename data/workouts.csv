@@ -417,3 +417,16 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-21-08,2026-10-21,heavy-lower,V squat machine,compound,2,12,234,,,,logged
 2026-10-21-09,2026-10-21,heavy-lower,Leg curl,isolation,1,,,,,"Two sets to failure on a machine different enough from home that the weight wouldn't mean much, so none is logged.",logged
 2026-10-21-10,2026-10-21,heavy-lower,Leg curl,isolation,2,,,,,,logged
+2026-10-22-01,2026-10-22,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-10-22-02,2026-10-22,heavy-upper,Pullups,compound,1,5,,,,2 x 5.,logged
+2026-10-22-03,2026-10-22,heavy-upper,Pullups,compound,2,5,,,,,logged
+2026-10-22-04,2026-10-22,heavy-upper,Chest press (machine),compound,1,,,,,"No barbell bench at this gym, so a chest press machine. Three sets to failure on a machine I didn't know, so no reps or weight logged.",logged
+2026-10-22-05,2026-10-22,heavy-upper,Chest press (machine),compound,2,,,,,,logged
+2026-10-22-06,2026-10-22,heavy-upper,Chest press (machine),compound,3,,,,,,logged
+2026-10-22-07,2026-10-22,heavy-upper,Cable row,compound,1,,,,,"Two sets to failure on a machine that doesn't match home, so no reps or weight logged.",logged
+2026-10-22-08,2026-10-22,heavy-upper,Cable row,compound,2,,,,,,logged
+2026-10-22-09,2026-10-22,heavy-upper,Seated Y raise,isolation,1,5,20,,,,logged
+2026-10-22-10,2026-10-22,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-10-22-11,2026-10-22,heavy-upper,Bayesian cable curl,isolation,1,,,,,Two sets to failure. The stack doesn't compare to home.,logged
+2026-10-22-12,2026-10-22,heavy-upper,Bayesian cable curl,isolation,2,,,,,,logged
+2026-10-22-13,2026-10-22,heavy-upper,Cable fly,isolation,1,,,,,One set to failure.,logged
