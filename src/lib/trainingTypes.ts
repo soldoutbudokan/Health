@@ -186,6 +186,13 @@ export interface Session {
   note?: string;
 }
 
+/** One colour per goal lift, shared by `/training` and the dashboard. */
+export const GOAL_COLOURS: Record<string, string> = {
+  deadlift: "var(--series-protein)",
+  squat: "var(--series-carbs)",
+  bench: "var(--series-fat)",
+};
+
 export const FATIGUE_LABELS: Record<number, string> = {
   1: "Fresh",
   2: "Easy",

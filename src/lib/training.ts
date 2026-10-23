@@ -276,6 +276,51 @@ export function liftSeries(
     }));
 }
 
+const HEAVY_SESSIONS: SessionType[] = ["heavy-lower", "heavy-upper"];
+
+export interface TopSetPoint {
+  date: string;
+  value: number;
+  reps?: number;
+  source: WorkoutSet["source"];
+  /** A top set short of the goal's rep count, e.g. Oct 8's 170 × 2. */
+  short: boolean;
+}
+
+/**
+ * A goal lift's top set on each heavy day, oldest first: the progression line
+ * on the dashboard. Light days are left out because they run the same lift
+ * lighter on purpose, and mixed in they would draw every light lower as a
+ * slump. The top set is the day's heaviest whatever its reps, since that is
+ * the set the plan grades; one short of the goal's reps is flagged rather than
+ * swapped for a lighter back-off that made them. Reference points outside any
+ * session (the August handoff) are kept, so the line starts where the goal did.
+ */
+export function heavyTopSets(
+  sets: WorkoutSet[],
+  exercise: string,
+  reps: number,
+  from: string,
+): TopSetPoint[] {
+  const best = new Map<string, WorkoutSet>();
+  for (const s of sets) {
+    if (!sameExercise(s.exercise, exercise)) continue;
+    if (s.weightLbs === undefined || s.date < from) continue;
+    if (s.session !== undefined && !HEAVY_SESSIONS.includes(s.session)) continue;
+    const cur = best.get(s.date);
+    if (!cur || s.weightLbs > cur.weightLbs!) best.set(s.date, s);
+  }
+  return [...best.values()]
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .map((s) => ({
+      date: s.date,
+      value: s.weightLbs!,
+      reps: s.reps,
+      source: s.source,
+      short: s.reps !== undefined && s.reps < reps,
+    }));
+}
+
 /* ------------------------------------------------------------------- pace */
 
 export interface GoalProgress {
@@ -627,115 +672,6 @@ export function setLabel(s: WorkoutSet): string {
   return "—";
 }
 
-/** Total working volume in pounds. Warmups and time-based work contribute 0. */
-export function volume(sets: WorkoutSet[]): number {
-  return sets.reduce(
-    (t, s) => t + (s.weightLbs !== undefined && s.reps !== undefined ? s.weightLbs * s.reps : 0),
-    0,
-  );
-}
-
 export function workingSets(sets: WorkoutSet[]): WorkoutSet[] {
   return sets.filter((s) => s.kind !== "warmup" && s.kind !== "finisher");
-}
-
-/* ----------------------------------------------------------------- output */
-
-/**
- * A day's training output, totalled in the three units the log actually
- * records: pounds moved (weight × reps), unweighted reps, and timed minutes.
- *
- * Three totals rather than one, because the units don't convert. Folding dips
- * into "equivalent pounds" would need a bodyweight guess for every rep, and
- * folding any of it into energy is the calories-burned estimate this site
- * built and removed on August 5, 2026. Everything here is a sum of logged
- * numbers; nothing is estimated.
- */
-export interface SessionOutput {
-  /** Σ weight × reps over every weighted set — the figure `volume` gives. */
-  volumeLbs: number;
-  /** Weighted exercises with their share of it, heaviest total first. */
-  lifts: { exercise: string; lbs: number }[];
-  /** Total reps of unweighted work — pullups, dips, jumps. */
-  bodyweightReps: number;
-  bodyweight: { exercise: string; reps: number }[];
-  /** Minutes of timed work. Both sled bouts of a session pool here. */
-  conditioningMin: number;
-  conditioning: { exercise: string; minutes: number }[];
-}
-
-export function sessionOutput(sets: WorkoutSet[]): SessionOutput {
-  // Keyed on the canonical name so "Sled push + pull" and "Sled" pool, but
-  // displayed under the first spelling the session used.
-  const tally = (
-    entries: Map<string, { exercise: string; total: number }>,
-    s: WorkoutSet,
-    amount: number,
-  ) => {
-    const key = canonical(s.exercise);
-    const cur = entries.get(key);
-    if (cur) cur.total += amount;
-    else entries.set(key, { exercise: s.exercise, total: amount });
-  };
-
-  const lifts = new Map<string, { exercise: string; total: number }>();
-  const bodyweight = new Map<string, { exercise: string; total: number }>();
-  const conditioning = new Map<string, { exercise: string; total: number }>();
-
-  for (const s of sets) {
-    if (s.weightLbs !== undefined && s.reps !== undefined) {
-      tally(lifts, s, s.weightLbs * s.reps);
-    } else if (s.durationMin !== undefined) {
-      tally(conditioning, s, s.durationMin);
-    } else if (s.reps !== undefined) {
-      tally(bodyweight, s, s.reps);
-    }
-    // A set with no numbers at all — the shoulder warmup — has nothing to add.
-  }
-
-  const liftRows = [...lifts.values()]
-    .map((r) => ({ exercise: r.exercise, lbs: r.total }))
-    .sort((a, b) => b.lbs - a.lbs);
-  const bwRows = [...bodyweight.values()].map((r) => ({
-    exercise: r.exercise,
-    reps: r.total,
-  }));
-  const condRows = [...conditioning.values()].map((r) => ({
-    exercise: r.exercise,
-    minutes: r.total,
-  }));
-
-  return {
-    volumeLbs: liftRows.reduce((t, r) => t + r.lbs, 0),
-    lifts: liftRows,
-    bodyweightReps: bwRows.reduce((t, r) => t + r.reps, 0),
-    bodyweight: bwRows,
-    conditioningMin: condRows.reduce((t, r) => t + r.minutes, 0),
-    conditioning: condRows,
-  };
-}
-
-export interface OutputPoint {
-  date: string;
-  lbs: number;
-  type: SessionType;
-}
-
-/**
- * Pounds moved per logged session day, oldest first — the tonnage line the
- * dashboard charts. A day whose session carried no weighted work (a stretch
- * day, basketball) is absent rather than zero: its output is measured in
- * other units, and a zero here would draw it as a collapse instead of a
- * different kind of day. Reference sets imported outside any session don't
- * chart either — a single remembered top set is not a day's output.
- */
-export function outputSeries(sets: WorkoutSet[], sessions: Session[]): OutputPoint[] {
-  return sessions
-    .map((s) => ({
-      date: s.date,
-      type: s.type,
-      lbs: sessionOutput(sessionSets(sets, s.date)).volumeLbs,
-    }))
-    .filter((p) => p.lbs > 0)
-    .sort((a, b) => a.date.localeCompare(b.date));
 }

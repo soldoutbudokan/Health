@@ -396,7 +396,7 @@ yesterday moves both columns together. A session, a meal or a morning check-in
 appears on its own day and nowhere else. The site records; it never schedules —
 an empty day renders as an honest empty, not as a plan or a suggestion. The
 standing (day-independent) elements are few because they are historical context,
-not a day's record: the week strip and the lbs-moved chart in the training
+not a day's record: the week strip and the goal-lifts chart in the training
 column, and the bodyweight chart in the food column — moved there on August 9,
 2026, because bodyweight follows diet more than it follows any single session.
 The days- and weeks-on-target tiles joined them on October 20, 2026, by request
@@ -495,7 +495,13 @@ Don't reintroduce it, on the dashboard or anywhere else, without being asked.
 A wattage estimate was considered on August 9, 2026 and turned down for the same
 reason: watts need bar speed and range of motion, neither of which is logged, so
 the figure would have been tonnage multiplied by invented constants — same chart,
-fake units. The lbs-moved line chart is what got built instead.
+fake units. A lbs-moved line chart was built instead, and removed on October 22,
+2026, along with the day's lbs-moved card and the figure in the session card's
+header: the owner judged that tonnage made no sense either. In its place the
+dashboard charts the three weight goals' heavy-day top sets against their
+targets (`heavyTopSets()`, rendered by `GoalLiftsChart`). Light days stay off it
+because they run lighter on purpose, and a top set short of 5 reps draws hollow
+and off the line rather than as progress.
 
 **Estimated 1/3/5RM curves are the one estimate that made it in** — added
 August 10, 2026, by explicit request, which is the bar the two paragraphs above

@@ -6,6 +6,7 @@ import type {
   Checkin,
   Session,
   TrainingBreak,
+  TrainingGoals,
   WorkoutSet,
 } from "@/lib/trainingTypes";
 import { loggedDates, type HitRate } from "@/lib/nutrition";
@@ -31,6 +32,7 @@ export function TodayView({
   breaks,
   dietBreaks,
   checkins,
+  trainingGoals,
 }: {
   entries: LogEntry[];
   goals: Goals;
@@ -46,6 +48,7 @@ export function TodayView({
      is by definition a training break. */
   dietBreaks: { start: string; end: string; label: string }[];
   checkins: Checkin[];
+  trainingGoals: TrainingGoals;
 }) {
   // Open on the newest day that has food in it. On a snapshot that is almost
   // always the build day, and when it isn't — a rebuild triggered by a code
@@ -84,6 +87,7 @@ export function TodayView({
           sessions={sessions}
           breaks={breaks}
           checkins={checkins}
+          trainingGoals={trainingGoals}
           date={date}
           today={builtOn}
         />

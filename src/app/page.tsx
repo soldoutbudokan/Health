@@ -4,6 +4,7 @@ import {
   readBreaks,
   readCheckins,
   readSessions,
+  readTrainingGoals,
   readWorkouts,
 } from "@/lib/trainingFile";
 import { hitRate, proteinStreak, toDateKey } from "@/lib/nutrition";
@@ -50,6 +51,7 @@ export default function Page() {
       breaks={breaks}
       dietBreaks={diet}
       checkins={readCheckins()}
+      trainingGoals={readTrainingGoals()}
     />
   );
 }

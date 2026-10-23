@@ -1,6 +1,6 @@
 import { round } from "@/lib/nutrition";
 import { formatDay } from "@/lib/labels";
-import { byExercise, setLabel, volume, workingSets } from "@/lib/training";
+import { byExercise, setLabel, workingSets } from "@/lib/training";
 import {
   FATIGUE_LABELS,
   KIND_LABELS,
@@ -108,7 +108,6 @@ export function SessionCard({ session, sets, today }: Props) {
 
   const working = workingSets(sets);
   const exerciseCount = byExercise(sets).length;
-  const moved = volume(sets);
 
   return (
     <section className="card overflow-hidden">
@@ -118,7 +117,6 @@ export function SessionCard({ session, sets, today }: Props) {
         <p className="tnum w-full text-xs text-muted">
           {exerciseCount} exercise{exerciseCount === 1 ? "" : "s"} · {working.length} working
           set{working.length === 1 ? "" : "s"}
-          {moved > 0 && ` · ${round(moved).toLocaleString("en-US")} lbs moved`}
           {session.durationMin !== undefined && ` · ${round(session.durationMin)} min`}
           {session.deload && " · deload week"}
         </p>

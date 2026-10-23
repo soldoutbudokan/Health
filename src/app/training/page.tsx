@@ -23,7 +23,7 @@ import {
   weekStrip,
   weeksSinceDeload,
 } from "@/lib/training";
-import { type TrainingGoal } from "@/lib/trainingTypes";
+import { GOAL_COLOURS, type TrainingGoal } from "@/lib/trainingTypes";
 import { SessionCard } from "@/components/SessionCard";
 import { PlanCheck } from "@/components/PlanCheck";
 import { GoalPace } from "@/components/GoalPace";
@@ -47,12 +47,6 @@ export const metadata = { title: "Training · Health" };
 
 /** How far back the charts look. Seven months puts the layoff in frame. */
 const CHART_LOOKBACK_DAYS = 212;
-
-const CHART_COLOURS: Record<string, string> = {
-  deadlift: "var(--series-protein)",
-  squat: "var(--series-carbs)",
-  bench: "var(--series-fat)",
-};
 
 export default function TrainingPage() {
   const sets = readWorkouts();
@@ -152,7 +146,7 @@ export default function TrainingPage() {
               windowStart={chartWindowStart}
               windowEnd={goals.deadline}
               today={today}
-              colour={CHART_COLOURS[g.id] ?? "var(--series-protein)"}
+              colour={GOAL_COLOURS[g.id] ?? "var(--series-protein)"}
             />
           ))}
           {bodyweight.length > 0 && (
@@ -176,7 +170,7 @@ export default function TrainingPage() {
                 windowStart={chartWindowStart}
                 windowEnd={goals.deadline}
                 today={today}
-                colour={CHART_COLOURS[goal.id] ?? "var(--series-protein)"}
+                colour={GOAL_COLOURS[goal.id] ?? "var(--series-protein)"}
               />
             ))}
           </div>

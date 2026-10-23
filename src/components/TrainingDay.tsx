@@ -5,25 +5,26 @@ import {
   breakOn,
   comparePlan,
   gymSessionsIn,
+  heavyTopSets,
   sessionsIn,
-  outputSeries,
   planFor,
   sessionOn,
   sessionSets,
   weekStrip,
   weeksSinceDeload,
 } from "@/lib/training";
-import type {
-  Checkin,
-  Session,
-  TrainingBreak,
-  WorkoutSet,
+import {
+  GOAL_COLOURS,
+  type Checkin,
+  type Session,
+  type TrainingBreak,
+  type TrainingGoals,
+  type WorkoutSet,
 } from "@/lib/trainingTypes";
 import { SessionCard } from "@/components/SessionCard";
 import { PlanCheck } from "@/components/PlanCheck";
-import { OutputCard } from "@/components/OutputCard";
 import { WeekStrip } from "@/components/WeekStrip";
-import { OutputChart } from "@/components/OutputChart";
+import { GoalLiftsChart, type GoalLift } from "@/components/GoalLiftsChart";
 
 /**
  * The training half of the dashboard, pinned to the dashboard's selected day:
@@ -31,8 +32,10 @@ import { OutputChart } from "@/components/OutputChart";
  * yesterday's heavy upper; today shows blank until something is logged. The
  * site never schedules — an empty day is an honest empty, not a plan.
  *
- * The week strip and the lbs-moved chart sit below as standing context; they
- * are historical and don't change with the selected day. The bodyweight chart
+ * The week strip and the goal-lifts chart sit below as standing context; they
+ * are historical and don't change with the selected day. The goal lifts
+ * replaced a lbs-moved chart, and the day's lbs-moved card went with it, on
+ * October 22, 2026: tonnage informed no decision. The bodyweight chart
  * used to sit here too, and moved to the food column on August 9, 2026 —
  * bodyweight follows diet more than it follows any single session.
  */
@@ -119,6 +122,7 @@ export function TrainingDay({
   sessions,
   breaks,
   checkins,
+  trainingGoals,
   date,
   today,
 }: {
@@ -126,6 +130,7 @@ export function TrainingDay({
   sessions: Session[];
   breaks: TrainingBreak[];
   checkins: Checkin[];
+  trainingGoals: TrainingGoals;
   /** The day the dashboard is looking at — this column follows it. */
   date: string;
   today: string;
@@ -141,7 +146,21 @@ export function TrainingDay({
   const gymThisWeek = gymSessionsIn(sessions, addDays(today, -6), today);
   const sessionsThisWeek = sessionsIn(sessions, addDays(today, -6), today);
   const sinceDeload = weeksSinceDeload(sessions, today);
-  const output = outputSeries(sets, sessions);
+
+  // The weight goals, from the day their baselines were taken. Pullups and
+  // dips are rep goals with no top set to draw; `/training` tracks them.
+  const liftsFrom = trainingGoals.baselineOn || addDays(today, -90);
+  const goalLifts: GoalLift[] = trainingGoals.goals
+    .filter((g) => g.metric === "weight")
+    .map((g) => ({
+      id: g.id,
+      name: g.name,
+      unit: g.unit,
+      target: g.target,
+      reps: g.reps ?? 5,
+      colour: GOAL_COLOURS[g.id] ?? "var(--series-protein)",
+      points: heavyTopSets(sets, g.exercise, g.reps ?? 5, liftsFrom),
+    }));
 
   return (
     <div className="space-y-6">
@@ -161,7 +180,6 @@ export function TrainingDay({
         <>
           <SessionCard session={session} sets={daySets} today={today} />
           {plan && <PlanCheck plan={plan} lines={planLines} />}
-          <OutputCard sets={daySets} date={date} today={today} />
         </>
       ) : (
         <div className="card p-8 text-center">
@@ -184,7 +202,7 @@ export function TrainingDay({
         today={today}
       />
 
-      {output.length > 0 && <OutputChart points={output} today={today} height={130} />}
+      <GoalLiftsChart lifts={goalLifts} windowStart={liftsFrom} today={today} />
     </div>
   );
 }
