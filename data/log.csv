@@ -751,3 +751,11 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-23-breakfast-sbux-protein-latte,2026-10-23,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-23T14:57:39.000Z
 2026-10-23-lunch-subway-grilled-chicken-ihc-pepperjack,2026-10-23,lunch,Grilled Chicken,"6-inch, Italian Herbs & Cheese, pepperjack, double meat, mustard not mayo, all the veg",Subway,1 six-inch sub,1,500,47,47,13,4,7,1550,claude,2026-10-23T17:16:55.000Z
 2026-10-23-lunch-core-power-42g,2026-10-23,lunch,Core Power 42g High Protein Milk Shake,Chocolate,fairlife,1 bottle (414 mL),1,230,42,9,3.5,2,7,260,packaged,2026-10-23T17:16:55.000Z
+2026-10-23-dinner-via-ciabatta-roll,2026-10-23,dinner,Ciabatta roll,"plain white; the VIA Rail bread roll, taken as ~55 g",,1 roll (~85 g),0.65,213,7.2,42.5,1.7,1.7,,485,claude,2026-10-23T23:11:59.000Z
+2026-10-23-dinner-via-butter,2026-10-23,dinner,Butter,"salted; one Natrel portion cup, taken as ~7 g",,1 tbsp (14 g),0.5,100,0.1,0,11.4,0,0,90,usda,2026-10-23T23:11:59.000Z
+2026-10-23-dinner-via-ginger-beef,2026-10-23,dinner,Ginger beef,"on rice with green beans, business class hot dish",VIA Rail,1 hot dish (~345 g),1,590,30,75,19,3,15,1000,claude,2026-10-23T23:11:59.000Z
+2026-10-23-dinner-via-fennel-slaw,2026-10-23,dinner,Fennel and mandarin slaw,"with red onion, vinaigrette",VIA Rail,1 side dish (~110 g),1,100,1.2,9,7,2.8,5.5,190,claude,2026-10-23T23:11:59.000Z
+2026-10-23-dinner-white-wine,2026-10-23,dinner,White wine,"table wine; one glass, taken as a standard 5 oz pour",,"1 glass (5 fl oz, 147 g)",1,121,0.1,3.8,0,0,1.4,7,usda,2026-10-23T23:11:59.000Z
+2026-10-23-snack-natursource-sweet-heat-mix,2026-10-23,snack,Sweet Heat mix,,naturSource,1 pack (~20 g),1,110,3.5,8,7.5,1,3,120,claude,2026-10-23T23:11:59.000Z
+2026-10-23-dinner-via-apple-crumble,2026-10-23,dinner,Apple crumble,business class dessert,VIA Rail,1 dish (~110 g),1,240,2.5,36,10,2,22,120,claude,2026-10-23T23:11:59.000Z
+2026-10-23-dinner-rum-diet-coke,2026-10-23,dinner,Rum and Diet Coke,"1.5 oz rum, a can of Diet Coke",,"1 drink (1.5 oz rum, 355 mL Diet Coke)",1,97,0,0,0,0,0,40,usda,2026-10-23T23:11:59.000Z

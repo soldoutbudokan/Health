@@ -1650,6 +1650,17 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["vodka", "vodka soda", "soda", "club soda", "cocktail", "alcohol", "drink", "via rail"],
   },
   {
+    id: "staple-rum-diet-coke",
+    name: "Rum and Diet Coke",
+    variant: "1.5 oz rum, a can of Diet Coke",
+    source: "usda",
+    per: "1 drink (1.5 oz rum, 355 mL Diet Coke)",
+    gramsPerServing: 397,
+    macros: { calories: 97, protein: 0, carbs: 0, fat: 0, fiber: 0, sugar: 0, sodium: 40 },
+    note: "USDA 80-proof rum at a 1.5 oz pour: 97 kcal, all of it from about 14 g of alcohol, which no macro column holds. Diet Coke adds no calories and 40 mg sodium a 355 mL can, from Coca-Cola Canada's panel on Oct 23. A 50 ml mini, which trains and planes often pour, is about 110 kcal.",
+    tags: ["rum", "rum and coke", "diet coke", "cola", "cocktail", "alcohol", "drink", "via rail"],
+  },
+  {
     id: "staple-white-wine-glass",
     name: "White wine",
     variant: "table wine",
