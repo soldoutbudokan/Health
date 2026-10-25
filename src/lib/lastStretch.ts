@@ -382,7 +382,15 @@ export function dayView(
     const daySets = sessionSets(sets, plan.date);
     const loggedLifts: LoggedLift[] = byExercise(daySets)
       .filter((g) =>
-        g.sets.some((s) => s.kind === "compound" || s.kind === "isolation" || s.kind === "jump"),
+        g.sets.some(
+          (s) =>
+            s.kind === "compound" ||
+            s.kind === "isolation" ||
+            s.kind === "jump" ||
+            // The cable fly closes the light upper as a finisher but still has
+            // a number on the plan; the sled, a timed finisher, has none.
+            (s.kind === "finisher" && plannedNumber(plan, g.exercise) !== undefined),
+        ),
       )
       .map((g) => {
         const top = topSet(g.sets, g.exercise);
