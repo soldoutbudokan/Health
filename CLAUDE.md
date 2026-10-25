@@ -212,8 +212,10 @@ a gym there. The first heavy lower on the Ottawa kit repeats October 7's numbers
 since a new tool is learned at the last settled weight, so the goals now close
 November 8 (pullups), November 10 (trap bar, then holding at 300) and November 17
 (squat). Redrawn October 11: the pullup test went 8, not the 9 it aimed at, so
-each test slides one and the pullups close November 22, which is now where the
-stretch ends. **When the three close, the last stretch is over** and the next block is
+each test slides one and the pullups close November 22, which was then where the
+stretch ended. Redrawn October 25: the test went 10, so the pullups closed four
+weeks early, the later tests became ordinary sets, and the stretch ends with the
+squat on November 17 again. **When the three close, the last stretch is over** and the next block is
 cardio, whatever the bench is doing — the owner said so on September 7. Don't extend the stretch to
 chase the bench.
 
@@ -249,12 +251,16 @@ below it for one more rep, `120×6` for 125 × 5, which Epley puts within about
 weight: every set at the planned pin has to reach the reps.
 
 **The curl and fly stack starts at 2.5 and climbs in 5s.** Found on October 8,
-2026: the home cable machine the Bayesian curl and the cable fly share has two
-1.5 lb add-ons, so 20 can't be set and 20.5 can. From October 11 the `curl` and
-`cable_fly` columns carry the half above each old figure (curl 20.5, 25.5, 30.5;
-fly 35.5), and the 5 lb steps still land on the stack. The fly's figure is both
-handles together, so 22.5 a hand logs as 45. `curl_backup` is
-dumbbells and keeps its round numbers.
+2026: the home cable machine the Bayesian curl and the cable fly share reads per
+handle, 2.5, 7.5, 12.5 and on to 97.5, and has two 1.5 lb add-ons. So a hand can
+sit on a stack number or 1.5 or 3 over it — 17.5, 19, 20.5, 22.5, 24, 25.5 —
+and 20 can't be set. The `curl` column is a side and lands on those (20.5, 22.5,
+25.5, 30.5). The `cable_fly` figure is both handles together, so 22.5 a hand
+logs as 45, and it has to be twice a settable hand. The 35.5 it carried from
+October 11 to 25 was 17.75 a hand, which nothing sets; the owner caught it on
+October 25 with a photo of the stack, and the fly holds at 45 from November 1.
+The page prints the hand figure beside the total. `curl_backup` is dumbbells and
+keeps its round numbers.
 
 **The weighted jump holds; every other jump is bodyweight.** Asked for on
 September 19, 2026 — a prescription for every lift in the schedule, not just the

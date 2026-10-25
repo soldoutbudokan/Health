@@ -92,7 +92,10 @@ export default function LastStretchPage() {
               upper toward bodyweight, the curl goes up once a block, and the Y raise, fly
               and dips stay put. If a set isn&rsquo;t clean, repeat the number, same as the main
               lifts. The cable row, pulldown and leg curl machines go up in 10s, so a 5 lb step shows
-              as the lower weight for 6 reps: 120 &times; 6 stands in for 125 &times; 5.
+              as the lower weight for 6 reps: 120 &times; 6 stands in for 125 &times; 5. The curl
+              and the fly share a cable stack that reads per handle, 2.5 up in 5s, with two
+              1.5 lb add-ons. The curl&rsquo;s number is a side; the fly&rsquo;s is both hands
+              together, with the hand figure beside it.
             </dd>
           </div>
           <div>
@@ -108,8 +111,8 @@ export default function LastStretchPage() {
           <div>
             <dt className="text-sm font-medium">Where it ends</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              Trap bar 300 on Nov 10, squat 225 on Nov 17, ten pullups on Nov 22. Once all
-              three are done, the stretch is over, whatever the bench is doing. The rows
+              Trap bar 300 on Nov 10 and squat 225 on Nov 17; the ten pullups came early, on
+              Oct 25. Once all three are done, the stretch is over, whatever the bench is doing. The rows
               after that are backup: the same goal weights repeated for any lift that
               stalls, and the plan ending Dec 20. The deadline is still Dec 31. There&rsquo;s
               no deload on the calendar before then; I took them off on Sep 30.

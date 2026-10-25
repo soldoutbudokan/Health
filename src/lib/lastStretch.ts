@@ -100,6 +100,10 @@ export interface PlanDay {
   /** The incline dumbbell curl, a hand, for when the cables are taken. */
   curlBackup?: number;
   yRaise?: number;
+  /**
+   * Both handles together, so 22.5 a hand is 45. The stack reads a hand, so
+   * this is always twice a figure the stack can set.
+   */
   cableFly?: number;
   /** "1×10", "1×8" on a deload — bodyweight, so a string like pullups. */
   dips?: string;
@@ -134,7 +138,7 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   "block-2": {
     label: "Block 2",
     blurb:
-      "Where the goals close on the all-goes-well line: trap bar 300 on Nov 10, squat 225 on Nov 17, ten pullups on Nov 22. The first week's heavy days are in Ottawa.",
+      "Where the goals close on the all-goes-well line: trap bar 300 on Nov 10, squat 225 on Nov 17. Ten pullups came early, on Oct 25. The first week's heavy days are in Ottawa.",
   },
   contingency: {
     label: "Contingency",
@@ -249,7 +253,10 @@ function plannedLoad(plan: PlanDay, exercise: string): string | undefined {
   }
   if (sameExercise(exercise, "Incline dumbbell curl")) return fmt(plan.curlBackup);
   if (sameExercise(exercise, "Seated Y raise")) return fmt(plan.yRaise);
-  if (sameExercise(exercise, "Cable fly")) return fmt(plan.cableFly);
+  if (sameExercise(exercise, "Cable fly")) {
+    if (plan.cableFly === undefined) return undefined;
+    return `${plan.cableFly} lbs, ${plan.cableFly / 2} a hand`;
+  }
   if (sameExercise(exercise, "Dips")) return plan.dips;
   return undefined;
 }
