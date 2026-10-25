@@ -430,3 +430,18 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-22-11,2026-10-22,heavy-upper,Bayesian cable curl,isolation,1,,,,,Two sets to failure. The stack doesn't compare to home.,logged
 2026-10-22-12,2026-10-22,heavy-upper,Bayesian cable curl,isolation,2,,,,,,logged
 2026-10-22-13,2026-10-22,heavy-upper,Cable fly,isolation,1,,,,,One set to failure.,logged
+2026-10-25-01,2026-10-25,light-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-10-25-02,2026-10-25,light-upper,Pullups,compound,1,10,,,,"Test set: 10, the goal. Kept the second set easy to save something for the rest.",logged
+2026-10-25-03,2026-10-25,light-upper,Pullups,compound,2,2,,,,,logged
+2026-10-25-04,2026-10-25,light-upper,Bench press,compound,1,8,140,,,3 x 8 at 140. Only the last couple of reps of the third set were hard.,logged
+2026-10-25-05,2026-10-25,light-upper,Bench press,compound,2,8,140,,,,logged
+2026-10-25-06,2026-10-25,light-upper,Bench press,compound,3,8,140,,,,logged
+2026-10-25-07,2026-10-25,light-upper,Lat pulldown,compound,1,5,140,,,"2 x 5 at 140, pretty hard.",logged
+2026-10-25-08,2026-10-25,light-upper,Lat pulldown,compound,2,5,140,,,,logged
+2026-10-25-09,2026-10-25,light-upper,Cable row,compound,1,5,140,,,"2 x 5 at 140, not that hard.",logged
+2026-10-25-10,2026-10-25,light-upper,Cable row,compound,2,5,140,,,,logged
+2026-10-25-11,2026-10-25,light-upper,Seated Y raise,isolation,1,5,20,,,,logged
+2026-10-25-12,2026-10-25,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-10-25-13,2026-10-25,light-upper,Bayesian cable curl,isolation,1,8,22.5,,,2 x 8 at 22.5 a side.,logged
+2026-10-25-14,2026-10-25,light-upper,Bayesian cable curl,isolation,2,8,22.5,,,,logged
+2026-10-25-15,2026-10-25,light-upper,Cable fly,finisher,1,5,45,,,"22.5 a hand, so 45 together. Maybe a rep left.",logged
