@@ -1383,6 +1383,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["cookie", "shortbread", "butter", "cookie it up", "bakery", "snack", "dessert"],
   },
   {
+    id: "pkg-cookie-it-up-shorts-milk-chocolate",
+    name: "Shorts Shortbread Cookie",
+    variant: "milk chocolate",
+    brand: "Cookie It Up",
+    source: "packaged",
+    per: "1 cookie (~17 g)",
+    gramsPerServing: 17,
+    macros: { calories: 90, protein: 1, carbs: 9, fat: 5.6, fiber: 0, sugar: 4, sodium: 35 },
+    note: "The 90 kcal is off the package, Oct 26; the rest is scaled to it from third-party listings of the two-cookie 30 g serving (160 kcal, 10 g fat, 16 g carbs, 7 g sugar, 65 mg sodium), which is how the cookie comes out at about 17 g. No panel read beyond the calories. Sodium 30–50 mg. Smaller than the plain shortbread above.",
+    tags: ["cookie", "shortbread", "shorts", "milk chocolate", "chocolate", "cookie it up", "snack", "dessert"],
+  },
+  {
     id: "pkg-covered-bridge-smokin-sweet-bbq-60g",
     name: "Smokin' Sweet BBQ Kettle Chips",
     variant: "single-serve bag",
