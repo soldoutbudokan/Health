@@ -215,7 +215,7 @@ November 8 (pullups), November 10 (trap bar, then holding at 300) and November 1
 each test slides one and the pullups close November 22, which was then where the
 stretch ended. Redrawn October 25: the test went 10, so the pullups closed four
 weeks early, the later tests became ordinary sets, and the stretch ends with the
-squat on November 17 again. **When the three close, the last stretch is over** and the next block is
+squat on November 17 again. Redrawn October 27: the trap bar stopped at one rep of 290 when the back started talking. The Ottawa bar had read light, so 290 was a 10 lb step on the home bar. The owner put it at 285 on November 3, then fives to 300, and the squat and leg curl slid a week, so both goals now close November 24. **When the three close, the last stretch is over** and the next block is
 cardio, whatever the bench is doing — the owner said so on September 7. Don't extend the stretch to
 chase the bench.
 
