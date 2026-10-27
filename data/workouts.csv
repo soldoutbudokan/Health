@@ -445,3 +445,6 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-25-13,2026-10-25,light-upper,Bayesian cable curl,isolation,1,8,22.5,,,2 x 8 at 22.5 a side.,logged
 2026-10-25-14,2026-10-25,light-upper,Bayesian cable curl,isolation,2,8,22.5,,,,logged
 2026-10-25-15,2026-10-25,light-upper,Cable fly,finisher,1,5,45,,,"22.5 a hand, so 45 together. Maybe a rep left.",logged
+2026-10-27-01,2026-10-27,heavy-lower,Warmups,warmup,1,,,,,"The usual warmups and ramp sets before the trap bar. Which ones, and the ramp weights, weren't noted.",logged
+2026-10-27-02,2026-10-27,heavy-lower,Trap bar deadlift,compound,1,1,290,,,"Lower back started talking on the first rep, so stopped there.",logged
+2026-10-27-03,2026-10-27,heavy-lower,Treadmill walk,finisher,1,,,,,Walked it off after stopping. No time noted.,logged
