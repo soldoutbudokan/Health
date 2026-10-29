@@ -796,3 +796,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-28-dinner-prime-protein-shake,2026-10-28,dinner,Prime Protein Shake,32 g protein,Prime,1 can (325 mL),1,150,32,3,0.5,0,2,320,packaged,2026-10-28T20:26:47.000Z
 2026-10-28-snack-kirkland-chewy-bar,2026-10-28,snack,Kirkland Signature Protein Bar,chewy,Kirkland Signature,1 bar (40 g),1,190,10,16,11,6,6,120,packaged,2026-10-28T20:26:47.000Z
 2026-10-29-breakfast-sbux-protein-latte,2026-10-29,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-29T14:56:07.000Z
+2026-10-29-lunch-chicken-caesar-wrap,2026-10-29,lunch,Chicken Caesar wrap,"grilled chicken, romaine, Parmesan, Caesar dressing",,"1 wrap (10-inch tortilla, ~90 g chicken)",0.5,516,38,37,24,2.6,2.5,1240,claude,2026-10-29T17:10:27.000Z
+2026-10-29-lunch-halloumi-sandwich,2026-10-29,lunch,Halloumi sandwich,"grilled halloumi, vegetables, spread",,"1 sandwich (~100 g bread, ~70 g halloumi)",0.5,584,25.4,55.4,29,3.5,4.5,1600,claude,2026-10-29T17:10:27.000Z
+2026-10-29-lunch-fries,2026-10-29,lunch,Fries,"handful, ~30 g",,100 g,0.3,315,4,40,15.5,4,0.5,480,claude,2026-10-29T17:10:27.000Z
+2026-10-29-lunch-caesar-salad,2026-10-29,lunch,Caesar salad,"small scoop: romaine, croutons, Parmesan, dressing",,"1 small scoop (~65 g, dressed)",1,120,2.5,5.4,10,1,1,265,claude,2026-10-29T17:10:27.000Z
