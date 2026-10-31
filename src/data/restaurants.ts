@@ -2414,4 +2414,15 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Richmond Station posts no nutrition, so built from the menu's description: a 110 g slice of chocolate Basque cheesecake at about 360 kcal per 100 g, 25 g whipped mascarpone, 50 g poached pear and a few candied cocoa nibs. Call it 400–800 kcal, mostly the size of the slice. Sodium 150–400 mg.",
     tags: ["cheesecake", "basque cheesecake", "chocolate", "mascarpone", "pear", "dessert", "richmond station", "toronto", "restaurant", "lunch"],
   },
+  {
+    id: "maker-franks-best-pizza-large-slice",
+    name: "Frank's Best Pizza",
+    variant: "large; béchamel, goat cheese, mozzarella, caramelized onions, rosemary, honey, sesame crust",
+    brand: "Maker Pizza",
+    source: "claude",
+    per: "1 slice (1/8 of a 16-in large)",
+    macros: { calories: 305, protein: 13, carbs: 35, fat: 12.5, fiber: 1.7, sugar: 5.5, sodium: 575 },
+    note: "Estimated on Oct 30 from the menu's topping list and a photo; Maker posts no nutrition. Delivery listings put the large at 16 inches, taken as 8 slices. The whole pie is built as 500 g of dough, 120 g béchamel, 200 g mozzarella, 70 g goat cheese, onions from 200 g raw, 30 g honey, 20 g sesame and a pinch of finishing salt. Call it 230–400 kcal a slice, mostly the dough and cheese; sodium 400–750 mg.",
+    tags: ["pizza", "white pizza", "frank's best", "franks best", "goat cheese", "béchamel", "bechamel", "caramelized onion", "honey", "sesame", "mozzarella", "maker", "maker pizza", "matty matheson", "toronto", "restaurant", "dinner"],
+  },
 ];
