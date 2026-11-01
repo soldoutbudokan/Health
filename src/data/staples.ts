@@ -840,6 +840,17 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["carrot cake", "cake", "dessert", "icing", "cream cheese", "snack"],
   },
   {
+    id: "staple-scallion-pancake-frozen",
+    name: "Scallion pancake",
+    variant: "frozen, pan-fried, plain",
+    source: "claude",
+    per: "1 pancake (~80 g)",
+    gramsPerServing: 80,
+    macros: { calories: 240, protein: 5, carbs: 28, fat: 12, fiber: 1, sugar: 1, sodium: 350 },
+    note: "Estimated on Oct 31, with no box to read: one frozen Taiwanese-style pancake, pan-fried, with nothing on it. It's the pancake in the Scallion Pancake Egg Roll-Up recipe, which puts the brands at 190–260 kcal and the pancake at about 350 mg sodium. Call it 190–290 kcal with the pan oil, and 300–450 mg sodium. If the box turns up, use its panel.",
+    tags: ["scallion pancake", "green onion pancake", "pancake", "frozen", "chinese", "taiwanese"],
+  },
+  {
     id: "staple-mortadella-sandwich-ciabatta",
     name: "Mortadella sandwich",
     variant: "ciabatta roll, melted cheese, pressed",
