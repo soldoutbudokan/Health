@@ -339,6 +339,16 @@ export const RECIPE_FOODS: Food[] = [
     tags: ["oats", "overnight oats", "protein oats", "whey", "peanut butter", "chocolate", "snack", "breakfast"],
   },
   {
+    id: "recipe-overnight-oats-protein-plain",
+    name: "Overnight Oats",
+    variant: "protein version, no topping",
+    source: "recipe",
+    per: "1 container (50 g oats, 100 g yogurt, 60 ml milk, 30 g whey)",
+    macros: { calories: 395, protein: 42, carbs: 43, fat: 6.5, fiber: 5, sugar: 8, sodium: 195 },
+    note: "The protein version as first made on Nov 1: the base only, without the PB caramel or the chocolate shell, which take off about 220 kcal. Worked out from the catalog's oats, 0% Greek yogurt, 2% milk and ON vanilla whey, assuming milk rather than water. The whey is about two-thirds of the sodium.",
+    tags: ["oats", "overnight oats", "protein oats", "whey", "snack", "breakfast"],
+  },
+  {
     id: "recipe-overnight-oats-pb",
     name: "Overnight Oats",
     variant: "PB version, no protein powder",
