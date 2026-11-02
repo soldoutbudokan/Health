@@ -2425,4 +2425,16 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Oct 30 from the menu's topping list and a photo; Maker posts no nutrition. Delivery listings put the large at 16 inches, taken as 8 slices. The whole pie is built as 500 g of dough, 120 g béchamel, 200 g mozzarella, 70 g goat cheese, onions from 200 g raw, 30 g honey, 20 g sesame and a pinch of finishing salt. Call it 230–400 kcal a slice, mostly the dough and cheese; sodium 400–750 mg.",
     tags: ["pizza", "white pizza", "frank's best", "franks best", "goat cheese", "béchamel", "bechamel", "caramelized onion", "honey", "sesame", "mozzarella", "maker", "maker pizza", "matty matheson", "toronto", "restaurant", "dinner"],
   },
+  {
+    id: "florin-pappardelle-ragu-toscano",
+    name: "Pappardelle al Ragù Toscano",
+    variant: "wild boar ragù, aged parmesan",
+    brand: "Florin Trattoria (Toronto)",
+    source: "claude",
+    per: "1 plate (~350 g)",
+    gramsPerServing: 350,
+    macros: { calories: 770, protein: 40, carbs: 78, fat: 32, fiber: 4, sugar: 5, sodium: 1000 },
+    note: "Estimated on Nov 2 from the menu's description; Florin posts no nutrition. Built as about 140 g fresh egg pappardelle, 150 g wild boar ragù with some pancetta and oil, 15 g aged parmesan and a little butter to finish. Call it 650–950 kcal, mostly the portion and the fat in the ragù; the boar itself is lean. Sodium 700–1,500 mg, from the ragù and the cheese.",
+    tags: ["pasta", "pappardelle", "ragu", "ragù", "wild boar", "boar", "parmesan", "florin", "florin trattoria", "italian", "toronto", "restaurant", "lunch"],
+  },
 ];
