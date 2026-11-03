@@ -974,6 +974,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "sour cream", "onion", "snack", "packaged"],
   },
   {
+    id: "pkg-miss-vickies-sour-cream-herb-onion",
+    name: "Kettle Cooked Potato Chips",
+    variant: "Sour Cream, Herb & Onion",
+    brand: "Miss Vickie's",
+    source: "packaged",
+    per: "28 g (~15 chips)",
+    gramsPerServing: 28,
+    macros: { calories: 150, protein: 2, carbs: 17, fat: 8, fiber: 1, sugar: 2, sodium: 140 },
+    note: "The US 28 g panel from Kroger and Stop & Shop listings, Nov 3; the Canadian bag wasn't seen. A tracking app lists the 40 g Canadian bag at 210 kcal, which matches this scaled up, so a 40 g bag is 1.43. Canadian sodium often runs higher than the US panel, so read it as 140–220 mg per 28 g.",
+    tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "sour cream", "herb", "onion", "snack", "packaged"],
+  },
+  {
     id: "pkg-handfuel-sweet-chili-mix",
     name: "Sweet Chili Nut Mix",
     variant: "hand-roasted mixed nuts",
