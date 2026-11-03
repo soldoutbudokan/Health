@@ -2459,4 +2459,15 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Nov 2 from the menu's description; Florin posts no nutrition. Built as about 140 g fresh egg pappardelle, 150 g wild boar ragù with some pancetta and oil, 15 g aged parmesan and a little butter to finish. Call it 650–950 kcal, mostly the portion and the fat in the ragù; the boar itself is lean. Sodium 700–1,500 mg, from the ragù and the cheese.",
     tags: ["pasta", "pappardelle", "ragu", "ragù", "wild boar", "boar", "parmesan", "florin", "florin trattoria", "italian", "toronto", "restaurant", "lunch"],
   },
+  {
+    id: "broken-rice-butter-beef",
+    name: "Butter Beef",
+    variant: "on vermicelli, noodles logged separately",
+    brand: "Broken Rice (Toronto)",
+    source: "claude",
+    per: "1 box, everything but the noodles",
+    macros: { calories: 622, protein: 43, carbs: 32, fat: 36, fiber: 3, sugar: 22, sodium: 1850 },
+    note: "Estimated on Nov 3; Broken Rice on Yonge posts no nutrition, only that the beef is shredded striploin cooked in butter. Built as about 130 g cooked striploin, a tablespoon of butter and a little oil, garlic and onion, a soy and sugar marinade, lettuce, herbs and pickled carrot, a sprinkle of peanuts and fried shallot, and 60 ml of nước chấm. Call it 450–850 kcal, mostly the butter and the beef portion; sodium 1,000–2,600 mg, most of it the nước chấm. The noodles go on their own row as the rice-noodle staple, about 200 g a box, so a box with noodles left over logs right.",
+    tags: ["butter beef", "buttered beef", "beef", "striploin", "vermicelli", "bun", "bún", "vietnamese", "broken rice", "toronto", "restaurant", "lunch"],
+  },
 ];

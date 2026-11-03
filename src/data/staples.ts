@@ -1727,4 +1727,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "USDA white table wine at a 5 oz glass. About 15 g of alcohol, 106 kcal, which no macro column holds; the carbs make up the rest. Sweeter whites carry more sugar, and a bigger pour scales with the servings multiplier.",
     tags: ["wine", "white wine", "glass", "alcohol", "drink", "via rail"],
   },
+  {
+    id: "staple-rice-noodles-cooked",
+    name: "Rice noodles, cooked",
+    variant: "rice vermicelli or flat rice noodles",
+    source: "usda",
+    per: "100 g cooked",
+    gramsPerServing: 100,
+    macros: { calories: 108, protein: 1.8, carbs: 24, fat: 0.2, fiber: 1, sugar: 0, sodium: 19 },
+    note: "USDA cooked rice noodles, per 100 g, added Nov 3 for a vermicelli box. Boiled in plain water, so the sodium is close to the whole figure; the sauce's salt belongs to whatever sits on top. A takeout vermicelli box holds about 200 g cooked, so a whole one is 2.",
+    tags: ["rice noodles", "noodles", "vermicelli", "bun", "bún", "rice", "vietnamese", "carb"],
+  },
 ];
