@@ -1010,6 +1010,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["nuts", "mixed nuts", "trail mix", "sweet chili", "sweet chilli", "handfuel", "snack", "packaged"],
   },
   {
+    id: "pkg-handfuel-lemon-marcona-almonds",
+    name: "Lemon Marcona Almonds",
+    variant: "dry roasted, lemon and sea salt",
+    brand: "Handfuel",
+    source: "packaged",
+    per: "1 pack (40 g)",
+    gramsPerServing: 40,
+    macros: { calories: 250, protein: 10, carbs: 6, fat: 22, fiber: 5, sugar: 1, sodium: 240 },
+    note: "The 40 g panel via search summaries of Canadian retailer listings and FatSecret on Nov 4; the retailer pages were blocked, so the pack itself wasn't seen. The listings agree with each other and with Handfuel's 10 g protein claim. The Atwater sum is 262, about 5% over, usual for nuts. One single-serve packet is 1.",
+    tags: ["handfuel", "almonds", "marcona", "marcona almonds", "lemon", "nuts", "sea salt", "roasted", "snack", "packaged"],
+  },
+  {
     id: "pkg-cheetos-puffs",
     name: "Cheetos Puffs",
     variant: "cheese flavoured",
