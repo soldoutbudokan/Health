@@ -173,7 +173,7 @@ curl,curl_backup,y_raise,cable_fly,dips,milestone,note
 | Column | Notes |
 |---|---|
 | `session` | a `sessions.csv` session type, or `rest` |
-| `phase` | `break` \| `return` \| `trip` \| `block-1` \| `deload` \| `block-2` \| `next-block` \| `contingency` |
+| `phase` | `break` \| `return` \| `trip` \| `block-1` \| `deload` \| `block-2` \| `contingency` |
 | `trap_bar`, `squat`, `leg_curl`, `bench` | planned top-set lbs. Blank means no such lift that day, never zero. `leg_curl`, `cable_row` and `lat_pulldown` may also carry reps, `120×6`; see below |
 | `trap_bar_backoff`, `squat_backoff`, `bench_backoff` | planned back-off lbs. Blank means every set at the top weight. The lower two were added September 29, 2026; see below |
 | `weighted_jumps` | lbs **per dumbbell**, light lower days only, added September 19, 2026. Blank on the heavy days, whose jumps are bodyweight by prescription, and blank before October 3 |
@@ -215,7 +215,7 @@ November 8 (pullups), November 10 (trap bar, then holding at 300) and November 1
 each test slides one and the pullups close November 22, which was then where the
 stretch ended. Redrawn October 25: the test went 10, so the pullups closed four
 weeks early, the later tests became ordinary sets, and the stretch ends with the
-squat on November 17 again. Redrawn October 27: the trap bar stopped at one rep of 290 when the back started talking. The Ottawa bar had read light, so 290 was a 10 lb step on the home bar. The owner put it at 285 on November 3, then fives to 300, and the squat and leg curl slid a week, so both goals now close November 24. Redrawn November 4: Mexico takes November 21–29 (in `data/breaks.csv`), so the two close after it, in the next block's heavy full-body day: triples at 295 and 220 on December 1, 300 and 225 on December 8, then one set of 5 at each on December 15, the last heavy day before BC. Those rows are `full-body` in phase `next-block`, and the rest of that block's week is deliberately not in this file. **When the three close, the last stretch is over** and the next block takes over,
+squat on November 17 again. Redrawn October 27: the trap bar stopped at one rep of 290 when the back started talking. The Ottawa bar had read light, so 290 was a 10 lb step on the home bar. The owner put it at 285 on November 3, then fives to 300, and the squat and leg curl slid a week, so both goals now close November 24. Redrawn November 4: Mexico takes November 21–29 (in `data/breaks.csv`), so the two close after it, still in Block 2 but on the next block's heavy full-body day: triples at 295 and 220 on December 1, 300 and 225 on December 8, then one set of 5 at each on December 15, the last heavy day before BC. Those rows are `full-body` in phase `block-2`, and the rest of those weeks is deliberately not in this file. **When the three close, the last stretch is over** and the next block takes over,
 whatever the bench is doing — the owner said so on September 7. Don't extend the stretch to
 chase the bench.
 

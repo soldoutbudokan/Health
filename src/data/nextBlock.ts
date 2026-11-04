@@ -328,7 +328,7 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
     detail: "Trap bar 290 then 295, squat 215 then 220. The Nov 12 and 19 heavy uppers set the bench top set, T.",
   },
   { when: "Nov 21 – 29", what: "Mexico", detail: "The away routine if you feel like it, and a lot of walking.", travel: true },
-  { when: "Mon Nov 30", what: "The new week starts", detail: "Food as now. No cut." },
+  { when: "Mon Nov 30", what: "The new week starts", detail: "The last stretch's Block 2 finishes on it, through Dec 15. Food as now; no cut." },
   { when: "Tue Dec 1", what: "First heavy day", detail: "Trap bar 295 × 3, squat 220 × 3, bench at T." },
   { when: "Tue Dec 8", what: "Up to the goal weights", detail: "Trap bar 300 × 3, squat 225 × 3." },
   {

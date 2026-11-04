@@ -480,6 +480,6 @@ The routine from November 30, 2026 to June 27, 2027, drafted October 27 to Novem
 
 **No cut for now.** The owner's decision on November 4: eat as now and let the cardio do what it does. Logged intake averaged 2,574 kcal and 179 g of protein from October 15 to November 3, and the scale has drifted down about four pounds since August. The weekly average and a weekly waist measurement decide whether a number comes in later.
 
-**Mexico** takes November 21–29, so the trap bar and squat close in the new block: triples at 295 and 220 on December 1, at 300 and 225 on December 8, and one set of 5 at each on December 15, the last heavy day before BC.
+**Mexico** takes November 21–29, so the last stretch's Block 2 finishes after it, on the new week's heavy day: triples at 295 and 220 on December 1, at 300 and 225 on December 8, and one set of 5 at each on December 15, the last heavy day before BC.
 
 **Not built yet.** The new sessions have no `program.ts` entries or session types, and the starting weights are formulas. Both get done after Mexico.
