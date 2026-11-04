@@ -30,6 +30,8 @@ export interface Piece {
   /** Chip text where space is short. */
   short: string;
   name: string;
+  /** The big word on a week tile, and the line under it. */
+  tile: { big: string; sub?: string };
   kind: PieceKind;
   when: string;
   time: string;
@@ -40,6 +42,7 @@ export interface Piece {
 export const PIECES: Piece[] = [
   {
     id: "H",
+    tile: { big: "Heavy", sub: "full body" },
     short: "Heavy",
     name: "Heavy full body",
     kind: "heavy",
@@ -57,6 +60,7 @@ export const PIECES: Piece[] = [
   },
   {
     id: "B2",
+    tile: { big: "Bench", sub: "volume" },
     short: "Bench volume",
     name: "Bench volume",
     kind: "bench",
@@ -73,6 +77,7 @@ export const PIECES: Piece[] = [
   },
   {
     id: "B3",
+    tile: { big: "Bench", sub: "light, paused" },
     short: "Light bench",
     name: "Light paused bench",
     kind: "bench",
@@ -89,6 +94,7 @@ export const PIECES: Piece[] = [
   },
   {
     id: "J",
+    tile: { big: "Jumps" },
     short: "Jumps",
     name: "Jumps",
     kind: "jump",
@@ -107,6 +113,7 @@ export const PIECES: Piece[] = [
   },
   {
     id: "J2",
+    tile: { big: "Jumps", sub: "short" },
     short: "Short jumps",
     name: "Short jumps",
     kind: "jump",
@@ -120,6 +127,7 @@ export const PIECES: Piece[] = [
   },
   {
     id: "I",
+    tile: { big: "Intervals" },
     short: "Intervals",
     name: "Intervals",
     kind: "cardio",
@@ -133,6 +141,7 @@ export const PIECES: Piece[] = [
   },
   {
     id: "Z",
+    tile: { big: "Zone 2" },
     short: "Zone 2",
     name: "Zone 2",
     kind: "cardio",
@@ -147,6 +156,7 @@ export const PIECES: Piece[] = [
   },
   {
     id: "knees",
+    tile: { big: "Knees" },
     short: "Knees",
     name: "Knees and shins",
     kind: "joint",
@@ -161,6 +171,7 @@ export const PIECES: Piece[] = [
   },
   {
     id: "hips",
+    tile: { big: "Hips" },
     short: "Hips",
     name: "Hips and calves",
     kind: "joint",
@@ -176,6 +187,9 @@ export const PIECES: Piece[] = [
 ];
 
 export const pieceById = (id: PieceId): Piece => PIECES.find((p) => p.id === id)!;
+
+/** Which piece names a day when several share it: the heavy day, then bench, jumps, cardio. */
+export const KIND_RANK: Record<PieceKind, number> = { heavy: 0, bench: 1, jump: 2, cardio: 3, joint: 4 };
 
 /** One piece of a day, with minutes where the piece is Zone 2. */
 export interface Slot {

@@ -256,3 +256,154 @@ body {
   stroke: var(--surface-1);
   stroke-width: 2;
 }
+
+/*
+ * The next-block page's own look, picked on November 4, 2026 from four
+ * samples: a hardwood court with a navy scoreboard and orange for the heavy
+ * day. It is scoped to `.arena` so nothing else on the site changes. Dark mode
+ * stains the floor walnut rather than inverting it, and keeps the navy and
+ * orange, so the page still reads as the same room at night.
+ *
+ * Contrast: navy on maple is about 9:1. Small orange text sits only on white
+ * panels or navy (--arena-orange-text, --arena-orange-bright), never on the
+ * floor, where orange falls to about 3:1.
+ */
+.arena {
+  --arena-court: #e7c38e;
+  --arena-grain-a: rgba(120, 72, 20, 0.07);
+  --arena-grain-b: rgba(255, 255, 255, 0.08);
+  --arena-ink: #13233f;
+  --arena-ink-2: #4a3a28;
+  --arena-line: rgba(255, 255, 255, 0.8);
+  --arena-panel: #ffffff;
+  --arena-panel-ink: #13233f;
+  --arena-panel-ink-2: #4f5b70;
+  --arena-panel-line: #ede4d4;
+  --arena-panel-shadow: 0 6px 0 rgba(19, 35, 63, 0.16);
+  --arena-navy: #13233f;
+  --arena-navy-deep: #0a1526;
+  --arena-on-navy: #ffffff;
+  --arena-on-navy-2: #9fb0cc;
+  --arena-orange: #e8692a;
+  --arena-orange-text: #b8481a;
+  --arena-orange-bright: #ff8a3d;
+  --arena-cardio: #ffffff;
+  --arena-track: #2a3b5c;
+  --arena-bench-bar: #6fa8ff;
+  --arena-done-bar: #5bd18b;
+  font-family: var(--font-arena-body), system-ui, sans-serif;
+  color: var(--arena-ink);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .arena {
+    --arena-court: #2b2017;
+    --arena-grain-a: rgba(0, 0, 0, 0.22);
+    --arena-grain-b: rgba(255, 255, 255, 0.03);
+    --arena-ink: #f3e8d6;
+    --arena-ink-2: #cdbba0;
+    --arena-line: rgba(255, 255, 255, 0.3);
+    --arena-panel: #18233a;
+    --arena-panel-ink: #eef2f8;
+    --arena-panel-ink-2: #aeb9cc;
+    --arena-panel-line: #2a3754;
+    --arena-panel-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+    --arena-navy: #0c1628;
+    --arena-navy-deep: #060d19;
+    --arena-orange: #f07a3a;
+    --arena-orange-text: #ff9a5c;
+    --arena-cardio: #e9dcc6;
+  }
+}
+:root[data-theme="dark"] .arena {
+  --arena-court: #2b2017;
+  --arena-grain-a: rgba(0, 0, 0, 0.22);
+  --arena-grain-b: rgba(255, 255, 255, 0.03);
+  --arena-ink: #f3e8d6;
+  --arena-ink-2: #cdbba0;
+  --arena-line: rgba(255, 255, 255, 0.3);
+  --arena-panel: #18233a;
+  --arena-panel-ink: #eef2f8;
+  --arena-panel-ink-2: #aeb9cc;
+  --arena-panel-line: #2a3754;
+  --arena-panel-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+  --arena-navy: #0c1628;
+  --arena-navy-deep: #060d19;
+  --arena-orange: #f07a3a;
+  --arena-orange-text: #ff9a5c;
+  --arena-cardio: #e9dcc6;
+}
+
+.arena-court {
+  background-color: var(--arena-court);
+  background-image:
+    repeating-linear-gradient(90deg, var(--arena-grain-a) 0 2px, transparent 2px 64px),
+    repeating-linear-gradient(0deg, var(--arena-grain-b) 0 1px, transparent 1px 9px);
+}
+.arena-display {
+  font-family: var(--font-arena-display), "Arial Narrow", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+}
+.arena-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.arena-panel {
+  background: var(--arena-panel);
+  color: var(--arena-panel-ink);
+  border-radius: 12px;
+  box-shadow: var(--arena-panel-shadow);
+}
+.arena-scoreboard {
+  background: var(--arena-navy);
+  color: var(--arena-on-navy);
+  border-radius: 12px;
+  box-shadow: 0 8px 0 var(--arena-navy-deep);
+}
+.arena-tile-heavy {
+  background: var(--arena-orange);
+  color: #13233f;
+}
+.arena-tile-gym {
+  background: var(--arena-navy);
+  color: var(--arena-on-navy);
+}
+.arena-tile-cardio {
+  background: var(--arena-cardio);
+  color: #13233f;
+}
+.arena-tile-joint {
+  border: 2px solid currentColor;
+}
+.arena-tile-rest {
+  border: 2px dashed currentColor;
+  opacity: 0.75;
+}
+.arena-details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.arena-details > summary::-webkit-details-marker {
+  display: none;
+}
+.arena-details[open] .arena-caret {
+  transform: rotate(90deg);
+}
+/* Border colours live here, not in utilities: the unlayered `* { border-color }`
+   above outranks Tailwind's layered border-colour classes. */
+.arena-lines {
+  border: 4px solid var(--arena-line);
+}
+.arena-lines-thin {
+  border: 2px solid var(--arena-line);
+}
+.arena-rule-navy {
+  border-top: 1px solid var(--arena-track);
+}
+.arena-stat-label {
+  font-size: 10px;
+}

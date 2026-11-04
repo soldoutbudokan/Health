@@ -301,8 +301,12 @@ The routine from November 30, 2026 to June 27, 2027, rendered at `/next-block`.
 Drafted October 27 to November 4, 2026 and audited on November 4; the reasoning
 is Section 11 of `docs/training-plan.md`. It is a plan document, not a calendar:
 the pieces of a week, a normal week, the short-week fallbacks and six rules for
-moving things. It reads nothing from the log and carries no dates beyond its
-own calendar list. The dated heavy days that close the last two goals stay in
+moving things. Its look — a hardwood court, a navy scoreboard, orange for the
+heavy day — was picked from four samples on November 4, 2026 and lives in
+`globals.css` under `.arena`, scoped to that page; plain labels, no sports puns,
+by request. The scoreboard and progress bars read the log through
+`goalTracks()`, the same figures `/last-stretch` shows; nothing else on the page
+does, and it carries no dates beyond its own calendar list. The dated heavy days that close the last two goals stay in
 `data/last-stretch.csv`, which is still the one file that schedules.
 
 The rules that matter when asked what to do: five sessions a week at most, two
