@@ -45,8 +45,15 @@ export default function LastStretchPage() {
         <p className="w-full text-sm text-muted">
           Every planned session from the BC break to the day the trap bar reaches 300 × 5,
           the squat 225 × 5 and the pullups 10, assuming every session goes well. The bench
-          rides along at an assumed rate and is not a condition of finishing; after these
-          three close, the next block is cardio. The plan is{" "}
+          rides along at an assumed rate and is not a condition of finishing. The last two
+          close in the{" "}
+          <Link
+            href="/next-block"
+            className="font-medium text-ink-2 underline decoration-hairline underline-offset-4 hover:text-ink"
+          >
+            next block
+          </Link>
+          , after Mexico. The plan is{" "}
           <code className="text-[13px]">data/last-stretch.csv</code>; the ticks come from{" "}
           <code className="text-[13px]">data/sessions.csv</code>.
         </p>
@@ -111,11 +118,12 @@ export default function LastStretchPage() {
           <div>
             <dt className="text-sm font-medium">Where it ends</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              Trap bar 300 and squat 225 together on Nov 24; the ten pullups came early, on
-              Oct 25. Once all three are done, the stretch is over, whatever the bench is doing. The rows
-              after that are backup: the same goal weights repeated for any lift that
-              stalls, and the plan ending Dec 20. The deadline is still Dec 31. There&rsquo;s
-              no deload on the calendar before then; I took them off on Sep 30.
+              The ten pullups came early, on Oct 25. Mexico takes Nov 21&ndash;29, so the trap bar
+              and squat close in the next block&rsquo;s heavy full-body day: triples at 295 and 220
+              on Dec 1, 300 and 225 on Dec 8, then one set of 5 at each on Dec 15, the last
+              heavy day before BC. Once both are done, the stretch is over, whatever the bench is
+              doing. The deadline is still Dec 31. There&rsquo;s no deload on the calendar before
+              then; I took them off on Sep 30.
             </dd>
           </div>
           <div>

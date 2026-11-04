@@ -124,7 +124,7 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   },
   trip: {
     label: "The trip",
-    blurb: "A maintenance week, not a deload. Away routine and trunk block, daily.",
+    blurb: "A maintenance week, not a deload. The away routine on most days; each day's note says what goes with it.",
   },
   "block-1": {
     label: "Block 1",
@@ -138,7 +138,12 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   "block-2": {
     label: "Block 2",
     blurb:
-      "Where the goals close on the all-goes-well line: trap bar 300 and squat 225 together on Nov 24. Ten pullups came early, on Oct 25. The first week's heavy days are in Ottawa.",
+      "The last weeks before Mexico, climbing to trap bar 295 and squat 220 on Nov 17. Ten pullups came early, on Oct 25. The first week's heavy days are in Ottawa.",
+  },
+  "next-block": {
+    label: "The next block",
+    blurb:
+      "The new week from Nov 30, with one heavy full-body day. Only the heavy days are drawn here, because they close the last two goals: triples at 295 and 220, then 300 and 225, then the test of 5 on Dec 15. The rest of the week is on the Next block page.",
   },
   contingency: {
     label: "Contingency",
@@ -154,6 +159,7 @@ export const PHASE_ORDER = [
   "block-1",
   "deload",
   "block-2",
+  "next-block",
   "contingency",
 ];
 

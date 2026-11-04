@@ -11,6 +11,7 @@ const LINKS = [
   { href: "/training", label: "Training" },
   { href: "/program", label: "Program" },
   { href: "/last-stretch", label: "Last stretch" },
+  { href: "/next-block", label: "Next block" },
 ];
 
 function ThemeToggle() {
