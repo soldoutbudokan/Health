@@ -448,3 +448,10 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-27-01,2026-10-27,heavy-lower,Warmups,warmup,1,,,,,"The usual warmups plus hip abductions and glute bridges, then the ramp sets. Ramp weights not noted.",logged
 2026-10-27-02,2026-10-27,heavy-lower,Trap bar deadlift,compound,1,1,290,,,"Lower back started talking on the first rep, so stopped there.",logged
 2026-10-27-03,2026-10-27,heavy-lower,Treadmill walk,finisher,1,,,,,Walked it off after stopping. No time noted.,logged
+2026-11-03-01,2026-11-03,heavy-lower,Warmups,warmup,1,,,,,"The usual warmups, then the ramp sets, with one more ramp set than normal. Ramp weights not noted.",logged
+2026-11-03-02,2026-11-03,heavy-lower,Trap bar deadlift,compound,1,5,270,,,Ramped up to this one.,logged
+2026-11-03-03,2026-11-03,heavy-lower,Trap bar deadlift,compound,2,3,290,,,"Stopped at 3. The back still felt a bit scary after last week, though I think 5 was there.",logged
+2026-11-03-04,2026-11-03,heavy-lower,Smith machine squat,compound,1,5,210,,,,logged
+2026-11-03-05,2026-11-03,heavy-lower,Smith machine squat,compound,2,5,190,,,"Back-off, at the planned 190.",logged
+2026-11-03-06,2026-11-03,heavy-lower,Lying leg curl,isolation,1,6,130,,,,logged
+2026-11-03-07,2026-11-03,heavy-lower,Lying leg curl,isolation,2,6,130,,,,logged
