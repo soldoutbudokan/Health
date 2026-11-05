@@ -211,7 +211,13 @@ function Reference({ title, children }: { title: string; children: React.ReactNo
 
 export default function NextBlockPage() {
   const today = toDateKey(new Date());
-  const tracks = goalTracks(readTrainingGoals(), readLastStretch(), readWorkouts());
+  const tracks = goalTracks(readTrainingGoals(), readLastStretch(), readWorkouts(), [
+    "deadlift",
+    "squat",
+    "pullups",
+    "dips",
+    "bench",
+  ]);
   const track = (id: string) => tracks.find((t) => t.id === id);
   const trap = track("deadlift");
   const squat = track("squat");

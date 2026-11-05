@@ -511,14 +511,16 @@ const MILESTONE_KEY: Record<string, RegExp> = {
 /**
  * The three goals the stretch is about, plus the bench as a rider. Graded on
  * real top sets only, the same rule the training page keeps: nothing
- * estimated feeds this.
+ * estimated feeds this. `/next-block` passes its own list, which adds the
+ * dips: they closed in August, before the stretch, so the stretch never
+ * tracked them, but the next block holds them like the rest.
  */
 export function goalTracks(
   goals: TrainingGoals,
   plans: PlanDay[],
   sets: WorkoutSet[],
+  wanted: string[] = ["deadlift", "squat", "pullups", "bench"],
 ): GoalTrack[] {
-  const wanted = ["deadlift", "squat", "pullups", "bench"];
   return wanted
     .map((id) => goals.goals.find((g) => g.id === id))
     .filter((g): g is NonNullable<typeof g> => g !== undefined)
