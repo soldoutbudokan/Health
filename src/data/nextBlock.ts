@@ -290,13 +290,13 @@ export const GOALS: { name: string; target: string; plan: string; state: GoalSta
   {
     name: "Trap bar deadlift",
     target: "300 × 5",
-    plan: "Closes in the last stretch: triples at 295 and 300 after Mexico, the test on Dec 15, two weeks of buffer. Then 300 × 3 to hold.",
+    plan: "Closes in the last stretch: 295 × 5 on Dec 1, 300 × 5 on Dec 8, with Dec 15 and 22 as tries at home. Then 300 × 3 to hold.",
     state: "open",
   },
   {
     name: "Smith squat",
     target: "225 × 5",
-    plan: "Closes in the last stretch: triples at 220 and 225, the test on Dec 15, two weeks of buffer. Then 225 × 3 to hold.",
+    plan: "Closes in the last stretch: 220 × 5 on Dec 1, 225 × 5 on Dec 8, with Dec 15 and 22 as tries at home. Then 225 × 3 to hold.",
     state: "open",
   },
   {
@@ -345,19 +345,19 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
   },
   { when: "Nov 21 – 29", what: "Mexico", detail: "The away routine if you feel like it, and a lot of walking.", travel: true },
   {
-    when: "Nov 30 – Dec 15",
+    when: "Nov 30 – Dec 8",
     what: "The last stretch, same week",
-    detail: "Heavy lower Tuesday, heavy upper Thursday, the light days on the weekend. Triples at 295 and 220 on Dec 1, 300 and 225 on Dec 8.",
+    detail: "Heavy lower Tuesday, heavy upper Thursday, the light days on the weekend. 295 and 220 for 5 on Dec 1, with back-offs.",
   },
   {
-    when: "Tue Dec 15",
-    what: "The test",
-    detail: "300 × 5 and 225 × 5. If BC starts first, it moves to the last heavy day before it.",
+    when: "Tue Dec 8",
+    what: "The goals",
+    detail: "300 × 5 and 225 × 5, then the back-offs.",
   },
   {
-    when: "Dec 16 – Jan 3",
+    when: "Dec 9 – Jan 3",
     what: "Buffer",
-    detail: "Two more heavy lowers for whichever lift is still open, triples for one that closed: Dec 22 at home, Dec 29 in BC. The Dec 23 and 31 heavy uppers set the bench top set, T.",
+    detail: "Tries at home on Dec 15 and 22 for whichever lift is still open, triples for one that closed, then Dec 29 in BC. The Dec 23 and 31 heavy uppers set the bench top set, T.",
   },
   {
     when: "Dec 24 – about Jan 15",

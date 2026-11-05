@@ -138,12 +138,12 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   "block-2": {
     label: "Block 2",
     blurb:
-      "Where the goals close. Trap bar 295 and squat 220 by Nov 17, then Mexico, then the same week again: triples at 295 and 220 on Dec 1, 300 and 225 on Dec 8, and the test of 5 on Dec 15. Ten pullups came early, on Oct 25.",
+      "Where the goals close. Trap bar 295 and squat 220 by Nov 17, then Mexico, then the same week again: 295 and 220 on Dec 1, and 300 × 5 and 225 × 5 on Dec 8. Ten pullups came early, on Oct 25.",
   },
   contingency: {
     label: "Contingency",
     blurb:
-      "Two weeks of buffer after the test, to Jan 3: goal weights for a lift still open, triples for one that closed, and no deload. Dec 22 is the last heavy lower at home; BC starts Dec 24 and the rest runs at a gym there. The next block starts Jan 4.",
+      "Buffer after the goals, to Jan 3: a set of 5 for a lift still open, triples for one that closed, and no deload. Dec 15 and 22 are the two tries at home; BC starts Dec 24 and the rest runs at a gym there. The next block starts Jan 4.",
   },
 };
 

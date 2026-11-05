@@ -47,7 +47,7 @@ export const metadata = { title: "The Next Block · Health" };
 const display = Big_Shoulders({ subsets: ["latin"], variable: "--font-arena-display" });
 const body = Barlow({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-arena-body" });
 
-const TEST_DAY = "2026-12-15";
+const TEST_DAY = "2026-12-08";
 
 function daysBetween(from: string, to: string): number {
   return Math.round((Date.parse(`${to}T12:00:00`) - Date.parse(`${from}T12:00:00`)) / 86_400_000);
@@ -238,7 +238,7 @@ export default function NextBlockPage() {
         </div>
         <div className="grid grid-cols-3 gap-2 md:flex">
           {toTest >= 0 ? (
-            <Stat label="Dec 15 test" value={toTest === 0 ? "Today" : `${toTest}`} under={toTest === 0 ? "Dec 15" : "days away"} />
+            <Stat label="Dec 8 goals" value={toTest === 0 ? "Today" : `${toTest}`} under={toTest === 0 ? "Dec 8" : "days away"} />
           ) : (
             bench && <Stat label="Bench × 5" value={`${bench.current ?? "–"}`} under={`of ${bench.target}`} />
           )}
