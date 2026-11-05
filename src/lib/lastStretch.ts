@@ -143,7 +143,7 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   contingency: {
     label: "Contingency",
     blurb:
-      "Two weeks of buffer after the test, to Jan 3. Goal weights repeated for a lift still open, triples for one that closed, and no deload. The deadline is Dec 31, and the next block starts Jan 4.",
+      "Two weeks of buffer after the test, to Jan 3: goal weights for a lift still open, triples for one that closed, and no deload. Dec 22 is the last heavy lower at home; BC starts Dec 24 and the rest runs at a gym there. The next block starts Jan 4.",
   },
 };
 

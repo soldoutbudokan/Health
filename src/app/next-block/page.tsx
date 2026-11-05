@@ -275,7 +275,7 @@ export default function NextBlockPage() {
       </section>
 
       <section className="space-y-4">
-        <Heading sub="T is the bench top set: the best clean 5 from the Dec 24 or Dec 31 heavy upper.">
+        <Heading sub="T is the bench top set: the best clean 5 from the Dec 23 or Dec 31 heavy upper.">
           The sessions
         </Heading>
         <div className="grid gap-4 md:grid-cols-2">

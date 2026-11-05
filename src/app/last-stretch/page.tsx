@@ -120,9 +120,9 @@ export default function LastStretchPage() {
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
               The ten pullups came early, on Oct 25. Mexico takes Nov 21&ndash;29, and the same
               week picks up after it: triples at 295 and 220 on Dec 1, 300 and 225 on Dec 8, then
-              one set of 5 at each on Dec 15. Dec 16 to Jan 3 is buffer, two more heavy lowers for
-              whichever lift is still open, and the next block starts Jan 4 whatever the bench is
-              doing. The deadline is still Dec 31. There&rsquo;s no deload on the calendar before
+              one set of 5 at each on Dec 15. Dec 16 to Jan 3 is buffer: two more heavy lowers for
+              whichever lift is still open, Dec 22 at home and Dec 29 at a gym in BC, where I am
+              from Dec 24. The next block starts Jan 4 whatever the bench is doing. The deadline is still Dec 31. There&rsquo;s no deload on the calendar before
               then; I took them off on Sep 30.
             </dd>
           </div>

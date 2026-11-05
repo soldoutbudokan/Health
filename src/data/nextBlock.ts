@@ -357,12 +357,12 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
   {
     when: "Dec 16 – Jan 3",
     what: "Buffer",
-    detail: "Two more heavy lowers for whichever lift is still open, triples for one that closed. The Dec 24 and 31 heavy uppers set the bench top set, T.",
+    detail: "Two more heavy lowers for whichever lift is still open, triples for one that closed: Dec 22 at home, Dec 29 in BC. The Dec 23 and 31 heavy uppers set the bench top set, T.",
   },
   {
-    when: "BC, dates TBD",
-    what: "Two or three weeks away, still training",
-    detail: "Same week at a BC gym, the first heavy day there at the last settled weights. One of the weeks is the deload.",
+    when: "Dec 24 – about Jan 15",
+    what: "BC, still training",
+    detail: "Same week at a BC gym, the first heavy day there at the last settled weights. One of the January weeks is the deload.",
     travel: true,
   },
   {
@@ -409,7 +409,7 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
   {
     group: "Heavy full body",
     rows: [
-      { name: "Bench top set, T", start: "The best clean 5 from the Dec 24 or Dec 31 heavy upper", then: "+5 when every set is clean" },
+      { name: "Bench top set, T", start: "The best clean 5 from the Dec 23 or Dec 31 heavy upper", then: "+5 when every set is clean" },
       { name: "Bench back-offs", start: "T − 15", then: "Follows T" },
       { name: "Trap bar", start: "300 × 3, once the goal closes", then: "Hold, and 300 × 5 on a block's last heavy day" },
       { name: "Smith squat", start: "225 × 3, once the goal closes", then: "Hold, and 225 × 5 on a block's last heavy day" },
@@ -473,5 +473,5 @@ export const BEFORE: string[] = [
   "Tape a strip on a wall from 9'6\" to 11' with inch marks, and take your best touch of five off one foot and off two.",
   "Resting heart rate on waking, a full 60-second count at the wrist, three mornings a week. None has been logged since Sep 5.",
   "Weigh in on at least four mornings a week, and tape the waist at the navel once a week.",
-  "The Dec 24 and Dec 31 heavy uppers set T, so there's no separate bench test.",
+  "The Dec 23 and Dec 31 heavy uppers set T, so there's no separate bench test.",
 ];
