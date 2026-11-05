@@ -29,7 +29,7 @@ import { goalTracks, type GoalTrack } from "@/lib/lastStretch";
 
 /**
  * The next block, rendered from `src/data/nextBlock.ts`: what a week is made
- * of from November 30, 2026, and the rules for moving the pieces when the
+ * of from January 4, 2027, and the rules for moving the pieces when the
  * week doesn't go to plan. It describes a template, not dates — the dated
  * heavy days that close the last two goals stay on `/last-stretch`, the one
  * page that schedules.
@@ -229,11 +229,11 @@ export default function NextBlockPage() {
     >
       <header className="arena-scoreboard flex flex-col gap-5 p-5 sm:p-6 md:flex-row md:items-center md:justify-between">
         <div className="space-y-1">
-          <p className="arena-eyebrow text-[color:var(--arena-orange-bright)]">Nov 30, 2026 – Jun 27, 2027</p>
+          <p className="arena-eyebrow text-[color:var(--arena-orange-bright)]">Jan 4 – Jun 27, 2027</p>
           <h1 className="arena-display text-6xl sm:text-7xl">The Next Block</h1>
           <p className="max-w-md pt-1 text-sm text-[color:var(--arena-on-navy-2)]">
             One heavy day a week holds the strength goals. The rest goes to the bench, cardio and
-            the dunk. Starting weights get real numbers after Mexico.
+            the dunk. Starting weights get real numbers before Jan 4.
           </p>
         </div>
         <div className="grid grid-cols-3 gap-2 md:flex">
@@ -275,7 +275,7 @@ export default function NextBlockPage() {
       </section>
 
       <section className="space-y-4">
-        <Heading sub="T is the bench top set: the best clean 5 from the Nov 12 or Nov 19 heavy upper.">
+        <Heading sub="T is the bench top set: the best clean 5 from the Dec 24 or Dec 31 heavy upper.">
           The sessions
         </Heading>
         <div className="grid gap-4 md:grid-cols-2">
@@ -522,7 +522,7 @@ export default function NextBlockPage() {
           </ul>
         </Reference>
 
-        <Reference title="Before Nov 30">
+        <Reference title="Before Jan 4">
           <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-[color:var(--arena-panel-ink-2)]">
             {BEFORE.map((b) => (
               <li key={b}>{b}</li>

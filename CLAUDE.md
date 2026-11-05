@@ -160,7 +160,8 @@ distance between it and reality is the layoff.
 ## THE LAST STRETCH — `data/last-stretch.csv`
 
 The calendar from September 7, 2026 to the day the trap bar reaches 300 × 5, the
-Smith squat 225 × 5 and the pullups 10, on the line where every session goes well.
+Smith squat 225 × 5 and the pullups 10, on the line where every session goes well,
+then two weeks of buffer to January 3, 2027.
 Rendered at `/last-stretch`. Asked for on September 7, 2026; the reasoning is
 Section 10 of `docs/training-plan.md`. One row per day:
 
@@ -215,9 +216,9 @@ November 8 (pullups), November 10 (trap bar, then holding at 300) and November 1
 each test slides one and the pullups close November 22, which was then where the
 stretch ended. Redrawn October 25: the test went 10, so the pullups closed four
 weeks early, the later tests became ordinary sets, and the stretch ends with the
-squat on November 17 again. Redrawn October 27: the trap bar stopped at one rep of 290 when the back started talking. The Ottawa bar had read light, so 290 was a 10 lb step on the home bar. The owner put it at 285 on November 3, then fives to 300, and the squat and leg curl slid a week, so both goals now close November 24. Redrawn November 4: Mexico takes November 21–29 (in `data/breaks.csv`), so the two close after it, still in Block 2 but on the next block's heavy full-body day: triples at 295 and 220 on December 1, 300 and 225 on December 8, then one set of 5 at each on December 15, the last heavy day before BC. Those rows are `full-body` in phase `block-2`, and the rest of those weeks is deliberately not in this file. **When the three close, the last stretch is over** and the next block takes over,
-whatever the bench is doing — the owner said so on September 7. Don't extend the stretch to
-chase the bench.
+squat on November 17 again. Redrawn October 27: the trap bar stopped at one rep of 290 when the back started talking. The Ottawa bar had read light, so 290 was a 10 lb step on the home bar. The owner put it at 285 on November 3, then fives to 300, and the squat and leg curl slid a week, so both goals now close November 24. Redrawn November 4: Mexico takes November 21–29 (in `data/breaks.csv`), so the two close after it, still in Block 2 but on the next block's heavy full-body day: triples at 295 and 220 on December 1, 300 and 225 on December 8, then one set of 5 at each on December 15, the last heavy day before BC. Those rows were `full-body`, one a week, with the rest of each week left to the next block. Redrawn November 5: the owner wanted the stretch's own week through December with a couple of weeks of buffer. So from November 30 the standing shape is back, the heavy lowers carry the same triples-then-test ramp to December 15 with no back-offs, and December 16 to January 3 is `contingency`: goal weights for a lift still open, triples for one that closed. The next block starts January 4, 2027. **The stretch ends January 3** and the next block takes over,
+whatever the bench is doing — the owner said on September 7 that the bench doesn't hold it open.
+Don't extend the stretch to chase the bench.
 
 **The heavy lower is a top set and a back-off.** Asked for on September 29,
 2026, after the second set failed on two heavy lowers running (260 lost form on
@@ -297,7 +298,8 @@ dashboard or the training page, however convenient it looks mid-week.
 
 ## THE NEXT BLOCK — `src/data/nextBlock.ts`
 
-The routine from November 30, 2026 to June 27, 2027, rendered at `/next-block`.
+The routine from January 4 to June 27, 2027, rendered at `/next-block` (November 30
+until the owner kept the last stretch running through December, on November 5).
 Drafted October 27 to November 4, 2026 and audited on November 4; the reasoning
 is Section 11 of `docs/training-plan.md`. It is a plan document, not a calendar:
 the pieces of a week, a normal week, the short-week fallbacks and six rules for
@@ -319,9 +321,8 @@ block, Copenhagen plank and overhead hold were left out on purpose, and direct
 ab work was replaced by two joint blocks — don't add them back unasked.
 
 **Not built yet.** None of the new sessions has a `program.ts` entry or a
-session type, and the starting weights are formulas. Both are due after
-Mexico. Until then, log a heavy full-body day as `full-body`, the session type
-the plan file's December rows use.
+session type, and the starting weights are formulas. Both are due before
+January 4. Until then, log a heavy full-body day as `full-body`.
 
 ## Before inventing an exercise, check the program
 

@@ -138,12 +138,12 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   "block-2": {
     label: "Block 2",
     blurb:
-      "Where the goals close. Trap bar 295 and squat 220 by Nov 17, then Mexico, then the new week's heavy full-body day: triples at 295 and 220, then 300 and 225, then the test of 5 on Dec 15. From Dec 1 only the heavy days are drawn; the rest of those weeks is on the Next block page. Ten pullups came early, on Oct 25.",
+      "Where the goals close. Trap bar 295 and squat 220 by Nov 17, then Mexico, then the same week again: triples at 295 and 220 on Dec 1, 300 and 225 on Dec 8, and the test of 5 on Dec 15. Ten pullups came early, on Oct 25.",
   },
   contingency: {
     label: "Contingency",
     blurb:
-      "Only if a goal is still open. Goal weights repeated, no deload, and the file ends Dec 20; the deadline is Dec 31.",
+      "Two weeks of buffer after the test, to Jan 3. Goal weights repeated for a lift still open, triples for one that closed, and no deload. The deadline is Dec 31, and the next block starts Jan 4.",
   },
 };
 

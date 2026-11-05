@@ -83,9 +83,38 @@ date,session,phase,deload,optional,trap_bar,trap_bar_backoff,squat,squat_backoff
 2026-11-27,stretch,trip,,yes,,,,,,,,,,,,,,,,,,Mexico. The away routine or a long walk.
 2026-11-28,stretch,trip,,yes,,,,,,,,,,,,,,,,,,Mexico. The away routine or a long walk.
 2026-11-29,stretch,trip,,yes,,,,,,,,,,,,,,,,,,Mexico. The away routine or a long walk.
-2026-11-30,rest,block-2,,,,,,,,,,,,,,,,,,,,"Home, and the new week starts. Only its heavy days are drawn here; the rest of the week is on the Next block page."
-2026-12-01,full-body,block-2,,,295,,220,,,,180,165,2×5,,,,,,,1×10,,"First heavy day back, at the weights from before the trip. One belted set of 3 on the trap bar and the squat, no back-offs."
-2026-12-07,rest,block-2,,,,,,,,,,,,,,,,,,,,
-2026-12-08,full-body,block-2,,,300,,225,,,,185,170,2×5,,,,,,,1×10,,"Trap bar 300 × 3 and squat 225 × 3. If both move well, next week is the test."
-2026-12-14,rest,block-2,,,,,,,,,,,,,,,,,,,,
-2026-12-15,full-body,block-2,,,300,,225,,,,190,175,2×5,,,,,,,1×10,"Trap bar 300 × 5 and squat 225 × 5 — goals, and the end of the last stretch","The test, on the last heavy day before BC, so it moves with the BC dates. One belted set of 5 at each. From here they hold at 300 × 3 and 225 × 3."
+2026-11-30,stretch,block-2,,,,,,,,,,,,,,,,,,,,"Home from Mexico. Stretch under tension, or a 30-minute walk if wrecked."
+2026-12-01,heavy-lower,block-2,,,295,,220,,140,,,,"2×4 easy, optional",,,,,,,,,"First heavy day back, at the weights from before the trip. One belted set of 3 on the trap bar and the squat, no back-offs."
+2026-12-02,off-a,block-2,,,,,,,,,,,,,,,,,,,,
+2026-12-03,heavy-upper,block-2,,,,,,,,,180,165,2×5,150×6,150,30.5,30,20,,1×10,,"First heavy upper back, so the bench repeats Nov 19's 180, back-offs 165."
+2026-12-04,off-b,block-2,,,,,,,,,,,,,,,,,,,,Or basketball instead.
+2026-12-05,light-lower,block-2,,,240,,180,,120×6,20,,,"2×4 easy, optional",,,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
+2026-12-06,light-upper,block-2,,,,,,,,,145,,2 sets,150×6,150,30.5,30,20,45,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
+2026-12-07,stretch,block-2,,,,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
+2026-12-08,heavy-lower,block-2,,,300,,225,,140,,,,"2×4 easy, optional",,,,,,,,,"Trap bar 300 × 3 and squat 225 × 3. If both move well, next week is the test."
+2026-12-09,off-a,block-2,,,,,,,,,,,,,,,,,,,,
+2026-12-10,heavy-upper,block-2,,,,,,,,,185,170,2×5,160,150,30.5,30,20,,1×10,,"Bench 185, back-offs 170."
+2026-12-11,off-b,block-2,,,,,,,,,,,,,,,,,,,,Or basketball instead.
+2026-12-12,light-lower,block-2,,,245,,185,,120×6,20,,,"2×4 easy, optional",,,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
+2026-12-13,light-upper,block-2,,,,,,,,,145,,2 sets,160,150×6,30.5,30,20,45,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
+2026-12-14,stretch,block-2,,,,,,,,,,,,,,,,,,,,"Stretch under tension, or a walk. Both goals tomorrow."
+2026-12-15,heavy-lower,block-2,,,300,,225,,140,,,,"2×4 easy, optional",,,,,,,,Trap bar 300 × 5 and squat 225 × 5 — goals,"The test: one belted set of 5 at each. A lift that lands holds at 3s from here; one that doesn't gets two more tries. If BC starts first, the test moves to the last heavy day before it."
+2026-12-16,off-a,contingency,,,,,,,,,,,,,,,,,,,,
+2026-12-17,heavy-upper,contingency,,,,,,,,,190,175,2×5,160,150×6,30.5,30,20,,1×10,,"Bench 190, back-offs 175."
+2026-12-18,off-b,contingency,,,,,,,,,,,,,,,,,,,,Or basketball instead.
+2026-12-19,light-lower,contingency,,,245,,185,,120×6,20,,,"2×4 easy, optional",,,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
+2026-12-20,light-upper,contingency,,,,,,,,,145,,2 sets,160,160,30.5,30,20,45,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
+2026-12-21,stretch,contingency,,,,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
+2026-12-22,heavy-lower,contingency,,,300,,225,,140,,,,"2×4 easy, optional",,,,,,,,,"Buffer. A set of 5 for a lift still open, a set of 3 for one that closed on Dec 15."
+2026-12-23,off-a,contingency,,,,,,,,,,,,,,,,,,,,
+2026-12-24,heavy-upper,contingency,,,,,,,,,190,175,2×5,160,160,30.5,30,20,,1×10,,Bench stays at 190; it goes up next week.
+2026-12-25,off-b,contingency,,,,,,,,,,,,,,,,,,,,Or basketball instead.
+2026-12-26,light-lower,contingency,,,245,,185,,120×6,20,,,"2×4 easy, optional",,,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
+2026-12-27,light-upper,contingency,,,,,,,,,145,,2 sets,160,160×6,30.5,30,20,45,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding."
+2026-12-28,stretch,contingency,,,,,,,,,,,,,,,,,,,,"Stretch under tension, or a 30-minute walk if wrecked."
+2026-12-29,heavy-lower,contingency,,,300,,225,,140,,,,"2×4 easy, optional",,,,,,,,,"Same as Dec 22, and the last try before the deadline."
+2026-12-30,off-a,contingency,,,,,,,,,,,,,,,,,,,,
+2026-12-31,heavy-upper,contingency,,,,,,,,,195,180,2×5,160×6,160×6,30.5,30,20,,1×10,,"Bench 195, back-offs 180."
+2027-01-01,off-b,contingency,,,,,,,,,,,,,,,,,,,,Or basketball instead.
+2027-01-02,light-lower,contingency,,,245,,185,,120×6,20,,,"2×4 easy, optional",,,,,,,,,"Fasted, beltless, jumps first. Focus on bar speed, not weight."
+2027-01-03,light-upper,contingency,,,,,,,,,145,,2 sets,160×6,170,30.5,30,20,45,1×10,,"Fasted. Keep the 3 x 8 smooth, no grinding. The last day of the stretch; the next block starts tomorrow."

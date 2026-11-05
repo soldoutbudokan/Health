@@ -44,16 +44,16 @@ export default function LastStretchPage() {
         </Link>
         <p className="w-full text-sm text-muted">
           Every planned session from the BC break to the day the trap bar reaches 300 × 5,
-          the squat 225 × 5 and the pullups 10, assuming every session goes well. The bench
-          rides along at an assumed rate and is not a condition of finishing. The last two
-          close after Mexico, on the{" "}
+          the squat 225 × 5 and the pullups 10, assuming every session goes well, then two
+          weeks of buffer to Jan 3. The bench rides along at an assumed rate and is not a
+          condition of finishing. The{" "}
           <Link
             href="/next-block"
             className="font-medium text-ink-2 underline decoration-hairline underline-offset-4 hover:text-ink"
           >
-            next block&rsquo;s
+            next block
           </Link>{" "}
-          week. The plan is{" "}
+          starts Jan 4. The plan is{" "}
           <code className="text-[13px]">data/last-stretch.csv</code>; the ticks come from{" "}
           <code className="text-[13px]">data/sessions.csv</code>.
         </p>
@@ -118,10 +118,10 @@ export default function LastStretchPage() {
           <div>
             <dt className="text-sm font-medium">Where it ends</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
-              The ten pullups came early, on Oct 25. Mexico takes Nov 21&ndash;29, so Block 2
-              finishes after it, on the new week&rsquo;s heavy full-body day: triples at 295 and
-              220 on Dec 1, 300 and 225 on Dec 8, then one set of 5 at each on Dec 15, the last
-              heavy day before BC. Once both are done, the stretch is over, whatever the bench is
+              The ten pullups came early, on Oct 25. Mexico takes Nov 21&ndash;29, and the same
+              week picks up after it: triples at 295 and 220 on Dec 1, 300 and 225 on Dec 8, then
+              one set of 5 at each on Dec 15. Dec 16 to Jan 3 is buffer, two more heavy lowers for
+              whichever lift is still open, and the next block starts Jan 4 whatever the bench is
               doing. The deadline is still Dec 31. There&rsquo;s no deload on the calendar before
               then; I took them off on Sep 30.
             </dd>

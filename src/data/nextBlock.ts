@@ -1,6 +1,8 @@
 /**
- * The next block: the routine from November 30, 2026, after the last stretch
- * and Mexico, to June 27, 2027. Rendered at `/next-block`.
+ * The next block: the routine from January 4, 2027, after the last stretch,
+ * to June 27, 2027. Rendered at `/next-block`. It was to start November 30,
+ * 2026, until the owner kept the last stretch's week running through December
+ * on November 5.
  *
  * Drafted October 27 – November 4, 2026, and audited on November 4. It is a
  * plan document, not a calendar: it says what a week is made of and the rules
@@ -10,7 +12,7 @@
  * `docs/training-plan.md` has the reasoning behind the shape.
  *
  * Nothing in `program.ts` knows about these sessions yet. They get program
- * entries, and the starting weights get numbers, after Mexico.
+ * entries, and the starting weights get numbers, before January 4.
  */
 
 export type PieceId = "H" | "B2" | "B3" | "J" | "J2" | "I" | "Z" | "knees" | "hips";
@@ -288,13 +290,13 @@ export const GOALS: { name: string; target: string; plan: string; state: GoalSta
   {
     name: "Trap bar deadlift",
     target: "300 × 5",
-    plan: "Triples at 295 and 300 after Mexico, the test on Dec 15, then 300 × 3 to hold.",
+    plan: "Closes in the last stretch: triples at 295 and 300 after Mexico, the test on Dec 15, two weeks of buffer. Then 300 × 3 to hold.",
     state: "open",
   },
   {
     name: "Smith squat",
     target: "225 × 5",
-    plan: "Triples at 220 and 225, the test on Dec 15, then 225 × 3 to hold.",
+    plan: "Closes in the last stretch: triples at 220 and 225, the test on Dec 15, two weeks of buffer. Then 225 × 3 to hold.",
     state: "open",
   },
   {
@@ -339,22 +341,34 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
   {
     when: "Nov 5 – 20",
     what: "The last stretch, as drawn",
-    detail: "Trap bar 290 then 295, squat 215 then 220. The Nov 12 and 19 heavy uppers set the bench top set, T.",
+    detail: "Trap bar 290 then 295, squat 215 then 220.",
   },
   { when: "Nov 21 – 29", what: "Mexico", detail: "The away routine if you feel like it, and a lot of walking.", travel: true },
-  { when: "Mon Nov 30", what: "The new week starts", detail: "The last stretch's Block 2 finishes on it, through Dec 15. Food as now; no cut." },
-  { when: "Tue Dec 1", what: "First heavy day", detail: "Trap bar 295 × 3, squat 220 × 3, bench at T." },
-  { when: "Tue Dec 8", what: "Up to the goal weights", detail: "Trap bar 300 × 3, squat 225 × 3." },
+  {
+    when: "Nov 30 – Dec 15",
+    what: "The last stretch, same week",
+    detail: "Heavy lower Tuesday, heavy upper Thursday, the light days on the weekend. Triples at 295 and 220 on Dec 1, 300 and 225 on Dec 8.",
+  },
   {
     when: "Tue Dec 15",
     what: "The test",
-    detail: "300 × 5 and 225 × 5, which closes the last stretch. It's the last heavy day before BC, so it moves with the BC dates.",
+    detail: "300 × 5 and 225 × 5. If BC starts first, it moves to the last heavy day before it.",
+  },
+  {
+    when: "Dec 16 – Jan 3",
+    what: "Buffer",
+    detail: "Two more heavy lowers for whichever lift is still open, triples for one that closed. The Dec 24 and 31 heavy uppers set the bench top set, T.",
   },
   {
     when: "BC, dates TBD",
     what: "Two or three weeks away, still training",
     detail: "Same week at a BC gym, the first heavy day there at the last settled weights. One of the weeks is the deload.",
     travel: true,
+  },
+  {
+    when: "Mon Jan 4",
+    what: "The next block starts",
+    detail: "Bench at T, the trap bar and squat at 300 × 3 and 225 × 3. Food as now; no cut.",
   },
   {
     when: "After BC – Jun 27",
@@ -381,8 +395,8 @@ export function benchBackups(barbell: number): { press: number; dumbbell: number
   };
 }
 
-/** The example top set the backup lines are drawn for: the Dec 1 row in the plan file. */
-export const EXAMPLE_T = 180;
+/** The example top set the backup lines are drawn for: the Dec 31 row in the plan file. */
+export const EXAMPLE_T = 195;
 
 export const BENCH_LINES: { line: string; offset: number; reps: string }[] = [
   { line: "Heavy top set", offset: 0, reps: "× 5" },
@@ -395,10 +409,10 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
   {
     group: "Heavy full body",
     rows: [
-      { name: "Bench top set, T", start: "The best clean 5 from the Nov 12 or Nov 19 heavy upper", then: "+5 when every set is clean" },
+      { name: "Bench top set, T", start: "The best clean 5 from the Dec 24 or Dec 31 heavy upper", then: "+5 when every set is clean" },
       { name: "Bench back-offs", start: "T − 15", then: "Follows T" },
-      { name: "Trap bar", start: "295 × 3 on Dec 1", then: "300 × 3, the test of 5, then hold" },
-      { name: "Smith squat", start: "220 × 3 on Dec 1", then: "225 × 3, the test of 5, then hold" },
+      { name: "Trap bar", start: "300 × 3, once the goal closes", then: "Hold, and 300 × 5 on a block's last heavy day" },
+      { name: "Smith squat", start: "225 × 3, once the goal closes", then: "Hold, and 225 × 5 on a block's last heavy day" },
       { name: "Pullups, dips", start: "2 × 5 and 1 × 10, bodyweight", then: "Hold" },
     ],
   },
@@ -408,7 +422,7 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
       { name: "Bench 3 × 8", start: "T − 30", then: "Follows T" },
       { name: "Paused bench", start: "T − 25", then: "Follows T" },
       { name: "Incline chest press machine", start: "Near two-thirds of the 3 × 8 weight, settled where 8 leaves 2 reps", then: "A step when both sets reach 10" },
-      { name: "Cable row", start: "140, the last clean 2 × 5 (Oct 25)", then: "About 82% of T; a 5 lb step is the pin below for one more rep" },
+      { name: "Cable row", start: "The last clean 2 × 5 in December", then: "About 82% of T; a 5 lb step is the pin below for one more rep" },
       { name: "Triceps pushdown", start: "Where 10 leaves 2–3 reps", then: "A step when both sets reach 12" },
       { name: "Seated Y raise", start: "20", then: "Hold" },
     ],
@@ -419,7 +433,7 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
       { name: "Pogos, depth and approach jumps", start: "Bodyweight, the same box as now", then: "Hold" },
       { name: "Weighted jumps", start: "20 a hand", then: "Hold" },
       { name: "Bulgarian split squat", start: "30 a hand (5 on Oct 10, not close to failure)", then: "Hold" },
-      { name: "Lying leg curl", start: "130 (2 × 6 on Nov 3)", then: "Hold" },
+      { name: "Lying leg curl", start: "The last clean heavy-lower weight in December", then: "Hold" },
     ],
   },
   {
@@ -459,5 +473,5 @@ export const BEFORE: string[] = [
   "Tape a strip on a wall from 9'6\" to 11' with inch marks, and take your best touch of five off one foot and off two.",
   "Resting heart rate on waking, a full 60-second count at the wrist, three mornings a week. None has been logged since Sep 5.",
   "Weigh in on at least four mornings a week, and tape the waist at the navel once a week.",
-  "The Nov 12 and Nov 19 heavy uppers set T, so there's no separate bench test.",
+  "The Dec 24 and Dec 31 heavy uppers set T, so there's no separate bench test.",
 ];
