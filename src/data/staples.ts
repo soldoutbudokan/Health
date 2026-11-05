@@ -1432,6 +1432,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["chips", "potato chips", "kettle chips", "dill", "dill pickle", "creamy dill", "covered bridge", "snack", "packaged"],
   },
   {
+    id: "pkg-covered-bridge-smokin-sweet-bbq-60g",
+    name: "Potato Chips",
+    variant: "Smokin' Sweet BBQ",
+    brand: "Covered Bridge",
+    source: "packaged",
+    per: "1 bag (~60 g)",
+    gramsPerServing: 60,
+    macros: { calories: 300, protein: 5, carbs: 36, fat: 15, fiber: 3.5, sugar: 2.5, sodium: 460 },
+    note: "A 60 g bag listing via search summaries on Nov 5 (300 kcal, 15 g fat, 36 g carbs, 460 mg sodium); the wrapper wasn't seen. Protein, fibre and sugar are scaled from a 49 g listing of the same flavour (4 g, 3 g, 2 g). Other listings run 290–380 mg sodium for about 50 g, so call the bag 350–460.",
+    tags: ["chips", "potato chips", "kettle chips", "bbq", "barbecue", "smokin sweet bbq", "covered bridge", "snack", "packaged"],
+  },
+  {
     id: "pkg-cookie-it-up-shortbread",
     name: "Shortbread Cookie",
     brand: "Cookie It Up",
