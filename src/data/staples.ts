@@ -1455,6 +1455,17 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["cookie", "shortbread", "shorts", "milk chocolate", "chocolate", "cookie it up", "snack", "dessert"],
   },
   {
+    id: "staple-macaron",
+    name: "Macaron",
+    variant: "French, filled",
+    source: "claude",
+    per: "1 macaron (~18 g)",
+    gramsPerServing: 18,
+    macros: { calories: 75, protein: 1.3, carbs: 10.5, fat: 3, fiber: 0.4, sugar: 9, sodium: 10 },
+    note: "Estimated on Nov 5 for a standard bakery macaron, no flavour or shop named: almond flour, sugar and egg white shells with a ganache or buttercream filling, about 420 kcal per 100 g. Call it 60–110 kcal, mostly the size and how much filling. Sodium 5–30 mg. A large one is about 1.5.",
+    tags: ["macaron", "macarons", "macaroon", "french", "almond", "cookie", "bakery", "dessert", "snack"],
+  },
+  {
     id: "pkg-pc-decadent-chocolate-chip-cookie",
     name: "The Decadent Chocolate Chip Cookie",
     brand: "President's Choice",
