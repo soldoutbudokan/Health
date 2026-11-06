@@ -454,3 +454,16 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-03-05,2026-11-03,heavy-lower,Smith machine squat,compound,2,5,190,,,"Back-off, at the planned 190.",logged
 2026-11-03-06,2026-11-03,heavy-lower,Lying leg curl,isolation,1,6,130,,,,logged
 2026-11-03-07,2026-11-03,heavy-lower,Lying leg curl,isolation,2,6,130,,,,logged
+2026-11-05-01,2026-11-05,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-11-05-02,2026-11-05,heavy-upper,Pullups,compound,1,5,,,,,logged
+2026-11-05-03,2026-11-05,heavy-upper,Pullups,compound,2,5,,,,,logged
+2026-11-05-04,2026-11-05,heavy-upper,Bench press,compound,1,5,175,,,,logged
+2026-11-05-05,2026-11-05,heavy-upper,Bench press,compound,2,5,160,,,,logged
+2026-11-05-06,2026-11-05,heavy-upper,Bench press,compound,3,5,160,,,,logged
+2026-11-05-07,2026-11-05,heavy-upper,Cable row,compound,1,5,150,,,,logged
+2026-11-05-08,2026-11-05,heavy-upper,Cable row,compound,2,5,150,,,,logged
+2026-11-05-09,2026-11-05,heavy-upper,Bayesian cable curl,isolation,1,8,25.5,,,25.5 a side.,logged
+2026-11-05-10,2026-11-05,heavy-upper,Bayesian cable curl,isolation,2,6,25.5,,,,logged
+2026-11-05-11,2026-11-05,heavy-upper,Seated Y raise,isolation,1,5,20,,,"First time these felt reasonably easy, maybe 1–2 reps left.",logged
+2026-11-05-12,2026-11-05,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-11-05-13,2026-11-05,heavy-upper,Dips,isolation,1,10,,,,,logged
