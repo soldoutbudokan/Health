@@ -325,6 +325,17 @@ export const RESTAURANT_FOODS: Food[] = [
     tags: ["tim hortons", "timmies", "timbit", "timbits", "old fashioned", "old fashion", "plain", "donut", "doughnut", "donut hole", "chain", "snack"],
   },
   {
+    id: "timhortons-chocolate-hazelnut-muffin",
+    name: "Chocolate Hazelnut Muffin",
+    brand: "Tim Hortons",
+    source: "claude",
+    per: "1 muffin (~115 g)",
+    gramsPerServing: 115,
+    macros: { calories: 430, protein: 6, carbs: 62, fat: 18, fiber: 2, sugar: 34, sodium: 400 },
+    note: "Estimated on Nov 7: searches found no figures for it, only that it's a seasonal muffin with nuts on top. Built from Tim Hortons' chocolate chip muffin (410–420 kcal, 115 g, 330–430 mg sodium in third-party listings), with a little fat added for the hazelnut. Call it 380–500 kcal and 300–500 mg sodium; the filling and topping are the unknowns.",
+    tags: ["tim hortons", "timmies", "muffin", "chocolate", "hazelnut", "bakery", "chain", "snack"],
+  },
+  {
     id: "mandys-cobb-salad",
     name: "Cobb Salad",
     variant: "signature size, as listed — no added protein",
