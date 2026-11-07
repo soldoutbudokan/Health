@@ -1201,6 +1201,16 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["chai", "vanilla chai", "chai latte", "tea", "latte", "drink", "cafe"],
   },
   {
+    id: "staple-karak-chai-12oz",
+    name: "Karak chai",
+    variant: "12 oz, evaporated milk and sugar",
+    source: "claude",
+    per: "1 cup (12 fl oz)",
+    macros: { calories: 195, protein: 6, carbs: 27, fat: 7, fiber: 0, sugar: 27, sodium: 100 },
+    note: "Estimated on Nov 6 for a cup from Shagh Cafe, whose menu couldn't be found: black tea and cardamom boiled with about 90 g of evaporated milk (USDA) and 18 g of sugar. Call it 120–300 kcal, mostly the sugar and whether the café uses condensed milk instead, which adds about 100. Sodium 60–160 mg.",
+    tags: ["chai", "karak", "karak chai", "tea", "cardamom", "evaporated milk", "drink", "cafe", "shagh"],
+  },
+  {
     id: "pkg-hide-seek-fab-vanilla",
     name: "Hide & Seek Fab! Cookies",
     variant: "Vanilla cream sandwich",
