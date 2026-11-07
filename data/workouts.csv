@@ -467,3 +467,12 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-05-11,2026-11-05,heavy-upper,Seated Y raise,isolation,1,5,20,,,"First time these felt reasonably easy, maybe 1–2 reps left.",logged
 2026-11-05-12,2026-11-05,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
 2026-11-05-13,2026-11-05,heavy-upper,Dips,isolation,1,10,,,,,logged
+2026-11-07-01,2026-11-07,light-lower,Warmups,warmup,1,,,,,,logged
+2026-11-07-02,2026-11-07,light-lower,Depth jumps,jump,1,5,,,,,logged
+2026-11-07-03,2026-11-07,light-lower,Depth jumps,jump,2,5,,,,,logged
+2026-11-07-04,2026-11-07,light-lower,Weighted jumps,jump,1,5,20,,,,logged
+2026-11-07-05,2026-11-07,light-lower,Weighted jumps,jump,2,5,20,,,,logged
+2026-11-07-06,2026-11-07,light-lower,Trap bar deadlift,compound,1,5,240,,,"240, not the planned 235, which is awkward to load.",logged
+2026-11-07-07,2026-11-07,light-lower,Trap bar deadlift,compound,2,5,240,,,,logged
+2026-11-07-08,2026-11-07,light-lower,Bulgarian split squat,compound,1,6,40,,,"Instead of the Smith squat, which was taken. Weight is per dumbbell, 6 per leg.",logged
+2026-11-07-09,2026-11-07,light-lower,Bulgarian split squat,compound,2,6,40,,,,logged
