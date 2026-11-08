@@ -476,3 +476,17 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-07-07,2026-11-07,light-lower,Trap bar deadlift,compound,2,5,240,,,,logged
 2026-11-07-08,2026-11-07,light-lower,Bulgarian split squat,compound,1,6,40,,,"Instead of the Smith squat, which was taken. Weight is per dumbbell, 6 per leg.",logged
 2026-11-07-09,2026-11-07,light-lower,Bulgarian split squat,compound,2,6,40,,,,logged
+2026-11-08-01,2026-11-08,light-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-11-08-02,2026-11-08,light-upper,Pullups,compound,1,10,,,,,logged
+2026-11-08-03,2026-11-08,light-upper,Pullups,compound,2,2,,,,,logged
+2026-11-08-04,2026-11-08,light-upper,Bench press,compound,1,8,145,,,,logged
+2026-11-08-05,2026-11-08,light-upper,Bench press,compound,2,8,145,,,,logged
+2026-11-08-06,2026-11-08,light-upper,Bench press,compound,3,8,145,,,,logged
+2026-11-08-07,2026-11-08,light-upper,Seated Y raise,isolation,1,5,20,,,,logged
+2026-11-08-08,2026-11-08,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-11-08-09,2026-11-08,light-upper,Lat pulldown,compound,1,6,140,,,Very hard.,logged
+2026-11-08-10,2026-11-08,light-upper,Lat pulldown,compound,2,6,140,,,,logged
+2026-11-08-11,2026-11-08,light-upper,Cable row,compound,1,4,150,,,"Four on both sets, nothing left.",logged
+2026-11-08-12,2026-11-08,light-upper,Cable row,compound,2,4,150,,,,logged
+2026-11-08-13,2026-11-08,light-upper,Incline dumbbell curl,isolation,1,6,25,,,25 a hand.,logged
+2026-11-08-14,2026-11-08,light-upper,Incline dumbbell curl,isolation,2,6,25,,,,logged
