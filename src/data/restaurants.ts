@@ -336,6 +336,18 @@ export const RESTAURANT_FOODS: Food[] = [
     tags: ["tim hortons", "timmies", "muffin", "chocolate", "hazelnut", "bakery", "chain", "snack"],
   },
   {
+    id: "prince-st-spicy-spring-square",
+    name: "Spicy Spring",
+    variant: "Sicilian square, cupped pepperoni",
+    brand: "Prince St. Pizza",
+    source: "claude",
+    per: "1 square slice (~230 g)",
+    gramsPerServing: 230,
+    macros: { calories: 620, protein: 27, carbs: 65, fat: 28, fiber: 3, sugar: 5, sodium: 1500 },
+    note: "Estimated on Nov 7 from what's on it, since Prince St. publishes no figures: thick Sicilian dough, fresh mozzarella, pecorino, spicy tomato sauce and cupped pepperoni, at about 230 g a square. Call it 450–800 kcal; the size of the cut and the pan oil are the unknowns. Sodium 1,000–2,000 mg, mostly from the pepperoni and the dough.",
+    tags: ["prince st", "prince street", "pizza", "spicy spring", "pepperoni", "square", "sicilian", "slice", "restaurant", "dinner"],
+  },
+  {
     id: "mandys-cobb-salad",
     name: "Cobb Salad",
     variant: "signature size, as listed — no added protein",
