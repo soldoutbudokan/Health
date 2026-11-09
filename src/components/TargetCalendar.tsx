@@ -385,13 +385,6 @@ export function TargetCalendar({
           <span className="h-[10px] w-[10px] rounded-[2px] border border-dashed border-hairline" />
           Not logged
         </span>
-        <span className="flex items-center gap-1.5">
-          <span className="flex h-[12px] gap-[2px]">
-            <span className="w-[4px] rounded-[2px]" style={{ background: "var(--status-good)" }} />
-            <span className="w-[4px] rounded-[2px]" style={{ background: "var(--status-critical)" }} />
-          </span>
-          Week average, calories then protein: met or missed
-        </span>
       </div>
 
       {hover?.week && (
