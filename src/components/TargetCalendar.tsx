@@ -28,6 +28,14 @@ import type { TrendBreak } from "@/components/TrendChart";
  * selected day is ringed, and any logged-range cell selects its day. Hovering
  * or focusing a cell opens a card with the day's two meters and where its
  * calories went, so a yellow day says how far over it ran.
+ *
+ * Each week ends in two thin bars after its Sunday, calories then protein,
+ * green where the week's average met that target and red where it missed.
+ * Asked for on November 9, 2026. The average is the tile's: logged days
+ * outside the breaks, divided by those days, never by seven. A week of only
+ * break days averages those and fades, like its days. The bars sit in the
+ * month that holds the Sunday, so a week split across two months shows once,
+ * and the week still running stays an outline until its Sunday is over.
  */
 
 const STATUS: Record<TargetStatus, { color: string; label: string; detail: string }> = {
@@ -62,6 +70,18 @@ interface DayTotals {
   top: { name: string; calories: number };
 }
 
+interface WeekTotals {
+  /** Averages over the days counted, never divided by seven. */
+  calories: number;
+  protein: number;
+  /** Days in the average. */
+  days: number;
+  /** Logged break days left out of the average. */
+  skipped: number;
+  /** Every logged day was a break day, so those are averaged and the bars fade. */
+  breakOnly: boolean;
+}
+
 /** How much of the status colour a break day keeps. */
 const BREAK_MIX = 50;
 
@@ -69,6 +89,22 @@ const WEEKDAYS = ["M", "T", "W", "T", "F", "S", "S"];
 
 const mondayOf = (key: string) =>
   addDays(key, -((parseDateKey(key).getDay() + 6) % 7));
+
+/** "Nov 2–8", or "Sep 28 – Oct 4" across a month. */
+const weekRange = (monday: string) => {
+  const sunday = addDays(monday, 6);
+  const mon = (k: string) => parseDateKey(k).toLocaleDateString("en-US", { month: "short" });
+  const day = (k: string) => Number(k.slice(8));
+  return mon(monday) === mon(sunday)
+    ? `${mon(monday)} ${day(monday)}–${day(sunday)}`
+    : `${mon(monday)} ${day(monday)} – ${mon(sunday)} ${day(sunday)}`;
+};
+
+/** Which of the two targets a total met, from the one definition of each. */
+const metTargets = (t: { calories: number; protein: number }, goals: Goals) => {
+  const s = targetStatus(t, goals);
+  return { calories: s === "both" || s === "calories", protein: s === "both" || s === "protein" };
+};
 
 /** The first of the next month, from a first of the month. */
 const nextMonth = (key: string) => {
@@ -98,7 +134,9 @@ export function TargetCalendar({
 }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const [hover, setHover] = useState<{
+    /** A day, or a week's Monday when `week` is set. */
     date: string;
+    week: boolean;
     x: number;
     top: number;
     bottom: number;
@@ -124,15 +162,40 @@ export function TargetCalendar({
     return out;
   }, [entries]);
 
+  // Finished days only, keyed by Monday, as `hitRate()` groups them.
+  const weeks = useMemo(() => {
+    const acc = new Map<string, { home: DayTotals[]; away: DayTotals[] }>();
+    for (const [date, t] of totals) {
+      if (date >= builtOn) continue;
+      const monday = mondayOf(date);
+      const w = acc.get(monday) ?? { home: [], away: [] };
+      (breaks.some((b) => date >= b.start && date <= b.end) ? w.away : w.home).push(t);
+      acc.set(monday, w);
+    }
+    const out = new Map<string, WeekTotals>();
+    for (const [monday, { home, away }] of acc) {
+      const days = home.length > 0 ? home : away;
+      out.set(monday, {
+        calories: days.reduce((s, t) => s + t.calories, 0) / days.length,
+        protein: days.reduce((s, t) => s + t.protein, 0) / days.length,
+        days: days.length,
+        skipped: home.length > 0 ? away.length : 0,
+        breakOnly: home.length === 0,
+      });
+    }
+    return out;
+  }, [totals, builtOn, breaks]);
+
   if (entries.length === 0) return null;
   const first = [...totals.keys()].sort()[0];
 
-  const show = (date: string, el: HTMLElement) => {
+  const show = (date: string, el: HTMLElement, week = false) => {
     const box = sectionRef.current?.getBoundingClientRect();
     if (!box) return;
     const r = el.getBoundingClientRect();
     setHover({
       date,
+      week,
       x: r.left + r.width / 2 - box.left,
       top: r.top - box.top,
       bottom: r.bottom - box.top,
@@ -214,6 +277,57 @@ export function TargetCalendar({
     );
   };
 
+  const weekBars = (monday: string, month: string) => {
+    const sunday = addDays(monday, 6);
+    const key = `week-${monday}`;
+    if (sunday.slice(0, 7) !== month.slice(0, 7) || sunday < first || monday > builtOn) {
+      return <div key={key} />;
+    }
+
+    const w = weeks.get(monday);
+    const bar = "h-full w-[4px] rounded-[2px]";
+    let label = `Week of ${weekRange(monday)}`;
+    let cal: { className: string; style?: CSSProperties };
+    let prot: typeof cal;
+
+    if (sunday >= builtOn) {
+      cal = prot = { className: `${bar} border border-hairline` };
+      label += " · in progress";
+    } else if (w === undefined) {
+      cal = prot = { className: `${bar} border border-dashed border-hairline` };
+      label += " · nothing logged";
+    } else {
+      const met = metTargets(w, goals);
+      const fill = (ok: boolean) => {
+        const c = ok ? "var(--status-good)" : "var(--status-critical)";
+        return {
+          className: bar,
+          style: { background: w.breakOnly ? `color-mix(in srgb, ${c} ${BREAK_MIX}%, transparent)` : c },
+        };
+      };
+      cal = fill(met.calories);
+      prot = fill(met.protein);
+      label += ` · averaged ${round(w.calories).toLocaleString("en-US")} kcal, ${met.calories ? "met" : "over"} · ${round(w.protein, 1)} g protein, ${met.protein ? "met" : "short"} · ${w.days} day${w.days === 1 ? "" : "s"}`;
+      if (w.breakOnly) label += " · break days";
+    }
+
+    return (
+      <div
+        key={key}
+        role="img"
+        tabIndex={0}
+        aria-label={label}
+        onMouseEnter={(e) => show(monday, e.currentTarget, true)}
+        onFocus={(e) => show(monday, e.currentTarget, true)}
+        onBlur={() => setHover(null)}
+        className="flex h-[22px] justify-end gap-[2px] rounded-[2px]"
+      >
+        <span className={cal.className} style={cal.style} />
+        <span className={prot.className} style={prot.style} />
+      </div>
+    );
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -232,13 +346,19 @@ export function TargetCalendar({
               <div className="mb-1 text-xs font-medium text-ink-2">
                 {parseDateKey(month).toLocaleDateString("en-US", { month: "long" })}
               </div>
-              <div className="grid grid-cols-7 gap-[2px]">
+              <div
+                className="grid gap-[2px]"
+                style={{ gridTemplateColumns: "repeat(7, minmax(0, 1fr)) 12px" }}
+              >
                 {WEEKDAYS.map((w, i) => (
                   <div key={i} className="text-center text-[9px] text-muted">
                     {w}
                   </div>
                 ))}
-                {days.map((d) => cell(d, month))}
+                <div />
+                {days.flatMap((d, i) =>
+                  i % 7 === 6 ? [cell(d, month), weekBars(addDays(d, -6), month)] : [cell(d, month)],
+                )}
               </div>
             </div>
           );
@@ -265,9 +385,32 @@ export function TargetCalendar({
           <span className="h-[10px] w-[10px] rounded-[2px] border border-dashed border-hairline" />
           Not logged
         </span>
+        <span className="flex items-center gap-1.5">
+          <span className="flex h-[12px] gap-[2px]">
+            <span className="w-[4px] rounded-[2px]" style={{ background: "var(--status-good)" }} />
+            <span className="w-[4px] rounded-[2px]" style={{ background: "var(--status-critical)" }} />
+          </span>
+          Week average, calories then protein: met or missed
+        </span>
       </div>
 
-      {hover && (
+      {hover?.week && (
+        <WeekCard
+          monday={hover.date}
+          w={weeks.get(hover.date)}
+          goals={goals}
+          done={addDays(hover.date, 6) < builtOn}
+          style={{
+            width: CARD_W,
+            left: Math.max(4, Math.min(hover.x - CARD_W / 2, hover.width - CARD_W - 4)),
+            ...(hover.top > 180
+              ? { top: hover.top - 8, transform: "translateY(-100%)" }
+              : { top: hover.bottom + 8 }),
+          }}
+        />
+      )}
+
+      {hover && !hover.week && (
         <DayCard
           date={hover.date}
           t={totals.get(hover.date)}
@@ -379,6 +522,89 @@ function DayCard({
               </div>
             </div>
           )}
+        </>
+      )}
+    </div>
+  );
+}
+
+/** The week's two averages against their targets, for the bars after a Sunday. */
+function WeekCard({
+  monday,
+  w,
+  goals,
+  done,
+  style,
+}: {
+  monday: string;
+  w: WeekTotals | undefined;
+  goals: Goals;
+  done: boolean;
+  style: CSSProperties;
+}) {
+  const status = w && done ? STATUS[targetStatus(w, goals)] : undefined;
+  const days = w ? `${w.days} day${w.days === 1 ? "" : "s"}` : "";
+
+  return (
+    <div
+      aria-hidden
+      className="card pointer-events-none absolute z-20 p-3 text-xs"
+      style={{ ...style, boxShadow: "0 6px 24px rgba(0,0,0,0.18)" }}
+    >
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="font-semibold">{weekRange(monday)}</span>
+        <span className="text-[11px] text-muted">Week average</span>
+      </div>
+
+      {w === undefined ? (
+        <p className="mt-1.5 text-muted">
+          {done ? "Nothing logged." : "In progress, no finished days yet."}
+        </p>
+      ) : (
+        <>
+          <div className="mt-1.5 flex items-center gap-1.5 text-[11px] text-ink-2">
+            <span
+              className="h-[10px] w-[10px] shrink-0 rounded-[2px]"
+              style={{
+                background: status
+                  ? w.breakOnly
+                    ? `color-mix(in srgb, ${status.color} ${BREAK_MIX}%, transparent)`
+                    : status.color
+                  : undefined,
+                border: status ? undefined : "1px solid var(--hairline)",
+              }}
+            />
+            {status
+              ? status.detail[0].toUpperCase() + status.detail.slice(1)
+              : "In progress"}
+          </div>
+
+          <Meter
+            label="Calories"
+            value={`${round(w.calories).toLocaleString("en-US")} / ${goals.calories.toLocaleString("en-US")}`}
+            amount={w.calories}
+            scale={Math.max(goals.calories, w.calories) * 1.08}
+            color="var(--series-carbs)"
+            ticks={[goals.calories]}
+          />
+          <Meter
+            label="Protein"
+            value={`${round(w.protein)}g / ${goals.proteinMin}–${goals.proteinMax}g`}
+            amount={w.protein}
+            scale={Math.max(goals.proteinMax, w.protein) * 1.08}
+            color="var(--series-protein)"
+            band={[goals.proteinMin, goals.proteinMax]}
+          />
+
+          <p className="mt-2.5 border-t border-hairline pt-2 text-[11px] text-ink-2">
+            {done ? `Over ${days} logged` : `${days} so far`}
+            {w.breakOnly
+              ? ", all break days"
+              : w.skipped > 0
+                ? `, leaving out ${w.skipped} break day${w.skipped === 1 ? "" : "s"}`
+                : ""}
+            .
+          </p>
         </>
       )}
     </div>

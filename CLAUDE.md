@@ -441,7 +441,10 @@ leave out the diet breaks and the unfinished build day, with the figure counting
 breaks given beside them. The calendar under them (`TargetCalendar`, same day)
 colours each finished day by `targetStatus()`: green both, yellow protein only,
 orange calories only, red neither. Break days follow the same rule at half
-strength, as asked; unlogged days are a dashed outline, not a miss.
+strength, as asked; unlogged days are a dashed outline, not a miss. Two thin
+bars after each Sunday (November 9, 2026, by request) give the week's average,
+calories then protein, green met and red missed, over the same days the weeks
+tile counts, so the green pairs match its figure.
 
 **A plan slot with a set count pools its alternatives.** `comparePlan()` counts
 incline bench toward the heavy-day bench 3–4 × 5 (revised August 5, 2026 — see
