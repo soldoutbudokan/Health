@@ -4,7 +4,10 @@
  * 2026, until the owner kept the last stretch's week running through December
  * on November 5.
  *
- * Drafted October 27 – November 4, 2026, and audited on November 4. It is a
+ * Drafted October 27 – November 4, 2026, and audited on November 4. Audited
+ * again on November 9, which brought in the cut, the climbing split squat, the
+ * Monday week, the run and the half marathon, and took out the wall target the
+ * gym won't allow. It is a
  * plan document, not a calendar: it says what a week is made of and the rules
  * for moving the pieces around a hectic schedule. The only dated rows are the
  * heavy days that close the last two strength goals, and those live in
@@ -83,7 +86,7 @@ export const PIECES: Piece[] = [
     short: "Light bench",
     name: "Light paused bench",
     kind: "bench",
-    when: "Sunday",
+    when: "Sunday, or Saturday after the jumps when the heavy day is Monday",
     time: "25 min",
     items: [
       { name: "Shoulder warmup with band pull-aparts", dose: "5 min", warmup: true },
@@ -106,12 +109,12 @@ export const PIECES: Piece[] = [
       { name: "Bike or sled", dose: "5–10 min", warmup: true },
       { name: "Pogo hops", dose: "2 × 20" },
       { name: "Depth jumps", dose: "2 × 5" },
-      { name: "Approach jumps to the wall target, one foot and two", dose: "~10 min" },
+      { name: "Approach jumps, one foot and two, at the same high mark each week", dose: "~10 min" },
       { name: "Weighted jumps", dose: "2 × 5 at 20s" },
-      { name: "Bulgarian split squat", dose: "2 × 6 a leg" },
+      { name: "Bulgarian split squat, climbing", dose: "2 × 6 a leg" },
       { name: "Lying leg curl", dose: "2 × 5" },
     ],
-    note: "Stop the approach jumps when two touches in a row land 2 inches below the day's best, and keep the one-foot jumps about even between the legs. A hoop, when there is one, replaces the wall.",
+    note: "The gym won't take a taped wall, so reach for one fixed thing every week, a beam or the top of the rig. Stop the approach jumps when two in a row come up short of the day's best, and keep the one-foot jumps about even between the legs. The split squat is the leg lift that climbs here, since it spares the back. A hoop, when there is one, is the real measure.",
   },
   {
     id: "J2",
@@ -123,7 +126,7 @@ export const PIECES: Piece[] = [
     time: "10 min",
     items: [
       { name: "Easy bike", dose: "5 min", warmup: true },
-      { name: "Approach jumps to the wall target", dose: "3 × 3" },
+      { name: "Approach jumps at the same high mark", dose: "3 × 3" },
     ],
     note: "The week's second jump session, two days from Saturday's. It goes when bench volume goes.",
   },
@@ -153,8 +156,9 @@ export const PIECES: Piece[] = [
       { name: "Bike or elliptical", dose: "first choice" },
       { name: "Treadmill", dose: "~10% incline" },
       { name: "Sled", dose: "when it's free" },
+      { name: "Easy run-walk, from February", dose: "one a week, 20–30 min" },
     ],
-    note: "Easy enough to hold a conversation in full sentences. A flat walk rarely gets there. Half the amount the first week, the full amount by the third.",
+    note: "Easy enough to hold a conversation in full sentences. A flat walk rarely gets there. It starts in December in BC at two or three short goes a week, and reaches the full amount by Jan 18. The run-walk counts toward the two hours and goes on a weekend after the session, never the day before jumps.",
   },
   {
     id: "knees",
@@ -177,7 +181,7 @@ export const PIECES: Piece[] = [
     short: "Hips",
     name: "Hips and calves",
     kind: "joint",
-    when: "With the light bench",
+    when: "Sunday",
     time: "12 min",
     items: [
       { name: "Knee raises on the roman chair", dose: "2 × 10" },
@@ -215,6 +219,17 @@ export const NORMAL_WEEK: WeekDay[] = [
   { day: "Sun", slots: [{ id: "B3" }, { id: "Z", minutes: 40 }, { id: "hips" }] },
 ];
 
+/** The same five sessions when Monday is the best day for the heavy one. */
+export const MONDAY_WEEK: WeekDay[] = [
+  { day: "Mon", slots: [{ id: "H" }] },
+  { day: "Tue", slots: [{ id: "Z", minutes: 50 }] },
+  { day: "Wed", slots: [] },
+  { day: "Thu", slots: [{ id: "J2" }, { id: "B2" }, { id: "I" }] },
+  { day: "Fri", slots: [] },
+  { day: "Sat", slots: [{ id: "J" }, { id: "B3" }, { id: "knees" }] },
+  { day: "Sun", slots: [{ id: "Z", minutes: 70 }, { id: "hips" }] },
+];
+
 export const RULES: { rule: string; detail: string }[] = [
   {
     rule: "Five sessions a week at most.",
@@ -230,7 +245,7 @@ export const RULES: { rule: string; detail: string }[] = [
   },
   {
     rule: "Leave a day between bench days.",
-    detail: "The heavy day counts as one.",
+    detail: "The heavy day counts as one. When the heavy day is Monday, Sunday's bench moves to Saturday, after the jumps.",
   },
   {
     rule: "Jumps come first and fresh.",
@@ -314,25 +329,31 @@ export const GOALS: { name: string; target: string; plan: string; state: GoalSta
   {
     name: "Bench press",
     target: "225 × 5",
-    plan: "About 185–190 by the end of March and 200 by the end of June, as estimates. 225 is a fall 2027 number.",
+    plan: "175 × 5 on Nov 5. About 195–200 by the end of March and 205–210 by the end of June, as estimates; it's the main lift now, but the cut will slow it. 225 is a fall 2027 number.",
     state: "climbing",
   },
   {
     name: "Resting heart rate",
     target: "low-to-mid 50s",
-    plan: "From one reading of 60 on Sep 5. An estimate; genetics moves it a lot.",
+    plan: "From one reading of 60 on Sep 5. Counted by hand on waking, when you can. An estimate; genetics moves it a lot.",
     state: "new",
   },
   {
     name: "Abs",
     target: "visible",
-    plan: "No cut for now and no date. The weekly average and the waist will show whether they're coming.",
+    plan: "A cut: 2,400 kcal from Jan 18 to the end of May, protein at 180, about half a pound a week toward 175–178. Then back to 2,800.",
     state: "new",
   },
   {
     name: "Dunk",
     target: "touch 6–8 in over the rim",
-    plan: "You touch the rim and just about palm the ball. The wall target measures it this winter; a first dunk in April–June, if a hoop turns up.",
+    plan: "You touch the rim and just about palm the ball. Nothing at the gym can measure a touch, so progress shows at a hoop: wrist over the rim first, and a dunk in April–June at the earliest.",
+    state: "new",
+  },
+  {
+    name: "Half marathon",
+    target: "October 2027",
+    plan: "One easy run-walk a week from February, inside the Zone 2 hours. The 16-week build starts in July, after this block, with the jumps down to one session.",
     state: "new",
   },
 ];
@@ -362,18 +383,38 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
   {
     when: "Dec 24 – about Jan 15",
     what: "BC, still training",
-    detail: "Same week at a BC gym, the first heavy day there at the last settled weights. One of the January weeks is the deload.",
+    detail: "Same week at a BC gym, the first heavy day there at the last settled weights. Zone 2 starts here, two or three short goes a week. One of the January weeks is the deload.",
     travel: true,
   },
   {
     when: "Mon Jan 4",
-    what: "The next block starts",
-    detail: "Bench at T, the trap bar and squat at 300 × 3 and 225 × 3. Food as now; no cut.",
+    what: "The next block starts, in BC",
+    detail: "Two ramp weeks on whatever the gym there has. Bench at T, the trap bar and squat at 300 × 3 and 225 × 3. Food as now.",
+  },
+  {
+    when: "Mon Jan 18",
+    what: "The full week, and the cut",
+    detail: "Home. All five sessions, and 2,400 kcal with protein at 180 until the end of May.",
+  },
+  {
+    when: "February",
+    what: "The first run-walk",
+    detail: "One a week on a weekend, 20 minutes to start.",
   },
   {
     when: "After BC – Jun 27",
     what: "Blocks of 4–5 weeks",
-    detail: "A deload after each. Each block's last heavy day is a test: 300 × 5, 225 × 5, a max set of pullups and the wall target.",
+    detail: "A deload after each. Each block's last heavy day is a test: 300 × 5, 225 × 5 and a max set of pullups. The jump gets tested at a hoop whenever one is near.",
+  },
+  {
+    when: "Jun 1",
+    what: "The cut ends",
+    detail: "Back to 2,800, sooner if the scale reaches 175–178 or the bench stalls for a whole block.",
+  },
+  {
+    when: "Jul – Oct",
+    what: "Half marathon build",
+    detail: "Sixteen weeks to an October race, planned in June. Outside this block.",
   },
 ];
 
@@ -395,8 +436,12 @@ export function benchBackups(barbell: number): { press: number; dumbbell: number
   };
 }
 
-/** The example top set the backup lines are drawn for: the Dec 31 row in the plan file. */
-export const EXAMPLE_T = 195;
+/**
+ * The example top set the backup lines are drawn for. The plan file's
+ * all-goes-well line reaches 200 on Dec 31; 190 is nearer where a 175 on
+ * Nov 5 is likely to leave it.
+ */
+export const EXAMPLE_T = 190;
 
 export const BENCH_LINES: { line: string; offset: number; reps: string }[] = [
   { line: "Heavy top set", offset: 0, reps: "× 5" },
@@ -432,7 +477,7 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
     rows: [
       { name: "Pogos, depth and approach jumps", start: "Bodyweight, the same box as now", then: "Hold" },
       { name: "Weighted jumps", start: "20 a hand", then: "Hold" },
-      { name: "Bulgarian split squat", start: "30 a hand (5 on Oct 10, not close to failure)", then: "Hold" },
+      { name: "Bulgarian split squat", start: "30 a hand (5 on Oct 10, not close to failure)", then: "+5 a hand when both sets of 6 are clean on both legs" },
       { name: "Lying leg curl", start: "The last clean heavy-lower weight in December", then: "Hold" },
     ],
   },
@@ -446,13 +491,14 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
       { name: "Straight-knee calf raise", start: "Where 12 leaves 2 reps", then: "A step when both sets reach 15" },
       { name: "Reverse hyper", start: "Bodyweight", then: "A 2-second hold at level" },
       { name: "Intervals", start: "The bike level where the fourth interval is barely held", then: "A level up when the fourth is comfortable" },
+      { name: "Run-walk, from February", start: "1 min running, 2 walking, for 20 min", then: "Longer runs between the walks, to 30 min unbroken by June" },
     ],
   },
 ];
 
 export const CUT: { what: string; why: string }[] = [
   { what: "The stretch day and the two home off days", why: "None serves a goal directly. Pogos moved to the jump day and calf raises to the hips-and-calves block." },
-  { what: "Direct ab work", why: "Abs show when the fat comes off, and the crunch machine flexes the spine under load. The knee raise stays, for the hip flexors." },
+  { what: "Direct ab work", why: "Abs show when the fat comes off, which is the cut's job, and the crunch machine flexes the spine under load. The knee raise stays, for the hip flexors." },
   { what: "The trunk block, Copenhagen plank and overhead hold", why: "Left out by choice on Nov 4." },
   { what: "Bayesian curl", why: "It protected the elbows while pullup volume grew. Pullup volume now holds." },
   { what: "Lat pulldown", why: "Pullups do its job, and most of the pulling is pullups by choice." },
@@ -467,11 +513,13 @@ export const HYPERMOBILITY: string[] = [
   "Dumbbell bench stops where the bar would, with the upper arms about level with the torso.",
   "Heavy bag with wraps and gloves, punching through the bag, never into the air. The rower only while the back is quiet.",
   "Deloads every 4–5 weeks from BC on: same sessions, weights down 10–15%, intervals out.",
+  "The run-walk grows by a few minutes a week at most, and stops for a sore joint, not for hard breathing.",
 ];
 
 export const BEFORE: string[] = [
-  "Tape a strip on a wall from 9'6\" to 11' with inch marks, and take your best touch of five off one foot and off two.",
-  "Resting heart rate on waking, a full 60-second count at the wrist, three mornings a week. None has been logged since Sep 5.",
+  "Pick the fixed mark the approach jumps will reach for, since the gym won't take tape on a wall.",
+  "Resting heart rate on waking, a full 60-second count at the wrist, when you can. None has been logged since Sep 5.",
+  "Zone 2 starts in BC in December: two or three easy goes of 20–30 minutes a week.",
   "Weigh in on at least four mornings a week, and tape the waist at the navel once a week.",
   "The Dec 23 and Dec 31 heavy uppers set T, so there's no separate bench test.",
 ];

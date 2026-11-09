@@ -316,7 +316,13 @@ of them on the weekend; one heavy full-body day on a weekday, fed, never on the
 fasted weekend; the day after it is Zone 2 or rest; a day between bench days;
 jumps first and never the day after intervals or the heavy day. The trap bar and
 squat take a set of 3 on ordinary weeks and a set of 5 on a block's last heavy
-day. There is no cut for now, by the owner's choice; eat as before. The trunk
+day. When the heavy day is Monday, the light bench moves to Saturday after the
+jumps. Audited again on November 9, 2026: a cut at 2,400 kcal runs from January
+18 to the end of May (change `data/goals.json` that day, not before; the
+calendar grades every day against the one number, so date the goal or accept
+that fall days regrade); the Bulgarian split squat climbs; one run-walk a week
+from February builds toward an October 2027 half marathon; and the approach
+jumps have no wall target, since the gym won't allow one. The trunk
 block, Copenhagen plank and overhead hold were left out on purpose, and direct
 ab work was replaced by two joint blocks — don't add them back unasked.
 

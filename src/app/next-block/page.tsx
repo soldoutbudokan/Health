@@ -9,6 +9,7 @@ import {
   GOALS,
   HYPERMOBILITY,
   KIND_RANK,
+  MONDAY_WEEK,
   NORMAL_WEEK,
   PIECES,
   RULES,
@@ -239,7 +240,7 @@ export default function NextBlockPage() {
           <h1 className="arena-display text-6xl sm:text-7xl">The Next Block</h1>
           <p className="max-w-md pt-1 text-sm text-[color:var(--arena-on-navy-2)]">
             One heavy day a week holds the strength goals. The rest goes to the bench, cardio and
-            the dunk. Starting weights get real numbers before Jan 4.
+            the dunk, on a cut from Jan 18. Starting weights get real numbers before Jan 4.
           </p>
         </div>
         <div className="grid grid-cols-3 gap-2 md:flex">
@@ -277,6 +278,18 @@ export default function NextBlockPage() {
           Orange is the heavy day, navy is gym work, white is cardio. About 2 hours of Zone 2 a
           week, plus the intervals. The Wednesday session can move to any weekday the rules
           allow, or drop, with its Zone 2 added to the weekend.
+        </p>
+        <h3 className="arena-display pt-2 text-2xl">When the heavy day is Monday</h3>
+        <div className="arena-lines relative overflow-hidden rounded-md p-3 sm:p-4">
+          <ol className="relative grid gap-2 sm:grid-cols-7">
+            {MONDAY_WEEK.map((d) => (
+              <DayTile key={d.day} day={d} />
+            ))}
+          </ol>
+        </div>
+        <p className="text-sm font-semibold text-[color:var(--arena-ink-2)]">
+          Sunday can&apos;t be a bench day then, so the light bench follows Saturday&apos;s jumps and
+          Sunday is Zone 2 and the hips block.
         </p>
       </section>
 
