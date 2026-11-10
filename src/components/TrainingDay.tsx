@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { addDays, round } from "@/lib/nutrition";
 import { formatDay } from "@/lib/labels";
 import {
@@ -166,12 +165,6 @@ export function TrainingDay({
     <div className="space-y-6">
       <div className="flex flex-wrap items-center gap-2">
         <h1 className="py-1.5 text-lg font-semibold">Training</h1>
-        <Link
-          href="/training"
-          className="ml-auto text-sm font-medium text-ink-2 underline decoration-hairline underline-offset-4 hover:text-ink"
-        >
-          Full training →
-        </Link>
       </div>
 
       {checkin && <CheckinCard checkin={checkin} today={today} />}

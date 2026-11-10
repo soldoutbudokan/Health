@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import Link from "next/link";
 import type { Goals, LogEntry } from "@/lib/types";
 import {
   addDays,
@@ -404,10 +403,6 @@ export function Dashboard({
       )}
 
       <p className="pb-2 text-center text-xs leading-relaxed text-muted">
-        <Link href="/history" className="hover:text-ink">
-          Full history &amp; export →
-        </Link>
-        <br />
         <span>Read-only snapshot of {formatFullDay(builtOn)}.</span>
       </p>
     </div>

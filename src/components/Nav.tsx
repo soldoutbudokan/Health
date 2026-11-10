@@ -4,12 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+/*
+ * Only the three pages in daily use, by request on November 10, 2026. History,
+ * Foods, Training and Program still build and still answer at their URLs; they
+ * are just not linked from anywhere.
+ */
 const LINKS = [
   { href: "/", label: "Today" },
-  { href: "/history", label: "History" },
-  { href: "/foods", label: "Foods" },
-  { href: "/training", label: "Training" },
-  { href: "/program", label: "Program" },
   { href: "/last-stretch", label: "Last stretch" },
   { href: "/next-block", label: "Next block" },
 ];
