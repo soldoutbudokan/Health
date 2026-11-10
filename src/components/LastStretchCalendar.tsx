@@ -146,7 +146,7 @@ function GoalTile({ g, today }: { g: GoalTrack; today: string }) {
         <span className="text-sm font-medium">{g.name}</span>
         {g.rider && <span className="text-[10px] uppercase tracking-wide text-muted">rider</span>}
       </div>
-      <div className="tnum mt-1 text-xl font-semibold">
+      <div className="tnum mt-1 font-display text-3xl font-bold leading-tight">
         {g.current !== undefined ? g.current : "—"}
         <span className="text-sm font-normal text-muted"> → {g.target} {g.unit}</span>
       </div>

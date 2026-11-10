@@ -31,7 +31,7 @@ interface RingProps {
 function Ring({
   value,
   size = 148,
-  stroke = 12,
+  stroke = 18,
   color,
   overflowColor = "var(--status-critical)",
   overflowBandEnd,
@@ -153,7 +153,7 @@ export function CalorieRing({
         label={`Calories: ${round(consumed)} of ${goal} kcal`}
       >
         <div>
-          <div className="text-[32px] font-semibold leading-none tracking-tight">
+          <div className="font-display text-[38px] font-bold leading-none">
             {round(consumed).toLocaleString()}
           </div>
           <div className="mt-1 text-[11px] font-medium uppercase tracking-wide text-muted">
@@ -209,7 +209,7 @@ export function ProteinRing({
         label={`Protein: ${round(consumed, 1)} g, target ${min} to ${max} g`}
       >
         <div>
-          <div className="text-[32px] font-semibold leading-none tracking-tight">
+          <div className="font-display text-[38px] font-bold leading-none">
             {round(consumed)}
             <span className="text-lg font-medium text-muted">g</span>
           </div>

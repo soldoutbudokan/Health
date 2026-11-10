@@ -330,6 +330,21 @@ ab work was replaced by two joint blocks — don't add them back unasked.
 session type, and the starting weights are formulas. Both are due before
 January 4. Until then, log a heavy full-body day as `full-body`.
 
+## The look, and what the nav shows
+
+The nav carries three pages, Today, Last stretch and Next block, by request on
+November 10, 2026. History, Foods, Training and Program still build and answer
+at their URLs but nothing links to them; don't put them back in the nav unasked.
+
+The site outside `/next-block` wears **Iron**, picked the same day from three
+samples: a speckled rubber-floor page, chalk panels with no outline, a dark bar
+across the top, and Saira Condensed capitals for headings and big figures
+(`font-display`). It is a skin: tokens, `.card`, the fonts and the radius
+variables in `globals.css`. The owner asked that every calendar, chart and
+figure stay as it was, so a restyle changes surfaces and type, never content,
+and never what a macro, chip or status colour means. `.arena` resets the radius
+variables and keeps its court.
+
 ## Before inventing an exercise, check the program
 
 `src/data/program.ts` is the plan in code — the same object `/program` renders and

@@ -164,7 +164,7 @@ export function TrainingDay({
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center gap-2">
-        <h1 className="py-1.5 text-lg font-semibold">Training</h1>
+        <h1 className="py-1.5 text-2xl font-bold leading-none">Training</h1>
       </div>
 
       {checkin && <CheckinCard checkin={checkin} today={today} />}

@@ -164,7 +164,7 @@ const GATE_CONTRAST = 4.5;
 
 const MODES = {
   light: {
-    surface: "#fcfcfb",
+    surface: "#f0efec",
     chips: [
       { name: "gym", fill: "#2a78d6", ink: "#ffffff" },
       { name: "conditioning", fill: "#e87ba4", ink: "#0b0b0b" },
@@ -173,7 +173,7 @@ const MODES = {
     ],
   },
   dark: {
-    surface: "#1a1a19",
+    surface: "#212120",
     chips: [
       { name: "gym", fill: "#3987e5", ink: "#ffffff" },
       { name: "conditioning", fill: "#d55181", ink: "#ffffff" },

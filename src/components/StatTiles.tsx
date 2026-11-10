@@ -29,7 +29,7 @@ export function StatTile({
         {label}
       </div>
       <div className="mt-1 flex items-baseline gap-1">
-        <span className="text-2xl font-semibold leading-none" style={{ color }}>
+        <span className="font-display text-3xl font-bold leading-none" style={{ color }}>
           {value}
         </span>
         {unit && <span className="text-sm text-muted">{unit}</span>}

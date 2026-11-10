@@ -35,7 +35,7 @@ export default function LastStretchPage() {
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <h1 className="text-lg font-semibold uppercase tracking-wide">The Last Stretch</h1>
+        <h1 className="text-3xl font-bold leading-none">The Last Stretch</h1>
         <p className="w-full text-sm text-muted">
           Every planned session from the BC break to the day the trap bar reaches 300 × 5,
           the squat 225 × 5 and the pullups 10, assuming every session goes well, then buffer

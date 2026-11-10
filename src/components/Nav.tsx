@@ -40,7 +40,7 @@ function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      className="rounded-lg border border-hairline px-2.5 py-1.5 text-ink-2 transition-colors hover:bg-surface-2"
+      className="site-nav-link rounded-lg border border-current/30 px-2.5 py-1.5 transition-colors"
     >
       {theme === "dark" ? (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -70,16 +70,13 @@ export function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-30 border-b border-hairline bg-page/85 backdrop-blur-md">
+    <header className="site-nav sticky top-0 z-30">
       <div className="mx-auto flex w-full max-w-5xl items-center gap-1 px-4 py-3 sm:px-6">
-        <Link href="/" className="mr-2 flex shrink-0 items-center gap-2 font-semibold">
-          <span
-            aria-hidden
-            className="grid h-7 w-7 place-items-center rounded-lg bg-protein text-[13px] font-bold text-white"
-          >
-            H
-          </span>
-          <span className="hidden lg:inline">Health</span>
+        <Link
+          href="/"
+          className="mr-3 shrink-0 font-display text-xl font-bold uppercase tracking-wider text-white"
+        >
+          Health
         </Link>
 
         {/* Five links no longer fit a narrow phone. Scrolling the strip keeps
@@ -96,11 +93,7 @@ export function Nav() {
                 key={l.href}
                 href={l.href}
                 aria-current={active ? "page" : undefined}
-                className={`shrink-0 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
-                  active
-                    ? "bg-surface-2 text-ink"
-                    : "text-ink-2 hover:bg-surface-2 hover:text-ink"
-                }`}
+                className="site-nav-link shrink-0 rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors"
               >
                 {l.label}
               </Link>

@@ -167,7 +167,7 @@ export function Dashboard({
         >
           ‹
         </button>
-        <h1 className="text-lg font-semibold">{formatDay(date, builtOn)}</h1>
+        <h1 className="text-2xl font-bold leading-none">{formatDay(date, builtOn)}</h1>
         <button
           onClick={() => onDateChange(addDays(date, 1))}
           disabled={atHorizon}
