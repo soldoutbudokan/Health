@@ -470,7 +470,7 @@ export const PROGRAM: PlannedSession[] = [
     name: "Daily — Brace and Hinge",
     place: "home",
     blurb:
-      "About 18 minutes, every day, gym days included, and bodyweight only so it travels. Built for the trap bar: a trunk that stays stiff when a set gets hard, and hips and hamstrings that finish the pull. On a gym day do it afterwards or later at home, never before: a tired trunk is the thing that loses position.",
+      "About 18 minutes, every day through January 3, gym days included, and bodyweight only so it travels. Built for the trap bar: a trunk that stays stiff when a set gets hard, and hips and hamstrings that finish the pull. On a gym day do it afterwards or later at home, never before: a tired trunk is the thing that loses position.",
     exercises: [
       {
         name: "Dead bugs",

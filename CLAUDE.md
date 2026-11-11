@@ -296,6 +296,8 @@ its own card with only its own sets, the calendar ticks the planned type, and
 the week strip counts the routine apart ("daily routine on 5 of the 7 days").
 When it's reported done, log it as written, one row per set, unless told
 otherwise. Tibialis work and the knee-to-wall drill were left out on purpose.
+It stops with the stretch on January 3, by request; the next block doesn't
+carry it.
 
 **Ticks are derived, never clicked.** A day is done when `sessions.csv` carries a
 session of the planned type on that date. Nothing on the page saves anything;
