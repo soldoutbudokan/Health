@@ -182,6 +182,16 @@ export interface PlannedLift {
   last?: string;
   optional?: boolean;
   note?: string;
+  /** The warmup ramp, top set and back-off with the plates for each. */
+  ramp?: RampStep[];
+}
+
+export interface RampStep {
+  label: "Warmup" | "Top set" | "Back-off";
+  weight: number;
+  reps: number;
+  /** Plates on each side of the bar, "45 + 45 + 25". */
+  perSide: string;
 }
 
 export interface LoggedLift {
@@ -219,6 +229,60 @@ export interface WeekView {
   start: string;
   phase: string;
   days: DayView[];
+}
+
+/* ---------------------------------------------------------------- ramp */
+
+/**
+ * The trap bar's warmup ramp on a heavy lower, asked for on November 11, 2026
+ * after the Nov 3 ramp spent 270 × 4 ahead of a top set at 290. Eleven warmup
+ * reps: 5 near half, 3 near 70%, 2 near 83%, then a single near 93% that
+ * checks the day without costing anything. Written out per top weight because
+ * each step has to load from the gym's plates on the 60 lb home bar. A top
+ * weight with no row here shows no ramp; add the row, don't guess one.
+ */
+const TRAP_BAR_LBS = 60;
+const PLATES = [45, 35, 25, 10, 5, 2.5];
+const RAMP_FROM = "2026-11-17";
+const TRAP_BAR_RAMPS: Record<number, [weight: number, reps: number][]> = {
+  290: [[150, 5], [200, 3], [240, 2], [270, 1]],
+  295: [[150, 5], [200, 3], [245, 2], [275, 1]],
+  300: [[150, 5], [210, 3], [250, 2], [280, 1]],
+};
+
+/** Largest plate first, which is also the order they go on the bar. */
+function perSide(weight: number): string {
+  let left = (weight - TRAP_BAR_LBS) / 2;
+  const plates: number[] = [];
+  for (const p of PLATES) {
+    while (left >= p) {
+      plates.push(p);
+      left -= p;
+    }
+  }
+  return plates.join(" + ");
+}
+
+/**
+ * Only a home heavy lower with a back-off gets one: the light days need two
+ * warmup sets and no table, and the Dec 29 row is another gym's bar.
+ */
+function trapBarRamp(plan: PlanDay): RampStep[] | undefined {
+  if (plan.slot !== "heavy-lower" || plan.date < RAMP_FROM) return undefined;
+  if (plan.trapBar === undefined || plan.trapBarBackoff === undefined) return undefined;
+  const warmups = TRAP_BAR_RAMPS[plan.trapBar];
+  if (!warmups) return undefined;
+  const step = (label: RampStep["label"], weight: number, reps: number): RampStep => ({
+    label,
+    weight,
+    reps,
+    perSide: perSide(weight),
+  });
+  return [
+    ...warmups.map(([w, r]) => step("Warmup", w, r)),
+    step("Top set", plan.trapBar, 5),
+    step("Back-off", plan.trapBarBackoff, 5),
+  ];
 }
 
 /** The curl column holds whichever curl the slot carried on that date. */
@@ -380,6 +444,7 @@ export function dayView(
       last: lastPerformed(sets, e.name, plan.date, today),
       optional: e.optional,
       note: e.note,
+      ramp: sameExercise(e.name, "Trap bar deadlift") ? trapBarRamp(plan) : undefined,
     };
   });
 
