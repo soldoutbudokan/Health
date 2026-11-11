@@ -100,8 +100,23 @@ export function setsOn(sets: WorkoutSet[], date: string): WorkoutSet[] {
   return sets.filter((s) => s.date === date);
 }
 
+/**
+ * Every session logged on a date, a lifting day first and otherwise in file
+ * order. Two on one day used to be rare (Aug 22 carried a light upper and
+ * basketball); since November 11, 2026 the daily routine runs every day, gym
+ * days included, so a gym day usually has two.
+ */
+export function sessionsOn(sessions: Session[], date: string): Session[] {
+  const onDay = sessions.filter((s) => s.date === date);
+  return [
+    ...onDay.filter((s) => GYM_SESSIONS.includes(s.type)),
+    ...onDay.filter((s) => !GYM_SESSIONS.includes(s.type)),
+  ];
+}
+
+/** The session that stands for a date: the lifting day, if there was one. */
 export function sessionOn(sessions: Session[], date: string): Session | undefined {
-  return sessions.find((s) => s.date === date);
+  return sessionsOn(sessions, date)[0];
 }
 
 /** The most recent session that was actually logged, if there is one. */
@@ -109,10 +124,14 @@ export function latestSession(sessions: Session[]): Session | undefined {
   return sessions.length ? sessions[sessions.length - 1] : undefined;
 }
 
-/** Sets belonging to a real session, in the order they were performed. */
-export function sessionSets(sets: WorkoutSet[], date: string): WorkoutSet[] {
+/**
+ * Sets belonging to a real session, in the order they were performed. Pass the
+ * session type when the day had more than one, so the daily routine's bird
+ * dogs don't land on the heavy lower's card.
+ */
+export function sessionSets(sets: WorkoutSet[], date: string, type?: SessionType): WorkoutSet[] {
   return setsOn(sets, date)
-    .filter((s) => s.session)
+    .filter((s) => s.session && (type === undefined || s.session === type))
     .sort((a, b) => a.order - b.order);
 }
 
@@ -479,7 +498,16 @@ export function gymSessionsIn(sessions: Session[], from: string, to: string): nu
  * read three lifts and a sled bout as a complete week.
  */
 export function sessionsIn(sessions: Session[], from: string, to: string): number {
-  return sessions.filter((s) => s.date >= from && s.date <= to).length;
+  // The daily routine is left out: it runs every day, so counting it would
+  // turn "sessions" into a count of days. `dailyDaysIn()` reports it instead.
+  return sessions.filter((s) => s.date >= from && s.date <= to && s.type !== "daily").length;
+}
+
+/** Days in the range with the daily routine logged, added November 11, 2026. */
+export function dailyDaysIn(sessions: Session[], from: string, to: string): number {
+  return new Set(
+    sessions.filter((s) => s.date >= from && s.date <= to && s.type === "daily").map((s) => s.date),
+  ).size;
 }
 
 /**

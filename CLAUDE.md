@@ -88,7 +88,7 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 
 | Column | Notes |
 |---|---|
-| `session` | `heavy-lower` \| `light-lower` \| `heavy-upper` \| `light-upper` \| `off-a` \| `off-b` \| `stretch` \| `full-body` \| `basketball` \| `conditioning` \| `other`. The last four have no `program.ts` entry on purpose, so they draw no plan comparison and read as deviations. `full-body` is nonetheless counted in `GYM_SESSIONS` — whether a session draws a plan comparison and whether it was a lifting day are different questions. **Blank** for imported reference points that belong to no session |
+| `session` | `heavy-lower` \| `light-lower` \| `heavy-upper` \| `light-upper` \| `off-a` \| `off-b` \| `stretch` \| `daily` \| `full-body` \| `basketball` \| `conditioning` \| `other`. The last four have no `program.ts` entry on purpose, so they draw no plan comparison and read as deviations. `full-body` is nonetheless counted in `GYM_SESSIONS` — whether a session draws a plan comparison and whether it was a lifting day are different questions. **Blank** for imported reference points that belong to no session |
 | `exercise` | free text; aliases are folded in `src/lib/training.ts` (`canonical`), so "Pull ups" and "Pullups" match. Add an alias there rather than renaming history |
 | `kind` | `warmup` \| `jump` \| `compound` \| `isolation` \| `core` \| `mobility` \| `finisher`. Drives how the session card groups things — the sled is `warmup` at the start and `finisher` at the end. The cable fly is a one-set `finisher` from October 25, 2026, by request; earlier fly rows stay `isolation` |
 | `set_index` | 1, 2, 3… within that exercise |
@@ -280,11 +280,22 @@ list, so bodyweight jumps now show there with no verdict.
 
 **The shape of a week.** Weekends are the likeliest training days and they are
 fasted, so only the light days go there: light lower Saturday, light upper
-Sunday. Heavy days are weekdays, Tuesday and Thursday, fed; Monday is the
-stretch day and Off A and B sit on Wednesday and Friday. The first week back
+Sunday. Heavy days are weekdays, Tuesday and Thursday, fed; Monday, Wednesday and
+Friday carry only the daily routine, which runs every day (below). The first week back
 (September 14–22) was written for weekdays because that weekend was spoken for,
 though the light lower ended up on Saturday the 19th after work took Friday —
 which is where the standing shape puts it anyway. When shifting rows, keep a heavy day off the weekend.
+
+**One routine at home, every day.** Asked for on November 10, 2026, after the
+trap bar stalled at 290: the `daily` session in `program.ts`, about 18 minutes
+of bodyweight brace and hinge work, in place of Off A, Off B and the stretch
+day, which are marked `retired` there and kept so earlier sessions still grade.
+Section 10 of `docs/training-plan.md` has the reasoning. It runs on gym days
+too, so a gym day usually has two `sessions.csv` rows; the dashboard gives each
+its own card with only its own sets, the calendar ticks the planned type, and
+the week strip counts the routine apart ("daily routine on 5 of the 7 days").
+When it's reported done, log it as written, one row per set, unless told
+otherwise. Tibialis work and the knee-to-wall drill were left out on purpose.
 
 **Ticks are derived, never clicked.** A day is done when `sessions.csv` carries a
 session of the planned type on that date. Nothing on the page saves anything;

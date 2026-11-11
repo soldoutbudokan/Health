@@ -3,11 +3,12 @@ import { formatDay } from "@/lib/labels";
 import {
   breakOn,
   comparePlan,
+  dailyDaysIn,
   gymSessionsIn,
   heavyTopSets,
   sessionsIn,
   planFor,
-  sessionOn,
+  sessionsOn,
   sessionSets,
   weekStrip,
   weeksSinceDeload,
@@ -134,16 +135,20 @@ export function TrainingDay({
   date: string;
   today: string;
 }) {
-  const session = sessionOn(sessions, date);
-  const daySets = session ? sessionSets(sets, date) : [];
-  const plan = planFor(session);
-  const planLines = plan ? comparePlan(plan, daySets) : [];
+  // Every session on the day gets its own card, each with only its own sets:
+  // since November 11, 2026 a gym day usually also carries the daily routine.
+  const daySessions = sessionsOn(sessions, date).map((session) => {
+    const daySets = sessionSets(sets, date, session.type);
+    const plan = planFor(session);
+    return { session, daySets, plan, planLines: plan ? comparePlan(plan, daySets) : [] };
+  });
   const checkin = checkins.find((c) => c.date === date);
   const dayBreak = breakOn(breaks, date);
 
   const week = weekStrip(sessions, breaks, today);
   const gymThisWeek = gymSessionsIn(sessions, addDays(today, -6), today);
   const sessionsThisWeek = sessionsIn(sessions, addDays(today, -6), today);
+  const dailyThisWeek = dailyDaysIn(sessions, addDays(today, -6), today);
   const sinceDeload = weeksSinceDeload(sessions, today);
 
   // The weight goals, from the day their baselines were taken. Pullups and
@@ -169,11 +174,13 @@ export function TrainingDay({
 
       {checkin && <CheckinCard checkin={checkin} today={today} />}
 
-      {session ? (
-        <>
-          <SessionCard session={session} sets={daySets} today={today} />
-          {plan && <PlanCheck plan={plan} lines={planLines} />}
-        </>
+      {daySessions.length ? (
+        daySessions.map(({ session, daySets, plan, planLines }) => (
+          <div key={session.type} className="space-y-6">
+            <SessionCard session={session} sets={daySets} today={today} />
+            {plan && <PlanCheck plan={plan} lines={planLines} />}
+          </div>
+        ))
       ) : (
         <div className="card p-8 text-center">
           <p className="text-sm text-ink-2">
@@ -191,6 +198,7 @@ export function TrainingDay({
         week={week}
         gymThisWeek={gymThisWeek}
         sessionsThisWeek={sessionsThisWeek}
+        dailyThisWeek={dailyThisWeek}
         sinceDeload={sinceDeload}
         today={today}
       />

@@ -124,7 +124,7 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   },
   trip: {
     label: "The trip",
-    blurb: "A maintenance week, not a deload. The away routine on most days; each day's note says what goes with it.",
+    blurb: "A maintenance week, not a deload. The away routine in September, the daily routine in Mexico; each day's note says what goes with it.",
   },
   "block-1": {
     label: "Block 1",
@@ -138,7 +138,7 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   "block-2": {
     label: "Block 2",
     blurb:
-      "Where the goals close. Trap bar 295 and squat 220 by Nov 17, then Mexico, then the same week again: 295 and 220 on Dec 1, and 300 × 5 and 225 × 5 on Dec 8. Ten pullups came early, on Oct 25.",
+      "Where the goals close. Trap bar 290 and squat 220 on Nov 17, then Mexico, then 295 and 220 on Dec 1, and 300 × 5 and 225 × 5 on Dec 8. Ten pullups came early, on Oct 25.",
   },
   contingency: {
     label: "Contingency",
@@ -386,7 +386,7 @@ export function dayView(
   const view: DayView = { plan, status, summary: summaryOf(plan), lifts };
 
   if (logged) {
-    const daySets = sessionSets(sets, plan.date);
+    const daySets = sessionSets(sets, plan.date, logged.type);
     const loggedLifts: LoggedLift[] = byExercise(daySets)
       .filter((g) =>
         g.sets.some(

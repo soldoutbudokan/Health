@@ -94,6 +94,8 @@ Days are slotted into the week by the athlete. Three scheduling rules:
 
 ### Off Day A — Jump Support (~15 min, home)
 
+*Retired November 11, 2026, for the daily routine below.*
+
 | Exercise | Sets x Reps | Notes |
 |---|---|---|
 | Pogo hops | 2 x 20 | Stiff ankles, minimal knee bend, quick off the ground. Springy, not high. Builds tendon stiffness without soreness. |
@@ -106,6 +108,8 @@ Note: single-leg calf raises and tibialis raises were in an earlier draft; the a
 
 ### Off Day B — Upper Support (~15 min, home)
 
+*Retired November 11, 2026, for the daily routine below.*
+
 | Exercise | Sets x Reps | Notes |
 |---|---|---|
 | Pushups | 2 sets | Stop a few reps short of failure. Free bench volume. |
@@ -115,6 +119,8 @@ Note: single-leg calf raises and tibialis raises were in an earlier draft; the a
 | Dead bugs | 2 x 10 | Lower back glued to the mat. |
 
 ### Stretch Under Tension Day (~20 min, home)
+
+*Retired November 11, 2026, for the daily routine below.*
 
 Loaded stretching suits hypermobility: the muscle under tension protects the joint, which is why this is fine while passive stretching is not. Rules: move slow, stop at the **first real stretch** (never max range — the athlete's end range is past where it should be), and never push into sharp or pinchy joint sensations (that means the stretch has drifted past muscle range into joint range; back off an inch).
 
@@ -131,6 +137,20 @@ Loaded stretching suits hypermobility: the muscle under tension protects the joi
 Short-on-time version: pullover, goblet pry, calf stretch.
 
 If wrecked: walk 30 minutes instead. Recovery beats one more session.
+
+### Daily — Brace and Hinge (~18 min, every day, bodyweight)
+
+From November 11, 2026, in place of the three home days above; the reasoning is in Section 10. Every day, gym days included, after the lifting or later at home, never before it. Bodyweight only, so it runs in Mexico and BC unchanged.
+
+| Exercise | Sets x Reps | Notes |
+|---|---|---|
+| Dead bugs | 2 x 8/side, slow | Lower back glued to the floor, breathing out as the arm and leg go long. |
+| Bird dog | 2 x 6/side, 5 sec hold | Arm and leg to level and no higher, nothing moving at the hips. |
+| Side plank | 2 x 30 sec/side | Elbow under the shoulder, body in one line. From the knees if the hip complains. |
+| Single-leg hip thrust | 2 x 10/side, 2 sec squeeze | Shoulders on a couch or bed edge. Stop with hip in line with knee and shoulder; no arching past it. From the floor if too much. |
+| Hamstring bridge hold | 2 x 30 sec | Heels on a chair or bed edge, knees slightly bent, hips up. |
+| Slow single-leg RDL | 2 x 6/side, 3 sec down | Bodyweight, hips square, back flat. Stop at the first real stretch. |
+| Hinge and brace hold | 2 x 5, 5 sec hold | The trap bar start position: hips back, chest up, chin tucked. Brace as for a top set, hold, stand. |
 
 ### Away From the Gym (travel weeks, no equipment)
 
@@ -467,6 +487,8 @@ The owner also put the trap bar at 280 on October 6 rather than the 275 the redr
 **The row and curl slide (November 8, 2026).** The November 8 light upper's row went 150 × 4 twice with nothing left, short of the 5s, and the incline dumbbell curl, standing in for the Bayesian, went 25 × 6 twice against 2 × 8. The owner asked for both to slide. The row repeats 150 on November 12 and 15 and each of its steps moves one heavy upper later: 155 (150 × 6 on the stack) from November 19, 160 from December 17, and the 165 planned for December 31 drops off the end. That puts it at 80–84% of the planned bench. The curl's once-a-block step moves from November 19 to December 3, the first heavy upper after Mexico, so 25.5 and 25 hold until then; the bench, pulldown and goals don't move.
 
 **The trap bar repeats 290 (November 10, 2026).** The November 10 heavy lower went 290 × 2, stopped when the form started slipping, then 290 × 3 in place of the 260 back-off. The squat went 215 and 195 as planned and the leg curl 2 × 4 at 140. The owner also corrected the October 27 entry above: the Ottawa staff gave that trap bar as 60 lbs, as counted, so October 21's 285 × 5 was real and 290 was a 5 lb step, not 10. That makes 290 an ordinary stall, three sessions long (1, 3, then 2 and 3), so November 17 repeats 290 with the 260 back-off. A restart at 280 was offered and turned down because it would have put 300 on December 22, the last day at home. Sliding the rows a week would have put it on December 15 with one try left. So December 1 steps to 295 if November 17 is clean, instead of repeating after the trip, and 300 stays on December 8 with both tries at home behind it. If November 17 isn't clean, December 1 repeats 290 and the goal moves to December 15. The squat and leg curl don't move.
+
+**The daily routine (November 10, 2026).** The owner asked for one 15–20 minute routine to do every day in place of Off A, Off B and the stretch day, bodyweight only so Mexico doesn't interrupt it, and aimed at the trap bar. None of the three home days had been logged since October 1. Strength itself comes from the bar, so the routine goes after what lets the bar's work land: a trunk that holds position late in a hard set (dead bugs, bird dog and side plank, the trunk block from Section 9.3), the hips and hamstrings that finish the pull (a single-leg hip thrust, a hamstring bridge hold and a slow single-leg RDL), and the brace rehearsed in the start position, since the November 10 set stopped when the form slipped. Everything is a hold or a slow tempo at bodyweight, two sets as everywhere else, so it can run every day, gym days included, without costing the next session; on a gym day it goes after the lifting, because a tired trunk is the thing that loses position. The owner suggested tibialis work and the knee-to-wall drill. Both serve the ankle, which the squat and the jump use and the trap bar barely does, so they were left out. Dropped with the three days: pogo hops, calf raises and the Copenhagen plank from Off A, pushups, pull-aparts and the overhead hold from Off B, and the loaded stretches. The routine runs through the last stretch. The next block left the trunk block out on purpose (Section 11), so whether it carries on past January 3 is still open.
 
 ## 11. The Next Block (November 4, 2026)
 

@@ -13,6 +13,7 @@ import {
   comparePlan,
   gymSessionsIn,
   sessionsIn,
+  dailyDaysIn,
   goalProgress,
   latestSession,
   liftSeries,
@@ -57,7 +58,7 @@ export default function TrainingPage() {
   const today = toDateKey(new Date());
 
   const latest = latestSession(sessions);
-  const latestSets = latest ? sessionSets(sets, latest.date) : [];
+  const latestSets = latest ? sessionSets(sets, latest.date, latest.type) : [];
   const plan = planFor(latest);
   const planLines = plan ? comparePlan(plan, latestSets) : [];
 
@@ -65,6 +66,7 @@ export default function TrainingPage() {
   const week = weekStrip(sessions, breaks, today);
   const gymThisWeek = gymSessionsIn(sessions, addDays(today, -6), today);
   const sessionsThisWeek = sessionsIn(sessions, addDays(today, -6), today);
+  const dailyThisWeek = dailyDaysIn(sessions, addDays(today, -6), today);
   const sinceDeload = weeksSinceDeload(sessions, today);
 
   const chartWindowStart = goals.baselineOn
@@ -102,6 +104,7 @@ export default function TrainingPage() {
         week={week}
         gymThisWeek={gymThisWeek}
         sessionsThisWeek={sessionsThisWeek}
+        dailyThisWeek={dailyThisWeek}
         sinceDeload={sinceDeload}
         today={today}
       />

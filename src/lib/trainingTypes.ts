@@ -43,6 +43,7 @@ export type SessionType =
   | "off-a"
   | "off-b"
   | "stretch"
+  | "daily"
   | "full-body"
   | "basketball"
   | "conditioning"
@@ -56,6 +57,7 @@ export const SESSION_LABELS: Record<SessionType, string> = {
   "off-a": "Off Day A — Jump Support",
   "off-b": "Off Day B — Upper Support",
   stretch: "Stretch Under Tension",
+  daily: "Daily — Brace and Hinge",
   "full-body": "Full Body",
   basketball: "Basketball",
   conditioning: "Conditioning",
@@ -71,6 +73,7 @@ export const SESSION_SHORT: Record<SessionType, string> = {
   "off-a": "Off A",
   "off-b": "Off B",
   stretch: "Stretch",
+  daily: "Daily",
   "full-body": "Full",
   basketball: "Ball",
   conditioning: "Cond",

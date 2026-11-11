@@ -177,7 +177,8 @@ function AwayFromTheGym() {
 
 export default function ProgramPage() {
   const gym = PROGRAM.filter((s) => s.place === "gym");
-  const home = PROGRAM.filter((s) => s.place === "home");
+  const home = PROGRAM.filter((s) => s.place === "home" && !s.retired);
+  const retired = PROGRAM.filter((s) => s.retired);
   const changes = readArchiveChanges();
   const oldRoutine = readArchiveRoutine();
   const grip = readGrip();
@@ -194,7 +195,7 @@ export default function ProgramPage() {
         </Link>
         <p className="w-full text-sm text-muted">
           Four gym sessions a week — two upper, two lower, each with a heavy and a
-          light day — plus short home sessions on off days. Transcribed from{" "}
+          light day — plus one short routine at home every day. Transcribed from{" "}
           <code className="text-[13px]">docs/training-plan.md</code>, which stays the
           source of truth for the reasoning.
         </p>
@@ -218,8 +219,8 @@ export default function ProgramPage() {
         <p className="mt-3 text-xs leading-snug text-muted">
           No exercise gets more than two sets, except bench press — two sets is
           easier to lock in mentally, so both sets have to be treated as real work
-          sets. Off days are home-only, capped at about 20 minutes, and low
-          intensity by design.
+          sets. The home work is one bodyweight routine of about 20 minutes, done
+          every day and low intensity by design.
         </p>
       </section>
 
@@ -233,13 +234,30 @@ export default function ProgramPage() {
       </div>
 
       <h2 className="pt-1 text-sm font-semibold uppercase tracking-wide text-muted">
-        Off days, at home
+        Every day, at home
       </h2>
       <div className="grid gap-5 lg:grid-cols-2">
         {home.map((s) => (
           <SessionTable key={s.id} session={s} />
         ))}
       </div>
+
+      {retired.length > 0 && (
+        <>
+          <h2 className="pt-1 text-sm font-semibold uppercase tracking-wide text-muted">
+            Retired
+          </h2>
+          <p className="-mt-3 text-xs leading-snug text-muted">
+            Replaced by the daily routine on November 11, 2026. Kept so sessions
+            logged before then still check against what they were asked to be.
+          </p>
+          <div className="grid gap-5 lg:grid-cols-2">
+            {retired.map((s) => (
+              <SessionTable key={s.id} session={s} />
+            ))}
+          </div>
+        </>
+      )}
 
       <AwayFromTheGym />
 

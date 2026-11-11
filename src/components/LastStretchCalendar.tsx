@@ -31,7 +31,8 @@ function tone(view: DayView): { colour: string; on: string } | undefined {
   const slot = view.plan.slot;
   if (slot === "rest") return undefined;
   if (GYM_SESSIONS.includes(slot)) return { colour: "var(--series-protein)", on: "#ffffff" };
-  if (slot === "stretch") return { colour: "var(--series-stretch)", on: "var(--on-stretch)" };
+  if (slot === "stretch" || slot === "daily")
+    return { colour: "var(--series-stretch)", on: "var(--on-stretch)" };
   return undefined; // off-a, off-b: neutral surface
 }
 
@@ -311,7 +312,7 @@ export function LastStretchCalendar({
           </div>
           <p className="mt-0.5 text-[11px] leading-snug text-muted">
             Outlined is planned, green is a finished lifting session, faded with a cross was
-            missed. Blue is a lifting day, teal the away routine, grey an off day at home.
+            missed. Blue is a lifting day, teal the daily routine at home or away, grey an old off day.
             Heavy days are weekdays; the fasted weekend gets the light days. Tap a day.
           </p>
 

@@ -44,6 +44,11 @@ export interface PlannedSession {
   place: "gym" | "home";
   blurb: string;
   exercises: PlannedExercise[];
+  /**
+   * The last date this day was in the plan. Kept, not deleted, so sessions
+   * logged before then still grade against what they were asked to be.
+   */
+  retired?: string;
 }
 
 export const PROGRAM: PlannedSession[] = [
@@ -303,6 +308,7 @@ export const PROGRAM: PlannedSession[] = [
     id: "off-a",
     name: "Off Day A — Jump Support",
     place: "home",
+    retired: "2026-11-10",
     blurb: "About 15 minutes at home. Low intensity by design — this is support, not a session.",
     exercises: [
       {
@@ -351,6 +357,7 @@ export const PROGRAM: PlannedSession[] = [
     id: "off-b",
     name: "Off Day B — Upper Support",
     place: "home",
+    retired: "2026-11-10",
     blurb: "About 15 minutes at home. Free bench volume without a gym visit.",
     exercises: [
       {
@@ -396,6 +403,7 @@ export const PROGRAM: PlannedSession[] = [
     id: "stretch",
     name: "Stretch Under Tension",
     place: "home",
+    retired: "2026-11-10",
     blurb:
       "About 20 minutes. Loaded stretching only — the muscle under tension protects the joint, which is why this is fine while passive stretching is not. Stop at the first real stretch, never max range.",
     exercises: [
@@ -450,6 +458,73 @@ export const PROGRAM: PlannedSession[] = [
         prescription: "20 sec/side",
         sets: 1,
         note: "Chest opener.",
+      },
+    ],
+  },
+  // Nov 10, 2026: one routine for every day, asked for after the trap bar
+  // stalled at 290 for three sessions and the last set lost position. It
+  // replaces Off A, Off B and the stretch day, and it is bodyweight only so
+  // Mexico doesn't interrupt it. Reasoning in docs/training-plan.md section 10.
+  {
+    id: "daily",
+    name: "Daily — Brace and Hinge",
+    place: "home",
+    blurb:
+      "About 18 minutes, every day, gym days included, and bodyweight only so it travels. Built for the trap bar: a trunk that stays stiff when a set gets hard, and hips and hamstrings that finish the pull. On a gym day do it afterwards or later at home, never before: a tired trunk is the thing that loses position.",
+    exercises: [
+      {
+        name: "Dead bugs",
+        kind: "core",
+        prescription: "2 × 8/side, slow",
+        sets: 2,
+        reps: 8,
+        note: "Lower back glued to the floor, breathing out as the arm and leg go long. This is the brace you want under the bar.",
+      },
+      {
+        name: "Bird dog",
+        kind: "core",
+        prescription: "2 × 6/side, 5 sec hold",
+        sets: 2,
+        reps: 6,
+        note: "Arm and leg to level and no higher, with nothing moving at the hips. Stability without taking the spine anywhere.",
+      },
+      {
+        name: "Side plank",
+        kind: "core",
+        prescription: "2 × 30 sec/side",
+        sets: 2,
+        note: "Elbow under the shoulder, body in one line. From the knees if the hip complains. Keeps the trunk from folding sideways on a heavy pull.",
+      },
+      {
+        name: "Single-leg hip thrust",
+        kind: "isolation",
+        prescription: "2 × 10/side, 2 sec squeeze",
+        sets: 2,
+        reps: 10,
+        note: "Shoulders on a couch or bed edge, drive through the heel. Stop when hip lines up with knee and shoulder; arching past it is the lower back doing the glutes' job. From the floor if the couch version is too much.",
+      },
+      {
+        name: "Hamstring bridge hold",
+        kind: "isolation",
+        prescription: "2 × 30 sec",
+        sets: 2,
+        note: "Heels on a chair or bed edge, knees slightly bent, hips up. A hold, so it builds the hamstrings without soreness that would cost the next heavy day.",
+      },
+      {
+        name: "Slow single-leg RDL",
+        kind: "mobility",
+        prescription: "2 × 6/side, 3 sec down",
+        sets: 2,
+        reps: 6,
+        note: "Bodyweight, reaching for the floor with hips square and back flat. Stop at the first real stretch, never max range.",
+      },
+      {
+        name: "Hinge and brace hold",
+        kind: "core",
+        prescription: "2 × 5, 5 sec hold",
+        sets: 2,
+        reps: 5,
+        note: "Set up as if gripping the trap bar: hips back, chest up, chin tucked. Breathe in, brace as hard as for a top set, hold, stand. Practice for the position that slipped on Nov 10.",
       },
     ],
   },

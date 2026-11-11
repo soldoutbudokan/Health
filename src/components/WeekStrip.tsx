@@ -11,14 +11,17 @@ export function WeekStrip({
   week,
   gymThisWeek,
   sessionsThisWeek,
+  dailyThisWeek,
   sinceDeload,
   today,
 }: {
   week: DaySlot[];
   /** The four programmed lifting days only — the program's own target. */
   gymThisWeek: number;
-  /** Everything logged, lifting or not. */
+  /** Everything logged, lifting or not, except the daily routine. */
   sessionsThisWeek: number;
+  /** Days with the daily routine logged, out of the seven. */
+  dailyThisWeek: number;
   sinceDeload: number | undefined;
   today: string;
 }) {
@@ -68,7 +71,7 @@ export function WeekStrip({
                     background: "var(--series-conditioning)",
                     color: "var(--on-conditioning)",
                   }
-                : d.session?.type === "stretch"
+                : d.session?.type === "stretch" || d.session?.type === "daily"
                   ? {
                       background: "var(--series-stretch)",
                       color: "var(--on-stretch)",
@@ -109,7 +112,8 @@ export function WeekStrip({
       <p className="mt-2 text-[11px] leading-snug text-muted">
         {sinceDeload === undefined
           ? "No deload week recorded yet. The plan calls for one every 4–5 weeks — mark it in data/sessions.csv when it happens."
-          : `${sinceDeload} week${sinceDeload === 1 ? "" : "s"} since the last deload. The plan calls for one every 4–5 weeks.`}
+          : `${sinceDeload} week${sinceDeload === 1 ? "" : "s"} since the last deload. The plan calls for one every 4–5 weeks.`}{" "}
+        Daily routine on {dailyThisWeek} of the 7 days.
       </p>
     </section>
   );
