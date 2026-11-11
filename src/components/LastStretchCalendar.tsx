@@ -219,6 +219,32 @@ function Detail({ view, today }: { view: DayView; today: string }) {
                   <span>{l.planned ? l.prescription : ""}</span>
                   {l.last && <span className="tnum">last: {l.last}</span>}
                 </div>
+                {l.ramp && (
+                  <div className="mt-2 rounded-md bg-surface-2/60 px-2.5 py-2">
+                    <div className="flex items-baseline justify-between text-[10px] font-semibold uppercase tracking-wide text-muted">
+                      <span>The ramp</span>
+                      <span>plates a side, 60 lb bar</span>
+                    </div>
+                    <ul className="tnum mt-1 space-y-0.5 text-xs">
+                      {l.ramp.map((r, j) => (
+                        <li
+                          key={j}
+                          className={`flex items-baseline justify-between gap-x-3 ${r.label === "Top set" ? "font-semibold text-ink" : "text-ink-2"}`}
+                        >
+                          <span>
+                            <span className="inline-block w-16 text-muted">{r.label}</span>
+                            {r.weight} × {r.reps}
+                          </span>
+                          <span>{r.perSide}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-1.5 text-[11px] leading-snug text-muted">
+                      A minute after the first two, 2&ndash;3 after the double, 4&ndash;5 after the
+                      single and again before the back-off. One try at the top set.
+                    </p>
+                  </div>
+                )}
               </li>
             ))}
           </ol>

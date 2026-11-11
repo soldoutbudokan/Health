@@ -229,6 +229,15 @@ the top set, and both sets have to be clean for it to step. Light lowers and
 deloads keep straight sets, blank in the back-off columns. The page grades the
 top set only, as it does the bench.
 
+**The trap bar has a written ramp.** Asked for on November 11, 2026, after the
+Nov 3 ramp spent 270 × 4 ahead of a top set at 290. From November 17 a home
+heavy lower's card lists eleven warmup reps with the plates a side on the 60 lb
+bar: 5 near half, 3 near 70%, 2 near 83%, a single near 93%, then one try at the
+top set and the back-off. It is `TRAP_BAR_RAMPS` in `src/lib/lastStretch.ts`,
+one row per top weight (290, 295, 300), because each step has to load from 45s,
+35s, 25s, 10s, 5s and 2.5s. A weight with no row shows no ramp; add the row.
+Light days and the BC row get none.
+
 **The accessories are rules rendered as numbers, not targets.** Asked for on
 September 17, 2026, after the row had sat at 130 for seven clean sessions
 because nothing said to move it. No weight on a row or a curl produces a bench;

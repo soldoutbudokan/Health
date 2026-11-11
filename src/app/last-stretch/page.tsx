@@ -84,6 +84,16 @@ export default function LastStretchPage() {
             </dd>
           </div>
           <div>
+            <dt className="text-sm font-medium">The trap bar ramps in eleven reps</dt>
+            <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
+              From Nov 17 a heavy lower&rsquo;s card lists the trap bar warmups with the plates
+              for each side: 5 near half the top weight, 3 near 70%, 2 near 83%, then a single
+              near 93%. The single is a check, not work. If it&rsquo;s slow or the back talks, I
+              find out there and not at the top weight. Then one try at the top set and the
+              back-off, never a second go at the top.
+            </dd>
+          </div>
+          <div>
             <dt className="text-sm font-medium">The accessories are rules, not targets</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-ink-2">
               From Sep 21 the upper days also have numbers for the row, pulldown, curl, Y
