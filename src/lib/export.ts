@@ -2,6 +2,7 @@ import type { Goals, LogEntry, Macros } from "./types";
 import {
   entriesForDate,
   entryMacros,
+  goalsOn,
   loggedDates,
   round,
   sumEntries,
@@ -39,7 +40,7 @@ export function toMarkdown(
   const lines: string[] = [
     "# Nutrition log",
     "",
-    `Goals: **${goals.calories} kcal**, **${goals.proteinMin}–${goals.proteinMax}g protein**`,
+    `Goals: **${goals.calories} kcal**, **${goals.proteinMin}–${goals.proteinMax}g protein**${(goals.calorieSpans ?? []).map((s) => `; ${s.calories} kcal from ${s.start} to ${s.end}`).join("")}`,
     "",
     `Exported ${new Date().toLocaleString()} · ${dates.length} day${dates.length === 1 ? "" : "s"} logged`,
     "",
@@ -48,13 +49,14 @@ export function toMarkdown(
   for (const date of dates) {
     const dayEntries = entriesForDate(entries, date);
     const totals = sumEntries(dayEntries);
-    const hitProtein = totals.protein >= goals.proteinMin;
-    const kcalDelta = totals.calories - goals.calories;
+    const day = goalsOn(goals, date);
+    const hitProtein = totals.protein >= day.proteinMin;
+    const kcalDelta = totals.calories - day.calories;
 
     lines.push(`## ${formatDay(date, today)} — ${date}`, "");
     lines.push(`**${macroLine(totals)}**`, "");
     lines.push(
-      `- Calories: ${round(totals.calories)} / ${goals.calories} (${kcalDelta >= 0 ? "+" : ""}${round(kcalDelta)})`,
+      `- Calories: ${round(totals.calories)} / ${day.calories} (${kcalDelta >= 0 ? "+" : ""}${round(kcalDelta)})`,
     );
     lines.push(
       `- Protein: ${round(totals.protein, 1)} / ${goals.proteinMin}–${goals.proteinMax}g ${hitProtein ? "✅" : "⚠️ short"}`,

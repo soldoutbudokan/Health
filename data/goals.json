@@ -2,5 +2,13 @@
   "calories": 2800,
   "proteinMin": 160,
   "proteinMax": 180,
-  "fiber": 30
+  "fiber": 30,
+  "calorieSpans": [
+    {
+      "start": "2026-11-11",
+      "end": "2026-12-31",
+      "calories": 3200,
+      "note": "Raised for the deadlift through December, asked for on November 11, 2026. The extra 400 kcal is meant as carbs; protein stays 160–180."
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 # Working on this repo
 
 Two logs on one site: a daily calorie and protein tracker targeting **2,800 kcal**
-and **160–180 g protein**, and a lifting log run against a training program with a
+(**3,200** from November 11 to December 31, 2026) and **160–180 g protein**, and a lifting log run against a training program with a
 **December 31st, 2026** deadline.
 
 **You are the only thing that writes to the log.** The website is a read-only
@@ -74,6 +74,15 @@ Quote any field containing a comma and double any internal quote (`"Chicken Curr
 Plenty of food names contain commas, so this matters.
 
 `data/goals.json` holds the targets. Edit it if asked; there's no UI for it.
+`calories` is the standing goal; `calorieSpans` holds dated exceptions, each a
+`start`, an `end` (both inclusive) and a `calories`, plus a `note` nothing reads.
+The first went in on November 11, 2026: 3,200 through December 31 for the
+deadlift, the extra 400 kcal meant as carbs, protein unchanged. Every day and
+chart reads its own goal through `goalsOn()` in `src/lib/nutrition.ts`, and a
+week or a 7-day average the mean of its days' goals (`goalsOver()`), so a span
+grades its own dates and leaves the rest alone. Raise or lower the goal for a
+stretch with a span, not by editing `calories`, which would regrade every day
+in the file.
 
 ## The training files
 
@@ -340,9 +349,8 @@ jumps first and never the day after intervals or the heavy day. The trap bar and
 squat take a set of 3 on ordinary weeks and a set of 5 on a block's last heavy
 day. When the heavy day is Monday, the light bench moves to Saturday after the
 jumps. Audited again on November 9, 2026: a cut at 2,400 kcal runs from January
-18 to the end of May (change `data/goals.json` that day, not before; the
-calendar grades every day against the one number, so date the goal or accept
-that fall days regrade); the Bulgarian split squat climbs; one run-walk a week
+18 to the end of May (a calorie span in `data/goals.json`, which
+grades only its own dates); the Bulgarian split squat climbs; one run-walk a week
 from February builds toward an October 2027 half marathon; and the approach
 jumps have no wall target, since the gym won't allow one. The trunk
 block, Copenhagen plank and overhead hold were left out on purpose, and direct
@@ -478,7 +486,7 @@ not a day's record: the week strip and the goal-lifts chart in the training
 column, and the bodyweight chart in the food column — moved there on August 9,
 2026, because bodyweight follows diet more than it follows any single session.
 The days- and weeks-on-target tiles joined them on October 20, 2026, by request
-(`hitRate()`): a day is on target at or under the calorie goal with protein at or
+(`hitRate()`): a day is on target at or under its own calorie goal with protein at or
 over the band's floor, a week on its average over the days logged in it. Both
 leave out the diet breaks and the unfinished build day, with the figure counting
 breaks given beside them. The calendar under them (`TargetCalendar`, same day)

@@ -78,7 +78,19 @@ export interface LogEntry {
   loggedAt: string; // ISO timestamp
 }
 
+/**
+ * A calorie goal that holds between two local dates, inclusive, in place of
+ * the standing one. Added November 11, 2026 for 3,200 kcal through December,
+ * so raising the goal for a stretch doesn't regrade the days before it.
+ */
+export interface CalorieSpan {
+  start: string;
+  end: string;
+  calories: number;
+}
+
 export interface Goals {
+  /** The standing calorie goal, for every day no span covers. */
   calories: number;
   proteinMin: number;
   proteinMax: number;
@@ -86,6 +98,8 @@ export interface Goals {
   carbs?: number;
   fat?: number;
   fiber?: number;
+  /** Dated exceptions to `calories`. Read a day's goal through `goalsOn()`. */
+  calorieSpans?: CalorieSpan[];
 }
 
 export const DEFAULT_GOALS: Goals = {

@@ -17,6 +17,12 @@ export interface TrendPoint {
    * short bar and read as a light day rather than an unknown one.
    */
   partial?: boolean;
+  /**
+   * The day's own target, where it can change from day to day: the calorie
+   * goal under a dated span in goals.json. When any point carries one, the
+   * reference line steps with it instead of reading the flat `goal`.
+   */
+  goal?: number;
 }
 
 /** A stretch of not-logging with a reason — shaded so a gap reads as a trip. */
@@ -87,8 +93,20 @@ export function TrendChart({
   const clipId = useId();
   const hatchId = useId();
 
+  // Runs of days sharing a per-day target, each drawn as its own segment.
+  const goalRuns: { goal: number; first: number; last: number }[] = [];
+  points.forEach((p, i) => {
+    if (p.goal === undefined) return;
+    const run = goalRuns[goalRuns.length - 1];
+    if (run && run.goal === p.goal && run.last === i - 1) run.last = i;
+    else goalRuns.push({ goal: p.goal, first: i, last: i });
+  });
+  // The caption names the latest day's target, which is the one in force.
+  const shownGoal = goalRuns.length > 0 ? goalRuns[goalRuns.length - 1].goal : goal;
+
   const ceiling = Math.max(
     ...points.map((p) => p.value),
+    ...goalRuns.map((r) => r.goal),
     goal ?? 0,
     band?.max ?? 0,
     1,
@@ -144,8 +162,8 @@ export function TrendChart({
         <span className="tnum text-xs text-muted">
           {active
             ? `${formatDay(active.date, today)} · ${readout(active)}${activeBreak ? ` · ${activeBreak.label}` : ""}`
-            : goal
-              ? `target ${round(goal)} ${unit}`
+            : shownGoal
+              ? `target ${round(shownGoal)} ${unit}`
               : band
                 ? `target ${band.min}–${band.max} ${unit}`
                 : (caption ?? "")}
@@ -221,7 +239,20 @@ export function TrendChart({
           )}
 
           {/* Reference lines, hairline weight — chrome, not data. */}
-          {goal !== undefined && (
+          {goalRuns.map((r) => (
+            <line
+              key={r.first}
+              x1={Math.max(0, r.first * (barW + gap) - gap / 2)}
+              x2={Math.min(W, r.last * (barW + gap) + barW + gap / 2)}
+              y1={y(r.goal)}
+              y2={y(r.goal)}
+              stroke="var(--baseline)"
+              strokeWidth="0.5"
+              strokeDasharray="2 2"
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+          {goalRuns.length === 0 && goal !== undefined && (
             <line
               x1="0"
               x2={W}

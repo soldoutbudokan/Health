@@ -7,6 +7,8 @@ import {
   computeProgress,
   type HitRate,
   entriesForDate,
+  goalsOn,
+  goalsOver,
   loggedDates,
   microTotals,
   proteinPace,
@@ -82,7 +84,9 @@ export function Dashboard({
   const dayEntries = useMemo(() => entriesForDate(entries, date), [entries, date]);
   const totals = useMemo(() => sumEntries(dayEntries), [dayEntries]);
   const micros = useMemo(() => microTotals(dayEntries), [dayEntries]);
-  const progress = useMemo(() => computeProgress(totals, goals), [totals, goals]);
+  // The selected day's own goals: a dated calorie span applies on its dates only.
+  const dayGoals = useMemo(() => goalsOn(goals, date), [goals, date]);
+  const progress = useMemo(() => computeProgress(totals, dayGoals), [totals, dayGoals]);
 
   /**
    * `proteinPace` only reads `getHours()`, so a date carrying the build hour
@@ -130,7 +134,12 @@ export function Dashboard({
     for (let d = first; d <= horizon; d = addDays(d, 1)) {
       const es = entriesForDate(entries, d);
       const t = sumEntries(es);
-      cal.push({ date: d, value: t.calories, logged: es.length > 0 });
+      cal.push({
+        date: d,
+        value: t.calories,
+        logged: es.length > 0,
+        goal: goalsOn(goals, d).calories,
+      });
       prot.push({ date: d, value: t.protein, logged: es.length > 0 });
       // Micros key off recordedRows, not on the day having entries: a day
       // where nothing recorded sodium is an empty slot, not a zero-sodium
@@ -149,11 +158,16 @@ export function Dashboard({
       }
     }
     return { cal, prot, fiber, sodium };
-  }, [entries, dates, horizon]);
+  }, [entries, dates, horizon, goals]);
 
   const { avg: avg7, loggedDays: logged7 } = useMemo(
     () => rollingAverage(entries, date, 7),
     [entries, date],
+  );
+  // The average's target is the mean of the same days' goals.
+  const goal7 = useMemo(
+    () => goalsOver(goals, dates.filter((d) => d <= date && d > addDays(date, -7))).calories,
+    [goals, dates, date],
   );
 
   return (
@@ -215,7 +229,7 @@ export function Dashboard({
             there; at gap-8 the pair no longer fits 430 px and wraps into a
             column twice as tall. */}
         <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-around sm:gap-8">
-          <CalorieRing consumed={totals.calories} goal={goals.calories} />
+          <CalorieRing consumed={totals.calories} goal={dayGoals.calories} />
           <ProteinRing
             consumed={totals.protein}
             min={goals.proteinMin}
@@ -280,11 +294,11 @@ export function Dashboard({
           value={logged7 > 0 ? round(avg7.calories).toLocaleString() : "—"}
           hint={
             logged7 > 0
-              ? `Over ${logged7} logged day${logged7 === 1 ? "" : "s"} · target ${goals.calories.toLocaleString()}`
+              ? `Over ${logged7} logged day${logged7 === 1 ? "" : "s"} · target ${round(goal7).toLocaleString()}`
               : "No days logged yet"
           }
           tone={
-            logged7 > 0 && Math.abs(avg7.calories - goals.calories) <= 200
+            logged7 > 0 && Math.abs(avg7.calories - goal7) <= 200
               ? "good"
               : "neutral"
           }
@@ -306,7 +320,7 @@ export function Dashboard({
         <StatTile
           label="Days on target"
           value={pct(hits.home.days)}
-          hint={`${hits.home.days.hit} of ${hits.home.days.of} at ≤${goals.calories.toLocaleString()} kcal and ${goals.proteinMin}g+ · ${pct(hits.all.days)} counting breaks`}
+          hint={`${hits.home.days.hit} of ${hits.home.days.of} at or under the day's kcal goal and ${goals.proteinMin}g+ · ${pct(hits.all.days)} counting breaks`}
         />
         <StatTile
           label="Weeks on target"
@@ -356,7 +370,6 @@ export function Dashboard({
           points={trend.cal}
           color="var(--series-carbs)"
           today={builtOn}
-          goal={goals.calories}
           breaks={breaks}
         />
         <TrendChart

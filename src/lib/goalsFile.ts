@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { DEFAULT_GOALS, type Goals } from "./types";
+import { DEFAULT_GOALS, type CalorieSpan, type Goals } from "./types";
 
 /**
  * Goals are a committed file, not a setting.
@@ -44,5 +44,36 @@ export function readGoals(): Goals {
     carbs: num(parsed.carbs) ?? DEFAULT_GOALS.carbs,
     fat: num(parsed.fat) ?? DEFAULT_GOALS.fat,
     fiber: num(parsed.fiber) ?? DEFAULT_GOALS.fiber,
+    calorieSpans: spans(parsed.calorieSpans),
   };
+}
+
+const DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+/**
+ * The dated calorie goals. A span with a bad date or number is dropped rather
+ * than failing the build, the way a log row without a date is, and the build
+ * log says so, since a dropped span silently grades its days at the standing
+ * goal.
+ */
+function spans(v: unknown): CalorieSpan[] {
+  if (!Array.isArray(v)) return [];
+  const out: CalorieSpan[] = [];
+  for (const s of v as Record<string, unknown>[]) {
+    const calories = num(s?.calories);
+    const { start, end } = s ?? {};
+    if (
+      calories === undefined ||
+      typeof start !== "string" ||
+      typeof end !== "string" ||
+      !DATE.test(start) ||
+      !DATE.test(end) ||
+      end < start
+    ) {
+      console.warn(`goals.json: dropped a calorie span that didn't parse: ${JSON.stringify(s)}`);
+      continue;
+    }
+    out.push({ start, end, calories });
+  }
+  return out;
 }

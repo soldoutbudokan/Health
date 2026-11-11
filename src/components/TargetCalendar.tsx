@@ -3,6 +3,8 @@ import type { Goals, LogEntry, MealSlot } from "@/lib/types";
 import {
   addDays,
   entryMacros,
+  goalsOn,
+  goalsOver,
   parseDateKey,
   round,
   targetStatus,
@@ -80,6 +82,8 @@ interface WeekTotals {
   skipped: number;
   /** Every logged day was a break day, so those are averaged and the bars fade. */
   breakOnly: boolean;
+  /** The same days' goals, with the calorie goal their mean (`goalsOver`). */
+  goals: Goals;
 }
 
 /** How much of the status colour a break day keeps. */
@@ -164,27 +168,29 @@ export function TargetCalendar({
 
   // Finished days only, keyed by Monday, as `hitRate()` groups them.
   const weeks = useMemo(() => {
-    const acc = new Map<string, { home: DayTotals[]; away: DayTotals[] }>();
+    type Day = { date: string; t: DayTotals };
+    const acc = new Map<string, { home: Day[]; away: Day[] }>();
     for (const [date, t] of totals) {
       if (date >= builtOn) continue;
       const monday = mondayOf(date);
       const w = acc.get(monday) ?? { home: [], away: [] };
-      (breaks.some((b) => date >= b.start && date <= b.end) ? w.away : w.home).push(t);
+      (breaks.some((b) => date >= b.start && date <= b.end) ? w.away : w.home).push({ date, t });
       acc.set(monday, w);
     }
     const out = new Map<string, WeekTotals>();
     for (const [monday, { home, away }] of acc) {
       const days = home.length > 0 ? home : away;
       out.set(monday, {
-        calories: days.reduce((s, t) => s + t.calories, 0) / days.length,
-        protein: days.reduce((s, t) => s + t.protein, 0) / days.length,
+        calories: days.reduce((s, d) => s + d.t.calories, 0) / days.length,
+        protein: days.reduce((s, d) => s + d.t.protein, 0) / days.length,
         days: days.length,
         skipped: home.length > 0 ? away.length : 0,
         breakOnly: home.length === 0,
+        goals: goalsOver(goals, days.map((d) => d.date)),
       });
     }
     return out;
-  }, [totals, builtOn, breaks]);
+  }, [totals, builtOn, breaks, goals]);
 
   if (entries.length === 0) return null;
   const first = [...totals.keys()].sort()[0];
@@ -244,7 +250,7 @@ export function TargetCalendar({
         className += " border border-hairline text-ink";
         label += " · in progress";
       } else {
-        const s = STATUS[targetStatus(t, goals)];
+        const s = STATUS[targetStatus(t, goalsOn(goals, date))];
         style = {
           ...style,
           // A faded fill takes the theme's ink, since what sits under it
@@ -297,7 +303,7 @@ export function TargetCalendar({
       cal = prot = { className: `${bar} border border-dashed border-hairline` };
       label += " · nothing logged";
     } else {
-      const met = metTargets(w, goals);
+      const met = metTargets(w, w.goals);
       const fill = (ok: boolean) => {
         const c = ok ? "var(--status-good)" : "var(--status-critical)";
         return {
@@ -391,7 +397,6 @@ export function TargetCalendar({
         <WeekCard
           monday={hover.date}
           w={weeks.get(hover.date)}
-          goals={goals}
           done={addDays(hover.date, 6) < builtOn}
           style={{
             width: CARD_W,
@@ -407,7 +412,7 @@ export function TargetCalendar({
         <DayCard
           date={hover.date}
           t={totals.get(hover.date)}
-          goals={goals}
+          goals={goalsOn(goals, hover.date)}
           builtOn={builtOn}
           brk={breaks.find((b) => hover.date >= b.start && hover.date <= b.end)}
           style={{
@@ -525,17 +530,15 @@ function DayCard({
 function WeekCard({
   monday,
   w,
-  goals,
   done,
   style,
 }: {
   monday: string;
   w: WeekTotals | undefined;
-  goals: Goals;
   done: boolean;
   style: CSSProperties;
 }) {
-  const status = w && done ? STATUS[targetStatus(w, goals)] : undefined;
+  const status = w && done ? STATUS[targetStatus(w, w.goals)] : undefined;
   const days = w ? `${w.days} day${w.days === 1 ? "" : "s"}` : "";
 
   return (
@@ -574,19 +577,19 @@ function WeekCard({
 
           <Meter
             label="Calories"
-            value={`${round(w.calories).toLocaleString("en-US")} / ${goals.calories.toLocaleString("en-US")}`}
+            value={`${round(w.calories).toLocaleString("en-US")} / ${round(w.goals.calories).toLocaleString("en-US")}`}
             amount={w.calories}
-            scale={Math.max(goals.calories, w.calories) * 1.08}
+            scale={Math.max(w.goals.calories, w.calories) * 1.08}
             color="var(--series-carbs)"
-            ticks={[goals.calories]}
+            ticks={[w.goals.calories]}
           />
           <Meter
             label="Protein"
-            value={`${round(w.protein)}g / ${goals.proteinMin}–${goals.proteinMax}g`}
+            value={`${round(w.protein)}g / ${w.goals.proteinMin}–${w.goals.proteinMax}g`}
             amount={w.protein}
-            scale={Math.max(goals.proteinMax, w.protein) * 1.08}
+            scale={Math.max(w.goals.proteinMax, w.protein) * 1.08}
             color="var(--series-protein)"
-            band={[goals.proteinMin, goals.proteinMax]}
+            band={[w.goals.proteinMin, w.goals.proteinMax]}
           />
 
           <p className="mt-2.5 border-t border-hairline pt-2 text-[11px] text-ink-2">

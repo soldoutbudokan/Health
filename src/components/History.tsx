@@ -5,6 +5,8 @@ import type { Goals, LogEntry } from "@/lib/types";
 import {
   addDays,
   entriesForDate,
+  goalsOn,
+  goalsOver,
   loggedDates,
   microTotals,
   rollingAverage,
@@ -66,7 +68,12 @@ export function History({ entries, goals, builtOn, breaks }: Props) {
       const d = addDays(builtOn, -i);
       const es = entriesForDate(entries, d);
       const t = sumEntries(es);
-      cal.push({ date: d, value: t.calories, logged: es.length > 0 });
+      cal.push({
+        date: d,
+        value: t.calories,
+        logged: es.length > 0,
+        goal: goalsOn(goals, d).calories,
+      });
       prot.push({ date: d, value: t.protein, logged: es.length > 0 });
       // See the same block in Dashboard: a micro is logged only where a row
       // records it, and a partial day is a floor rather than a low day.
@@ -84,7 +91,7 @@ export function History({ entries, goals, builtOn, breaks }: Props) {
       }
     }
     return { cal, prot, fiber, sodium };
-  }, [entries, span, builtOn]);
+  }, [entries, span, builtOn, goals]);
 
   const stats = useMemo(() => {
     // rollingAverage already divides by logged days rather than calendar days.
@@ -96,11 +103,16 @@ export function History({ entries, goals, builtOn, breaks }: Props) {
       loggedDays,
       avg,
       onTarget,
+      // The average's target is the mean of the logged days' own goals.
+      calorieGoal: goalsOver(
+        goals,
+        points.cal.filter((p) => p.logged).map((p) => p.date),
+      ).calories,
       // `null`, not 0 — nothing logged is an absence of evidence, and a 0%
       // painted in the alert colour reads as "you missed every day".
       hitRate: loggedDays > 0 ? (onTarget / loggedDays) * 100 : null,
     };
-  }, [points, entries, goals.proteinMin, span, builtOn]);
+  }, [points, entries, goals, span, builtOn]);
 
   return (
     <div className="space-y-6">
@@ -152,7 +164,7 @@ export function History({ entries, goals, builtOn, breaks }: Props) {
         <StatTile
           label="Avg kcal / logged day"
           value={stats.loggedDays > 0 ? round(stats.avg.calories).toLocaleString() : "—"}
-          hint={`Target ${goals.calories.toLocaleString()}`}
+          hint={`Target ${round(stats.calorieGoal).toLocaleString()}`}
         />
         <StatTile
           label="Avg protein / logged day"
@@ -174,7 +186,6 @@ export function History({ entries, goals, builtOn, breaks }: Props) {
           points={points.cal}
           color="var(--series-carbs)"
           today={builtOn}
-          goal={goals.calories}
           breaks={breaks}
           height={150}
         />

@@ -115,6 +115,35 @@ export interface GoalProgress {
   split: { protein: number; carbs: number; fat: number };
 }
 
+/**
+ * The goals in force on one day: the standing ones, with the calorie goal of
+ * any span covering the date. Where spans overlap, the later one in the file
+ * wins. Everything that grades or draws a day's calories reads it through
+ * here, so a raised goal applies to its own dates and no others.
+ */
+export function goalsOn(goals: Goals, date: string): Goals {
+  let calories = goals.calories;
+  for (const s of goals.calorieSpans ?? []) {
+    if (date >= s.start && date <= s.end) calories = s.calories;
+  }
+  return { ...goals, calories };
+}
+
+/**
+ * The goals for an average over several days: the calorie goal is the mean
+ * of those days' own, so a week straddling a change is graded on the mix it
+ * actually ran under. With no days, the standing goals.
+ */
+export function goalsOver(goals: Goals, dates: Iterable<string>): Goals {
+  let sum = 0;
+  let n = 0;
+  for (const d of dates) {
+    sum += goalsOn(goals, d).calories;
+    n++;
+  }
+  return n > 0 ? { ...goals, calories: sum / n } : goals;
+}
+
 export function computeProgress(totals: Macros, goals: Goals): GoalProgress {
   const proteinStatus: GoalProgress["protein"]["status"] =
     totals.protein < goals.proteinMin
@@ -296,10 +325,12 @@ export function targetStatus(
  * How often both targets were met: calories at or under the goal and protein
  * at or over the band's floor. Asked for on October 20, 2026.
  *
- * Only finished days count, so `before` (the build day) is left out — a
- * snapshot taken after breakfast would otherwise score the day a miss. A week
- * runs Monday to Sunday, counts once its Sunday is before `before`, and is
- * scored on its average over the days logged in it, never divided by seven.
+ * Each day is graded on its own goal (`goalsOn`) and each week on the mean
+ * of its days' goals. Only finished days count, so `before` (the build day)
+ * is left out — a snapshot taken after breakfast would otherwise score the
+ * day a miss. A week runs Monday to Sunday, counts once its Sunday is before
+ * `before`, and is scored on its average over the days logged in it, never
+ * divided by seven.
  * Days inside `skip` (the diet breaks) drop out of both; a week with nothing
  * left drops out with them.
  */
@@ -320,15 +351,19 @@ export function hitRate(
     byDate.set(e.date, t);
   }
   const days: HitRate = { hit: 0, of: 0 };
-  const byWeek = new Map<string, { calories: number; protein: number; n: number }>();
+  const byWeek = new Map<
+    string,
+    { calories: number; protein: number; n: number; dates: string[] }
+  >();
   for (const [date, t] of byDate) {
     days.of++;
-    if (targetStatus(t, goals) === "both") days.hit++;
+    if (targetStatus(t, goalsOn(goals, date)) === "both") days.hit++;
     const monday = addDays(date, -((parseDateKey(date).getDay() + 6) % 7));
-    const w = byWeek.get(monday) ?? { calories: 0, protein: 0, n: 0 };
+    const w = byWeek.get(monday) ?? { calories: 0, protein: 0, n: 0, dates: [] };
     w.calories += t.calories;
     w.protein += t.protein;
     w.n++;
+    w.dates.push(date);
     byWeek.set(monday, w);
   }
 
@@ -337,7 +372,7 @@ export function hitRate(
     if (addDays(monday, 6) >= before) continue;
     weeks.of++;
     const avg = { calories: w.calories / w.n, protein: w.protein / w.n };
-    if (targetStatus(avg, goals) === "both") weeks.hit++;
+    if (targetStatus(avg, goalsOver(goals, w.dates)) === "both") weeks.hit++;
   }
   return { days, weeks };
 }
