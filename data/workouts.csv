@@ -491,7 +491,7 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-08-13,2026-11-08,light-upper,Incline dumbbell curl,isolation,1,6,25,,,25 a hand.,logged
 2026-11-08-14,2026-11-08,light-upper,Incline dumbbell curl,isolation,2,6,25,,,,logged
 2026-11-10-01,2026-11-10,heavy-lower,Warmups,warmup,1,,,,,"The usual warmups, then the ramp sets. Ramp weights not noted.",logged
-2026-11-10-02,2026-11-10,heavy-lower,Trap bar deadlift,compound,1,2,290,,,Stopped at 2.,logged
+2026-11-10-02,2026-11-10,heavy-lower,Trap bar deadlift,compound,1,2,290,,,Stopped at 2 when the form started slipping.,logged
 2026-11-10-03,2026-11-10,heavy-lower,Trap bar deadlift,compound,2,3,290,,,"Second set also at 290, where the plan had a 260 back-off. Stopped at 3.",logged
 2026-11-10-04,2026-11-10,heavy-lower,Smith machine squat,compound,1,5,215,,,,logged
 2026-11-10-05,2026-11-10,heavy-lower,Smith machine squat,compound,2,5,195,,,"Back-off, at the planned 195.",logged
