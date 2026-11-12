@@ -2707,4 +2707,15 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Nov 12; no nutrition posted. The closest menu item is assorted sweet steamed buns, with no piece count, so this is about 170 g of steamed dough around red bean, sesame or custard. Call it 330–650 kcal an order; the count and the fillings are the unknowns. Sodium 120–300 mg.",
     tags: ["sweet dumpling", "sweet bun", "red bean", "sesame", "custard", "dessert", "steamed", "mother's dumplings", "mothers dumplings", "chinese", "toronto", "restaurant", "dinner"],
   },
+  {
+    id: "banh-mi-lemongrass-chicken",
+    name: "Bánh mì",
+    variant: "lemongrass chicken, ~6 inch",
+    source: "claude",
+    per: "1 sandwich (~6 inch, ~250 g)",
+    gramsPerServing: 250,
+    macros: { calories: 565, protein: 32, carbs: 55, fat: 23, fiber: 3, sugar: 11, sodium: 1500 },
+    note: "Estimated on Nov 12; the shop wasn't named. Built as an 80 g Vietnamese baguette, about 90 g of grilled lemongrass chicken thigh in an oil, sugar and fish sauce marinade, a smear of mayo, 40 g of pickled carrot and daikon, cucumber, cilantro and a dash of Maggi. Call it 450–750 kcal, mostly the chicken portion and the mayo; pâté, if the shop adds it, is about 60 more. Sodium 1,000–2,100 mg, spread across the bread, the marinade and the Maggi.",
+    tags: ["banh mi", "bánh mì", "sandwich", "baguette", "lemongrass", "chicken", "vietnamese", "restaurant", "takeout", "lunch"],
+  },
 ];

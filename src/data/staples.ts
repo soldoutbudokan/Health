@@ -1005,6 +1005,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "sour cream", "herb", "onion", "snack", "packaged"],
   },
   {
+    id: "pkg-miss-vickies-applewood-bbq",
+    name: "Kettle Cooked Potato Chips",
+    variant: "Applewood Smoked BBQ",
+    brand: "Miss Vickie's",
+    source: "packaged",
+    per: "28 chips (50 g)",
+    gramsPerServing: 50,
+    macros: { calories: 260, protein: 3, carbs: 29, fat: 15, fiber: 2, sodium: 240 },
+    note: "The Canadian 50 g panel off the 200 g bag, as quoted by Voila and database listings on Nov 12; the bag itself wasn't seen. The US panel's 135 mg per 28 g scales to the same sodium. Fibre wasn't listed and is taken from the brand's other 50 g panels, which all read 2 g; sugar wasn't found, so it's blank. A 40 g single-serve bag is 0.8, matching the 210 kcal a tracking app lists for it.",
+    tags: ["chips", "crisps", "potato chips", "kettle", "miss vickies", "bbq", "barbecue", "applewood", "smoked", "snack", "packaged"],
+  },
+  {
     id: "pkg-ruffles-all-dressed",
     name: "Potato Chips",
     variant: "All Dressed",
