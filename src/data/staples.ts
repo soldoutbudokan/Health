@@ -1554,6 +1554,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["crispy squares", "smores", "s'mores", "madegood", "made good", "rice crisp", "bar", "snack", "packaged"],
   },
   {
+    id: "pkg-kelloggs-rice-krispies-square-original",
+    name: "Rice Krispies Squares",
+    variant: "Original",
+    brand: "Kellogg's",
+    source: "packaged",
+    per: "1 bar (22 g)",
+    gramsPerServing: 22,
+    macros: { calories: 90, protein: 1, carbs: 17, fat: 2, fiber: 0, sugar: 8, sodium: 105 },
+    note: "The Canadian 22 g bar as Costco and Voila list it, via search on Nov 12, with the calories and sodium matching Kellogg's own SmartLabel page; the wrapper wasn't seen. One listing gives 85 mg sodium, so call it 85–105. A bakery or homemade square is usually three or four times this size.",
+    tags: ["rice krispies", "rice krispie", "rice crispies", "rice crispy", "square", "marshmallow", "kelloggs", "kellogg's", "bar", "snack", "packaged"],
+  },
+  {
     id: "staple-scone-100g",
     name: "Scone",
     variant: "plain or fruit, bakery-style",
