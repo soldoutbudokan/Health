@@ -511,3 +511,16 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-11-12,2026-11-11,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
 2026-11-11-13,2026-11-11,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
 2026-11-11-14,2026-11-11,daily,Hinge and brace hold,core,2,5,,,,,logged
+2026-11-12-01,2026-11-12,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-11-12-02,2026-11-12,heavy-upper,Pullups,compound,1,5,,,,2 x 5.,logged
+2026-11-12-03,2026-11-12,heavy-upper,Pullups,compound,2,5,,,,,logged
+2026-11-12-04,2026-11-12,heavy-upper,Lying chest press (machine),compound,1,6,150,,,"Life Fitness lying chest press, because the bench was taken. Three sets to failure; weight is what the stack says.",logged
+2026-11-12-05,2026-11-12,heavy-upper,Lying chest press (machine),compound,2,5,150,,,,logged
+2026-11-12-06,2026-11-12,heavy-upper,Lying chest press (machine),compound,3,5,140,,,,logged
+2026-11-12-07,2026-11-12,heavy-upper,Cable row,compound,1,4,150,,,"2 x 4, to failure.",logged
+2026-11-12-08,2026-11-12,heavy-upper,Cable row,compound,2,4,150,,,,logged
+2026-11-12-09,2026-11-12,heavy-upper,Seated Y raise,isolation,1,5,20,,,Not as easy as it has been.,logged
+2026-11-12-10,2026-11-12,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-11-12-11,2026-11-12,heavy-upper,Bayesian cable curl,isolation,1,7,25.5,,,25.5 a side.,logged
+2026-11-12-12,2026-11-12,heavy-upper,Bayesian cable curl,isolation,2,5,25.5,,,,logged
+2026-11-12-13,2026-11-12,heavy-upper,Cable fly,finisher,1,5,45,,,"Said 22.2 a hand, which the stack can't set, so taken as 22.5 a hand, 45 together. One set of 5.",logged
