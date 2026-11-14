@@ -449,7 +449,7 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-10-27-02,2026-10-27,heavy-lower,Trap bar deadlift,compound,1,1,290,,,"Lower back started talking on the first rep, so stopped there.",logged
 2026-10-27-03,2026-10-27,heavy-lower,Treadmill walk,finisher,1,,,,,Walked it off after stopping. No time noted.,logged
 2026-11-03-01,2026-11-03,heavy-lower,Warmups,warmup,1,,,,,"The usual warmups, then the ramp sets, with one more ramp set than normal. The trap bar ramps included 150 × 5, 200 × 5 and 270 × 4.",logged
-2026-11-03-03,2026-11-03,heavy-lower,Trap bar deadlift,compound,1,3,290,,,"Stopped at 3. The back still felt a bit scary after last week, though I think 5 was there.",logged
+2026-11-03-03,2026-11-03,heavy-lower,Trap bar deadlift,compound,1,3,290,,,"Stopped at 3. The back still felt a bit scary after last week, though I think 5 was there. On the film the bar rolled forward an inch or two as the first rep started, and it started the third about three inches ahead of where I set it up.",logged
 2026-11-03-04,2026-11-03,heavy-lower,Smith machine squat,compound,1,5,210,,,,logged
 2026-11-03-05,2026-11-03,heavy-lower,Smith machine squat,compound,2,5,190,,,"Back-off, at the planned 190.",logged
 2026-11-03-06,2026-11-03,heavy-lower,Lying leg curl,isolation,1,6,130,,,,logged
@@ -544,7 +544,7 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-14-04,2026-11-14,light-lower,Depth jumps,jump,2,5,,,,,logged
 2026-11-14-05,2026-11-14,light-lower,Weighted jumps,jump,1,5,15,,,"15s a hand, since the 20s were taken.",logged
 2026-11-14-06,2026-11-14,light-lower,Weighted jumps,jump,2,5,15,,,,logged
-2026-11-14-07,2026-11-14,light-lower,Trap bar deadlift,compound,1,5,240,,,"Three sets at 240, as discussed. None of them hard; filmed the ramp and all three, belted, which the light day isn't meant to be. The bar rolled forward a bit on the first rep of each set, not on the others.",logged
+2026-11-14-07,2026-11-14,light-lower,Trap bar deadlift,compound,1,5,240,,,"Three sets at 240, as discussed. None of them hard; filmed the ramp and all three, belted, which the light day isn't meant to be.",logged
 2026-11-14-08,2026-11-14,light-lower,Trap bar deadlift,compound,2,5,240,,,,logged
 2026-11-14-09,2026-11-14,light-lower,Trap bar deadlift,compound,3,5,240,,,,logged
 2026-11-14-10,2026-11-14,light-lower,Bulgarian split squat,compound,1,5,40,,,"Instead of the Smith squat. 40 a hand, 5 a leg; could have gone heavier.",logged
