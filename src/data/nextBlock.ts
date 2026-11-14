@@ -305,7 +305,7 @@ export const GOALS: { name: string; target: string; plan: string; state: GoalSta
   {
     name: "Trap bar deadlift",
     target: "300 × 5",
-    plan: "Closes in the last stretch: 295 × 5 on Dec 1, 300 × 5 on Dec 8, with Dec 15 and 22 as tries at home. Then 300 × 3 to hold.",
+    plan: "Closes in the last stretch: 290 × 5 on Dec 1, 295 on Dec 8 and 300 × 5 on Dec 15, with Dec 22 as the try at home. Then 300 × 3 to hold.",
     state: "open",
   },
   {
@@ -362,23 +362,28 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
   {
     when: "Nov 5 – 20",
     what: "The last stretch, as drawn",
-    detail: "Trap bar 290 then 295, squat 215 then 220.",
+    detail: "Trap bar 290, squat 215 then 220.",
   },
   { when: "Nov 21 – 29", what: "Mexico", detail: "The away routine if you feel like it, and a lot of walking.", travel: true },
   {
-    when: "Nov 30 – Dec 8",
+    when: "Nov 30 – Dec 15",
     what: "The last stretch, same week",
-    detail: "Heavy lower Tuesday, heavy upper Thursday, the light days on the weekend. 295 and 220 for 5 on Dec 1, with back-offs.",
+    detail: "Heavy lower Tuesday, heavy upper Thursday, the light days on the weekend. 290 and 220 for 5 on Dec 1, with back-offs.",
   },
   {
     when: "Tue Dec 8",
-    what: "The goals",
-    detail: "300 × 5 and 225 × 5, then the back-offs.",
+    what: "The squat goal",
+    detail: "225 × 5, with the trap bar at 295, then the back-offs.",
   },
   {
-    when: "Dec 9 – Jan 3",
+    when: "Tue Dec 15",
+    what: "The trap bar goal",
+    detail: "300 × 5, then the back-off.",
+  },
+  {
+    when: "Dec 16 – Jan 3",
     what: "Buffer",
-    detail: "Tries at home on Dec 15 and 22 for whichever lift is still open, triples for one that closed, then Dec 29 in BC. The Dec 23 and 31 heavy uppers set the bench top set, T.",
+    detail: "A try at home on Dec 22 for whichever lift is still open, triples for one that closed, then Dec 29 in BC. The Dec 23 and 31 heavy uppers set the bench top set, T.",
   },
   {
     when: "Dec 24 – about Jan 15",
