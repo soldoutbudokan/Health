@@ -524,3 +524,17 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-12-11,2026-11-12,heavy-upper,Bayesian cable curl,isolation,1,7,25.5,,,25.5 a side.,logged
 2026-11-12-12,2026-11-12,heavy-upper,Bayesian cable curl,isolation,2,5,25.5,,,,logged
 2026-11-12-13,2026-11-12,heavy-upper,Cable fly,finisher,1,5,45,,,"Said 22.2 a hand, which the stack can't set, so taken as 22.5 a hand, 45 together. One set of 5.",logged
+2026-11-13-01,2026-11-13,daily,Dead bugs,core,1,8,,,,"Per side, slow.",logged
+2026-11-13-02,2026-11-13,daily,Dead bugs,core,2,8,,,,,logged
+2026-11-13-03,2026-11-13,daily,Bird dog,core,1,6,,,,"Per side, 5 sec hold.",logged
+2026-11-13-04,2026-11-13,daily,Bird dog,core,2,6,,,,,logged
+2026-11-13-05,2026-11-13,daily,Side plank,core,1,,,0.5,,Per side.,logged
+2026-11-13-06,2026-11-13,daily,Side plank,core,2,,,0.5,,,logged
+2026-11-13-07,2026-11-13,daily,Single-leg hip thrust,isolation,1,10,,,,"Per side, 2 sec squeeze.",logged
+2026-11-13-08,2026-11-13,daily,Single-leg hip thrust,isolation,2,10,,,,,logged
+2026-11-13-09,2026-11-13,daily,Hamstring bridge hold,isolation,1,,,0.5,,,logged
+2026-11-13-10,2026-11-13,daily,Hamstring bridge hold,isolation,2,,,0.5,,,logged
+2026-11-13-11,2026-11-13,daily,Slow single-leg RDL,mobility,1,6,,,,"Per side, 3 sec down.",logged
+2026-11-13-12,2026-11-13,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
+2026-11-13-13,2026-11-13,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
+2026-11-13-14,2026-11-13,daily,Hinge and brace hold,core,2,5,,,,,logged
