@@ -1,4 +1,4 @@
-import { PROGRAM } from "@/data/program";
+import { PROGRAM, exerciseOn } from "@/data/program";
 import { addDays } from "./nutrition";
 import { formatDay } from "./labels";
 import {
@@ -64,6 +64,12 @@ export interface PlanDay {
   trapBarBackoff?: number;
   squat?: number;
   squatBackoff?: number;
+  /**
+   * The Bulgarian split squat, a hand, on the light lower days from December
+   * 5, 2026, where it replaced the Smith squat. Blank before. It climbs 5 a
+   * hand a clean session and is graded on the program's 6 reps.
+   */
+  splitSquat?: number;
   legCurl?: number;
   /**
    * Reps for the leg curl, cable row and lat pulldown where the plan sets
@@ -296,6 +302,9 @@ function plannedLoad(plan: PlanDay, exercise: string): string | undefined {
     top !== undefined && backoff !== undefined ? `${top} lbs, back-off ${backoff}` : fmt(top);
   if (sameExercise(exercise, "Trap bar deadlift")) return withBackoff(plan.trapBar, plan.trapBarBackoff);
   if (sameExercise(exercise, "Smith machine squat")) return withBackoff(plan.squat, plan.squatBackoff);
+  if (sameExercise(exercise, "Bulgarian split squat")) {
+    return plan.splitSquat === undefined ? undefined : `${plan.splitSquat} lbs a hand`;
+  }
   if (sameExercise(exercise, "Lying leg curl")) return fmt(plan.legCurl);
   if (sameExercise(exercise, "Weighted jumps")) {
     return plan.weightedJumps === undefined ? undefined : `${plan.weightedJumps} lbs a hand`;
@@ -329,6 +338,7 @@ function plannedLoad(plan: PlanDay, exercise: string): string | undefined {
 function plannedNumber(plan: PlanDay, exercise: string): number | undefined {
   if (sameExercise(exercise, "Trap bar deadlift")) return plan.trapBar;
   if (sameExercise(exercise, "Smith machine squat")) return plan.squat;
+  if (sameExercise(exercise, "Bulgarian split squat")) return plan.splitSquat;
   if (sameExercise(exercise, "Lying leg curl")) return plan.legCurl;
   if (sameExercise(exercise, "Weighted jumps")) return plan.weightedJumps;
   if (sameExercise(exercise, "Bench press")) return plan.bench;
@@ -346,6 +356,12 @@ function plannedReps(plan: PlanDay, exercise: string): number | undefined {
   if (sameExercise(exercise, "Lying leg curl")) return plan.legCurlReps;
   if (sameExercise(exercise, "Cable row")) return plan.cableRowReps;
   if (sameExercise(exercise, "Lat pulldown")) return plan.latPulldownReps;
+  // The split squat steps on reps, so a 2 × 5 at the planned weight is short.
+  if (sameExercise(exercise, "Bulgarian split squat") && plan.splitSquat !== undefined) {
+    return PROGRAM.find((p) => p.id === plan.slot)?.exercises.find((e) =>
+      sameExercise(e.name, exercise),
+    )?.reps;
+  }
   return undefined;
 }
 
@@ -434,12 +450,16 @@ export function dayView(
   const status = statusOf(plan, logged, today);
   const program = plan.slot === "rest" ? undefined : PROGRAM.find((p) => p.id === plan.slot);
 
-  const lifts: PlannedLift[] = (program?.exercises ?? []).map((e) => {
+  // A day before a swap shows the lift it was planned with, not its successor.
+  const lifts: PlannedLift[] = (program?.exercises ?? []).map((slot) => {
+    const e = exerciseOn(slot, plan.date);
     const reps = plannedReps(plan, e.name);
     return {
       exercise: e.name,
       prescription:
-        reps !== undefined && e.sets !== undefined ? `${e.sets} × ${reps}` : e.prescription,
+        reps !== undefined && reps !== e.reps && e.sets !== undefined
+          ? `${e.sets} × ${reps}`
+          : e.prescription,
       planned: plannedLoad(plan, e.name),
       last: lastPerformed(sets, e.name, plan.date, today),
       optional: e.optional,

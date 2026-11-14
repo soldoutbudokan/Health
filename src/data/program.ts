@@ -34,8 +34,34 @@ export interface PlannedExercise {
    * Sessions up to that date still fill the slot with it; after that date
    * the old lift reads as the deviation it is.
    */
-  replaced?: { name: string; until: string };
+  replaced?: {
+    name: string;
+    until: string;
+    /** The old lift's own prescription, where it differed from the new one. */
+    prescription?: string;
+    reps?: number;
+  };
   note?: string;
+}
+
+/**
+ * A slot as it stood on a date: before its swap, the lift it replaced, with
+ * that lift's prescription where one is given; on and after, as written.
+ */
+export function exerciseOn(e: PlannedExercise, date: string): PlannedExercise {
+  if (e.replaced === undefined || date > e.replaced.until) return e;
+  const { name, prescription, reps } = e.replaced;
+  return {
+    name,
+    kind: e.kind,
+    prescription: prescription ?? e.prescription,
+    sets: e.sets,
+    setsMax: e.setsMax,
+    reps: reps ?? e.reps,
+    repsMax: reps !== undefined ? undefined : e.repsMax,
+    optional: e.optional,
+    alternative: e.alternative,
+  };
 }
 
 export interface PlannedSession {
@@ -172,12 +198,16 @@ export const PROGRAM: PlannedSession[] = [
         note: "80–85% of heavy-day weight. Crisp bar speed. Beltless — this day is what keeps the unbelted brace trained.",
       },
       {
-        name: "Smith machine squat",
+        // Nov 14, 2026: replaced the Smith squat from Dec 5, by request. The
+        // heavy day carries the squat goal; this spares the back, which the
+        // trap bar already loads here, and the Smith was often taken.
+        name: "Bulgarian split squat",
         kind: "compound",
-        prescription: "2 × 5",
+        prescription: "2 × 6 a leg",
         sets: 2,
-        reps: 5,
-        note: "Beltless, as above.",
+        reps: 6,
+        replaced: { name: "Smith machine squat", until: "2026-12-04", prescription: "2 × 5", reps: 5 },
+        note: "Dumbbells, the weight a hand. +5 a hand when both sets of 6 are clean on both legs.",
       },
       { name: "Lying leg curl", kind: "isolation", prescription: "2 × 5", sets: 2, reps: 5 },
       { name: "Sled", kind: "finisher", prescription: "To tolerance", optional: true },

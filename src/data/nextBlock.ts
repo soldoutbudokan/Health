@@ -477,7 +477,7 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
     rows: [
       { name: "Pogos, depth and approach jumps", start: "Bodyweight, the same box as now", then: "Hold" },
       { name: "Weighted jumps", start: "20 a hand", then: "Hold" },
-      { name: "Bulgarian split squat", start: "30 a hand (5 on Oct 10, not close to failure)", then: "+5 a hand when both sets of 6 are clean on both legs" },
+      { name: "Bulgarian split squat", start: "Where the last stretch leaves it, which took it up from 45 a hand on Dec 5", then: "+5 a hand when both sets of 6 are clean on both legs" },
       { name: "Lying leg curl", start: "The last clean heavy-lower weight in December", then: "Hold" },
     ],
   },

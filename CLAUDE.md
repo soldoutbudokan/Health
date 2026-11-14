@@ -176,8 +176,8 @@ Section 10 of `docs/training-plan.md`. One row per day:
 
 ```
 date,session,phase,deload,optional,trap_bar,trap_bar_backoff,squat,squat_backoff,
-leg_curl,weighted_jumps,bench,bench_backoff,pullups,cable_row,lat_pulldown,
-curl,curl_backup,y_raise,cable_fly,dips,milestone,note
+split_squat,leg_curl,weighted_jumps,bench,bench_backoff,pullups,cable_row,
+lat_pulldown,curl,curl_backup,y_raise,cable_fly,dips,milestone,note
 ```
 
 | Column | Notes |
@@ -186,6 +186,7 @@ curl,curl_backup,y_raise,cable_fly,dips,milestone,note
 | `phase` | `break` \| `return` \| `trip` \| `block-1` \| `deload` \| `block-2` \| `contingency` |
 | `trap_bar`, `squat`, `leg_curl`, `bench` | planned top-set lbs. Blank means no such lift that day, never zero. `leg_curl`, `cable_row` and `lat_pulldown` may also carry reps, `120×6`; see below |
 | `trap_bar_backoff`, `squat_backoff`, `bench_backoff` | planned back-off lbs. Blank means every set at the top weight. The lower two were added September 29, 2026; see below |
+| `split_squat` | the Bulgarian split squat, lbs **a hand**, light lower days from December 5, 2026, where it replaced the Smith squat; those rows leave `squat` blank. Added November 14, 2026, after `squat_backoff`; blank before |
 | `weighted_jumps` | lbs **per dumbbell**, light lower days only, added September 19, 2026. Blank on the heavy days, whose jumps are bodyweight by prescription, and blank before October 3 |
 | `pullups` | free text: `2×5`, `test (9)`, `2×4 easy, optional` |
 | `cable_row`, `lat_pulldown`, `curl`, `y_raise`, `cable_fly` | planned lbs on the upper days, added September 17, 2026. Blank on lower days and on every row before September 21 — no accessory plan existed for those, so none is written in after the fact. `curl` was `preacher_curl` until October 3, 2026: preacher numbers through October 2, Bayesian cable curl numbers a side after |
@@ -295,6 +296,16 @@ jump is graded on speed, 40 lbs on a 186 lb bodyweight is already about a fifth,
 and a load that climbs while the trap bar climbs is a fourth progressing load on
 the same joints. Grading it meant admitting `jump` sets to the day card's logged
 list, so bodyweight jumps now show there with no verdict.
+
+**The light lower's squat is a split squat from December 5.** Asked for on
+November 14, 2026: the heavy day carries the squat goal, the light day's Smith
+put load on a back the trap bar already loads, and the Smith was often taken.
+The `program.ts` slot is the Bulgarian split squat, 2 × 6 a leg, with the
+Smith as its `replaced` lift through December 4, so earlier light lowers still
+grade against the Smith and a split squat on them reads as the substitute it
+was. It steps 5 a hand when both sets of 6 are clean, and the page grades the
+reps as well as the weight. Section 10 of `docs/training-plan.md` has the
+reasoning.
 
 **The shape of a week.** Weekends are the likeliest training days and they are
 fasted, so only the light days go there: light lower Saturday, light upper

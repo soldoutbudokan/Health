@@ -11,9 +11,9 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * Columns, in order:
  *
  *   date, session, phase, deload, optional, trap_bar, trap_bar_backoff,
- *   squat, squat_backoff, leg_curl, weighted_jumps, bench, bench_backoff,
- *   pullups, cable_row, lat_pulldown, curl, curl_backup, y_raise, cable_fly,
- *   dips, milestone, note
+ *   squat, squat_backoff, split_squat, leg_curl, weighted_jumps, bench,
+ *   bench_backoff, pullups, cable_row, lat_pulldown, curl, curl_backup,
+ *   y_raise, cable_fly, dips, milestone, note
  *
  * `session` is a SessionType or `rest`. The load columns are the planned
  * top-set weights in pounds and are blank where the day has no such lift;
@@ -47,6 +47,10 @@ import type { PlanDay, PlanSlot } from "./lastStretch";
  * went from 2 × 5 at one weight to a top set of 5 and a back-off set of 5
  * about 10% lighter. Blank means both sets at the top weight — every light
  * lower, every deload, and every row before October 6.
+ *
+ * `split_squat` came November 14, 2026, after `squat_backoff`: the Bulgarian
+ * split squat, lbs a hand, which takes the light lower's Smith squat from
+ * December 5. Blank before, and the light rows from then leave `squat` blank.
  */
 
 const SESSION_TYPES = Object.keys(SESSION_LABELS) as SessionType[];
@@ -74,9 +78,9 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
     const date = c[0]?.trim();
     if (!isDateKey(date)) continue;
     const slot = optional(c[1])?.toLowerCase();
-    const legCurl = optionalLoad(c[9]);
-    const cableRow = optionalLoad(c[14]);
-    const latPulldown = optionalLoad(c[15]);
+    const legCurl = optionalLoad(c[10]);
+    const cableRow = optionalLoad(c[15]);
+    const latPulldown = optionalLoad(c[16]);
     days.push({
       date,
       slot: isSlot(slot) ? slot : "rest",
@@ -87,23 +91,24 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
       trapBarBackoff: optionalNumber(c[6]),
       squat: optionalNumber(c[7]),
       squatBackoff: optionalNumber(c[8]),
+      splitSquat: optionalNumber(c[9]),
       legCurl: legCurl.lbs,
       legCurlReps: legCurl.reps,
-      weightedJumps: optionalNumber(c[10]),
-      bench: optionalNumber(c[11]),
-      benchBackoff: optionalNumber(c[12]),
-      pullups: optional(c[13]),
+      weightedJumps: optionalNumber(c[11]),
+      bench: optionalNumber(c[12]),
+      benchBackoff: optionalNumber(c[13]),
+      pullups: optional(c[14]),
       cableRow: cableRow.lbs,
       cableRowReps: cableRow.reps,
       latPulldown: latPulldown.lbs,
       latPulldownReps: latPulldown.reps,
-      curl: optionalNumber(c[16]),
-      curlBackup: optionalNumber(c[17]),
-      yRaise: optionalNumber(c[18]),
-      cableFly: optionalNumber(c[19]),
-      dips: optional(c[20]),
-      milestone: optional(c[21]),
-      note: optional(c[22]),
+      curl: optionalNumber(c[17]),
+      curlBackup: optionalNumber(c[18]),
+      yRaise: optionalNumber(c[19]),
+      cableFly: optionalNumber(c[20]),
+      dips: optional(c[21]),
+      milestone: optional(c[22]),
+      note: optional(c[23]),
     });
   }
   return days.sort((a, b) => a.date.localeCompare(b.date));

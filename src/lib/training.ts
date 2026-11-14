@@ -1,5 +1,5 @@
 import { addDays, parseDateKey, round } from "./nutrition";
-import { PROGRAM, type PlannedExercise, type PlannedSession } from "@/data/program";
+import { PROGRAM, exerciseOn, type PlannedExercise, type PlannedSession } from "@/data/program";
 import {
   GYM_SESSIONS,
   type Checkin,
@@ -82,7 +82,8 @@ const ALIASES: Record<string, string> = {
   pushups: "pushups",
 };
 // Substitutes are deliberately left unaliased so the slot they stood in for
-// reads as unfilled: Bulgarian split squat (Smith squat), cable lateral raise
+// reads as unfilled: Bulgarian split squat (Smith squat, until it took the
+// light lower's slot on Dec 5, 2026), cable lateral raise
 // (seated Y raise), lying chest press machine (bench — stack lbs aren't barbell
 // lbs, and the bench goal grades real top sets only), and the backwards
 // treadmill walk and elliptical (sled).
@@ -581,15 +582,19 @@ export function comparePlan(plan: PlannedSession, sets: WorkoutSet[]): PlanLine[
   const claimed = new Set<number>();
   const lines: PlanLine[] = [];
 
-  for (const planned of plan.exercises) {
+  const date = sets[0]?.date;
+  const slots = date ? plan.exercises.map((e) => exerciseOn(e, date)) : plan.exercises;
+  for (const planned of slots) {
     // A slot with a set-count prescription pools every unclaimed exercise that
     // answers to it — the named lift or its alternative — because a volume
     // prescription is about the slot's total sets, not one exercise name:
     // incline pressed beside flat bench counts toward the bench 3–4.
     // Slots without a set count (the sled's "5–10 min") take one match only,
     // so a second sled bout at the end of a session stays visible as its own
-    // line instead of vanishing into the warmup's. A lift the slot replaced
-    // still answers to it on sessions up to the swap, and not after.
+    // line instead of vanishing into the warmup's. A slot is read as it stood
+    // on the session's date (`exerciseOn`): up to a swap it is the lift it
+    // replaced, and after it the new one, so a split squat done on a day the
+    // plan said Smith still reads as the substitute it was.
     const pools = planned.sets !== undefined;
     const matches: number[] = [];
     for (const [i, d] of done.entries()) {
@@ -598,10 +603,7 @@ export function comparePlan(plan: PlannedSession, sets: WorkoutSet[]): PlanLine[
       if (
         sameExercise(d.exercise, planned.name) ||
         (planned.alternative !== undefined &&
-          sameExercise(d.exercise, planned.alternative)) ||
-        (planned.replaced !== undefined &&
-          sameExercise(d.exercise, planned.replaced.name) &&
-          d.sets[0].date <= planned.replaced.until)
+          sameExercise(d.exercise, planned.alternative))
       ) {
         matches.push(i);
       }
