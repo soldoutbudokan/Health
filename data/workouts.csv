@@ -538,3 +538,16 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-13-12,2026-11-13,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
 2026-11-13-13,2026-11-13,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
 2026-11-13-14,2026-11-13,daily,Hinge and brace hold,core,2,5,,,,,logged
+2026-11-14-01,2026-11-14,light-lower,Sled push + pull,warmup,1,,,,,No time noted.,logged
+2026-11-14-02,2026-11-14,light-lower,Warmups,warmup,1,,,,,,logged
+2026-11-14-03,2026-11-14,light-lower,Depth jumps,jump,1,5,,,,,logged
+2026-11-14-04,2026-11-14,light-lower,Depth jumps,jump,2,5,,,,,logged
+2026-11-14-05,2026-11-14,light-lower,Weighted jumps,jump,1,5,15,,,"15s a hand, since the 20s were taken.",logged
+2026-11-14-06,2026-11-14,light-lower,Weighted jumps,jump,2,5,15,,,,logged
+2026-11-14-07,2026-11-14,light-lower,Trap bar deadlift,compound,1,5,240,,,"Three sets at 240, as discussed. None of them hard; filmed the ramp and all three.",logged
+2026-11-14-08,2026-11-14,light-lower,Trap bar deadlift,compound,2,5,240,,,,logged
+2026-11-14-09,2026-11-14,light-lower,Trap bar deadlift,compound,3,5,240,,,,logged
+2026-11-14-10,2026-11-14,light-lower,Bulgarian split squat,compound,1,5,40,,,"Instead of the Smith squat. 40 a hand, 5 a leg; could have gone heavier.",logged
+2026-11-14-11,2026-11-14,light-lower,Bulgarian split squat,compound,2,5,40,,,,logged
+2026-11-14-12,2026-11-14,light-lower,Lying leg curl,isolation,1,6,120,,,"120 x 6, as planned.",logged
+2026-11-14-13,2026-11-14,light-lower,Lying leg curl,isolation,2,6,120,,,,logged
