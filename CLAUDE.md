@@ -248,6 +248,18 @@ one row per top weight (290, 295, 300), because each step has to load from 45s,
 35s, 25s, 10s, 5s and 2.5s. A weight with no row shows no ramp; add the row.
 Light days and the BC row get none.
 
+**The trap bar has a setup checklist.** Asked for on November 14, 2026, after
+film of November 3's 290 × 3 showed the bar set about 4 in behind mid-foot and
+rolling forward as the first rep started. From November 17 every heavy lower's
+card carries it under the ramp (`TrapBarSetup`, fed by `trapBarSetup()` in
+`src/lib/lastStretch.ts`): the hex bar from above, showing where to stand, then
+six cues in two groups of three. The owner's edits bind: no step about the
+arms, no roll check, Breath and Push the floor away are the two loud ones, and
+the last is never called a pull. The line above the diagram is the heaviest
+logged set of 5 before that day, read from the log. It is built to be
+remembered and to wind the lifter up, by request, and nothing in it is
+clickable. Section 10 of `docs/training-plan.md` has the film's figures.
+
 **The accessories are rules rendered as numbers, not targets.** Asked for on
 September 17, 2026, after the row had sat at 130 for seven clean sessions
 because nothing said to move it. No weight on a row or a curl produces a bench;

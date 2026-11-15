@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PHASES, type DayStatus, type DayView, type GoalTrack, type WeekView } from "@/lib/lastStretch";
 import { formatDay, formatFullDay } from "@/lib/labels";
 import { GYM_SESSIONS, SESSION_LABELS, SESSION_SHORT } from "@/lib/trainingTypes";
+import { TrapBarSetup } from "./TrapBarSetup";
 
 /**
  * The Last Stretch calendar. Every value is a prop computed on the build
@@ -245,6 +246,7 @@ function Detail({ view, today }: { view: DayView; today: string }) {
                     </p>
                   </div>
                 )}
+                {l.setup && <TrapBarSetup setup={l.setup} />}
               </li>
             ))}
           </ol>

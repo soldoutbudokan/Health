@@ -190,6 +190,20 @@ export interface PlannedLift {
   note?: string;
   /** The warmup ramp, top set and back-off with the plates for each. */
   ramp?: RampStep[];
+  /** The trap bar's setup checklist, on the heavy lower days that carry it. */
+  setup?: SetupCue;
+}
+
+/**
+ * What the trap bar's setup checklist needs from the plan and the log. The
+ * checklist itself is fixed text in `TrapBarSetup`; these two figures are the
+ * line above it.
+ */
+export interface SetupCue {
+  /** The day's planned top set, lbs. */
+  top: number;
+  /** The heaviest logged set of 5 or more before this day. Proof, not a plan. */
+  best?: { weight: number; reps: number };
 }
 
 export interface RampStep {
@@ -289,6 +303,31 @@ function trapBarRamp(plan: PlanDay): RampStep[] | undefined {
     step("Top set", plan.trapBar, 5),
     step("Back-off", plan.trapBarBackoff, 5),
   ];
+}
+
+/**
+ * The setup checklist, asked for on November 14, 2026, after film of Nov 3's
+ * 290 × 3 showed the bar set about 4 in behind mid-foot and rolling forward as
+ * the first rep started. Every heavy lower from the same date as the ramp,
+ * the BC row included: where to stand does not depend on whose bar it is.
+ */
+const SETUP_FROM = RAMP_FROM;
+
+function trapBarSetup(plan: PlanDay, sets: WorkoutSet[]): SetupCue | undefined {
+  if (plan.slot !== "heavy-lower" || plan.date < SETUP_FROM) return undefined;
+  if (plan.trapBar === undefined) return undefined;
+  const best = bestWeight(
+    sets.filter((s) => s.date < plan.date),
+    "Trap bar deadlift",
+    5,
+  );
+  return {
+    top: plan.trapBar,
+    best:
+      best?.weightLbs !== undefined && best.reps !== undefined
+        ? { weight: best.weightLbs, reps: best.reps }
+        : undefined,
+  };
 }
 
 /** The curl column holds whichever curl the slot carried on that date. */
@@ -465,6 +504,7 @@ export function dayView(
       optional: e.optional,
       note: e.note,
       ramp: sameExercise(e.name, "Trap bar deadlift") ? trapBarRamp(plan) : undefined,
+      setup: sameExercise(e.name, "Trap bar deadlift") ? trapBarSetup(plan, sets) : undefined,
     };
   });
 
