@@ -551,3 +551,18 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-14-11,2026-11-14,light-lower,Bulgarian split squat,compound,2,5,40,,,,logged
 2026-11-14-12,2026-11-14,light-lower,Lying leg curl,isolation,1,6,120,,,"120 x 6, as planned.",logged
 2026-11-14-13,2026-11-14,light-lower,Lying leg curl,isolation,2,6,120,,,,logged
+2026-11-15-01,2026-11-15,light-upper,Warmups,warmup,1,,,,,,logged
+2026-11-15-02,2026-11-15,light-upper,Pullups,compound,1,5,,,,,logged
+2026-11-15-03,2026-11-15,light-upper,Pullups,compound,2,5,,,,,logged
+2026-11-15-04,2026-11-15,light-upper,Bench press,compound,1,8,145,,,,logged
+2026-11-15-05,2026-11-15,light-upper,Bench press,compound,2,8,145,,,,logged
+2026-11-15-06,2026-11-15,light-upper,Bench press,compound,3,8,145,,,,logged
+2026-11-15-07,2026-11-15,light-upper,Lat pulldown,compound,1,4,150,,,Felt quite heavy.,logged
+2026-11-15-08,2026-11-15,light-upper,Lat pulldown,compound,2,4,150,,,,logged
+2026-11-15-09,2026-11-15,light-upper,Cable row,compound,1,6,130,,,"Down from the planned 150, quite cooked by this point.",logged
+2026-11-15-10,2026-11-15,light-upper,Cable row,compound,2,6,130,,,,logged
+2026-11-15-11,2026-11-15,light-upper,Seated Y raise,isolation,1,5,20,,,,logged
+2026-11-15-12,2026-11-15,light-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-11-15-13,2026-11-15,light-upper,Bayesian cable curl,isolation,1,8,25.5,,,"25.5 a side. Form broke down over the last few reps.",logged
+2026-11-15-14,2026-11-15,light-upper,Bayesian cable curl,isolation,2,7,25.5,,,,logged
+2026-11-15-15,2026-11-15,light-upper,Cable fly,finisher,1,7,45,,,"22.5 a hand, so 45 together.",logged
