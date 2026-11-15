@@ -386,6 +386,15 @@ export const RECIPE_FOODS: Food[] = [
     tags: ["pasta", "italian", "vodka", "dinner"],
   },
   {
+    id: "recipe-penne-spicy-sausage-tomato-cream",
+    name: "Penne with Spicy Sausage and Tomato Cream",
+    source: "recipe",
+    per: "1 serving (1/8 recipe)",
+    macros: { calories: 700, protein: 29, carbs: 60, fat: 40, fiber: 4, sodium: 1820 },
+    note: "The recipe's own estimate for an eighth of the pot. It checks out against the ingredient list with the sausage at about 290 kcal per 100 g raw and none of the fat drained. The sausage brand is the unknown: 250–350 kcal per 100 g moves a serving between 655 and 770. Fibre and sodium are worked out from the ingredients; the sausage (~750 mg per 100 g) and the 1.7 tbsp of Diamond Crystal are about 85% of the sodium, so read it as 1,500–2,100 mg, before any Parmesan at the table.",
+    tags: ["pasta", "penne", "sausage", "italian", "tomato", "cream", "bake", "dinner"],
+  },
+  {
     id: "recipe-protein-berry-smoothie",
     name: "Protein Berry Smoothie",
     source: "recipe",
