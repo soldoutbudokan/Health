@@ -1480,6 +1480,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["popcorn", "white cheddar", "cheddar", "from farm to table", "farm to table", "snack", "packaged"],
   },
   {
+    id: "pkg-fftt-hot-honey-popcorn",
+    name: "Hot Honey Popcorn",
+    variant: "single-serve bag",
+    brand: "From Farm To Table",
+    source: "packaged",
+    per: "1 bag (~40 g)",
+    gramsPerServing: 40,
+    macros: { calories: 190, protein: 3, carbs: 27, fat: 8, fiber: 4, sugar: 7, sodium: 200 },
+    note: "Only the 190 kcal is off the package, Nov 16; taken as popcorn like the white cheddar bag, though the product wasn't named. The rest is built to match, as about 30 g popcorn with oil and a honey and chili coating, which puts the bag near 40 g. Sugar 4–10 g depends on how much honey; sodium is a guess, 120–300 mg.",
+    tags: ["popcorn", "hot honey", "honey", "from farm to table", "farm to table", "snack", "packaged"],
+  },
+  {
     id: "pkg-covered-bridge-creamy-dill-60g",
     name: "Creamy Dill Pickle Kettle Chips",
     variant: "single-serve bag",
