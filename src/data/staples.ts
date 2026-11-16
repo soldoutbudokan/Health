@@ -459,7 +459,7 @@ export const PACKAGED_FOODS: Food[] = [
       sugar: 19,
       sodium: 0,
     },
-    note: "The US Original Mix panel via grocery listings on Nov 15, not the wrapper, so three pieces is 0.5. The Tropical and Fantasy mixes list the same 130 kcal for 6 pieces, so the flavour barely matters.",
+    note: "The US Original Mix panel via grocery listings on Nov 15, not the wrapper. The Tropical and Fantasy mixes list the same 130 kcal for 6 pieces, so the flavour barely matters.",
     tags: ["candy", "sweets", "chews", "chewy", "hi-chew", "hichew", "morinaga", "fruit chews", "snack", "sugar"],
   },
   {
