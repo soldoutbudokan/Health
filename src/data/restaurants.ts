@@ -386,6 +386,17 @@ export const RESTAURANT_FOODS: Food[] = [
     tags: ["tim hortons", "timmies", "timbit", "timbits", "chocolate", "custard", "filled", "donut", "doughnut", "donut hole", "chain", "snack"],
   },
   {
+    id: "timhortons-sour-cream-glazed-donut",
+    name: "Sour Cream Glazed Donut",
+    brand: "Tim Hortons",
+    source: "packaged",
+    per: "1 donut (~81 g)",
+    gramsPerServing: 81,
+    macros: { calories: 340, protein: 3, carbs: 46, fat: 16, fiber: 1, sugar: 29, sodium: 230 },
+    note: "Tim Hortons' figures as quoted by several nutrition databases on Nov 17; their own guide wasn't seen. Most listings agree on 340 kcal, 46 g carbs, 16 g fat and 29 g sugar; one that cites the Canadian menu gives 320–330 kcal with 18 g fat and 40 g carbs. Fibre is a guess for a cake donut. Sodium 220–330 mg.",
+    tags: ["tim hortons", "timmies", "donut", "doughnut", "sour cream", "glazed", "cake donut", "chain", "snack"],
+  },
+  {
     id: "timhortons-chocolate-hazelnut-muffin",
     name: "Chocolate Hazelnut Muffin",
     brand: "Tim Hortons",

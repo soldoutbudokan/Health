@@ -203,6 +203,18 @@ export const PACKAGED_FOODS: Food[] = [
     tags: ["bar", "fibre bar", "fiber one", "fibre one", "snack", "oats", "chocolate", "chocolate chip", "chewy"],
   },
   {
+    id: "pkg-quaker-chewy-yogourt-blueberry",
+    name: "Quaker Chewy Granola Bar",
+    variant: "Yogourt Blueberry",
+    brand: "Quaker",
+    source: "packaged",
+    per: "1 bar (35 g)",
+    gramsPerServing: 35,
+    macros: { calories: 150, protein: 2, carbs: 25, fat: 4.5, fiber: 1, sugar: 11, sodium: 110 },
+    note: "The 35 g yogourt-coated blueberry bar, from retailer and database listings on Nov 17; the box wasn't seen. Costco Canada and most listings say 150 kcal, a few US ones 140. Sodium 105–115 mg. Logged from \"blueberry granola bar\", taken to be this one since it's the blueberry bar Quaker sells here.",
+    tags: ["bar", "granola bar", "quaker", "chewy", "blueberry", "yogourt", "yogurt", "dipped", "snack", "packaged"],
+  },
+  {
     id: "pkg-on-whey-shake-2scoop",
     name: "Protein Shake",
     variant: "2 scoops ON Gold Standard vanilla, water",
