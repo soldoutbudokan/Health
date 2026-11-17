@@ -566,3 +566,17 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-15-13,2026-11-15,light-upper,Bayesian cable curl,isolation,1,8,25.5,,,"25.5 a side. Form broke down over the last few reps.",logged
 2026-11-15-14,2026-11-15,light-upper,Bayesian cable curl,isolation,2,7,25.5,,,,logged
 2026-11-15-15,2026-11-15,light-upper,Cable fly,finisher,1,7,45,,,"22.5 a hand, so 45 together.",logged
+2026-11-16-01,2026-11-16,daily,Dead bugs,core,1,8,,,,"Per side, slow.",logged
+2026-11-16-02,2026-11-16,daily,Dead bugs,core,2,8,,,,,logged
+2026-11-16-03,2026-11-16,daily,Bird dog,core,1,6,,,,"Per side, 5 sec hold.",logged
+2026-11-16-04,2026-11-16,daily,Bird dog,core,2,6,,,,,logged
+2026-11-16-05,2026-11-16,daily,Side plank,core,1,,,0.5,,Per side.,logged
+2026-11-16-06,2026-11-16,daily,Side plank,core,2,,,0.5,,,logged
+2026-11-16-07,2026-11-16,daily,Single-leg hip thrust,isolation,1,10,,,,"Per side, 2 sec squeeze.",logged
+2026-11-16-08,2026-11-16,daily,Single-leg hip thrust,isolation,2,10,,,,,logged
+2026-11-16-09,2026-11-16,daily,Hamstring bridge hold,isolation,1,,,0.5,,,logged
+2026-11-16-10,2026-11-16,daily,Hamstring bridge hold,isolation,2,,,0.5,,,logged
+2026-11-16-11,2026-11-16,daily,Slow single-leg RDL,mobility,1,6,,,,"Per side, 3 sec down.",logged
+2026-11-16-12,2026-11-16,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
+2026-11-16-13,2026-11-16,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
+2026-11-16-14,2026-11-16,daily,Hinge and brace hold,core,2,5,,,,,logged
