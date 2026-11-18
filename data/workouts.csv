@@ -580,3 +580,10 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-16-12,2026-11-16,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
 2026-11-16-13,2026-11-16,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
 2026-11-16-14,2026-11-16,daily,Hinge and brace hold,core,2,5,,,,,logged
+2026-11-17-01,2026-11-17,heavy-lower,Warmups,warmup,1,,,,,"The usual warmups, then the written ramp: 150 × 5, 200 × 3, 240 × 2 and 270 × 1.",logged
+2026-11-17-02,2026-11-17,heavy-lower,Trap bar deadlift,compound,1,5,290,,,,logged
+2026-11-17-03,2026-11-17,heavy-lower,Trap bar deadlift,compound,2,3,270,,,"Back-off at 270 instead of the planned 260, since the plates there (45, 35, 25 and 10) couldn't make 260.",logged
+2026-11-17-04,2026-11-17,heavy-lower,Smith machine squat,compound,1,5,220,,,"After the ramp sets.",logged
+2026-11-17-05,2026-11-17,heavy-lower,Smith machine squat,compound,2,5,200,,,"Back-off, at the planned 200.",logged
+2026-11-17-06,2026-11-17,heavy-lower,Lying leg curl,isolation,1,5,140,,,,logged
+2026-11-17-07,2026-11-17,heavy-lower,Lying leg curl,isolation,2,5,140,,,,logged
