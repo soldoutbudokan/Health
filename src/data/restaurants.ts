@@ -2790,7 +2790,7 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Nov 12; the shop wasn't named. Built as an 80 g Vietnamese baguette, about 90 g of grilled lemongrass chicken thigh in an oil, sugar and fish sauce marinade, a smear of mayo, 40 g of pickled carrot and daikon, cucumber, cilantro and a dash of Maggi. Call it 450–750 kcal, mostly the chicken portion and the mayo; pâté, if the shop adds it, is about 60 more. Sodium 1,000–2,100 mg, spread across the bread, the marinade and the Maggi.",
     tags: ["banh mi", "bánh mì", "sandwich", "baguette", "lemongrass", "chicken", "vietnamese", "restaurant", "takeout", "lunch"],
   },
-{
+  {
     id: "ohiru-tonkatsu-sando",
     name: "Tonkatsu Sando",
     variant: "pork loin cutlet on milk bread",
