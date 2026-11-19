@@ -2790,4 +2790,16 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Nov 12; the shop wasn't named. Built as an 80 g Vietnamese baguette, about 90 g of grilled lemongrass chicken thigh in an oil, sugar and fish sauce marinade, a smear of mayo, 40 g of pickled carrot and daikon, cucumber, cilantro and a dash of Maggi. Call it 450–750 kcal, mostly the chicken portion and the mayo; pâté, if the shop adds it, is about 60 more. Sodium 1,000–2,100 mg, spread across the bread, the marinade and the Maggi.",
     tags: ["banh mi", "bánh mì", "sandwich", "baguette", "lemongrass", "chicken", "vietnamese", "restaurant", "takeout", "lunch"],
   },
+{
+    id: "ohiru-tonkatsu-sando",
+    name: "Tonkatsu Sando",
+    variant: "pork loin cutlet on milk bread",
+    brand: "Ohiru Café",
+    source: "claude",
+    per: "1 sandwich (~250 g)",
+    gramsPerServing: 250,
+    macros: { calories: 780, protein: 42, carbs: 76, fat: 34, fiber: 3, sugar: 11, sodium: 1300 },
+    note: "Estimated on Nov 19; Ohiru posts no nutrition or description beyond the name. Built as two thick slices of milk bread (~90 g), a ~120 g panko-fried pork loin cutlet, about 20 g of tonkatsu sauce, a little Kewpie and shredded cabbage. Call it 600–950 kcal, mostly the cutlet's size and how much oil the crust holds. Sodium 900–1,800 mg, half of it the sauce and bread.",
+    tags: ["tonkatsu", "katsu", "katsu sando", "sando", "pork", "cutlet", "sandwich", "japanese", "ohiru", "toronto", "restaurant", "lunch"],
+  },
 ];
