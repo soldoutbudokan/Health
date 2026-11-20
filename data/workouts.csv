@@ -587,6 +587,20 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-17-05,2026-11-17,heavy-lower,Smith machine squat,compound,2,5,200,,,"Back-off, at the planned 200.",logged
 2026-11-17-06,2026-11-17,heavy-lower,Lying leg curl,isolation,1,5,140,,,,logged
 2026-11-17-07,2026-11-17,heavy-lower,Lying leg curl,isolation,2,5,140,,,,logged
+2026-11-18-01,2026-11-18,daily,Dead bugs,core,1,8,,,,"Per side, slow.",logged
+2026-11-18-02,2026-11-18,daily,Dead bugs,core,2,8,,,,,logged
+2026-11-18-03,2026-11-18,daily,Bird dog,core,1,6,,,,"Per side, 5 sec hold.",logged
+2026-11-18-04,2026-11-18,daily,Bird dog,core,2,6,,,,,logged
+2026-11-18-05,2026-11-18,daily,Side plank,core,1,,,0.5,,Per side.,logged
+2026-11-18-06,2026-11-18,daily,Side plank,core,2,,,0.5,,,logged
+2026-11-18-07,2026-11-18,daily,Single-leg hip thrust,isolation,1,10,,,,"Per side, 2 sec squeeze.",logged
+2026-11-18-08,2026-11-18,daily,Single-leg hip thrust,isolation,2,10,,,,,logged
+2026-11-18-09,2026-11-18,daily,Hamstring bridge hold,isolation,1,,,0.5,,,logged
+2026-11-18-10,2026-11-18,daily,Hamstring bridge hold,isolation,2,,,0.5,,,logged
+2026-11-18-11,2026-11-18,daily,Slow single-leg RDL,mobility,1,6,,,,"Per side, 3 sec down.",logged
+2026-11-18-12,2026-11-18,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
+2026-11-18-13,2026-11-18,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
+2026-11-18-14,2026-11-18,daily,Hinge and brace hold,core,2,5,,,,,logged
 2026-11-19-01,2026-11-19,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
 2026-11-19-02,2026-11-19,heavy-upper,Pullups,compound,1,5,,,,,logged
 2026-11-19-03,2026-11-19,heavy-upper,Pullups,compound,2,5,,,,,logged
