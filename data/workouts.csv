@@ -587,3 +587,15 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-17-05,2026-11-17,heavy-lower,Smith machine squat,compound,2,5,200,,,"Back-off, at the planned 200.",logged
 2026-11-17-06,2026-11-17,heavy-lower,Lying leg curl,isolation,1,5,140,,,,logged
 2026-11-17-07,2026-11-17,heavy-lower,Lying leg curl,isolation,2,5,140,,,,logged
+2026-11-19-01,2026-11-19,heavy-upper,Shoulder warmup,warmup,1,,,,,,logged
+2026-11-19-02,2026-11-19,heavy-upper,Pullups,compound,1,5,,,,,logged
+2026-11-19-03,2026-11-19,heavy-upper,Pullups,compound,2,5,,,,,logged
+2026-11-19-04,2026-11-19,heavy-upper,Bench press,compound,1,1,180,,,Maybe could have eked out a second.,logged
+2026-11-19-05,2026-11-19,heavy-upper,Bench press,compound,2,3,160,,,,logged
+2026-11-19-06,2026-11-19,heavy-upper,Bench press,compound,3,5,135,,,,logged
+2026-11-19-07,2026-11-19,heavy-upper,Cable row,compound,1,5,150,,,Right at failure.,logged
+2026-11-19-08,2026-11-19,heavy-upper,Cable row,compound,2,5,150,,,,logged
+2026-11-19-09,2026-11-19,heavy-upper,Seated Y raise,isolation,1,5,20,,,,logged
+2026-11-19-10,2026-11-19,heavy-upper,Seated Y raise,isolation,2,5,20,,,,logged
+2026-11-19-11,2026-11-19,heavy-upper,Incline dumbbell curl,isolation,1,8,25,,,25 a hand.,logged
+2026-11-19-12,2026-11-19,heavy-upper,Incline dumbbell curl,isolation,2,8,25,,,,logged
