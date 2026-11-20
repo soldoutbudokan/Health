@@ -434,6 +434,18 @@ export function lastPerformed(
   return `${setLabel(best)} on ${formatDay(lastDate, today)}`;
 }
 
+/**
+ * From November 20, 2026, by request, every bench day is the planned weight
+ * (155) for as many sets as the day has, each to max reps over the full range:
+ * the bar to the chest with the blades pinned, no hard lockout. The program's
+ * sets × reps no longer describe those days, so the card says this instead.
+ */
+const BENCH_MAX_REPS_FROM = "2026-11-20";
+
+function benchMaxReps(plan: PlanDay): boolean {
+  return plan.bench !== undefined && plan.date >= BENCH_MAX_REPS_FROM;
+}
+
 function summaryOf(plan: PlanDay): string[] {
   const lines: string[] = [];
   if (plan.trapBar !== undefined || plan.squat !== undefined) {
@@ -441,7 +453,9 @@ function summaryOf(plan: PlanDay): string[] {
   }
   if (plan.bench !== undefined) {
     lines.push(
-      plan.slot === "light-upper"
+      benchMaxReps(plan)
+        ? `${plan.bench} max reps`
+        : plan.slot === "light-upper"
         ? `${plan.bench} ×8`
         : plan.benchBackoff !== undefined
           ? `${plan.bench} / ${plan.benchBackoff}`
@@ -496,7 +510,9 @@ export function dayView(
     return {
       exercise: e.name,
       prescription:
-        reps !== undefined && reps !== e.reps && e.sets !== undefined
+        sameExercise(e.name, "Bench press") && benchMaxReps(plan)
+          ? "Sets to max reps, full range"
+          : reps !== undefined && reps !== e.reps && e.sets !== undefined
           ? `${e.sets} × ${reps}`
           : e.prescription,
       planned: plannedLoad(plan, e.name),

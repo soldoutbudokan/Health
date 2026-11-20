@@ -383,7 +383,7 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
   {
     when: "Dec 16 – Jan 3",
     what: "Buffer",
-    detail: "A try at home on Dec 22 for whichever lift is still open, triples for one that closed, then Dec 29 in BC. The Dec 23 and 31 heavy uppers set the bench top set, T.",
+    detail: "A try at home on Dec 22 for whichever lift is still open, triples for one that closed, then Dec 29 in BC. The bench is 155 to max reps on every bench day, and the best set on Dec 23 or 31 sets the top set, T.",
   },
   {
     when: "Dec 24 – about Jan 15",
@@ -442,11 +442,11 @@ export function benchBackups(barbell: number): { press: number; dumbbell: number
 }
 
 /**
- * The example top set the backup lines are drawn for. The plan file's
- * all-goes-well line reaches 200 on Dec 31; 190 is nearer where a 175 on
- * Nov 5 is likely to leave it.
+ * The example top set the backup lines are drawn for. December's bench is
+ * 155 to max reps, and 155 × 10 works out to 175 for 5, so 175 is the
+ * example until a real T exists.
  */
-export const EXAMPLE_T = 190;
+export const EXAMPLE_T = 175;
 
 export const BENCH_LINES: { line: string; offset: number; reps: string }[] = [
   { line: "Heavy top set", offset: 0, reps: "× 5" },
@@ -459,7 +459,7 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
   {
     group: "Heavy full body",
     rows: [
-      { name: "Bench top set, T", start: "The best clean 5 from the Dec 23 or Dec 31 heavy upper", then: "+5 when every set is clean" },
+      { name: "Bench top set, T", start: "From the best 155 set on Dec 23 or Dec 31: the weight Epley gives for 5 at that many reps, rounded down to 5 (155 × 10 makes 175)", then: "+5 when every set is clean" },
       { name: "Bench back-offs", start: "T − 15", then: "Follows T" },
       { name: "Trap bar", start: "300 × 3, once the goal closes", then: "Hold, and 300 × 5 on a block's last heavy day" },
       { name: "Smith squat", start: "225 × 3, once the goal closes", then: "Hold, and 225 × 5 on a block's last heavy day" },

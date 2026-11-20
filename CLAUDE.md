@@ -260,6 +260,15 @@ logged set of 5 before that day, read from the log. It is built to be
 remembered and to wind the lifter up, by request, and nothing in it is
 clickable. Section 10 of `docs/training-plan.md` has the film's figures.
 
+**The bench is 155 for max reps from December 3.** Asked for on November 19,
+2026, after 185 × 5 went 180 × 1 and the owner said he'd been cutting the range
+short. Every bench day to January 3, heavy and light, is 155 for as many sets as
+he likes, each to max reps, the bar to the chest with the blades pinned and no
+hard lockout; no back-offs. The card says so from `BENCH_MAX_REPS_FROM` in
+`src/lib/lastStretch.ts`. The next block's T is the best of those sets on
+December 23 or 31, Epley for 5, rounded down to 5 lbs. Section 10 of
+`docs/training-plan.md` has it.
+
 **The accessories are rules rendered as numbers, not targets.** Asked for on
 September 17, 2026, after the row had sat at 130 for seven clean sessions
 because nothing said to move it. No weight on a row or a curl produces a bench;
