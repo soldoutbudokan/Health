@@ -1597,6 +1597,17 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["crispy squares", "smores", "s'mores", "madegood", "made good", "rice crisp", "bar", "snack", "packaged"],
   },
   {
+    id: "pkg-marinela-pinguinos",
+    name: "Pingüinos",
+    brand: "Marinela",
+    source: "claude",
+    per: "1 cake (40 g)",
+    gramsPerServing: 40,
+    macros: { calories: 154, protein: 2, carbs: 24, fat: 6, sodium: 150 },
+    note: "Calories and macros from the Mexican entry on FatSecret, Nov 21; no panel was seen. Sodium is borrowed from the Chilean 40 g Pingüino panel (149 mg), since no Mexican figure turned up, so call it 100–200 mg. Fibre and sugar are left blank for want of a source.",
+    tags: ["pinguinos", "pingüinos", "marinela", "snack cake", "chocolate", "cake", "mexico", "snack", "packaged"],
+  },
+  {
     id: "pkg-kelloggs-rice-krispies-square-original",
     name: "Rice Krispies Squares",
     variant: "Original",
