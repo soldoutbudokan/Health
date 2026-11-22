@@ -2824,4 +2824,16 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Nov 20 for a pub side of fries finished with truffle oil and parmesan, about 200 g. Call it 450–800 kcal, the portion and the fry oil driving it. Sodium 500–1,200 mg; the salt and cheese on top are the guess.",
     tags: ["fries", "truffle fries", "chips", "side", "king taps", "pub", "toronto", "restaurant", "lunch"],
   },
+  {
+    id: "azul-condesa-enchiladas-mole-negro",
+    name: "Enchiladas de mole negro oaxaqueño",
+    variant: "chicken, 3 pieces",
+    brand: "Azul Condesa",
+    source: "claude",
+    per: "3 enchiladas (~480 g)",
+    gramsPerServing: 480,
+    macros: { calories: 940, protein: 49, carbs: 62, fat: 55, fiber: 9, sugar: 12, sodium: 1500 },
+    note: "Estimated on Nov 21 from the menu and a photo; the restaurant posts no nutrition. Three corn tortillas, about 120 g shredded chicken, about 200 g mole negro, queso fresco, crema and white onion. Call it 750–1,150 kcal; the mole, made with nuts, seeds and lard, is the unknown. Sodium 1,000–2,200 mg.",
+    tags: ["enchiladas", "mole", "mole negro", "oaxaca", "chicken", "azul condesa", "mexican", "mexico city", "cdmx", "restaurant", "dinner"],
+  },
 ];
