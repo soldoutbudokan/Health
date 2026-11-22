@@ -1608,6 +1608,18 @@ export const STAPLE_FOODS: Food[] = [
     tags: ["pinguinos", "pingüinos", "marinela", "snack cake", "chocolate", "cake", "mexico", "snack", "packaged"],
   },
   {
+    id: "pkg-prispas-picositas-chile-limon",
+    name: "Prispas Picositas",
+    variant: "chile y limón, puffed sticks",
+    brand: "Prispas",
+    source: "claude",
+    per: "about 20 pieces (~28 g)",
+    gramsPerServing: 28,
+    macros: { calories: 150, protein: 2, carbs: 16, fat: 9, fiber: 0.5, sugar: 1, sodium: 300 },
+    note: "Estimated Nov 22 with no panel seen; Oxxo sells it in a 50 g bag. Built as a fried corn puff like Cheetos at about 535 kcal per 100 g, with 20 pieces taken as roughly 28 g, about half the bag. Call it 120–190 kcal, mostly the piece weight; chile-lime powders run salty, so sodium 200–450 mg.",
+    tags: ["prispas", "picositas", "chile limon", "chilli lime", "puffs", "cheetos", "chips", "mexico", "oxxo", "snack", "packaged"],
+  },
+  {
     id: "pkg-kelloggs-rice-krispies-square-original",
     name: "Rice Krispies Squares",
     variant: "Original",
