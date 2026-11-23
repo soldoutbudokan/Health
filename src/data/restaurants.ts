@@ -2881,4 +2881,15 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Nov 22 from the menu, which gives 200 g; the other huaraches change weight with the meat, so that is taken as the carnitas. Built as about 130 g of masa base cooked in fat, the carnitas, about 60 g of guacamole and a thin layer of refried beans. Call it 800–1,400 kcal, mostly the carnitas fat and the oil on the base. Sodium 1,300–2,700 mg.",
     tags: ["huarache", "carnitas", "pork", "guacamole", "masa", "el bajio", "el bajío", "mexican", "mexico city", "cdmx", "restaurant", "dinner"],
   },
+  {
+    id: "mexicanazo-flautas-pollo",
+    name: "Flautas de pollo",
+    variant: "four, in salsa verde with crema and queso fresco",
+    brand: "Mexicanazo Restaurante",
+    source: "claude",
+    per: "1 plate (4 flautas)",
+    macros: { calories: 1080, protein: 52, carbs: 70, fat: 66, fiber: 11, sugar: 9, sodium: 1550 },
+    note: "Estimated on Nov 23 from a photo; nothing printed. Built as four fried corn tortillas rolled around about 35 g of shredded chicken each, with about 8 g of frying oil apiece, sitting in about 200 g of salsa verde under about 30 g of crema and 50 g of queso fresco. Call it 850–1,350 kcal, mostly the frying oil and the chicken in each roll. Sodium 1,000–2,500 mg.",
+    tags: ["flautas", "flautas de pollo", "taquitos", "chicken", "salsa verde", "crema", "queso fresco", "mexicanazo", "mexican", "mexico city", "cdmx", "restaurant", "lunch"],
+  },
 ];
