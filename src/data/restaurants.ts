@@ -2925,4 +2925,14 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Nov 23 from the menu. Built as the menu's 60 g of cooked meat and 30 g of beans on a handmade corn tortilla of about 35 g, plus a spoon of salsa. The belly and chistorra mix is taken at about 430 kcal per 100 g cooked. Call it 300–480 kcal, mostly how much fat renders off. Sodium 450–1,100 mg; chistorra is cured.",
     tags: ["taco", "campechano", "pork belly", "chistorra", "chorizo", "sausage", "pork", "el villano", "taqueria", "mexican", "mexico city", "cdmx", "restaurant", "dinner"],
   },
+  {
+    id: "torta-arrachera",
+    name: "Torta de arrachera",
+    variant: "flank steak, standard build",
+    source: "claude",
+    per: "1 torta (~130 g steak)",
+    macros: { calories: 920, protein: 58, carbs: 73, fat: 45, fiber: 9, sugar: 7, sodium: 1800 },
+    note: "Estimated on Nov 24 with no photo or menu, so built as a usual torta: a 110 g telera roll, about 130 g of cooked marinated flank, refried beans, avocado, a tablespoon of mayo, a little queso Oaxaca, and onion, tomato and pickled jalapeño. Call it 750–1,100 kcal; the mayo, the cheese and the meat portion are the unknowns. Sodium 1,300–2,500 mg.",
+    tags: ["torta", "arrachera", "flank steak", "steak", "beef", "sandwich", "telera", "mexican", "mexico city", "cdmx", "lunch"],
+  },
 ];
