@@ -1970,4 +1970,15 @@ export const STAPLE_FOODS: Food[] = [
     note: "USDA 80-proof distilled spirits, added Nov 24; every calorie is the 14 g of alcohol. A shot is taken as 1.5 oz. Mezcal often runs 45% or more and pours vary, so call it 80–140 kcal a shot.",
     tags: ["mezcal", "mescal", "shot", "spirits", "liquor", "alcohol", "drink", "mexican"],
   },
+  {
+    id: "staple-peanuts-roasted-salted",
+    name: "Peanuts",
+    variant: "roasted, salted",
+    source: "usda",
+    per: "100 g",
+    gramsPerServing: 100,
+    macros: { calories: 587, protein: 24.4, carbs: 21.3, fat: 49.7, fiber: 8.4, sugar: 4.9, sodium: 410 },
+    note: "USDA dry-roasted peanuts with salt, per 100 g, added Nov 25; log grams as a fraction, 15 g is 0.15. Atwater runs about 8% high, as it does for most nuts. Salting varies a lot by brand, so sodium is 200–800 mg per 100 g; unsalted is near zero.",
+    tags: ["peanuts", "peanut", "cacahuates", "nuts", "roasted", "salted", "snack"],
+  },
 ];
