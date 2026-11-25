@@ -2975,4 +2975,15 @@ export const RESTAURANT_FOODS: Food[] = [
     note: "Estimated on Nov 25 from a photo: a single espresso with about 180 mL of steamed whole milk in an ordinary latte cup, milk at USDA's 61 kcal per 100 mL. Sugar isn't included; log packets separately. Call it 80–150 kcal, mostly the cup size and whether the milk is whole.",
     tags: ["latte", "café con leche", "cafe con leche", "coffee", "espresso", "milk", "hot drink", "cafe", "breakfast"],
   },
+  {
+    id: "mexico-cafe-black-bean-sauce",
+    name: "Black bean sauce",
+    variant: "brothy, with whole black beans",
+    source: "claude",
+    per: "1 enamel mug (~200 g)",
+    gramsPerServing: 200,
+    macros: { calories: 230, protein: 12, carbs: 32, fat: 6, fiber: 11, sugar: 1, sodium: 600 },
+    note: "Estimated on Nov 25 from a photo of the mug served beside the chilaquiles: about 200 g, taken as half whole black beans and half thinned bean purée, at USDA's 132 kcal per 100 g for cooked beans, with about 5 g of lard or oil. Call it 150–320 kcal, mostly how full the mug was and the fat. Sodium 350–900 mg.",
+    tags: ["frijoles", "frijoles negros", "black beans", "beans", "bean sauce", "frijoles de olla", "side", "mexican", "mexico", "cafe", "breakfast"],
+  },
 ];
