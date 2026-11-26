@@ -186,7 +186,7 @@ bbac2f56-7286-4a12-8c04-6892e371bbd4,2026-08-24,dinner,Chicken Curry,curry only,
 df631b1d-fe60-4dd9-9661-f429a68f58d0,2026-08-24,dinner,Molasses cookie,"small, homemade",,1 small cookie (~22 g),2,95,1.1,15,3.5,0.3,9,75,claude,2026-08-24T23:06:32.000Z
 8151701b-a4f6-4f23-b662-9528ca5a477d,2026-08-24,dinner,Premier Protein Shake,Cookies & Cream,Premier Protein,1 bottle (11 fl oz / 325 ml),1,160,30,5,3,,1,200,packaged,2026-08-24T23:10:23.000Z
 84e3f0ae-e9be-4b7f-89ba-c1585334a073,2026-08-25,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-08-25T13:30:08.000Z
-e2b7c4d1-5a39-4f86-9c02-71de3a8b6f45,2026-08-25,lunch,Cobb Salad,"signature size, no added protein","Mandy's Gourmet Salads","1 signature salad (~439 g plated, dressed)",1,730,25,38,55,9.5,7,1280,claude,2026-08-25T17:05:00.000Z
+e2b7c4d1-5a39-4f86-9c02-71de3a8b6f45,2026-08-25,lunch,Cobb Salad,"signature size, no added protein",Mandy's Gourmet Salads,"1 signature salad (~439 g plated, dressed)",1,730,25,38,55,9.5,7,1280,claude,2026-08-25T17:05:00.000Z
 877da760-daba-48ac-9f40-96315c26ed0c,2026-08-25,snack,Grenade Protein Bar,Oreo White,Grenade,1 bar (60 g),1,230,20,21,9,5,2,300,packaged,2026-08-25T20:40:00.000Z
 9d56e990-4e89-488b-a549-621dcabf365b,2026-08-25,snack,Super Whey,Works size,Oakberry,1 Works (~318 g blended),1,375,32,41,9.5,6,26,190,claude,2026-08-25T21:10:00.000Z
 a0380518-e843-4876-811e-c24d71a236b2,2026-08-25,dinner,Pork and Chive Dumpling,"restaurant, steamed and pan-fried average",,"1 dumpling (~38 g), light dipping sauce",12,95,3.4,9,4.7,0.6,0.5,240,claude,2026-08-25T23:45:00.000Z
@@ -215,16 +215,16 @@ d3592c37-f134-408d-8073-e5d6d365d49f,2026-08-28,dinner,Protein Shake,"2 scoops O
 b293a05f-2554-4ffc-a0f4-a4897fee9cae,2026-08-29,breakfast,I'll Have It All,"full breakfast plate, bread included",L'Avenue,"1 plate (full breakfast, bread included, no syrup)",1,1675,64,136,95,7,15,3470,claude,2026-08-29T17:50:09.000Z
 40685d9b-7772-4dc0-bc0e-e7d7d35e1992,2026-08-29,breakfast,Maple syrup,,,1 tbsp (20 g),2,52,0,13.4,0,0,12.1,2,usda,2026-08-29T17:50:09.000Z
 8cc78132-4e8e-483c-8a2c-1b7edb4da84d,2026-08-29,lunch,Protein Berry Smoothie,,,1 batch (~515 ml),1,505,76,35.5,6,4,24,265,recipe,2026-08-29T21:20:32.000Z
-19d9f97f-1c17-43eb-9e10-764a5b7cd5bb,2026-08-29,snack,Kettle Cooked Potato Chips,Cacio e Pepe,Miss Vickie's,"27 chips (50 g)",0.37,260,3,29,15,2,2,250,packaged,2026-08-29T21:20:32.000Z
-91c5edf1-ff6b-4112-8953-b94b37911269,2026-08-29,dinner,"Cured meats, charcuterie board","salami, prosciutto and capicola mix",,"~90 g (about half a plate)",1,340,21,1.5,28,0,0.5,1550,claude,2026-08-30T02:39:08.000Z
+19d9f97f-1c17-43eb-9e10-764a5b7cd5bb,2026-08-29,snack,Kettle Cooked Potato Chips,Cacio e Pepe,Miss Vickie's,27 chips (50 g),0.37,260,3,29,15,2,2,250,packaged,2026-08-29T21:20:32.000Z
+91c5edf1-ff6b-4112-8953-b94b37911269,2026-08-29,dinner,"Cured meats, charcuterie board","salami, prosciutto and capicola mix",,~90 g (about half a plate),1,340,21,1.5,28,0,0.5,1550,claude,2026-08-30T02:39:08.000Z
 064b2f66-2907-4218-944f-f5f30d9c305d,2026-08-29,dinner,Samosa,"small, vegetable",,1 small samosa (~40 g),1,110,2.5,13,5.5,1.5,1,190,claude,2026-08-30T02:39:08.000Z
 36bc3123-986c-46e8-b8b4-e960ad0ca5f7,2026-08-29,snack,Hard apple cider,"dry, ~5% ABV",,1 can (473 mL),1,210,0,24,0,0,24,15,claude,2026-08-30T02:39:08.000Z
-f0928e01-b69b-44ea-a927-54853791e77b,2026-08-29,snack,Coffee cake,"streusel and glaze",Kirkland Signature,1 slice (~95 g),1,390,4.5,52,18,1,30,280,claude,2026-08-30T02:39:08.000Z
+f0928e01-b69b-44ea-a927-54853791e77b,2026-08-29,snack,Coffee cake,streusel and glaze,Kirkland Signature,1 slice (~95 g),1,390,4.5,52,18,1,30,280,claude,2026-08-30T02:39:08.000Z
 92cbcae0-308f-49a1-8e34-88e475ca9a8f,2026-08-29,snack,Grapes,,,100 g,1,69,0.72,18.1,0.16,0.9,15.5,2,usda,2026-08-30T02:39:08.000Z
 8802f905-02bd-40b6-a0de-c9acf795db87,2026-08-30,breakfast,Eggs Benedict,"peameal bacon, house greens",The Queen & Beaver Public House,1 plate,1,840,49,39,52.5,4,4,1885,claude,2026-08-30T14:28:00.000Z
-d9635241-b09d-4c58-bf8f-28777b7038ba,2026-08-30,snack,Protein Shake,"2 scoops ON vanilla + splash of 2% milk",Optimum Nutrition,"2 scoops (~61 g) + ~1/2 cup 2% milk",1,301,52,12,4.5,1,8,318,packaged,2026-08-30T20:18:34.000Z
-da3b0e3c-c9ff-4338-aefb-da925bacef42,2026-08-30,snack,Grenade Protein Bar,Oreo White,Grenade,"1 bar (60 g)",1,230,20,21,9,5,2,300,packaged,2026-08-30T20:18:34.000Z
-44a15159-993a-4081-abaa-9ebfe8f51971,2026-08-30,dinner,Lasagna,"homemade, lean beef",,"1 normal piece (~265 g)",1.2,395,33,26,17.5,2.5,7,800,claude,2026-08-31T00:58:00.000Z
+d9635241-b09d-4c58-bf8f-28777b7038ba,2026-08-30,snack,Protein Shake,2 scoops ON vanilla + splash of 2% milk,Optimum Nutrition,2 scoops (~61 g) + ~1/2 cup 2% milk,1,301,52,12,4.5,1,8,318,packaged,2026-08-30T20:18:34.000Z
+da3b0e3c-c9ff-4338-aefb-da925bacef42,2026-08-30,snack,Grenade Protein Bar,Oreo White,Grenade,1 bar (60 g),1,230,20,21,9,5,2,300,packaged,2026-08-30T20:18:34.000Z
+44a15159-993a-4081-abaa-9ebfe8f51971,2026-08-30,dinner,Lasagna,"homemade, lean beef",,1 normal piece (~265 g),1.2,395,33,26,17.5,2.5,7,800,claude,2026-08-31T00:58:00.000Z
 b790c46b-5a44-45e3-845d-2e583896b079,2026-08-30,dinner,"Carrots, raw",,,100 g,1,41,0.9,9.6,0.2,2.8,4.7,69,usda,2026-08-31T00:58:00.000Z
 16a3d813-965c-4d53-b07d-c445626bed1b,2026-08-30,dinner,Premier Protein Shake,flavour not noted,Premier Protein,1 bottle (11 fl oz / 325 ml),1,160,30,5,3,,1,200,packaged,2026-08-31T00:58:00.000Z
 483e4c14-e187-4467-81ad-2515beb2670c,2026-08-31,breakfast,Protein Berry Smoothie,,,1 batch (~515 ml),1,505,76,35.5,6,4,24,265,recipe,2026-08-31T15:50:36.000Z
@@ -598,8 +598,8 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-06-dinner-chicken-caesar-salad,2026-10-06,dinner,Chicken Caesar Salad,with 3 tbsp dressing,,1 serving (1/6 recipe) + 3 tbsp dressing,1,840,58,21,58,4,,1950,recipe,2026-10-06T23:30:08.000Z
 2026-10-07-breakfast-sbux-protein-latte,2026-10-07,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-07T13:49:10.000Z
 2026-10-07-lunch-chicken-biryani,2026-10-07,lunch,Chicken Biryani,"Charcoal Biryani at Chefs Hall, one food-court box; estimated with no photo, 700–1,200 kcal and 35–55 g protein, sodium 1,000–2,400 mg; the portion and the oil drive it",Charcoal Biryani,1 box (~500 g),1,900,45,105,34,4,5,1500,claude,2026-10-07T17:13:57.000Z
-2026-10-07-lunch-biryani-curry,2026-10-07,lunch,Curry (side with biryani),"one spoonful of the gravy that came with the biryani; estimate",Charcoal Biryani,1 tbsp (~15 g),1,25,0.5,1.5,2,0.3,0.5,90,claude,2026-10-07T17:13:57.000Z
-2026-10-07-lunch-biryani-raita,2026-10-07,lunch,Raita,"one spoonful of the yogurt that came with the biryani; estimate",Charcoal Biryani,1 tbsp (~15 g),1,10,0.5,0.8,0.5,0,0.7,25,claude,2026-10-07T17:13:57.000Z
+2026-10-07-lunch-biryani-curry,2026-10-07,lunch,Curry (side with biryani),one spoonful of the gravy that came with the biryani; estimate,Charcoal Biryani,1 tbsp (~15 g),1,25,0.5,1.5,2,0.3,0.5,90,claude,2026-10-07T17:13:57.000Z
+2026-10-07-lunch-biryani-raita,2026-10-07,lunch,Raita,one spoonful of the yogurt that came with the biryani; estimate,Charcoal Biryani,1 tbsp (~15 g),1,10,0.5,0.8,0.5,0,0.7,25,claude,2026-10-07T17:13:57.000Z
 2026-10-07-snack-grenade-bar,2026-10-07,snack,Grenade Protein Bar,Oreo White,Grenade,1 bar (60 g),1,230,20,21,9,5,2,300,packaged,2026-10-07T19:29:33.000Z
 2026-10-07-snack-apple,2026-10-07,snack,Apple,,,1 medium (182 g),1,95,0.5,25,0.3,4.4,19,2,staple,2026-10-07T19:29:33.000Z
 2026-10-07-dinner-chicken-caesar-salad,2026-10-07,dinner,Chicken Caesar Salad,with 3 tbsp dressing,,1 serving (1/6 recipe) + 3 tbsp dressing,1,840,58,21,58,4,,1950,recipe,2026-10-07T23:18:15.000Z
@@ -639,9 +639,9 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-11-lunch-smoothie,2026-10-11,lunch,Protein Berry Smoothie,,,1 batch (~515 ml),1,505,76,35.5,6,4,24,265,recipe,2026-10-11T16:48:54.000Z
 2026-10-11-lunch-maggi-masala,2026-10-11,lunch,Maggi 2-Minute Noodles,Masala,Maggi,"1 pack (70 g, noodle cake + tastemaker)",2,310,6,43,13,2,3,890,packaged,2026-10-11T16:48:54.000Z
 2026-10-11-lunch-eggs,2026-10-11,lunch,"Egg, large","two, boiled, with the Maggi",,1 large egg (50 g),2,72,6.3,0.4,4.8,,,,staple,2026-10-11T16:48:54.000Z
-2026-10-11-lunch-baby-carrots,2026-10-11,lunch,"Carrots, raw","12 baby carrots at ~10 g each",,100 g,1.2,41,0.9,9.6,0.2,2.8,4.7,69,usda,2026-10-11T16:48:54.000Z
+2026-10-11-lunch-baby-carrots,2026-10-11,lunch,"Carrots, raw",12 baby carrots at ~10 g each,,100 g,1.2,41,0.9,9.6,0.2,2.8,4.7,69,usda,2026-10-11T16:48:54.000Z
 2026-10-11-dinner-cacio-e-pepe-spaghetti,2026-10-11,dinner,"Spaghetti, dry","for homemade cacio e pepe; 125 g dry assumed, cooked in salted water, no butter",,100 g,1.25,371,13,74.7,1.5,3.2,2.7,,usda,2026-10-12T00:02:07.000Z
-2026-10-11-dinner-cacio-e-pepe-pecorino,2026-10-11,dinner,Pecorino Romano,"grated into the cacio e pepe; 50 g assumed",,100 g,0.5,387,31.8,3.6,26.9,0,0.7,1433,usda,2026-10-12T00:02:07.000Z
+2026-10-11-dinner-cacio-e-pepe-pecorino,2026-10-11,dinner,Pecorino Romano,grated into the cacio e pepe; 50 g assumed,,100 g,0.5,387,31.8,3.6,26.9,0,0.7,1433,usda,2026-10-12T00:02:07.000Z
 2026-10-11-dinner-premier-shake,2026-10-11,dinner,Premier Protein Shake,flavour not noted,Premier Protein,1 bottle (11 fl oz / 325 ml),1,160,30,5,3,,1,200,packaged,2026-10-12T00:02:07.000Z
 2026-10-12-breakfast-sbux-protein-latte,2026-10-12,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-12T13:40:05.000Z
 2026-10-12-lunch-mcd-garlic-pepper-mcnuggets,2026-10-12,lunch,Garlic & Black Pepper Chicken McNuggets,"10 piece, no sauce",McDonald's,10 pieces (~160 g),1,420,26,25,23,1,0,780,claude,2026-10-12T16:52:03.000Z
@@ -675,7 +675,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-14-dinner-nandos-garlic-mash,2026-10-14,dinner,Garlic mashed potatoes,"regular; 230 on the Canadian menu, first logged at a US listing's 260",Nando's,1 regular side,1,230,2,27,13,2.5,2,800,claude,2026-10-14T23:40:22.000Z
 2026-10-14-dinner-nandos-pastel-de-nata,2026-10-14,dinner,Pastel de nata,,Nando's,1 tart,1,180,2.7,19,10.5,0.5,10.5,90,claude,2026-10-14T23:40:22.000Z
 2026-10-15-breakfast-sbux-protein-latte,2026-10-15,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-15T17:00:11.000Z
-2026-10-15-lunch-mrfez-chicken-shawarma-salad,2026-10-15,lunch,Chicken shawarma salad,"light garlic sauce and tahini; first logged at 730 with more chicken",Mr. Fez (Ottawa),1 bowl (~440 g),1,680,50,15,47,3.5,5,1450,claude,2026-10-15T17:00:11.000Z
+2026-10-15-lunch-mrfez-chicken-shawarma-salad,2026-10-15,lunch,Chicken shawarma salad,light garlic sauce and tahini; first logged at 730 with more chicken,Mr. Fez (Ottawa),1 bowl (~440 g),1,680,50,15,47,3.5,5,1450,claude,2026-10-15T17:00:11.000Z
 2026-10-15-lunch-milk2go-sport-pro-vanilla,2026-10-15,lunch,Milk 2 Go Sport Pro High Protein Milk Shake,Vanilla,Milk2Go,1 bottle (473 mL),1,220,38,16,0.5,0,15,180,packaged,2026-10-15T17:25:09.000Z
 2026-10-15-dinner-nandos-boneless-thighs,2026-10-15,dinner,Boneless chicken thighs,"PERi-PERi, skin-on; 950 on the menu, taken as 690; first logged at 420",Nando's,3 boneless thighs,1,690,59,2,49,0,,950,claude,2026-10-16T01:29:41.000Z
 2026-10-15-dinner-nandos-brussels-sprouts,2026-10-15,dinner,Roasted Brussels sprouts,regular,Nando's,1 regular side,1,170,5,14,11,5,3,350,claude,2026-10-16T01:29:41.000Z
@@ -704,7 +704,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-18-lunch-deep-parathas,2026-10-18,lunch,Paratha,Homestyle,Deep,1 paratha (~66 g),2,220,5,32,8,,,310,packaged,2026-10-18T17:12:34.000Z
 2026-10-18-lunch-red-pepper,2026-10-18,lunch,"Red bell pepper, raw",quarter pepper,,1 medium (~119 g),0.25,37,1.2,7.2,0.4,2.5,5,5,staple,2026-10-18T17:12:34.000Z
 2026-10-18-lunch-baby-carrots,2026-10-18,lunch,"Carrots, raw","4 baby carrots, taken as ~40 g",,100 g,0.4,41,0.9,9.6,0.2,2.8,4.7,69,usda,2026-10-18T17:12:34.000Z
-2026-10-18-lunch-on-whey-3.5-scoops,2026-10-18,lunch,Whey Protein Powder,"1 scoop ON Gold Standard vanilla; 3.5 scoops in water",Optimum Nutrition,1 scoop (~30.5 g),3.5,120,24,3,1,0.5,1,130,packaged,2026-10-18T17:12:34.000Z
+2026-10-18-lunch-on-whey-3.5-scoops,2026-10-18,lunch,Whey Protein Powder,1 scoop ON Gold Standard vanilla; 3.5 scoops in water,Optimum Nutrition,1 scoop (~30.5 g),3.5,120,24,3,1,0.5,1,130,packaged,2026-10-18T17:12:34.000Z
 2026-10-18-snack-pear,2026-10-18,snack,"Pear, raw",,,1 medium (178 g),1,101,0.6,27.1,0.3,5.5,17.4,2,usda,2026-10-18T19:29:46.000Z
 2026-10-18-snack-natursource-sweet-heat-mix,2026-10-18,snack,Sweet Heat mix,,naturSource,1 pack (~20 g),1,110,3.5,8,7.5,1,3,120,claude,2026-10-19T00:13:31.000Z
 2026-10-18-dinner-via-brisket-mac,2026-10-18,dinner,Beef brisket on mac and cheese,"with Brussels sprouts, business class hot dish",VIA Rail,1 hot dish (~300 g),1,560,35,39,28,3,11,1000,claude,2026-10-19T00:13:31.000Z
@@ -731,7 +731,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-20-dinner-mashed-potatoes,2026-10-20,dinner,Mashed potatoes,"home-prepared with milk and butter, ~160 g a plate",,~160 g (3/4 cup),1.3,181,3,27,6.7,2.4,2.2,530,usda,2026-10-20T23:32:52.000Z
 2026-10-20-dinner-mashed-rutabaga,2026-10-20,dinner,Mashed rutabaga,"with a little butter, ~130 g a plate; squash would be about the same",,~130 g,1.3,78,1.2,8.9,4.3,2.3,6,180,claude,2026-10-20T23:32:52.000Z
 2026-10-20-dinner-boiled-carrots,2026-10-20,dinner,"Carrots, boiled","~90 g a plate, no butter assumed",,~90 g,1.3,32,0.7,7.4,0.2,2.7,3.1,100,usda,2026-10-20T23:32:52.000Z
-2026-10-20-dinner-cheesecake-homemade,2026-10-20,dinner,"Cheesecake, homemade","a third of the usual cream cheese; slice taken as ~120 g; call it 230–420 kcal a slice",,1 slice (~120 g),1.25,310,8,27,19,0.4,18,200,claude,2026-10-20T23:32:52.000Z
+2026-10-20-dinner-cheesecake-homemade,2026-10-20,dinner,"Cheesecake, homemade",a third of the usual cream cheese; slice taken as ~120 g; call it 230–420 kcal a slice,,1 slice (~120 g),1.25,310,8,27,19,0.4,18,200,claude,2026-10-20T23:32:52.000Z
 2026-10-21-breakfast-sbux-protein-latte,2026-10-21,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-21T19:24:56.000Z
 2026-10-21-lunch-subway-fresh-fit-rotisserie-ihc,2026-10-21,lunch,Rotisserie-Style Chicken,"Fresh Fit 6-inch, Italian Herbs & Cheese, double meat, mustard not mayo, all the veg",Subway,1 six-inch sub,1,530,48,47,16,4,7,1500,claude,2026-10-21T19:24:56.000Z
 2026-10-21-lunch-core-power-26g,2026-10-21,lunch,Core Power 26g High Protein Milk Shake,Vanilla,fairlife,1 bottle (414 mL),1,170,26,6,4.5,1,5,270,packaged,2026-10-21T19:24:56.000Z
@@ -739,7 +739,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-21-dinner-nandos-peri-mac,2026-10-21,dinner,PERi mac,regular,Nando's,1 regular side,1,340,13,44,12.5,1.5,4,1200,claude,2026-10-22T00:37:53.000Z
 2026-10-21-dinner-nandos-garlic-mash,2026-10-21,dinner,Garlic mashed potatoes,regular,Nando's,1 regular side,1,230,2,27,13,2.5,2,800,claude,2026-10-22T00:37:53.000Z
 2026-10-21-dinner-nandos-pastel-de-nata,2026-10-21,dinner,Pastel de nata,half a tart,Nando's,1 tart,0.5,180,2.7,19,10.5,0.5,10.5,90,claude,2026-10-22T00:37:53.000Z
-2026-10-21-dinner-cheesecake-homemade,2026-10-21,dinner,"Cheesecake, homemade","a third of the usual cream cheese; about half of yesterday's ~120 g slice; call it 230–420 kcal a slice",,1 slice (~120 g),0.5,310,8,27,19,0.4,18,200,claude,2026-10-22T00:37:53.000Z
+2026-10-21-dinner-cheesecake-homemade,2026-10-21,dinner,"Cheesecake, homemade",a third of the usual cream cheese; about half of yesterday's ~120 g slice; call it 230–420 kcal a slice,,1 slice (~120 g),0.5,310,8,27,19,0.4,18,200,claude,2026-10-22T00:37:53.000Z
 2026-10-22-breakfast-sbux-protein-latte,2026-10-22,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-22T15:19:40.000Z
 2026-10-22-lunch-subway-grilled-chicken-ihc-pepperjack,2026-10-22,lunch,Grilled Chicken,"6-inch, Italian Herbs & Cheese, pepperjack, double meat, mustard not mayo, all the veg",Subway,1 six-inch sub,1,500,47,47,13,4,7,1550,claude,2026-10-22T17:29:35.000Z
 2026-10-22-lunch-core-power-42g,2026-10-22,lunch,Core Power 42g High Protein Milk Shake,Chocolate,fairlife,1 bottle (414 mL),1,230,42,9,3.5,2,7,260,packaged,2026-10-22T17:29:55.000Z
@@ -783,7 +783,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-10-26-dinner-roasted-potato,2026-10-26,dinner,Roasted potatoes,"one small potato, roasted in oil; taken as ~120 g roasted, same as Oct 24",,100 g,1.2,150,2.5,21,6,2.2,1,250,claude,2026-10-26T23:08:32.000Z
 2026-10-26-snack-cookie-it-up-shorts-milk-chocolate-2,2026-10-26,snack,Shorts Shortbread Cookie,milk chocolate,Cookie It Up,1 cookie (~17 g),1,90,1,9,5.6,0,4,35,packaged,2026-10-26T23:47:02.000Z
 2026-10-27-breakfast-sbux-protein-latte,2026-10-27,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-10-27T13:34:42.000Z
-2026-10-27-lunch-mandys-cobb-salad,2026-10-27,lunch,Cobb Salad,"signature recipe, smaller catered portion, taken as about 550 kcal","Mandy's Gourmet Salads","1 signature salad (~439 g plated, dressed)",0.75,730,25,38,55,9.5,7,1280,claude,2026-10-27T16:17:52.000Z
+2026-10-27-lunch-mandys-cobb-salad,2026-10-27,lunch,Cobb Salad,"signature recipe, smaller catered portion, taken as about 550 kcal",Mandy's Gourmet Salads,"1 signature salad (~439 g plated, dressed)",0.75,730,25,38,55,9.5,7,1280,claude,2026-10-27T16:17:52.000Z
 2026-10-27-snack-vickies-jalapeno,2026-10-27,snack,Kettle Cooked Potato Chips,Jalapeño,Miss Vickie's,28 chips (50 g),0.8,260,4,29,15,2,1,320,packaged,2026-10-27T16:58:50.000Z
 2026-10-27-snack-kirkland-chewy-bars,2026-10-27,snack,Kirkland Signature Protein Bar,chewy,Kirkland Signature,1 bar (40 g),2,190,10,16,11,6,6,120,packaged,2026-10-27T19:44:00.000Z
 2026-10-27-dinner-chicken-thighs-sherry-mushroom-veg,2026-10-27,dinner,Chicken Thighs with Sherry Mushroom Pan Sauce,"with roasted vegetables, cream",,1 serving (1/4 recipe) + ~200 g roasted vegetables,1,720,49,21,47,7,9,930,recipe,2026-10-27T23:43:16.000Z
@@ -874,7 +874,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-11-05-snack-covered-bridge-bbq-chips,2026-11-05,snack,Potato Chips,Smokin' Sweet BBQ,Covered Bridge,1 bag (~60 g),1,300,5,36,15,3.5,2.5,460,packaged,2026-11-05T21:14:17.000Z
 2026-11-05-snack-banana,2026-11-05,snack,Banana,,,1 medium (118 g),1,105,1.3,27,0.4,3,,1,staple,2026-11-05T21:14:17.000Z
 2026-11-05-dinner-beyond-meat-quesadillas,2026-11-05,dinner,Beyond Meat Quesadilla,,,1 quesadilla (1 patty),1.625,550,28,42,30,3.5,,1115,recipe,2026-11-06T00:48:26.000Z
-2026-11-05-dinner-whey-shake-milk,2026-11-05,dinner,Protein Shake,"2 scoops ON vanilla + splash of 2% milk; scoop and milk both about 20% bigger",Optimum Nutrition,2 scoops (~61 g) + ~1/2 cup 2% milk,1.2,301,52,12,4.5,1,8,318,packaged,2026-11-06T00:48:26.000Z
+2026-11-05-dinner-whey-shake-milk,2026-11-05,dinner,Protein Shake,2 scoops ON vanilla + splash of 2% milk; scoop and milk both about 20% bigger,Optimum Nutrition,2 scoops (~61 g) + ~1/2 cup 2% milk,1.2,301,52,12,4.5,1,8,318,packaged,2026-11-06T00:48:26.000Z
 2026-11-06-lunch-tims-chicken-parm-flatbread,2026-11-06,lunch,Chicken Parmesan Flatbread Pizza,,Tim Hortons,1 flatbread,1,760,48,68,34,3,6,1890,packaged,2026-11-06T19:36:53.000Z
 2026-11-06-lunch-sbux-protein-latte,2026-11-06,lunch,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-11-06T19:36:53.000Z
 2026-11-06-dinner-laylak-cold-dips,2026-11-06,dinner,Cold Dips,"all four, a third share",Laylak,"1 order (trio + extra dip, ~400 g)",0.33,1020,23,48,83,12,15,1650,claude,2026-11-07T02:52:02.000Z
@@ -921,10 +921,10 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-11-11-snack-vanilla-cake-slice,2026-11-11,snack,Vanilla cake,"1 slice, frosted; kind not noted",,"1 slice (~110 g, frosted)",1,390,4,52,19,0.6,38,300,claude,2026-11-11T20:18:38.000Z
 2026-11-11-snack-vickies-sour-cream-herb-onion,2026-11-11,snack,Kettle Cooked Potato Chips,"Sour Cream, Herb & Onion",Miss Vickie's,28 g (~15 chips),1.43,150,2,17,8,1,2,140,packaged,2026-11-11T20:18:38.000Z
 2026-11-11-dinner-mothers-juicy-pork,2026-11-11,dinner,Juicy Pork Dumpling,"xiao long bao, steamed; half of an 8-piece order",Mother's Dumplings,1 dumpling (~38 g),4,80,4.2,7.5,3.5,0.3,0.4,180,claude,2026-11-12T00:19:47.000Z
-2026-11-11-dinner-mothers-chive-egg-pancake,2026-11-11,dinner,Chives and Eggs Filled Pancake,"pan-fried; half of a 4-piece order",Mother's Dumplings,1 pancake (~95 g),2,210,6.5,26,9,1.5,1,320,claude,2026-11-12T00:19:47.000Z
-2026-11-11-dinner-mothers-pork-cabbage,2026-11-11,dinner,Pork and Cabbage Dumpling,"pan-fried; half of a 10-piece order",Mother's Dumplings,1 dumpling (~32 g),5,70,3.3,6.5,3.4,0.4,0.4,170,claude,2026-11-12T00:19:47.000Z
-2026-11-11-dinner-mothers-special-beef,2026-11-11,dinner,Special Beef Dumpling,"taken as boiled; half of a 12-piece order",Mother's Dumplings,1 dumpling (~30 g),6,60,3.3,6,2.5,0.3,0.3,150,claude,2026-11-12T00:19:47.000Z
-2026-11-11-dinner-mothers-assorted-sweet,2026-11-11,dinner,Assorted Sweet Dumplings,"steamed; half the order",Mother's Dumplings,1 order (~170 g),0.5,480,10,85,11,3,30,200,claude,2026-11-12T00:19:47.000Z
+2026-11-11-dinner-mothers-chive-egg-pancake,2026-11-11,dinner,Chives and Eggs Filled Pancake,pan-fried; half of a 4-piece order,Mother's Dumplings,1 pancake (~95 g),2,210,6.5,26,9,1.5,1,320,claude,2026-11-12T00:19:47.000Z
+2026-11-11-dinner-mothers-pork-cabbage,2026-11-11,dinner,Pork and Cabbage Dumpling,pan-fried; half of a 10-piece order,Mother's Dumplings,1 dumpling (~32 g),5,70,3.3,6.5,3.4,0.4,0.4,170,claude,2026-11-12T00:19:47.000Z
+2026-11-11-dinner-mothers-special-beef,2026-11-11,dinner,Special Beef Dumpling,taken as boiled; half of a 12-piece order,Mother's Dumplings,1 dumpling (~30 g),6,60,3.3,6,2.5,0.3,0.3,150,claude,2026-11-12T00:19:47.000Z
+2026-11-11-dinner-mothers-assorted-sweet,2026-11-11,dinner,Assorted Sweet Dumplings,steamed; half the order,Mother's Dumplings,1 order (~170 g),0.5,480,10,85,11,3,30,200,claude,2026-11-12T00:19:47.000Z
 2026-11-12-breakfast-sbux-protein-latte,2026-11-12,breakfast,Iced Sugar-Free Vanilla Protein Latte,"Venti, less ice",Starbucks,"1 venti (24 fl oz), less ice",1,294,42,17.9,6.3,0,13.7,294,packaged,2026-11-12T17:45:00.000Z
 2026-11-12-lunch-banh-mi-lemongrass-chicken,2026-11-12,lunch,Bánh mì,"lemongrass chicken, ~6 inch",,"1 sandwich (~6 inch, ~250 g)",1,565,32,55,23,3,11,1500,claude,2026-11-12T17:45:00.000Z
 2026-11-12-lunch-vickies-applewood-bbq,2026-11-12,lunch,Kettle Cooked Potato Chips,Applewood Smoked BBQ,Miss Vickie's,28 chips (50 g),0.8,260,3,29,15,2,,240,packaged,2026-11-12T17:45:00.000Z
@@ -951,15 +951,15 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-11-14-lunch-egg-burrito,2026-11-14,lunch,Egg Burrito,,,1 burrito (whole recipe),2,440,19.1,38,21.5,2,,780,recipe,2026-11-14T19:49:06.000Z
 2026-11-14-lunch-smoothie,2026-11-14,lunch,Protein Berry Smoothie,,,1 batch (~515 ml),1,505,76,35.5,6,4,24,265,recipe,2026-11-14T19:49:06.000Z
 2026-11-14-lunch-charcuterie-cheese,2026-11-14,lunch,Cheese cubes,"off a charcuterie board; type not noted, cheddar figures",,1 cube (~10 g),8,40,2.5,0.1,3.3,0,0.05,62,usda,2026-11-14T19:49:06.000Z
-2026-11-14-lunch-charcuterie-salami,2026-11-14,lunch,Cured meat slices,"off a charcuterie board; hard salami figures",,1 slice (~8 g),6,30,1.7,0.1,2.5,0,0,145,usda,2026-11-14T19:49:06.000Z
+2026-11-14-lunch-charcuterie-salami,2026-11-14,lunch,Cured meat slices,off a charcuterie board; hard salami figures,,1 slice (~8 g),6,30,1.7,0.1,2.5,0,0,145,usda,2026-11-14T19:49:06.000Z
 2026-11-14-lunch-charcuterie-cucumber,2026-11-14,lunch,"Cucumber, raw",2 pieces off a charcuterie board,,2 pieces (~20 g),1,3,0.1,0.7,0,0.1,0.3,0,usda,2026-11-14T19:49:06.000Z
 2026-11-14-lunch-bell-pepper,2026-11-14,lunch,"Red bell pepper, raw","about a sixth, raw; assumed red",,1 medium (~119 g),0.17,37,1.2,7.2,0.4,2.5,5,5,staple,2026-11-14T19:49:06.000Z
-2026-11-14-lunch-charcuterie-crackers,2026-11-14,lunch,Crackers,"off a charcuterie board; kind not noted",,1 cracker (~4 g),2,18,0.4,2.8,0.6,0.1,0.1,30,claude,2026-11-14T19:49:06.000Z
+2026-11-14-lunch-charcuterie-crackers,2026-11-14,lunch,Crackers,off a charcuterie board; kind not noted,,1 cracker (~4 g),2,18,0.4,2.8,0.6,0.1,0.1,30,claude,2026-11-14T19:49:06.000Z
 2026-11-14-dinner-penne-spicy-sausage,2026-11-14,dinner,Penne with Spicy Sausage and Tomato Cream,,,1 serving (1/8 recipe),1,700,29,60,40,4,,1820,recipe,2026-11-15T03:32:35.000Z
 2026-11-15-breakfast-ritz-bits-cheese,2026-11-15,breakfast,Ritz Bits Cheese Sandwiches,"cheese; US snack-pack panel, flavour assumed",Ritz,1 snack pack (~29 g),1,150,2,17,8,0,3,125,packaged,2026-11-15T18:10:55.000Z
 2026-11-15-lunch-maggi-masala,2026-11-15,lunch,Maggi 2-Minute Noodles,"Masala, the usual two packs",Maggi,"1 pack (70 g, noodle cake + tastemaker)",2,310,6,43,13,2,3,890,packaged,2026-11-15T18:10:55.000Z
 2026-11-15-lunch-eggs,2026-11-15,lunch,"Egg, large","two, with the Maggi",,1 large egg (50 g),2,72,6.3,0.4,4.8,,,,staple,2026-11-15T18:10:55.000Z
-2026-11-15-lunch-smoothie,2026-11-15,lunch,Protein Berry Smoothie,"about 20% bigger than usual",,1 batch (~515 ml),1.2,505,76,35.5,6,4,24,265,recipe,2026-11-15T18:10:55.000Z
+2026-11-15-lunch-smoothie,2026-11-15,lunch,Protein Berry Smoothie,about 20% bigger than usual,,1 batch (~515 ml),1.2,505,76,35.5,6,4,24,265,recipe,2026-11-15T18:10:55.000Z
 2026-11-15-lunch-cheese-cubes,2026-11-15,lunch,Cheese cubes,"type not noted, cheddar figures",,1 cube (~10 g),8,40,2.5,0.1,3.3,0,0.05,62,usda,2026-11-15T18:10:55.000Z
 2026-11-15-lunch-bell-pepper,2026-11-15,lunch,"Red bell pepper, raw","half a medium, raw; assumed red",,1 medium (~119 g),0.5,37,1.2,7.2,0.4,2.5,5,5,staple,2026-11-15T18:10:55.000Z
 2026-11-15-dinner-penne-spicy-sausage,2026-11-15,dinner,Penne with Spicy Sausage and Tomato Cream,leftovers from Nov 14,,1 serving (1/8 recipe),1,700,29,60,40,4,,1820,recipe,2026-11-16T02:42:42.000Z
@@ -990,7 +990,7 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-11-18-lunch-tims-simply-cheese-flatbread,2026-11-18,lunch,Simply Cheese Flatbread Pizza,,Tim Hortons,1 flatbread,1,630,31,68,26,3,6,1590,packaged,2026-11-18T17:47:57.000Z
 2026-11-18-snack-apple,2026-11-18,snack,Apple,,,1 medium (182 g),1,95,0.5,25,0.3,4.4,19,2,staple,2026-11-18T21:40:30.000Z
 2026-11-18-snack-vickies-original,2026-11-18,snack,Kettle Cooked Potato Chips,"Original Recipe; flavour not noted, 40 g bag",Miss Vickie's,28 g (~16 chips),1.43,150,2,17,9,1,0,95,packaged,2026-11-18T21:40:30.000Z
-2026-11-18-snack-handfuel-sweet-chili-mix,2026-11-18,snack,Sweet Chili Nut Mix,"hand-roasted mixed nuts; flavour not noted",Handfuel,1/3 cup (40 g),1,230,6,12,18,3,5,160,packaged,2026-11-18T21:40:30.000Z
+2026-11-18-snack-handfuel-sweet-chili-mix,2026-11-18,snack,Sweet Chili Nut Mix,hand-roasted mixed nuts; flavour not noted,Handfuel,1/3 cup (40 g),1,230,6,12,18,3,5,160,packaged,2026-11-18T21:40:30.000Z
 2026-11-18-dinner-japanese-curry-paneer,2026-11-18,dinner,Japanese Curry with Paneer,"curry only, with naan",,"1 serving (1/4 recipe), no rice",1,500,18,36,30,3,,1575,recipe,2026-11-19T04:11:16.000Z
 2026-11-18-dinner-naan,2026-11-18,dinner,Naan,"plain; two pieces, taken as ~100 g each",,1 naan (100 g),2,290,9.5,50,6,2,3,550,usda,2026-11-19T04:11:16.000Z
 2026-11-18-dinner-protein-shake-milk,2026-11-18,dinner,Protein Shake,2 scoops ON vanilla + splash of 2% milk,Optimum Nutrition,2 scoops (~61 g) + ~1/2 cup 2% milk,1,301,52,12,4.5,1,8,318,packaged,2026-11-19T04:11:16.000Z
@@ -1061,10 +1061,10 @@ e657f786-57b1-43f0-b515-261c9e15371d,2026-09-10,snack,Poha chivda,"spiced, homem
 2026-11-25-dinner-chipotle-mayo,2026-11-25,dinner,Chipotle mayo,,,1 tbsp (~15 g),1,92,0.2,0.6,10,0,0.3,120,claude,2026-11-26T04:09:11.000Z
 2026-11-26-breakfast-banana,2026-11-26,breakfast,Banana,,,1 medium (118 g),1,105,1.3,27,0.4,3,,1,staple,2026-11-26T15:08:34.000Z
 2026-11-26-breakfast-mini-danish,2026-11-26,breakfast,Mini danish,cream cheese and strawberry jam,,1 mini danish (~40 g),1,160,3,18,9,0.5,8,140,claude,2026-11-26T15:08:34.000Z
-2026-11-26-breakfast-scrambled-eggs,2026-11-26,breakfast,Scrambled eggs,hotel buffet,,1 scoop (~100 g; about 2 eggs),1,170,11,2,13,0,1,300,claude,2026-11-26T15:08:34.000Z
-2026-11-26-breakfast-chilaquiles,2026-11-26,breakfast,Chilaquiles,tortilla chips with chilaquiles sauce,,"1 scoop chips (~30 g) and 1 scoop sauce (~80 g)",1,180,3,24,8.5,2.5,3,470,claude,2026-11-26T15:08:34.000Z
-2026-11-26-breakfast-refried-beans,2026-11-26,breakfast,Refried bean paste,,,1 scoop (~80 g),1,110,5,14,4,4,1,350,claude,2026-11-26T15:08:34.000Z
-2026-11-26-breakfast-potato-beef,2026-11-26,breakfast,Potato with ground beef,"hotel buffet; possibly chorizo",,1 scoop (~100 g),1,170,8,11,10.5,1.5,1,380,claude,2026-11-26T15:08:34.000Z
-2026-11-26-breakfast-oaxaca-cheese,2026-11-26,breakfast,Oaxaca cheese,,,a bit (~20 g),1,60,4.5,0.5,4.5,0,0,130,claude,2026-11-26T15:08:34.000Z
-2026-11-26-breakfast-sour-cream,2026-11-26,breakfast,Sour cream,,,about 1 tbsp (~20 g),1,40,0.5,1,4,0,0.5,10,claude,2026-11-26T15:08:34.000Z
-2026-11-26-breakfast-salsa-onion,2026-11-26,breakfast,Spicy salsa and onion,sprinkled over the plate,,about 2 tbsp each,1,20,0.5,4,0,1,2,150,claude,2026-11-26T15:08:34.000Z
+2026-11-26-breakfast-scrambled-eggs,2026-11-26,breakfast,Scrambled eggs,hotel buffet,,1 scoop (~100 g; about 2 eggs),0.8,170,11,2,13,0,1,300,claude,2026-11-26T15:08:34.000Z
+2026-11-26-breakfast-chilaquiles,2026-11-26,breakfast,Chilaquiles,tortilla chips with chilaquiles sauce,,1 scoop chips (~30 g) and 1 scoop sauce (~80 g),0.8,180,3,24,8.5,2.5,3,470,claude,2026-11-26T15:08:34.000Z
+2026-11-26-breakfast-refried-beans,2026-11-26,breakfast,Refried bean paste,,,1 scoop (~80 g),0.8,110,5,14,4,4,1,350,claude,2026-11-26T15:08:34.000Z
+2026-11-26-breakfast-potato-beef,2026-11-26,breakfast,Potato with ground beef,hotel buffet; possibly chorizo,,1 scoop (~100 g),0.8,170,8,11,10.5,1.5,1,380,claude,2026-11-26T15:08:34.000Z
+2026-11-26-breakfast-oaxaca-cheese,2026-11-26,breakfast,Oaxaca cheese,,,a bit (~20 g),0.8,60,4.5,0.5,4.5,0,0,130,claude,2026-11-26T15:08:34.000Z
+2026-11-26-breakfast-sour-cream,2026-11-26,breakfast,Sour cream,,,about 1 tbsp (~20 g),0.8,40,0.5,1,4,0,0.5,10,claude,2026-11-26T15:08:34.000Z
+2026-11-26-breakfast-salsa-onion,2026-11-26,breakfast,Spicy salsa and onion,sprinkled over the plate,,about 2 tbsp each,0.8,20,0.5,4,0,1,2,150,claude,2026-11-26T15:08:34.000Z
