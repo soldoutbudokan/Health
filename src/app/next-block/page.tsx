@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { Barlow, Big_Shoulders } from "next/font/google";
 import {
@@ -9,12 +10,12 @@ import {
   GOALS,
   HYPERMOBILITY,
   KIND_RANK,
-  MONDAY_WEEK,
   NORMAL_WEEK,
   PIECES,
   RULES,
   SHORT_WEEKS,
   STARTING_WEIGHTS,
+  TUESDAY_WEEK,
   VISIT_ORDER,
   benchBackups,
   pieceById,
@@ -130,11 +131,11 @@ function SessionCard({ piece, wide = false }: { piece: Piece; wide?: boolean }) 
         </p>
         <h3 className="arena-display text-3xl">{piece.name}</h3>
       </div>
-      <ol className={`divide-y ${wide ? "md:grid md:grid-flow-col md:grid-rows-3 md:gap-x-8" : ""}`}>
+      <ol className={`divide-y ${wide ? "md:columns-2 md:gap-x-8" : ""}`}>
         {piece.items.map((item) => (
           <li
             key={item.name}
-            className={`grid grid-cols-[2rem_1fr] items-baseline gap-2 py-2 ${wide ? "md:border-b" : ""}`}
+            className={`grid grid-cols-[2rem_1fr] items-baseline gap-2 py-2 ${wide ? "md:break-inside-avoid md:border-b" : ""}`}
           >
             <span className="arena-display text-2xl text-[color:var(--arena-orange-text)]">
               {item.warmup ? "" : ++n}
@@ -142,6 +143,19 @@ function SessionCard({ piece, wide = false }: { piece: Piece; wide?: boolean }) 
             <span className={item.warmup ? "text-[color:var(--arena-panel-ink-2)]" : ""}>
               <span className="font-semibold">{item.name}</span>
               <span className="tnum block text-sm text-[color:var(--arena-panel-ink-2)]">{item.dose}</span>
+              {item.alts && (
+                <span className="tnum mt-1.5 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 text-[13px] leading-snug">
+                  {item.alts.map((a) => (
+                    <Fragment key={a.when}>
+                      <span className="font-semibold">{a.when}</span>
+                      <span className="text-[color:var(--arena-panel-ink-2)]">
+                        {a.tool ? `${a.tool}: ` : ""}
+                        {a.dose}
+                      </span>
+                    </Fragment>
+                  ))}
+                </span>
+              )}
             </span>
           </li>
         ))}
@@ -255,7 +269,7 @@ export default function NextBlockPage() {
       </header>
 
       <section className="space-y-4">
-        <Heading sub="Five sessions and two days off. The weekend is fasted, so the heavy day stays on a weekday and the weekend gets the lighter work.">
+        <Heading sub="Five sessions and two days off. The heavy day is Monday, when the machines are free, and the bench runs Monday, Wednesday, Friday, all fed. The weekend is fasted, so it gets the jumps and the cardio.">
           A normal week
         </Heading>
         <div className="arena-lines relative overflow-hidden rounded-md p-3 sm:p-4">
@@ -276,25 +290,26 @@ export default function NextBlockPage() {
         </div>
         <p className="text-sm font-semibold text-[color:var(--arena-ink-2)]">
           Orange is the heavy day, navy is gym work, white is cardio. About 2 hours of Zone 2 a
-          week, plus the intervals. The Wednesday session can move to any weekday the rules
-          allow, or drop, with its Zone 2 added to the weekend.
+          week, plus the intervals. Tuesday can take Zone 2 if you want three days running, with
+          the minutes taken off Sunday. It can&apos;t take the bench: the day after the heavy day
+          is the one day the bench doesn&apos;t go.
         </p>
-        <h3 className="arena-display pt-2 text-2xl">When the heavy day is Monday</h3>
+        <h3 className="arena-display pt-2 text-2xl">When Monday is gone</h3>
         <div className="arena-lines relative overflow-hidden rounded-md p-3 sm:p-4">
           <ol className="relative grid gap-2 sm:grid-cols-7">
-            {MONDAY_WEEK.map((d) => (
+            {TUESDAY_WEEK.map((d) => (
               <DayTile key={d.day} day={d} />
             ))}
           </ol>
         </div>
         <p className="text-sm font-semibold text-[color:var(--arena-ink-2)]">
-          Sunday can&apos;t be a bench day then, so the light bench follows Saturday&apos;s jumps and
-          Sunday is Zone 2 and the hips block.
+          The week slides a day. Friday would follow Thursday&apos;s bench, so the light bench goes
+          after Saturday&apos;s jumps, and Sunday stays cardio and the hips block.
         </p>
       </section>
 
       <section className="space-y-4">
-        <Heading sub="T is the bench top set: the best clean 5 from the Dec 23 or Dec 31 heavy upper.">
+        <Heading sub={`T is the bench top set, worked out from the best 155 set on Dec 23 or Dec 31. Until then the numbers under each bench line are drawn for T = ${EXAMPLE_T}, with what to load when the bench is taken.`}>
           The sessions
         </Heading>
         <div className="grid gap-4 md:grid-cols-2">
@@ -434,11 +449,14 @@ export default function NextBlockPage() {
         <Reference title="Bench, three ways">
           <div className="space-y-4 text-sm">
             <p className="max-w-prose leading-relaxed text-[color:var(--arena-panel-ink-2)]">
-              When the bench is taken, the whole bench slot moves to one backup for the day, with
-              the same sets and reps. The Life Fitness chest press is 90% of the barbell to the
-              nearest 10; dumbbells are 40% a hand to the nearest 5. T only steps on barbell
-              days. If the first set on a backup leaves 3 or more reps, the ratio is off and gets
-              corrected.
+              When the bench is taken, the whole bench slot moves to one stand-in for the day,
+              with the same sets. The Life Fitness lying chest press, on its flat setting, is 90%
+              of the bar rounded down to the pin: it went 150 × 5 on Sep 17 and 150 × 6 on Nov 12,
+              against a bench near 165 and 175. Dumbbells are 35% a hand rounded down to 5, a
+              first guess with nothing logged behind it. After its first go each tool keeps its
+              own number, and goes up when its top set reaches 8 or its 3 × 8 reaches three 10s,
+              since a pin or a pair of dumbbells is a bigger step than 5 lb on the bar. If a first
+              set leaves 3 or more reps, go up a step next time. T only steps on barbell days.
             </p>
             <div className="overflow-x-auto">
               <table className="tnum w-full min-w-[420px]">
@@ -551,7 +569,7 @@ export default function NextBlockPage() {
       </section>
 
       <footer className="arena-lines-thin flex flex-wrap items-baseline justify-between gap-3 rounded-lg px-5 py-3.5 text-sm font-semibold">
-        <span>The dunk: you touch the rim now, and need a touch 6–8 inches over it.</span>
+        <span>The dunk: close to a graze before August, and a clean one needs a touch 6–8 inches over the rim.</span>
         <Link
           href="/last-stretch"
           className="underline decoration-2 underline-offset-4 hover:opacity-80"

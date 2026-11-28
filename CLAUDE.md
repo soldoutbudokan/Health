@@ -8,6 +8,14 @@ Two logs on one site: a daily calorie and protein tracker targeting **2,800 kcal
 dashboard. It has no add button, no browser storage, and no way to save anything —
 that is deliberate, not an oversight. Don't add one back.
 
+## Say when an idea is a bad one
+
+Asked for on November 28, 2026. If the owner proposes something that would cost
+a goal or a joint, say so plainly before doing anything, with the reason and the
+log entry behind it, and offer the version that works. Don't go along with it to
+be agreeable. He still decides, and a call made against the advice gets recorded
+as one, the way the trunk block was.
+
 ## How it works
 
 ```
@@ -378,15 +386,29 @@ The rules that matter when asked what to do: five sessions a week at most, two
 of them on the weekend; one heavy full-body day on a weekday, fed, never on the
 fasted weekend; the day after it is Zone 2 or rest; a day between bench days;
 jumps first and never the day after intervals or the heavy day. The trap bar and
-squat take a set of 3 on ordinary weeks and a set of 5 on a block's last heavy
-day. When the heavy day is Monday, the light bench moves to Saturday after the
-jumps. Audited again on November 9, 2026: a cut at 2,400 kcal runs from January
-18 to the end of May (a calorie span in `data/goals.json`, which
-grades only its own dates); the Bulgarian split squat climbs; one run-walk a week
+squat take a set of 3 every week, and the set of 5 is tested once, on the last
+heavy day in June. The heavy day is Monday, when the machines are free, the bench
+runs Monday, Wednesday, Friday, and the weekend is jumps and cardio; a bench
+session the weekdays can't carry goes on Saturday after the jumps, never Sunday.
+Audited again on November 9, 2026: a cut at 2,400 kcal runs from January
+18 until the scale reaches 175–178, about early April at the pound a week it
+works out to and the end of May at the latest (a calorie span in
+`data/goals.json`, which grades only its own dates); the Bulgarian split squat climbs; one run-walk a week
 from February builds toward an October 2027 half marathon; and the approach
 jumps have no wall target, since the gym won't allow one. The trunk
 block, Copenhagen plank and overhead hold were left out on purpose, and direct
 ab work was replaced by two joint blocks — don't add them back unasked.
+
+**The bench, and what stands in for it.** Audited a third time on November 28,
+2026, when the Monday week and the single June test above went in. The top set
+is T for up to 7 clean reps, 5 lb up at seven; the volume day keeps its own
+count, 3 × 8 to 10; the light day gained a dumbbell press. Every bench line
+prints two stand-ins with a weight, because the bench is often taken: the Life
+Fitness lying chest press on its flat setting (90% of the bar, rounded down to
+the pin) and dumbbells (35% a hand, an untested guess), from `benchAlts()` in
+`nextBlock.ts`. The numbers are drawn for `EXAMPLE_T` until December sets T;
+change that one constant. The owner asked for three bench days in a row and was
+talked out of it: the day after the heavy day takes no bench.
 
 **Not built yet.** None of the new sessions has a `program.ts` entry or a
 session type, and the starting weights are formulas. Both are due before
