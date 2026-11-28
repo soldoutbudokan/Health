@@ -57,6 +57,12 @@ export interface PlanDay {
   /** Planned top-set loads. Absent where the day has no such lift. */
   trapBar?: number;
   /**
+   * Reps for the trap bar's top set where the plan sets them, added November
+   * 28, 2026: the plates at the bar can't make 295, so that 5 lb step is
+   * written `290×6`, the way the stacks write theirs. Absent means 5.
+   */
+  trapBarReps?: number;
+  /**
    * The heavy lower's back-off sets, added September 29, 2026: a top set of 5,
    * then one set of 5 about 10% lighter. Absent means both sets at the top
    * weight, which is every light lower and every deload.
@@ -144,7 +150,7 @@ export const PHASES: Record<string, { label: string; blurb: string }> = {
   "block-2": {
     label: "Block 2",
     blurb:
-      "Where the goals close. Trap bar 290 and squat 220 on Nov 17, then Mexico, then 290 and 220 again on Dec 1, 295 and the squat's 225 × 5 on Dec 8, and the trap bar's 300 × 5 on Dec 15. Ten pullups came early, on Oct 25.",
+      "Where the goals close. Trap bar 290 and squat 220 on Nov 17, then Mexico, then 290 and 220 again on Dec 1, 290 × 6 and the squat's 225 × 5 on Dec 8, and the trap bar's 300 × 5 on Dec 15. The plates can't make 295, so 290 × 6 is that step. Ten pullups came early, on Oct 25.",
   },
   contingency: {
     label: "Contingency",
@@ -260,27 +266,63 @@ export interface WeekView {
  * checks the day without costing anything. Written out per top weight because
  * each step has to load from the gym's plates on the 60 lb home bar. A top
  * weight with no row here shows no ramp; add the row, don't guess one.
+ *
+ * The plates, as the owner gave them on November 28, 2026: one 45, one 35, one
+ * 25 and one 10 a side, and sometimes a 5. So the bar loads 290 without the 5s
+ * and 300 with every plate on, and nothing between: 295 has no row because it
+ * can't be made, nor can 260 or 265. Until that day this file assumed any
+ * number of each plate and printed two 45s a side.
  */
 const TRAP_BAR_LBS = 60;
-const PLATES = [45, 35, 25, 10, 5, 2.5];
+const PLATES = [45, 35, 25, 10, 5];
 const RAMP_FROM = "2026-11-17";
 const TRAP_BAR_RAMPS: Record<number, [weight: number, reps: number][]> = {
   290: [[150, 5], [200, 3], [240, 2], [270, 1]],
-  295: [[150, 5], [200, 3], [245, 2], [275, 1]],
   300: [[150, 5], [210, 3], [250, 2], [280, 1]],
 };
 
-/** Largest plate first, which is also the order they go on the bar. */
-function perSide(weight: number): string {
-  let left = (weight - TRAP_BAR_LBS) / 2;
-  const plates: number[] = [];
-  for (const p of PLATES) {
-    while (left >= p) {
-      plates.push(p);
-      left -= p;
+/**
+ * One of each plate a side, largest first, which is also the order they go on
+ * the bar. Leaves the 5 off where another way exists, since it isn't always
+ * there. Undefined when the plates can't make the weight.
+ */
+function perSide(weight: number): string | undefined {
+  const target = (weight - TRAP_BAR_LBS) / 2;
+  const five = (p: number[]) => (p.includes(5) ? 1 : 0);
+  const better = (a: number[], b: number[]) => {
+    if (five(a) !== five(b)) return five(a) < five(b);
+    for (let i = 0; i < Math.max(a.length, b.length); i++) {
+      if ((a[i] ?? 0) !== (b[i] ?? 0)) return (a[i] ?? 0) > (b[i] ?? 0);
     }
+    return false;
+  };
+  let best: number[] | undefined;
+  for (let mask = 0; mask < 1 << PLATES.length; mask++) {
+    const pick = PLATES.filter((_, i) => mask & (1 << i));
+    if (pick.reduce((x, y) => x + y, 0) !== target) continue;
+    if (!best || better(pick, best)) best = pick;
   }
-  return plates.join(" + ");
+  return best?.join(" + ");
+}
+
+/**
+ * The ramp to a top set, with the plates for every step. Shared with the next
+ * block's heavy day, whose top set is a triple with no back-off.
+ */
+export function trapBarRampFor(top: number, topReps: number, backoff?: number): RampStep[] | undefined {
+  const warmups = TRAP_BAR_RAMPS[top];
+  if (!warmups) return undefined;
+  const step = (label: RampStep["label"], weight: number, reps: number): RampStep => ({
+    label,
+    weight,
+    reps,
+    perSide: perSide(weight) ?? "these plates can't make it",
+  });
+  return [
+    ...warmups.map(([w, r]) => step("Warmup", w, r)),
+    step("Top set", top, topReps),
+    ...(backoff === undefined ? [] : [step("Back-off", backoff, 5)]),
+  ];
 }
 
 /**
@@ -290,19 +332,7 @@ function perSide(weight: number): string {
 function trapBarRamp(plan: PlanDay): RampStep[] | undefined {
   if (plan.slot !== "heavy-lower" || plan.date < RAMP_FROM) return undefined;
   if (plan.trapBar === undefined || plan.trapBarBackoff === undefined) return undefined;
-  const warmups = TRAP_BAR_RAMPS[plan.trapBar];
-  if (!warmups) return undefined;
-  const step = (label: RampStep["label"], weight: number, reps: number): RampStep => ({
-    label,
-    weight,
-    reps,
-    perSide: perSide(weight),
-  });
-  return [
-    ...warmups.map(([w, r]) => step("Warmup", w, r)),
-    step("Top set", plan.trapBar, 5),
-    step("Back-off", plan.trapBarBackoff, 5),
-  ];
+  return trapBarRampFor(plan.trapBar, plan.trapBarReps ?? 5, plan.trapBarBackoff);
 }
 
 /**
@@ -392,6 +422,7 @@ function plannedNumber(plan: PlanDay, exercise: string): number | undefined {
 
 /** Reps the plan sets for a lift, where it overrides the program's. */
 function plannedReps(plan: PlanDay, exercise: string): number | undefined {
+  if (sameExercise(exercise, "Trap bar deadlift")) return plan.trapBarReps;
   if (sameExercise(exercise, "Lying leg curl")) return plan.legCurlReps;
   if (sameExercise(exercise, "Cable row")) return plan.cableRowReps;
   if (sameExercise(exercise, "Lat pulldown")) return plan.latPulldownReps;
@@ -449,7 +480,8 @@ function benchMaxReps(plan: PlanDay): boolean {
 function summaryOf(plan: PlanDay): string[] {
   const lines: string[] = [];
   if (plan.trapBar !== undefined || plan.squat !== undefined) {
-    lines.push(`${plan.trapBar ?? "–"} / ${plan.squat ?? "–"}`);
+    const trap = plan.trapBarReps !== undefined ? `${plan.trapBar} ×${plan.trapBarReps}` : `${plan.trapBar ?? "–"}`;
+    lines.push(`${trap} / ${plan.squat ?? "–"}`);
   }
   if (plan.bench !== undefined) {
     lines.push(
@@ -512,6 +544,8 @@ export function dayView(
       prescription:
         sameExercise(e.name, "Bench press") && benchMaxReps(plan)
           ? "Sets to max reps, full range"
+          : sameExercise(e.name, "Trap bar deadlift") && reps !== undefined && plan.trapBarBackoff !== undefined
+          ? `Top set of ${reps}, then a back-off of 5`
           : reps !== undefined && reps !== e.reps && e.sets !== undefined
           ? `${e.sets} × ${reps}`
           : e.prescription,

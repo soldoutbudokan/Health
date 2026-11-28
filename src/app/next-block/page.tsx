@@ -15,7 +15,6 @@ import {
   RULES,
   SHORT_WEEKS,
   STARTING_WEIGHTS,
-  TUESDAY_WEEK,
   VISIT_ORDER,
   benchBackups,
   pieceById,
@@ -24,10 +23,12 @@ import {
   type Slot,
   type WeekDay,
 } from "@/data/nextBlock";
+import { TrapBarSetup } from "@/components/TrapBarSetup";
 import { toDateKey } from "@/lib/nutrition";
+import { bestWeight } from "@/lib/training";
 import { readTrainingGoals, readWorkouts } from "@/lib/trainingFile";
 import { readLastStretch } from "@/lib/lastStretchFile";
-import { goalTracks, type GoalTrack } from "@/lib/lastStretch";
+import { goalTracks, trapBarRampFor, type GoalTrack, type RampStep } from "@/lib/lastStretch";
 
 /**
  * The next block, rendered from `src/data/nextBlock.ts`: what a week is made
@@ -116,6 +117,7 @@ function DayTile({ day }: { day: WeekDay }) {
         {extras.length > 0 && (
           <span className="text-xs leading-tight opacity-85">+ {extras.join(", ")}</span>
         )}
+        {day.note && <span className="text-xs leading-tight opacity-85">{day.note}</span>}
       </span>
     </li>
   );
@@ -164,6 +166,31 @@ function SessionCard({ piece, wide = false }: { piece: Piece; wide?: boolean }) 
         <p className="text-sm leading-relaxed text-[color:var(--arena-panel-ink-2)]">{piece.note}</p>
       )}
     </section>
+  );
+}
+
+function Ramp({ title, steps }: { title: string; steps: RampStep[] }) {
+  return (
+    <div>
+      <div className="arena-eyebrow flex items-baseline justify-between gap-3 text-[color:var(--arena-panel-ink-2)]">
+        <span>{title}</span>
+        <span>plates a side, 60 lb bar</span>
+      </div>
+      <ul className="tnum mt-1.5 divide-y text-sm">
+        {steps.map((r, i) => (
+          <li
+            key={i}
+            className={`flex items-baseline justify-between gap-x-3 py-1.5 ${r.label === "Top set" ? "font-bold" : "text-[color:var(--arena-panel-ink-2)]"}`}
+          >
+            <span>
+              <span className="inline-block w-16">{r.label}</span>
+              {r.weight} × {r.reps}
+            </span>
+            <span>{r.perSide}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -226,13 +253,17 @@ function Reference({ title, children }: { title: string; children: React.ReactNo
 
 export default function NextBlockPage() {
   const today = toDateKey(new Date());
-  const tracks = goalTracks(readTrainingGoals(), readLastStretch(), readWorkouts(), [
+  const workouts = readWorkouts();
+  const tracks = goalTracks(readTrainingGoals(), readLastStretch(), workouts, [
     "deadlift",
     "squat",
     "pullups",
     "dips",
     "bench",
   ]);
+  const best = bestWeight(workouts, "Trap bar deadlift", 5);
+  const ramp = trapBarRampFor(300, 3);
+  const rampNoFives = trapBarRampFor(290, 4);
   const track = (id: string) => tracks.find((t) => t.id === id);
   const trap = track("deadlift");
   const squat = track("squat");
@@ -253,8 +284,9 @@ export default function NextBlockPage() {
           <p className="arena-eyebrow text-[color:var(--arena-orange-bright)]">Jan 4 – Jun 27, 2027</p>
           <h1 className="arena-display text-6xl sm:text-7xl">The Next Block</h1>
           <p className="max-w-md pt-1 text-sm text-[color:var(--arena-on-navy-2)]">
-            One heavy day a week holds the strength goals. The rest goes to the bench, cardio and
-            the dunk, on a cut from Jan 18. Starting weights get real numbers before Jan 4.
+            Cardio comes first in this block: the heart rate, the cut and the run. One heavy day a
+            week holds the strength, the bench gets two days, and the jumps get two. Starting
+            weights get real numbers before Jan 4.
           </p>
         </div>
         <div className="grid grid-cols-3 gap-2 md:flex">
@@ -269,7 +301,7 @@ export default function NextBlockPage() {
       </header>
 
       <section className="space-y-4">
-        <Heading sub="Five sessions and two days off. The heavy day is Monday, when the machines are free, and the bench runs Monday, Wednesday, Friday, all fed. The weekend is fasted, so it gets the jumps and the cardio.">
+        <Heading sub="Four fixed sessions and one that floats. The heavy day is Monday, when the machines are free, and bench volume follows on Thursday. The weekend is fasted, so it gets the jumps and the cardio. No run of days is longer than three.">
           A normal week
         </Heading>
         <div className="arena-lines relative overflow-hidden rounded-md p-3 sm:p-4">
@@ -290,21 +322,9 @@ export default function NextBlockPage() {
         </div>
         <p className="text-sm font-semibold text-[color:var(--arena-ink-2)]">
           Orange is the heavy day, navy is gym work, white is cardio. About 2 hours of Zone 2 a
-          week, plus the intervals. Tuesday can take Zone 2 if you want three days running, with
-          the minutes taken off Sunday. It can&apos;t take the bench: the day after the heavy day
-          is the one day the bench doesn&apos;t go.
-        </p>
-        <h3 className="arena-display pt-2 text-2xl">When Monday is gone</h3>
-        <div className="arena-lines relative overflow-hidden rounded-md p-3 sm:p-4">
-          <ol className="relative grid gap-2 sm:grid-cols-7">
-            {TUESDAY_WEEK.map((d) => (
-              <DayTile key={d.day} day={d} />
-            ))}
-          </ol>
-        </div>
-        <p className="text-sm font-semibold text-[color:var(--arena-ink-2)]">
-          The week slides a day. Friday would follow Thursday&apos;s bench, so the light bench goes
-          after Saturday&apos;s jumps, and Sunday stays cardio and the hips block.
+          week, plus the intervals. Wednesday&apos;s Zone 2 floats to whichever weekday is free,
+          and its minutes go on the weekend when none is. If Monday is gone, the heavy day takes
+          the next free weekday and bench volume follows two or more days later.
         </p>
       </section>
 
@@ -314,7 +334,39 @@ export default function NextBlockPage() {
         </Heading>
         <div className="grid gap-4 md:grid-cols-2">
           {sessions.map((p) => (
-            <SessionCard key={p.id} piece={p} wide={p.id === "H"} />
+            <Fragment key={p.id}>
+              <SessionCard piece={p} wide={p.id === "H"} />
+              {p.id === "H" && ramp && (
+                <section className="arena-panel grid gap-5 p-5 md:col-span-2 md:grid-cols-2">
+                  <div className="space-y-4">
+                    <div className="space-y-1">
+                      <p className="arena-eyebrow text-[color:var(--arena-orange-text)]">
+                        Heavy day · eleven warmup reps, then one try
+                      </p>
+                      <h3 className="arena-display text-3xl">The trap bar ramp</h3>
+                    </div>
+                    <Ramp title="With the 5s on the rack" steps={ramp} />
+                    {rampNoFives && <Ramp title="No 5s that day" steps={rampNoFives} />}
+                    <p className="text-sm leading-relaxed text-[color:var(--arena-panel-ink-2)]">
+                      The ramp is beltless, and the belt goes on for the top set. A minute after
+                      the first two, 2&ndash;3 after the double, 4&ndash;5 after the single.
+                      The bar takes one 45, one 35, one 25 and one 10 a side, and a 5 when the 5s
+                      are there, so 300 is every plate on. Without them the bar stops at 290, and
+                      290 &times; 4 is the same work as 300 &times; 3.
+                    </p>
+                  </div>
+                  <TrapBarSetup
+                    setup={{
+                      top: 300,
+                      best:
+                        best?.weightLbs !== undefined && best.reps !== undefined
+                          ? { weight: best.weightLbs, reps: best.reps }
+                          : undefined,
+                    }}
+                  />
+                </section>
+              )}
+            </Fragment>
           ))}
         </div>
       </section>
@@ -450,8 +502,8 @@ export default function NextBlockPage() {
           <div className="space-y-4 text-sm">
             <p className="max-w-prose leading-relaxed text-[color:var(--arena-panel-ink-2)]">
               When the bench is taken, the whole bench slot moves to one stand-in for the day,
-              with the same sets. The Life Fitness lying chest press, on its flat setting, is 90%
-              of the bar rounded down to the pin: it went 150 × 5 on Sep 17 and 150 × 6 on Nov 12,
+              with the same sets. The Life Fitness lying chest press, with the handles on the top
+              of their three notches, is 90% of the bar rounded down to the pin: it went 150 × 5 on Sep 17 and 150 × 6 on Nov 12,
               against a bench near 165 and 175. Dumbbells are 35% a hand rounded down to 5, a
               first guess with nothing logged behind it. After its first go each tool keeps its
               own number, and goes up when its top set reaches 8 or its 3 × 8 reaches three 10s,

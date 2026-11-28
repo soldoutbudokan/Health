@@ -7,11 +7,12 @@
  * Drafted October 27 – November 4, 2026, and audited on November 4. Audited
  * again on November 9, which brought in the cut, the climbing split squat, the
  * Monday week, the run and the half marathon, and took out the wall target the
- * gym won't allow. Audited a third time on November 28: the bench top set
- * became a rep range, the volume day got its own count, Sunday gained a
- * dumbbell press, every bench line got its two stand-ins with a weight, and
- * the set-of-5 tests on the trap bar and squat went from every block to one
- * in June. It is a
+ * gym won't allow. Audited a third time on November 28: cardio was put ahead
+ * of lifting, so the bench went to two days a week and the light paused day
+ * came out; the bench top set became a rep range and the volume day got its
+ * own count; every bench line got its two stand-ins with a weight; the Smith
+ * squat gave way to the split squat on the heavy day; the trap bar got its
+ * ramp; and its set-of-5 test went from every block to one in June. It is a
  * plan document, not a calendar: it says what a week is made of and the rules
  * for moving the pieces around a hectic schedule. The only dated rows are the
  * heavy days that close the last two strength goals, and those live in
@@ -22,7 +23,7 @@
  * entries, and the starting weights get numbers, before January 4.
  */
 
-export type PieceId = "H" | "B2" | "B3" | "J" | "J2" | "I" | "Z" | "knees" | "hips";
+export type PieceId = "H" | "B2" | "J" | "J2" | "I" | "Z" | "knees" | "hips";
 
 /** Drives the chip colour: the four session hues the week strip already validates. */
 export type PieceKind = "heavy" | "bench" | "jump" | "cardio" | "joint";
@@ -45,8 +46,8 @@ export interface Item {
 }
 
 /**
- * The bench stand-ins. The Life Fitness lying chest press, on its flat
- * setting, moves in 10s and reads about 90% of the barbell: 150 × 5 on
+ * The bench stand-ins. The Life Fitness lying chest press, with the handles
+ * on the top of their three notches for a flat press, moves in 10s and reads about 90% of the barbell: 150 × 5 on
  * September 17 against a bench near 165, and 150 × 6 to failure on November 12,
  * a week after 175 × 5, which is 0.91 and 0.88 by Epley. It rounds down to the
  * pin, since a pin too low costs a rep or two and one too high misses the set.
@@ -73,7 +74,7 @@ export function benchBackups(barbell: number): { press: number; dumbbell: number
  */
 export const EXAMPLE_T = 175;
 
-const PRESS = "Life Fitness press, flat";
+const PRESS = "Life Fitness press, handles on the top notch";
 const T = EXAMPLE_T;
 
 /** The three rows under a bench line: the bar, the machine, the dumbbells. */
@@ -119,18 +120,18 @@ export const PIECES: Piece[] = [
       { name: "Bike or sled, pancakes, shoulder warmup with band pull-aparts", dose: "10 min", warmup: true },
       {
         name: "Bench press",
-        dose: "T for 5 to 7, then 2 × 5 at T − 15",
+        dose: "T for 5 to 7, then 2 × 5 at T − 20 with a 1 s stop on the chest",
         alts: benchAlts(
-          (t, u) => `${on(t, T)}${u}, then 2 × 5 at ${on(t, T - 15)}`,
-          (t, u) => `${on(t, T)}${u} for 5 to 8, then 2 × 5 at ${on(t, T - 15)}`,
+          (t, u) => `${on(t, T)}${u}, then 2 × 5 at ${on(t, T - 20)}`,
+          (t, u) => `${on(t, T)}${u} for 5 to 8, then 2 × 5 at ${on(t, T - 20)}`,
         ),
       },
-      { name: "Trap bar deadlift, belted, after a beltless ramp", dose: "1 × 3" },
+      { name: "Trap bar deadlift, belted, after the ramp below", dose: "300 × 3" },
       { name: "Pullups", dose: "2 × 5" },
-      { name: "Smith squat, belted, after a ramp", dose: "1 × 3" },
+      { name: "Bulgarian split squat", dose: "2 × 6 a leg, climbing. About 60 a hand is the Smith's 225 × 5" },
       { name: "Dips", dose: "1 × 10" },
     ],
-    note: "Bench goes first because it's the only lift here meant to climb, and this is the one day that is always fed. The top set is as many clean reps as go, up to 7: seven puts T up 5 next week, and two weeks under 5 bring it down 10. The trap bar and squat take a set of 3 every week, and the set of 5 is tested once, on the last heavy day in June. If 300 × 3 grinds two weeks running, drop to 285 and climb back.",
+    note: "Bench goes first because it's the only lift here meant to climb, and this is the one day that is always fed. The top set is as many clean reps as go, up to 7: seven puts T up 5 next week, and two weeks under 5 bring it down 10. The trap bar takes a set of 3 every week, and its set of 5 is tested once, on the last heavy day in June. If 300 × 3 grinds two weeks running, drop to 290 and climb back. The Smith squat is gone, to spare the spine, and the split squat has its slot.",
   },
   {
     id: "B2",
@@ -138,9 +139,10 @@ export const PIECES: Piece[] = [
     short: "Bench volume",
     name: "Bench volume",
     kind: "bench",
-    when: "Wednesday, or any weekday two or more days after the heavy day",
-    time: "45 min",
+    when: "Thursday, or any weekday two or more days after the heavy day",
+    time: "50 min",
     items: [
+      { name: "Shoulder warmup with band pull-aparts", dose: "5 min", warmup: true },
       {
         name: "Bench press",
         dose: "3 × 8 to 10, starting at T − 30",
@@ -154,33 +156,9 @@ export const PIECES: Piece[] = [
       },
       { name: "Cable row", dose: "2 × 5" },
       { name: "Cable triceps pushdown", dose: "2 × 10" },
-    ],
-    note: "The 3 × 8 keeps its own count: when all three sets reach 10, add 5 and go back to 8s, whatever T is doing. The pullups and row keep pulling close to pressing, which keeps a hypermobile shoulder centred while the bench climbs.",
-  },
-  {
-    id: "B3",
-    tile: { big: "Bench", sub: "light, paused" },
-    short: "Light bench",
-    name: "Light paused bench",
-    kind: "bench",
-    when: "Friday, or Saturday after the jumps in a week the weekdays can't carry it",
-    time: "30 min",
-    items: [
-      { name: "Shoulder warmup with band pull-aparts", dose: "5 min", warmup: true },
-      { name: "Deep pushup hold", dose: "2 × 15–20 s", warmup: true },
-      {
-        name: "Paused bench, 1 s on the chest",
-        dose: "3 × 5 at T − 25",
-        alts: benchAlts(
-          (t, u) => `3 × 5 at ${on(t, T - 25)}${u}`,
-          (t, u) => `3 × 5 at ${on(t, T - 25)}${u}, 1 s stop at the bottom`,
-        ),
-      },
-      { name: "Pullups", dose: "2 × 5" },
-      { name: "Dumbbell press, flat", dose: "2 × 10 with 2 reps left, 45 a hand to start" },
       { name: "Seated Y raise", dose: "2 × 5 at 20" },
     ],
-    note: "Blades pinned. The bar touches and stops; the chest doesn't sink to meet it. The paused sets are practice, so the dumbbell press is the day's work: upper arms no lower than the torso, and stop with 2 reps left.",
+    note: "The 3 × 8 keeps its own count: when all three sets reach 10, add 5 and go back to 8s, whatever T is doing. The pullups and row keep pulling close to pressing, which keeps a hypermobile shoulder centred while the bench climbs.",
   },
   {
     id: "J",
@@ -189,17 +167,16 @@ export const PIECES: Piece[] = [
     name: "Jumps",
     kind: "jump",
     when: "Saturday",
-    time: "40 min",
+    time: "30 min",
     items: [
       { name: "Bike or sled", dose: "5–10 min", warmup: true },
       { name: "Pogo hops", dose: "2 × 20" },
       { name: "Depth jumps", dose: "2 × 5" },
       { name: "Approach jumps, one foot and two, at the same high mark each week", dose: "~10 min" },
       { name: "Weighted jumps", dose: "2 × 5 at 20s" },
-      { name: "Bulgarian split squat, climbing", dose: "2 × 6 a leg" },
       { name: "Lying leg curl", dose: "2 × 5" },
     ],
-    note: "The gym won't take a taped wall, so reach for the same spot on the wall every week. Stop the approach jumps when two in a row come up short of the day's best, and keep the one-foot jumps about even between the legs. The split squat is the leg lift that climbs here, since it spares the back. A hoop, when there is one, is the real measure.",
+    note: "The gym won't take a taped wall, so reach for the same spot on the wall every week. Stop the approach jumps when two in a row come up short of the day's best, and keep the one-foot jumps about even between the legs. A hoop, when there is one, is the real measure.",
   },
   {
     id: "J2",
@@ -243,7 +220,7 @@ export const PIECES: Piece[] = [
       { name: "Sled", dose: "when it's free" },
       { name: "Easy run-walk, from February", dose: "one a week, 20–30 min" },
     ],
-    note: "Easy enough to hold a conversation in full sentences. A flat walk rarely gets there. It starts in December in BC at two or three short goes a week, and reaches the full amount by Jan 18. The run-walk counts toward the two hours and goes on a weekend after the session, never the day before jumps.",
+    note: "Easy enough to hold a conversation in full sentences. A flat walk rarely gets there. One go a week floats to whichever weekday is free; the rest rides on the weekend. It starts in December in BC at two or three short goes a week, and reaches the full amount by Jan 18. The run-walk counts toward the two hours and goes on Sunday.",
   },
   {
     id: "knees",
@@ -291,42 +268,32 @@ export interface Slot {
 export interface WeekDay {
   day: string;
   slots: Slot[];
+  /** A line under the tile, for a session that can move. */
+  note?: string;
 }
 
 /**
- * Five sessions, two rest days. The heavy day is Monday, when the machines are
- * freest, the bench runs Monday, Wednesday, Friday, all fed, and the weekend is
- * jumps and cardio. Asked for on November 28, 2026.
+ * Four fixed sessions and one that floats. The heavy day is Monday, when the
+ * machines are freest, bench volume follows midweek, and the weekend is jumps
+ * and cardio. Asked for on November 28, 2026, in two passes: the first had
+ * the bench on Monday, Wednesday and Friday, which made four days running
+ * from Friday to Monday, so the bench went to two days and the Friday session
+ * came out. No run of days is longer than three.
  */
 export const NORMAL_WEEK: WeekDay[] = [
   { day: "Mon", slots: [{ id: "H" }] },
   { day: "Tue", slots: [] },
-  { day: "Wed", slots: [{ id: "J2" }, { id: "B2" }, { id: "I" }] },
-  { day: "Thu", slots: [] },
-  { day: "Fri", slots: [{ id: "B3" }, { id: "Z", minutes: 30 }] },
-  { day: "Sat", slots: [{ id: "J" }, { id: "Z", minutes: 30 }, { id: "knees" }] },
-  { day: "Sun", slots: [{ id: "Z", minutes: 60 }, { id: "hips" }] },
-];
-
-/**
- * The same five sessions when Monday is gone. Everything slides a day, and the
- * light bench lands on Saturday after the jumps, since Friday would follow
- * Thursday's bench and Sunday would sit against the next Monday.
- */
-export const TUESDAY_WEEK: WeekDay[] = [
-  { day: "Mon", slots: [] },
-  { day: "Tue", slots: [{ id: "H" }] },
-  { day: "Wed", slots: [{ id: "Z", minutes: 45 }] },
+  { day: "Wed", slots: [{ id: "Z", minutes: 40 }], note: "any free weekday" },
   { day: "Thu", slots: [{ id: "J2" }, { id: "B2" }, { id: "I" }] },
   { day: "Fri", slots: [] },
-  { day: "Sat", slots: [{ id: "J" }, { id: "B3" }, { id: "knees" }] },
-  { day: "Sun", slots: [{ id: "Z", minutes: 75 }, { id: "hips" }] },
+  { day: "Sat", slots: [{ id: "J" }, { id: "Z", minutes: 30 }, { id: "knees" }] },
+  { day: "Sun", slots: [{ id: "Z", minutes: 60 }, { id: "hips" }] },
 ];
 
 export const RULES: { rule: string; detail: string }[] = [
   {
     rule: "Five sessions a week at most.",
-    detail: "Saturday and Sunday are two of them, for the jumps and the cardio.",
+    detail: "Saturday and Sunday are two of them, for the jumps and the cardio. No run of days is longer than three.",
   },
   {
     rule: "The heavy day goes on a weekday, once every 5–9 days.",
@@ -338,7 +305,7 @@ export const RULES: { rule: string; detail: string }[] = [
   },
   {
     rule: "Leave a day between bench days.",
-    detail: "The heavy day counts as one, so the bench runs Monday, Wednesday, Friday. A bench session the weekdays can't carry goes on Saturday after the jumps, never on Sunday, the day before the heavy day.",
+    detail: "There are two: the heavy day, and bench volume two or more days after it. In a week the weekdays can't carry it, bench volume goes on Saturday after the jumps, never on Sunday, the day before the heavy day.",
   },
   {
     rule: "Jumps come first and fresh.",
@@ -346,7 +313,7 @@ export const RULES: { rule: string; detail: string }[] = [
   },
   {
     rule: "Cardio and the joint blocks ride along.",
-    detail: "Zone 2 and the two joint blocks attach to any session and never need a day of their own.",
+    detail: "Zone 2 and the two joint blocks attach to any session. One Zone 2 go floats to whichever weekday is free, and goes on the weekend when none is.",
   },
 ];
 
@@ -365,17 +332,17 @@ export interface ShortWeek {
 export const SHORT_WEEKS: ShortWeek[] = [
   {
     free: "3",
-    weekdays: [[{ id: "H" }], [{ id: "J2" }, { id: "B2" }, { id: "I" }], [{ id: "B3" }, { id: "Z", minutes: 30 }]],
+    weekdays: [[{ id: "H" }], [{ id: "Z", minutes: 40 }], [{ id: "J2" }, { id: "B2" }, { id: "I" }]],
     saturday: [{ id: "J" }, { id: "Z", minutes: 30 }, { id: "knees" }],
     sunday: [{ id: "Z", minutes: 60 }, { id: "hips" }],
-    note: "The normal week. If the three days run back to back, the middle one is Zone 2 and the light bench goes on Saturday, as in the row below.",
+    note: "The normal week.",
   },
   {
     free: "2",
     weekdays: [[{ id: "H" }], [{ id: "J2" }, { id: "B2" }, { id: "I" }]],
-    saturday: [{ id: "J" }, { id: "B3" }, { id: "knees" }],
+    saturday: [{ id: "J" }, { id: "Z", minutes: 45 }, { id: "knees" }],
     sunday: [{ id: "Z", minutes: 75 }, { id: "hips" }],
-    note: "If the two days are back to back, the second is Zone 2, and Saturday takes bench volume in place of the light bench.",
+    note: "If the two days are back to back, the second is Zone 2, and Saturday takes bench volume after the jumps.",
   },
   {
     free: "1",
@@ -399,19 +366,19 @@ export const GOALS: { name: string; target: string; plan: string; state: GoalSta
   {
     name: "Trap bar deadlift",
     target: "300 × 5",
-    plan: "Closes in the last stretch: 290 × 5 on Dec 1, 295 on Dec 8 and 300 × 5 on Dec 15, with Dec 22 as the try at home. Then 300 × 3 to hold, and one set of 5 in June.",
+    plan: "Closes in the last stretch: 290 × 5 on Dec 1, 290 × 6 on Dec 8, since the plates can't make 295, and 300 × 5 on Dec 15, with Dec 22 as the try at home. Then 300 × 3 to hold, and one set of 5 in June.",
     state: "open",
   },
   {
     name: "Smith squat",
     target: "225 × 5",
-    plan: "Closes in the last stretch: 220 × 5 on Dec 1, 225 × 5 on Dec 8, with Dec 15 and 22 as tries at home. Then 225 × 3 to hold, and one set of 5 in June.",
+    plan: "Closes in the last stretch: 220 × 5 on Dec 1, 225 × 5 on Dec 8, with Dec 15 and 22 as tries at home. Then the Smith is done, to spare the spine, and the Bulgarian split squat takes its slot: about 60 a hand for 6 a leg is the same work.",
     state: "open",
   },
   {
     name: "Pullups",
     target: "10 reps",
-    plan: "Done Oct 25. Six sets of 5 a week hold it, and a max set at each block's end.",
+    plan: "Done Oct 25. Four sets of 5 a week hold it, and a max set at each block's end.",
     state: "done",
   },
   {
@@ -423,7 +390,7 @@ export const GOALS: { name: string; target: string; plan: string; state: GoalSta
   {
     name: "Bench press",
     target: "225 × 5",
-    plan: "175 × 5 on Nov 5. About 180–185 when the cut ends and 195–205 by the end of June, as estimates: the cut slows it, and three bar days a week in place of one speed it up. 225 × 5 is more likely 2028, since the half marathon build takes July to October.",
+    plan: "175 × 5 on Nov 5. Two bench days a week, since cardio comes first in this block. About 180–185 when the cut ends and 190–200 by the end of June, as estimates. 225 × 5 is more likely 2028, since the half marathon build takes July to October.",
     state: "climbing",
   },
   {
@@ -467,17 +434,17 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
   {
     when: "Tue Dec 8",
     what: "The squat goal",
-    detail: "225 × 5, with the trap bar at 295, then the back-offs.",
+    detail: "225 × 5, with the trap bar at 290 for 6, then the back-offs. The Smith is done once this goes.",
   },
   {
     when: "Tue Dec 15",
     what: "The trap bar goal",
-    detail: "300 × 5, then the back-off.",
+    detail: "300 × 5, then the back-off. It takes every plate at the bar, the 5s included.",
   },
   {
     when: "Dec 16 – Jan 3",
     what: "Buffer",
-    detail: "A try at home on Dec 22 for whichever lift is still open, triples for one that closed, then Dec 29 in BC. The bench is 155 to max reps on every bench day, and the best set on Dec 23 or 31 sets the top set, T.",
+    detail: "A try at home on Dec 22 for whichever lift is still open, then Dec 29 in BC. A closed trap bar takes a triple, and a closed squat gives way to split squats. The bench is 155 to max reps on every bench day, and the best set on Dec 23 or 31 sets the top set, T.",
   },
   {
     when: "Dec 24 – about Jan 15",
@@ -488,12 +455,12 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
   {
     when: "Mon Jan 4",
     what: "The next block starts, in BC",
-    detail: "Two ramp weeks on whatever the gym there has. Bench at T, the trap bar and squat at 300 × 3 and 225 × 3. Food as now.",
+    detail: "Two ramp weeks on whatever the gym there has. Bench at T, the trap bar at 300 × 3, split squats where the Smith was. Food as now.",
   },
   {
     when: "Mon Jan 18",
     what: "The full week, and the cut",
-    detail: "Home. All five sessions, and 2,400 kcal with protein at 180, which works out to about a pound a week.",
+    detail: "Home. The four fixed sessions and the floating one, and 2,400 kcal with protein at 180, which works out to about a pound a week.",
   },
   {
     when: "February",
@@ -508,12 +475,12 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
   {
     when: "About early April",
     what: "The cut ends",
-    detail: "Back to 2,800 when the scale reaches 175–178 or the abs show, or sooner if the bench stalls for a whole block. Jun 1 is the limit.",
+    detail: "Back to 2,800 when the scale reaches 175–178 or the abs show. A stalled bench doesn't end it. Jun 1 is the limit.",
   },
   {
     when: "Late June",
     what: "The one test",
-    detail: "300 × 5 and 225 × 5 on the block's last heavy day. Every other week they take a set of 3.",
+    detail: "The trap bar's 300 × 5, on the block's last heavy day. Every other week it takes a set of 3.",
   },
   {
     when: "Jul – Oct",
@@ -524,9 +491,8 @@ export const CALENDAR: { when: string; what: string; detail: string; travel?: bo
 
 export const BENCH_LINES: { line: string; offset: number; reps: string }[] = [
   { line: "Heavy top set", offset: 0, reps: "5 to 7" },
-  { line: "Heavy back-offs", offset: -15, reps: "2 × 5" },
+  { line: "Heavy back-offs, paused", offset: -20, reps: "2 × 5" },
   { line: "Bench volume, to start", offset: -30, reps: "3 × 8 to 10" },
-  { line: "Paused", offset: -25, reps: "3 × 5" },
 ];
 
 export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: string; then: string }[] }[] = [
@@ -534,19 +500,17 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
     group: "Heavy full body",
     rows: [
       { name: "Bench top set, T", start: "From the best 155 set on Dec 23 or Dec 31: the weight Epley gives for 5 at that many reps, rounded down to 5 (155 × 10 makes 175)", then: "+5 when the top set reaches 7 clean reps; −10 after two heavy days under 5" },
-      { name: "Bench back-offs", start: "T − 15", then: "Follows T" },
-      { name: "Trap bar", start: "300 × 3, closed or not: 290 × 5 on Nov 17 already covers it by Epley", then: "Hold. One set of 5 on the last heavy day in June, which is the next try if the goal is still open" },
-      { name: "Smith squat", start: "225 × 3, closed or not: 220 × 5 on Nov 17 covers it", then: "Hold. One set of 5 on the last heavy day in June, the same way" },
+      { name: "Bench back-offs", start: "T − 20, with a 1 s stop on the chest", then: "Follows T" },
+      { name: "Trap bar", start: "300 × 3, closed or not: 290 × 5 on Nov 17 already covers it by Epley. 290 × 4 on a day the 5s are gone", then: "Hold. One set of 5 on the last heavy day in June, which is the next try if the goal is still open" },
+      { name: "Bulgarian split squat", start: "Where December leaves it: 45 a hand on Dec 5, up 5 each clean light lower. About 60 a hand for 6 a leg matches the Smith's 225 × 5, give or take 10: 40 × 6 on Nov 7 felt like that day's 175", then: "+5 a hand when both sets of 6 are clean on both legs" },
       { name: "Pullups, dips", start: "2 × 5 and 1 × 10, bodyweight", then: "Hold" },
     ],
   },
   {
-    group: "Bench days",
+    group: "Bench volume",
     rows: [
       { name: "Bench 3 × 8 to 10", start: "T − 30, where 145 × 8 × 3 was hard on the third set with the bench at 175", then: "Its own count: +5 when all three sets reach 10, then back to 8s" },
-      { name: "Paused bench", start: "T − 25", then: "Follows T" },
       { name: "Incline chest press, Life Fitness", start: "90, a first guess at two-thirds of the 3 × 8 weight; settle where 8 leaves 2 reps. The dumbbell stand-in starts at 35 a hand, also a guess", then: "The next pin, or 5 a hand, when both sets reach 10" },
-      { name: "Dumbbell press, Sunday", start: "45 a hand, a first guess; settle where 10 leaves 2 reps", then: "+5 a hand when both sets reach 12" },
       { name: "Cable row", start: "The last clean 2 × 5 in December", then: "About 82% of T; a 5 lb step is the pin below for one more rep" },
       { name: "Triceps pushdown", start: "Where 10 leaves 2–3 reps", then: "A step when both sets reach 12" },
       { name: "Seated Y raise", start: "20", then: "Hold" },
@@ -557,7 +521,6 @@ export const STARTING_WEIGHTS: { group: string; rows: { name: string; start: str
     rows: [
       { name: "Pogos, depth and approach jumps", start: "Bodyweight, the same box as now", then: "Hold" },
       { name: "Weighted jumps", start: "20 a hand", then: "Hold" },
-      { name: "Bulgarian split squat", start: "Where the last stretch leaves it, which took it up from 45 a hand on Dec 5", then: "+5 a hand when both sets of 6 are clean on both legs" },
       { name: "Lying leg curl", start: "The last clean heavy-lower weight in December", then: "Hold" },
     ],
   },
@@ -584,6 +547,8 @@ export const CUT: { what: string; why: string }[] = [
   { what: "Lat pulldown", why: "Pullups do its job, and most of the pulling is pullups by choice." },
   { what: "Cable fly", why: "A fourth press on the same tissue as the bench, dips and the machine." },
   { what: "Light trap bar and squat, and the back-off sets", why: "One heavy set a week holds them." },
+  { what: "The Smith squat", why: "Out once 225 × 5 closes, by choice on Nov 28: too much load on the spine. The split squat takes its slot on the heavy day, and came off Saturday to make room." },
+  { what: "The light paused bench day", why: "Cardio comes first in this block, so the bench gets two days. The pause moved to the heavy day's back-offs." },
 ];
 
 export const HYPERMOBILITY: string[] = [
@@ -602,5 +567,5 @@ export const BEFORE: string[] = [
   "Zone 2 starts in BC in December: two or three easy goes of 20–30 minutes a week.",
   "Weigh in on at least four mornings a week, and tape the waist at the navel once a week.",
   "The Dec 23 and Dec 31 heavy uppers set T, so there's no separate bench test.",
-  "The Life Fitness press has a flat and an incline setting. Note the seat and handle positions for each, so the cards can carry them.",
+  "The flat press is the top of the Life Fitness machine's three handle notches. Note which notch the incline press uses.",
 ];

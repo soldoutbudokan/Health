@@ -78,6 +78,7 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
     const date = c[0]?.trim();
     if (!isDateKey(date)) continue;
     const slot = optional(c[1])?.toLowerCase();
+    const trapBar = optionalLoad(c[5]);
     const legCurl = optionalLoad(c[10]);
     const cableRow = optionalLoad(c[15]);
     const latPulldown = optionalLoad(c[16]);
@@ -87,7 +88,8 @@ export function parseLastStretchCsv(csv: string): PlanDay[] {
       phase: optional(c[2])?.toLowerCase() ?? "",
       deload: /^(y|yes|true|1)$/i.test(c[3]?.trim() ?? ""),
       optional: /^(y|yes|true|1)$/i.test(c[4]?.trim() ?? ""),
-      trapBar: optionalNumber(c[5]),
+      trapBar: trapBar.lbs,
+      trapBarReps: trapBar.reps,
       trapBarBackoff: optionalNumber(c[6]),
       squat: optionalNumber(c[7]),
       squatBackoff: optionalNumber(c[8]),

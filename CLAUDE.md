@@ -192,7 +192,7 @@ lat_pulldown,curl,curl_backup,y_raise,cable_fly,dips,milestone,note
 |---|---|
 | `session` | a `sessions.csv` session type, or `rest` |
 | `phase` | `break` \| `return` \| `trip` \| `block-1` \| `deload` \| `block-2` \| `contingency` |
-| `trap_bar`, `squat`, `leg_curl`, `bench` | planned top-set lbs. Blank means no such lift that day, never zero. `leg_curl`, `cable_row` and `lat_pulldown` may also carry reps, `120×6`; see below |
+| `trap_bar`, `squat`, `leg_curl`, `bench` | planned top-set lbs. Blank means no such lift that day, never zero. `trap_bar`, `leg_curl`, `cable_row` and `lat_pulldown` may also carry reps, `120×6`; see below |
 | `trap_bar_backoff`, `squat_backoff`, `bench_backoff` | planned back-off lbs. Blank means every set at the top weight. The lower two were added September 29, 2026; see below |
 | `split_squat` | the Bulgarian split squat, lbs **a hand**, light lower days from December 5, 2026, where it replaced the Smith squat; those rows leave `squat` blank. Added November 14, 2026, after `squat_backoff`; blank before |
 | `weighted_jumps` | lbs **per dumbbell**, light lower days only, added September 19, 2026. Blank on the heavy days, whose jumps are bodyweight by prescription, and blank before October 3 |
@@ -234,7 +234,7 @@ November 8 (pullups), November 10 (trap bar, then holding at 300) and November 1
 each test slides one and the pullups close November 22, which was then where the
 stretch ended. Redrawn October 25: the test went 10, so the pullups closed four
 weeks early, the later tests became ordinary sets, and the stretch ends with the
-squat on November 17 again. Redrawn October 27: the trap bar stopped at one rep of 290 when the back started talking. That redraw took the Ottawa bar to have read light, making 290 a 10 lb step on the home bar; the owner corrected it on November 10, since the staff gave the bar as 60 lbs, as counted, so 285 there was real and 290 a 5 lb step. The owner put it at 285 on November 3, then fives to 300, and the squat and leg curl slid a week, so both goals now close November 24. Redrawn November 4: Mexico takes November 21–29 (in `data/breaks.csv`), so the two close after it, still in Block 2 but on the next block's heavy full-body day: triples at 295 and 220 on December 1, 300 and 225 on December 8, then one set of 5 at each on December 15, the last heavy day before BC. Those rows were `full-body`, one a week, with the rest of each week left to the next block. Redrawn November 5: the owner wanted the stretch's own week through December with a couple of weeks of buffer. So from November 30 the standing shape is back. BC is December 24 to about January 15, still training at a gym there, which left one home try after a December 15 test, so the owner swapped the triples for the usual top set and back-off: 295 and 220 on December 1, the goals at 300 × 5 and 225 × 5 on December 8. Redrawn November 10: 290 went 2, when the form slipped, and 3, so November 17 repeats 290, and December 1 steps to 295 rather than repeating after the trip, which keeps the goal on December 8 with both tries before BC. Redrawn November 14: the owner put December 1 at 290 again, whatever November 17 does, then fives, so the trap bar is 295 on December 8 and closes at 300 × 5 on December 15, a week after the squat, which keeps December 8. December 16 to January 3 is `contingency`: December 22 is the try at home for a lift still open (the squat has December 15 too), a lift that closed takes a set of 3, December 23 takes the heavy upper off the flight day, and December 29 is a heavy lower at a BC gym. The next block starts January 4, 2027. **The stretch ends January 3** and the next block takes over,
+squat on November 17 again. Redrawn October 27: the trap bar stopped at one rep of 290 when the back started talking. That redraw took the Ottawa bar to have read light, making 290 a 10 lb step on the home bar; the owner corrected it on November 10, since the staff gave the bar as 60 lbs, as counted, so 285 there was real and 290 a 5 lb step. The owner put it at 285 on November 3, then fives to 300, and the squat and leg curl slid a week, so both goals now close November 24. Redrawn November 4: Mexico takes November 21–29 (in `data/breaks.csv`), so the two close after it, still in Block 2 but on the next block's heavy full-body day: triples at 295 and 220 on December 1, 300 and 225 on December 8, then one set of 5 at each on December 15, the last heavy day before BC. Those rows were `full-body`, one a week, with the rest of each week left to the next block. Redrawn November 5: the owner wanted the stretch's own week through December with a couple of weeks of buffer. So from November 30 the standing shape is back. BC is December 24 to about January 15, still training at a gym there, which left one home try after a December 15 test, so the owner swapped the triples for the usual top set and back-off: 295 and 220 on December 1, the goals at 300 × 5 and 225 × 5 on December 8. Redrawn November 10: 290 went 2, when the form slipped, and 3, so November 17 repeats 290, and December 1 steps to 295 rather than repeating after the trip, which keeps the goal on December 8 with both tries before BC. Redrawn November 14: the owner put December 1 at 290 again, whatever November 17 does, then fives, so the trap bar is 295 on December 8 and closes at 300 × 5 on December 15, a week after the squat, which keeps December 8. December 16 to January 3 is `contingency`: December 22 is the try at home for a lift still open (the squat has December 15 too), a lift that closed takes a set of 3, December 23 takes the heavy upper off the flight day, and December 29 is a heavy lower at a BC gym. Redrawn November 28: the plates at the bar can't make 295 (below), so December 8 is 290 × 6, the same step, written `290×6`; the December 1 and 8 back-offs are 250 and the home light lowers 240. The same day the owner said the Smith squat stops for good once 225 × 5 is logged, for his spine, so every heavy lower after that takes split squats, 2 × 6 a leg, in its slot: rewrite those rows when the goal is logged. The next block starts January 4, 2027. **The stretch ends January 3** and the next block takes over,
 whatever the bench is doing — the owner said on September 7 that the bench doesn't hold it open.
 Don't extend the stretch to chase the bench.
 
@@ -252,9 +252,16 @@ Nov 3 ramp spent 270 × 4 ahead of a top set at 290. From November 17 a home
 heavy lower's card lists eleven warmup reps with the plates a side on the 60 lb
 bar: 5 near half, 3 near 70%, 2 near 83%, a single near 93%, then one try at the
 top set and the back-off. It is `TRAP_BAR_RAMPS` in `src/lib/lastStretch.ts`,
-one row per top weight (290, 295, 300), because each step has to load from 45s,
-35s, 25s, 10s, 5s and 2.5s. A weight with no row shows no ramp; add the row.
-Light days and the BC row get none.
+one row per top weight (290 and 300). A weight with no row shows no ramp; add
+the row. Light days and the BC row get none.
+
+**The bar takes one of each plate a side.** Given by the owner on November 28,
+2026: one 45, one 35, one 25 and one 10, and sometimes a 5, on the 60 lb bar.
+So it loads 290 without the 5s and 300 with every plate, and nothing between;
+295 can't be made, nor 245, 260 or 265, and 300 needs the 5s to be there.
+`perSide()` picks from one of each and leaves the 5 off where it can. Check a
+new trap bar number against that before writing it into a row, and write a
+5 lb step the plates can't make as one more rep at the weight below.
 
 **The trap bar has a setup checklist.** Asked for on November 14, 2026, after
 film of November 3's 290 × 3 showed the bar set about 4 in behind mid-foot and
@@ -385,30 +392,47 @@ does, and it carries no dates beyond its own calendar list. The dated heavy days
 The rules that matter when asked what to do: five sessions a week at most, two
 of them on the weekend; one heavy full-body day on a weekday, fed, never on the
 fasted weekend; the day after it is Zone 2 or rest; a day between bench days;
-jumps first and never the day after intervals or the heavy day. The trap bar and
-squat take a set of 3 every week, and the set of 5 is tested once, on the last
-heavy day in June. The heavy day is Monday, when the machines are free, the bench
-runs Monday, Wednesday, Friday, and the weekend is jumps and cardio; a bench
-session the weekdays can't carry goes on Saturday after the jumps, never Sunday.
+jumps first and never the day after intervals or the heavy day; no run of days
+longer than three. The trap bar takes a set of 3 every week, and its set of 5 is
+tested once, on the last heavy day in June. The heavy day is Monday, when the
+machines are free, bench volume is Thursday, the weekend is jumps and cardio, and
+one Zone 2 session floats to whichever weekday is free; in a week the weekdays
+can't carry bench volume it goes on Saturday after the jumps, never Sunday.
 Audited again on November 9, 2026: a cut at 2,400 kcal runs from January
 18 until the scale reaches 175–178, about early April at the pound a week it
 works out to and the end of May at the latest (a calorie span in
-`data/goals.json`, which grades only its own dates); the Bulgarian split squat climbs; one run-walk a week
+`data/goals.json`, which grades only its own dates), and a stalled bench no
+longer ends it; the Bulgarian split squat climbs; one run-walk a week
 from February builds toward an October 2027 half marathon; and the approach
 jumps have no wall target, since the gym won't allow one. The trunk
 block, Copenhagen plank and overhead hold were left out on purpose, and direct
 ab work was replaced by two joint blocks — don't add them back unasked.
 
-**The bench, and what stands in for it.** Audited a third time on November 28,
-2026, when the Monday week and the single June test above went in. The top set
-is T for up to 7 clean reps, 5 lb up at seven; the volume day keeps its own
-count, 3 × 8 to 10; the light day gained a dumbbell press. Every bench line
-prints two stand-ins with a weight, because the bench is often taken: the Life
-Fitness lying chest press on its flat setting (90% of the bar, rounded down to
-the pin) and dumbbells (35% a hand, an untested guess), from `benchAlts()` in
+**Cardio comes first in this block.** The owner's word on November 28, 2026,
+in the third audit: five of the six lifting goals are done or close, so the
+heart rate, the cut and the run outrank the lifts. The bench went from three
+days to two, the light paused day came out, and a stalled bench doesn't end the
+cut. He asked for three bench days in a row and was talked out of it, since the
+day after the heavy day takes no bench, and he turned down a Monday, Wednesday,
+Friday bench because it made four days running.
+
+**The bench, and what stands in for it.** The top set is T for up to 7 clean
+reps, 5 lb up at seven, then 2 × 5 at T − 20 paused; the volume day keeps its
+own count, 3 × 8 to 10. Every bench line prints two stand-ins with a weight,
+because the bench is often taken: the Life Fitness lying chest press with its
+handles on the top notch (90% of the bar, rounded down to the pin) and
+dumbbells (35% a hand, an untested guess), from `benchAlts()` in
 `nextBlock.ts`. The numbers are drawn for `EXAMPLE_T` until December sets T;
-change that one constant. The owner asked for three bench days in a row and was
-talked out of it: the day after the heavy day takes no bench.
+change that one constant.
+
+**No Smith squat after 225 × 5.** By the owner's call on November 28, 2026, for
+his spine. The Bulgarian split squat takes its slot on the heavy day, 2 × 6 a
+leg and climbing; about 60 a hand is the same work, an estimate from his log
+with 10 either way on it (Section 11). Don't put the Smith back.
+
+**The heavy day's card carries the trap bar ramp**, to 300 × 3 and to 290 × 4
+for a day the 5s are gone, with the setup checklist: `trapBarRampFor()` and
+`TrapBarSetup`, the same pieces `/last-stretch` uses.
 
 **Not built yet.** None of the new sessions has a `program.ts` entry or a
 session type, and the starting weights are formulas. Both are due before
