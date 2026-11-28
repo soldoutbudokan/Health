@@ -655,3 +655,59 @@ id,date,session,exercise,kind,set_index,reps,weight_lbs,duration_min,rpe,note,so
 2026-11-23-12,2026-11-23,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
 2026-11-23-13,2026-11-23,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
 2026-11-23-14,2026-11-23,daily,Hinge and brace hold,core,2,5,,,,,logged
+2026-11-24-01,2026-11-24,daily,Dead bugs,core,1,8,,,,"Per side, slow.",logged
+2026-11-24-02,2026-11-24,daily,Dead bugs,core,2,8,,,,,logged
+2026-11-24-03,2026-11-24,daily,Bird dog,core,1,6,,,,"Per side, 5 sec hold.",logged
+2026-11-24-04,2026-11-24,daily,Bird dog,core,2,6,,,,,logged
+2026-11-24-05,2026-11-24,daily,Side plank,core,1,,,0.5,,Per side.,logged
+2026-11-24-06,2026-11-24,daily,Side plank,core,2,,,0.5,,,logged
+2026-11-24-07,2026-11-24,daily,Single-leg hip thrust,isolation,1,10,,,,"Per side, 2 sec squeeze.",logged
+2026-11-24-08,2026-11-24,daily,Single-leg hip thrust,isolation,2,10,,,,,logged
+2026-11-24-09,2026-11-24,daily,Hamstring bridge hold,isolation,1,,,0.5,,,logged
+2026-11-24-10,2026-11-24,daily,Hamstring bridge hold,isolation,2,,,0.5,,,logged
+2026-11-24-11,2026-11-24,daily,Slow single-leg RDL,mobility,1,6,,,,"Per side, 3 sec down.",logged
+2026-11-24-12,2026-11-24,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
+2026-11-24-13,2026-11-24,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
+2026-11-24-14,2026-11-24,daily,Hinge and brace hold,core,2,5,,,,,logged
+2026-11-25-01,2026-11-25,daily,Dead bugs,core,1,8,,,,"Per side, slow.",logged
+2026-11-25-02,2026-11-25,daily,Dead bugs,core,2,8,,,,,logged
+2026-11-25-03,2026-11-25,daily,Bird dog,core,1,6,,,,"Per side, 5 sec hold.",logged
+2026-11-25-04,2026-11-25,daily,Bird dog,core,2,6,,,,,logged
+2026-11-25-05,2026-11-25,daily,Side plank,core,1,,,0.5,,Per side.,logged
+2026-11-25-06,2026-11-25,daily,Side plank,core,2,,,0.5,,,logged
+2026-11-25-07,2026-11-25,daily,Single-leg hip thrust,isolation,1,10,,,,"Per side, 2 sec squeeze.",logged
+2026-11-25-08,2026-11-25,daily,Single-leg hip thrust,isolation,2,10,,,,,logged
+2026-11-25-09,2026-11-25,daily,Hamstring bridge hold,isolation,1,,,0.5,,,logged
+2026-11-25-10,2026-11-25,daily,Hamstring bridge hold,isolation,2,,,0.5,,,logged
+2026-11-25-11,2026-11-25,daily,Slow single-leg RDL,mobility,1,6,,,,"Per side, 3 sec down.",logged
+2026-11-25-12,2026-11-25,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
+2026-11-25-13,2026-11-25,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
+2026-11-25-14,2026-11-25,daily,Hinge and brace hold,core,2,5,,,,,logged
+2026-11-26-01,2026-11-26,daily,Dead bugs,core,1,8,,,,"Per side, slow.",logged
+2026-11-26-02,2026-11-26,daily,Dead bugs,core,2,8,,,,,logged
+2026-11-26-03,2026-11-26,daily,Bird dog,core,1,6,,,,"Per side, 5 sec hold.",logged
+2026-11-26-04,2026-11-26,daily,Bird dog,core,2,6,,,,,logged
+2026-11-26-05,2026-11-26,daily,Side plank,core,1,,,0.5,,Per side.,logged
+2026-11-26-06,2026-11-26,daily,Side plank,core,2,,,0.5,,,logged
+2026-11-26-07,2026-11-26,daily,Single-leg hip thrust,isolation,1,10,,,,"Per side, 2 sec squeeze.",logged
+2026-11-26-08,2026-11-26,daily,Single-leg hip thrust,isolation,2,10,,,,,logged
+2026-11-26-09,2026-11-26,daily,Hamstring bridge hold,isolation,1,,,0.5,,,logged
+2026-11-26-10,2026-11-26,daily,Hamstring bridge hold,isolation,2,,,0.5,,,logged
+2026-11-26-11,2026-11-26,daily,Slow single-leg RDL,mobility,1,6,,,,"Per side, 3 sec down.",logged
+2026-11-26-12,2026-11-26,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
+2026-11-26-13,2026-11-26,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
+2026-11-26-14,2026-11-26,daily,Hinge and brace hold,core,2,5,,,,,logged
+2026-11-27-01,2026-11-27,daily,Dead bugs,core,1,8,,,,"Per side, slow.",logged
+2026-11-27-02,2026-11-27,daily,Dead bugs,core,2,8,,,,,logged
+2026-11-27-03,2026-11-27,daily,Bird dog,core,1,6,,,,"Per side, 5 sec hold.",logged
+2026-11-27-04,2026-11-27,daily,Bird dog,core,2,6,,,,,logged
+2026-11-27-05,2026-11-27,daily,Side plank,core,1,,,0.5,,Per side.,logged
+2026-11-27-06,2026-11-27,daily,Side plank,core,2,,,0.5,,,logged
+2026-11-27-07,2026-11-27,daily,Single-leg hip thrust,isolation,1,10,,,,"Per side, 2 sec squeeze.",logged
+2026-11-27-08,2026-11-27,daily,Single-leg hip thrust,isolation,2,10,,,,,logged
+2026-11-27-09,2026-11-27,daily,Hamstring bridge hold,isolation,1,,,0.5,,,logged
+2026-11-27-10,2026-11-27,daily,Hamstring bridge hold,isolation,2,,,0.5,,,logged
+2026-11-27-11,2026-11-27,daily,Slow single-leg RDL,mobility,1,6,,,,"Per side, 3 sec down.",logged
+2026-11-27-12,2026-11-27,daily,Slow single-leg RDL,mobility,2,6,,,,,logged
+2026-11-27-13,2026-11-27,daily,Hinge and brace hold,core,1,5,,,,5 sec hold.,logged
+2026-11-27-14,2026-11-27,daily,Hinge and brace hold,core,2,5,,,,,logged
